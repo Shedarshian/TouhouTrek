@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="oacz4rtm" jpegQuality="80" compressPNG="true">
+  <resources>
+    <component id="qfxq0" name="Main.xml" path="/" exported="true"/>
+    <component id="qfxq1" name="HandCard.xml" path="/"/>
+    <component id="qfxq2" name="PlayerInfo.xml" path="/"/>
+    <component id="qfxq3" name="SkillBtn.xml" path="/"/>
+    <component id="qfxq4" name="HandCards.xml" path="/"/>
+    <component id="qfxq5" name="Head.xml" path="/"/>
+    <component id="qfxq6" name="EventCard.xml" path="/"/>
+    <component id="qfxq7" name="Tip.xml" path="/"/>
+  </resources>
+  <publish name="Battle"/>
+</packageDescription>

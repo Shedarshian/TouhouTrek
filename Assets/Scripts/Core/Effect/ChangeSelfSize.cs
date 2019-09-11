@@ -10,7 +10,7 @@ namespace ZMDFQ.Effect
     public class ChangeSelfSize : EffectBase<Target.ChooseOne>
     {
         public int Size;
-        public override void DoEffect(Game game, ChooseOne target)
+        public override void Enable(Game game, ChooseOne target)
         {
             target.Target.ChangeSize(Size);
         }

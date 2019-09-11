@@ -1,0 +1,14 @@
+{
+    "name": "Model",
+    "references": [
+        "GUID:36c4ea0499030b942aabc267490c086f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

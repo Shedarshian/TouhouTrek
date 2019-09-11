@@ -8,5 +8,6 @@ namespace ZMDFQ
 {
     public class CharactorBase
     {
+        
     }
 }

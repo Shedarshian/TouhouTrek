@@ -12,7 +12,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class TestCard:ActionCard
     {
-        public override void DoEffect(Game game, TargetBase target)
+        internal override void DoEffect(Game game, TargetBase target)
         {
             game.ChangeSize(1);
         }

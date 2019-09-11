@@ -9,7 +9,7 @@ namespace ZMDFQ.Effect
 {
     public class TestChoice:EffectBase
     {
-        public override async void DoEffect(Game game, TargetBase target)
+        public override async void Enable(Game game, TargetBase target)
         {
             var result = await game.WaitAnswer();
             Log.Debug("errrrrrrrrrrr");

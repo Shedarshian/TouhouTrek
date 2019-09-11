@@ -9,7 +9,7 @@ namespace ZMDFQ.Effect
     public class ChangeMainSize:EffectBase<Target.Simple>
     {
         public int Size;
-        public override void DoEffect(Game game, Target.Simple target)
+        public override void Enable(Game game, Target.Simple target)
         {
             game.ChangeSize(Size);
         }

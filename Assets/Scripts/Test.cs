@@ -30,7 +30,7 @@ public class Test : MonoBehaviour
 
         game.UseCard(0, 0, new ZMDFQ.Target.Simple());
 
-        Card card1 = new Card()
+        Card card1 = new ActionCard()
         {
             Effects = new List<EffectBase>()
             {

@@ -10,13 +10,18 @@ namespace ZMDFQ
     {
         public int Id;
         public CardTypeEnum CardType;
-        public List<EffectBase> Effects;
-        public virtual void DoEffect(Game game, Target.TargetBase target)
+
+        /// <summary>
+        /// 这张牌能用怎么样的方式打出
+        /// </summary>
+        /// <returns></returns>
+        public virtual Type GetUseType()
         {
-            foreach (var effect in Effects)
-            {
-                effect.DoEffect(game, target);
-            }
+            return typeof(Target.Simple);
+        }
+
+        internal virtual void DoEffect(Game game, Target.TargetBase target)
+        {
         }
 
     }

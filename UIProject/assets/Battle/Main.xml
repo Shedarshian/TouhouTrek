@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="State" pages="0,,1," selected="0">
+    <remark page="0" value="正常"/>
+    <remark page="1" value="用卡"/>
+  </controller>
+  <controller name="PlayerCount" pages="0,,1,,2,,3,,4,,5,,6,,7," selected="0"/>
+  <displayList>
+    <graph id="n1_qfxq" name="n1" xy="0,801" size="1920,279" type="rect" lineSize="0" lineColor="#ff0066ff" fillColor="#ff0099ff"/>
+    <component id="n3_qfxq" name="Player0" src="qfxq2" fileName="PlayerInfo.xml" xy="6,449"/>
+    <component id="n4_qfxq" name="Player1" src="qfxq2" fileName="PlayerInfo.xml" xy="93,123"/>
+    <component id="n5_qfxq" name="Player2" src="qfxq2" fileName="PlayerInfo.xml" xy="363,19"/>
+    <component id="n6_qfxq" name="Player3" src="qfxq2" fileName="PlayerInfo.xml" xy="655,19"/>
+    <component id="n7_qfxq" name="Player4" src="qfxq2" fileName="PlayerInfo.xml" xy="965,18"/>
+    <component id="n8_qfxq" name="Player5" src="qfxq2" fileName="PlayerInfo.xml" xy="1275,19"/>
+    <component id="n9_qfxq" name="Player6" src="qfxq2" fileName="PlayerInfo.xml" xy="1567,94"/>
+    <component id="n10_qfxq" name="Player7" src="qfxq2" fileName="PlayerInfo.xml" xy="1663,431"/>
+    <component id="n11_qfxq" name="Head" src="qfxq5" fileName="Head.xml" xy="20,822"/>
+    <component id="n13_qfxq" name="HandCards" src="qfxq4" fileName="HandCards.xml" xy="416,826"/>
+    <list id="n15_qfxq" name="Skllls" xy="281,831" size="134,227" overflow="scroll" lineGap="5" defaultItem="ui://oacz4rtmqfxq3">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <component id="n16_qfxq" name="n16" src="qfxq6" fileName="EventCard.xml" xy="1517,816"/>
+    <component id="n17_qfxq" name="n17" src="qfxq7" fileName="Tip.xml" xy="493,736" pivot="0.5,0.5" size="119,57">
+      <gearDisplay controller="State" pages="1"/>
+      <Button title="出牌"/>
+    </component>
+    <component id="n18_qfxq" name="n18" src="qfxq7" fileName="Tip.xml" xy="1292,736" pivot="0.5,0.5" size="119,57">
+      <gearDisplay controller="State" pages="1"/>
+      <Button title="取消"/>
+    </component>
+  </displayList>
+</component>

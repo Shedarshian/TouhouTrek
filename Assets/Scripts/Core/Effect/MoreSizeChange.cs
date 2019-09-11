@@ -11,12 +11,12 @@ namespace ZMDFQ.Effect
     {
         public int Need;
         public int Change;
-        public override void DoEffect(Game game, TargetBase target)
+        public override void Enable(Game game, TargetBase target)
         {
             game.EventSystem.Register(EventEnum.OnGameSizeChange, MoreChange, 0);
         }
 
-        public override void Dispose(Game game)
+        public override void Disable(Game game)
         {
             game.EventSystem.Remove(EventEnum.OnGameSizeChange, MoreChange);
         }

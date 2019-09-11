@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="120,50">
+  <displayList>
+    <graph id="n0_qfxq" name="n0" xy="0,0" size="120,50" type="rect"/>
+    <text id="n1_qfxq" name="n1" xy="0,0" size="120,50" fontSize="40" align="center" vAlign="middle" autoSize="shrink" text=""/>
+  </displayList>
+</component>

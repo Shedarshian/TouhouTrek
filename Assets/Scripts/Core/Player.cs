@@ -11,16 +11,26 @@ namespace ZMDFQ
     public class Player
     {
         public int Size;
-        public void UseCard(Card card, TargetBase cardTarget)
+        /// <summary>
+        /// 手牌
+        /// </summary>
+        public List<Card> Cards = new List<Card>();
+        /// <summary>
+        /// 被玩家扣住的事件
+        /// </summary>
+        public Card SaveEvent;
+        internal void UseCard( Game game, int cardId, TargetBase cardTarget)
         {
-            
+            Card card = Cards.Find(x => x.Id == cardId);
+            if (card == null) return;
+            card.DoEffect(game, cardTarget); 
         }
-        public void UseSkill()
+        internal void UseSkill()
         {
 
         }
 
-        public void ChangeSize(int Size)
+        internal void ChangeSize(int Size)
         {
 
         }

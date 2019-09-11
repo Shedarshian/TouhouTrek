@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="235,300">
+  <displayList>
+    <graph id="n3_qfxq" name="n3" xy="0,0" size="235,300" type="rect" lineSize="3"/>
+    <graph id="n4_qfxq" name="n4" xy="212,121" size="40,40" type="eclipse" fillColor="#ff333333"/>
+    <text id="n5_qfxq" name="Cards" xy="222,123" size="22,39" fontSize="30" color="#ffffff" text="3"/>
+    <graph id="n6_qfxq" name="n6" xy="231,165" size="36,36" rotation="45" type="rect" fillColor="#ff666666"/>
+    <text id="n7_qfxq" name="n7" xy="205,172" size="52,39" fontSize="30" color="#ffffff" align="center" autoSize="none" text="-5"/>
+    <text id="n8_qfxq" name="n8" xy="90,0" size="99,301" fontSize="50" align="center" vAlign="middle" autoSize="none" strokeColor="#cccccc" text="单推厨的的"/>
+    <graph id="n9_qfxq" name="n9" xy="8,252" size="48,42" type="rect" lineSize="2" fillColor="#ff00ccff"/>
+  </displayList>
+</component>
