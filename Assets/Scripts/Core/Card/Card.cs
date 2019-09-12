@@ -9,6 +9,7 @@ namespace ZMDFQ
     public class Card
     {
         public int Id;
+        public string Name;
         public CardTypeEnum CardType;
 
         /// <summary>
@@ -17,10 +18,10 @@ namespace ZMDFQ
         /// <returns></returns>
         public virtual Type GetUseType()
         {
-            return typeof(Target.Simple);
+            return typeof(PlayerAction.Simple);
         }
 
-        internal virtual void DoEffect(Game game, Target.TargetBase target)
+        internal virtual void DoEffect(Game game, PlayerAction.ActionBase target)
         {
         }
 

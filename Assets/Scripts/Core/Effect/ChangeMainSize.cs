@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ.Effect
 {
-    public class ChangeMainSize:EffectBase<Target.Simple>
+    public class ChangeMainSize:EffectBase<PlayerAction.Simple>
     {
         public int Size;
-        public override void Enable(Game game, Target.Simple target)
+        public override void Enable(Game game, PlayerAction.Simple target)
         {
             game.ChangeSize(Size);
         }

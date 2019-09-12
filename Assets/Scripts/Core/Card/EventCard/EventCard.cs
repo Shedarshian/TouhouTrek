@@ -11,7 +11,7 @@ namespace ZMDFQ
         public List<EffectBase> ForwardEffects, BackwardEffects;
         public override Type GetUseType()
         {
-            return typeof(Target.ChooseDirection);
+            return typeof(PlayerAction.ChooseDirection);
         }
     }
 }

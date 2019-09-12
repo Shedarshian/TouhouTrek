@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZMDFQ.Target;
+using ZMDFQ.PlayerAction;
 
 namespace ZMDFQ
 {
     public class EffectBase
     {
-        public virtual void Enable(Game game, Target.TargetBase target)
+        public dynamic Parent;
+        public virtual void DoEnable(Game game, PlayerAction.ActionBase target)
         {
 
         }
@@ -24,9 +25,9 @@ namespace ZMDFQ
             return typeof(Simple);
         }
     }
-    public class EffectBase<T>:EffectBase where T:TargetBase
+    public class EffectBase<T>:EffectBase where T:ActionBase
     {
-        public override void Enable(Game game, TargetBase target)
+        public sealed override void DoEnable(Game game, ActionBase target)
         {
             if (target is T)
             {

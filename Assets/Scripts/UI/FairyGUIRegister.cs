@@ -12,6 +12,8 @@ namespace ZMDFQ.UI
         public static void Register()
         {
             UIObjectFactory.SetPackageItemExtension(UI_Player.URL, typeof(UI_Player));
+            UIObjectFactory.SetPackageItemExtension(UI_ActionCard.URL, typeof(UI_ActionCard));
+            UIObjectFactory.SetPackageItemExtension(UI_Hands.URL, typeof(UI_Hands));
         }
     }
 }

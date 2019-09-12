@@ -2,6 +2,6 @@
 <component size="172,240" extention="Label">
   <displayList>
     <graph id="n2_qfxq" name="n2" xy="0,0" size="171,240" type="rect"/>
-    <text id="n3_qfxq" name="title" xy="21,12" size="128,209" fontSize="35" align="center" vAlign="middle" autoSize="none" text="敖德萨大所多"/>
+    <text id="n3_qfxq" name="title" xy="21,12" size="128,209" fontSize="35" align="center" vAlign="middle" autoSize="none" text=""/>
   </displayList>
 </component>

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ.PlayerAction
 {
-    public class UseCard:PlayerAction
+    public class ActionBase
     {
-        public int CardId;
-        public int TargetId;
+        public virtual void HandleAction(Game game, Player player)
+        {
+
+        }
     }
 }

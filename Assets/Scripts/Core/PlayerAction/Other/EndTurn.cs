@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZMDFQ.Target
+namespace ZMDFQ.PlayerAction
 {
-    public class ChooseOne:TargetBase
+    public class EndTurn:ActionBase
     {
-        public Player Target;
+
     }
 }

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ
 {
-    public class CharactorBase
+    public class Hero
     {
-        
+        public string Name;
     }
 }

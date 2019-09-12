@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZMDFQ.Target
+namespace ZMDFQ.PlayerAction
 {
     /// <summary>
-    /// 直接使用牌
+    /// 选择一名玩家使用此牌
     /// </summary>
-    public class Simple:TargetBase
+    public class ChooseOneUseCard: UseCardBase
     {
-
+        public Player Target;
+        
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZMDFQ.Target;
+using ZMDFQ.PlayerAction;
 
 namespace ZMDFQ.Cards
 {
@@ -12,7 +12,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class TestCard:ActionCard
     {
-        internal override void DoEffect(Game game, TargetBase target)
+        internal override void DoEffect(Game game, ActionBase target)
         {
             game.ChangeSize(1);
         }

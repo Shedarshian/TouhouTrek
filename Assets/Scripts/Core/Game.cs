@@ -18,64 +18,93 @@ namespace ZMDFQ
         /// </summary>
         public List<Player> Players = new List<Player>();
 
-        public List<Card> Deck = new List<Card>();
+        public List<ActionCard> Deck = new List<ActionCard>();
 
-        public List<Card> UsedDeck = new List<Card>();
+        public List<ActionCard> UsedDeck = new List<ActionCard>();
 
-        public List<Card> WeatherDeck = new List<Card>();
+        public List<ThemeCard> ThemeDeck = new List<ThemeCard>();
 
-        public List<Card> UsedWeatherDeck = new List<Card>();
+        public List<ThemeCard> UsedWeatherDeck = new List<ThemeCard>();
 
-        public List<Card> EventDeck = new List<Card>();
+        public List<EventCard> EventDeck = new List<EventCard>();
 
-        public List<Card> UsedEventDeck = new List<Card>();
+        public List<EventCard> UsedEventDeck = new List<EventCard>();
 
         public Player Self;
 
         private System.Random ram = new System.Random();
 
-        private TaskCompletionSource<Target.TargetBase> tcs;
+        private TaskCompletionSource<PlayerAction.ActionBase> tcs;
 
         public void StartGame()
         {
-            for (int i = 0; i < 8; i++)
-            {
-                Players.Add(new Player());
-            }
-            Self = Players[0];
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 20; i++)
             {
                 Deck.Add(new ActionCard()
                 {
                     Id = i,
-                    Effects = new List<EffectBase>() {
-                        new Effect.ChangeMainSize(){ Size=1
+                    Name = "社群+"+(i%2+1),
+                    Effects = new List<EffectBase>()
+                    {
+                        new Effect.ChangeMainSize()
+                        {
+                            Size =i%2+1
                         }
                     }
                 });
             }
+            for (int i = 20; i < 40; i++)
+            {
+                Deck.Add(new ActionCard()
+                {
+                    Id = i,
+                    Name = "社群+2以上时，额外加一",
+                    Effects = new List<EffectBase>()
+                    {
+                        new Effect.MoreSizeChange()
+                        {
+                            Need=2,
+                            Change=1,
+                        }
+                    }
+                });
+            }
+            Reshuffle(Deck);
+            for (int i = 0; i < 8; i++)
+            {
+                Player p = new Player();
+                p.Id = i;
+                p.Hero = new Hero() { Name = "Test" + i };
+                Players.Add(p);
+                p.drawActionCard(this, 4);
+            }
+            Self = Players[0];
         }
 
+        public void DoAction(int playerId, PlayerAction.ActionBase action)
+        {
+            Player player = Players[playerId];
+            action.HandleAction(this, player);
+        }
 
-
-        public void UseCard(int playerId, int CardId, Target.TargetBase target)
+        public void UseCard(int playerId, int CardId, PlayerAction.ActionBase target)
         {
             Player player = Players[playerId];
             player.UseCard(this, CardId, target);
         }
 
-        public void UseSkill(int playerId, int CardId, Target.TargetBase target)
+        public void UseSkill(int playerId, int CardId, PlayerAction.ActionBase target)
         {
 
         }
 
-        public void Answer(Target.TargetBase target)
+        public void Answer(PlayerAction.ActionBase target)
         {
             tcs.TrySetResult(target);
         }
-        public Task<Target.TargetBase> WaitAnswer() //where T: Target.TargetBase
+        public Task<PlayerAction.ActionBase> WaitAnswer() //where T: Target.TargetBase
         {
-            tcs = new TaskCompletionSource<Target.TargetBase>();
+            tcs = new TaskCompletionSource<PlayerAction.ActionBase>();
             return tcs.Task;
         }
 

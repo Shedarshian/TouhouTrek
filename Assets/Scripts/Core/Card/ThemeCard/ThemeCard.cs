@@ -11,13 +11,13 @@ namespace ZMDFQ
         public List<EffectBase> Effects;
         public override Type GetUseType()
         {
-            return typeof(Target.Simple);
+            return typeof(PlayerAction.Simple);
         }
-        internal  void Enable(Game game, Target.TargetBase target)
+        internal  void Enable(Game game, PlayerAction.ActionBase target)
         {
             foreach (var effect in Effects)
             {
-                effect.Enable(game, target);
+                effect.DoEnable(game, target);
             }
         }
         internal void Disable(Game game)

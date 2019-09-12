@@ -22,13 +22,13 @@ public class Test : MonoBehaviour
                     }
                 }
         };
-        card.DoEffect(game, new ZMDFQ.Target.Simple());
+        card.DoEffect(game, new ZMDFQ.PlayerAction.Simple());
 
-        game.UseCard(0, 0, new ZMDFQ.Target.Simple());
+        game.UseCard(0, 0, new ZMDFQ.PlayerAction.Simple());
 
         card.Disable(game);
 
-        game.UseCard(0, 0, new ZMDFQ.Target.Simple());
+        game.UseCard(0, 0, new ZMDFQ.PlayerAction.Simple());
 
         Card card1 = new ActionCard()
         {
@@ -40,7 +40,7 @@ public class Test : MonoBehaviour
                 }
             }
         };
-        card1.DoEffect(game, new ZMDFQ.Target.Simple());
+        card1.DoEffect(game, new ZMDFQ.PlayerAction.Simple());
     }
 
     // Update is called once per frame
@@ -48,7 +48,7 @@ public class Test : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            game.Answer(new ZMDFQ.Target.Simple());
+            game.Answer(new ZMDFQ.PlayerAction.Simple());
         }
     }
 }

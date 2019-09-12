@@ -17,14 +17,14 @@ namespace ZMDFQ
             }
             else
             {
-                return typeof(Target.Simple);
+                return typeof(PlayerAction.Simple);
             }
         }
-        internal override void DoEffect(Game game, Target.TargetBase target)
+        internal override void DoEffect(Game game, PlayerAction.ActionBase target)
         {
             foreach (var effect in Effects)
             {
-                effect.Enable(game, target);
+                effect.DoEnable(game, target);
             }
         }
     }

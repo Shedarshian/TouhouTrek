@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ.PlayerAction
 {
-    public class PlayerAction
+    /// <summary>
+    /// 直接使用牌
+    /// </summary>
+    public class Simple: UseCardBase
     {
+
     }
 }
