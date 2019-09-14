@@ -24,6 +24,7 @@ namespace ZMDFQ
 
         internal void DrawActionCard(Game game,int count)
         {
+            List<ActionCard> data = new List<ActionCard>();
             for (int i = 0; i < count; i++)
             {
                 if (game.Deck.Count == 0)
@@ -33,8 +34,10 @@ namespace ZMDFQ
                     game.Reshuffle(game.Deck);
                 }
                 Cards.Add(game.Deck[0]);
+                data.Add(game.Deck[0]);
                 game.Deck.RemoveAt(0);
             }
+            game.EventSystem.Call(EventEnum.DrawCard, this, data);
         }
 
         internal void UseCard(Game game, int cardId, Response cardTarget)
@@ -47,11 +50,15 @@ namespace ZMDFQ
 
         internal void DropActionCard(Game game, List<ActionCard> cards)
         {
+            Log.Debug($"{Id}丢{cards.Count}");
+            List<ActionCard> data = new List<ActionCard>();
             foreach (var card in cards)
             {
                 Cards.Remove(card);
                 game.UsedDeck.Add(card);
+                data.Add(card);
             }
+            game.EventSystem.Call(EventEnum.DropCard, this, data);
         }
 
         internal void UseSkill()

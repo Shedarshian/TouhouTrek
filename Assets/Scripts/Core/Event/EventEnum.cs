@@ -12,6 +12,12 @@ namespace ZMDFQ
         TurnStart,
         TurnEnd,
 
+        ActionStart,
+        ActionEnd,
+
+        DrawCard,
+        DropCard,
+
         OnGameSizeChange,
         AfterGameSizeChange,
     }

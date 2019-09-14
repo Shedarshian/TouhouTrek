@@ -85,14 +85,24 @@ namespace ZMDFQ
             Reshuffle(Deck);
             for (int i = 0; i < 8; i++)
             {
-                Player p = new Player();
+                Player p;
+                if (i == 0) p = new Player();
+                else { p = new AI(); (p as AI).Init(this); }
                 p.Id = i;
                 p.Hero = new Hero() { Name = "Test" + i };
                 Players.Add(p);
-                p.DrawActionCard(this, 4);
             }
             Self = Players[0];
-            ActivePlayer = Players[0];
+            ActivePlayer = Players[1];
+
+            foreach (var player in Players)
+            {
+                player.DrawActionCard(this, 4);
+            }
+
+            EventSystem.Call(EventEnum.GameStart);
+
+            NewTurn(ActivePlayer);
         }
 
         public void DoAction(Response action)
@@ -113,17 +123,23 @@ namespace ZMDFQ
 
         internal void NewTurn(Player player)
         {
+            EventSystem.Call(EventEnum.TurnStart, this);
             player.DrawActionCard(this, 1);
-            //WaitAnswer(new TurnStart() { });
+            EventSystem.Call(EventEnum.ActionStart, this);
         }
 
         internal async void EndTurn(Player player)
         {
+            EventSystem.Call(EventEnum.ActionEnd, this);
             int max = player.HandMax();
             if (player.Cards.Count > max)
             {
-                await WaitAnswer(new DropCardRequest() { Count = player.Cards.Count - max });
+                DropCardResponse response = (DropCardResponse)await WaitAnswer(new DropCardRequest() { playerId = player.Id, Count = player.Cards.Count - max });
+                response.HandleAction(this);
             }
+
+            EventSystem.Call(EventEnum.TurnEnd, this);
+
             int index = Players.IndexOf(player);
             if (index == Players.Count-1)
             {
@@ -133,6 +149,7 @@ namespace ZMDFQ
             {
                 ActivePlayer = Players[index + 1];
             }
+            NewTurn(ActivePlayer);
         }
 
         internal void Reshuffle<T>(List<T> listtemp)

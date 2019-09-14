@@ -11,7 +11,7 @@ namespace ZMDFQ
     {
         public void Init(Game game)
         {
-            game.EventSystem.Register(EventEnum.TurnStart, async (x) =>
+            game.EventSystem.Register(EventEnum.ActionStart, async (x) =>
             {
                 if (game.ActivePlayer == this)
                 {
@@ -32,10 +32,11 @@ namespace ZMDFQ
                     List<ActionCard> cards = new List<ActionCard>();
                     for (int i = 0; i < dropCard.Count; i++)
                     {
-                        cards.Add(Cards[0]);
+                        cards.Add(Cards[i]);
                     }
                     game.Answer(new DropCardResponse()
                     {
+                        playerId = Id,
                         Cards = cards
                     });
                     break;
