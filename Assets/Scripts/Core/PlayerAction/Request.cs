@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ.PlayerAction
 {
-    public class ChooseDirectionRequest : Request
+    public class Request
     {
-    }
-    public class ChooseDirectionResponse : Response
-    {
-        public bool IfForward;
+        public int playerId;
     }
 }

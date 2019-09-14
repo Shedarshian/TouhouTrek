@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ
 {
+    using PlayerAction;
     public class Game
     {
         public EventSystem EventSystem = new EventSystem();
@@ -30,11 +31,21 @@ namespace ZMDFQ
 
         public List<EventCard> UsedEventDeck = new List<EventCard>();
 
+        /// <summary>
+        /// 当前回合的玩家
+        /// </summary>
+        public Player ActivePlayer;
+
+        /// <summary>
+        /// 自己控制的玩家
+        /// </summary>
         public Player Self;
+
+        public System.Action<Game, Request> OnRequest;
 
         private System.Random ram = new System.Random();
 
-        private TaskCompletionSource<PlayerAction.ActionBase> tcs;
+        private TaskCompletionSource<Response> tcs;
 
         public void StartGame()
         {
@@ -43,7 +54,8 @@ namespace ZMDFQ
                 Deck.Add(new ActionCard()
                 {
                     Id = i,
-                    Name = "社群+"+(i%2+1),
+                    Name = "社群+" + (i % 2 + 1),
+                    RequestWay = SimpleRequest.Instance,
                     Effects = new List<EffectBase>()
                     {
                         new Effect.ChangeMainSize()
@@ -58,6 +70,7 @@ namespace ZMDFQ
                 Deck.Add(new ActionCard()
                 {
                     Id = i,
+                    RequestWay = SimpleRequest.Instance,
                     Name = "社群+2以上时，额外加一",
                     Effects = new List<EffectBase>()
                     {
@@ -76,36 +89,50 @@ namespace ZMDFQ
                 p.Id = i;
                 p.Hero = new Hero() { Name = "Test" + i };
                 Players.Add(p);
-                p.drawActionCard(this, 4);
+                p.DrawActionCard(this, 4);
             }
             Self = Players[0];
+            ActivePlayer = Players[0];
         }
 
-        public void DoAction(int playerId, PlayerAction.ActionBase action)
+        public void DoAction(Response action)
         {
-            Player player = Players[playerId];
-            action.HandleAction(this, player);
+            action.HandleAction(this);
         }
-
-        public void UseCard(int playerId, int CardId, PlayerAction.ActionBase target)
-        {
-            Player player = Players[playerId];
-            player.UseCard(this, CardId, target);
-        }
-
-        public void UseSkill(int playerId, int CardId, PlayerAction.ActionBase target)
-        {
-
-        }
-
-        public void Answer(PlayerAction.ActionBase target)
+   
+        public void Answer(Response target)
         {
             tcs.TrySetResult(target);
         }
-        public Task<PlayerAction.ActionBase> WaitAnswer() //where T: Target.TargetBase
+        internal Task<Response> WaitAnswer(Request request)
         {
-            tcs = new TaskCompletionSource<PlayerAction.ActionBase>();
+            tcs = new TaskCompletionSource<Response>();
+            OnRequest?.Invoke(this, request);
             return tcs.Task;
+        }
+
+        internal void NewTurn(Player player)
+        {
+            player.DrawActionCard(this, 1);
+            //WaitAnswer(new TurnStart() { });
+        }
+
+        internal async void EndTurn(Player player)
+        {
+            int max = player.HandMax();
+            if (player.Cards.Count > max)
+            {
+                await WaitAnswer(new DropCardRequest() { Count = player.Cards.Count - max });
+            }
+            int index = Players.IndexOf(player);
+            if (index == Players.Count-1)
+            {
+                ActivePlayer = Players[0];
+            }
+            else
+            {
+                ActivePlayer = Players[index + 1];
+            }
         }
 
         internal void Reshuffle<T>(List<T> listtemp)

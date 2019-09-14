@@ -9,8 +9,17 @@ namespace ZMDFQ.PlayerAction
     /// <summary>
     /// 直接使用牌
     /// </summary>
-    public class Simple: UseCardBase
+    public class SimpleRequest: Request
     {
-
+        public readonly static SimpleRequest Instance = new SimpleRequest();
+    }
+    public class SimpleResponse : Response
+    {
+        public int CardId;
+        public override void HandleAction(Game game)
+        {
+            Player player = game.Players.Find(x => x.Id == playerId);
+            player.UseCard(game, CardId, this);
+        }
     }
 }

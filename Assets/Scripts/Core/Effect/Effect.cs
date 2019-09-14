@@ -1,51 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ZMDFQ.PlayerAction;
+﻿using ZMDFQ.PlayerAction;
 
 namespace ZMDFQ
 {
     public class EffectBase
     {
         public dynamic Parent;
-        public virtual void DoEnable(Game game, PlayerAction.ActionBase target)
+        public virtual void DoEnable(Game game, PlayerAction.Response response)
         {
 
-        }
-
-        public virtual void Disable(Game game)
-        {
-
-        }
-
-        public virtual Type GetUseType()
-        {
-            return typeof(Simple);
         }
     }
-    public class EffectBase<T>:EffectBase where T:ActionBase
+    /// <summary>
+    /// 用泛型简单封装一层，表示子类希望接受什么类型的参数
+    /// 如果需要接受复数类型的参数的情况下，使用基类泛型然后在子类做判断
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class EffectBase<T>:EffectBase where T:Response
     {
-        public sealed override void DoEnable(Game game, ActionBase target)
+        public sealed override void DoEnable(Game game, Response response)
         {
-            if (target is T)
+            if (response is T)
             {
-                Enable(game, target as T);
+                Enable(game, response as T);
             }
             else
             {
-                Log.Error($"{GetType()}效果无法接受该类参数：{target.GetType()}");
+                Log.Error($"{GetType()}效果无法接受该类参数：{response.GetType()}");
             }
         }
-        public virtual void Enable(Game game, T target)
+        public virtual void Enable(Game game, T response)
         {
 
-        }
-
-        public override Type GetUseType()
-        {
-            return typeof(T);
         }
     }
 }
