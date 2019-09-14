@@ -10,7 +10,7 @@ namespace ZMDFQ.Cards
     /// <summary>
     /// 测试卡，社区影响力+1
     /// </summary>
-    public class TestCard:ActionCard
+    public class TestCard : ActionCard
     {
         internal override void DoEffect(Game game, ActionBase target)
         {
