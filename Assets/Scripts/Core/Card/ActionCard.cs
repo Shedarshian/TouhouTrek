@@ -9,18 +9,8 @@ namespace ZMDFQ
     public class ActionCard:Card
     {
         public List<EffectBase> Effects;
-        public override Type GetUseType()
-        {
-            if (Effects.Count > 0)
-            {
-                return Effects[0].GetUseType();
-            }
-            else
-            {
-                return typeof(PlayerAction.Simple);
-            }
-        }
-        internal override void DoEffect(Game game, PlayerAction.ActionBase target)
+
+        internal override void DoEffect(Game game, PlayerAction.Response target)
         {
             foreach (var effect in Effects)
             {

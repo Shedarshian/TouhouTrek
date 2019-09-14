@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ.PlayerAction
 {
-    public class ChooseSomeoneRequest : Request
+    public class DropCardRequest:Request
     {
-        public int Number;
+        public int Count;
     }
-    public class ChooseSomeoneResponse: Response
+    public class DropCardResponse : Response
     {
-        public List<Player> Targets;
-        public int CardId;
+        public List<ActionCard> Cards;
         public override void HandleAction(Game game)
         {
             Player player = game.Players.Find(x => x.Id == playerId);
-            player.UseCard(game, CardId, this);
+            player.DropActionCard(game, Cards);
         }
     }
 }

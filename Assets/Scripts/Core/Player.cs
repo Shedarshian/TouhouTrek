@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace ZMDFQ
 {
     using PlayerAction;
-    using PlayerAction;
     public class Player
     {
         public int Id;
@@ -23,7 +22,7 @@ namespace ZMDFQ
 
         public Hero Hero;
 
-        internal void drawActionCard(Game game,int count)
+        internal void DrawActionCard(Game game,int count)
         {
             for (int i = 0; i < count; i++)
             {
@@ -38,14 +37,23 @@ namespace ZMDFQ
             }
         }
 
-        internal void UseCard(Game game, int cardId, ActionBase cardTarget)
+        internal void UseCard(Game game, int cardId, Response cardTarget)
         {
             ActionCard card = Cards.Find(x => x.Id == cardId);
             if (card == null) return;
             card.DoEffect(game, cardTarget);
-            Cards.Remove(card);
-            game.UsedDeck.Add(card);
+            DropActionCard(game,new List<ActionCard>() { card });
         }
+
+        internal void DropActionCard(Game game, List<ActionCard> cards)
+        {
+            foreach (var card in cards)
+            {
+                Cards.Remove(card);
+                game.UsedDeck.Add(card);
+            }
+        }
+
         internal void UseSkill()
         {
 
@@ -54,6 +62,18 @@ namespace ZMDFQ
         internal void ChangeSize(int Size)
         {
 
+        }
+
+        internal int HandMax()
+        {
+            int result=1;
+            if (Size > 1 && Size < 4)
+            {
+                result = Size;
+            }
+            else if (Size >= 4)
+                result = 4;
+            return result;
         }
     }
 }

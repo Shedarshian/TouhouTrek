@@ -9,22 +9,11 @@ namespace ZMDFQ
     public class ThemeCard:Card
     {
         public List<EffectBase> Effects;
-        public override Type GetUseType()
-        {
-            return typeof(PlayerAction.Simple);
-        }
-        internal  void Enable(Game game, PlayerAction.ActionBase target)
+        internal void Enable(Game game, PlayerAction.Response target)
         {
             foreach (var effect in Effects)
             {
                 effect.DoEnable(game, target);
-            }
-        }
-        internal void Disable(Game game)
-        {
-            foreach (var effect in Effects)
-            {
-                effect.Disable(game);
             }
         }
     }

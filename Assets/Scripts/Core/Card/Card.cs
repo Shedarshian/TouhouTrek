@@ -12,16 +12,9 @@ namespace ZMDFQ
         public string Name;
         public CardTypeEnum CardType;
 
-        /// <summary>
-        /// 这张牌能用怎么样的方式打出
-        /// </summary>
-        /// <returns></returns>
-        public virtual Type GetUseType()
-        {
-            return typeof(PlayerAction.Simple);
-        }
+        public PlayerAction.Request RequestWay;
 
-        internal virtual void DoEffect(Game game, PlayerAction.ActionBase target)
+        internal virtual void DoEffect(Game game, PlayerAction.Response target)
         {
         }
 

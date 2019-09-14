@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ.PlayerAction
 {
-    public class ActionBase
+    public class Response
     {
-        public virtual void HandleAction(Game game, Player player)
+        public int playerId;
+        public virtual void HandleAction(Game game)
         {
-
+            
         }
     }
 }
