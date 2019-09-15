@@ -29,7 +29,7 @@ namespace ZMDFQ
         /// </summary>
         /// <param name="game">游戏参数</param>
         /// <param name="target">目标参数</param>
-        public void run(Game game, ActionBase target)
+        public void run(Game game, Response target)
         {
             script.RunAsync(new Globals(game, target));
         }
@@ -56,7 +56,7 @@ namespace ZMDFQ
         /// <param name="game">游戏参数</param>
         /// <param name="target">目标参数</param>
         /// <returns>返回脚本执行的返回值</returns>
-        public T run(Game game, ActionBase target)
+        public T run(Game game, Response target)
         {
             return script.RunAsync(new Globals(game, target)).Result.ReturnValue;
         }

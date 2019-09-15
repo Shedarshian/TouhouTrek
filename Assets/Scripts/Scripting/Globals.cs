@@ -3,9 +3,9 @@ using ZMDFQ.PlayerAction;
 
 namespace ZMDFQ
 {
-    class Globals
+    public class Globals
     {
-        public Globals(Game game, ActionBase target)
+        public Globals(Game game, Response target)
         {
             api = new GameAPI(game, target);
         }

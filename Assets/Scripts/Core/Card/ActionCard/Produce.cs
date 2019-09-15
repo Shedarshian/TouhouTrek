@@ -7,8 +7,8 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class Produce : ActionCard
     {
-        Script script { get; } = new Script("System.IO.File.Create(\"Test.txt\");");
-        internal override void DoEffect(Game game, ActionBase target)
+        Script script { get; } = new Script("game.Players.Find(p => { return p.Id == target.playerId; }).Size += 2;");
+        internal override void DoEffect(Game game, Response target)
         {
             script.run(game, target);
         }

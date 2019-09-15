@@ -49,7 +49,20 @@ namespace ZMDFQ
 
         public void StartGame()
         {
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 10; i++)
+            {
+                Deck.Add(new ActionCard()
+                {
+                    Id = i,
+                    Name = "创作",
+                    RequestWay = SimpleRequest.Instance,
+                    Effects = new List<EffectBase>()
+                    {
+                        new Effect.SimpleScriptingEffect(new Script("api.addPlayerInfluence(api.triggerPlayer,2);"))
+                    }
+                });
+            }
+            for (int i = 10; i < 20; i++)
             {
                 Deck.Add(new ActionCard()
                 {
@@ -99,7 +112,7 @@ namespace ZMDFQ
         {
             action.HandleAction(this);
         }
-   
+
         public void Answer(Response target)
         {
             tcs.TrySetResult(target);
@@ -125,7 +138,7 @@ namespace ZMDFQ
                 await WaitAnswer(new DropCardRequest() { Count = player.Cards.Count - max });
             }
             int index = Players.IndexOf(player);
-            if (index == Players.Count-1)
+            if (index == Players.Count - 1)
             {
                 ActivePlayer = Players[0];
             }
@@ -148,7 +161,7 @@ namespace ZMDFQ
             }
         }
 
-        internal int NextInt(int start,int end)
+        internal int NextInt(int start, int end)
         {
             return ram.Next(start, end);
         }
