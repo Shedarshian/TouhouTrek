@@ -13,13 +13,12 @@ namespace ZMDFQ.PlayerAction
     {
         public readonly static SimpleRequest Instance = new SimpleRequest();
     }
-    public class SimpleResponse : Response
+    public class SimpleResponse : UseOneCard
     {
-        public int CardId;
         public override void HandleAction(Game game)
         {
             Player player = game.Players.Find(x => x.Id == playerId);
-            player.UseCard(game, CardId, this);
+            player.UseActionCard(game, CardId, this);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace ZMDFQ
             {
                 if (game.ActivePlayer == this)
                 {
-                    await Task.Delay(100);
+                    await Task.Delay(500);
                     game.DoAction(new EndTurn() { playerId = Id });
                 }
             }, 0);
@@ -25,14 +25,14 @@ namespace ZMDFQ
         async void doResponse(Game game, Request request)
         {
             if (request.playerId != Id) return;
-            await Task.Delay(100);//假装思考0.1s
+            await Task.Delay(500);//假装思考0.1s
             switch (request)
             {
                 case ChooseSomeCardRequest  dropCard:
                     List<ActionCard> cards = new List<ActionCard>();
                     for (int i = 0; i < dropCard.Count; i++)
                     {
-                        cards.Add(Cards[i]);
+                        cards.Add(ActionCards[i]);
                     }
                     game.Answer(new ChooseSomeCardResponse()
                     {

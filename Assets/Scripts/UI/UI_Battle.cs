@@ -96,9 +96,9 @@ namespace ZMDFQ
 
             Game.EventSystem.Register(EventEnum.ActionEnd, actionEnd);
 
-            Game.EventSystem.Register(EventEnum.DrawCard, onDrawCard);
+            Game.EventSystem.Register(EventEnum.DrawActionCard, onDrawCard);
 
-            Game.EventSystem.Register(EventEnum.DropCard, onDropCard);
+            Game.EventSystem.Register(EventEnum.DropActionCard, onDropCard);
 
             Game.OnRequest += OnRequest;
 
@@ -117,7 +117,7 @@ namespace ZMDFQ
                 ui_player.SetPlayerCard(game.Players[i]);
                 ui_player.selected = SelectedPlayers.Contains(ui_player);
             }
-            HandCards.SetCards(game.Self.Cards, SelectedCards);
+            HandCards.SetCards(game.Self.ActionCards, SelectedCards);
 
             _main.GetController("State").selectedIndex = 0;
 

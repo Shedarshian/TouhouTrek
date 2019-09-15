@@ -19,7 +19,7 @@ namespace ZMDFQ.UI
         public void SetPlayerCard(Player player)
         {
             this.Player = player;
-            GetChild("Cards").text = player.Cards.Count.ToString();
+            GetChild("Cards").text = player.ActionCards.Count.ToString();
             GetChild("Size").text = player.Size.ToString();
             GetChild("Name").text = player.Hero.Name;
         }

@@ -71,7 +71,8 @@ namespace ZMDFQ
                         new Effect.ChangeMainSize()
                         {
                             Size =i%2+1
-                        }
+                        },
+                        new Effect.GoUsedDeck(),
                     }
                 });
             }
@@ -88,7 +89,8 @@ namespace ZMDFQ
                         {
                             Need=2,
                             Change=1,
-                        }
+                        },
+                        new Effect.GoUsedDeck(),
                     }
                 });
             }
@@ -173,10 +175,11 @@ namespace ZMDFQ
             {
                 //新的一轮
                 Round++;
-                EventSystem.Call(EventEnum.RoundStart, this);
                 NextThemeCard();
+                EventSystem.Call(EventEnum.RoundStart, this);
             }
             EventSystem.Call(EventEnum.TurnStart, this);
+            player.DrawEventCard(this);
             player.DrawActionCard(this, 1);
             EventSystem.Call(EventEnum.ActionStart, this);
         }
@@ -184,11 +187,16 @@ namespace ZMDFQ
         internal async void EndTurn(Player player)
         {
             EventSystem.Call(EventEnum.ActionEnd, this);
+
+            var chooseDirectionResponse = (ChooseDirectionResponse)await WaitAnswer(new ChooseDirectionRequest());
+
+            player.UseEventCard(this, chooseDirectionResponse);
+
             int max = player.HandMax();
-            if (player.Cards.Count > max)
+            if (player.ActionCards.Count > max)
             {
-                ChooseSomeCardResponse response = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { playerId = player.Id, Count = player.Cards.Count - max });
-                response.HandleAction(this);
+                ChooseSomeCardResponse chooseSomeCardResponse = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { playerId = player.Id, Count = player.ActionCards.Count - max });
+                player.DropActionCard(this, chooseSomeCardResponse.Cards);
             }
 
             EventSystem.Call(EventEnum.TurnEnd, this);

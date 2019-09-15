@@ -20,8 +20,10 @@ namespace ZMDFQ
         ActionStart,
         ActionEnd,
 
-        DrawCard,
-        DropCard,
+        DrawEventCard,
+
+        DrawActionCard,
+        DropActionCard,
 
         OnGameSizeChange,
         AfterGameSizeChange,

@@ -10,15 +10,13 @@ namespace ZMDFQ.PlayerAction
     {
         public int Number;
     }
-    public class ChooseSomeoneResponse: Response
+    public class ChooseSomeoneResponse: UseOneCard
     {
         public List<Player> Targets;
-        public int CardId;
         public override void HandleAction(Game game)
         {
-            Log.Debug("123");
             Player player = game.Players.Find(x => x.Id == playerId);
-            player.UseCard(game, CardId, this);
+            player.UseActionCard(game, CardId, this);
         }
     }
 }

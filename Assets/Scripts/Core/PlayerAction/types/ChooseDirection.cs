@@ -8,9 +8,11 @@ namespace ZMDFQ.PlayerAction
 {
     public class ChooseDirectionRequest : Request
     {
+        //public EventCard EventCard;
     }
-    public class ChooseDirectionResponse : Response
+    public class ChooseDirectionResponse : UseOneCard
     {
         public bool IfForward;
+        public bool IfSet;
     }
 }

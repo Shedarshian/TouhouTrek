@@ -5,7 +5,7 @@ namespace ZMDFQ
 {
     public class EffectBase
     {
-        public dynamic Parent;
+        public object Parent;
         public virtual void DoEnable(Game game, PlayerAction.Response response)
         {
 

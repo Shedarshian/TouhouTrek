@@ -1,4 +1,13 @@
 {
+	"expanded_nodes": [
+		"oacz4rtm",
+		"/"
+	],
+	"active_doc": [
+		"oacz4rtm",
+		"pbk78"
+	],
+	"hidden_packages": [],
 	"docs": [
 		"oacz4rtm",
 		"qfxq0",
@@ -7,15 +16,8 @@
 		"oacz4rtm",
 		"qfxq1",
 		"oacz4rtm",
-		"qfxq2"
-	],
-	"expanded_nodes": [
+		"qfxq2",
 		"oacz4rtm",
-		"/"
-	],
-	"active_doc": [
-		"oacz4rtm",
-		"qfxq0"
-	],
-	"hidden_packages": []
+		"pbk78"
+	]
 }
