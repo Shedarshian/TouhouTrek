@@ -9,6 +9,11 @@ namespace ZMDFQ
     public enum EventEnum
     {
         GameStart,
+        GameEnd,
+
+        RoundStart,
+        RoundEnd,
+
         TurnStart,
         TurnEnd,
 

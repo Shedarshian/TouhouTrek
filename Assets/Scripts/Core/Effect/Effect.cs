@@ -1,4 +1,5 @@
-﻿using ZMDFQ.PlayerAction;
+﻿using System;
+using ZMDFQ.PlayerAction;
 
 namespace ZMDFQ
 {
@@ -8,6 +9,11 @@ namespace ZMDFQ
         public virtual void DoEnable(Game game, PlayerAction.Response response)
         {
 
+        }
+
+        internal void Disable(Game game)
+        {
+            
         }
     }
     /// <summary>

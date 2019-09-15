@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="946,454">
+  <displayList>
+    <graph id="n27_pbk7" name="n27" xy="0,0" size="945,453" type="rect"/>
+    <component id="n28_pbk7" name="hero0" src="pbk79" fileName="ChooseHero/Hero.xml" xy="80,77"/>
+    <component id="n29_pbk7" name="hero1" src="pbk79" fileName="ChooseHero/Hero.xml" xy="365,77"/>
+    <component id="n30_pbk7" name="hero2" src="pbk79" fileName="ChooseHero/Hero.xml" xy="663,77"/>
+  </displayList>
+</component>

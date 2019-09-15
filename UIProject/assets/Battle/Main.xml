@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
-  <controller name="State" pages="0,,1," selected="1">
+  <controller name="State" pages="0,,1," selected="0">
     <remark page="0" value="正常"/>
     <remark page="1" value="用卡"/>
   </controller>
   <controller name="PlayerCount" pages="0,,1,,2,,3,,4,,5,,6,,7," selected="0"/>
+  <controller name="ChooseHero" pages="0,,1," selected="0"/>
   <displayList>
     <graph id="n24_njtn" name="n24" xy="0,0" size="1920,1080" type="rect" lineSize="0" fillColor="#ff666666"/>
     <graph id="n1_qfxq" name="n1" xy="0,801" size="1920,279" type="rect" lineSize="0" lineColor="#ff0066ff" fillColor="#ff0099ff"/>
@@ -25,15 +26,21 @@
       <item/>
     </list>
     <component id="n16_qfxq" name="n16" src="qfxq6" fileName="EventCard.xml" xy="1517,816"/>
-    <component id="n17_qfxq" name="n17" src="qfxq7" fileName="Tip.xml" xy="1381,736" pivot="0.5,0.5" size="131,57">
+    <component id="n17_qfxq" name="n17" src="qfxq7" fileName="Tip.xml" xy="1382,736" pivot="0.5,0.5" size="129,57">
       <gearDisplay controller="State" pages="1"/>
       <Button title="出 牌"/>
     </component>
     <text id="n19_njtn" name="Deck" xy="128,6" size="40,44" fontSize="35" text=""/>
-    <text id="n21_njtn" name="n21" xy="9,6" size="111,44" fontSize="35" text="牌堆数"/>
+    <text id="n21_njtn" name="n21" xy="9,6" size="110,44" fontSize="35" text="牌堆数"/>
     <text id="n23_njtn" name="Size" xy="1020,482" size="33,61" fontSize="50" text="0"/>
-    <component id="n26_njtn" name="EndTurn" src="qfxq7" fileName="Tip.xml" xy="1121,736" size="205,57">
+    <component id="n26_njtn" name="EndTurn" src="qfxq7" fileName="Tip.xml" xy="1121,736" size="201,57">
       <Button title="回合结束"/>
+    </component>
+    <graph id="n29_pbk7" name="n29" xy="0,0" size="1920,1080" type="rect" lineSize="0" fillColor="#66000000">
+      <gearDisplay controller="ChooseHero" pages="1"/>
+    </graph>
+    <component id="n28_pbk7" name="n28" src="pbk78" fileName="ChooseHeroWindow.xml" xy="487,313">
+      <gearDisplay controller="ChooseHero" pages="1"/>
     </component>
   </displayList>
 </component>

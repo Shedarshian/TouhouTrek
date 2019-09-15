@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ.PlayerAction
 {
-    public class DropCardRequest:Request
+    public class ChooseSomeCardRequest :Request
     {
         public int Count;
     }
-    public class DropCardResponse : Response
+    public class ChooseSomeCardResponse : Response
     {
         public List<ActionCard> Cards;
         public override void HandleAction(Game game)

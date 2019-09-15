@@ -25,11 +25,13 @@ namespace ZMDFQ
 
         public List<ThemeCard> ThemeDeck = new List<ThemeCard>();
 
-        public List<ThemeCard> UsedWeatherDeck = new List<ThemeCard>();
+        public List<ThemeCard> UsedThemeDeck = new List<ThemeCard>();
 
         public List<EventCard> EventDeck = new List<EventCard>();
 
         public List<EventCard> UsedEventDeck = new List<EventCard>();
+
+        public ThemeCard ActiveTheme;
 
         /// <summary>
         /// 当前回合的玩家
@@ -41,13 +43,21 @@ namespace ZMDFQ
         /// </summary>
         public Player Self;
 
+        /// <summary>
+        /// 当前处于第几轮
+        /// </summary>
+        public int Round;
+
         public System.Action<Game, Request> OnRequest;
 
         private System.Random ram = new System.Random();
 
-        private TaskCompletionSource<Response> tcs;
+        /// <summary>
+        /// 一名玩家最多处于一个询问状态
+        /// </summary>
+        private TaskCompletionSource<Response>[] requests;
 
-        public void StartGame()
+        public async void StartGame()
         {
             for (int i = 0; i < 20; i++)
             {
@@ -82,18 +92,37 @@ namespace ZMDFQ
                     }
                 });
             }
+            for (int i = 0; i < 23; i++)
+            {
+                ThemeDeck.Add(new ThemeCard()
+                {
+                    Effects = new List<EffectBase>(),
+                    Name = "旧作",
+                });
+            }
+
             Reshuffle(Deck);
             for (int i = 0; i < 8; i++)
             {
                 Player p;
-                if (i == 0) p = new Player();
+                if (i == 1) p = new Player();
                 else { p = new AI(); (p as AI).Init(this); }
                 p.Id = i;
                 p.Hero = new Hero() { Name = "Test" + i };
                 Players.Add(p);
             }
-            Self = Players[0];
-            ActivePlayer = Players[1];
+            requests = new TaskCompletionSource<Response>[Players.Count];
+            Self = Players[1];
+            ActivePlayer = Players[0];
+
+            Task<Response>[] chooseHero = new Task<Response>[Players.Count];
+            for (int i = 0; i < Players.Count; i++)
+            {
+                Player p = Players[i];
+                chooseHero[i] = WaitAnswer(new ChooseHeroRequest() { playerId = p.Id, HeroIds = new List<int>() { 1, 2, 3 } });
+            }
+
+            await Task.WhenAll(chooseHero);
 
             foreach (var player in Players)
             {
@@ -105,24 +134,48 @@ namespace ZMDFQ
             NewTurn(ActivePlayer);
         }
 
+        /// <summary>
+        /// 玩家出牌阶段自由出牌用这个接口
+        /// </summary>
+        /// <param name="action"></param>
         public void DoAction(Response action)
         {
             action.HandleAction(this);
         }
    
-        public void Answer(Response target)
+        /// <summary>
+        /// 玩家响应系统询问用这个接口
+        /// </summary>
+        /// <param name="response"></param>
+        public void Answer(Response response)
         {
-            tcs.TrySetResult(target);
+            int index = Players.FindIndex(x => x.Id == response.playerId);
+            Log.Debug(index.ToString());
+            requests[index].TrySetResult(response);
+            requests[index] = null;
         }
+        /// <summary>
+        /// 向玩家请求一个动作的回应
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         internal Task<Response> WaitAnswer(Request request)
         {
-            tcs = new TaskCompletionSource<Response>();
+            var tcs = new TaskCompletionSource<Response>();
+            requests[Players.FindIndex(x => x.Id == request.playerId)] = tcs;
             OnRequest?.Invoke(this, request);
             return tcs.Task;
         }
 
         internal void NewTurn(Player player)
         {
+            if (Players.IndexOf(player) == 0)
+            {
+                //新的一轮
+                Round++;
+                EventSystem.Call(EventEnum.RoundStart, this);
+                NextThemeCard();
+            }
             EventSystem.Call(EventEnum.TurnStart, this);
             player.DrawActionCard(this, 1);
             EventSystem.Call(EventEnum.ActionStart, this);
@@ -134,11 +187,22 @@ namespace ZMDFQ
             int max = player.HandMax();
             if (player.Cards.Count > max)
             {
-                DropCardResponse response = (DropCardResponse)await WaitAnswer(new DropCardRequest() { playerId = player.Id, Count = player.Cards.Count - max });
+                ChooseSomeCardResponse response = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { playerId = player.Id, Count = player.Cards.Count - max });
                 response.HandleAction(this);
             }
 
             EventSystem.Call(EventEnum.TurnEnd, this);
+
+            if (Players.IndexOf(player) == Players.Count - 1)
+            {
+                //一轮结束了
+                EventSystem.Call(EventEnum.RoundEnd, this);
+                if (Round + Players.Count == 12)//游戏结束规则
+                {
+                    EventSystem.Call(EventEnum.GameEnd, this);
+                    return;
+                }
+            }
 
             int index = Players.IndexOf(player);
             if (index == Players.Count-1)
@@ -150,6 +214,18 @@ namespace ZMDFQ
                 ActivePlayer = Players[index + 1];
             }
             NewTurn(ActivePlayer);
+        }
+
+        internal void NextThemeCard()
+        {
+            if (ActiveTheme != null)
+            {
+                ActiveTheme.Disable(this);
+                UsedThemeDeck.Add(ActiveTheme);
+            }
+            ActiveTheme = ThemeDeck[0];
+            ThemeDeck.RemoveAt(0);
+            ActiveTheme.Enable(this, null);
         }
 
         internal void Reshuffle<T>(List<T> listtemp)

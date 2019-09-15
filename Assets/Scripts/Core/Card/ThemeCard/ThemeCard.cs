@@ -9,11 +9,22 @@ namespace ZMDFQ
     public class ThemeCard:Card
     {
         public List<EffectBase> Effects;
+        public bool Enabled = false;
         internal void Enable(Game game, PlayerAction.Response target)
         {
+            Enabled = true;
             foreach (var effect in Effects)
             {
                 effect.DoEnable(game, target);
+            }
+        }
+        internal void Disable(Game game)
+        {
+            if (!Enabled) return;
+            Enabled = false;
+            foreach (var effect in Effects)
+            {
+                effect.Disable(game);
             }
         }
     }

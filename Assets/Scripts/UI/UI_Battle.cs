@@ -38,6 +38,20 @@ namespace ZMDFQ
 
             _main.GetChild("EndTurn").onClick.Add(() => Game.DoAction(new EndTurn() { playerId = Game.Self.Id }));
 
+            for (int i = 0; i < 3; i++)
+            {
+                var ui_hero = _main.GetChild("n28").asCom.GetChild("hero" + i);
+                ui_hero.onClick.Add((x) =>
+                {
+                    Game.Answer(new ChooseHeroResponse()
+                    {
+                        playerId = Game.Self.Id,
+                        HeroId = int.Parse(ui_hero.text),
+                    });
+                    _main.GetController("ChooseHero").selectedIndex = 0;
+                });
+            }
+
             Game = new Game();
 
             for (int i = 0; i < 8; i++)
@@ -123,9 +137,16 @@ namespace ZMDFQ
             if (request.playerId != game.Self.Id) return;
             switch (request)
             {
-                case DropCardRequest dropCardRequest:
+                case ChooseSomeCardRequest  dropCardRequest:
                     nowRequest = dropCardRequest;
                     FlushView(Game);
+                    break;
+                case ChooseHeroRequest chooseHeroRequest:
+                    _main.GetController("ChooseHero").selectedIndex = 1;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        _main.GetChild("n28").asCom.GetChild("hero" + i).text = chooseHeroRequest.HeroIds[i].ToString();
+                    }
                     break;
             }
         }
@@ -146,7 +167,7 @@ namespace ZMDFQ
                     break;
                 case ChooseDirectionRequest chooseDirectionRequest:
                     break;
-                case DropCardRequest dropCardRequest:
+                case ChooseSomeCardRequest  dropCardRequest:
                     c.selectedIndex = SelectedCards.Count == dropCardRequest.Count ? 1 : 0;
                     break;
             }
@@ -164,8 +185,8 @@ namespace ZMDFQ
                     break;
                 case ChooseDirectionRequest chooseDirectionRequest:
                     break;
-                case DropCardRequest dropCardRequest:
-                    Game.DoAction(new DropCardResponse() { playerId = Game.Self.Id, Cards = SelectedCards });
+                case ChooseSomeCardRequest  dropCardRequest:
+                    Game.DoAction(new ChooseSomeCardResponse() { playerId = Game.Self.Id, Cards = SelectedCards });
                     break;
             }
             SelectedCards.Clear();

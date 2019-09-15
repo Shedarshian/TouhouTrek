@@ -28,16 +28,23 @@ namespace ZMDFQ
             await Task.Delay(100);//假装思考0.1s
             switch (request)
             {
-                case DropCardRequest dropCard:
+                case ChooseSomeCardRequest  dropCard:
                     List<ActionCard> cards = new List<ActionCard>();
                     for (int i = 0; i < dropCard.Count; i++)
                     {
                         cards.Add(Cards[i]);
                     }
-                    game.Answer(new DropCardResponse()
+                    game.Answer(new ChooseSomeCardResponse()
                     {
                         playerId = Id,
                         Cards = cards
+                    });
+                    break;
+                case ChooseHeroRequest chooseHero:
+                    game.Answer(new ChooseHeroResponse()
+                    {
+                        playerId = Id,
+                        HeroId = chooseHero.HeroIds[0],
                     });
                     break;
             }
