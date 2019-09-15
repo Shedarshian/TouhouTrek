@@ -16,6 +16,7 @@ namespace ZMDFQ.PlayerAction
         public int CardId;
         public override void HandleAction(Game game)
         {
+            Log.Debug("123");
             Player player = game.Players.Find(x => x.Id == playerId);
             player.UseCard(game, CardId, this);
         }

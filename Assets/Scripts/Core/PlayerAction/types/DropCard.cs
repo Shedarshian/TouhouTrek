@@ -15,6 +15,7 @@ namespace ZMDFQ.PlayerAction
         public List<ActionCard> Cards;
         public override void HandleAction(Game game)
         {
+            Log.Debug("234");
             Player player = game.Players.Find(x => x.Id == playerId);
             player.DropActionCard(game, Cards);
         }

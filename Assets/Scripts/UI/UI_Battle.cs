@@ -18,6 +18,10 @@ namespace ZMDFQ
         public List<ActionCard> SelectedCards = new List<ActionCard>();
         public UI_Hands HandCards;
 
+        /// <summary>
+        /// 是否处于自由出牌的状态
+        /// </summary>
+        private bool freeUse;
         private Request nowRequest;
 
 
@@ -34,7 +38,7 @@ namespace ZMDFQ
 
             _main.GetChild("EndTurn").onClick.Add(() => Game.DoAction(new EndTurn() { playerId = Game.Self.Id }));
 
-            Game game = new Game();
+            Game = new Game();
 
             for (int i = 0; i < 8; i++)
             {
@@ -56,7 +60,7 @@ namespace ZMDFQ
                         else if (SelectedPlayers[0] == ui_player) SelectedPlayers.Clear();
                         else SelectedPlayers[0] = ui_player;
                     }
-                    FlushView(game);
+                    FlushView(Game);
                 });
             }
             HandCards.OnCardClick.Add((x) =>
@@ -70,16 +74,23 @@ namespace ZMDFQ
                 {
                     SelectedCards.Add(ui_card.Card);
                 }
-                FlushView(game);
+                FlushView(Game);
             });
 
-            game.StartGame();
 
-            game.EventSystem.Register(EventEnum.TurnStart, turnStart);
+            Game.EventSystem.Register(EventEnum.ActionStart, actionStart);
 
-            game.OnRequest += OnRequest;
+            Game.EventSystem.Register(EventEnum.ActionEnd, actionEnd);
 
-            FlushView(game);
+            Game.EventSystem.Register(EventEnum.DrawCard, onDrawCard);
+
+            Game.EventSystem.Register(EventEnum.DropCard, onDropCard);
+
+            Game.OnRequest += OnRequest;
+
+            Game.StartGame();
+
+            FlushView(Game);
         }
 
         public void FlushView(Game game)
@@ -96,7 +107,9 @@ namespace ZMDFQ
 
             _main.GetController("State").selectedIndex = 0;
 
-            if (SelectedCards.Count == 1)
+            if (nowRequest != null)
+                checkUse(nowRequest);
+            else if (freeUse && SelectedCards.Count == 1)
             {
                 checkUse(SelectedCards[0].RequestWay);
             }
@@ -160,9 +173,42 @@ namespace ZMDFQ
             FlushView(Game);
         }
 
-        void turnStart(object[] param)
+        void actionStart(object[] param)
         {
-            //freeUse = true;
+            Game game = param[0] as Game;
+            if (game.ActivePlayer == game.Self)
+                freeUse = true;
+        }
+
+        void actionEnd(object[] param)
+        {
+            Game game = param[0] as Game;
+            if (game.ActivePlayer == game.Self)
+                freeUse = false;
+        }
+
+        void onDrawCard(object[] param)
+        {
+            string s = string.Empty;
+            s += (param[0] as Player).Id.ToString()+"抽到了";
+            foreach (ActionCard card in (param[1] as List<ActionCard>))
+            {
+                s += card.Name + ",";
+            }
+            Log.Debug(s);
+            FlushView(Game);
+        }
+
+        void onDropCard(object[] param)
+        {
+            string s = string.Empty;
+            s += (param[0] as Player).Id.ToString() + "丢掉了";
+            foreach (ActionCard card in (param[1] as List<ActionCard>))
+            {
+                s +=  card.Name + ",";
+            }
+            Log.Debug(s);
+            FlushView(Game);
         }
     }
 }
