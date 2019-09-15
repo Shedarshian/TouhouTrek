@@ -12,7 +12,7 @@ namespace ZMDFQ
     /// <summary>
     /// 脚本
     /// </summary>
-    class Script
+    public class Script
     {
         Microsoft.CodeAnalysis.Scripting.Script script { get; } = null;
         /// <summary>
@@ -38,7 +38,7 @@ namespace ZMDFQ
     /// 带有返回类型的脚本
     /// </summary>
     /// <typeparam name="T">脚本在执行的时候的返回类型</typeparam>
-    class Script<T>
+    public class Script<T>
     {
         Microsoft.CodeAnalysis.Scripting.Script<T> script { get; } = null;
         /// <summary>
