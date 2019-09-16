@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ.PlayerAction
 {
-    public class Response
+    public abstract class UseOneCard : UseInfo
     {
-        public int PlayerId = -1;
+        public int CardId;
     }
 }

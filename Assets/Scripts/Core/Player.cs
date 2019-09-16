@@ -96,7 +96,6 @@ namespace ZMDFQ
 
         internal void DropActionCard(Game game, List<ActionCard> cards)
         {
-            Log.Debug($"{Id}丢{cards.Count}");
             List<ActionCard> data = new List<ActionCard>();
             foreach (var card in cards)
             {

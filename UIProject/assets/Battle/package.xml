@@ -8,9 +8,9 @@
     <component id="qfxq4" name="HandCards.xml" path="/"/>
     <component id="qfxq5" name="Head.xml" path="/"/>
     <component id="qfxq6" name="EventCard.xml" path="/"/>
-    <component id="qfxq7" name="Tip.xml" path="/"/>
     <component id="pbk78" name="ChooseHeroWindow.xml" path="/" exported="true"/>
     <component id="pbk79" name="Hero.xml" path="/ChooseHero/"/>
+    <component id="lziga" name="Btn.xml" path="/"/>
   </resources>
   <publish name="Battle"/>
 </packageDescription>

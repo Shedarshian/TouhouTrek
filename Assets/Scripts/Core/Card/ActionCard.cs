@@ -10,6 +10,8 @@ namespace ZMDFQ
     {
         public List<EffectBase> Effects;
 
+        public PlayerAction.UseWay UseWay;
+
         internal override void DoEffect(Game game, PlayerAction.Response target)
         {
             foreach (var effect in Effects)

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="90,50" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,disabled,3,selectedDisabled,4,over,5,selectedOver" selected="0"/>
+  <displayList>
+    <graph id="n0_lzig" name="n0" xy="0,0" size="90,50" type="rect">
+      <gearColor controller="button" pages="1,2,3,4,5" values="#cccccc|#666666|#666666|#99cc00|#99cc33" default="#ffffff"/>
+      <relation target="n1_lzig" sidePair="width-width"/>
+    </graph>
+    <text id="n1_lzig" name="title" xy="22,2" size="46,45" fontSize="36" text="11"/>
+  </displayList>
+  <Button/>
+  <relation target="n1_lzig" sidePair="width-width"/>
+</component>

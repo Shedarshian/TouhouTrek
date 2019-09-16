@@ -25,14 +25,7 @@ namespace ZMDFQ
     {
         public sealed override void DoEnable(Game game, Response response)
         {
-            if (response is T)
-            {
-                Enable(game, response as T);
-            }
-            else
-            {
-                Log.Error($"{GetType()}效果无法接受该类参数：{response.GetType()}");
-            }
+            Enable(game, response as T);            
         }
         public virtual void Enable(Game game, T response)
         {

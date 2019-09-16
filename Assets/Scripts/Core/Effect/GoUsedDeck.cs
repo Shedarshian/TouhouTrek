@@ -11,7 +11,7 @@ namespace ZMDFQ.Effect
     {
         public override void Enable(Game game, UseOneCard response)
         {
-            Player player = game.Players.Find(x => x.Id == response.playerId);
+            Player player = game.Players.Find(x => x.Id == response.PlayerId);
             Card card = Parent as Card;
             switch (card)
             {

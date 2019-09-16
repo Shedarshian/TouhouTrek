@@ -9,6 +9,8 @@ namespace ZMDFQ
     public class Game
     {
         public EventSystem EventSystem = new EventSystem();
+
+        public ITimeManager TimeManager;
         /// <summary>
         /// 当前社团规模
         /// </summary>
@@ -48,6 +50,16 @@ namespace ZMDFQ
         /// </summary>
         public int Round;
 
+        /// <summary>
+        /// 出牌阶段可用时间
+        /// </summary>
+        public float TurnTime = 30f;
+
+        /// <summary>
+        /// 其他询问可用时间
+        /// </summary>
+        public float RequestTime = 5f;
+
         public System.Action<Game, Request> OnRequest;
 
         private System.Random ram = new System.Random();
@@ -59,40 +71,45 @@ namespace ZMDFQ
 
         public async void StartGame()
         {
+            if (TimeManager != null)
+                TimeManager.Game = this;
+
             for (int i = 0; i < 20; i++)
             {
-                Deck.Add(new ActionCard()
+                ActionCard card = new ActionCard()
                 {
                     Id = i,
                     Name = "社群+" + (i % 2 + 1),
-                    RequestWay = SimpleRequest.Instance,
-                    Effects = new List<EffectBase>()
-                    {
-                        new Effect.ChangeMainSize()
+                    UseWay = SimpleRequest.Instance,
+                };
+                card.Effects = new List<EffectBase>()
+                {
+                    new Effect.ChangeMainSize()
                         {
                             Size =i%2+1
                         },
-                        new Effect.GoUsedDeck(),
-                    }
-                });
+                        new Effect.GoUsedDeck(){ Parent=card},
+                };
+                Deck.Add(card);
             }
             for (int i = 20; i < 40; i++)
             {
-                Deck.Add(new ActionCard()
+                ActionCard card = new ActionCard()
                 {
                     Id = i,
-                    RequestWay = SimpleRequest.Instance,
+                    UseWay = SimpleRequest.Instance,
                     Name = "社群+2以上时，额外加一",
-                    Effects = new List<EffectBase>()
-                    {
-                        new Effect.MoreSizeChange()
+                };
+                card.Effects = new List<EffectBase>()
+                {
+                    new Effect.MoreSizeChange()
                         {
                             Need=2,
                             Change=1,
                         },
-                        new Effect.GoUsedDeck(),
-                    }
-                });
+                        new Effect.GoUsedDeck(){ Parent=card},
+                };
+                Deck.Add(card);
             }
             for (int i = 0; i < 23; i++)
             {
@@ -101,6 +118,32 @@ namespace ZMDFQ
                     Effects = new List<EffectBase>(),
                     Name = "旧作",
                 });
+            }
+
+            for (int i = 0; i < 50; i++)
+            {
+                EventCard eventCard = new EventCard()
+                {
+                    Id = 1000 + i,
+                    Name = "事件" + i,
+                };
+                eventCard.ForwardEffects = new List<EffectBase>()
+                {
+                    new Effect.ChangeMainSize()
+                        {
+                            Size =2
+                        },
+                        new Effect.GoUsedDeck(){ Parent=eventCard},
+                };
+                eventCard.BackwardEffects = new List<EffectBase>()
+                {
+                    new Effect.ChangeMainSize()
+                        {
+                            Size =1
+                        },
+                        new Effect.GoUsedDeck(){ Parent=eventCard},
+                };
+                EventDeck.Add(eventCard);
             }
 
             Reshuffle(Deck);
@@ -121,10 +164,12 @@ namespace ZMDFQ
             for (int i = 0; i < Players.Count; i++)
             {
                 Player p = Players[i];
-                chooseHero[i] = WaitAnswer(new ChooseHeroRequest() { playerId = p.Id, HeroIds = new List<int>() { 1, 2, 3 } });
+                chooseHero[i] = WaitAnswer(new ChooseHeroRequest() { PlayerId = p.Id, HeroIds = new List<int>() { 1, 2, 3 } });
             }
 
             await Task.WhenAll(chooseHero);
+
+            Log.Debug($"所有玩家选择英雄完毕！");
 
             foreach (var player in Players)
             {
@@ -140,9 +185,10 @@ namespace ZMDFQ
         /// 玩家出牌阶段自由出牌用这个接口
         /// </summary>
         /// <param name="action"></param>
-        public void DoAction(Response action)
+        public void DoAction(UseInfo action)
         {
             action.HandleAction(this);
+            Answer(action);
         }
    
         /// <summary>
@@ -151,10 +197,10 @@ namespace ZMDFQ
         /// <param name="response"></param>
         public void Answer(Response response)
         {
-            int index = Players.FindIndex(x => x.Id == response.playerId);
-            Log.Debug(index.ToString());
-            requests[index].TrySetResult(response);
-            requests[index] = null;
+            int index = Players.FindIndex(x => x.Id == response.PlayerId);
+            var tcs = requests[index];
+            requests[index] = null;//可能后续会重新对requests[index]询问，所以这个要写在TrySetResult之前
+            tcs.TrySetResult(response);
         }
         /// <summary>
         /// 向玩家请求一个动作的回应
@@ -164,12 +210,18 @@ namespace ZMDFQ
         internal Task<Response> WaitAnswer(Request request)
         {
             var tcs = new TaskCompletionSource<Response>();
-            requests[Players.FindIndex(x => x.Id == request.playerId)] = tcs;
+            int index = Players.FindIndex(x => x.Id == request.PlayerId);
+            requests[index] = tcs;
             OnRequest?.Invoke(this, request);
+            if (TimeManager != null)
+            {
+                TimeManager.Register(request);
+                tcs.Task.ContinueWith(x => { TimeManager.Cancel(request); });
+            }
             return tcs.Task;
         }
 
-        internal void NewTurn(Player player)
+        internal async void NewTurn(Player player)
         {
             if (Players.IndexOf(player) == 0)
             {
@@ -182,20 +234,27 @@ namespace ZMDFQ
             player.DrawEventCard(this);
             player.DrawActionCard(this, 1);
             EventSystem.Call(EventEnum.ActionStart, this);
-        }
 
-        internal async void EndTurn(Player player)
-        {
+            UseCardRequest useCardRequest = new UseCardRequest() { PlayerId = player.Id, TimeOut = TurnTime };
+            Response response;
+            do
+            {
+                Log.Debug($"玩家{player.Id}出牌中");
+                response = await WaitAnswer(useCardRequest);
+                Log.Debug($"回合剩余时间{ useCardRequest.TimeOut.ToString()}");
+            }
+            while (!(response is EndTurnResponse));
+
             EventSystem.Call(EventEnum.ActionEnd, this);
 
-            var chooseDirectionResponse = (ChooseDirectionResponse)await WaitAnswer(new ChooseDirectionRequest());
+            var chooseDirectionResponse = (ChooseDirectionResponse)await WaitAnswer(new ChooseDirectionRequest() { PlayerId = player.Id });
 
             player.UseEventCard(this, chooseDirectionResponse);
 
             int max = player.HandMax();
             if (player.ActionCards.Count > max)
             {
-                ChooseSomeCardResponse chooseSomeCardResponse = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { playerId = player.Id, Count = player.ActionCards.Count - max });
+                ChooseSomeCardResponse chooseSomeCardResponse = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { PlayerId = player.Id, Count = player.ActionCards.Count - max });
                 player.DropActionCard(this, chooseSomeCardResponse.Cards);
             }
 
@@ -213,7 +272,7 @@ namespace ZMDFQ
             }
 
             int index = Players.IndexOf(player);
-            if (index == Players.Count-1)
+            if (index == Players.Count - 1)
             {
                 ActivePlayer = Players[0];
             }

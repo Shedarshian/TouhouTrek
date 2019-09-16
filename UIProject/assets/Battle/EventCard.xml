@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="384,243">
+<component size="384,243" extention="Label">
   <displayList>
     <graph id="n16_qfxq" name="n16" xy="0,0" size="384,243" type="rect"/>
     <text id="n17_qfxq" name="title" xy="28,31" size="331,183" fontSize="55" align="center" vAlign="middle" autoSize="none" text="fdgdfgdg "/>
