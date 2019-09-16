@@ -16,7 +16,11 @@ namespace ZMDFQ.Effect
             switch (card)
             {
                 case ActionCard actionCard:
-                    player.DropActionCard(game, new List<ActionCard>() { actionCard });
+                    //这里要和弃牌分开来
+                    List<ActionCard> data = new List<ActionCard>();
+                    player.ActionCards.Remove(actionCard);
+                    game.UsedDeck.Add(actionCard);
+                    data.Add(actionCard);
                     break;
                 case EventCard eventCard:
                     player.DropEventCard(game, eventCard);
