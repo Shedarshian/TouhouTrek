@@ -12,7 +12,6 @@ namespace ZMDFQ
         public string Name;
         public CardTypeEnum CardType;
 
-        public PlayerAction.Request RequestWay;
 
         internal virtual void DoEffect(Game game, PlayerAction.Response target)
         {

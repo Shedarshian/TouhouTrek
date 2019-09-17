@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ.PlayerAction
 {
+    /// <summary>
+    /// 选择事件卡的出牌方向
+    /// </summary>
     public class ChooseDirectionRequest : Request
     {
         //public EventCard EventCard;
