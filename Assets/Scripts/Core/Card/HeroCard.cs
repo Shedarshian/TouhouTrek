@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ
 {
-    public class Hero
+    public abstract class HeroCard : Card
     {
-        public string Name;
+
     }
 }

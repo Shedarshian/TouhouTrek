@@ -22,7 +22,7 @@ namespace ZMDFQ
         /// </summary>
         public EventCard SaveEvent;
 
-        public Hero Hero;
+        public HeroCard Hero;
 
         internal void DrawActionCard(Game game,int count)
         {
@@ -54,12 +54,15 @@ namespace ZMDFQ
         {
             if (response.IfSet)
             {
-                //默认玩家手上一定是一张事件卡，有其他情况再改
-                EventCards[0].DoEffect(game, response);
+                SetEventCard(game, response);
             }
             else
             {
-                SetEventCard(game, response);
+                //默认玩家手上一定是一张事件卡，有其他情况再改
+                if (response.IfForward)
+                    EventCards[0].UseForward(game, this);
+                else
+                    EventCards[0].UseBackward(game, this);
             }
         }
 
@@ -67,7 +70,7 @@ namespace ZMDFQ
         {
             if (SaveEvent != null)
             {
-                SaveEvent.DoEffect(game, response);
+                SaveEvent.UseForward(game, this);
             }
             SaveEvent = EventCards[0];
             EventCards.RemoveAt(0);
@@ -87,7 +90,7 @@ namespace ZMDFQ
             }
         }
 
-        internal void UseActionCard(Game game, int cardId, Response cardTarget)
+        internal void UseActionCard(Game game, int cardId, UseOneCard cardTarget)
         {
             ActionCard card = ActionCards.Find(x => x.Id == cardId);
             if (card == null) return;

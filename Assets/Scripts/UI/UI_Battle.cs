@@ -47,6 +47,13 @@ namespace ZMDFQ
                 FlushView(Game);
             });
 
+            _main.GetChild("n34").asList.onClickItem.Add((x) =>
+            {
+                var takeChoiceRequest = _main.GetChild("n34").data as TakeChoiceRequest;
+                int index = _main.GetChild("n34").asList.GetChildIndex(x.data as GButton);
+                Game.Answer(new TakeChoiceResponse() { PlayerId = takeChoiceRequest.PlayerId, Index = index });
+            });
+
             for (int i = 0; i < 3; i++)
             {
                 var ui_hero = _main.GetChild("n28").asCom.GetChild("hero" + i);
@@ -179,6 +186,17 @@ namespace ZMDFQ
                 case ChooseSomeCardRequest chooseCardsRequest:
                     c.selectedIndex = 3;
                     _main.GetChild("n33").asButton.enabled = SelectedCards.Count == chooseCardsRequest.Count;
+                    break;
+                case TakeChoiceRequest takeChoiceRequest:
+                    c.selectedIndex = 4;
+                    GList choiceList = _main.GetChild("n34").asList;
+                    choiceList.data = takeChoiceRequest;
+                    choiceList.RemoveChildrenToPool();
+                    foreach (var s in takeChoiceRequest.Infos)
+                    {
+                        var btn = choiceList.AddItemFromPool().asButton;
+                        btn.text = s;
+                    }
                     break;
                 
             }

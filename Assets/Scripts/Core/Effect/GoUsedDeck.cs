@@ -5,14 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using ZMDFQ.PlayerAction;
 
-namespace ZMDFQ.Effect
+namespace ZMDFQ
 {
-    public class GoUsedDeck:EffectBase<PlayerAction.UseOneCard>
+    public partial class Effects
     {
-        public override void Enable(Game game, UseOneCard response)
+        public static void GoUsedDeck(Game game, Card card, UseOneCard response)
         {
             Player player = game.Players.Find(x => x.Id == response.PlayerId);
-            Card card = Parent as Card;
             switch (card)
             {
                 case ActionCard actionCard:
@@ -26,7 +25,6 @@ namespace ZMDFQ.Effect
                     player.DropEventCard(game, eventCard);
                     break;
             }
-
         }
     }
 }
