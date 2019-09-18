@@ -18,12 +18,8 @@ namespace ZMDFQ
         public List<ActionCard> SelectedCards = new List<ActionCard>();
         public UI_Hands HandCards;
 
-        /// <summary>
-        /// 是否处于自由出牌的状态
-        /// </summary>
-        private bool freeUse;
         private Request nowRequest;
-
+        private UseWay nowUseWay;
 
         private void Awake()
         {
@@ -36,9 +32,45 @@ namespace ZMDFQ
 
             _main.GetChild("n17").onClick.Add(takeUse);
 
-            _main.GetChild("EndTurn").onClick.Add(() => Game.DoAction(new EndTurn() { playerId = Game.Self.Id }));
+            _main.GetChild("EndTurn").onClick.Add(() => Game.Answer(new EndTurnResponse() { PlayerId = Game.Self.Id }));
+
+            _main.GetChild("n30").onClick.Add(useForward);
+
+            _main.GetChild("n31").onClick.Add(useBackward);
+
+            _main.GetChild("n32").onClick.Add(saveEventCard);
+
+            _main.GetChild("n33").onClick.Add(() =>
+            {
+                nowRequest = null;
+                Game.Answer(new ChooseSomeCardResponse() { PlayerId = Game.Self.Id, Cards = SelectedCards });
+                FlushView(Game);
+            });
+
+            _main.GetChild("n34").asList.onClickItem.Add((x) =>
+            {
+                var takeChoiceRequest = _main.GetChild("n34").data as TakeChoiceRequest;
+                int index = _main.GetChild("n34").asList.GetChildIndex(x.data as GButton);
+                Game.Answer(new TakeChoiceResponse() { PlayerId = takeChoiceRequest.PlayerId, Index = index });
+            });
+
+            for (int i = 0; i < 3; i++)
+            {
+                var ui_hero = _main.GetChild("n28").asCom.GetChild("hero" + i);
+                ui_hero.onClick.Add((x) =>
+                {
+                    nowRequest = null;
+                    Game.Answer(new ChooseHeroResponse()
+                    {
+                        PlayerId = Game.Self.Id,
+                        HeroId = int.Parse(ui_hero.text),
+                    });
+                    _main.GetController("ChooseHero").selectedIndex = 0;
+                });
+            }
 
             Game = new Game();
+            Game.TimeManager = GetComponent<RequestTimeoutManager>();
 
             for (int i = 0; i < 8; i++)
             {
@@ -46,7 +78,7 @@ namespace ZMDFQ
                 ui_player.changeStateOnClick = false;
                 ui_player.onClick.Add(() =>
                 {
-                    if (nowRequest is ChooseSomeoneRequest request && request.Number > 1)
+                    if (nowUseWay is ChooseSomeoneRequest request && request.Number > 1)
                     {
                         //复选玩家模式
                         if (SelectedPlayers.Contains(ui_player))
@@ -77,14 +109,9 @@ namespace ZMDFQ
                 FlushView(Game);
             });
 
+            Game.EventSystem.Register(EventEnum.DrawActionCard, onDrawCard);
 
-            Game.EventSystem.Register(EventEnum.ActionStart, actionStart);
-
-            Game.EventSystem.Register(EventEnum.ActionEnd, actionEnd);
-
-            Game.EventSystem.Register(EventEnum.DrawCard, onDrawCard);
-
-            Game.EventSystem.Register(EventEnum.DropCard, onDropCard);
+            Game.EventSystem.Register(EventEnum.DropActionCard, onDropCard);
 
             Game.OnRequest += OnRequest;
 
@@ -103,88 +130,114 @@ namespace ZMDFQ
                 ui_player.SetPlayerCard(game.Players[i]);
                 ui_player.selected = SelectedPlayers.Contains(ui_player);
             }
-            HandCards.SetCards(game.Self.Cards, SelectedCards);
+            HandCards.SetCards(game.Self.ActionCards, SelectedCards);
 
-            _main.GetController("State").selectedIndex = 0;
-
-            if (nowRequest != null)
-                checkUse(nowRequest);
-            else if (freeUse && SelectedCards.Count == 1)
-            {
-                checkUse(SelectedCards[0].RequestWay);
-            }
+            checkRequest(nowRequest);
 
             _main.GetChild("Deck").text = game.Deck.Count.ToString();
             _main.GetChild("Size").text = game.Size.ToString();
+            _main.GetChild("n16").text = game.Self.EventCards.Count > 0 ? game.Self.EventCards[0].Name : "无";
         }
 
+        /// <summary>
+        /// 被询问时
+        /// </summary>
+        /// <param name="game"></param>
+        /// <param name="request"></param>
         void OnRequest(Game game,Request request)
         {
-            if (request.playerId != game.Self.Id) return;
-            switch (request)
+            if (request.PlayerId != game.Self.Id)
             {
-                case DropCardRequest dropCardRequest:
-                    nowRequest = dropCardRequest;
-                    FlushView(Game);
-                    break;
+                return;
             }
+            checkRequest(request);
         }
-
-        void checkUse(Request request)
+        /// <summary>
+        /// 根据询问刷新UI
+        /// </summary>
+        /// <param name="request"></param>
+        void checkRequest(Request request)
         {
-            Controller c = _main.GetController("State");
-
             nowRequest = request;
-
+            Controller c = _main.GetController("State");
+            c.selectedIndex = 0;
+            _main.GetController("ChooseHero").selectedIndex = 0;
             switch (request)
             {
-                case SimpleRequest simpleRequest:
+                case UseCardRequest useCardRequest:
+                    Debug.Log("出牌");
                     c.selectedIndex = 1;
-                    break;
-                case ChooseSomeoneRequest chooseSomeoneRequest:
-                    c.selectedIndex = SelectedPlayers.Count == chooseSomeoneRequest.Number ? 1 : 0;
+                    _main.GetChild("n17").asButton.enabled = false;
+                    if (SelectedCards.Count == 1)
+                    {
+                        checkUse(SelectedCards[0].UseWay);
+                    }
                     break;
                 case ChooseDirectionRequest chooseDirectionRequest:
+                    c.selectedIndex = 2;
                     break;
-                case DropCardRequest dropCardRequest:
-                    c.selectedIndex = SelectedCards.Count == dropCardRequest.Count ? 1 : 0;
+                case ChooseHeroRequest chooseHeroRequest:
+                    _main.GetController("ChooseHero").selectedIndex = 1;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        _main.GetChild("n28").asCom.GetChild("hero" + i).text = chooseHeroRequest.HeroIds[i].ToString();
+                    }
+                    break;
+                case ChooseSomeCardRequest chooseCardsRequest:
+                    c.selectedIndex = 3;
+                    _main.GetChild("n33").asButton.enabled = SelectedCards.Count == chooseCardsRequest.Count;
+                    break;
+                case TakeChoiceRequest takeChoiceRequest:
+                    c.selectedIndex = 4;
+                    GList choiceList = _main.GetChild("n34").asList;
+                    choiceList.data = takeChoiceRequest;
+                    choiceList.RemoveChildrenToPool();
+                    foreach (var s in takeChoiceRequest.Infos)
+                    {
+                        var btn = choiceList.AddItemFromPool().asButton;
+                        btn.text = s;
+                    }
+                    break;
+                
+            }
+        }
+        /// <summary>
+        /// 根据出牌方式刷新UI
+        /// </summary>
+        /// <param name="useway"></param>
+        void checkUse(UseWay useway)
+        {
+            nowUseWay = useway;
+            switch (useway)
+            {
+                case SimpleRequest simpleRequest:
+                    _main.GetChild("n17").asButton.enabled = true;
+                    break;
+                case ChooseSomeoneRequest chooseSomeoneRequest:
+                    _main.GetChild("n17").asButton.enabled = SelectedPlayers.Count == chooseSomeoneRequest.Number;
                     break;
             }
         }
 
         void takeUse()
-        {            
-            switch (nowRequest)
+        {
+            nowRequest = null;
+            switch (nowUseWay)
             {
                 case SimpleRequest simpleRequest:
-                    Game.DoAction(new SimpleResponse() { playerId = Game.Self.Id, CardId = SelectedCards[0].Id });
+                    Game.Answer(new SimpleResponse() { PlayerId = Game.Self.Id, CardId = SelectedCards[0].Id });
                     break;
                 case ChooseSomeoneRequest chooseSomeoneRequest:
-                    Game.DoAction(new ChooseSomeoneResponse() { playerId = Game.Self.Id, Targets = SelectedPlayers.Select(x => x.Player).ToList() });
+                    Game.Answer(new ChooseSomeoneResponse() { PlayerId = Game.Self.Id, Targets = SelectedPlayers.Select(x => x.Player).ToList() });
                     break;
-                case ChooseDirectionRequest chooseDirectionRequest:
-                    break;
-                case DropCardRequest dropCardRequest:
-                    Game.DoAction(new DropCardResponse() { playerId = Game.Self.Id, Cards = SelectedCards });
-                    break;
+                //case ChooseDirectionRequest chooseDirectionRequest:
+                //    break;
+                //case ChooseSomeCardRequest  dropCardRequest:
+                //    Game.DoAction(new ChooseSomeCardResponse() { PlayerId = Game.Self.Id, Cards = SelectedCards });
+                //    break;
             }
             SelectedCards.Clear();
-            nowRequest = null;
             FlushView(Game);
-        }
-
-        void actionStart(object[] param)
-        {
-            Game game = param[0] as Game;
-            if (game.ActivePlayer == game.Self)
-                freeUse = true;
-        }
-
-        void actionEnd(object[] param)
-        {
-            Game game = param[0] as Game;
-            if (game.ActivePlayer == game.Self)
-                freeUse = false;
         }
 
         void onDrawCard(object[] param)
@@ -208,6 +261,26 @@ namespace ZMDFQ
                 s +=  card.Name + ",";
             }
             Log.Debug(s);
+            FlushView(Game);
+        }
+        void useForward()
+        {
+            nowRequest = null;
+            Game.Answer(new ChooseDirectionResponse() { PlayerId = Game.Self.Id, CardId = Game.Self.EventCards[0].Id, IfForward = true, IfSet = false });
+            FlushView(Game);
+        }
+
+        void useBackward()
+        {
+            nowRequest = null;
+            Game.Answer(new ChooseDirectionResponse() { PlayerId = Game.Self.Id, CardId = Game.Self.EventCards[0].Id, IfForward = false, IfSet = false });
+            FlushView(Game);
+        }
+
+        void saveEventCard()
+        {
+            nowRequest = null;
+            Game.Answer(new ChooseDirectionResponse() { PlayerId = Game.Self.Id, CardId = Game.Self.EventCards[0].Id, IfSet = true });
             FlushView(Game);
         }
     }

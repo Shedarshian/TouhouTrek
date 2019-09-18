@@ -8,6 +8,6 @@ namespace ZMDFQ
 {
     public class SkillBase
     {
-        public List<EffectBase> Effects;
+
     }
 }

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZMDFQ.PlayerAction
+namespace ZMDFQ
 {
-    public class Response
+    public abstract class HeroCard : Card
     {
-        public int PlayerId = -1;
+
     }
 }

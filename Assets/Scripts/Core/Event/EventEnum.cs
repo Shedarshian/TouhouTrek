@@ -9,14 +9,21 @@ namespace ZMDFQ
     public enum EventEnum
     {
         GameStart,
+        GameEnd,
+
+        RoundStart,
+        RoundEnd,
+
         TurnStart,
         TurnEnd,
 
         ActionStart,
         ActionEnd,
 
-        DrawCard,
-        DropCard,
+        DrawEventCard,
+
+        DrawActionCard,
+        DropActionCard,
 
         OnGameSizeChange,
         AfterGameSizeChange,

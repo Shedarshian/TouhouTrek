@@ -6,11 +6,20 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ.PlayerAction
 {
+    /// <summary>
+    /// 选择事件卡的出牌方向
+    /// </summary>
     public class ChooseDirectionRequest : Request
     {
+        //public EventCard EventCard;
     }
-    public class ChooseDirectionResponse : Response
+    public class ChooseDirectionResponse : UseOneCard
     {
         public bool IfForward;
+        public bool IfSet;
+        public override Task HandleAction(Game game)
+        {
+            return Task.CompletedTask;
+        }
     }
 }

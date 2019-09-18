@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
-  <controller name="State" pages="0,,1," selected="1">
+  <controller name="State" pages="0,,1,,2,,4,,5," selected="4">
     <remark page="0" value="正常"/>
-    <remark page="1" value="用卡"/>
+    <remark page="1" value="出牌阶段"/>
+    <remark page="2" value="用事件卡"/>
+    <remark page="3" value="选X张"/>
+    <remark page="4" value="做选择"/>
   </controller>
   <controller name="PlayerCount" pages="0,,1,,2,,3,,4,,5,,6,,7," selected="0"/>
+  <controller name="ChooseHero" pages="0,,1," selected="0"/>
   <displayList>
     <graph id="n24_njtn" name="n24" xy="0,0" size="1920,1080" type="rect" lineSize="0" fillColor="#ff666666"/>
     <graph id="n1_qfxq" name="n1" xy="0,801" size="1920,279" type="rect" lineSize="0" lineColor="#ff0066ff" fillColor="#ff0099ff"/>
@@ -25,15 +29,44 @@
       <item/>
     </list>
     <component id="n16_qfxq" name="n16" src="qfxq6" fileName="EventCard.xml" xy="1517,816"/>
-    <component id="n17_qfxq" name="n17" src="qfxq7" fileName="Tip.xml" xy="1381,736" pivot="0.5,0.5" size="131,57">
+    <component id="n17_qfxq" name="n17" src="lziga" fileName="Btn.xml" xy="1387,736" pivot="0.5,0.5" size="151,57">
       <gearDisplay controller="State" pages="1"/>
-      <Button title="出 牌"/>
+      <Button title="出 牌1"/>
     </component>
     <text id="n19_njtn" name="Deck" xy="128,6" size="40,44" fontSize="35" text=""/>
-    <text id="n21_njtn" name="n21" xy="9,6" size="111,44" fontSize="35" text="牌堆数"/>
+    <text id="n21_njtn" name="n21" xy="9,6" size="110,44" fontSize="35" text="牌堆数"/>
     <text id="n23_njtn" name="Size" xy="1020,482" size="33,61" fontSize="50" text="0"/>
-    <component id="n26_njtn" name="EndTurn" src="qfxq7" fileName="Tip.xml" xy="1121,736" size="205,57">
+    <component id="n26_njtn" name="EndTurn" src="lziga" fileName="Btn.xml" xy="1069,736" pivot="0.5,0.5" size="193,57">
+      <gearDisplay controller="State" pages="1"/>
       <Button title="回合结束"/>
     </component>
+    <graph id="n29_pbk7" name="n29" xy="0,0" size="1920,1080" type="rect" lineSize="0" fillColor="#66000000">
+      <gearDisplay controller="ChooseHero" pages="1"/>
+    </graph>
+    <component id="n28_pbk7" name="n28" src="pbk78" fileName="ChooseHeroWindow.xml" xy="487,313">
+      <gearDisplay controller="ChooseHero" pages="1"/>
+    </component>
+    <component id="n30_lzig" name="n30" src="lziga" fileName="Btn.xml" xy="544,730" pivot="0.5,0.5" size="85,57">
+      <gearDisplay controller="State" pages="2"/>
+      <Button title="正"/>
+    </component>
+    <component id="n31_lzig" name="n31" src="lziga" fileName="Btn.xml" xy="762,730" pivot="0.5,0.5" size="85,57">
+      <gearDisplay controller="State" pages="2"/>
+      <Button title="逆"/>
+    </component>
+    <component id="n32_lzig" name="n32" src="lziga" fileName="Btn.xml" xy="978,730" pivot="0.5,0.5" size="121,57">
+      <gearDisplay controller="State" pages="2"/>
+      <Button title="扣置"/>
+    </component>
+    <component id="n33_lzig" name="n33" src="lziga" fileName="Btn.xml" xy="1334,729" pivot="0.5,0.5" size="121,57">
+      <gearDisplay controller="State" pages="4"/>
+      <Button title="丢牌"/>
+    </component>
+    <list id="n34_gw0y" name="n34" xy="392,740" size="1164,56" layout="row" overflow="scroll" colGap="50" defaultItem="ui://oacz4rtmlziga">
+      <gearDisplay controller="State" pages="5"/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
   </displayList>
 </component>

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ZMDFQ
 {
     using PlayerAction;
+    using System.Threading.Tasks;
+
     public class Player
     {
         public int Id;
@@ -14,13 +12,19 @@ namespace ZMDFQ
         /// <summary>
         /// 手牌
         /// </summary>
-        public List<ActionCard> Cards = new List<ActionCard>();
+        public List<ActionCard> ActionCards = new List<ActionCard>();
+
+        /// <summary>
+        /// 玩家手上的事件牌
+        /// </summary>
+        public List<EventCard> EventCards = new List<EventCard>();
+
         /// <summary>
         /// 被玩家扣住的事件
         /// </summary>
         public EventCard SaveEvent;
 
-        public Hero Hero;
+        public HeroCard Hero;
 
         internal void DrawActionCard(Game game,int count)
         {
@@ -33,33 +37,80 @@ namespace ZMDFQ
                     game.UsedDeck.Clear();
                     game.Reshuffle(game.Deck);
                 }
-                Cards.Add(game.Deck[0]);
+                ActionCards.Add(game.Deck[0]);
                 data.Add(game.Deck[0]);
                 game.Deck.RemoveAt(0);
             }
-            game.EventSystem.Call(EventEnum.DrawCard, this, data);
+            game.EventSystem.Call(EventEnum.DrawActionCard, this, data);
         }
 
-        internal void UseCard(Game game, int cardId, Response cardTarget)
+        internal void DrawEventCard(Game game)
         {
-            ActionCard card = Cards.Find(x => x.Id == cardId);
-            if (card == null) return;
-            card.DoEffect(game, cardTarget);
-            DropActionCard(game,new List<ActionCard>() { card });
+            EventCard card = game.EventDeck[0];
+            EventCards.Add(card);
+            game.EventDeck.Remove(card);
+            game.EventSystem.Call(EventEnum.DrawEventCard, this, card);
+        }
+
+        internal void UseEventCard(Game game, ChooseDirectionResponse response)
+        {
+            if (response.IfSet)
+            {
+                SetEventCard(game, response);
+            }
+            else
+            {
+                //默认玩家手上一定是一张事件卡，有其他情况再改
+                if (response.IfForward)
+                    EventCards[0].UseForward(game, this);
+                else
+                    EventCards[0].UseBackward(game, this);
+            }
+        }
+
+        private void SetEventCard(Game game, ChooseDirectionResponse response)
+        {
+            if (SaveEvent != null)
+            {
+                SaveEvent.UseForward(game, this);
+            }
+            SaveEvent = EventCards[0];
+            EventCards.RemoveAt(0);
+        }
+
+        internal void DropEventCard(Game game,EventCard card)
+        {
+            if (card == SaveEvent)
+            {
+                game.UsedEventDeck.Add(card);
+                SaveEvent = null;
+            }
+            else
+            {
+                game.UsedEventDeck.Add(card);
+                EventCards.Remove(card);
+            }
+        }
+
+        internal Task UseActionCard(Game game, int cardId, UseOneCard cardTarget)
+        {
+            ActionCard card = ActionCards.Find(x => x.Id == cardId);
+            if (card == null) return Task.CompletedTask;
+            return card.DoEffect(game, cardTarget);
         }
 
         internal void DropActionCard(Game game, List<ActionCard> cards)
         {
-            Log.Debug($"{Id}丢{cards.Count}");
             List<ActionCard> data = new List<ActionCard>();
             foreach (var card in cards)
             {
-                Cards.Remove(card);
+                ActionCards.Remove(card);
                 game.UsedDeck.Add(card);
                 data.Add(card);
             }
-            game.EventSystem.Call(EventEnum.DropCard, this, data);
+            game.EventSystem.Call(EventEnum.DropActionCard, this, data);
         }
+
 
         internal void UseSkill()
         {

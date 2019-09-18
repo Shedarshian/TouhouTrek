@@ -9,6 +9,8 @@ namespace ZMDFQ
     public class Game
     {
         public EventSystem EventSystem = new EventSystem();
+
+        public ITimeManager TimeManager;
         /// <summary>
         /// 当前社团规模
         /// </summary>
@@ -25,11 +27,13 @@ namespace ZMDFQ
 
         public List<ThemeCard> ThemeDeck = new List<ThemeCard>();
 
-        public List<ThemeCard> UsedWeatherDeck = new List<ThemeCard>();
+        public List<ThemeCard> UsedThemeDeck = new List<ThemeCard>();
 
         public List<EventCard> EventDeck = new List<EventCard>();
 
         public List<EventCard> UsedEventDeck = new List<EventCard>();
+
+        public ThemeCard ActiveTheme;
 
         /// <summary>
         /// 当前回合的玩家
@@ -41,117 +45,172 @@ namespace ZMDFQ
         /// </summary>
         public Player Self;
 
+        /// <summary>
+        /// 当前处于第几轮
+        /// </summary>
+        public int Round;
+
+        /// <summary>
+        /// 出牌阶段可用时间
+        /// </summary>
+        public float TurnTime = 30f;
+
+        /// <summary>
+        /// 其他询问可用时间
+        /// </summary>
+        public float RequestTime = 5f;
+
         public System.Action<Game, Request> OnRequest;
 
         private System.Random ram = new System.Random();
 
-        private TaskCompletionSource<Response> tcs;
+        /// <summary>
+        /// 一名玩家最多处于一个询问状态
+        /// </summary>
+        private  TaskCompletionSource<Response>[] requests;
 
-        public void StartGame()
+        public async void StartGame()
         {
-            for (int i = 0; i < 10; i++)
+            if (TimeManager != null)
+                TimeManager.Game = this;
+
+            for (int i = 0; i < 20; i++)
             {
-                Deck.Add(new ActionCard()
-                {
-                    Id = i,
-                    Name = "创作",
-                    RequestWay = SimpleRequest.Instance,
-                    Effects = new List<EffectBase>()
-                    {
-                        new Effect.SimpleScriptingEffect(new Script("api.addPlayerInfluence(api.triggerPlayer,2);"))
-                    }
-                });
+                Deck.Add(new Cards.AT_N001() { Name="传教"});
             }
-            for (int i = 10; i < 20; i++)
+
+            for (int i = 0; i < 23; i++)
             {
-                Deck.Add(new ActionCard()
-                {
-                    Id = i,
-                    Name = "社群+" + (i % 2 + 1),
-                    RequestWay = SimpleRequest.Instance,
-                    Effects = new List<EffectBase>()
-                    {
-                        new Effect.ChangeMainSize()
-                        {
-                            Size =i%2+1
-                        }
-                    }
-                });
+                ThemeDeck.Add(new Cards.G_001() { Name="旧作"});
             }
-            for (int i = 20; i < 40; i++)
+
+            for (int i = 0; i < 50; i++)
             {
-                Deck.Add(new ActionCard()
-                {
-                    Id = i,
-                    RequestWay = SimpleRequest.Instance,
-                    Name = "社群+2以上时，额外加一",
-                    Effects = new List<EffectBase>()
-                    {
-                        new Effect.MoreSizeChange()
-                        {
-                            Need=2,
-                            Change=1,
-                        }
-                    }
-                });
+                EventDeck.Add(new Cards.EV_E002() { Name="全国性活动"});
             }
+
             Reshuffle(Deck);
             for (int i = 0; i < 8; i++)
             {
                 Player p;
-                if (i == 0) p = new Player();
+                if (i == 1) p = new Player();
                 else { p = new AI(); (p as AI).Init(this); }
                 p.Id = i;
-                p.Hero = new Hero() { Name = "Test" + i };
+                p.Hero = new Cards.CR_CP001();
                 Players.Add(p);
             }
-            Self = Players[0];
-            ActivePlayer = Players[1];
+            requests = new TaskCompletionSource<Response>[Players.Count];
+            Self = Players[1];
+            ActivePlayer = Players[0];
 
+            Task<Response>[] chooseHero = new Task<Response>[Players.Count];
+            for (int i = 0; i < Players.Count; i++)
+            {
+                Player p = Players[i];
+                chooseHero[i] = WaitAnswer(new ChooseHeroRequest() { PlayerId = p.Id, HeroIds = new List<int>() { 1, 2, 3 } });
+            }
+
+            await Task.WhenAll(chooseHero);
+
+            Log.Debug($"所有玩家选择英雄完毕！");
+
+            //游戏开始时 所有玩家抽两张牌
             foreach (var player in Players)
             {
-                player.DrawActionCard(this, 4);
+                player.DrawActionCard(this, 2);
             }
 
             EventSystem.Call(EventEnum.GameStart);
 
             NewTurn(ActivePlayer);
         }
-
-        public void DoAction(Response action)
+   
+        /// <summary>
+        /// 玩家响应系统询问用这个接口
+        /// </summary>
+        /// <param name="response"></param>
+        public void Answer(Response response)
         {
-            action.HandleAction(this);
+            int index = Players.FindIndex(x => x.Id == response.PlayerId);
+            var tcs = requests[index];
+            requests[index] = null;//可能后续会重新对requests[index]询问，所以这个要写在TrySetResult之前
+            tcs.TrySetResult(response);
         }
-
-        public void Answer(Response target)
-        {
-            tcs.TrySetResult(target);
-        }
+        /// <summary>
+        /// 向玩家请求一个动作的回应
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         internal Task<Response> WaitAnswer(Request request)
         {
-            tcs = new TaskCompletionSource<Response>();
+            var tcs = new TaskCompletionSource<Response>();
+            int index = Players.FindIndex(x => x.Id == request.PlayerId);
+            requests[index] = tcs;
             OnRequest?.Invoke(this, request);
+            if (TimeManager != null)
+            {
+                TimeManager.Register(request);
+                tcs.Task.ContinueWith(x => { TimeManager.Cancel(request); });
+            }
             return tcs.Task;
         }
 
-        internal void NewTurn(Player player)
+        internal async void NewTurn(Player player)
         {
+            if (Players.IndexOf(player) == 0)
+            {
+                //新的一轮
+                Round++;
+                NextThemeCard();
+                EventSystem.Call(EventEnum.RoundStart, this);
+            }
             EventSystem.Call(EventEnum.TurnStart, this);
+            player.DrawEventCard(this);
             player.DrawActionCard(this, 1);
             EventSystem.Call(EventEnum.ActionStart, this);
-        }
 
-        internal async void EndTurn(Player player)
-        {
-            EventSystem.Call(EventEnum.ActionEnd, this);
-            int max = player.HandMax();
-            if (player.Cards.Count > max)
+            UseCardRequest useCardRequest = new UseCardRequest() { PlayerId = player.Id, TimeOut = TurnTime };
+            Response response;
+
+            while (true)
             {
-                DropCardResponse response = (DropCardResponse)await WaitAnswer(new DropCardRequest() { playerId = player.Id, Count = player.Cards.Count - max });
-                response.HandleAction(this);
+                Log.Debug($"玩家{player.Id}出牌中");
+                response = await WaitAnswer(useCardRequest);
+                if (response is EndTurnResponse)
+                {
+                    break;
+                }
+                else
+                {
+                    await (response as UseOneCard).HandleAction(this);
+                }
+            }
+
+            EventSystem.Call(EventEnum.ActionEnd, this);
+
+            var chooseDirectionResponse = (ChooseDirectionResponse)await WaitAnswer(new ChooseDirectionRequest() { PlayerId = player.Id });
+
+            player.UseEventCard(this, chooseDirectionResponse);
+
+            int max = player.HandMax();
+            if (player.ActionCards.Count > max)
+            {
+                ChooseSomeCardResponse chooseSomeCardResponse = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { PlayerId = player.Id, Count = player.ActionCards.Count - max });
+                player.DropActionCard(this, chooseSomeCardResponse.Cards);
             }
 
             EventSystem.Call(EventEnum.TurnEnd, this);
+
+            if (Players.IndexOf(player) == Players.Count - 1)
+            {
+                //一轮结束了
+                EventSystem.Call(EventEnum.RoundEnd, this);
+                if (Round + Players.Count == 12)//游戏结束规则
+                {
+                    EventSystem.Call(EventEnum.GameEnd, this);
+                    return;
+                }
+            }
 
             int index = Players.IndexOf(player);
             if (index == Players.Count - 1)
@@ -163,6 +222,18 @@ namespace ZMDFQ
                 ActivePlayer = Players[index + 1];
             }
             NewTurn(ActivePlayer);
+        }
+
+        internal void NextThemeCard()
+        {
+            if (ActiveTheme != null)
+            {
+                ActiveTheme.Disable(this);
+                UsedThemeDeck.Add(ActiveTheme);
+            }
+            ActiveTheme = ThemeDeck[0];
+            ThemeDeck.RemoveAt(0);
+            ActiveTheme.Enable(this);
         }
 
         internal void Reshuffle<T>(List<T> listtemp)
@@ -178,7 +249,7 @@ namespace ZMDFQ
             }
         }
 
-        internal int NextInt(int start, int end)
+        internal int NextInt(int start,int end)
         {
             return ram.Next(start, end);
         }
