@@ -1,16 +1,21 @@
-﻿using ZMDFQ.PlayerAction;
+﻿using System.Threading.Tasks;
+using ZMDFQ.PlayerAction;
 
 namespace ZMDFQ.Cards
 {
     /// <summary>
     /// 创作，个人影响力+1
     /// </summary>
-    class Produce : ActionCard
+    class Produce : ActionCard<SimpleRequest, SimpleResponse>
     {
         Script script { get; } = new Script("game.Players.Find(p => { return p.Id == target.playerId; }).Size += 2;");
-        internal override void DoEffect(Game game, Response target)
+        protected override SimpleRequest useWay()
         {
-            script.run(game, target);
+            return SimpleRequest.Instance;
+        }
+        protected override Task doEffect(Game game, SimpleResponse useWay)
+        {
+            return script.run(game, useWay);
         }
     }
 }
