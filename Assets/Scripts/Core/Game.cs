@@ -67,7 +67,7 @@ namespace ZMDFQ
         /// <summary>
         /// 一名玩家最多处于一个询问状态
         /// </summary>
-        private TaskCompletionSource<Response>[] requests;
+        private  TaskCompletionSource<Response>[] requests;
 
         public async void StartGame()
         {
@@ -124,16 +124,6 @@ namespace ZMDFQ
 
             NewTurn(ActivePlayer);
         }
-
-        /// <summary>
-        /// 玩家出牌阶段自由出牌用这个接口
-        /// </summary>
-        /// <param name="action"></param>
-        public void DoAction(UseInfo action)
-        {
-            action.HandleAction(this);
-            Answer(action);
-        }
    
         /// <summary>
         /// 玩家响应系统询问用这个接口
@@ -181,13 +171,20 @@ namespace ZMDFQ
 
             UseCardRequest useCardRequest = new UseCardRequest() { PlayerId = player.Id, TimeOut = TurnTime };
             Response response;
-            do
+
+            while (true)
             {
                 Log.Debug($"玩家{player.Id}出牌中");
                 response = await WaitAnswer(useCardRequest);
-                Log.Debug($"回合剩余时间{ useCardRequest.TimeOut.ToString()}");
+                if (response is EndTurnResponse)
+                {
+                    break;
+                }
+                else
+                {
+                    await (response as UseOneCard).HandleAction(this);
+                }
             }
-            while (!(response is EndTurnResponse));
 
             EventSystem.Call(EventEnum.ActionEnd, this);
 

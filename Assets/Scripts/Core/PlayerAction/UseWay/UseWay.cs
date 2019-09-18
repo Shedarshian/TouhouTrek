@@ -16,11 +16,8 @@ namespace ZMDFQ.PlayerAction
     /// <summary>
     /// 使用一张卡的信息
     /// </summary>
-    public class UseInfo : Response
+    public abstract class UseInfo : Response
     {
-        public virtual void HandleAction(Game game)
-        {
-
-        }
+        public abstract Task HandleAction(Game game);
     }
 }

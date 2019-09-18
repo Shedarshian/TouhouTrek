@@ -17,5 +17,9 @@ namespace ZMDFQ.PlayerAction
     {
         public bool IfForward;
         public bool IfSet;
+        public override Task HandleAction(Game game)
+        {
+            return Task.CompletedTask;
+        }
     }
 }

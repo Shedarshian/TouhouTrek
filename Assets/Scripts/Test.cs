@@ -8,6 +8,7 @@ public class Test : MonoBehaviour
 {
     Task task;
     TaskCompletionSource<bool> bo;
+    Stack<int> stack;
     // Start is called before the first frame update
     void Start()
     {

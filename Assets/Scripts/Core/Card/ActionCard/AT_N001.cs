@@ -12,7 +12,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class AT_N001 : ActionCard<SimpleRequest, SimpleResponse>
     {
-        protected override async void doEffect(Game game, SimpleResponse useWay)
+        protected override async Task doEffect(Game game, SimpleResponse useWay)
         {
             Effects.GoUsedDeck(game, this, useWay);
             TakeChoiceResponse response = (TakeChoiceResponse)await game.WaitAnswer(new TakeChoiceRequest()

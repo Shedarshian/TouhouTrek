@@ -13,14 +13,14 @@ namespace ZMDFQ.Cards
     {
         public override bool ForwardOnly => false;
 
-        public override void UseBackward(Game game, Player user)
-        {      
-
+        public override Task UseBackward(Game game, Player user)
+        {
+            return Task.CompletedTask;
         }
 
-        public override void UseForward(Game game, Player user)
+        public override Task UseForward(Game game, Player user)
         {
-            
+            return Task.CompletedTask;
         }
     }
 }

@@ -15,10 +15,10 @@ namespace ZMDFQ.PlayerAction
     }
     public class SimpleResponse : UseOneCard
     {
-        public override void HandleAction(Game game)
+        public override Task HandleAction(Game game)
         {
             Player player = game.Players.Find(x => x.Id == PlayerId);
-            player.UseActionCard(game, CardId, this);
+            return player.UseActionCard(game, CardId, this);
         }
     }
 }

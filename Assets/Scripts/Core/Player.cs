@@ -3,6 +3,8 @@
 namespace ZMDFQ
 {
     using PlayerAction;
+    using System.Threading.Tasks;
+
     public class Player
     {
         public int Id;
@@ -90,11 +92,11 @@ namespace ZMDFQ
             }
         }
 
-        internal void UseActionCard(Game game, int cardId, UseOneCard cardTarget)
+        internal Task UseActionCard(Game game, int cardId, UseOneCard cardTarget)
         {
             ActionCard card = ActionCards.Find(x => x.Id == cardId);
-            if (card == null) return;
-            card.DoEffect(game, cardTarget);
+            if (card == null) return Task.CompletedTask;
+            return card.DoEffect(game, cardTarget);
         }
 
         internal void DropActionCard(Game game, List<ActionCard> cards)

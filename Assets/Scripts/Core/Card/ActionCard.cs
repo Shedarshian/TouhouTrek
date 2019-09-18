@@ -11,20 +11,20 @@ namespace ZMDFQ
     {
         internal abstract UseWay UseWay { get; }
 
-        internal abstract void DoEffect(Game game, UseOneCard useWay);
+        internal abstract Task DoEffect(Game game, UseOneCard useWay);
     }
 
     public abstract class ActionCard<T, K> : ActionCard where T : UseWay where K : UseOneCard
     {
         internal sealed override UseWay UseWay => useWay();
 
-        internal sealed override void DoEffect(Game game, UseOneCard useWay)
+        internal sealed async override  Task DoEffect(Game game, UseOneCard useWay)
         {
-            doEffect(game, useWay as K);
+            await doEffect(game, useWay as K);
         }
 
         protected abstract T useWay();
 
-        protected abstract void doEffect(Game game, K useWay);
+        protected abstract Task doEffect(Game game, K useWay);
     }
 }

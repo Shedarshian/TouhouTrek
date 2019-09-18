@@ -10,8 +10,8 @@ namespace ZMDFQ
     {
         public abstract bool ForwardOnly { get; }
 
-        public abstract void UseForward(Game game, Player user);
+        public abstract Task UseForward(Game game, Player user);
 
-        public abstract void UseBackward(Game game, Player user);
+        public abstract Task UseBackward(Game game, Player user);
     }
 }

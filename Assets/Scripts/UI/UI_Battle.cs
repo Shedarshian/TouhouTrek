@@ -225,10 +225,10 @@ namespace ZMDFQ
             switch (nowUseWay)
             {
                 case SimpleRequest simpleRequest:
-                    Game.DoAction(new SimpleResponse() { PlayerId = Game.Self.Id, CardId = SelectedCards[0].Id });
+                    Game.Answer(new SimpleResponse() { PlayerId = Game.Self.Id, CardId = SelectedCards[0].Id });
                     break;
                 case ChooseSomeoneRequest chooseSomeoneRequest:
-                    Game.DoAction(new ChooseSomeoneResponse() { PlayerId = Game.Self.Id, Targets = SelectedPlayers.Select(x => x.Player).ToList() });
+                    Game.Answer(new ChooseSomeoneResponse() { PlayerId = Game.Self.Id, Targets = SelectedPlayers.Select(x => x.Player).ToList() });
                     break;
                 //case ChooseDirectionRequest chooseDirectionRequest:
                 //    break;
