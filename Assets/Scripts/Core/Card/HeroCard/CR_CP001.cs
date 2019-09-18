@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZMDFQ.PlayerAction;
 
 namespace ZMDFQ.Cards
 {
@@ -12,5 +13,25 @@ namespace ZMDFQ.Cards
     public class CR_CP001 : HeroCard
     {
 
+    }
+
+    public class CR_CP001_SK1 : Skill
+    {
+        protected override UseWay useWay()
+        {
+            return SimpleRequest.Instance;
+        }
+
+        internal override Task DoEffect(Game game, UseInfo useInfo)
+        {
+            SimpleResponse simpleResponse = useInfo as SimpleResponse;
+            AT_N001 card = new AT_N001();
+            return card.DoEffect(game, simpleResponse);
+        }
+
+        internal override void Enable(Game game)
+        {
+            
+        }
     }
 }

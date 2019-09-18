@@ -14,7 +14,6 @@ namespace ZMDFQ.Cards
     {
         protected override async Task doEffect(Game game, SimpleResponse useWay)
         {
-            Effects.GoUsedDeck(game, this, useWay);
             TakeChoiceResponse response = (TakeChoiceResponse)await game.WaitAnswer(new TakeChoiceRequest()
             {
                 PlayerId = useWay.PlayerId,
@@ -32,6 +31,7 @@ namespace ZMDFQ.Cards
             {
                 game.ChangeSize(-2);
             }
+            Effects.GoUsedDeck(game, this, useWay);
         }
 
         protected override SimpleRequest useWay()

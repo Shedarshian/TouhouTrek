@@ -52,27 +52,27 @@ namespace ZMDFQ
             game.EventSystem.Call(EventEnum.DrawEventCard, this, card);
         }
 
-        internal void UseEventCard(Game game, ChooseDirectionResponse response)
+        internal Task UseEventCard(Game game, ChooseDirectionResponse response)
         {
             if (response.IfSet)
             {
-                SetEventCard(game, response);
+                return SetEventCard(game, response);
             }
             else
             {
                 //默认玩家手上一定是一张事件卡，有其他情况再改
                 if (response.IfForward)
-                    EventCards[0].UseForward(game, this);
+                    return EventCards[0].UseForward(game, this);
                 else
-                    EventCards[0].UseBackward(game, this);
+                    return EventCards[0].UseBackward(game, this);
             }
         }
 
-        private void SetEventCard(Game game, ChooseDirectionResponse response)
+        private async Task SetEventCard(Game game, ChooseDirectionResponse response)
         {
             if (SaveEvent != null)
             {
-                SaveEvent.UseForward(game, this);
+                await SaveEvent.UseForward(game, this);
             }
             SaveEvent = EventCards[0];
             EventCards.RemoveAt(0);
