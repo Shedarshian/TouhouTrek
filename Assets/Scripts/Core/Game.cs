@@ -21,6 +21,11 @@ namespace ZMDFQ
         /// </summary>
         public List<Player> Players = new List<Player>();
 
+        /// <summary>
+        /// 正在结算中的卡
+        /// </summary>
+        public List<Card> UsingCards = new List<Card>();
+
         public List<ActionCard> Deck = new List<ActionCard>();
 
         public List<ActionCard> UsedDeck = new List<ActionCard>();
@@ -169,13 +174,11 @@ namespace ZMDFQ
             player.DrawActionCard(this, 1);
             EventSystem.Call(EventEnum.ActionStart, this);
 
-            UseCardRequest useCardRequest = new UseCardRequest() { PlayerId = player.Id, TimeOut = TurnTime };
-            Response response;
 
             while (true)
             {
                 Log.Debug($"玩家{player.Id}出牌中");
-                response = await WaitAnswer(useCardRequest);
+                Response response = await WaitAnswer(new UseCardRequest() { PlayerId = player.Id, TimeOut = TurnTime });
                 if (response is EndTurnResponse)
                 {
                     break;
@@ -190,7 +193,7 @@ namespace ZMDFQ
 
             var chooseDirectionResponse = (ChooseDirectionResponse)await WaitAnswer(new ChooseDirectionRequest() { PlayerId = player.Id });
 
-            player.UseEventCard(this, chooseDirectionResponse);
+            await player.UseEventCard(this, chooseDirectionResponse);
 
             int max = player.HandMax();
             if (player.ActionCards.Count > max)
