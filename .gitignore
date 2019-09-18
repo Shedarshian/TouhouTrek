@@ -35,4 +35,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-UIProject/.objs/:
+UIProject/.objs/
+ProjectSettings/ProjectVersion.txt
