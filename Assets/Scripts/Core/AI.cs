@@ -9,6 +9,11 @@ namespace ZMDFQ
     using PlayerAction;
     public class AI : Player
     {
+        public AI() : base() { }
+        public AI(Game game, int id, HeroCard hero) : base(id, hero)
+        {
+            Init(game);
+        }
         public void Init(Game game)
         {
             game.OnRequest += doResponse;
@@ -23,7 +28,7 @@ namespace ZMDFQ
                 case UseCardRequest useCardRequest:
                     game.Answer(new EndTurnResponse() { PlayerId = Id });
                     break;
-                case ChooseSomeCardRequest  dropCard:
+                case ChooseSomeCardRequest dropCard:
                     List<ActionCard> cards = new List<ActionCard>();
                     for (int i = 0; i < dropCard.Count; i++)
                     {
@@ -44,7 +49,7 @@ namespace ZMDFQ
                     break;
                 case ChooseDirectionRequest chooseDirectionRequest:
                     game.Answer(new ChooseDirectionResponse() { PlayerId = Id, IfSet = false, IfForward = true });
-                    break;                      
+                    break;
                 default:
                     Log.Warning($"ai未处理的响应类型:{request.GetType()}");
                     break;

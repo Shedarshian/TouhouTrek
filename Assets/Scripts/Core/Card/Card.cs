@@ -15,7 +15,18 @@ namespace ZMDFQ
         //internal abstract PlayerAction.Request GetRequest();
 
         //internal abstract void DoEffect(Game game, PlayerAction.Response target);
-
+        public static T copyCard<T>(T origin) where T : Card, new()
+        {
+            T card = new T();
+            origin.copyPropTo(card);
+            return card;
+        }
+        protected virtual void copyPropTo(Card target)
+        {
+            target.Id = Id;
+            target.Name = Name;
+            target.CardType = CardType;
+        }
     }
 
     public enum CardTypeEnum

@@ -1,0 +1,654 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/Projects/TouhouTrek",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.AI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.AI.html",
+          "hash": "5sRlCBVj5WBI9zp22DUtGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.ActionCard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.ActionCard.html",
+          "hash": "w3aaetBfV0hO1uP86fN7vA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Card.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Card.html",
+          "hash": "1bFzWus6J/slpQJpaRKaYQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.CardTypeEnum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.CardTypeEnum.html",
+          "hash": "PsUaLQGcXpi4AnFbDHEjsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Cards.TestCard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Cards.TestCard.html",
+          "hash": "335ZQBi3cSzHpVdvXCewSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Cards.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Cards.html",
+          "hash": "SX3GQBr1QJEul5rEHi2cOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Effect.ChangeMainSize.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Effect.ChangeMainSize.html",
+          "hash": "eEWn5esH1WETuepOnkGBaw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Effect.ChangeSelfSize.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Effect.ChangeSelfSize.html",
+          "hash": "MvFqkLeu+9AT7QloTybZrg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Effect.MoreSizeChange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Effect.MoreSizeChange.html",
+          "hash": "ZkY/RA/KnbGtJNV4HvptlA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Effect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Effect.html",
+          "hash": "7VkKXojEHNnD2RO2SlPZjA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.EffectBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.EffectBase-1.html",
+          "hash": "xV20HuSZNfOOclpegwtz9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.EffectBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.EffectBase.html",
+          "hash": "TtYbQ71Nr5Xppd/w0adkQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.EventCard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.EventCard.html",
+          "hash": "5IdehkI/YhQbYmxPY2XGkg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.EventData-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.EventData-1.html",
+          "hash": "VaToO+ZR2OfmWzJyevj5QA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.EventEnum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.EventEnum.html",
+          "hash": "+GEbf90ATE0kH4i2IPYhNQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.EventSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.EventSystem.html",
+          "hash": "dSi6YbhWgCePJC5VJKO7/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Game.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Game.html",
+          "hash": "ubLSL6ncHkdX2ZNjcaoEwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.GameAPI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.GameAPI.html",
+          "hash": "CNZCZR8tFCcAHiUYMZdEvA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Globals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Globals.html",
+          "hash": "7tnn0B8N8VhQ8sNxnxwUyw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Hero.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Hero.html",
+          "hash": "mrz5qidFs8zfM0Lt0aZBhg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Player.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Player.html",
+          "hash": "TMkIW5Xvkn0de9mfwhvcdA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.PlayerAction.ChooseDirectionRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.PlayerAction.ChooseDirectionRequest.html",
+          "hash": "nfQR/KPmurgSnjK2gRF79g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.PlayerAction.ChooseDirectionResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.PlayerAction.ChooseDirectionResponse.html",
+          "hash": "BoV+p81Vt2wKN4NOPZZ96w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.PlayerAction.ChooseSomeoneRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.PlayerAction.ChooseSomeoneRequest.html",
+          "hash": "TTnIo7PxG4pSTlJN3HrVTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.PlayerAction.ChooseSomeoneResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.PlayerAction.ChooseSomeoneResponse.html",
+          "hash": "TMmX6OC01GiygGOXUTO66g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.PlayerAction.DropCardRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.PlayerAction.DropCardRequest.html",
+          "hash": "aK2DM4fZRq8YeD8NqaO61Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.PlayerAction.DropCardResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.PlayerAction.DropCardResponse.html",
+          "hash": "ZKczCFqN8wYQ56N+eyj7IA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.PlayerAction.EndTurn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.PlayerAction.EndTurn.html",
+          "hash": "1awLPYqoPrPszxZnH/Xm7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.PlayerAction.Request.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.PlayerAction.Request.html",
+          "hash": "MvZD/nowDnMyrRGmpCrIgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.PlayerAction.Response.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.PlayerAction.Response.html",
+          "hash": "VWAFgvgVldtoyCJWwpIPzw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.PlayerAction.SimpleRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.PlayerAction.SimpleRequest.html",
+          "hash": "vd/W2mkc1j5xYI5SHprWbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.PlayerAction.SimpleResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.PlayerAction.SimpleResponse.html",
+          "hash": "i+9hvc+r6HNBThllrfjyiQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.PlayerAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.PlayerAction.html",
+          "hash": "NKIZgl+8UYIo3oe04MKnGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Script-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Script-1.html",
+          "hash": "k9zY4F4d03HMaQ8xzeAUJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Script.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Script.html",
+          "hash": "r8tLjXt+LjJKfo8yQ/bnQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.SkillBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.SkillBase.html",
+          "hash": "7bzAg0WnkMEHhJvtAep7bw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.ThemeCard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.ThemeCard.html",
+          "hash": "LaDoSH9iQFJggY9rFftiCQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI.FairyGUIRegister.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI.FairyGUIRegister.html",
+          "hash": "QRXEKz+pb71ZG/pfFhIfHQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI.UI_ActionCard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI.UI_ActionCard.html",
+          "hash": "W2MXAiKfpeh+mQYbSyC81g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI.UI_Hands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI.UI_Hands.html",
+          "hash": "6YcfLGkCESmAMxjQIKQkzw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI.UI_Player.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI.UI_Player.html",
+          "hash": "w3Fk4n0XyI6Jr2EraopBDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI.html",
+          "hash": "0vwnX9XKU7lhPQMb2sOoxQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI_Battle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI_Battle.html",
+          "hash": "p4s3goPjZr8P4F/ZpsKC3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.html",
+          "hash": "SJFSrRuPYk3TzfuBXRYR4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "trFolVUyPEGAHTVUlX4qGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "Zls2VbIgI3Y5LqTyyr3d2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "IQ37s8JcB/kB7sjgfgVG/w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "t7iiFrmuYmrKWisdq+lN6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "l5lk/s9eDRBl7Tb1qB0aXw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "k+/dkjFuwAVS32HduMpmBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 3
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 44,
+          "skipped_file_count": 41
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
