@@ -27,7 +27,7 @@ namespace ZMDFQ.Cards
                 return null;
         }
 
-        internal override Task DoEffect(Game game, UseInfo useInfo)
+        public override Task DoEffect(Game game, UseInfo useInfo)
         {
             turnLimit.Use();
             SimpleResponse simpleResponse = useInfo as SimpleResponse;
@@ -35,11 +35,11 @@ namespace ZMDFQ.Cards
             return card.DoEffect(game, simpleResponse);
         }
 
-        internal override void Enable(Game game)
+        public override void Enable(Game game)
         {
             turnLimit.Enable(game);
         }
-        internal override void Disable(Game game)
+        public override void Disable(Game game)
         {
             turnLimit.Disable(game);
         }

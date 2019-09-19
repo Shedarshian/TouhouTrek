@@ -72,39 +72,68 @@ namespace ZMDFQ
         /// <summary>
         /// 一名玩家最多处于一个询问状态
         /// </summary>
-        private  TaskCompletionSource<Response>[] requests;
-
+        private TaskCompletionSource<Response>[] requests;
+        GameOptions options { get; set; } = null;
         /// <summary>
         /// 游戏初始化，卡组玩家生成
         /// </summary>
-        public void Init()
+        public void Init(GameOptions options = null)
         {
+            this.options = options;
             if (TimeManager != null)
                 TimeManager.Game = this;
-
-            for (int i = 0; i < 20; i++)
+            //初始化牌库
+            if (options != null && options.actionCards != null)
+                Deck = new List<ActionCard>(options.actionCards);
+            else
             {
-                Deck.Add(new Cards.AT_N001() { Name = "传教" });
+                for (int i = 0; i < 20; i++)
+                {
+                    Deck.Add(new Cards.AT_N001() { Name = "传教" });
+                }
             }
-
-            for (int i = 0; i < 23; i++)
+            if (options != null && options.officialCards != null)
+                ThemeDeck = new List<ThemeCard>(options.officialCards);
+            else
             {
-                ThemeDeck.Add(new Cards.G_001() { Name = "旧作" });
+                for (int i = 0; i < 23; i++)
+                {
+                    ThemeDeck.Add(new Cards.G_001() { Name = "旧作" });
+                }
             }
-
-            for (int i = 0; i < 50; i++)
+            if (options != null && options.eventCards != null)
+                EventDeck = new List<EventCard>(options.eventCards);
+            else
             {
-                EventDeck.Add(new Cards.EV_E002() { Name = "全国性活动" });
+                for (int i = 0; i < 50; i++)
+                {
+                    EventDeck.Add(new Cards.EV_E002() { Name = "全国性活动" });
+                }
             }
-
-            Reshuffle(Deck);
-            for (int i = 0; i < 8; i++)
+            if (options == null || options.shuffle)
             {
-                Player p;
-                if (i == 1) p = new Player(i);
-                else { p = new AI(this,i);}
-                //p.Hero = new Cards.CR_CP001();
-                Players.Add(p);
+                //TODO:角色牌库洗牌
+                Reshuffle(Deck);
+                Reshuffle(ThemeDeck);
+                Reshuffle(EventDeck);
+            }
+            //初始化玩家
+            if (options != null && options.players != null)
+                Players = new List<Player>(options.players);
+            else
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    Player p;
+                    if (i == 1) p = new Player(i);
+                    else { p = new AI(this, i); }
+                    //p.Hero = new Cards.CR_CP001();
+                    Players.Add(p);
+                }
+            }
+            foreach (Player player in Players)
+            {
+                player.Size = options != null ? options.initInfluence : 0;
             }
             requests = new TaskCompletionSource<Response>[Players.Count];
         }
@@ -114,37 +143,54 @@ namespace ZMDFQ
         /// </summary>
         public async void StartGame()
         {
+            Size = options != null ? options.initCommunitySize : 0;//初始化社群规模
             //Self = Players[1];
+            //TODO:随机决定玩家行动顺序
             ActivePlayer = Players[0];
-
-            Task<Response>[] chooseHero = new Task<Response>[Players.Count];
-            for (int i = 0; i < Players.Count; i++)
+            if (options == null || options.chooseCharacter)//选择角色
             {
-                Player p = Players[i];
-                chooseHero[i] = WaitAnswer(new ChooseHeroRequest() { PlayerId = p.Id, HeroIds = new List<int>() { 1, 2, 3 } });
+                if (options == null || !options.doubleCharacter)//单角色三选一
+                {
+                    Task<Response>[] chooseHero = new Task<Response>[Players.Count];
+                    for (int i = 0; i < Players.Count; i++)
+                    {
+                        Player p = Players[i];
+                        chooseHero[i] = WaitAnswer(new ChooseHeroRequest() { PlayerId = p.Id, HeroIds = new List<int>() { 1, 2, 3 } });
+                    }
+
+                    await Task.WhenAll(chooseHero);
+
+                    foreach (var response in chooseHero)
+                    {
+                        var chooseHeroResponse = response.Result as ChooseHeroResponse;
+                        GetPlayer(chooseHeroResponse.PlayerId).Hero = new Cards.CR_CP001() { Name = "传教爱好者" };
+                    }
+                    Log.Debug($"所有玩家选择英雄完毕！");
+                }
+                else
+                {
+                    //TODO:双角色六选二
+                }
             }
-
-            await Task.WhenAll(chooseHero);
-
-            foreach (var response in chooseHero)
-            {
-                var chooseHeroResponse = response.Result as ChooseHeroResponse;
-                GetPlayer(chooseHeroResponse.PlayerId).Hero = new Cards.CR_CP001() { Name = "传教爱好者" };
-            }
-
-            Log.Debug($"所有玩家选择英雄完毕！");
-
             //游戏开始时 所有玩家抽两张牌
             foreach (var player in Players)
             {
                 await player.DrawActionCard(this, 2);
             }
-
+            //游戏执行阶段
             await EventSystem.Call(EventEnum.GameStart);
 
             NewTurn(ActivePlayer);
         }
-   
+        public T[] createCards<T>(T origin, int number) where T : Card, new()
+        {
+            T[] cards = new T[number];
+            for (int i = 0; i < number; i++)
+            {
+                cards[i] = Card.copyCard(origin);
+            }
+            return cards;
+        }
         /// <summary>
         /// 玩家响应系统询问用这个接口
         /// </summary>
@@ -152,7 +198,7 @@ namespace ZMDFQ
         public void Answer(Response response)
         {
             Log.Debug(response.GetType().Name);
-            int index = Players.FindIndex(x=>x.Id==response.PlayerId);
+            int index = Players.FindIndex(x => x.Id == response.PlayerId);
             var tcs = requests[index];
             requests[index] = null;//可能后续会重新对requests[index]询问，所以这个要写在TrySetResult之前
             tcs?.TrySetResult(response);
@@ -268,7 +314,7 @@ namespace ZMDFQ
         {
             return Players.Find(x => x.Id == id);
         }
-        
+
         internal void Reshuffle<T>(List<T> listtemp)
         {
             int currentIndex;
@@ -282,7 +328,7 @@ namespace ZMDFQ
             }
         }
 
-        internal int NextInt(int start,int end)
+        internal int NextInt(int start, int end)
         {
             return ram.Next(start, end);
         }
@@ -298,19 +344,18 @@ namespace ZMDFQ
             Size += data.data;
             Log.Debug($"Game size change to {Size}");
         }
-
-        public class GameOptions
-        {
-            public Player[] players = null;
-            public IEnumerable<ActionCard> actionCards = null;
-            public IEnumerable<ThemeCard> officialCards = null;
-            public IEnumerable<EventCard> eventCards = null;
-            public int firstPlayer = -1;
-            public bool shuffle = true;
-            public int initCommunitySize = 0;
-            public int initInfluence = 0;
-            public bool chooseCharacter = true;
-            public bool doubleCharacter = false;
-        }
+    }
+    public class GameOptions
+    {
+        public Player[] players = null;
+        public IEnumerable<ActionCard> actionCards = null;
+        public IEnumerable<ThemeCard> officialCards = null;
+        public IEnumerable<EventCard> eventCards = null;
+        public int firstPlayer = -1;
+        public bool shuffle = true;
+        public int initCommunitySize = 0;
+        public int initInfluence = 0;
+        public bool chooseCharacter = true;
+        public bool doubleCharacter = false;
     }
 }

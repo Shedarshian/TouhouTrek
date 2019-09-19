@@ -24,13 +24,13 @@ namespace ZMDFQ
         /// <summary>
         /// 选择角色牌后就生效
         /// </summary>
-        internal abstract void Enable(Game game);
+        public abstract void Enable(Game game);
 
         /// <summary>
         /// 某些原因导致技能失效
         /// </summary>
         /// <param name="game"></param>
-        internal abstract void Disable(Game game);
+        public abstract void Disable(Game game);
 
         /// <summary>
         /// 主动使用时效果
@@ -38,6 +38,6 @@ namespace ZMDFQ
         /// <param name="game"></param>
         /// <param name="request"></param>
         /// <returns></returns>
-        internal abstract Task DoEffect(Game game, UseInfo useInfo);
+        public abstract Task DoEffect(Game game, UseInfo useInfo);
     }
 }
