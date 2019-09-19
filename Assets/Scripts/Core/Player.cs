@@ -26,7 +26,12 @@ namespace ZMDFQ
 
         public HeroCard Hero;
 
-        internal void DrawActionCard(Game game,int count)
+        public Player(int id)
+        {
+            Id = id;
+        }
+
+        internal async Task DrawActionCard(Game game,int count)
         {
             List<ActionCard> data = new List<ActionCard>();
             for (int i = 0; i < count; i++)
@@ -41,15 +46,15 @@ namespace ZMDFQ
                 data.Add(game.Deck[0]);
                 game.Deck.RemoveAt(0);
             }
-            game.EventSystem.Call(EventEnum.DrawActionCard, this, data);
+            await game.EventSystem.Call(EventEnum.DrawActionCard, this, data);
         }
 
-        internal void DrawEventCard(Game game)
+        internal async Task DrawEventCard(Game game)
         {
             EventCard card = game.EventDeck[0];
             EventCards.Add(card);
             game.EventDeck.Remove(card);
-            game.EventSystem.Call(EventEnum.DrawEventCard, this, card);
+            await game.EventSystem.Call(EventEnum.DrawEventCard, this, card);
         }
 
         internal Task UseEventCard(Game game, ChooseDirectionResponse response)

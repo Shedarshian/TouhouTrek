@@ -9,8 +9,7 @@ namespace ZMDFQ
     using PlayerAction;
     public class AI : Player
     {
-        public AI() : base() { }
-        public AI(Game game, int id, HeroCard hero) : base(id, hero)
+        public AI(Game game, int id) : base(id)
         {
             Init(game);
         }

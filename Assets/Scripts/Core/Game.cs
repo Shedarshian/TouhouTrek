@@ -101,9 +101,8 @@ namespace ZMDFQ
             for (int i = 0; i < 8; i++)
             {
                 Player p;
-                if (i == 1) p = new Player();
-                else { p = new AI(); (p as AI).Init(this); }
-                p.Id = i;
+                if (i == 1) p = new Player(i);
+                else { p = new AI(this,i); (p as AI).Init(this); }
                 //p.Hero = new Cards.CR_CP001();
                 Players.Add(p);
             }
@@ -138,7 +137,7 @@ namespace ZMDFQ
             //游戏开始时 所有玩家抽两张牌
             foreach (var player in Players)
             {
-                player.DrawActionCard(this, 2);
+                await player.DrawActionCard(this, 2);
             }
 
             await EventSystem.Call(EventEnum.GameStart);
@@ -186,8 +185,8 @@ namespace ZMDFQ
                 await EventSystem.Call(EventEnum.RoundStart, this);
             }
             await EventSystem.Call(EventEnum.TurnStart, this);
-            player.DrawEventCard(this);
-            player.DrawActionCard(this, 1);
+            await player.DrawEventCard(this);
+            await player.DrawActionCard(this, 1);
             await EventSystem.Call(EventEnum.ActionStart, this);
 
 
@@ -297,6 +296,20 @@ namespace ZMDFQ
             await EventSystem.Call(EventEnum.OnGameSizeChange, data, source);
             Size += data.data;
             Log.Debug($"Game size change to {Size}");
+        }
+
+        public class GameOptions
+        {
+            public Player[] players = null;
+            public IEnumerable<ActionCard> actionCards = null;
+            public IEnumerable<ThemeCard> officialCards = null;
+            public IEnumerable<EventCard> eventCards = null;
+            public int firstPlayer = -1;
+            public bool shuffle = true;
+            public int initCommunitySize = 0;
+            public int initInfluence = 0;
+            public bool chooseCharacter = true;
+            public bool doubleCharacter = false;
         }
     }
 }
