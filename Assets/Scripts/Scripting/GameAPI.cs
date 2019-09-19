@@ -15,7 +15,7 @@ namespace ZMDFQ
         /// </summary>
         public Player triggerPlayer
         {
-            get { return game.Players.Find(p => { return p.Id == target.playerId; }); }
+            get { return game.Players.Find(p => { return p.Id == target.PlayerId; }); }
         }
         public GameAPI(Game game, Response target)
         {
