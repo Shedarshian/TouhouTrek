@@ -41,7 +41,7 @@ namespace ZMDFQ
 
         void timeoutAnswer(Request request)
         {
-            Player player = Game.Players.Find(x => x.Id == request.PlayerId);
+            Player player = Game.GetPlayer(request.PlayerId);
             switch (request)
             {
                 case UseCardRequest useCardRequest:
@@ -56,7 +56,7 @@ namespace ZMDFQ
                     Game.Answer(new ChooseSomeCardResponse()
                     {
                         PlayerId = request.PlayerId,
-                        Cards = cards
+                        Cards = cards.Select(x=>x.Id).ToList()
                     });
                     break;
                 case ChooseHeroRequest chooseHero:

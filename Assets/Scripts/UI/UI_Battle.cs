@@ -17,9 +17,11 @@ namespace ZMDFQ
         public List<UI_Player> SelectedPlayers = new List<UI_Player>();
         public List<ActionCard> SelectedCards = new List<ActionCard>();
         public UI_Hands HandCards;
+        public Player Self;
 
         private Request nowRequest;
         private UseWay nowUseWay;
+        private Skill nowSkill;
 
         private void Awake()
         {
@@ -32,7 +34,7 @@ namespace ZMDFQ
 
             _main.GetChild("n17").onClick.Add(takeUse);
 
-            _main.GetChild("EndTurn").onClick.Add(() => Game.Answer(new EndTurnResponse() { PlayerId = Game.Self.Id }));
+            _main.GetChild("EndTurn").onClick.Add(() => Game.Answer(new EndTurnResponse() { PlayerId = Self.Id }));
 
             _main.GetChild("n30").onClick.Add(useForward);
 
@@ -43,7 +45,7 @@ namespace ZMDFQ
             _main.GetChild("n33").onClick.Add(() =>
             {
                 nowRequest = null;
-                Game.Answer(new ChooseSomeCardResponse() { PlayerId = Game.Self.Id, Cards = SelectedCards });
+                Game.Answer(new ChooseSomeCardResponse() { PlayerId = Self.Id, Cards = SelectedCards.Select(x=>x.Id).ToList() });
                 FlushView(Game);
             });
 
@@ -52,6 +54,17 @@ namespace ZMDFQ
                 var takeChoiceRequest = _main.GetChild("n34").data as TakeChoiceRequest;
                 int index = _main.GetChild("n34").asList.GetChildIndex(x.data as GButton);
                 Game.Answer(new TakeChoiceResponse() { PlayerId = takeChoiceRequest.PlayerId, Index = index });
+                FlushView(Game);
+            });
+
+            _main.GetChild("Skills").asList.onClickItem.Add((x) =>
+            {
+                var ui_skill = x.data as GButton;
+                Skill skill = ui_skill.data as Skill;
+                if (nowSkill == null || nowSkill != skill) nowSkill = skill;
+                else nowSkill = null;
+                if (nowSkill != null) nowUseWay = nowSkill.UseWay;
+                FlushView(Game);
             });
 
             for (int i = 0; i < 3; i++)
@@ -62,7 +75,7 @@ namespace ZMDFQ
                     nowRequest = null;
                     Game.Answer(new ChooseHeroResponse()
                     {
-                        PlayerId = Game.Self.Id,
+                        PlayerId = Self.Id,
                         HeroId = int.Parse(ui_hero.text),
                     });
                     _main.GetController("ChooseHero").selectedIndex = 0;
@@ -109,6 +122,10 @@ namespace ZMDFQ
                 FlushView(Game);
             });
 
+            Game.Init();
+
+            Self = Game.Players[1];
+
             Game.EventSystem.Register(EventEnum.DrawActionCard, onDrawCard);
 
             Game.EventSystem.Register(EventEnum.DropActionCard, onDropCard);
@@ -123,20 +140,31 @@ namespace ZMDFQ
         public void FlushView(Game game)
         {
             this.Game = game;
-            int playerIndex = game.Players.IndexOf(game.Self);
+            int playerIndex = game.Players.IndexOf(Self);
             for (int i = 0; i < game.Players.Count; i++)
             {
                 var ui_player = _main.GetChild("Player" + (7 - i)) as UI_Player;
                 ui_player.SetPlayerCard(game.Players[i]);
                 ui_player.selected = SelectedPlayers.Contains(ui_player);
             }
-            HandCards.SetCards(game.Self.ActionCards, SelectedCards);
+            HandCards.SetCards(Self.ActionCards, SelectedCards);
 
             checkRequest(nowRequest);
 
             _main.GetChild("Deck").text = game.Deck.Count.ToString();
             _main.GetChild("Size").text = game.Size.ToString();
-            _main.GetChild("n16").text = game.Self.EventCards.Count > 0 ? game.Self.EventCards[0].Name : "无";
+            _main.GetChild("n16").text = Self.EventCards.Count > 0 ? Self.EventCards[0].Name : "无";
+
+            var skillList = _main.GetChild("Skills").asList;
+            skillList.RemoveChildrenToPool();
+            if (Self.Hero != null)
+                foreach (var skill in Self.Hero.Skills)
+                {
+                    var ui_skill = skillList.AddItemFromPool().asButton;
+                    ui_skill.text = skill.Name;
+                    ui_skill.data = skill;
+                    ui_skill.selected = skill != null && skill == nowSkill;
+                }
         }
 
         /// <summary>
@@ -146,7 +174,7 @@ namespace ZMDFQ
         /// <param name="request"></param>
         void OnRequest(Game game,Request request)
         {
-            if (request.PlayerId != game.Self.Id)
+            if (request.PlayerId != Self.Id)
             {
                 return;
             }
@@ -225,22 +253,22 @@ namespace ZMDFQ
             switch (nowUseWay)
             {
                 case SimpleRequest simpleRequest:
-                    Game.Answer(new SimpleResponse() { PlayerId = Game.Self.Id, CardId = SelectedCards[0].Id });
+                    Game.Answer(new SimpleResponse() { PlayerId = Self.Id, CardId = SelectedCards[0].Id });
                     break;
                 case ChooseSomeoneRequest chooseSomeoneRequest:
-                    Game.Answer(new ChooseSomeoneResponse() { PlayerId = Game.Self.Id, Targets = SelectedPlayers.Select(x => x.Player).ToList() });
+                    Game.Answer(new ChooseSomeoneResponse() { PlayerId = Self.Id, Targets = SelectedPlayers.Select(x => x.Player.Id).ToList() });
                     break;
                 //case ChooseDirectionRequest chooseDirectionRequest:
                 //    break;
                 //case ChooseSomeCardRequest  dropCardRequest:
-                //    Game.DoAction(new ChooseSomeCardResponse() { PlayerId = Game.Self.Id, Cards = SelectedCards });
+                //    Game.DoAction(new ChooseSomeCardResponse() { PlayerId = Self.Id, Cards = SelectedCards });
                 //    break;
             }
             SelectedCards.Clear();
             FlushView(Game);
         }
 
-        void onDrawCard(object[] param)
+        Task onDrawCard(object[] param)
         {
             string s = string.Empty;
             s += (param[0] as Player).Id.ToString()+"抽到了";
@@ -250,9 +278,10 @@ namespace ZMDFQ
             }
             Log.Debug(s);
             FlushView(Game);
+            return Task.CompletedTask;
         }
 
-        void onDropCard(object[] param)
+        Task onDropCard(object[] param)
         {
             string s = string.Empty;
             s += (param[0] as Player).Id.ToString() + "丢掉了";
@@ -262,25 +291,26 @@ namespace ZMDFQ
             }
             Log.Debug(s);
             FlushView(Game);
+            return Task.CompletedTask;
         }
         void useForward()
         {
             nowRequest = null;
-            Game.Answer(new ChooseDirectionResponse() { PlayerId = Game.Self.Id, CardId = Game.Self.EventCards[0].Id, IfForward = true, IfSet = false });
+            Game.Answer(new ChooseDirectionResponse() { PlayerId = Self.Id, CardId = Self.EventCards[0].Id, IfForward = true, IfSet = false });
             FlushView(Game);
         }
 
         void useBackward()
         {
             nowRequest = null;
-            Game.Answer(new ChooseDirectionResponse() { PlayerId = Game.Self.Id, CardId = Game.Self.EventCards[0].Id, IfForward = false, IfSet = false });
+            Game.Answer(new ChooseDirectionResponse() { PlayerId = Self.Id, CardId = Self.EventCards[0].Id, IfForward = false, IfSet = false });
             FlushView(Game);
         }
 
         void saveEventCard()
         {
             nowRequest = null;
-            Game.Answer(new ChooseDirectionResponse() { PlayerId = Game.Self.Id, CardId = Game.Self.EventCards[0].Id, IfSet = true });
+            Game.Answer(new ChooseDirectionResponse() { PlayerId = Self.Id, CardId = Self.EventCards[0].Id, IfSet = true });
             FlushView(Game);
         }
     }

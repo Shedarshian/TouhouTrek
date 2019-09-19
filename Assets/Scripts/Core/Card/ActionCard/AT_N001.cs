@@ -12,8 +12,14 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class AT_N001 : ActionCard<SimpleRequest, SimpleResponse>
     {
-        protected override async Task doEffect(Game game, SimpleResponse useWay)
+        protected override Task doEffect(Game game, SimpleResponse useWay)
         {
+            return Effects.UseCard.NormalUse(game, useWay, this, effect);          
+        }
+
+        private async Task effect(Game game, SimpleResponse useWay)
+        {
+            //询问玩家是加或减
             TakeChoiceResponse response = (TakeChoiceResponse)await game.WaitAnswer(new TakeChoiceRequest()
             {
                 PlayerId = useWay.PlayerId,
@@ -23,15 +29,15 @@ namespace ZMDFQ.Cards
                     "-2",
                 }
             });
+            //处理实际效果
             if (response.Index == 0)
             {
-                game.ChangeSize(2);
+                await game.ChangeSize(2, this);
             }
             else
             {
-                game.ChangeSize(-2);
+                await game.ChangeSize(-2, this);
             }
-            Effects.GoUsedDeck(game, this, useWay);
         }
 
         protected override SimpleRequest useWay()

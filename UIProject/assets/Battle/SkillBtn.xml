@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="120,50">
+<component size="120,50" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,disabled,3,selectedDisabled" selected="0"/>
   <displayList>
-    <graph id="n0_qfxq" name="n0" xy="0,0" size="120,50" type="rect"/>
-    <text id="n1_qfxq" name="n1" xy="0,0" size="120,50" fontSize="40" align="center" vAlign="middle" autoSize="shrink" text=""/>
+    <graph id="n0_qfxq" name="n0" xy="0,0" size="120,50" type="rect">
+      <gearColor controller="button" pages="1,2,3" values="#cccccc|#666666|#666666" default="#ffffff"/>
+    </graph>
+    <text id="n1_qfxq" name="title" xy="0,0" size="120,50" fontSize="40" align="center" vAlign="middle" autoSize="shrink" text=""/>
   </displayList>
+  <Button mode="Radio"/>
 </component>

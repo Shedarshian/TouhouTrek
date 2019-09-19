@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
-  <controller name="State" pages="0,,1,,2,,4,,5," selected="4">
+  <controller name="State" pages="0,,1,,2,,4,,5," selected="0">
     <remark page="0" value="正常"/>
     <remark page="1" value="出牌阶段"/>
     <remark page="2" value="用事件卡"/>
@@ -22,7 +22,7 @@
     <component id="n10_qfxq" name="Player7" src="qfxq2" fileName="PlayerInfo.xml" xy="1663,431"/>
     <component id="n11_qfxq" name="Head" src="qfxq5" fileName="Head.xml" xy="20,822"/>
     <component id="n13_qfxq" name="HandCards" src="qfxq4" fileName="HandCards.xml" xy="416,826"/>
-    <list id="n15_qfxq" name="Skllls" xy="281,831" size="134,227" overflow="scroll" lineGap="5" defaultItem="ui://oacz4rtmqfxq3">
+    <list id="n15_qfxq" name="Skills" xy="281,831" size="134,227" selectionMode="none" overflow="scroll" lineGap="5" defaultItem="ui://oacz4rtmqfxq3">
       <item/>
       <item/>
       <item/>

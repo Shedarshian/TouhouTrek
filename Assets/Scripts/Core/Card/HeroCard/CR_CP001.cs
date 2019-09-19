@@ -12,18 +12,24 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class CR_CP001 : HeroCard
     {
-
+        public override List<Skill> Skills => skills;
+        List<Skill> skills = new List<Skill>() { new CR_CP001_SK1() { Name = "传教" } };
     }
 
     public class CR_CP001_SK1 : Skill
     {
+        Effects.TurnLimit turnLimit = new Effects.TurnLimit() { MaxUseTime = 2 };
         protected override UseWay useWay()
         {
-            return SimpleRequest.Instance;
+            if (turnLimit.CanUse())
+                return SimpleRequest.Instance;
+            else
+                return null;
         }
 
         internal override Task DoEffect(Game game, UseInfo useInfo)
         {
+            turnLimit.Use();
             SimpleResponse simpleResponse = useInfo as SimpleResponse;
             AT_N001 card = new AT_N001();
             return card.DoEffect(game, simpleResponse);
@@ -31,7 +37,11 @@ namespace ZMDFQ.Cards
 
         internal override void Enable(Game game)
         {
-            
+            turnLimit.Enable(game);
+        }
+        internal override void Disable(Game game)
+        {
+            turnLimit.Disable(game);
         }
     }
 }

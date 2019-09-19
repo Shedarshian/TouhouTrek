@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ
 {
-    public abstract class HeroCard : Card
+    /// <summary>
+    /// 表示可以将一张卡视为另一张
+    /// </summary>
+    public interface ITreatAs
     {
-        public abstract List<Skill> Skills { get; }
     }
 }

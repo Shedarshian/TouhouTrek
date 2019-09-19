@@ -8,6 +8,9 @@ namespace ZMDFQ.PlayerAction
 {
     public class Response
     {
-        public int PlayerId = -1;
+        /// <summary>
+        /// 回应操作的玩家
+        /// </summary>
+        public int PlayerId;
     }
 }

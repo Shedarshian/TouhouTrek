@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZMDFQ.Cards
+namespace ZMDFQ
 {
     using PlayerAction;
     public abstract class Skill
     {
+        public string Name;
         /// <summary>
         /// 未翻开时 是否询问响应技能
         /// </summary>
@@ -24,6 +25,13 @@ namespace ZMDFQ.Cards
         /// 选择角色牌后就生效
         /// </summary>
         internal abstract void Enable(Game game);
+
+        /// <summary>
+        /// 某些原因导致技能失效
+        /// </summary>
+        /// <param name="game"></param>
+        internal abstract void Disable(Game game);
+
         /// <summary>
         /// 主动使用时效果
         /// </summary>

@@ -33,8 +33,8 @@ namespace ZMDFQ
             {
                 if (game.Deck.Count == 0)
                 {
-                    game.Deck.AddRange(game.UsedDeck);
-                    game.UsedDeck.Clear();
+                    game.Deck.AddRange(game.UsedActionDeck);
+                    game.UsedActionDeck.Clear();
                     game.Reshuffle(game.Deck);
                 }
                 ActionCards.Add(game.Deck[0]);
@@ -78,17 +78,28 @@ namespace ZMDFQ
             EventCards.RemoveAt(0);
         }
 
-        internal void DropEventCard(Game game,EventCard card)
+        /// <summary>
+        /// 失去一张事件卡
+        /// 注意没有进弃牌堆
+        /// </summary>
+        /// <param name="game"></param>
+        /// <param name="card"></param>
+        /// <returns></returns>
+        internal EventCard DropEventCard(Game game,EventCard card)
         {
             if (card == SaveEvent)
             {
-                game.UsedEventDeck.Add(card);
+                //game.UsedEventDeck.Add(card);
                 SaveEvent = null;
+                return SaveEvent;
             }
             else
             {
-                game.UsedEventDeck.Add(card);
-                EventCards.Remove(card);
+                //game.UsedEventDeck.Add(card);
+                if (EventCards.Remove(card))
+                    return card;
+                else
+                    return null;
             }
         }
 
@@ -98,17 +109,23 @@ namespace ZMDFQ
             if (card == null) return Task.CompletedTask;
             return card.DoEffect(game, cardTarget);
         }
-
-        internal void DropActionCard(Game game, List<ActionCard> cards)
+        /// <summary>
+        /// 失去一张行动牌
+        /// 注意不进弃牌堆
+        /// </summary>
+        /// <param name="game"></param>
+        /// <param name="cards"></param>
+        internal async Task DropActionCard(Game game, List<int> cards)
         {
             List<ActionCard> data = new List<ActionCard>();
-            foreach (var card in cards)
+            foreach (var cardId in cards)
             {
+                ActionCard card = ActionCards.Find(x => x.Id == cardId);
                 ActionCards.Remove(card);
-                game.UsedDeck.Add(card);
+                //game.UsedDeck.Add(card);
                 data.Add(card);
             }
-            game.EventSystem.Call(EventEnum.DropActionCard, this, data);
+            await game.EventSystem.Call(EventEnum.DropActionCard, this, data);
         }
 
 

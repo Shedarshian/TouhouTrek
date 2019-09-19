@@ -18,6 +18,6 @@ namespace ZMDFQ.PlayerAction
     }
     public class ChooseSomeCardResponse : Response
     {
-        public List<ActionCard> Cards;
+        public List<int> Cards;
     }
 }

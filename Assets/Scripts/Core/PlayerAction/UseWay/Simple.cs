@@ -17,8 +17,7 @@ namespace ZMDFQ.PlayerAction
     {
         public override Task HandleAction(Game game)
         {
-            Player player = game.Players.Find(x => x.Id == PlayerId);
-            return player.UseActionCard(game, CardId, this);
+            return game.GetPlayer(PlayerId).UseActionCard(game, CardId, this);
         }
     }
 }

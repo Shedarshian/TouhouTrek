@@ -26,9 +26,14 @@ namespace ZMDFQ
         /// </summary>
         public List<Card> UsingCards = new List<Card>();
 
+        /// <summary>
+        /// 结算时出过什么卡
+        /// </summary>
+        public List<UsingInfo> UsingInfos = new List<UsingInfo>();
+
         public List<ActionCard> Deck = new List<ActionCard>();
 
-        public List<ActionCard> UsedDeck = new List<ActionCard>();
+        public List<ActionCard> UsedActionDeck = new List<ActionCard>();
 
         public List<ThemeCard> ThemeDeck = new List<ThemeCard>();
 
@@ -44,11 +49,6 @@ namespace ZMDFQ
         /// 当前回合的玩家
         /// </summary>
         public Player ActivePlayer;
-
-        /// <summary>
-        /// 自己控制的玩家
-        /// </summary>
-        public Player Self;
 
         /// <summary>
         /// 当前处于第几轮
@@ -74,24 +74,27 @@ namespace ZMDFQ
         /// </summary>
         private  TaskCompletionSource<Response>[] requests;
 
-        public async void StartGame()
+        /// <summary>
+        /// 游戏初始化，卡组玩家生成
+        /// </summary>
+        public void Init()
         {
             if (TimeManager != null)
                 TimeManager.Game = this;
 
             for (int i = 0; i < 20; i++)
             {
-                Deck.Add(new Cards.AT_N001() { Name="传教"});
+                Deck.Add(new Cards.AT_N001() { Name = "传教" });
             }
 
             for (int i = 0; i < 23; i++)
             {
-                ThemeDeck.Add(new Cards.G_001() { Name="旧作"});
+                ThemeDeck.Add(new Cards.G_001() { Name = "旧作" });
             }
 
             for (int i = 0; i < 50; i++)
             {
-                EventDeck.Add(new Cards.EV_E002() { Name="全国性活动"});
+                EventDeck.Add(new Cards.EV_E002() { Name = "全国性活动" });
             }
 
             Reshuffle(Deck);
@@ -101,11 +104,18 @@ namespace ZMDFQ
                 if (i == 1) p = new Player();
                 else { p = new AI(); (p as AI).Init(this); }
                 p.Id = i;
-                p.Hero = new Cards.CR_CP001();
+                //p.Hero = new Cards.CR_CP001();
                 Players.Add(p);
             }
             requests = new TaskCompletionSource<Response>[Players.Count];
-            Self = Players[1];
+        }
+
+        /// <summary>
+        /// 开始游戏流程
+        /// </summary>
+        public async void StartGame()
+        {
+            //Self = Players[1];
             ActivePlayer = Players[0];
 
             Task<Response>[] chooseHero = new Task<Response>[Players.Count];
@@ -117,6 +127,12 @@ namespace ZMDFQ
 
             await Task.WhenAll(chooseHero);
 
+            foreach (var response in chooseHero)
+            {
+                var chooseHeroResponse = response.Result as ChooseHeroResponse;
+                GetPlayer(chooseHeroResponse.PlayerId).Hero = new Cards.CR_CP001() { Name = "传教爱好者" };
+            }
+
             Log.Debug($"所有玩家选择英雄完毕！");
 
             //游戏开始时 所有玩家抽两张牌
@@ -125,7 +141,7 @@ namespace ZMDFQ
                 player.DrawActionCard(this, 2);
             }
 
-            EventSystem.Call(EventEnum.GameStart);
+            await EventSystem.Call(EventEnum.GameStart);
 
             NewTurn(ActivePlayer);
         }
@@ -136,10 +152,10 @@ namespace ZMDFQ
         /// <param name="response"></param>
         public void Answer(Response response)
         {
-            int index = Players.FindIndex(x => x.Id == response.PlayerId);
+            int index = Players.FindIndex(x=>x.Id==response.PlayerId);
             var tcs = requests[index];
             requests[index] = null;//可能后续会重新对requests[index]询问，所以这个要写在TrySetResult之前
-            tcs.TrySetResult(response);
+            tcs?.TrySetResult(response);
         }
         /// <summary>
         /// 向玩家请求一个动作的回应
@@ -167,12 +183,12 @@ namespace ZMDFQ
                 //新的一轮
                 Round++;
                 NextThemeCard();
-                EventSystem.Call(EventEnum.RoundStart, this);
+                await EventSystem.Call(EventEnum.RoundStart, this);
             }
-            EventSystem.Call(EventEnum.TurnStart, this);
+            await EventSystem.Call(EventEnum.TurnStart, this);
             player.DrawEventCard(this);
             player.DrawActionCard(this, 1);
-            EventSystem.Call(EventEnum.ActionStart, this);
+            await EventSystem.Call(EventEnum.ActionStart, this);
 
 
             while (true)
@@ -189,7 +205,7 @@ namespace ZMDFQ
                 }
             }
 
-            EventSystem.Call(EventEnum.ActionEnd, this);
+            await EventSystem.Call(EventEnum.ActionEnd, this);
 
             var chooseDirectionResponse = (ChooseDirectionResponse)await WaitAnswer(new ChooseDirectionRequest() { PlayerId = player.Id });
 
@@ -199,18 +215,18 @@ namespace ZMDFQ
             if (player.ActionCards.Count > max)
             {
                 ChooseSomeCardResponse chooseSomeCardResponse = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { PlayerId = player.Id, Count = player.ActionCards.Count - max });
-                player.DropActionCard(this, chooseSomeCardResponse.Cards);
+                await player.DropActionCard(this, chooseSomeCardResponse.Cards);
             }
 
-            EventSystem.Call(EventEnum.TurnEnd, this);
+            await EventSystem.Call(EventEnum.TurnEnd, this);
 
             if (Players.IndexOf(player) == Players.Count - 1)
             {
                 //一轮结束了
-                EventSystem.Call(EventEnum.RoundEnd, this);
+                await EventSystem.Call(EventEnum.RoundEnd, this);
                 if (Round + Players.Count == 12)//游戏结束规则
                 {
-                    EventSystem.Call(EventEnum.GameEnd, this);
+                    await EventSystem.Call(EventEnum.GameEnd, this);
                     return;
                 }
             }
@@ -239,6 +255,20 @@ namespace ZMDFQ
             ActiveTheme.Enable(this);
         }
 
+        internal void AddUsingCard(Card card)
+        {
+            UsingCards.Add(card);
+        }
+        internal void AddUsingInfo(UsingInfo useInfo)
+        {
+            UsingInfos.Add(useInfo);
+        }
+
+        internal Player GetPlayer(int id)
+        {
+            return Players.Find(x => x.Id == id);
+        }
+        
         internal void Reshuffle<T>(List<T> listtemp)
         {
             int currentIndex;
@@ -256,11 +286,15 @@ namespace ZMDFQ
         {
             return ram.Next(start, end);
         }
-
-        internal void ChangeSize(int size)
+        /// <summary>
+        /// 改变社群繁荣度
+        /// </summary>
+        /// <param name="size"></param>
+        /// <param name="source">改变的原因</param>
+        internal async Task ChangeSize(int size, object source)
         {
             var data = new EventData<int> { data = size };
-            EventSystem.Call(EventEnum.OnGameSizeChange, data);
+            await EventSystem.Call(EventEnum.OnGameSizeChange, data, source);
             Size += data.data;
             Log.Debug($"Game size change to {Size}");
         }

@@ -11,10 +11,10 @@ namespace ZMDFQ
         Dictionary<EventEnum, List<EventItem>> dic = new Dictionary<EventEnum, List<EventItem>>();
         struct EventItem
         {
-            public Action<object[]> action;
+            public Func<object[],Task> action;
             public int sortIndex;
         }
-        public void Register(EventEnum eventEnum, Action<object[]> action, int sortIndex = 0)
+        public void Register(EventEnum eventEnum, Func<object[],Task> action, int sortIndex = 0)
         {
             List<EventItem> list;
             if (!dic.TryGetValue(eventEnum, out list))
@@ -40,7 +40,7 @@ namespace ZMDFQ
                 sortIndex = sortIndex,
             });
         }
-        public void Remove(EventEnum eventEnum,Action<object[]> action)
+        public void Remove(EventEnum eventEnum, Func<object[], Task> action)
         {
             List<EventItem> list;
             if (dic.TryGetValue(eventEnum, out list))
@@ -48,14 +48,14 @@ namespace ZMDFQ
                 list.RemoveAll(x => x.action == action);
             }
         }
-        public void Call(EventEnum eventEnum, params object[] param)
+        public async Task Call(EventEnum eventEnum, params object[] param)
         {
             List<EventItem> list;
             if (dic.TryGetValue(eventEnum, out list))
             {
                 foreach (var eventItem in list)
                 {
-                    eventItem.action(param);
+                    await eventItem.action(param);
                 }
             }
         }

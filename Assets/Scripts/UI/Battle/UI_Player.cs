@@ -21,7 +21,7 @@ namespace ZMDFQ.UI
             this.Player = player;
             GetChild("Cards").text = player.ActionCards.Count.ToString();
             GetChild("Size").text = player.Size.ToString();
-            GetChild("Name").text = player.Hero.Name;
+            GetChild("Name").text = player.Hero == null ? "" : player.Hero.Name;
         }
     }
 }

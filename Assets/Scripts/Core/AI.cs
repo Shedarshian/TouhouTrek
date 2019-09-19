@@ -32,7 +32,7 @@ namespace ZMDFQ
                     game.Answer(new ChooseSomeCardResponse()
                     {
                         PlayerId = Id,
-                        Cards = cards
+                        Cards = cards.Select(x=>x.Id).ToList()
                     });
                     break;
                 case ChooseHeroRequest chooseHero:
