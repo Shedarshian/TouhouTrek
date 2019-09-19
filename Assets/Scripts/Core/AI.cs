@@ -11,6 +11,7 @@ namespace ZMDFQ
     {
         public AI(Game game, int id) : base(id)
         {
+            Id = id;
             Init(game);
         }
         public void Init(Game game)
@@ -21,6 +22,7 @@ namespace ZMDFQ
         async void doResponse(Game game, Request request)
         {
             if (request.PlayerId != Id) return;
+            Log.Debug(request.PlayerId + "," + Id);
             await Task.Delay(500);//假装思考0.5s
             switch (request)
             {

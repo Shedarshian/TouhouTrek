@@ -18,6 +18,6 @@ namespace ZMDFQ.PlayerAction
         /// <summary>
         /// 询问的目标玩家
         /// </summary>
-        public int PlayerId;
+        public int PlayerId = -1;
     }
 }

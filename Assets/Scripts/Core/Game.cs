@@ -102,7 +102,7 @@ namespace ZMDFQ
             {
                 Player p;
                 if (i == 1) p = new Player(i);
-                else { p = new AI(this,i); (p as AI).Init(this); }
+                else { p = new AI(this,i);}
                 //p.Hero = new Cards.CR_CP001();
                 Players.Add(p);
             }
@@ -151,6 +151,7 @@ namespace ZMDFQ
         /// <param name="response"></param>
         public void Answer(Response response)
         {
+            Log.Debug(response.GetType().Name);
             int index = Players.FindIndex(x=>x.Id==response.PlayerId);
             var tcs = requests[index];
             requests[index] = null;//可能后续会重新对requests[index]询问，所以这个要写在TrySetResult之前
