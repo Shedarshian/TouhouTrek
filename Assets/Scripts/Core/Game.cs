@@ -88,7 +88,10 @@ namespace ZMDFQ
                 TimeManager.Game = this;
             //玩家与玩家初始化
             if (options != null && options.players != null)
+            {
                 Players = new List<Player>(options.players);
+                Self = Players[0];
+            }
             else
             {
                 for (int i = 0; i < 8; i++)
@@ -100,15 +103,17 @@ namespace ZMDFQ
                     p.Hero = new Cards.CR_CP001();
                     Players.Add(p);
                 }
+                Self = Players[1];
             }
             requests = new TaskCompletionSource<Response>[Players.Count];
-            Self = Players[1];
-            ActivePlayer = Players[0];
             //牌库初始化
             Deck = new List<ActionCard>(options != null && options.actionCards != null ? options.actionCards : createCards(new Cards.AT_N001() { Name = "传教" }, 20));
             ThemeDeck = new List<ThemeCard>(options != null && options.officialCards != null ? options.officialCards : createCards(new Cards.G_001() { Name = "旧作" }, 23));
             EventDeck = new List<EventCard>(options != null && options.eventCards != null ? options.eventCards : createCards(new Cards.EV_E002() { Name = "全国性活动" }, 50));
             //游戏准备阶段
+            //随机决定第一个行动的玩家
+            ActivePlayer = Players[options != null && options.firstPlayer > -1 ? options.firstPlayer : 0];
+            //洗牌
             if (options == null || options.shuffle)
             {
                 //TODO:角色牌库洗牌
@@ -294,6 +299,7 @@ namespace ZMDFQ
         public IEnumerable<ActionCard> actionCards = null;
         public IEnumerable<ThemeCard> officialCards = null;
         public IEnumerable<EventCard> eventCards = null;
+        public int firstPlayer = -1;
         public bool shuffle = true;
         public int initCommunitySize = 0;
         public int initInfluence = 0;

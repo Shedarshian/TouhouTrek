@@ -27,12 +27,28 @@ namespace Tests
                 actionCards = game.createCards(new TestAction1(), 20),
                 officialCards = game.createCards(new TestOfficial(), 20),
                 eventCards = game.createCards(new TestEvent(), 20),
+                firstPlayer = 0,
                 shuffle = false,
                 initCommunitySize = 0,
                 initInfluence = 0,
                 chooseCharacter = false,
                 doubleCharacter = false
             });
+
+            Assert.AreEqual(2, game.Players.Count);
+
+            Assert.IsInstanceOf<Player>(game.Players[0]);
+            Assert.IsInstanceOf<AI>(game.Players[1]);
+            Assert.AreEqual(15, game.Deck.Count);//初始-4，再抽1
+            Assert.AreEqual(19, game.ThemeDeck.Count);//抽1
+            Assert.AreEqual(19, game.EventDeck.Count);//抽1
+            Assert.AreEqual(0, game.ActivePlayer.Id);
+            Assert.AreEqual(0, game.Size);
+            foreach (Player player in game.Players)
+            {
+                Assert.AreEqual(0, player.Size);
+                Assert.IsInstanceOf<TestCharacter>(player.Hero);
+            }
             yield break;
         }
         class TestCharacter : HeroCard
