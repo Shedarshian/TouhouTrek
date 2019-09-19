@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZMDFQ.Cards
+namespace ZMDFQ
 {
     using PlayerAction;
     public abstract class Skill

@@ -11,12 +11,12 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class G_001 : ThemeCard
     {
-        internal override void Disable(Game game)
+        public override void Disable(Game game)
         {
             
         }
 
-        internal override void Enable(Game game)
+        public override void Enable(Game game)
         {
             
         }

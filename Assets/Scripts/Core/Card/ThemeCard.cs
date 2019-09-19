@@ -9,7 +9,7 @@ namespace ZMDFQ
     public abstract class ThemeCard:Card
     {
         public bool Enabled = false;
-        internal abstract void Enable(Game game);
-        internal abstract void Disable(Game game);
+        public abstract void Enable(Game game);
+        public abstract void Disable(Game game);
     }
 }

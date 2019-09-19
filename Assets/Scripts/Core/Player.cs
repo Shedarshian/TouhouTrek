@@ -25,8 +25,14 @@ namespace ZMDFQ
         public EventCard SaveEvent;
 
         public HeroCard Hero;
+        public Player() { }
+        public Player(int id, HeroCard hero)
+        {
+            Id = id;
+            Hero = hero;
+        }
 
-        internal void DrawActionCard(Game game,int count)
+        internal void DrawActionCard(Game game, int count)
         {
             List<ActionCard> data = new List<ActionCard>();
             for (int i = 0; i < count; i++)
@@ -78,7 +84,7 @@ namespace ZMDFQ
             EventCards.RemoveAt(0);
         }
 
-        internal void DropEventCard(Game game,EventCard card)
+        internal void DropEventCard(Game game, EventCard card)
         {
             if (card == SaveEvent)
             {
@@ -124,7 +130,7 @@ namespace ZMDFQ
 
         internal int HandMax()
         {
-            int result=1;
+            int result = 1;
             if (Size > 1 && Size < 4)
             {
                 result = Size;
