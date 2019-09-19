@@ -21,6 +21,11 @@ namespace ZMDFQ
         /// </summary>
         public List<Player> Players = new List<Player>();
 
+        /// <summary>
+        /// 正在结算中的卡
+        /// </summary>
+        public List<Card> UsingCards = new List<Card>();
+
         public List<ActionCard> Deck = new List<ActionCard>();
 
         public List<ActionCard> UsedDeck = new List<ActionCard>();
@@ -67,7 +72,7 @@ namespace ZMDFQ
         /// <summary>
         /// 一名玩家最多处于一个询问状态
         /// </summary>
-        private TaskCompletionSource<Response>[] requests;
+        private  TaskCompletionSource<Response>[] requests;
 
         public async void StartGame()
         {
@@ -76,74 +81,17 @@ namespace ZMDFQ
 
             for (int i = 0; i < 20; i++)
             {
-                ActionCard card = new ActionCard()
-                {
-                    Id = i,
-                    Name = "社群+" + (i % 2 + 1),
-                    UseWay = SimpleRequest.Instance,
-                };
-                card.Effects = new List<EffectBase>()
-                {
-                    new Effect.ChangeMainSize()
-                        {
-                            Size =i%2+1
-                        },
-                        new Effect.GoUsedDeck(){ Parent=card},
-                };
-                Deck.Add(card);
+                Deck.Add(new Cards.AT_N001() { Name="传教"});
             }
-            for (int i = 20; i < 40; i++)
-            {
-                ActionCard card = new ActionCard()
-                {
-                    Id = i,
-                    UseWay = SimpleRequest.Instance,
-                    Name = "社群+2以上时，额外加一",
-                };
-                card.Effects = new List<EffectBase>()
-                {
-                    new Effect.MoreSizeChange()
-                        {
-                            Need=2,
-                            Change=1,
-                        },
-                        new Effect.GoUsedDeck(){ Parent=card},
-                };
-                Deck.Add(card);
-            }
+
             for (int i = 0; i < 23; i++)
             {
-                ThemeDeck.Add(new ThemeCard()
-                {
-                    Effects = new List<EffectBase>(),
-                    Name = "旧作",
-                });
+                ThemeDeck.Add(new Cards.G_001() { Name="旧作"});
             }
 
             for (int i = 0; i < 50; i++)
             {
-                EventCard eventCard = new EventCard()
-                {
-                    Id = 1000 + i,
-                    Name = "事件" + i,
-                };
-                eventCard.ForwardEffects = new List<EffectBase>()
-                {
-                    new Effect.ChangeMainSize()
-                        {
-                            Size =2
-                        },
-                        new Effect.GoUsedDeck(){ Parent=eventCard},
-                };
-                eventCard.BackwardEffects = new List<EffectBase>()
-                {
-                    new Effect.ChangeMainSize()
-                        {
-                            Size =1
-                        },
-                        new Effect.GoUsedDeck(){ Parent=eventCard},
-                };
-                EventDeck.Add(eventCard);
+                EventDeck.Add(new Cards.EV_E002() { Name="全国性活动"});
             }
 
             Reshuffle(Deck);
@@ -153,7 +101,7 @@ namespace ZMDFQ
                 if (i == 1) p = new Player();
                 else { p = new AI(); (p as AI).Init(this); }
                 p.Id = i;
-                p.Hero = new Hero() { Name = "Test" + i };
+                p.Hero = new Cards.CR_CP001();
                 Players.Add(p);
             }
             requests = new TaskCompletionSource<Response>[Players.Count];
@@ -171,24 +119,15 @@ namespace ZMDFQ
 
             Log.Debug($"所有玩家选择英雄完毕！");
 
+            //游戏开始时 所有玩家抽两张牌
             foreach (var player in Players)
             {
-                player.DrawActionCard(this, 4);
+                player.DrawActionCard(this, 2);
             }
 
             EventSystem.Call(EventEnum.GameStart);
 
             NewTurn(ActivePlayer);
-        }
-
-        /// <summary>
-        /// 玩家出牌阶段自由出牌用这个接口
-        /// </summary>
-        /// <param name="action"></param>
-        public void DoAction(UseInfo action)
-        {
-            action.HandleAction(this);
-            Answer(action);
         }
    
         /// <summary>
@@ -235,21 +174,26 @@ namespace ZMDFQ
             player.DrawActionCard(this, 1);
             EventSystem.Call(EventEnum.ActionStart, this);
 
-            UseCardRequest useCardRequest = new UseCardRequest() { PlayerId = player.Id, TimeOut = TurnTime };
-            Response response;
-            do
+
+            while (true)
             {
                 Log.Debug($"玩家{player.Id}出牌中");
-                response = await WaitAnswer(useCardRequest);
-                Log.Debug($"回合剩余时间{ useCardRequest.TimeOut.ToString()}");
+                Response response = await WaitAnswer(new UseCardRequest() { PlayerId = player.Id, TimeOut = TurnTime });
+                if (response is EndTurnResponse)
+                {
+                    break;
+                }
+                else
+                {
+                    await (response as UseOneCard).HandleAction(this);
+                }
             }
-            while (!(response is EndTurnResponse));
 
             EventSystem.Call(EventEnum.ActionEnd, this);
 
             var chooseDirectionResponse = (ChooseDirectionResponse)await WaitAnswer(new ChooseDirectionRequest() { PlayerId = player.Id });
 
-            player.UseEventCard(this, chooseDirectionResponse);
+            await player.UseEventCard(this, chooseDirectionResponse);
 
             int max = player.HandMax();
             if (player.ActionCards.Count > max)
@@ -292,7 +236,7 @@ namespace ZMDFQ
             }
             ActiveTheme = ThemeDeck[0];
             ThemeDeck.RemoveAt(0);
-            ActiveTheme.Enable(this, null);
+            ActiveTheme.Enable(this);
         }
 
         internal void Reshuffle<T>(List<T> listtemp)

@@ -34,6 +34,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+UIProject/.objs/
 /ProjectSettings/ProjectVersion.txt
 /_site/api/ZMDFQ.AI.html
 /_site/api/ZMDFQ.ActionCard.html

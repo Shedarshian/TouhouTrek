@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ
 {
-    public class SkillBase
+    public abstract class HeroCard : Card
     {
-        public List<EffectBase> Effects;
+
     }
 }

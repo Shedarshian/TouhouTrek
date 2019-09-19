@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ
 {
-    public class Card
+    public abstract class Card
     {
         public int Id;
         public string Name;
         public CardTypeEnum CardType;
 
+        //internal abstract PlayerAction.Request GetRequest();
 
-        internal virtual void DoEffect(Game game, PlayerAction.Response target)
-        {
-        }
+        //internal abstract void DoEffect(Game game, PlayerAction.Response target);
 
     }
 

@@ -3,6 +3,8 @@
 namespace ZMDFQ
 {
     using PlayerAction;
+    using System.Threading.Tasks;
+
     public class Player
     {
         public int Id;
@@ -22,7 +24,7 @@ namespace ZMDFQ
         /// </summary>
         public EventCard SaveEvent;
 
-        public Hero Hero;
+        public HeroCard Hero;
 
         internal void DrawActionCard(Game game,int count)
         {
@@ -50,24 +52,27 @@ namespace ZMDFQ
             game.EventSystem.Call(EventEnum.DrawEventCard, this, card);
         }
 
-        internal void UseEventCard(Game game, ChooseDirectionResponse response)
+        internal Task UseEventCard(Game game, ChooseDirectionResponse response)
         {
             if (response.IfSet)
             {
-                //默认玩家手上一定是一张事件卡，有其他情况再改
-                EventCards[0].DoEffect(game, response);
+                return SetEventCard(game, response);
             }
             else
             {
-                SetEventCard(game, response);
+                //默认玩家手上一定是一张事件卡，有其他情况再改
+                if (response.IfForward)
+                    return EventCards[0].UseForward(game, this);
+                else
+                    return EventCards[0].UseBackward(game, this);
             }
         }
 
-        private void SetEventCard(Game game, ChooseDirectionResponse response)
+        private async Task SetEventCard(Game game, ChooseDirectionResponse response)
         {
             if (SaveEvent != null)
             {
-                SaveEvent.DoEffect(game, response);
+                await SaveEvent.UseForward(game, this);
             }
             SaveEvent = EventCards[0];
             EventCards.RemoveAt(0);
@@ -87,11 +92,11 @@ namespace ZMDFQ
             }
         }
 
-        internal void UseActionCard(Game game, int cardId, Response cardTarget)
+        internal Task UseActionCard(Game game, int cardId, UseOneCard cardTarget)
         {
             ActionCard card = ActionCards.Find(x => x.Id == cardId);
-            if (card == null) return;
-            card.DoEffect(game, cardTarget);
+            if (card == null) return Task.CompletedTask;
+            return card.DoEffect(game, cardTarget);
         }
 
         internal void DropActionCard(Game game, List<ActionCard> cards)
