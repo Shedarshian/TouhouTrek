@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+
 using UnityEngine;
 
 using Microsoft.CodeAnalysis.Scripting;
@@ -29,9 +31,9 @@ namespace ZMDFQ
         /// </summary>
         /// <param name="game">游戏参数</param>
         /// <param name="target">目标参数</param>
-        public void run(Game game, Response target)
+        public Task run(Game game, Response target)
         {
-            script.RunAsync(new Globals(game, target));
+            return script.RunAsync(new Globals(game, target));
         }
     }
     /// <summary>
