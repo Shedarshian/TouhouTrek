@@ -83,7 +83,7 @@ namespace Tests
             yield break;
         }
         [UnityTest]
-        public IEnumerator useCardTest()
+        public IEnumerator useActionTest()
         {
             Game game = new Game();
             game.Init(new GameOptions()
@@ -110,6 +110,39 @@ namespace Tests
             game.Answer(new SimpleResponse() { PlayerId = 0, CardId = 21 });
 
             Assert.AreEqual(1, game.Players[0].Size);
+            yield break;
+        }
+        [UnityTest]
+        public IEnumerator useEventTest()
+        {
+            Game game = new Game();
+            game.Init(new GameOptions()
+            {
+                players = new Player[]
+                {
+                    new Player(0),
+                    new Player(1)
+                },
+                characterCards = game.createCards(new TestCharacter(), 20),
+                actionCards = game.createCards(new TestAction1(), 20),
+                officialCards = game.createCards(new TestOfficial(), 20),
+                eventCards = game.createCards(new TestEvent(), 20),
+                firstPlayer = 0,
+                shuffle = false,
+                initCommunitySize = 0,
+                initInfluence = 0,
+                chooseCharacter = true,
+                doubleCharacter = false
+            });
+            game.StartGame();
+            game.Answer(new ChooseHeroResponse() { PlayerId = 0, HeroId = 1 });
+            game.Answer(new ChooseHeroResponse() { PlayerId = 1, HeroId = 4 });
+            game.Answer(new SimpleResponse() { PlayerId = 0, CardId = 21 });
+            game.Answer(new SimpleResponse() { PlayerId = 0, CardId = 22 });
+            game.Answer(new EndTurnResponse() { PlayerId = 0 });//TODO:回合结束的设定也许需要修改，按道理来讲应该先进入事件结算。
+            game.Answer(new ChooseDirectionResponse() { PlayerId = 0, CardId = 61, IfForward = true });
+
+            Assert.AreEqual(4, game.Players[0].Size);
             yield break;
         }
         class TestCharacter : HeroCard
@@ -163,14 +196,14 @@ namespace Tests
         class TestEvent : EventCard
         {
             public override bool ForwardOnly => false;
-
-            public override Task UseBackward(Game game, Player user)
-            {
-                return Task.CompletedTask;
-            }
-
             public override Task UseForward(Game game, Player user)
             {
+                user.Size *= 2;
+                return Task.CompletedTask;
+            }
+            public override Task UseBackward(Game game, Player user)
+            {
+                user.Size = 0;
                 return Task.CompletedTask;
             }
         }
