@@ -16,7 +16,7 @@ namespace ZMDFQ.Cards
         List<Skill> skills = new List<Skill>() { new CR_CP001_SK1() { Name = "传教" } };
     }
 
-    public class CR_CP001_SK1 : Skill
+    public class CR_CP001_SK1 : Skill,ITreatAs
     {
         Effects.TurnLimit turnLimit = new Effects.TurnLimit() { MaxUseTime = 2 };
         protected override UseWay useWay()
@@ -42,6 +42,16 @@ namespace ZMDFQ.Cards
         public override void Disable(Game game)
         {
             turnLimit.Disable(game);
+        }
+
+        public Card TreatTo(Game game, UseOneCard useOneCard)
+        {
+            return new AT_N001();
+        }
+
+        public bool CanTreat(Game game, UseOneCard useOneCard)
+        {
+            return (useOneCard.Source.Count == 1);
         }
     }
 }

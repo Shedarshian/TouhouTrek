@@ -72,6 +72,8 @@ namespace ZMDFQ
 
         private System.Random ram = new System.Random();
 
+        private List<Card> allCards = new List<Card>();
+
         /// <summary>
         /// 一名玩家最多处于一个询问状态
         /// </summary>
@@ -220,6 +222,7 @@ namespace ZMDFQ
             {
                 cards[i] = Card.copyCard(origin);
                 cards[i].Id = startID > -1 ? startID + i : ++lastAllocatedID;
+                allCards.Add(cards[i]);
             }
             return cards;
         }
@@ -339,6 +342,11 @@ namespace ZMDFQ
         internal Player GetPlayer(int id)
         {
             return Players.Find(x => x.Id == id);
+        }
+
+        internal Card GetCard(int id)
+        {
+            return allCards.Find(x => x.Id == id);
         }
 
         internal void Reshuffle<T>(List<T> listtemp)

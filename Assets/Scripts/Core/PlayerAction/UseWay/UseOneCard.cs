@@ -11,10 +11,10 @@ namespace ZMDFQ.PlayerAction
     /// </summary>
     public abstract class UseOneCard : UseInfo
     {
-        public int CardId;
+        public int CardId = -1;
 
         public List<int> Source;
 
-        public int TreatAs;
+        public int TreatAs = -1;
     }
 }

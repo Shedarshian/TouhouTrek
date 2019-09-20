@@ -111,10 +111,29 @@ namespace ZMDFQ
 
         internal Task UseActionCard(Game game, int cardId, UseOneCard cardTarget)
         {
-            ActionCard card = ActionCards.Find(x => x.Id == cardId);
-            if (card == null) return Task.CompletedTask;
-            return card.DoEffect(game, cardTarget);
+            if (cardId >= 0)
+            {
+                //正常用卡
+                ActionCard card = ActionCards.Find(x => x.Id == cardId);
+                if (card == null) return Task.CompletedTask;
+                return card.DoEffect(game, cardTarget);
+            }
+            else
+            {
+                //玩家打出了一张转换过的卡
+                ITreatAs treatAs = System.Activator.CreateInstance(TreatHelper.getType(cardTarget.TreatAs)) as ITreatAs;
+                if (treatAs.CanTreat(game, cardTarget))
+                {
+                    var card = treatAs.TreatTo(game, cardTarget);
+                    return (card as ActionCard).DoEffect(game, cardTarget);
+                }
+                else
+                {
+                    throw new System.Exception($"未知的卡牌转换错误");
+                }
+            }
         }
+
         /// <summary>
         /// 失去一张行动牌
         /// 注意不进弃牌堆
