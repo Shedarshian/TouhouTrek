@@ -205,13 +205,21 @@ namespace ZMDFQ
             return drawedCards;
         }
         int lastAllocatedID { get; set; } = 0;
-        public T[] createCards<T>(T origin, int number) where T : Card, new()
+        /// <summary>
+        /// 创建卡牌
+        /// </summary>
+        /// <typeparam name="T">卡牌类型</typeparam>
+        /// <param name="origin">数组中的所有卡牌都会以这张牌作为原型</param>
+        /// <param name="number">要创建多少张卡牌</param>
+        /// <param name="startID">如果不填这个参数那么会自动给卡牌分配ID，如果填了那么被创建的卡牌会从startID开始分配参数，每张卡在前一张的基础上+1</param>
+        /// <returns>创建好的卡牌</returns>
+        public T[] createCards<T>(T origin, int number, int startID = -1) where T : Card, new()
         {
             T[] cards = new T[number];
             for (int i = 0; i < number; i++)
             {
                 cards[i] = Card.copyCard(origin);
-                cards[i].Id = ++lastAllocatedID;
+                cards[i].Id = startID > -1 ? startID + i : ++lastAllocatedID;
             }
             return cards;
         }

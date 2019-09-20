@@ -22,7 +22,7 @@ namespace Tests
                 players = new Player[]
                 {
                     new Player(0),
-                    new AI(game, 1)
+                    new Player(1)
                 },
                 actionCards = game.createCards(new TestAction1(), 20),
                 officialCards = game.createCards(new TestOfficial(), 20),
@@ -34,7 +34,7 @@ namespace Tests
 
             Assert.AreEqual(2, game.Players.Count);
             Assert.IsInstanceOf<Player>(game.Players[0]);
-            Assert.IsInstanceOf<AI>(game.Players[1]);
+            Assert.IsInstanceOf<Player>(game.Players[1]);
             Assert.AreEqual(20, game.Deck.Count);
             Assert.AreEqual(20, game.ThemeDeck.Count);
             Assert.AreEqual(20, game.EventDeck.Count);
@@ -50,8 +50,9 @@ namespace Tests
                 players = new Player[]
                 {
                     new Player(0),
-                    new AI(game, 1)
+                    new Player(1)
                 },
+                characterCards = game.createCards(new TestCharacter(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
                 officialCards = game.createCards(new TestOfficial(), 20),
                 eventCards = game.createCards(new TestEvent(), 20),
@@ -59,16 +60,21 @@ namespace Tests
                 shuffle = false,
                 initCommunitySize = 0,
                 initInfluence = 0,
-                chooseCharacter = false,
+                chooseCharacter = true,
                 doubleCharacter = false
             });
             game.StartGame();
+            yield return new WaitForSeconds(1);//我也假装思考1秒
+            game.Answer(new ChooseHeroResponse() { PlayerId = 0, HeroId = 1 });
+            game.Answer(new ChooseHeroResponse() { PlayerId = 1, HeroId = 4 });
+
             Assert.AreEqual(0, game.ActivePlayer.Id);
-            foreach (Player player in game.Players)
-            {
-                Assert.AreEqual(0, player.Size);
-            }
-            yield break;
+            Assert.AreEqual(0, game.Players[0].Size);
+            Assert.IsInstanceOf<TestCharacter>(game.Players[0].Hero);
+            Assert.AreEqual(0, game.Players[1].Size);
+            Assert.IsInstanceOf<TestCharacter>(game.Players[1].Hero);
+            Assert.IsInstanceOf<TestOfficial>(game.ActiveTheme);
+            Assert.AreEqual(1, game.Size);
         }
         class TestCharacter : HeroCard
         {
@@ -108,10 +114,11 @@ namespace Tests
         }
         class TestOfficial : ThemeCard
         {
-            public override void Disable(Game game)
-            {
-            }
             public override void Enable(Game game)
+            {
+                game.Size += 1;
+            }
+            public override void Disable(Game game)
             {
             }
         }
