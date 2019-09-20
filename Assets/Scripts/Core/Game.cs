@@ -192,7 +192,7 @@ namespace ZMDFQ
             //游戏执行阶段
             await EventSystem.Call(EventEnum.GameStart);
 
-            NewTurn(ActivePlayer);
+            NewRound();
         }
         T[] drawCards<T>(List<T> pile, int number) where T : Card
         {
@@ -246,15 +246,29 @@ namespace ZMDFQ
             return tcs.Task;
         }
 
-        internal async void NewTurn(Player player)
+        internal async void NewRound()
         {
-            if (Players.IndexOf(player) == 0)
+            Round++;
+            NextThemeCard();
+            await EventSystem.Call(EventEnum.RoundStart, this);
+            for (int i = 0; i < Players.Count; i++)
             {
-                //新的一轮
-                Round++;
-                NextThemeCard();
-                await EventSystem.Call(EventEnum.RoundStart, this);
-            }
+                await NewTurn(Players[i]);
+            }           
+                //一轮结束了
+                await EventSystem.Call(EventEnum.RoundEnd, this);
+                if (Round + Players.Count == 12)//游戏结束规则
+                {
+                    await EventSystem.Call(EventEnum.GameEnd, this);
+                }
+            else
+            {
+                NewRound();
+            }           
+        }
+
+        internal async Task NewTurn(Player player)
+        {
             await EventSystem.Call(EventEnum.TurnStart, this);
             await player.DrawEventCard(this);
             await player.DrawActionCard(this, 1);
@@ -290,27 +304,7 @@ namespace ZMDFQ
 
             await EventSystem.Call(EventEnum.TurnEnd, this);
 
-            if (Players.IndexOf(player) == Players.Count - 1)
-            {
-                //一轮结束了
-                await EventSystem.Call(EventEnum.RoundEnd, this);
-                if (Round + Players.Count == 12)//游戏结束规则
-                {
-                    await EventSystem.Call(EventEnum.GameEnd, this);
-                    return;
-                }
-            }
-
-            int index = Players.IndexOf(player);
-            if (index == Players.Count - 1)
-            {
-                ActivePlayer = Players[0];
-            }
-            else
-            {
-                ActivePlayer = Players[index + 1];
-            }
-            NewTurn(ActivePlayer);
+            
         }
 
         internal void NextThemeCard()
