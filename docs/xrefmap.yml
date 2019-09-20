@@ -13,18 +13,68 @@ references:
   commentId: T:ZMDFQ.ActionCard
   fullName: ZMDFQ.ActionCard
   nameWithType: ActionCard
-- uid: ZMDFQ.ActionCard.Effects
-  name: Effects
-  href: api/ZMDFQ.ActionCard.html#ZMDFQ_ActionCard_Effects
-  commentId: F:ZMDFQ.ActionCard.Effects
-  fullName: ZMDFQ.ActionCard.Effects
-  nameWithType: ActionCard.Effects
+- uid: ZMDFQ.ActionCard`2
+  name: ActionCard<T, K>
+  href: api/ZMDFQ.ActionCard-2.html
+  commentId: T:ZMDFQ.ActionCard`2
+  name.vb: ActionCard(Of T, K)
+  fullName: ZMDFQ.ActionCard<T, K>
+  fullName.vb: ZMDFQ.ActionCard(Of T, K)
+  nameWithType: ActionCard<T, K>
+  nameWithType.vb: ActionCard(Of T, K)
+- uid: ZMDFQ.ActionCard`2.doEffect(ZMDFQ.Game,`1)
+  name: doEffect(Game, K)
+  href: api/ZMDFQ.ActionCard-2.html#ZMDFQ_ActionCard_2_doEffect_ZMDFQ_Game__1_
+  commentId: M:ZMDFQ.ActionCard`2.doEffect(ZMDFQ.Game,`1)
+  fullName: ZMDFQ.ActionCard<T, K>.doEffect(ZMDFQ.Game, K)
+  fullName.vb: ZMDFQ.ActionCard(Of T, K).doEffect(ZMDFQ.Game, K)
+  nameWithType: ActionCard<T, K>.doEffect(Game, K)
+  nameWithType.vb: ActionCard(Of T, K).doEffect(Game, K)
+- uid: ZMDFQ.ActionCard`2.doEffect*
+  name: doEffect
+  href: api/ZMDFQ.ActionCard-2.html#ZMDFQ_ActionCard_2_doEffect_
+  commentId: Overload:ZMDFQ.ActionCard`2.doEffect
+  isSpec: "True"
+  fullName: ZMDFQ.ActionCard<T, K>.doEffect
+  fullName.vb: ZMDFQ.ActionCard(Of T, K).doEffect
+  nameWithType: ActionCard<T, K>.doEffect
+  nameWithType.vb: ActionCard(Of T, K).doEffect
+- uid: ZMDFQ.ActionCard`2.useWay
+  name: useWay()
+  href: api/ZMDFQ.ActionCard-2.html#ZMDFQ_ActionCard_2_useWay
+  commentId: M:ZMDFQ.ActionCard`2.useWay
+  fullName: ZMDFQ.ActionCard<T, K>.useWay()
+  fullName.vb: ZMDFQ.ActionCard(Of T, K).useWay()
+  nameWithType: ActionCard<T, K>.useWay()
+  nameWithType.vb: ActionCard(Of T, K).useWay()
+- uid: ZMDFQ.ActionCard`2.useWay*
+  name: useWay
+  href: api/ZMDFQ.ActionCard-2.html#ZMDFQ_ActionCard_2_useWay_
+  commentId: Overload:ZMDFQ.ActionCard`2.useWay
+  isSpec: "True"
+  fullName: ZMDFQ.ActionCard<T, K>.useWay
+  fullName.vb: ZMDFQ.ActionCard(Of T, K).useWay
+  nameWithType: ActionCard<T, K>.useWay
+  nameWithType.vb: ActionCard(Of T, K).useWay
 - uid: ZMDFQ.AI
   name: AI
   href: api/ZMDFQ.AI.html
   commentId: T:ZMDFQ.AI
   fullName: ZMDFQ.AI
   nameWithType: AI
+- uid: ZMDFQ.AI.#ctor(ZMDFQ.Game,System.Int32)
+  name: AI(Game, Int32)
+  href: api/ZMDFQ.AI.html#ZMDFQ_AI__ctor_ZMDFQ_Game_System_Int32_
+  commentId: M:ZMDFQ.AI.#ctor(ZMDFQ.Game,System.Int32)
+  fullName: ZMDFQ.AI.AI(ZMDFQ.Game, System.Int32)
+  nameWithType: AI.AI(Game, Int32)
+- uid: ZMDFQ.AI.#ctor*
+  name: AI
+  href: api/ZMDFQ.AI.html#ZMDFQ_AI__ctor_
+  commentId: Overload:ZMDFQ.AI.#ctor
+  isSpec: "True"
+  fullName: ZMDFQ.AI.AI
+  nameWithType: AI.AI
 - uid: ZMDFQ.AI.Init(ZMDFQ.Game)
   name: Init(Game)
   href: api/ZMDFQ.AI.html#ZMDFQ_AI_Init_ZMDFQ_Game_
@@ -50,6 +100,35 @@ references:
   commentId: F:ZMDFQ.Card.CardType
   fullName: ZMDFQ.Card.CardType
   nameWithType: Card.CardType
+- uid: ZMDFQ.Card.copyCard*
+  name: copyCard
+  href: api/ZMDFQ.Card.html#ZMDFQ_Card_copyCard_
+  commentId: Overload:ZMDFQ.Card.copyCard
+  isSpec: "True"
+  fullName: ZMDFQ.Card.copyCard
+  nameWithType: Card.copyCard
+- uid: ZMDFQ.Card.copyCard``1(``0)
+  name: copyCard<T>(T)
+  href: api/ZMDFQ.Card.html#ZMDFQ_Card_copyCard__1___0_
+  commentId: M:ZMDFQ.Card.copyCard``1(``0)
+  name.vb: copyCard(Of T)(T)
+  fullName: ZMDFQ.Card.copyCard<T>(T)
+  fullName.vb: ZMDFQ.Card.copyCard(Of T)(T)
+  nameWithType: Card.copyCard<T>(T)
+  nameWithType.vb: Card.copyCard(Of T)(T)
+- uid: ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+  name: copyPropTo(Card)
+  href: api/ZMDFQ.Card.html#ZMDFQ_Card_copyPropTo_ZMDFQ_Card_
+  commentId: M:ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+  fullName: ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+  nameWithType: Card.copyPropTo(Card)
+- uid: ZMDFQ.Card.copyPropTo*
+  name: copyPropTo
+  href: api/ZMDFQ.Card.html#ZMDFQ_Card_copyPropTo_
+  commentId: Overload:ZMDFQ.Card.copyPropTo
+  isSpec: "True"
+  fullName: ZMDFQ.Card.copyPropTo
+  nameWithType: Card.copyPropTo
 - uid: ZMDFQ.Card.Id
   name: Id
   href: api/ZMDFQ.Card.html#ZMDFQ_Card_Id
@@ -62,24 +141,198 @@ references:
   commentId: F:ZMDFQ.Card.Name
   fullName: ZMDFQ.Card.Name
   nameWithType: Card.Name
-- uid: ZMDFQ.Card.RequestWay
-  name: RequestWay
-  href: api/ZMDFQ.Card.html#ZMDFQ_Card_RequestWay
-  commentId: F:ZMDFQ.Card.RequestWay
-  fullName: ZMDFQ.Card.RequestWay
-  nameWithType: Card.RequestWay
 - uid: ZMDFQ.Cards
   name: ZMDFQ.Cards
   href: api/ZMDFQ.Cards.html
   commentId: N:ZMDFQ.Cards
   fullName: ZMDFQ.Cards
   nameWithType: ZMDFQ.Cards
-- uid: ZMDFQ.Cards.TestCard
-  name: TestCard
-  href: api/ZMDFQ.Cards.TestCard.html
-  commentId: T:ZMDFQ.Cards.TestCard
-  fullName: ZMDFQ.Cards.TestCard
-  nameWithType: TestCard
+- uid: ZMDFQ.Cards.AT_N001
+  name: AT_N001
+  href: api/ZMDFQ.Cards.AT_N001.html
+  commentId: T:ZMDFQ.Cards.AT_N001
+  fullName: ZMDFQ.Cards.AT_N001
+  nameWithType: AT_N001
+- uid: ZMDFQ.Cards.AT_N001.doEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.SimpleResponse)
+  name: doEffect(Game, SimpleResponse)
+  href: api/ZMDFQ.Cards.AT_N001.html#ZMDFQ_Cards_AT_N001_doEffect_ZMDFQ_Game_ZMDFQ_PlayerAction_SimpleResponse_
+  commentId: M:ZMDFQ.Cards.AT_N001.doEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.SimpleResponse)
+  fullName: ZMDFQ.Cards.AT_N001.doEffect(ZMDFQ.Game, ZMDFQ.PlayerAction.SimpleResponse)
+  nameWithType: AT_N001.doEffect(Game, SimpleResponse)
+- uid: ZMDFQ.Cards.AT_N001.doEffect*
+  name: doEffect
+  href: api/ZMDFQ.Cards.AT_N001.html#ZMDFQ_Cards_AT_N001_doEffect_
+  commentId: Overload:ZMDFQ.Cards.AT_N001.doEffect
+  isSpec: "True"
+  fullName: ZMDFQ.Cards.AT_N001.doEffect
+  nameWithType: AT_N001.doEffect
+- uid: ZMDFQ.Cards.AT_N001.useWay
+  name: useWay()
+  href: api/ZMDFQ.Cards.AT_N001.html#ZMDFQ_Cards_AT_N001_useWay
+  commentId: M:ZMDFQ.Cards.AT_N001.useWay
+  fullName: ZMDFQ.Cards.AT_N001.useWay()
+  nameWithType: AT_N001.useWay()
+- uid: ZMDFQ.Cards.AT_N001.useWay*
+  name: useWay
+  href: api/ZMDFQ.Cards.AT_N001.html#ZMDFQ_Cards_AT_N001_useWay_
+  commentId: Overload:ZMDFQ.Cards.AT_N001.useWay
+  isSpec: "True"
+  fullName: ZMDFQ.Cards.AT_N001.useWay
+  nameWithType: AT_N001.useWay
+- uid: ZMDFQ.Cards.CR_CP001
+  name: CR_CP001
+  href: api/ZMDFQ.Cards.CR_CP001.html
+  commentId: T:ZMDFQ.Cards.CR_CP001
+  fullName: ZMDFQ.Cards.CR_CP001
+  nameWithType: CR_CP001
+- uid: ZMDFQ.Cards.CR_CP001.Skills
+  name: Skills
+  href: api/ZMDFQ.Cards.CR_CP001.html#ZMDFQ_Cards_CR_CP001_Skills
+  commentId: P:ZMDFQ.Cards.CR_CP001.Skills
+  fullName: ZMDFQ.Cards.CR_CP001.Skills
+  nameWithType: CR_CP001.Skills
+- uid: ZMDFQ.Cards.CR_CP001.Skills*
+  name: Skills
+  href: api/ZMDFQ.Cards.CR_CP001.html#ZMDFQ_Cards_CR_CP001_Skills_
+  commentId: Overload:ZMDFQ.Cards.CR_CP001.Skills
+  isSpec: "True"
+  fullName: ZMDFQ.Cards.CR_CP001.Skills
+  nameWithType: CR_CP001.Skills
+- uid: ZMDFQ.Cards.CR_CP001_SK1
+  name: CR_CP001_SK1
+  href: api/ZMDFQ.Cards.CR_CP001_SK1.html
+  commentId: T:ZMDFQ.Cards.CR_CP001_SK1
+  fullName: ZMDFQ.Cards.CR_CP001_SK1
+  nameWithType: CR_CP001_SK1
+- uid: ZMDFQ.Cards.CR_CP001_SK1.Disable(ZMDFQ.Game)
+  name: Disable(Game)
+  href: api/ZMDFQ.Cards.CR_CP001_SK1.html#ZMDFQ_Cards_CR_CP001_SK1_Disable_ZMDFQ_Game_
+  commentId: M:ZMDFQ.Cards.CR_CP001_SK1.Disable(ZMDFQ.Game)
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.Disable(ZMDFQ.Game)
+  nameWithType: CR_CP001_SK1.Disable(Game)
+- uid: ZMDFQ.Cards.CR_CP001_SK1.Disable*
+  name: Disable
+  href: api/ZMDFQ.Cards.CR_CP001_SK1.html#ZMDFQ_Cards_CR_CP001_SK1_Disable_
+  commentId: Overload:ZMDFQ.Cards.CR_CP001_SK1.Disable
+  isSpec: "True"
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.Disable
+  nameWithType: CR_CP001_SK1.Disable
+- uid: ZMDFQ.Cards.CR_CP001_SK1.DoEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.UseInfo)
+  name: DoEffect(Game, UseInfo)
+  href: api/ZMDFQ.Cards.CR_CP001_SK1.html#ZMDFQ_Cards_CR_CP001_SK1_DoEffect_ZMDFQ_Game_ZMDFQ_PlayerAction_UseInfo_
+  commentId: M:ZMDFQ.Cards.CR_CP001_SK1.DoEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.UseInfo)
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.DoEffect(ZMDFQ.Game, ZMDFQ.PlayerAction.UseInfo)
+  nameWithType: CR_CP001_SK1.DoEffect(Game, UseInfo)
+- uid: ZMDFQ.Cards.CR_CP001_SK1.DoEffect*
+  name: DoEffect
+  href: api/ZMDFQ.Cards.CR_CP001_SK1.html#ZMDFQ_Cards_CR_CP001_SK1_DoEffect_
+  commentId: Overload:ZMDFQ.Cards.CR_CP001_SK1.DoEffect
+  isSpec: "True"
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.DoEffect
+  nameWithType: CR_CP001_SK1.DoEffect
+- uid: ZMDFQ.Cards.CR_CP001_SK1.Enable(ZMDFQ.Game)
+  name: Enable(Game)
+  href: api/ZMDFQ.Cards.CR_CP001_SK1.html#ZMDFQ_Cards_CR_CP001_SK1_Enable_ZMDFQ_Game_
+  commentId: M:ZMDFQ.Cards.CR_CP001_SK1.Enable(ZMDFQ.Game)
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.Enable(ZMDFQ.Game)
+  nameWithType: CR_CP001_SK1.Enable(Game)
+- uid: ZMDFQ.Cards.CR_CP001_SK1.Enable*
+  name: Enable
+  href: api/ZMDFQ.Cards.CR_CP001_SK1.html#ZMDFQ_Cards_CR_CP001_SK1_Enable_
+  commentId: Overload:ZMDFQ.Cards.CR_CP001_SK1.Enable
+  isSpec: "True"
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.Enable
+  nameWithType: CR_CP001_SK1.Enable
+- uid: ZMDFQ.Cards.CR_CP001_SK1.useWay
+  name: useWay()
+  href: api/ZMDFQ.Cards.CR_CP001_SK1.html#ZMDFQ_Cards_CR_CP001_SK1_useWay
+  commentId: M:ZMDFQ.Cards.CR_CP001_SK1.useWay
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.useWay()
+  nameWithType: CR_CP001_SK1.useWay()
+- uid: ZMDFQ.Cards.CR_CP001_SK1.useWay*
+  name: useWay
+  href: api/ZMDFQ.Cards.CR_CP001_SK1.html#ZMDFQ_Cards_CR_CP001_SK1_useWay_
+  commentId: Overload:ZMDFQ.Cards.CR_CP001_SK1.useWay
+  isSpec: "True"
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.useWay
+  nameWithType: CR_CP001_SK1.useWay
+- uid: ZMDFQ.Cards.EV_E002
+  name: EV_E002
+  href: api/ZMDFQ.Cards.EV_E002.html
+  commentId: T:ZMDFQ.Cards.EV_E002
+  fullName: ZMDFQ.Cards.EV_E002
+  nameWithType: EV_E002
+- uid: ZMDFQ.Cards.EV_E002.ForwardOnly
+  name: ForwardOnly
+  href: api/ZMDFQ.Cards.EV_E002.html#ZMDFQ_Cards_EV_E002_ForwardOnly
+  commentId: P:ZMDFQ.Cards.EV_E002.ForwardOnly
+  fullName: ZMDFQ.Cards.EV_E002.ForwardOnly
+  nameWithType: EV_E002.ForwardOnly
+- uid: ZMDFQ.Cards.EV_E002.ForwardOnly*
+  name: ForwardOnly
+  href: api/ZMDFQ.Cards.EV_E002.html#ZMDFQ_Cards_EV_E002_ForwardOnly_
+  commentId: Overload:ZMDFQ.Cards.EV_E002.ForwardOnly
+  isSpec: "True"
+  fullName: ZMDFQ.Cards.EV_E002.ForwardOnly
+  nameWithType: EV_E002.ForwardOnly
+- uid: ZMDFQ.Cards.EV_E002.UseBackward(ZMDFQ.Game,ZMDFQ.Player)
+  name: UseBackward(Game, Player)
+  href: api/ZMDFQ.Cards.EV_E002.html#ZMDFQ_Cards_EV_E002_UseBackward_ZMDFQ_Game_ZMDFQ_Player_
+  commentId: M:ZMDFQ.Cards.EV_E002.UseBackward(ZMDFQ.Game,ZMDFQ.Player)
+  fullName: ZMDFQ.Cards.EV_E002.UseBackward(ZMDFQ.Game, ZMDFQ.Player)
+  nameWithType: EV_E002.UseBackward(Game, Player)
+- uid: ZMDFQ.Cards.EV_E002.UseBackward*
+  name: UseBackward
+  href: api/ZMDFQ.Cards.EV_E002.html#ZMDFQ_Cards_EV_E002_UseBackward_
+  commentId: Overload:ZMDFQ.Cards.EV_E002.UseBackward
+  isSpec: "True"
+  fullName: ZMDFQ.Cards.EV_E002.UseBackward
+  nameWithType: EV_E002.UseBackward
+- uid: ZMDFQ.Cards.EV_E002.UseForward(ZMDFQ.Game,ZMDFQ.Player)
+  name: UseForward(Game, Player)
+  href: api/ZMDFQ.Cards.EV_E002.html#ZMDFQ_Cards_EV_E002_UseForward_ZMDFQ_Game_ZMDFQ_Player_
+  commentId: M:ZMDFQ.Cards.EV_E002.UseForward(ZMDFQ.Game,ZMDFQ.Player)
+  fullName: ZMDFQ.Cards.EV_E002.UseForward(ZMDFQ.Game, ZMDFQ.Player)
+  nameWithType: EV_E002.UseForward(Game, Player)
+- uid: ZMDFQ.Cards.EV_E002.UseForward*
+  name: UseForward
+  href: api/ZMDFQ.Cards.EV_E002.html#ZMDFQ_Cards_EV_E002_UseForward_
+  commentId: Overload:ZMDFQ.Cards.EV_E002.UseForward
+  isSpec: "True"
+  fullName: ZMDFQ.Cards.EV_E002.UseForward
+  nameWithType: EV_E002.UseForward
+- uid: ZMDFQ.Cards.G_001
+  name: G_001
+  href: api/ZMDFQ.Cards.G_001.html
+  commentId: T:ZMDFQ.Cards.G_001
+  fullName: ZMDFQ.Cards.G_001
+  nameWithType: G_001
+- uid: ZMDFQ.Cards.G_001.Disable(ZMDFQ.Game)
+  name: Disable(Game)
+  href: api/ZMDFQ.Cards.G_001.html#ZMDFQ_Cards_G_001_Disable_ZMDFQ_Game_
+  commentId: M:ZMDFQ.Cards.G_001.Disable(ZMDFQ.Game)
+  fullName: ZMDFQ.Cards.G_001.Disable(ZMDFQ.Game)
+  nameWithType: G_001.Disable(Game)
+- uid: ZMDFQ.Cards.G_001.Disable*
+  name: Disable
+  href: api/ZMDFQ.Cards.G_001.html#ZMDFQ_Cards_G_001_Disable_
+  commentId: Overload:ZMDFQ.Cards.G_001.Disable
+  isSpec: "True"
+  fullName: ZMDFQ.Cards.G_001.Disable
+  nameWithType: G_001.Disable
+- uid: ZMDFQ.Cards.G_001.Enable(ZMDFQ.Game)
+  name: Enable(Game)
+  href: api/ZMDFQ.Cards.G_001.html#ZMDFQ_Cards_G_001_Enable_ZMDFQ_Game_
+  commentId: M:ZMDFQ.Cards.G_001.Enable(ZMDFQ.Game)
+  fullName: ZMDFQ.Cards.G_001.Enable(ZMDFQ.Game)
+  nameWithType: G_001.Enable(Game)
+- uid: ZMDFQ.Cards.G_001.Enable*
+  name: Enable
+  href: api/ZMDFQ.Cards.G_001.html#ZMDFQ_Cards_G_001_Enable_
+  commentId: Overload:ZMDFQ.Cards.G_001.Enable
+  isSpec: "True"
+  fullName: ZMDFQ.Cards.G_001.Enable
+  nameWithType: G_001.Enable
 - uid: ZMDFQ.CardTypeEnum
   name: CardTypeEnum
   href: api/ZMDFQ.CardTypeEnum.html
@@ -110,185 +363,149 @@ references:
   commentId: F:ZMDFQ.CardTypeEnum.Theme
   fullName: ZMDFQ.CardTypeEnum.Theme
   nameWithType: CardTypeEnum.Theme
-- uid: ZMDFQ.Effect
-  name: ZMDFQ.Effect
-  href: api/ZMDFQ.Effect.html
-  commentId: N:ZMDFQ.Effect
-  fullName: ZMDFQ.Effect
-  nameWithType: ZMDFQ.Effect
-- uid: ZMDFQ.Effect.ChangeMainSize
-  name: ChangeMainSize
-  href: api/ZMDFQ.Effect.ChangeMainSize.html
-  commentId: T:ZMDFQ.Effect.ChangeMainSize
-  fullName: ZMDFQ.Effect.ChangeMainSize
-  nameWithType: ChangeMainSize
-- uid: ZMDFQ.Effect.ChangeMainSize.Enable(ZMDFQ.Game,ZMDFQ.PlayerAction.SimpleResponse)
-  name: Enable(Game, SimpleResponse)
-  href: api/ZMDFQ.Effect.ChangeMainSize.html#ZMDFQ_Effect_ChangeMainSize_Enable_ZMDFQ_Game_ZMDFQ_PlayerAction_SimpleResponse_
-  commentId: M:ZMDFQ.Effect.ChangeMainSize.Enable(ZMDFQ.Game,ZMDFQ.PlayerAction.SimpleResponse)
-  fullName: ZMDFQ.Effect.ChangeMainSize.Enable(ZMDFQ.Game, ZMDFQ.PlayerAction.SimpleResponse)
-  nameWithType: ChangeMainSize.Enable(Game, SimpleResponse)
-- uid: ZMDFQ.Effect.ChangeMainSize.Enable*
+- uid: ZMDFQ.Effects
+  name: ZMDFQ.Effects
+  href: api/ZMDFQ.Effects.html
+  commentId: N:ZMDFQ.Effects
+  fullName: ZMDFQ.Effects
+  nameWithType: ZMDFQ.Effects
+- uid: ZMDFQ.Effects.TurnLimit
+  name: TurnLimit
+  href: api/ZMDFQ.Effects.TurnLimit.html
+  commentId: T:ZMDFQ.Effects.TurnLimit
+  fullName: ZMDFQ.Effects.TurnLimit
+  nameWithType: TurnLimit
+- uid: ZMDFQ.Effects.TurnLimit.CanUse
+  name: CanUse()
+  href: api/ZMDFQ.Effects.TurnLimit.html#ZMDFQ_Effects_TurnLimit_CanUse
+  commentId: M:ZMDFQ.Effects.TurnLimit.CanUse
+  fullName: ZMDFQ.Effects.TurnLimit.CanUse()
+  nameWithType: TurnLimit.CanUse()
+- uid: ZMDFQ.Effects.TurnLimit.CanUse*
+  name: CanUse
+  href: api/ZMDFQ.Effects.TurnLimit.html#ZMDFQ_Effects_TurnLimit_CanUse_
+  commentId: Overload:ZMDFQ.Effects.TurnLimit.CanUse
+  isSpec: "True"
+  fullName: ZMDFQ.Effects.TurnLimit.CanUse
+  nameWithType: TurnLimit.CanUse
+- uid: ZMDFQ.Effects.TurnLimit.Disable(ZMDFQ.Game)
+  name: Disable(Game)
+  href: api/ZMDFQ.Effects.TurnLimit.html#ZMDFQ_Effects_TurnLimit_Disable_ZMDFQ_Game_
+  commentId: M:ZMDFQ.Effects.TurnLimit.Disable(ZMDFQ.Game)
+  fullName: ZMDFQ.Effects.TurnLimit.Disable(ZMDFQ.Game)
+  nameWithType: TurnLimit.Disable(Game)
+- uid: ZMDFQ.Effects.TurnLimit.Disable*
+  name: Disable
+  href: api/ZMDFQ.Effects.TurnLimit.html#ZMDFQ_Effects_TurnLimit_Disable_
+  commentId: Overload:ZMDFQ.Effects.TurnLimit.Disable
+  isSpec: "True"
+  fullName: ZMDFQ.Effects.TurnLimit.Disable
+  nameWithType: TurnLimit.Disable
+- uid: ZMDFQ.Effects.TurnLimit.Enable(ZMDFQ.Game)
+  name: Enable(Game)
+  href: api/ZMDFQ.Effects.TurnLimit.html#ZMDFQ_Effects_TurnLimit_Enable_ZMDFQ_Game_
+  commentId: M:ZMDFQ.Effects.TurnLimit.Enable(ZMDFQ.Game)
+  fullName: ZMDFQ.Effects.TurnLimit.Enable(ZMDFQ.Game)
+  nameWithType: TurnLimit.Enable(Game)
+- uid: ZMDFQ.Effects.TurnLimit.Enable*
   name: Enable
-  href: api/ZMDFQ.Effect.ChangeMainSize.html#ZMDFQ_Effect_ChangeMainSize_Enable_
-  commentId: Overload:ZMDFQ.Effect.ChangeMainSize.Enable
+  href: api/ZMDFQ.Effects.TurnLimit.html#ZMDFQ_Effects_TurnLimit_Enable_
+  commentId: Overload:ZMDFQ.Effects.TurnLimit.Enable
   isSpec: "True"
-  fullName: ZMDFQ.Effect.ChangeMainSize.Enable
-  nameWithType: ChangeMainSize.Enable
-- uid: ZMDFQ.Effect.ChangeMainSize.Size
-  name: Size
-  href: api/ZMDFQ.Effect.ChangeMainSize.html#ZMDFQ_Effect_ChangeMainSize_Size
-  commentId: F:ZMDFQ.Effect.ChangeMainSize.Size
-  fullName: ZMDFQ.Effect.ChangeMainSize.Size
-  nameWithType: ChangeMainSize.Size
-- uid: ZMDFQ.Effect.ChangeSelfSize
-  name: ChangeSelfSize
-  href: api/ZMDFQ.Effect.ChangeSelfSize.html
-  commentId: T:ZMDFQ.Effect.ChangeSelfSize
-  fullName: ZMDFQ.Effect.ChangeSelfSize
-  nameWithType: ChangeSelfSize
-- uid: ZMDFQ.Effect.ChangeSelfSize.Enable(ZMDFQ.Game,ZMDFQ.PlayerAction.ChooseSomeoneResponse)
-  name: Enable(Game, ChooseSomeoneResponse)
-  href: api/ZMDFQ.Effect.ChangeSelfSize.html#ZMDFQ_Effect_ChangeSelfSize_Enable_ZMDFQ_Game_ZMDFQ_PlayerAction_ChooseSomeoneResponse_
-  commentId: M:ZMDFQ.Effect.ChangeSelfSize.Enable(ZMDFQ.Game,ZMDFQ.PlayerAction.ChooseSomeoneResponse)
-  fullName: ZMDFQ.Effect.ChangeSelfSize.Enable(ZMDFQ.Game, ZMDFQ.PlayerAction.ChooseSomeoneResponse)
-  nameWithType: ChangeSelfSize.Enable(Game, ChooseSomeoneResponse)
-- uid: ZMDFQ.Effect.ChangeSelfSize.Enable*
-  name: Enable
-  href: api/ZMDFQ.Effect.ChangeSelfSize.html#ZMDFQ_Effect_ChangeSelfSize_Enable_
-  commentId: Overload:ZMDFQ.Effect.ChangeSelfSize.Enable
+  fullName: ZMDFQ.Effects.TurnLimit.Enable
+  nameWithType: TurnLimit.Enable
+- uid: ZMDFQ.Effects.TurnLimit.MaxUseTime
+  name: MaxUseTime
+  href: api/ZMDFQ.Effects.TurnLimit.html#ZMDFQ_Effects_TurnLimit_MaxUseTime
+  commentId: F:ZMDFQ.Effects.TurnLimit.MaxUseTime
+  fullName: ZMDFQ.Effects.TurnLimit.MaxUseTime
+  nameWithType: TurnLimit.MaxUseTime
+- uid: ZMDFQ.Effects.TurnLimit.Use
+  name: Use()
+  href: api/ZMDFQ.Effects.TurnLimit.html#ZMDFQ_Effects_TurnLimit_Use
+  commentId: M:ZMDFQ.Effects.TurnLimit.Use
+  fullName: ZMDFQ.Effects.TurnLimit.Use()
+  nameWithType: TurnLimit.Use()
+- uid: ZMDFQ.Effects.TurnLimit.Use*
+  name: Use
+  href: api/ZMDFQ.Effects.TurnLimit.html#ZMDFQ_Effects_TurnLimit_Use_
+  commentId: Overload:ZMDFQ.Effects.TurnLimit.Use
   isSpec: "True"
-  fullName: ZMDFQ.Effect.ChangeSelfSize.Enable
-  nameWithType: ChangeSelfSize.Enable
-- uid: ZMDFQ.Effect.ChangeSelfSize.Size
-  name: Size
-  href: api/ZMDFQ.Effect.ChangeSelfSize.html#ZMDFQ_Effect_ChangeSelfSize_Size
-  commentId: F:ZMDFQ.Effect.ChangeSelfSize.Size
-  fullName: ZMDFQ.Effect.ChangeSelfSize.Size
-  nameWithType: ChangeSelfSize.Size
-- uid: ZMDFQ.Effect.MoreSizeChange
-  name: MoreSizeChange
-  href: api/ZMDFQ.Effect.MoreSizeChange.html
-  commentId: T:ZMDFQ.Effect.MoreSizeChange
-  fullName: ZMDFQ.Effect.MoreSizeChange
-  nameWithType: MoreSizeChange
-- uid: ZMDFQ.Effect.MoreSizeChange.Change
-  name: Change
-  href: api/ZMDFQ.Effect.MoreSizeChange.html#ZMDFQ_Effect_MoreSizeChange_Change
-  commentId: F:ZMDFQ.Effect.MoreSizeChange.Change
-  fullName: ZMDFQ.Effect.MoreSizeChange.Change
-  nameWithType: MoreSizeChange.Change
-- uid: ZMDFQ.Effect.MoreSizeChange.disable
-  name: disable
-  href: api/ZMDFQ.Effect.MoreSizeChange.html#ZMDFQ_Effect_MoreSizeChange_disable
-  commentId: F:ZMDFQ.Effect.MoreSizeChange.disable
-  fullName: ZMDFQ.Effect.MoreSizeChange.disable
-  nameWithType: MoreSizeChange.disable
-- uid: ZMDFQ.Effect.MoreSizeChange.DoEnable(ZMDFQ.Game,ZMDFQ.PlayerAction.Response)
-  name: DoEnable(Game, Response)
-  href: api/ZMDFQ.Effect.MoreSizeChange.html#ZMDFQ_Effect_MoreSizeChange_DoEnable_ZMDFQ_Game_ZMDFQ_PlayerAction_Response_
-  commentId: M:ZMDFQ.Effect.MoreSizeChange.DoEnable(ZMDFQ.Game,ZMDFQ.PlayerAction.Response)
-  fullName: ZMDFQ.Effect.MoreSizeChange.DoEnable(ZMDFQ.Game, ZMDFQ.PlayerAction.Response)
-  nameWithType: MoreSizeChange.DoEnable(Game, Response)
-- uid: ZMDFQ.Effect.MoreSizeChange.DoEnable*
-  name: DoEnable
-  href: api/ZMDFQ.Effect.MoreSizeChange.html#ZMDFQ_Effect_MoreSizeChange_DoEnable_
-  commentId: Overload:ZMDFQ.Effect.MoreSizeChange.DoEnable
+  fullName: ZMDFQ.Effects.TurnLimit.Use
+  nameWithType: TurnLimit.Use
+- uid: ZMDFQ.Effects.TurnLimit.UseTime
+  name: UseTime
+  href: api/ZMDFQ.Effects.TurnLimit.html#ZMDFQ_Effects_TurnLimit_UseTime
+  commentId: F:ZMDFQ.Effects.TurnLimit.UseTime
+  fullName: ZMDFQ.Effects.TurnLimit.UseTime
+  nameWithType: TurnLimit.UseTime
+- uid: ZMDFQ.Effects.UseCard
+  name: UseCard
+  href: api/ZMDFQ.Effects.UseCard.html
+  commentId: T:ZMDFQ.Effects.UseCard
+  fullName: ZMDFQ.Effects.UseCard
+  nameWithType: UseCard
+- uid: ZMDFQ.Effects.UseCard.NormalUse*
+  name: NormalUse
+  href: api/ZMDFQ.Effects.UseCard.html#ZMDFQ_Effects_UseCard_NormalUse_
+  commentId: Overload:ZMDFQ.Effects.UseCard.NormalUse
   isSpec: "True"
-  fullName: ZMDFQ.Effect.MoreSizeChange.DoEnable
-  nameWithType: MoreSizeChange.DoEnable
-- uid: ZMDFQ.Effect.MoreSizeChange.Need
-  name: Need
-  href: api/ZMDFQ.Effect.MoreSizeChange.html#ZMDFQ_Effect_MoreSizeChange_Need
-  commentId: F:ZMDFQ.Effect.MoreSizeChange.Need
-  fullName: ZMDFQ.Effect.MoreSizeChange.Need
-  nameWithType: MoreSizeChange.Need
-- uid: ZMDFQ.EffectBase
-  name: EffectBase
-  href: api/ZMDFQ.EffectBase.html
-  commentId: T:ZMDFQ.EffectBase
-  fullName: ZMDFQ.EffectBase
-  nameWithType: EffectBase
-- uid: ZMDFQ.EffectBase.DoEnable(ZMDFQ.Game,ZMDFQ.PlayerAction.Response)
-  name: DoEnable(Game, Response)
-  href: api/ZMDFQ.EffectBase.html#ZMDFQ_EffectBase_DoEnable_ZMDFQ_Game_ZMDFQ_PlayerAction_Response_
-  commentId: M:ZMDFQ.EffectBase.DoEnable(ZMDFQ.Game,ZMDFQ.PlayerAction.Response)
-  fullName: ZMDFQ.EffectBase.DoEnable(ZMDFQ.Game, ZMDFQ.PlayerAction.Response)
-  nameWithType: EffectBase.DoEnable(Game, Response)
-- uid: ZMDFQ.EffectBase.DoEnable*
-  name: DoEnable
-  href: api/ZMDFQ.EffectBase.html#ZMDFQ_EffectBase_DoEnable_
-  commentId: Overload:ZMDFQ.EffectBase.DoEnable
-  isSpec: "True"
-  fullName: ZMDFQ.EffectBase.DoEnable
-  nameWithType: EffectBase.DoEnable
-- uid: ZMDFQ.EffectBase.Parent
-  name: Parent
-  href: api/ZMDFQ.EffectBase.html#ZMDFQ_EffectBase_Parent
-  commentId: F:ZMDFQ.EffectBase.Parent
-  fullName: ZMDFQ.EffectBase.Parent
-  nameWithType: EffectBase.Parent
-- uid: ZMDFQ.EffectBase`1
-  name: EffectBase<T>
-  href: api/ZMDFQ.EffectBase-1.html
-  commentId: T:ZMDFQ.EffectBase`1
-  name.vb: EffectBase(Of T)
-  fullName: ZMDFQ.EffectBase<T>
-  fullName.vb: ZMDFQ.EffectBase(Of T)
-  nameWithType: EffectBase<T>
-  nameWithType.vb: EffectBase(Of T)
-- uid: ZMDFQ.EffectBase`1.DoEnable(ZMDFQ.Game,ZMDFQ.PlayerAction.Response)
-  name: DoEnable(Game, Response)
-  href: api/ZMDFQ.EffectBase-1.html#ZMDFQ_EffectBase_1_DoEnable_ZMDFQ_Game_ZMDFQ_PlayerAction_Response_
-  commentId: M:ZMDFQ.EffectBase`1.DoEnable(ZMDFQ.Game,ZMDFQ.PlayerAction.Response)
-  fullName: ZMDFQ.EffectBase<T>.DoEnable(ZMDFQ.Game, ZMDFQ.PlayerAction.Response)
-  fullName.vb: ZMDFQ.EffectBase(Of T).DoEnable(ZMDFQ.Game, ZMDFQ.PlayerAction.Response)
-  nameWithType: EffectBase<T>.DoEnable(Game, Response)
-  nameWithType.vb: EffectBase(Of T).DoEnable(Game, Response)
-- uid: ZMDFQ.EffectBase`1.DoEnable*
-  name: DoEnable
-  href: api/ZMDFQ.EffectBase-1.html#ZMDFQ_EffectBase_1_DoEnable_
-  commentId: Overload:ZMDFQ.EffectBase`1.DoEnable
-  isSpec: "True"
-  fullName: ZMDFQ.EffectBase<T>.DoEnable
-  fullName.vb: ZMDFQ.EffectBase(Of T).DoEnable
-  nameWithType: EffectBase<T>.DoEnable
-  nameWithType.vb: EffectBase(Of T).DoEnable
-- uid: ZMDFQ.EffectBase`1.Enable(ZMDFQ.Game,`0)
-  name: Enable(Game, T)
-  href: api/ZMDFQ.EffectBase-1.html#ZMDFQ_EffectBase_1_Enable_ZMDFQ_Game__0_
-  commentId: M:ZMDFQ.EffectBase`1.Enable(ZMDFQ.Game,`0)
-  fullName: ZMDFQ.EffectBase<T>.Enable(ZMDFQ.Game, T)
-  fullName.vb: ZMDFQ.EffectBase(Of T).Enable(ZMDFQ.Game, T)
-  nameWithType: EffectBase<T>.Enable(Game, T)
-  nameWithType.vb: EffectBase(Of T).Enable(Game, T)
-- uid: ZMDFQ.EffectBase`1.Enable*
-  name: Enable
-  href: api/ZMDFQ.EffectBase-1.html#ZMDFQ_EffectBase_1_Enable_
-  commentId: Overload:ZMDFQ.EffectBase`1.Enable
-  isSpec: "True"
-  fullName: ZMDFQ.EffectBase<T>.Enable
-  fullName.vb: ZMDFQ.EffectBase(Of T).Enable
-  nameWithType: EffectBase<T>.Enable
-  nameWithType.vb: EffectBase(Of T).Enable
+  fullName: ZMDFQ.Effects.UseCard.NormalUse
+  nameWithType: UseCard.NormalUse
+- uid: ZMDFQ.Effects.UseCard.NormalUse``1(ZMDFQ.Game,``0,ZMDFQ.Card,System.Func{ZMDFQ.Game,``0,System.Threading.Tasks.Task})
+  name: NormalUse<T>(Game, T, Card, Func<Game, T, Task>)
+  href: api/ZMDFQ.Effects.UseCard.html#ZMDFQ_Effects_UseCard_NormalUse__1_ZMDFQ_Game___0_ZMDFQ_Card_System_Func_ZMDFQ_Game___0_System_Threading_Tasks_Task__
+  commentId: M:ZMDFQ.Effects.UseCard.NormalUse``1(ZMDFQ.Game,``0,ZMDFQ.Card,System.Func{ZMDFQ.Game,``0,System.Threading.Tasks.Task})
+  name.vb: NormalUse(Of T)(Game, T, Card, Func(Of Game, T, Task))
+  fullName: ZMDFQ.Effects.UseCard.NormalUse<T>(ZMDFQ.Game, T, ZMDFQ.Card, System.Func<ZMDFQ.Game, T, System.Threading.Tasks.Task>)
+  fullName.vb: ZMDFQ.Effects.UseCard.NormalUse(Of T)(ZMDFQ.Game, T, ZMDFQ.Card, System.Func(Of ZMDFQ.Game, T, System.Threading.Tasks.Task))
+  nameWithType: UseCard.NormalUse<T>(Game, T, Card, Func<Game, T, Task>)
+  nameWithType.vb: UseCard.NormalUse(Of T)(Game, T, Card, Func(Of Game, T, Task))
 - uid: ZMDFQ.EventCard
   name: EventCard
   href: api/ZMDFQ.EventCard.html
   commentId: T:ZMDFQ.EventCard
   fullName: ZMDFQ.EventCard
   nameWithType: EventCard
-- uid: ZMDFQ.EventCard.BackwardEffects
-  name: BackwardEffects
-  href: api/ZMDFQ.EventCard.html#ZMDFQ_EventCard_BackwardEffects
-  commentId: F:ZMDFQ.EventCard.BackwardEffects
-  fullName: ZMDFQ.EventCard.BackwardEffects
-  nameWithType: EventCard.BackwardEffects
-- uid: ZMDFQ.EventCard.ForwardEffects
-  name: ForwardEffects
-  href: api/ZMDFQ.EventCard.html#ZMDFQ_EventCard_ForwardEffects
-  commentId: F:ZMDFQ.EventCard.ForwardEffects
-  fullName: ZMDFQ.EventCard.ForwardEffects
-  nameWithType: EventCard.ForwardEffects
+- uid: ZMDFQ.EventCard.ForwardOnly
+  name: ForwardOnly
+  href: api/ZMDFQ.EventCard.html#ZMDFQ_EventCard_ForwardOnly
+  commentId: P:ZMDFQ.EventCard.ForwardOnly
+  fullName: ZMDFQ.EventCard.ForwardOnly
+  nameWithType: EventCard.ForwardOnly
+- uid: ZMDFQ.EventCard.ForwardOnly*
+  name: ForwardOnly
+  href: api/ZMDFQ.EventCard.html#ZMDFQ_EventCard_ForwardOnly_
+  commentId: Overload:ZMDFQ.EventCard.ForwardOnly
+  isSpec: "True"
+  fullName: ZMDFQ.EventCard.ForwardOnly
+  nameWithType: EventCard.ForwardOnly
+- uid: ZMDFQ.EventCard.UseBackward(ZMDFQ.Game,ZMDFQ.Player)
+  name: UseBackward(Game, Player)
+  href: api/ZMDFQ.EventCard.html#ZMDFQ_EventCard_UseBackward_ZMDFQ_Game_ZMDFQ_Player_
+  commentId: M:ZMDFQ.EventCard.UseBackward(ZMDFQ.Game,ZMDFQ.Player)
+  fullName: ZMDFQ.EventCard.UseBackward(ZMDFQ.Game, ZMDFQ.Player)
+  nameWithType: EventCard.UseBackward(Game, Player)
+- uid: ZMDFQ.EventCard.UseBackward*
+  name: UseBackward
+  href: api/ZMDFQ.EventCard.html#ZMDFQ_EventCard_UseBackward_
+  commentId: Overload:ZMDFQ.EventCard.UseBackward
+  isSpec: "True"
+  fullName: ZMDFQ.EventCard.UseBackward
+  nameWithType: EventCard.UseBackward
+- uid: ZMDFQ.EventCard.UseForward(ZMDFQ.Game,ZMDFQ.Player)
+  name: UseForward(Game, Player)
+  href: api/ZMDFQ.EventCard.html#ZMDFQ_EventCard_UseForward_ZMDFQ_Game_ZMDFQ_Player_
+  commentId: M:ZMDFQ.EventCard.UseForward(ZMDFQ.Game,ZMDFQ.Player)
+  fullName: ZMDFQ.EventCard.UseForward(ZMDFQ.Game, ZMDFQ.Player)
+  nameWithType: EventCard.UseForward(Game, Player)
+- uid: ZMDFQ.EventCard.UseForward*
+  name: UseForward
+  href: api/ZMDFQ.EventCard.html#ZMDFQ_EventCard_UseForward_
+  commentId: Overload:ZMDFQ.EventCard.UseForward
+  isSpec: "True"
+  fullName: ZMDFQ.EventCard.UseForward
+  nameWithType: EventCard.UseForward
 - uid: ZMDFQ.EventData`1
   name: EventData<T>
   href: api/ZMDFQ.EventData-1.html
@@ -330,18 +547,30 @@ references:
   commentId: F:ZMDFQ.EventEnum.AfterGameSizeChange
   fullName: ZMDFQ.EventEnum.AfterGameSizeChange
   nameWithType: EventEnum.AfterGameSizeChange
-- uid: ZMDFQ.EventEnum.DrawCard
-  name: DrawCard
-  href: api/ZMDFQ.EventEnum.html#ZMDFQ_EventEnum_DrawCard
-  commentId: F:ZMDFQ.EventEnum.DrawCard
-  fullName: ZMDFQ.EventEnum.DrawCard
-  nameWithType: EventEnum.DrawCard
-- uid: ZMDFQ.EventEnum.DropCard
-  name: DropCard
-  href: api/ZMDFQ.EventEnum.html#ZMDFQ_EventEnum_DropCard
-  commentId: F:ZMDFQ.EventEnum.DropCard
-  fullName: ZMDFQ.EventEnum.DropCard
-  nameWithType: EventEnum.DropCard
+- uid: ZMDFQ.EventEnum.DrawActionCard
+  name: DrawActionCard
+  href: api/ZMDFQ.EventEnum.html#ZMDFQ_EventEnum_DrawActionCard
+  commentId: F:ZMDFQ.EventEnum.DrawActionCard
+  fullName: ZMDFQ.EventEnum.DrawActionCard
+  nameWithType: EventEnum.DrawActionCard
+- uid: ZMDFQ.EventEnum.DrawEventCard
+  name: DrawEventCard
+  href: api/ZMDFQ.EventEnum.html#ZMDFQ_EventEnum_DrawEventCard
+  commentId: F:ZMDFQ.EventEnum.DrawEventCard
+  fullName: ZMDFQ.EventEnum.DrawEventCard
+  nameWithType: EventEnum.DrawEventCard
+- uid: ZMDFQ.EventEnum.DropActionCard
+  name: DropActionCard
+  href: api/ZMDFQ.EventEnum.html#ZMDFQ_EventEnum_DropActionCard
+  commentId: F:ZMDFQ.EventEnum.DropActionCard
+  fullName: ZMDFQ.EventEnum.DropActionCard
+  nameWithType: EventEnum.DropActionCard
+- uid: ZMDFQ.EventEnum.GameEnd
+  name: GameEnd
+  href: api/ZMDFQ.EventEnum.html#ZMDFQ_EventEnum_GameEnd
+  commentId: F:ZMDFQ.EventEnum.GameEnd
+  fullName: ZMDFQ.EventEnum.GameEnd
+  nameWithType: EventEnum.GameEnd
 - uid: ZMDFQ.EventEnum.GameStart
   name: GameStart
   href: api/ZMDFQ.EventEnum.html#ZMDFQ_EventEnum_GameStart
@@ -354,6 +583,18 @@ references:
   commentId: F:ZMDFQ.EventEnum.OnGameSizeChange
   fullName: ZMDFQ.EventEnum.OnGameSizeChange
   nameWithType: EventEnum.OnGameSizeChange
+- uid: ZMDFQ.EventEnum.RoundEnd
+  name: RoundEnd
+  href: api/ZMDFQ.EventEnum.html#ZMDFQ_EventEnum_RoundEnd
+  commentId: F:ZMDFQ.EventEnum.RoundEnd
+  fullName: ZMDFQ.EventEnum.RoundEnd
+  nameWithType: EventEnum.RoundEnd
+- uid: ZMDFQ.EventEnum.RoundStart
+  name: RoundStart
+  href: api/ZMDFQ.EventEnum.html#ZMDFQ_EventEnum_RoundStart
+  commentId: F:ZMDFQ.EventEnum.RoundStart
+  fullName: ZMDFQ.EventEnum.RoundStart
+  nameWithType: EventEnum.RoundStart
 - uid: ZMDFQ.EventEnum.TurnEnd
   name: TurnEnd
   href: api/ZMDFQ.EventEnum.html#ZMDFQ_EventEnum_TurnEnd
@@ -388,15 +629,15 @@ references:
   isSpec: "True"
   fullName: ZMDFQ.EventSystem.Call
   nameWithType: EventSystem.Call
-- uid: ZMDFQ.EventSystem.Register(ZMDFQ.EventEnum,System.Action{System.Object[]},System.Int32)
-  name: Register(EventEnum, Action<Object[]>, Int32)
-  href: api/ZMDFQ.EventSystem.html#ZMDFQ_EventSystem_Register_ZMDFQ_EventEnum_System_Action_System_Object____System_Int32_
-  commentId: M:ZMDFQ.EventSystem.Register(ZMDFQ.EventEnum,System.Action{System.Object[]},System.Int32)
-  name.vb: Register(EventEnum, Action(Of Object()), Int32)
-  fullName: ZMDFQ.EventSystem.Register(ZMDFQ.EventEnum, System.Action<System.Object[]>, System.Int32)
-  fullName.vb: ZMDFQ.EventSystem.Register(ZMDFQ.EventEnum, System.Action(Of System.Object()), System.Int32)
-  nameWithType: EventSystem.Register(EventEnum, Action<Object[]>, Int32)
-  nameWithType.vb: EventSystem.Register(EventEnum, Action(Of Object()), Int32)
+- uid: ZMDFQ.EventSystem.Register(ZMDFQ.EventEnum,System.Func{System.Object[],System.Threading.Tasks.Task},System.Int32)
+  name: Register(EventEnum, Func<Object[], Task>, Int32)
+  href: api/ZMDFQ.EventSystem.html#ZMDFQ_EventSystem_Register_ZMDFQ_EventEnum_System_Func_System_Object___System_Threading_Tasks_Task__System_Int32_
+  commentId: M:ZMDFQ.EventSystem.Register(ZMDFQ.EventEnum,System.Func{System.Object[],System.Threading.Tasks.Task},System.Int32)
+  name.vb: Register(EventEnum, Func(Of Object(), Task), Int32)
+  fullName: ZMDFQ.EventSystem.Register(ZMDFQ.EventEnum, System.Func<System.Object[], System.Threading.Tasks.Task>, System.Int32)
+  fullName.vb: ZMDFQ.EventSystem.Register(ZMDFQ.EventEnum, System.Func(Of System.Object(), System.Threading.Tasks.Task), System.Int32)
+  nameWithType: EventSystem.Register(EventEnum, Func<Object[], Task>, Int32)
+  nameWithType.vb: EventSystem.Register(EventEnum, Func(Of Object(), Task), Int32)
 - uid: ZMDFQ.EventSystem.Register*
   name: Register
   href: api/ZMDFQ.EventSystem.html#ZMDFQ_EventSystem_Register_
@@ -404,15 +645,15 @@ references:
   isSpec: "True"
   fullName: ZMDFQ.EventSystem.Register
   nameWithType: EventSystem.Register
-- uid: ZMDFQ.EventSystem.Remove(ZMDFQ.EventEnum,System.Action{System.Object[]})
-  name: Remove(EventEnum, Action<Object[]>)
-  href: api/ZMDFQ.EventSystem.html#ZMDFQ_EventSystem_Remove_ZMDFQ_EventEnum_System_Action_System_Object____
-  commentId: M:ZMDFQ.EventSystem.Remove(ZMDFQ.EventEnum,System.Action{System.Object[]})
-  name.vb: Remove(EventEnum, Action(Of Object()))
-  fullName: ZMDFQ.EventSystem.Remove(ZMDFQ.EventEnum, System.Action<System.Object[]>)
-  fullName.vb: ZMDFQ.EventSystem.Remove(ZMDFQ.EventEnum, System.Action(Of System.Object()))
-  nameWithType: EventSystem.Remove(EventEnum, Action<Object[]>)
-  nameWithType.vb: EventSystem.Remove(EventEnum, Action(Of Object()))
+- uid: ZMDFQ.EventSystem.Remove(ZMDFQ.EventEnum,System.Func{System.Object[],System.Threading.Tasks.Task})
+  name: Remove(EventEnum, Func<Object[], Task>)
+  href: api/ZMDFQ.EventSystem.html#ZMDFQ_EventSystem_Remove_ZMDFQ_EventEnum_System_Func_System_Object___System_Threading_Tasks_Task__
+  commentId: M:ZMDFQ.EventSystem.Remove(ZMDFQ.EventEnum,System.Func{System.Object[],System.Threading.Tasks.Task})
+  name.vb: Remove(EventEnum, Func(Of Object(), Task))
+  fullName: ZMDFQ.EventSystem.Remove(ZMDFQ.EventEnum, System.Func<System.Object[], System.Threading.Tasks.Task>)
+  fullName.vb: ZMDFQ.EventSystem.Remove(ZMDFQ.EventEnum, System.Func(Of System.Object(), System.Threading.Tasks.Task))
+  nameWithType: EventSystem.Remove(EventEnum, Func<Object[], Task>)
+  nameWithType.vb: EventSystem.Remove(EventEnum, Func(Of Object(), Task))
 - uid: ZMDFQ.EventSystem.Remove*
   name: Remove
   href: api/ZMDFQ.EventSystem.html#ZMDFQ_EventSystem_Remove_
@@ -432,6 +673,12 @@ references:
   commentId: F:ZMDFQ.Game.ActivePlayer
   fullName: ZMDFQ.Game.ActivePlayer
   nameWithType: Game.ActivePlayer
+- uid: ZMDFQ.Game.ActiveTheme
+  name: ActiveTheme
+  href: api/ZMDFQ.Game.html#ZMDFQ_Game_ActiveTheme
+  commentId: F:ZMDFQ.Game.ActiveTheme
+  fullName: ZMDFQ.Game.ActiveTheme
+  nameWithType: Game.ActiveTheme
 - uid: ZMDFQ.Game.Answer(ZMDFQ.PlayerAction.Response)
   name: Answer(Response)
   href: api/ZMDFQ.Game.html#ZMDFQ_Game_Answer_ZMDFQ_PlayerAction_Response_
@@ -445,25 +692,28 @@ references:
   isSpec: "True"
   fullName: ZMDFQ.Game.Answer
   nameWithType: Game.Answer
+- uid: ZMDFQ.Game.createCards*
+  name: createCards
+  href: api/ZMDFQ.Game.html#ZMDFQ_Game_createCards_
+  commentId: Overload:ZMDFQ.Game.createCards
+  isSpec: "True"
+  fullName: ZMDFQ.Game.createCards
+  nameWithType: Game.createCards
+- uid: ZMDFQ.Game.createCards``1(``0,System.Int32,System.Int32)
+  name: createCards<T>(T, Int32, Int32)
+  href: api/ZMDFQ.Game.html#ZMDFQ_Game_createCards__1___0_System_Int32_System_Int32_
+  commentId: M:ZMDFQ.Game.createCards``1(``0,System.Int32,System.Int32)
+  name.vb: createCards(Of T)(T, Int32, Int32)
+  fullName: ZMDFQ.Game.createCards<T>(T, System.Int32, System.Int32)
+  fullName.vb: ZMDFQ.Game.createCards(Of T)(T, System.Int32, System.Int32)
+  nameWithType: Game.createCards<T>(T, Int32, Int32)
+  nameWithType.vb: Game.createCards(Of T)(T, Int32, Int32)
 - uid: ZMDFQ.Game.Deck
   name: Deck
   href: api/ZMDFQ.Game.html#ZMDFQ_Game_Deck
   commentId: F:ZMDFQ.Game.Deck
   fullName: ZMDFQ.Game.Deck
   nameWithType: Game.Deck
-- uid: ZMDFQ.Game.DoAction(ZMDFQ.PlayerAction.Response)
-  name: DoAction(Response)
-  href: api/ZMDFQ.Game.html#ZMDFQ_Game_DoAction_ZMDFQ_PlayerAction_Response_
-  commentId: M:ZMDFQ.Game.DoAction(ZMDFQ.PlayerAction.Response)
-  fullName: ZMDFQ.Game.DoAction(ZMDFQ.PlayerAction.Response)
-  nameWithType: Game.DoAction(Response)
-- uid: ZMDFQ.Game.DoAction*
-  name: DoAction
-  href: api/ZMDFQ.Game.html#ZMDFQ_Game_DoAction_
-  commentId: Overload:ZMDFQ.Game.DoAction
-  isSpec: "True"
-  fullName: ZMDFQ.Game.DoAction
-  nameWithType: Game.DoAction
 - uid: ZMDFQ.Game.EventDeck
   name: EventDeck
   href: api/ZMDFQ.Game.html#ZMDFQ_Game_EventDeck
@@ -476,6 +726,19 @@ references:
   commentId: F:ZMDFQ.Game.EventSystem
   fullName: ZMDFQ.Game.EventSystem
   nameWithType: Game.EventSystem
+- uid: ZMDFQ.Game.Init(ZMDFQ.GameOptions)
+  name: Init(GameOptions)
+  href: api/ZMDFQ.Game.html#ZMDFQ_Game_Init_ZMDFQ_GameOptions_
+  commentId: M:ZMDFQ.Game.Init(ZMDFQ.GameOptions)
+  fullName: ZMDFQ.Game.Init(ZMDFQ.GameOptions)
+  nameWithType: Game.Init(GameOptions)
+- uid: ZMDFQ.Game.Init*
+  name: Init
+  href: api/ZMDFQ.Game.html#ZMDFQ_Game_Init_
+  commentId: Overload:ZMDFQ.Game.Init
+  isSpec: "True"
+  fullName: ZMDFQ.Game.Init
+  nameWithType: Game.Init
 - uid: ZMDFQ.Game.OnRequest
   name: OnRequest
   href: api/ZMDFQ.Game.html#ZMDFQ_Game_OnRequest
@@ -488,12 +751,18 @@ references:
   commentId: F:ZMDFQ.Game.Players
   fullName: ZMDFQ.Game.Players
   nameWithType: Game.Players
-- uid: ZMDFQ.Game.Self
-  name: Self
-  href: api/ZMDFQ.Game.html#ZMDFQ_Game_Self
-  commentId: F:ZMDFQ.Game.Self
-  fullName: ZMDFQ.Game.Self
-  nameWithType: Game.Self
+- uid: ZMDFQ.Game.RequestTime
+  name: RequestTime
+  href: api/ZMDFQ.Game.html#ZMDFQ_Game_RequestTime
+  commentId: F:ZMDFQ.Game.RequestTime
+  fullName: ZMDFQ.Game.RequestTime
+  nameWithType: Game.RequestTime
+- uid: ZMDFQ.Game.Round
+  name: Round
+  href: api/ZMDFQ.Game.html#ZMDFQ_Game_Round
+  commentId: F:ZMDFQ.Game.Round
+  fullName: ZMDFQ.Game.Round
+  nameWithType: Game.Round
 - uid: ZMDFQ.Game.Size
   name: Size
   href: api/ZMDFQ.Game.html#ZMDFQ_Game_Size
@@ -519,24 +788,61 @@ references:
   commentId: F:ZMDFQ.Game.ThemeDeck
   fullName: ZMDFQ.Game.ThemeDeck
   nameWithType: Game.ThemeDeck
-- uid: ZMDFQ.Game.UsedDeck
-  name: UsedDeck
-  href: api/ZMDFQ.Game.html#ZMDFQ_Game_UsedDeck
-  commentId: F:ZMDFQ.Game.UsedDeck
-  fullName: ZMDFQ.Game.UsedDeck
-  nameWithType: Game.UsedDeck
+- uid: ZMDFQ.Game.TimeManager
+  name: TimeManager
+  href: api/ZMDFQ.Game.html#ZMDFQ_Game_TimeManager
+  commentId: F:ZMDFQ.Game.TimeManager
+  fullName: ZMDFQ.Game.TimeManager
+  nameWithType: Game.TimeManager
+- uid: ZMDFQ.Game.TurnTime
+  name: TurnTime
+  href: api/ZMDFQ.Game.html#ZMDFQ_Game_TurnTime
+  commentId: F:ZMDFQ.Game.TurnTime
+  fullName: ZMDFQ.Game.TurnTime
+  nameWithType: Game.TurnTime
+- uid: ZMDFQ.Game.UsedActionDeck
+  name: UsedActionDeck
+  href: api/ZMDFQ.Game.html#ZMDFQ_Game_UsedActionDeck
+  commentId: F:ZMDFQ.Game.UsedActionDeck
+  fullName: ZMDFQ.Game.UsedActionDeck
+  nameWithType: Game.UsedActionDeck
 - uid: ZMDFQ.Game.UsedEventDeck
   name: UsedEventDeck
   href: api/ZMDFQ.Game.html#ZMDFQ_Game_UsedEventDeck
   commentId: F:ZMDFQ.Game.UsedEventDeck
   fullName: ZMDFQ.Game.UsedEventDeck
   nameWithType: Game.UsedEventDeck
-- uid: ZMDFQ.Game.UsedWeatherDeck
-  name: UsedWeatherDeck
-  href: api/ZMDFQ.Game.html#ZMDFQ_Game_UsedWeatherDeck
-  commentId: F:ZMDFQ.Game.UsedWeatherDeck
-  fullName: ZMDFQ.Game.UsedWeatherDeck
-  nameWithType: Game.UsedWeatherDeck
+- uid: ZMDFQ.Game.UsedThemeDeck
+  name: UsedThemeDeck
+  href: api/ZMDFQ.Game.html#ZMDFQ_Game_UsedThemeDeck
+  commentId: F:ZMDFQ.Game.UsedThemeDeck
+  fullName: ZMDFQ.Game.UsedThemeDeck
+  nameWithType: Game.UsedThemeDeck
+- uid: ZMDFQ.Game.UsingCards
+  name: UsingCards
+  href: api/ZMDFQ.Game.html#ZMDFQ_Game_UsingCards
+  commentId: F:ZMDFQ.Game.UsingCards
+  fullName: ZMDFQ.Game.UsingCards
+  nameWithType: Game.UsingCards
+- uid: ZMDFQ.Game.UsingInfos
+  name: UsingInfos
+  href: api/ZMDFQ.Game.html#ZMDFQ_Game_UsingInfos
+  commentId: F:ZMDFQ.Game.UsingInfos
+  fullName: ZMDFQ.Game.UsingInfos
+  nameWithType: Game.UsingInfos
+- uid: ZMDFQ.Game.WaitAnswer(ZMDFQ.PlayerAction.Request)
+  name: WaitAnswer(Request)
+  href: api/ZMDFQ.Game.html#ZMDFQ_Game_WaitAnswer_ZMDFQ_PlayerAction_Request_
+  commentId: M:ZMDFQ.Game.WaitAnswer(ZMDFQ.PlayerAction.Request)
+  fullName: ZMDFQ.Game.WaitAnswer(ZMDFQ.PlayerAction.Request)
+  nameWithType: Game.WaitAnswer(Request)
+- uid: ZMDFQ.Game.WaitAnswer*
+  name: WaitAnswer
+  href: api/ZMDFQ.Game.html#ZMDFQ_Game_WaitAnswer_
+  commentId: Overload:ZMDFQ.Game.WaitAnswer
+  isSpec: "True"
+  fullName: ZMDFQ.Game.WaitAnswer
+  nameWithType: Game.WaitAnswer
 - uid: ZMDFQ.GameAPI
   name: GameAPI
   href: api/ZMDFQ.GameAPI.html
@@ -582,6 +888,84 @@ references:
   isSpec: "True"
   fullName: ZMDFQ.GameAPI.triggerPlayer
   nameWithType: GameAPI.triggerPlayer
+- uid: ZMDFQ.GameOptions
+  name: GameOptions
+  href: api/ZMDFQ.GameOptions.html
+  commentId: T:ZMDFQ.GameOptions
+  fullName: ZMDFQ.GameOptions
+  nameWithType: GameOptions
+- uid: ZMDFQ.GameOptions.actionCards
+  name: actionCards
+  href: api/ZMDFQ.GameOptions.html#ZMDFQ_GameOptions_actionCards
+  commentId: F:ZMDFQ.GameOptions.actionCards
+  fullName: ZMDFQ.GameOptions.actionCards
+  nameWithType: GameOptions.actionCards
+- uid: ZMDFQ.GameOptions.characterCards
+  name: characterCards
+  href: api/ZMDFQ.GameOptions.html#ZMDFQ_GameOptions_characterCards
+  commentId: F:ZMDFQ.GameOptions.characterCards
+  fullName: ZMDFQ.GameOptions.characterCards
+  nameWithType: GameOptions.characterCards
+- uid: ZMDFQ.GameOptions.chooseCharacter
+  name: chooseCharacter
+  href: api/ZMDFQ.GameOptions.html#ZMDFQ_GameOptions_chooseCharacter
+  commentId: F:ZMDFQ.GameOptions.chooseCharacter
+  fullName: ZMDFQ.GameOptions.chooseCharacter
+  nameWithType: GameOptions.chooseCharacter
+- uid: ZMDFQ.GameOptions.doubleCharacter
+  name: doubleCharacter
+  href: api/ZMDFQ.GameOptions.html#ZMDFQ_GameOptions_doubleCharacter
+  commentId: F:ZMDFQ.GameOptions.doubleCharacter
+  fullName: ZMDFQ.GameOptions.doubleCharacter
+  nameWithType: GameOptions.doubleCharacter
+- uid: ZMDFQ.GameOptions.endingOfficialCardCount
+  name: endingOfficialCardCount
+  href: api/ZMDFQ.GameOptions.html#ZMDFQ_GameOptions_endingOfficialCardCount
+  commentId: F:ZMDFQ.GameOptions.endingOfficialCardCount
+  fullName: ZMDFQ.GameOptions.endingOfficialCardCount
+  nameWithType: GameOptions.endingOfficialCardCount
+- uid: ZMDFQ.GameOptions.eventCards
+  name: eventCards
+  href: api/ZMDFQ.GameOptions.html#ZMDFQ_GameOptions_eventCards
+  commentId: F:ZMDFQ.GameOptions.eventCards
+  fullName: ZMDFQ.GameOptions.eventCards
+  nameWithType: GameOptions.eventCards
+- uid: ZMDFQ.GameOptions.firstPlayer
+  name: firstPlayer
+  href: api/ZMDFQ.GameOptions.html#ZMDFQ_GameOptions_firstPlayer
+  commentId: F:ZMDFQ.GameOptions.firstPlayer
+  fullName: ZMDFQ.GameOptions.firstPlayer
+  nameWithType: GameOptions.firstPlayer
+- uid: ZMDFQ.GameOptions.initCommunitySize
+  name: initCommunitySize
+  href: api/ZMDFQ.GameOptions.html#ZMDFQ_GameOptions_initCommunitySize
+  commentId: F:ZMDFQ.GameOptions.initCommunitySize
+  fullName: ZMDFQ.GameOptions.initCommunitySize
+  nameWithType: GameOptions.initCommunitySize
+- uid: ZMDFQ.GameOptions.initInfluence
+  name: initInfluence
+  href: api/ZMDFQ.GameOptions.html#ZMDFQ_GameOptions_initInfluence
+  commentId: F:ZMDFQ.GameOptions.initInfluence
+  fullName: ZMDFQ.GameOptions.initInfluence
+  nameWithType: GameOptions.initInfluence
+- uid: ZMDFQ.GameOptions.officialCards
+  name: officialCards
+  href: api/ZMDFQ.GameOptions.html#ZMDFQ_GameOptions_officialCards
+  commentId: F:ZMDFQ.GameOptions.officialCards
+  fullName: ZMDFQ.GameOptions.officialCards
+  nameWithType: GameOptions.officialCards
+- uid: ZMDFQ.GameOptions.players
+  name: players
+  href: api/ZMDFQ.GameOptions.html#ZMDFQ_GameOptions_players
+  commentId: F:ZMDFQ.GameOptions.players
+  fullName: ZMDFQ.GameOptions.players
+  nameWithType: GameOptions.players
+- uid: ZMDFQ.GameOptions.shuffle
+  name: shuffle
+  href: api/ZMDFQ.GameOptions.html#ZMDFQ_GameOptions_shuffle
+  commentId: F:ZMDFQ.GameOptions.shuffle
+  fullName: ZMDFQ.GameOptions.shuffle
+  nameWithType: GameOptions.shuffle
 - uid: ZMDFQ.Globals
   name: Globals
   href: api/ZMDFQ.Globals.html
@@ -607,30 +991,107 @@ references:
   commentId: F:ZMDFQ.Globals.api
   fullName: ZMDFQ.Globals.api
   nameWithType: Globals.api
-- uid: ZMDFQ.Hero
-  name: Hero
-  href: api/ZMDFQ.Hero.html
-  commentId: T:ZMDFQ.Hero
-  fullName: ZMDFQ.Hero
-  nameWithType: Hero
-- uid: ZMDFQ.Hero.Name
-  name: Name
-  href: api/ZMDFQ.Hero.html#ZMDFQ_Hero_Name
-  commentId: F:ZMDFQ.Hero.Name
-  fullName: ZMDFQ.Hero.Name
-  nameWithType: Hero.Name
+- uid: ZMDFQ.HeroCard
+  name: HeroCard
+  href: api/ZMDFQ.HeroCard.html
+  commentId: T:ZMDFQ.HeroCard
+  fullName: ZMDFQ.HeroCard
+  nameWithType: HeroCard
+- uid: ZMDFQ.HeroCard.Skills
+  name: Skills
+  href: api/ZMDFQ.HeroCard.html#ZMDFQ_HeroCard_Skills
+  commentId: P:ZMDFQ.HeroCard.Skills
+  fullName: ZMDFQ.HeroCard.Skills
+  nameWithType: HeroCard.Skills
+- uid: ZMDFQ.HeroCard.Skills*
+  name: Skills
+  href: api/ZMDFQ.HeroCard.html#ZMDFQ_HeroCard_Skills_
+  commentId: Overload:ZMDFQ.HeroCard.Skills
+  isSpec: "True"
+  fullName: ZMDFQ.HeroCard.Skills
+  nameWithType: HeroCard.Skills
+- uid: ZMDFQ.ITimeManager
+  name: ITimeManager
+  href: api/ZMDFQ.ITimeManager.html
+  commentId: T:ZMDFQ.ITimeManager
+  fullName: ZMDFQ.ITimeManager
+  nameWithType: ITimeManager
+- uid: ZMDFQ.ITimeManager.Cancel(ZMDFQ.PlayerAction.Request)
+  name: Cancel(Request)
+  href: api/ZMDFQ.ITimeManager.html#ZMDFQ_ITimeManager_Cancel_ZMDFQ_PlayerAction_Request_
+  commentId: M:ZMDFQ.ITimeManager.Cancel(ZMDFQ.PlayerAction.Request)
+  fullName: ZMDFQ.ITimeManager.Cancel(ZMDFQ.PlayerAction.Request)
+  nameWithType: ITimeManager.Cancel(Request)
+- uid: ZMDFQ.ITimeManager.Cancel*
+  name: Cancel
+  href: api/ZMDFQ.ITimeManager.html#ZMDFQ_ITimeManager_Cancel_
+  commentId: Overload:ZMDFQ.ITimeManager.Cancel
+  isSpec: "True"
+  fullName: ZMDFQ.ITimeManager.Cancel
+  nameWithType: ITimeManager.Cancel
+- uid: ZMDFQ.ITimeManager.Game
+  name: Game
+  href: api/ZMDFQ.ITimeManager.html#ZMDFQ_ITimeManager_Game
+  commentId: P:ZMDFQ.ITimeManager.Game
+  fullName: ZMDFQ.ITimeManager.Game
+  nameWithType: ITimeManager.Game
+- uid: ZMDFQ.ITimeManager.Game*
+  name: Game
+  href: api/ZMDFQ.ITimeManager.html#ZMDFQ_ITimeManager_Game_
+  commentId: Overload:ZMDFQ.ITimeManager.Game
+  isSpec: "True"
+  fullName: ZMDFQ.ITimeManager.Game
+  nameWithType: ITimeManager.Game
+- uid: ZMDFQ.ITimeManager.Register(ZMDFQ.PlayerAction.Request)
+  name: Register(Request)
+  href: api/ZMDFQ.ITimeManager.html#ZMDFQ_ITimeManager_Register_ZMDFQ_PlayerAction_Request_
+  commentId: M:ZMDFQ.ITimeManager.Register(ZMDFQ.PlayerAction.Request)
+  fullName: ZMDFQ.ITimeManager.Register(ZMDFQ.PlayerAction.Request)
+  nameWithType: ITimeManager.Register(Request)
+- uid: ZMDFQ.ITimeManager.Register*
+  name: Register
+  href: api/ZMDFQ.ITimeManager.html#ZMDFQ_ITimeManager_Register_
+  commentId: Overload:ZMDFQ.ITimeManager.Register
+  isSpec: "True"
+  fullName: ZMDFQ.ITimeManager.Register
+  nameWithType: ITimeManager.Register
+- uid: ZMDFQ.ITreatAs
+  name: ITreatAs
+  href: api/ZMDFQ.ITreatAs.html
+  commentId: T:ZMDFQ.ITreatAs
+  fullName: ZMDFQ.ITreatAs
+  nameWithType: ITreatAs
 - uid: ZMDFQ.Player
   name: Player
   href: api/ZMDFQ.Player.html
   commentId: T:ZMDFQ.Player
   fullName: ZMDFQ.Player
   nameWithType: Player
-- uid: ZMDFQ.Player.Cards
-  name: Cards
-  href: api/ZMDFQ.Player.html#ZMDFQ_Player_Cards
-  commentId: F:ZMDFQ.Player.Cards
-  fullName: ZMDFQ.Player.Cards
-  nameWithType: Player.Cards
+- uid: ZMDFQ.Player.#ctor(System.Int32)
+  name: Player(Int32)
+  href: api/ZMDFQ.Player.html#ZMDFQ_Player__ctor_System_Int32_
+  commentId: M:ZMDFQ.Player.#ctor(System.Int32)
+  fullName: ZMDFQ.Player.Player(System.Int32)
+  nameWithType: Player.Player(Int32)
+- uid: ZMDFQ.Player.#ctor*
+  name: Player
+  href: api/ZMDFQ.Player.html#ZMDFQ_Player__ctor_
+  commentId: Overload:ZMDFQ.Player.#ctor
+  isSpec: "True"
+  fullName: ZMDFQ.Player.Player
+  nameWithType: Player.Player
+- uid: ZMDFQ.Player.ActionCards
+  name: ActionCards
+  href: api/ZMDFQ.Player.html#ZMDFQ_Player_ActionCards
+  commentId: F:ZMDFQ.Player.ActionCards
+  fullName: ZMDFQ.Player.ActionCards
+  nameWithType: Player.ActionCards
+- uid: ZMDFQ.Player.EventCards
+  name: EventCards
+  href: api/ZMDFQ.Player.html#ZMDFQ_Player_EventCards
+  commentId: F:ZMDFQ.Player.EventCards
+  fullName: ZMDFQ.Player.EventCards
+  nameWithType: Player.EventCards
 - uid: ZMDFQ.Player.Hero
   name: Hero
   href: api/ZMDFQ.Player.html#ZMDFQ_Player_Hero
@@ -673,12 +1134,79 @@ references:
   commentId: T:ZMDFQ.PlayerAction.ChooseDirectionResponse
   fullName: ZMDFQ.PlayerAction.ChooseDirectionResponse
   nameWithType: ChooseDirectionResponse
+- uid: ZMDFQ.PlayerAction.ChooseDirectionResponse.HandleAction(ZMDFQ.Game)
+  name: HandleAction(Game)
+  href: api/ZMDFQ.PlayerAction.ChooseDirectionResponse.html#ZMDFQ_PlayerAction_ChooseDirectionResponse_HandleAction_ZMDFQ_Game_
+  commentId: M:ZMDFQ.PlayerAction.ChooseDirectionResponse.HandleAction(ZMDFQ.Game)
+  fullName: ZMDFQ.PlayerAction.ChooseDirectionResponse.HandleAction(ZMDFQ.Game)
+  nameWithType: ChooseDirectionResponse.HandleAction(Game)
+- uid: ZMDFQ.PlayerAction.ChooseDirectionResponse.HandleAction*
+  name: HandleAction
+  href: api/ZMDFQ.PlayerAction.ChooseDirectionResponse.html#ZMDFQ_PlayerAction_ChooseDirectionResponse_HandleAction_
+  commentId: Overload:ZMDFQ.PlayerAction.ChooseDirectionResponse.HandleAction
+  isSpec: "True"
+  fullName: ZMDFQ.PlayerAction.ChooseDirectionResponse.HandleAction
+  nameWithType: ChooseDirectionResponse.HandleAction
 - uid: ZMDFQ.PlayerAction.ChooseDirectionResponse.IfForward
   name: IfForward
   href: api/ZMDFQ.PlayerAction.ChooseDirectionResponse.html#ZMDFQ_PlayerAction_ChooseDirectionResponse_IfForward
   commentId: F:ZMDFQ.PlayerAction.ChooseDirectionResponse.IfForward
   fullName: ZMDFQ.PlayerAction.ChooseDirectionResponse.IfForward
   nameWithType: ChooseDirectionResponse.IfForward
+- uid: ZMDFQ.PlayerAction.ChooseDirectionResponse.IfSet
+  name: IfSet
+  href: api/ZMDFQ.PlayerAction.ChooseDirectionResponse.html#ZMDFQ_PlayerAction_ChooseDirectionResponse_IfSet
+  commentId: F:ZMDFQ.PlayerAction.ChooseDirectionResponse.IfSet
+  fullName: ZMDFQ.PlayerAction.ChooseDirectionResponse.IfSet
+  nameWithType: ChooseDirectionResponse.IfSet
+- uid: ZMDFQ.PlayerAction.ChooseHeroRequest
+  name: ChooseHeroRequest
+  href: api/ZMDFQ.PlayerAction.ChooseHeroRequest.html
+  commentId: T:ZMDFQ.PlayerAction.ChooseHeroRequest
+  fullName: ZMDFQ.PlayerAction.ChooseHeroRequest
+  nameWithType: ChooseHeroRequest
+- uid: ZMDFQ.PlayerAction.ChooseHeroRequest.HeroIds
+  name: HeroIds
+  href: api/ZMDFQ.PlayerAction.ChooseHeroRequest.html#ZMDFQ_PlayerAction_ChooseHeroRequest_HeroIds
+  commentId: F:ZMDFQ.PlayerAction.ChooseHeroRequest.HeroIds
+  fullName: ZMDFQ.PlayerAction.ChooseHeroRequest.HeroIds
+  nameWithType: ChooseHeroRequest.HeroIds
+- uid: ZMDFQ.PlayerAction.ChooseHeroResponse
+  name: ChooseHeroResponse
+  href: api/ZMDFQ.PlayerAction.ChooseHeroResponse.html
+  commentId: T:ZMDFQ.PlayerAction.ChooseHeroResponse
+  fullName: ZMDFQ.PlayerAction.ChooseHeroResponse
+  nameWithType: ChooseHeroResponse
+- uid: ZMDFQ.PlayerAction.ChooseHeroResponse.HeroId
+  name: HeroId
+  href: api/ZMDFQ.PlayerAction.ChooseHeroResponse.html#ZMDFQ_PlayerAction_ChooseHeroResponse_HeroId
+  commentId: F:ZMDFQ.PlayerAction.ChooseHeroResponse.HeroId
+  fullName: ZMDFQ.PlayerAction.ChooseHeroResponse.HeroId
+  nameWithType: ChooseHeroResponse.HeroId
+- uid: ZMDFQ.PlayerAction.ChooseSomeCardRequest
+  name: ChooseSomeCardRequest
+  href: api/ZMDFQ.PlayerAction.ChooseSomeCardRequest.html
+  commentId: T:ZMDFQ.PlayerAction.ChooseSomeCardRequest
+  fullName: ZMDFQ.PlayerAction.ChooseSomeCardRequest
+  nameWithType: ChooseSomeCardRequest
+- uid: ZMDFQ.PlayerAction.ChooseSomeCardRequest.Count
+  name: Count
+  href: api/ZMDFQ.PlayerAction.ChooseSomeCardRequest.html#ZMDFQ_PlayerAction_ChooseSomeCardRequest_Count
+  commentId: F:ZMDFQ.PlayerAction.ChooseSomeCardRequest.Count
+  fullName: ZMDFQ.PlayerAction.ChooseSomeCardRequest.Count
+  nameWithType: ChooseSomeCardRequest.Count
+- uid: ZMDFQ.PlayerAction.ChooseSomeCardResponse
+  name: ChooseSomeCardResponse
+  href: api/ZMDFQ.PlayerAction.ChooseSomeCardResponse.html
+  commentId: T:ZMDFQ.PlayerAction.ChooseSomeCardResponse
+  fullName: ZMDFQ.PlayerAction.ChooseSomeCardResponse
+  nameWithType: ChooseSomeCardResponse
+- uid: ZMDFQ.PlayerAction.ChooseSomeCardResponse.Cards
+  name: Cards
+  href: api/ZMDFQ.PlayerAction.ChooseSomeCardResponse.html#ZMDFQ_PlayerAction_ChooseSomeCardResponse_Cards
+  commentId: F:ZMDFQ.PlayerAction.ChooseSomeCardResponse.Cards
+  fullName: ZMDFQ.PlayerAction.ChooseSomeCardResponse.Cards
+  nameWithType: ChooseSomeCardResponse.Cards
 - uid: ZMDFQ.PlayerAction.ChooseSomeoneRequest
   name: ChooseSomeoneRequest
   href: api/ZMDFQ.PlayerAction.ChooseSomeoneRequest.html
@@ -697,12 +1225,6 @@ references:
   commentId: T:ZMDFQ.PlayerAction.ChooseSomeoneResponse
   fullName: ZMDFQ.PlayerAction.ChooseSomeoneResponse
   nameWithType: ChooseSomeoneResponse
-- uid: ZMDFQ.PlayerAction.ChooseSomeoneResponse.CardId
-  name: CardId
-  href: api/ZMDFQ.PlayerAction.ChooseSomeoneResponse.html#ZMDFQ_PlayerAction_ChooseSomeoneResponse_CardId
-  commentId: F:ZMDFQ.PlayerAction.ChooseSomeoneResponse.CardId
-  fullName: ZMDFQ.PlayerAction.ChooseSomeoneResponse.CardId
-  nameWithType: ChooseSomeoneResponse.CardId
 - uid: ZMDFQ.PlayerAction.ChooseSomeoneResponse.HandleAction(ZMDFQ.Game)
   name: HandleAction(Game)
   href: api/ZMDFQ.PlayerAction.ChooseSomeoneResponse.html#ZMDFQ_PlayerAction_ChooseSomeoneResponse_HandleAction_ZMDFQ_Game_
@@ -722,99 +1244,42 @@ references:
   commentId: F:ZMDFQ.PlayerAction.ChooseSomeoneResponse.Targets
   fullName: ZMDFQ.PlayerAction.ChooseSomeoneResponse.Targets
   nameWithType: ChooseSomeoneResponse.Targets
-- uid: ZMDFQ.PlayerAction.DropCardRequest
-  name: DropCardRequest
-  href: api/ZMDFQ.PlayerAction.DropCardRequest.html
-  commentId: T:ZMDFQ.PlayerAction.DropCardRequest
-  fullName: ZMDFQ.PlayerAction.DropCardRequest
-  nameWithType: DropCardRequest
-- uid: ZMDFQ.PlayerAction.DropCardRequest.Count
-  name: Count
-  href: api/ZMDFQ.PlayerAction.DropCardRequest.html#ZMDFQ_PlayerAction_DropCardRequest_Count
-  commentId: F:ZMDFQ.PlayerAction.DropCardRequest.Count
-  fullName: ZMDFQ.PlayerAction.DropCardRequest.Count
-  nameWithType: DropCardRequest.Count
-- uid: ZMDFQ.PlayerAction.DropCardResponse
-  name: DropCardResponse
-  href: api/ZMDFQ.PlayerAction.DropCardResponse.html
-  commentId: T:ZMDFQ.PlayerAction.DropCardResponse
-  fullName: ZMDFQ.PlayerAction.DropCardResponse
-  nameWithType: DropCardResponse
-- uid: ZMDFQ.PlayerAction.DropCardResponse.Cards
-  name: Cards
-  href: api/ZMDFQ.PlayerAction.DropCardResponse.html#ZMDFQ_PlayerAction_DropCardResponse_Cards
-  commentId: F:ZMDFQ.PlayerAction.DropCardResponse.Cards
-  fullName: ZMDFQ.PlayerAction.DropCardResponse.Cards
-  nameWithType: DropCardResponse.Cards
-- uid: ZMDFQ.PlayerAction.DropCardResponse.HandleAction(ZMDFQ.Game)
-  name: HandleAction(Game)
-  href: api/ZMDFQ.PlayerAction.DropCardResponse.html#ZMDFQ_PlayerAction_DropCardResponse_HandleAction_ZMDFQ_Game_
-  commentId: M:ZMDFQ.PlayerAction.DropCardResponse.HandleAction(ZMDFQ.Game)
-  fullName: ZMDFQ.PlayerAction.DropCardResponse.HandleAction(ZMDFQ.Game)
-  nameWithType: DropCardResponse.HandleAction(Game)
-- uid: ZMDFQ.PlayerAction.DropCardResponse.HandleAction*
-  name: HandleAction
-  href: api/ZMDFQ.PlayerAction.DropCardResponse.html#ZMDFQ_PlayerAction_DropCardResponse_HandleAction_
-  commentId: Overload:ZMDFQ.PlayerAction.DropCardResponse.HandleAction
-  isSpec: "True"
-  fullName: ZMDFQ.PlayerAction.DropCardResponse.HandleAction
-  nameWithType: DropCardResponse.HandleAction
-- uid: ZMDFQ.PlayerAction.EndTurn
-  name: EndTurn
-  href: api/ZMDFQ.PlayerAction.EndTurn.html
-  commentId: T:ZMDFQ.PlayerAction.EndTurn
-  fullName: ZMDFQ.PlayerAction.EndTurn
-  nameWithType: EndTurn
-- uid: ZMDFQ.PlayerAction.EndTurn.HandleAction(ZMDFQ.Game)
-  name: HandleAction(Game)
-  href: api/ZMDFQ.PlayerAction.EndTurn.html#ZMDFQ_PlayerAction_EndTurn_HandleAction_ZMDFQ_Game_
-  commentId: M:ZMDFQ.PlayerAction.EndTurn.HandleAction(ZMDFQ.Game)
-  fullName: ZMDFQ.PlayerAction.EndTurn.HandleAction(ZMDFQ.Game)
-  nameWithType: EndTurn.HandleAction(Game)
-- uid: ZMDFQ.PlayerAction.EndTurn.HandleAction*
-  name: HandleAction
-  href: api/ZMDFQ.PlayerAction.EndTurn.html#ZMDFQ_PlayerAction_EndTurn_HandleAction_
-  commentId: Overload:ZMDFQ.PlayerAction.EndTurn.HandleAction
-  isSpec: "True"
-  fullName: ZMDFQ.PlayerAction.EndTurn.HandleAction
-  nameWithType: EndTurn.HandleAction
+- uid: ZMDFQ.PlayerAction.EndTurnResponse
+  name: EndTurnResponse
+  href: api/ZMDFQ.PlayerAction.EndTurnResponse.html
+  commentId: T:ZMDFQ.PlayerAction.EndTurnResponse
+  fullName: ZMDFQ.PlayerAction.EndTurnResponse
+  nameWithType: EndTurnResponse
 - uid: ZMDFQ.PlayerAction.Request
   name: Request
   href: api/ZMDFQ.PlayerAction.Request.html
   commentId: T:ZMDFQ.PlayerAction.Request
   fullName: ZMDFQ.PlayerAction.Request
   nameWithType: Request
-- uid: ZMDFQ.PlayerAction.Request.playerId
-  name: playerId
-  href: api/ZMDFQ.PlayerAction.Request.html#ZMDFQ_PlayerAction_Request_playerId
-  commentId: F:ZMDFQ.PlayerAction.Request.playerId
-  fullName: ZMDFQ.PlayerAction.Request.playerId
-  nameWithType: Request.playerId
+- uid: ZMDFQ.PlayerAction.Request.PlayerId
+  name: PlayerId
+  href: api/ZMDFQ.PlayerAction.Request.html#ZMDFQ_PlayerAction_Request_PlayerId
+  commentId: F:ZMDFQ.PlayerAction.Request.PlayerId
+  fullName: ZMDFQ.PlayerAction.Request.PlayerId
+  nameWithType: Request.PlayerId
+- uid: ZMDFQ.PlayerAction.Request.TimeOut
+  name: TimeOut
+  href: api/ZMDFQ.PlayerAction.Request.html#ZMDFQ_PlayerAction_Request_TimeOut
+  commentId: F:ZMDFQ.PlayerAction.Request.TimeOut
+  fullName: ZMDFQ.PlayerAction.Request.TimeOut
+  nameWithType: Request.TimeOut
 - uid: ZMDFQ.PlayerAction.Response
   name: Response
   href: api/ZMDFQ.PlayerAction.Response.html
   commentId: T:ZMDFQ.PlayerAction.Response
   fullName: ZMDFQ.PlayerAction.Response
   nameWithType: Response
-- uid: ZMDFQ.PlayerAction.Response.HandleAction(ZMDFQ.Game)
-  name: HandleAction(Game)
-  href: api/ZMDFQ.PlayerAction.Response.html#ZMDFQ_PlayerAction_Response_HandleAction_ZMDFQ_Game_
-  commentId: M:ZMDFQ.PlayerAction.Response.HandleAction(ZMDFQ.Game)
-  fullName: ZMDFQ.PlayerAction.Response.HandleAction(ZMDFQ.Game)
-  nameWithType: Response.HandleAction(Game)
-- uid: ZMDFQ.PlayerAction.Response.HandleAction*
-  name: HandleAction
-  href: api/ZMDFQ.PlayerAction.Response.html#ZMDFQ_PlayerAction_Response_HandleAction_
-  commentId: Overload:ZMDFQ.PlayerAction.Response.HandleAction
-  isSpec: "True"
-  fullName: ZMDFQ.PlayerAction.Response.HandleAction
-  nameWithType: Response.HandleAction
-- uid: ZMDFQ.PlayerAction.Response.playerId
-  name: playerId
-  href: api/ZMDFQ.PlayerAction.Response.html#ZMDFQ_PlayerAction_Response_playerId
-  commentId: F:ZMDFQ.PlayerAction.Response.playerId
-  fullName: ZMDFQ.PlayerAction.Response.playerId
-  nameWithType: Response.playerId
+- uid: ZMDFQ.PlayerAction.Response.PlayerId
+  name: PlayerId
+  href: api/ZMDFQ.PlayerAction.Response.html#ZMDFQ_PlayerAction_Response_PlayerId
+  commentId: F:ZMDFQ.PlayerAction.Response.PlayerId
+  fullName: ZMDFQ.PlayerAction.Response.PlayerId
+  nameWithType: Response.PlayerId
 - uid: ZMDFQ.PlayerAction.SimpleRequest
   name: SimpleRequest
   href: api/ZMDFQ.PlayerAction.SimpleRequest.html
@@ -833,12 +1298,6 @@ references:
   commentId: T:ZMDFQ.PlayerAction.SimpleResponse
   fullName: ZMDFQ.PlayerAction.SimpleResponse
   nameWithType: SimpleResponse
-- uid: ZMDFQ.PlayerAction.SimpleResponse.CardId
-  name: CardId
-  href: api/ZMDFQ.PlayerAction.SimpleResponse.html#ZMDFQ_PlayerAction_SimpleResponse_CardId
-  commentId: F:ZMDFQ.PlayerAction.SimpleResponse.CardId
-  fullName: ZMDFQ.PlayerAction.SimpleResponse.CardId
-  nameWithType: SimpleResponse.CardId
 - uid: ZMDFQ.PlayerAction.SimpleResponse.HandleAction(ZMDFQ.Game)
   name: HandleAction(Game)
   href: api/ZMDFQ.PlayerAction.SimpleResponse.html#ZMDFQ_PlayerAction_SimpleResponse_HandleAction_ZMDFQ_Game_
@@ -852,6 +1311,136 @@ references:
   isSpec: "True"
   fullName: ZMDFQ.PlayerAction.SimpleResponse.HandleAction
   nameWithType: SimpleResponse.HandleAction
+- uid: ZMDFQ.PlayerAction.TakeChoiceRequest
+  name: TakeChoiceRequest
+  href: api/ZMDFQ.PlayerAction.TakeChoiceRequest.html
+  commentId: T:ZMDFQ.PlayerAction.TakeChoiceRequest
+  fullName: ZMDFQ.PlayerAction.TakeChoiceRequest
+  nameWithType: TakeChoiceRequest
+- uid: ZMDFQ.PlayerAction.TakeChoiceRequest.Infos
+  name: Infos
+  href: api/ZMDFQ.PlayerAction.TakeChoiceRequest.html#ZMDFQ_PlayerAction_TakeChoiceRequest_Infos
+  commentId: F:ZMDFQ.PlayerAction.TakeChoiceRequest.Infos
+  fullName: ZMDFQ.PlayerAction.TakeChoiceRequest.Infos
+  nameWithType: TakeChoiceRequest.Infos
+- uid: ZMDFQ.PlayerAction.TakeChoiceResponse
+  name: TakeChoiceResponse
+  href: api/ZMDFQ.PlayerAction.TakeChoiceResponse.html
+  commentId: T:ZMDFQ.PlayerAction.TakeChoiceResponse
+  fullName: ZMDFQ.PlayerAction.TakeChoiceResponse
+  nameWithType: TakeChoiceResponse
+- uid: ZMDFQ.PlayerAction.TakeChoiceResponse.Index
+  name: Index
+  href: api/ZMDFQ.PlayerAction.TakeChoiceResponse.html#ZMDFQ_PlayerAction_TakeChoiceResponse_Index
+  commentId: F:ZMDFQ.PlayerAction.TakeChoiceResponse.Index
+  fullName: ZMDFQ.PlayerAction.TakeChoiceResponse.Index
+  nameWithType: TakeChoiceResponse.Index
+- uid: ZMDFQ.PlayerAction.UseCardRequest
+  name: UseCardRequest
+  href: api/ZMDFQ.PlayerAction.UseCardRequest.html
+  commentId: T:ZMDFQ.PlayerAction.UseCardRequest
+  fullName: ZMDFQ.PlayerAction.UseCardRequest
+  nameWithType: UseCardRequest
+- uid: ZMDFQ.PlayerAction.UseInfo
+  name: UseInfo
+  href: api/ZMDFQ.PlayerAction.UseInfo.html
+  commentId: T:ZMDFQ.PlayerAction.UseInfo
+  fullName: ZMDFQ.PlayerAction.UseInfo
+  nameWithType: UseInfo
+- uid: ZMDFQ.PlayerAction.UseInfo.HandleAction(ZMDFQ.Game)
+  name: HandleAction(Game)
+  href: api/ZMDFQ.PlayerAction.UseInfo.html#ZMDFQ_PlayerAction_UseInfo_HandleAction_ZMDFQ_Game_
+  commentId: M:ZMDFQ.PlayerAction.UseInfo.HandleAction(ZMDFQ.Game)
+  fullName: ZMDFQ.PlayerAction.UseInfo.HandleAction(ZMDFQ.Game)
+  nameWithType: UseInfo.HandleAction(Game)
+- uid: ZMDFQ.PlayerAction.UseInfo.HandleAction*
+  name: HandleAction
+  href: api/ZMDFQ.PlayerAction.UseInfo.html#ZMDFQ_PlayerAction_UseInfo_HandleAction_
+  commentId: Overload:ZMDFQ.PlayerAction.UseInfo.HandleAction
+  isSpec: "True"
+  fullName: ZMDFQ.PlayerAction.UseInfo.HandleAction
+  nameWithType: UseInfo.HandleAction
+- uid: ZMDFQ.PlayerAction.UseOneCard
+  name: UseOneCard
+  href: api/ZMDFQ.PlayerAction.UseOneCard.html
+  commentId: T:ZMDFQ.PlayerAction.UseOneCard
+  fullName: ZMDFQ.PlayerAction.UseOneCard
+  nameWithType: UseOneCard
+- uid: ZMDFQ.PlayerAction.UseOneCard.CardId
+  name: CardId
+  href: api/ZMDFQ.PlayerAction.UseOneCard.html#ZMDFQ_PlayerAction_UseOneCard_CardId
+  commentId: F:ZMDFQ.PlayerAction.UseOneCard.CardId
+  fullName: ZMDFQ.PlayerAction.UseOneCard.CardId
+  nameWithType: UseOneCard.CardId
+- uid: ZMDFQ.PlayerAction.UseOneCard.Source
+  name: Source
+  href: api/ZMDFQ.PlayerAction.UseOneCard.html#ZMDFQ_PlayerAction_UseOneCard_Source
+  commentId: F:ZMDFQ.PlayerAction.UseOneCard.Source
+  fullName: ZMDFQ.PlayerAction.UseOneCard.Source
+  nameWithType: UseOneCard.Source
+- uid: ZMDFQ.PlayerAction.UseOneCard.TreatAs
+  name: TreatAs
+  href: api/ZMDFQ.PlayerAction.UseOneCard.html#ZMDFQ_PlayerAction_UseOneCard_TreatAs
+  commentId: F:ZMDFQ.PlayerAction.UseOneCard.TreatAs
+  fullName: ZMDFQ.PlayerAction.UseOneCard.TreatAs
+  nameWithType: UseOneCard.TreatAs
+- uid: ZMDFQ.PlayerAction.UseWay
+  name: UseWay
+  href: api/ZMDFQ.PlayerAction.UseWay.html
+  commentId: T:ZMDFQ.PlayerAction.UseWay
+  fullName: ZMDFQ.PlayerAction.UseWay
+  nameWithType: UseWay
+- uid: ZMDFQ.PlayerAction.UseWay.PlayerId
+  name: PlayerId
+  href: api/ZMDFQ.PlayerAction.UseWay.html#ZMDFQ_PlayerAction_UseWay_PlayerId
+  commentId: F:ZMDFQ.PlayerAction.UseWay.PlayerId
+  fullName: ZMDFQ.PlayerAction.UseWay.PlayerId
+  nameWithType: UseWay.PlayerId
+- uid: ZMDFQ.RequestTimeoutManager
+  name: RequestTimeoutManager
+  href: api/ZMDFQ.RequestTimeoutManager.html
+  commentId: T:ZMDFQ.RequestTimeoutManager
+  fullName: ZMDFQ.RequestTimeoutManager
+  nameWithType: RequestTimeoutManager
+- uid: ZMDFQ.RequestTimeoutManager.Cancel(ZMDFQ.PlayerAction.Request)
+  name: Cancel(Request)
+  href: api/ZMDFQ.RequestTimeoutManager.html#ZMDFQ_RequestTimeoutManager_Cancel_ZMDFQ_PlayerAction_Request_
+  commentId: M:ZMDFQ.RequestTimeoutManager.Cancel(ZMDFQ.PlayerAction.Request)
+  fullName: ZMDFQ.RequestTimeoutManager.Cancel(ZMDFQ.PlayerAction.Request)
+  nameWithType: RequestTimeoutManager.Cancel(Request)
+- uid: ZMDFQ.RequestTimeoutManager.Cancel*
+  name: Cancel
+  href: api/ZMDFQ.RequestTimeoutManager.html#ZMDFQ_RequestTimeoutManager_Cancel_
+  commentId: Overload:ZMDFQ.RequestTimeoutManager.Cancel
+  isSpec: "True"
+  fullName: ZMDFQ.RequestTimeoutManager.Cancel
+  nameWithType: RequestTimeoutManager.Cancel
+- uid: ZMDFQ.RequestTimeoutManager.Game
+  name: Game
+  href: api/ZMDFQ.RequestTimeoutManager.html#ZMDFQ_RequestTimeoutManager_Game
+  commentId: P:ZMDFQ.RequestTimeoutManager.Game
+  fullName: ZMDFQ.RequestTimeoutManager.Game
+  nameWithType: RequestTimeoutManager.Game
+- uid: ZMDFQ.RequestTimeoutManager.Game*
+  name: Game
+  href: api/ZMDFQ.RequestTimeoutManager.html#ZMDFQ_RequestTimeoutManager_Game_
+  commentId: Overload:ZMDFQ.RequestTimeoutManager.Game
+  isSpec: "True"
+  fullName: ZMDFQ.RequestTimeoutManager.Game
+  nameWithType: RequestTimeoutManager.Game
+- uid: ZMDFQ.RequestTimeoutManager.Register(ZMDFQ.PlayerAction.Request)
+  name: Register(Request)
+  href: api/ZMDFQ.RequestTimeoutManager.html#ZMDFQ_RequestTimeoutManager_Register_ZMDFQ_PlayerAction_Request_
+  commentId: M:ZMDFQ.RequestTimeoutManager.Register(ZMDFQ.PlayerAction.Request)
+  fullName: ZMDFQ.RequestTimeoutManager.Register(ZMDFQ.PlayerAction.Request)
+  nameWithType: RequestTimeoutManager.Register(Request)
+- uid: ZMDFQ.RequestTimeoutManager.Register*
+  name: Register
+  href: api/ZMDFQ.RequestTimeoutManager.html#ZMDFQ_RequestTimeoutManager_Register_
+  commentId: Overload:ZMDFQ.RequestTimeoutManager.Register
+  isSpec: "True"
+  fullName: ZMDFQ.RequestTimeoutManager.Register
+  nameWithType: RequestTimeoutManager.Register
 - uid: ZMDFQ.Script
   name: Script
   href: api/ZMDFQ.Script.html
@@ -927,30 +1516,158 @@ references:
   fullName.vb: ZMDFQ.Script(Of T).run
   nameWithType: Script<T>.run
   nameWithType.vb: Script(Of T).run
-- uid: ZMDFQ.SkillBase
-  name: SkillBase
-  href: api/ZMDFQ.SkillBase.html
-  commentId: T:ZMDFQ.SkillBase
-  fullName: ZMDFQ.SkillBase
-  nameWithType: SkillBase
-- uid: ZMDFQ.SkillBase.Effects
-  name: Effects
-  href: api/ZMDFQ.SkillBase.html#ZMDFQ_SkillBase_Effects
-  commentId: F:ZMDFQ.SkillBase.Effects
-  fullName: ZMDFQ.SkillBase.Effects
-  nameWithType: SkillBase.Effects
+- uid: ZMDFQ.Skill
+  name: Skill
+  href: api/ZMDFQ.Skill.html
+  commentId: T:ZMDFQ.Skill
+  fullName: ZMDFQ.Skill
+  nameWithType: Skill
+- uid: ZMDFQ.Skill.AutoRequest
+  name: AutoRequest
+  href: api/ZMDFQ.Skill.html#ZMDFQ_Skill_AutoRequest
+  commentId: F:ZMDFQ.Skill.AutoRequest
+  fullName: ZMDFQ.Skill.AutoRequest
+  nameWithType: Skill.AutoRequest
+- uid: ZMDFQ.Skill.Disable(ZMDFQ.Game)
+  name: Disable(Game)
+  href: api/ZMDFQ.Skill.html#ZMDFQ_Skill_Disable_ZMDFQ_Game_
+  commentId: M:ZMDFQ.Skill.Disable(ZMDFQ.Game)
+  fullName: ZMDFQ.Skill.Disable(ZMDFQ.Game)
+  nameWithType: Skill.Disable(Game)
+- uid: ZMDFQ.Skill.Disable*
+  name: Disable
+  href: api/ZMDFQ.Skill.html#ZMDFQ_Skill_Disable_
+  commentId: Overload:ZMDFQ.Skill.Disable
+  isSpec: "True"
+  fullName: ZMDFQ.Skill.Disable
+  nameWithType: Skill.Disable
+- uid: ZMDFQ.Skill.DoEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.UseInfo)
+  name: DoEffect(Game, UseInfo)
+  href: api/ZMDFQ.Skill.html#ZMDFQ_Skill_DoEffect_ZMDFQ_Game_ZMDFQ_PlayerAction_UseInfo_
+  commentId: M:ZMDFQ.Skill.DoEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.UseInfo)
+  fullName: ZMDFQ.Skill.DoEffect(ZMDFQ.Game, ZMDFQ.PlayerAction.UseInfo)
+  nameWithType: Skill.DoEffect(Game, UseInfo)
+- uid: ZMDFQ.Skill.DoEffect*
+  name: DoEffect
+  href: api/ZMDFQ.Skill.html#ZMDFQ_Skill_DoEffect_
+  commentId: Overload:ZMDFQ.Skill.DoEffect
+  isSpec: "True"
+  fullName: ZMDFQ.Skill.DoEffect
+  nameWithType: Skill.DoEffect
+- uid: ZMDFQ.Skill.Enable(ZMDFQ.Game)
+  name: Enable(Game)
+  href: api/ZMDFQ.Skill.html#ZMDFQ_Skill_Enable_ZMDFQ_Game_
+  commentId: M:ZMDFQ.Skill.Enable(ZMDFQ.Game)
+  fullName: ZMDFQ.Skill.Enable(ZMDFQ.Game)
+  nameWithType: Skill.Enable(Game)
+- uid: ZMDFQ.Skill.Enable*
+  name: Enable
+  href: api/ZMDFQ.Skill.html#ZMDFQ_Skill_Enable_
+  commentId: Overload:ZMDFQ.Skill.Enable
+  isSpec: "True"
+  fullName: ZMDFQ.Skill.Enable
+  nameWithType: Skill.Enable
+- uid: ZMDFQ.Skill.Name
+  name: Name
+  href: api/ZMDFQ.Skill.html#ZMDFQ_Skill_Name
+  commentId: F:ZMDFQ.Skill.Name
+  fullName: ZMDFQ.Skill.Name
+  nameWithType: Skill.Name
+- uid: ZMDFQ.Skill.useWay
+  name: useWay()
+  href: api/ZMDFQ.Skill.html#ZMDFQ_Skill_useWay
+  commentId: M:ZMDFQ.Skill.useWay
+  fullName: ZMDFQ.Skill.useWay()
+  nameWithType: Skill.useWay()
+- uid: ZMDFQ.Skill.UseWay
+  name: UseWay
+  href: api/ZMDFQ.Skill.html#ZMDFQ_Skill_UseWay
+  commentId: P:ZMDFQ.Skill.UseWay
+  fullName: ZMDFQ.Skill.UseWay
+  nameWithType: Skill.UseWay
+- uid: ZMDFQ.Skill.useWay*
+  name: useWay
+  href: api/ZMDFQ.Skill.html#ZMDFQ_Skill_useWay_
+  commentId: Overload:ZMDFQ.Skill.useWay
+  isSpec: "True"
+  fullName: ZMDFQ.Skill.useWay
+  nameWithType: Skill.useWay
+- uid: ZMDFQ.Skill.UseWay*
+  name: UseWay
+  href: api/ZMDFQ.Skill.html#ZMDFQ_Skill_UseWay_
+  commentId: Overload:ZMDFQ.Skill.UseWay
+  isSpec: "True"
+  fullName: ZMDFQ.Skill.UseWay
+  nameWithType: Skill.UseWay
 - uid: ZMDFQ.ThemeCard
   name: ThemeCard
   href: api/ZMDFQ.ThemeCard.html
   commentId: T:ZMDFQ.ThemeCard
   fullName: ZMDFQ.ThemeCard
   nameWithType: ThemeCard
-- uid: ZMDFQ.ThemeCard.Effects
-  name: Effects
-  href: api/ZMDFQ.ThemeCard.html#ZMDFQ_ThemeCard_Effects
-  commentId: F:ZMDFQ.ThemeCard.Effects
-  fullName: ZMDFQ.ThemeCard.Effects
-  nameWithType: ThemeCard.Effects
+- uid: ZMDFQ.ThemeCard.Disable(ZMDFQ.Game)
+  name: Disable(Game)
+  href: api/ZMDFQ.ThemeCard.html#ZMDFQ_ThemeCard_Disable_ZMDFQ_Game_
+  commentId: M:ZMDFQ.ThemeCard.Disable(ZMDFQ.Game)
+  fullName: ZMDFQ.ThemeCard.Disable(ZMDFQ.Game)
+  nameWithType: ThemeCard.Disable(Game)
+- uid: ZMDFQ.ThemeCard.Disable*
+  name: Disable
+  href: api/ZMDFQ.ThemeCard.html#ZMDFQ_ThemeCard_Disable_
+  commentId: Overload:ZMDFQ.ThemeCard.Disable
+  isSpec: "True"
+  fullName: ZMDFQ.ThemeCard.Disable
+  nameWithType: ThemeCard.Disable
+- uid: ZMDFQ.ThemeCard.Enable(ZMDFQ.Game)
+  name: Enable(Game)
+  href: api/ZMDFQ.ThemeCard.html#ZMDFQ_ThemeCard_Enable_ZMDFQ_Game_
+  commentId: M:ZMDFQ.ThemeCard.Enable(ZMDFQ.Game)
+  fullName: ZMDFQ.ThemeCard.Enable(ZMDFQ.Game)
+  nameWithType: ThemeCard.Enable(Game)
+- uid: ZMDFQ.ThemeCard.Enable*
+  name: Enable
+  href: api/ZMDFQ.ThemeCard.html#ZMDFQ_ThemeCard_Enable_
+  commentId: Overload:ZMDFQ.ThemeCard.Enable
+  isSpec: "True"
+  fullName: ZMDFQ.ThemeCard.Enable
+  nameWithType: ThemeCard.Enable
+- uid: ZMDFQ.ThemeCard.Enabled
+  name: Enabled
+  href: api/ZMDFQ.ThemeCard.html#ZMDFQ_ThemeCard_Enabled
+  commentId: F:ZMDFQ.ThemeCard.Enabled
+  fullName: ZMDFQ.ThemeCard.Enabled
+  nameWithType: ThemeCard.Enabled
+- uid: ZMDFQ.TimeManager
+  name: TimeManager
+  href: api/ZMDFQ.TimeManager.html
+  commentId: T:ZMDFQ.TimeManager
+  fullName: ZMDFQ.TimeManager
+  nameWithType: TimeManager
+- uid: ZMDFQ.TimeManager.Instance
+  name: Instance
+  href: api/ZMDFQ.TimeManager.html#ZMDFQ_TimeManager_Instance
+  commentId: F:ZMDFQ.TimeManager.Instance
+  fullName: ZMDFQ.TimeManager.Instance
+  nameWithType: TimeManager.Instance
+- uid: ZMDFQ.TimeManager.WaitAsync(System.Single)
+  name: WaitAsync(Single)
+  href: api/ZMDFQ.TimeManager.html#ZMDFQ_TimeManager_WaitAsync_System_Single_
+  commentId: M:ZMDFQ.TimeManager.WaitAsync(System.Single)
+  fullName: ZMDFQ.TimeManager.WaitAsync(System.Single)
+  nameWithType: TimeManager.WaitAsync(Single)
+- uid: ZMDFQ.TimeManager.WaitAsync(System.Single,System.Threading.CancellationToken)
+  name: WaitAsync(Single, CancellationToken)
+  href: api/ZMDFQ.TimeManager.html#ZMDFQ_TimeManager_WaitAsync_System_Single_System_Threading_CancellationToken_
+  commentId: M:ZMDFQ.TimeManager.WaitAsync(System.Single,System.Threading.CancellationToken)
+  fullName: ZMDFQ.TimeManager.WaitAsync(System.Single, System.Threading.CancellationToken)
+  nameWithType: TimeManager.WaitAsync(Single, CancellationToken)
+- uid: ZMDFQ.TimeManager.WaitAsync*
+  name: WaitAsync
+  href: api/ZMDFQ.TimeManager.html#ZMDFQ_TimeManager_WaitAsync_
+  commentId: Overload:ZMDFQ.TimeManager.WaitAsync
+  isSpec: "True"
+  fullName: ZMDFQ.TimeManager.WaitAsync
+  nameWithType: TimeManager.WaitAsync
 - uid: ZMDFQ.UI
   name: ZMDFQ.UI
   href: api/ZMDFQ.UI.html
@@ -1186,3 +1903,27 @@ references:
   commentId: F:ZMDFQ.UI_Battle.SelectedPlayers
   fullName: ZMDFQ.UI_Battle.SelectedPlayers
   nameWithType: UI_Battle.SelectedPlayers
+- uid: ZMDFQ.UI_Battle.Self
+  name: Self
+  href: api/ZMDFQ.UI_Battle.html#ZMDFQ_UI_Battle_Self
+  commentId: F:ZMDFQ.UI_Battle.Self
+  fullName: ZMDFQ.UI_Battle.Self
+  nameWithType: UI_Battle.Self
+- uid: ZMDFQ.UsingInfo
+  name: UsingInfo
+  href: api/ZMDFQ.UsingInfo.html
+  commentId: T:ZMDFQ.UsingInfo
+  fullName: ZMDFQ.UsingInfo
+  nameWithType: UsingInfo
+- uid: ZMDFQ.UsingInfo.Card
+  name: Card
+  href: api/ZMDFQ.UsingInfo.html#ZMDFQ_UsingInfo_Card
+  commentId: F:ZMDFQ.UsingInfo.Card
+  fullName: ZMDFQ.UsingInfo.Card
+  nameWithType: UsingInfo.Card
+- uid: ZMDFQ.UsingInfo.Info
+  name: Info
+  href: api/ZMDFQ.UsingInfo.html#ZMDFQ_UsingInfo_Info
+  commentId: F:ZMDFQ.UsingInfo.Info
+  fullName: ZMDFQ.UsingInfo.Info
+  nameWithType: UsingInfo.Info

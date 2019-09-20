@@ -68,9 +68,9 @@ namespace ZMDFQ
             {
                 //默认玩家手上一定是一张事件卡，有其他情况再改
                 if (response.IfForward)
-                    return EventCards[0].UseForward(game, this);
+                    return EventCards.Find(c => c.Id == response.CardId).UseForward(game, this);
                 else
-                    return EventCards[0].UseBackward(game, this);
+                    return EventCards.Find(c => c.Id == response.CardId).UseBackward(game, this);
             }
         }
 

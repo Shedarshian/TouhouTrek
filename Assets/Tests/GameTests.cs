@@ -271,11 +271,51 @@ namespace Tests
             Assert.AreEqual(23, game.UsedActionDeck[1].Id);
             Assert.AreEqual(24, game.UsedActionDeck[2].Id);
             Assert.AreEqual(3, game.UsedActionDeck.Count);
+            yield break;
+        }
+        [UnityTest]
+        public IEnumerator winTest()
+        {
+            Game game = new Game();
+            game.Init(new GameOptions()
+            {
+                players = new Player[]
+                {
+                    new Player(0),
+                    new Player(1)
+                },
+                characterCards = game.createCards(new TestCharacter(), 20),
+                actionCards = game.createCards(new TestAction1(), 20),
+                officialCards = game.createCards(new TestOfficial(), 20),
+                eventCards = game.createCards(new TestEvent(), 20),
+                firstPlayer = 0,
+                shuffle = false,
+                initCommunitySize = 0,
+                initInfluence = 0,
+                chooseCharacter = true,
+                doubleCharacter = false,
+                endingOfficialCardCount = 1
+            });
+            game.StartGame();
+            game.Answer(new ChooseHeroResponse() { PlayerId = 0, HeroId = 1 });
+            game.Answer(new ChooseHeroResponse() { PlayerId = 1, HeroId = 4 });
+            game.Answer(new SimpleResponse() { PlayerId = 0, CardId = 21 });
+            game.Answer(new EndTurnResponse() { PlayerId = 0 });//TODO:回合结束的设定也许需要修改，按道理来讲应该先进入事件结算。
+            game.Answer(new ChooseDirectionResponse() { PlayerId = 0, CardId = 61, IfForward = true });
 
+            game.Answer(new EndTurnResponse() { PlayerId = 1 });
+            game.Answer(new ChooseDirectionResponse() { PlayerId = 1, CardId = 62, IfSet = true });
+            game.Answer(new ChooseSomeCardResponse() { PlayerId = 1, Cards = new List<int>() { 23, 24 } });
+
+            Assert.AreEqual(game.Players[0], game.winner);
             yield break;
         }
         class TestCharacter : HeroCard
         {
+            public override Camp camp
+            {
+                get { return Camp.commuMajor; }
+            }
             public override List<Skill> Skills { get; } = new List<Skill>(new Skill[] { });
         }
         class TestSkill : Skill
