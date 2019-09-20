@@ -240,7 +240,7 @@ namespace ZMDFQ
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        internal Task<Response> WaitAnswer(Request request)
+        public Task<Response> WaitAnswer(Request request)
         {
             var tcs = new TaskCompletionSource<Response>();
             int index = Players.FindIndex(x => x.Id == request.PlayerId);

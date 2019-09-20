@@ -64,7 +64,6 @@ namespace Tests
                 doubleCharacter = false
             });
             game.StartGame();
-            yield return new WaitForSeconds(1);//我也假装思考1秒
             game.Answer(new ChooseHeroResponse() { PlayerId = 0, HeroId = 1 });
             game.Answer(new ChooseHeroResponse() { PlayerId = 1, HeroId = 4 });
 
@@ -75,6 +74,43 @@ namespace Tests
             Assert.IsInstanceOf<TestCharacter>(game.Players[1].Hero);
             Assert.IsInstanceOf<TestOfficial>(game.ActiveTheme);
             Assert.AreEqual(1, game.Size);
+            Assert.AreEqual(1, game.ActivePlayer.EventCards.Count);
+            Assert.IsInstanceOf<TestEvent>(game.ActivePlayer.EventCards[0]);
+            Assert.AreEqual(3, game.ActivePlayer.ActionCards.Count);
+            Assert.IsInstanceOf<TestAction1>(game.ActivePlayer.ActionCards[0]);
+            Assert.IsInstanceOf<TestAction1>(game.ActivePlayer.ActionCards[1]);
+            Assert.IsInstanceOf<TestAction1>(game.ActivePlayer.ActionCards[2]);
+            yield break;
+        }
+        [UnityTest]
+        public IEnumerator useCardTest()
+        {
+            Game game = new Game();
+            game.Init(new GameOptions()
+            {
+                players = new Player[]
+                {
+                    new Player(0),
+                    new Player(1)
+                },
+                characterCards = game.createCards(new TestCharacter(), 20),
+                actionCards = game.createCards(new TestAction1(), 20),
+                officialCards = game.createCards(new TestOfficial(), 20),
+                eventCards = game.createCards(new TestEvent(), 20),
+                firstPlayer = 0,
+                shuffle = false,
+                initCommunitySize = 0,
+                initInfluence = 0,
+                chooseCharacter = true,
+                doubleCharacter = false
+            });
+            game.StartGame();
+            game.Answer(new ChooseHeroResponse() { PlayerId = 0, HeroId = 1 });
+            game.Answer(new ChooseHeroResponse() { PlayerId = 1, HeroId = 4 });
+            game.Answer(new SimpleResponse() { PlayerId = 0, CardId = 21 });
+
+            Assert.AreEqual(1, game.Players[0].Size);
+            yield break;
         }
         class TestCharacter : HeroCard
         {
@@ -104,8 +140,10 @@ namespace Tests
         }
         class TestAction1 : ActionCard<SimpleRequest, SimpleResponse>
         {
-            protected override async Task doEffect(Game game, SimpleResponse useWay)
+            protected override Task doEffect(Game game, SimpleResponse useWay)
             {
+                game.Players.Find(p => p.Id == useWay.PlayerId).Size += 1;
+                return Task.CompletedTask;
             }
             protected override SimpleRequest useWay()
             {
