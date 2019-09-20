@@ -31,22 +31,23 @@ namespace ZMDFQ
             Id = id;
         }
 
-        internal async Task DrawActionCard(Game game,int count)
+        internal async Task DrawActionCard(Game game, int count)
         {
-            List<ActionCard> data = new List<ActionCard>();
+            List<ActionCard> drawedCards = new List<ActionCard>();
             for (int i = 0; i < count; i++)
             {
-                if (game.Deck.Count == 0)
+                if (game.Deck.Count == 0)//如果没有行动牌了
                 {
+                    //就把行动弃牌堆洗入行动牌堆
                     game.Deck.AddRange(game.UsedActionDeck);
                     game.UsedActionDeck.Clear();
                     game.Reshuffle(game.Deck);
                 }
                 ActionCards.Add(game.Deck[0]);
-                data.Add(game.Deck[0]);
+                drawedCards.Add(game.Deck[0]);
                 game.Deck.RemoveAt(0);
             }
-            await game.EventSystem.Call(EventEnum.DrawActionCard, this, data);
+            await game.EventSystem.Call(EventEnum.DrawActionCard, this, drawedCards);
         }
 
         internal async Task DrawEventCard(Game game)
@@ -90,7 +91,7 @@ namespace ZMDFQ
         /// <param name="game"></param>
         /// <param name="card"></param>
         /// <returns></returns>
-        internal EventCard DropEventCard(Game game,EventCard card)
+        internal EventCard DropEventCard(Game game, EventCard card)
         {
             if (card == SaveEvent)
             {
@@ -146,7 +147,7 @@ namespace ZMDFQ
 
         internal int HandMax()
         {
-            int result=1;
+            int result = 1;
             if (Size > 1 && Size < 4)
             {
                 result = Size;

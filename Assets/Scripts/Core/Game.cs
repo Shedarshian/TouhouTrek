@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 //using UnityEngine;
@@ -30,6 +31,8 @@ namespace ZMDFQ
         /// 结算时出过什么卡
         /// </summary>
         public List<UsingInfo> UsingInfos = new List<UsingInfo>();
+
+        List<HeroCard> characterDeck = new List<HeroCard>();
 
         public List<ActionCard> Deck = new List<ActionCard>();
 
@@ -83,6 +86,15 @@ namespace ZMDFQ
             if (TimeManager != null)
                 TimeManager.Game = this;
             //初始化牌库
+            if (options != null && options.characterCards != null)
+                characterDeck = new List<HeroCard>(options.characterCards);
+            else
+            {
+                characterDeck = new List<HeroCard>(createCards(new Cards.CR_CP001()
+                {
+                    Name = "传教爱好者",
+                }, 28));
+            }
             if (options != null && options.actionCards != null)
                 Deck = new List<ActionCard>(options.actionCards);
             else
@@ -155,7 +167,7 @@ namespace ZMDFQ
                     for (int i = 0; i < Players.Count; i++)
                     {
                         Player p = Players[i];
-                        chooseHero[i] = WaitAnswer(new ChooseHeroRequest() { PlayerId = p.Id, HeroIds = new List<int>() { 1, 2, 3 } });
+                        chooseHero[i] = WaitAnswer(new ChooseHeroRequest() { PlayerId = p.Id, HeroIds = new List<int>(characterDeck.GetRange(i * 3, 3).Select(c => c.Id)) });
                     }
 
                     await Task.WhenAll(chooseHero);
@@ -163,7 +175,7 @@ namespace ZMDFQ
                     foreach (var response in chooseHero)
                     {
                         var chooseHeroResponse = response.Result as ChooseHeroResponse;
-                        GetPlayer(chooseHeroResponse.PlayerId).Hero = new Cards.CR_CP001() { Name = "传教爱好者" };
+                        GetPlayer(chooseHeroResponse.PlayerId).Hero = characterDeck.Find(c => c.Id == chooseHeroResponse.HeroId);
                     }
                     Log.Debug($"所有玩家选择英雄完毕！");
                 }
@@ -182,12 +194,24 @@ namespace ZMDFQ
 
             NewTurn(ActivePlayer);
         }
+        T[] drawCards<T>(List<T> pile, int number) where T : Card
+        {
+            T[] drawedCards = new T[pile.Count >= number ? number : pile.Count];
+            for (int i = 0; i < drawedCards.Length; i++)
+            {
+                drawedCards[i] = pile[0];
+                pile.RemoveAt(0);
+            }
+            return drawedCards;
+        }
+        int lastAllocatedID { get; set; } = 0;
         public T[] createCards<T>(T origin, int number) where T : Card, new()
         {
             T[] cards = new T[number];
             for (int i = 0; i < number; i++)
             {
                 cards[i] = Card.copyCard(origin);
+                cards[i].Id = ++lastAllocatedID;
             }
             return cards;
         }
@@ -348,6 +372,7 @@ namespace ZMDFQ
     public class GameOptions
     {
         public Player[] players = null;
+        public IEnumerable<HeroCard> characterCards = null;
         public IEnumerable<ActionCard> actionCards = null;
         public IEnumerable<ThemeCard> officialCards = null;
         public IEnumerable<EventCard> eventCards = null;
