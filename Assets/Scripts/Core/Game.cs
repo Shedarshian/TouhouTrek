@@ -262,17 +262,17 @@ namespace ZMDFQ
             for (int i = 0; i < Players.Count; i++)
             {
                 await NewTurn(Players[i]);
-            }           
-                //一轮结束了
-                await EventSystem.Call(EventEnum.RoundEnd, this);
-                if (Round + Players.Count == 12)//游戏结束规则
-                {
-                    await EventSystem.Call(EventEnum.GameEnd, this);
-                }
+            }
+            //一轮结束了
+            await EventSystem.Call(EventEnum.RoundEnd, this);
+            if (Round + Players.Count == 12)//游戏结束规则
+            {
+                await EventSystem.Call(EventEnum.GameEnd, this);
+            }
             else
             {
                 NewRound();
-            }           
+            }
         }
 
         internal async Task NewTurn(Player player)
@@ -307,12 +307,12 @@ namespace ZMDFQ
             if (player.ActionCards.Count > max)
             {
                 ChooseSomeCardResponse chooseSomeCardResponse = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { PlayerId = player.Id, Count = player.ActionCards.Count - max });
-                await player.DropActionCard(this, chooseSomeCardResponse.Cards);
+                await player.DropActionCard(this, chooseSomeCardResponse.Cards, true);
             }
 
             await EventSystem.Call(EventEnum.TurnEnd, this);
 
-            
+
         }
 
         internal void NextThemeCard()

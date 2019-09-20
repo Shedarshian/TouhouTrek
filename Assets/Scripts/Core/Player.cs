@@ -121,14 +121,15 @@ namespace ZMDFQ
         /// </summary>
         /// <param name="game"></param>
         /// <param name="cards"></param>
-        internal async Task DropActionCard(Game game, List<int> cards)
+        internal async Task DropActionCard(Game game, List<int> cards, bool goUsedPile = false)
         {
             List<ActionCard> data = new List<ActionCard>();
             foreach (var cardId in cards)
             {
                 ActionCard card = ActionCards.Find(x => x.Id == cardId);
                 ActionCards.Remove(card);
-                //game.UsedDeck.Add(card);
+                if (goUsedPile)
+                    game.UsedActionDeck.Add(card);
                 data.Add(card);
             }
             await game.EventSystem.Call(EventEnum.DropActionCard, this, data);
