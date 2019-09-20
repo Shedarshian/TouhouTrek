@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -77,6 +78,7 @@ namespace ZMDFQ
         /// </summary>
         private TaskCompletionSource<Response>[] requests;
         GameOptions options { get; set; } = null;
+        int endingOfficialCardCount { get; set; } = 0;
         /// <summary>
         /// 游戏初始化，卡组玩家生成
         /// </summary>
@@ -124,7 +126,7 @@ namespace ZMDFQ
             }
             if (options == null || options.shuffle)
             {
-                //TODO:角色牌库洗牌
+                Reshuffle(characterDeck);
                 Reshuffle(Deck);
                 Reshuffle(ThemeDeck);
                 Reshuffle(EventDeck);
@@ -147,6 +149,8 @@ namespace ZMDFQ
             {
                 player.Size = options != null ? options.initInfluence : 0;
             }
+            //初始化游戏结束条件
+            endingOfficialCardCount = options != null && options.endingOfficialCardCount > 0 ? options.endingOfficialCardCount : 12 - Players.Count;
             requests = new TaskCompletionSource<Response>[Players.Count];
         }
 
@@ -257,24 +261,55 @@ namespace ZMDFQ
         internal async void NewRound()
         {
             Round++;
+            //官作发布阶段
             NextThemeCard();
             await EventSystem.Call(EventEnum.RoundStart, this);
+            //玩家回合
             for (int i = 0; i < Players.Count; i++)
             {
                 await NewTurn(Players[i]);
             }
+            //官作弃置阶段
+            if (ActiveTheme != null)
+            {
+                UsedThemeDeck.Add(ActiveTheme);
+                if (UsedThemeDeck.Count >= endingOfficialCardCount)//游戏结束规则
+                {
+                    //游戏结束结算
+                    for (int i = 0; i < Players.Count; i++)
+                    {
+                        Player p = Players[Players.Count - 1 - i];
+                        if (p.SaveEvent != null)
+                            await p.SaveEvent.UseForward(this, p);
+                    }
+                    //统计玩家胜利情况和得分
+                    Dictionary<Player, int> playerPointDic = new Dictionary<Player, int>();
+                    foreach (Player player in Players)
+                    {
+                        int basePoint = 0;
+                        if (player.Hero.camp == Camp.commuMajor && player.Size >= 0 && Size >= 0)
+                            basePoint = Size;
+                        else if (player.Hero.camp == Camp.indivMajor && player.Size >= 0 && Size >= 0)
+                            basePoint = player.Size;
+                        else if (player.Hero.camp == Camp.commuMinor && player.Size >= 0 && Size <= 0)
+                            basePoint = Math.Abs(Size);
+                        else if (player.Hero.camp == Camp.indivMinor && player.Size >= 0 && Size <= 0)
+                            basePoint = player.Size;
+                        //TODO:进行玩家的其他分数结算
+                        playerPointDic.Add(player, basePoint);
+                    }
+                    winner = playerPointDic.OrderByDescending(kvp => kvp.Value).First().Key;//这就是获胜者，目前不知道该干嘛。
+                    await EventSystem.Call(EventEnum.GameEnd, this);
+                    return;
+                }
+                else
+                    ActiveTheme.Disable(this);//在游戏结束的时候不调用该方法，因为此时进入弃牌堆的官作牌被视作有效的。
+            }
             //一轮结束了
             await EventSystem.Call(EventEnum.RoundEnd, this);
-            if (Round + Players.Count == 12)//游戏结束规则
-            {
-                await EventSystem.Call(EventEnum.GameEnd, this);
-            }
-            else
-            {
-                NewRound();
-            }
+            NewRound();
         }
-
+        public Player winner { get; private set; } = null;
         internal async Task NewTurn(Player player)
         {
             await EventSystem.Call(EventEnum.TurnStart, this);
@@ -317,11 +352,6 @@ namespace ZMDFQ
 
         internal void NextThemeCard()
         {
-            if (ActiveTheme != null)
-            {
-                ActiveTheme.Disable(this);
-                UsedThemeDeck.Add(ActiveTheme);
-            }
             ActiveTheme = ThemeDeck[0];
             ThemeDeck.RemoveAt(0);
             ActiveTheme.Enable(this);
@@ -374,6 +404,7 @@ namespace ZMDFQ
     public class GameOptions
     {
         public Player[] players = null;
+        public int endingOfficialCardCount = 0;
         public IEnumerable<HeroCard> characterCards = null;
         public IEnumerable<ActionCard> actionCards = null;
         public IEnumerable<ThemeCard> officialCards = null;

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class Response
+    <title>Class UseCard
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class Response
+    <meta name="title" content="Class UseCard
    ">
     <meta name="generator" content="docfx 2.45.1.0">
     
@@ -68,22 +68,17 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="ZMDFQ.PlayerAction.Response">
+            <article class="content wrap" id="_content" data-uid="ZMDFQ.Effects.UseCard">
   
   
-  <h1 id="ZMDFQ_PlayerAction_Response" data-uid="ZMDFQ.PlayerAction.Response" class="text-break">Class Response
+  <h1 id="ZMDFQ_Effects_UseCard" data-uid="ZMDFQ.Effects.UseCard" class="text-break">Class UseCard
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">Response</span></div>
-      <div class="level2"><a class="xref" href="ZMDFQ.PlayerAction.ChooseHeroResponse.html">ChooseHeroResponse</a></div>
-      <div class="level2"><a class="xref" href="ZMDFQ.PlayerAction.ChooseSomeCardResponse.html">ChooseSomeCardResponse</a></div>
-      <div class="level2"><a class="xref" href="ZMDFQ.PlayerAction.EndTurnResponse.html">EndTurnResponse</a></div>
-      <div class="level2"><a class="xref" href="ZMDFQ.PlayerAction.TakeChoiceResponse.html">TakeChoiceResponse</a></div>
-      <div class="level2"><a class="xref" href="ZMDFQ.PlayerAction.UseInfo.html">UseInfo</a></div>
+    <div class="level1"><span class="xref">UseCard</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -109,30 +104,64 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="ZMDFQ.PlayerAction.html">ZMDFQ.PlayerAction</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ZMDFQ.Effects.html">ZMDFQ.Effects</a></h6>
   <h6><strong>Assembly</strong>: Model.dll</h6>
-  <h5 id="ZMDFQ_PlayerAction_Response_syntax">Syntax</h5>
+  <h5 id="ZMDFQ_Effects_UseCard_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Response</code></pre>
+    <pre><code class="lang-csharp hljs">public class UseCard</code></pre>
   </div>
-  <h3 id="fields">Fields
+  <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_PlayerAction_Response_PlayerId.md&amp;value=---%0Auid%3A%20ZMDFQ.PlayerAction.Response.PlayerId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_Effects_UseCard_NormalUse__1_ZMDFQ_Game___0_ZMDFQ_Card_System_Func_ZMDFQ_Game___0_System_Threading_Tasks_Task__.md&amp;value=---%0Auid%3A%20ZMDFQ.Effects.UseCard.NormalUse%60%601(ZMDFQ.Game%2C%60%600%2CZMDFQ.Card%2CSystem.Func%7BZMDFQ.Game%2C%60%600%2CSystem.Threading.Tasks.Task%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/Core/PlayerAction/Response.cs/#L14">View Source</a>
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/Core/Effect/UseCard.cs/#L18">View Source</a>
   </span>
-  <h4 id="ZMDFQ_PlayerAction_Response_PlayerId" data-uid="ZMDFQ.PlayerAction.Response.PlayerId">PlayerId</h4>
-  <div class="markdown level1 summary"><p>回应操作的玩家</p>
+  <a id="ZMDFQ_Effects_UseCard_NormalUse_" data-uid="ZMDFQ.Effects.UseCard.NormalUse*"></a>
+  <h4 id="ZMDFQ_Effects_UseCard_NormalUse__1_ZMDFQ_Game___0_ZMDFQ_Card_System_Func_ZMDFQ_Game___0_System_Threading_Tasks_Task__" data-uid="ZMDFQ.Effects.UseCard.NormalUse``1(ZMDFQ.Game,``0,ZMDFQ.Card,System.Func{ZMDFQ.Game,``0,System.Threading.Tasks.Task})">NormalUse&lt;T&gt;(Game, T, Card, Func&lt;Game, T, Task&gt;)</h4>
+  <div class="markdown level1 summary"><p>正常的结算流程：结算牌放结算区，结算完毕后进入弃牌堆</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int PlayerId</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task NormalUse&lt;T&gt;(Game game, T useOneCard, Card card, Func&lt;Game, T, Task&gt; effect)
+    where T : UseOneCard</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">useOneCard</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.Card.html">Card</a></td>
+        <td><span class="parametername">card</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="ZMDFQ.Game.html">Game</a>, T, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -142,7 +171,22 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -155,10 +199,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_PlayerAction_Response.md&amp;value=---%0Auid%3A%20ZMDFQ.PlayerAction.Response%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_Effects_UseCard.md&amp;value=---%0Auid%3A%20ZMDFQ.Effects.UseCard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/Core/PlayerAction/Response.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/Core/Effect/UseCard.cs/#L9" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

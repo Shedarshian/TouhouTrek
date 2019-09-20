@@ -12,6 +12,10 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class CR_CP001 : HeroCard
     {
+        public override Camp camp
+        {
+            get { return Camp.commuMajor; }
+        }
         public override List<Skill> Skills => skills;
         List<Skill> skills = new List<Skill>() { new CR_CP001_SK1() { Name = "传教" } };
     }
