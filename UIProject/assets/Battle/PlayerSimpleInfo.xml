@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="419,128">
+  <displayList>
+    <graph id="n0_gs0s" name="n0" xy="0,0" size="362,128" type="rect"/>
+    <graph id="n1_gs0s" name="n1" xy="11,10" size="70,66" type="rect"/>
+    <graph id="n2_gs0s" name="n2" xy="91,10" size="49,66" type="rect" lineSize="0" fillColor="#ffff0000"/>
+    <graph id="n3_gs0s" name="n3" xy="148,10" size="49,66" type="rect" lineSize="0" fillColor="#ff0066ff"/>
+    <graph id="n4_gs0s" name="n4" xy="101,18" size="27,49" type="rect" lineSize="0"/>
+    <graph id="n5_gs0s" name="n5" xy="160,18" size="27,49" type="rect" lineSize="0"/>
+    <graph id="n6_gs0s" name="n6" xy="206,10" size="79,109" type="rect" fillColor="#ff009900"/>
+    <graph id="n8_gs0s" name="n8" xy="295,10" size="58,50" type="rect"/>
+    <graph id="n9_gs0s" name="n9" xy="294,67" size="59,52" type="rect"/>
+    <graph id="n10_gs0s" name="n10" xy="361,0" size="58,128" type="rect"/>
+    <graph id="n11_gs0s" name="n11" xy="12,85" size="138,34" type="rect"/>
+    <graph id="n12_gs0s" name="n12" xy="157,84" size="41,35" type="rect"/>
+    <text id="n13_gs0s" name="n13" xy="17,89" size="127,21" fontSize="15" vAlign="middle" autoSize="none" text="玩家名称"/>
+    <text id="n14_gs0s" name="n14" xy="96,28" size="38,36" fontSize="27" align="center" vAlign="middle" autoSize="none" text="3"/>
+    <text id="n15_gs0s" name="n15" xy="155,27" size="38,36" fontSize="27" align="center" vAlign="middle" autoSize="none" text="1"/>
+    <text id="n16_gs0s" name="n16" xy="287,14" size="78,48" fontSize="39" align="center" vAlign="middle" autoSize="none" text="-1"/>
+    <text id="n17_gs0s" name="n17" xy="161,89" size="34,25" fontSize="18" align="center" vAlign="middle" autoSize="none" text="856"/>
+  </displayList>
+</component>

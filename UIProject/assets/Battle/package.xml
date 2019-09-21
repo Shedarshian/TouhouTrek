@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <packageDescription id="oacz4rtm" jpegQuality="80" compressPNG="true">
   <resources>
-    <component id="qfxq0" name="Main.xml" path="/" exported="true"/>
-    <component id="qfxq1" name="HandCard.xml" path="/" exported="true"/>
-    <component id="qfxq2" name="PlayerInfo.xml" path="/"/>
-    <component id="qfxq3" name="SkillBtn.xml" path="/"/>
-    <component id="qfxq4" name="HandCards.xml" path="/"/>
-    <component id="qfxq5" name="Head.xml" path="/"/>
-    <component id="qfxq6" name="EventCard.xml" path="/"/>
-    <component id="pbk78" name="ChooseHeroWindow.xml" path="/" exported="true"/>
-    <component id="pbk79" name="Hero.xml" path="/ChooseHero/"/>
-    <component id="lziga" name="Btn.xml" path="/"/>
+    <component id="qfxq0" name="Main.xml" path="/Main1/" exported="true"/>
+    <component id="qfxq1" name="HandCard.xml" path="/Main1/" exported="true"/>
+    <component id="qfxq2" name="PlayerInfo.xml" path="/Main1/"/>
+    <component id="qfxq3" name="SkillBtn.xml" path="/Main1/"/>
+    <component id="qfxq4" name="HandCards.xml" path="/Main1/"/>
+    <component id="qfxq5" name="Head.xml" path="/Main1/"/>
+    <component id="qfxq6" name="EventCard.xml" path="/Main1/"/>
+    <component id="pbk78" name="ChooseHeroWindow.xml" path="/Main1/" exported="true"/>
+    <component id="pbk79" name="Hero.xml" path="/Main1/ChooseHero/"/>
+    <component id="lziga" name="Btn.xml" path="/Main1/"/>
+    <image id="gs0sb" name="设计图.png" path="/"/>
+    <component id="gs0sc" name="Main2.xml" path="/" exported="true"/>
+    <component id="gs0sd" name="PlayerSimpleInfo.xml" path="/"/>
   </resources>
   <publish name="Battle"/>
 </packageDescription>

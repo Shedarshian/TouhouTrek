@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" designImage="ui://oacz4rtmgs0sb" designImageAlpha="28" designImageLayer="1">
+  <displayList>
+    <component id="n0_gs0s" name="PlayerInfo0" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="8,8"/>
+    <component id="n18_gs0s" name="PlayerInfo1" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="7,142"/>
+    <component id="n19_gs0s" name="PlayerInfo2" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="7,276"/>
+    <component id="n20_gs0s" name="PlayerInfo3" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="7,410"/>
+    <component id="n21_gs0s" name="PlayerInfo4" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="7,544"/>
+    <component id="n22_gs0s" name="PlayerInfo5" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="7,678"/>
+    <component id="n23_gs0s" name="PlayerInfo6" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="7,812"/>
+    <component id="n24_gs0s" name="PlayerInfo7" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="7,946"/>
+    <graph id="n26_gs0s" name="n26" xy="456,48" size="148,170" type="rect" fillColor="#ff0066ff"/>
+    <text id="n27_gs0s" name="n27" xy="493,76" size="105,32" fontSize="25" align="center" vAlign="middle" text="事件牌堆"/>
+    <text id="n28_gs0s" name="n28" xy="496,153" size="55,32" fontSize="25" align="center" vAlign="middle" text="剩余"/>
+    <text id="n29_gs0s" name="EventDeckCount" xy="541,142" size="55,54" fontSize="45" color="#ffffff" align="center" vAlign="middle" text="56"/>
+    <graph id="n30_gs0s" name="n30" xy="458,234" size="148,170" type="rect" fillColor="#ffff0000"/>
+    <text id="n31_gs0s" name="n31" xy="495,262" size="105,32" fontSize="25" align="center" vAlign="middle" text="行动牌堆"/>
+    <text id="n32_gs0s" name="n32" xy="498,339" size="55,32" fontSize="25" align="center" vAlign="middle" text="剩余"/>
+    <text id="n33_gs0s" name="ActionDeckCount" xy="543,328" size="55,54" fontSize="45" color="#ffffff" align="center" vAlign="middle" text="56"/>
+    <graph id="n34_gs0s" name="n34" xy="1477,549" size="128,151" type="rect" fillColor="#ffff0000"/>
+  </displayList>
+</component>

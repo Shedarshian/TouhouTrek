@@ -18,8 +18,7 @@ namespace ZMDFQ.Cards
             switch (nowRequest)
             {
                 case UseLimitCard useLimitCard:
-                    //TODO 根据Id找到对应类
-                    if (useLimitCard.CardType != 0)
+                    if (useLimitCard.CardType != CardHelper.getId(this))
                     {
                         return false;
                     }
