@@ -109,27 +109,23 @@ namespace ZMDFQ
             }
         }
 
-        internal Task UseActionCard(Game game, FreeUse cardTarget)
+        internal Task UseActionCard(Game game, FreeUse useInfo)
         {
-            if (cardTarget.CardId >= 0)
+            if (useInfo.SkillId < 0)
             {
                 //正常用卡
-                ActionCard card = ActionCards.Find(x => x.Id == cardTarget.CardId);
+                ActionCard card = ActionCards.Find(x => x.Id == useInfo.CardId);
                 if (card == null) return Task.CompletedTask;
-                return card.DoEffect(game, cardTarget);
+                return card.DoEffect(game, useInfo);
             }
             else
             {
-                //玩家打出了一张转换过的卡
-                ITreatAs treatAs = System.Activator.CreateInstance(TreatHelper.getType(cardTarget.SkillId)) as ITreatAs;
-                if (treatAs.CanTreat(game, cardTarget))
-                {
-                    var card = treatAs.TreatTo(game, cardTarget);
-                    return (card as ActionCard).DoEffect(game, cardTarget);
-                }
+                Skill skill = Hero.Skills.Find(x => SkillHelper.getId(x) == useInfo.SkillId);
+                if (skill != null)
+                    return skill.DoEffect(game, useInfo);
                 else
                 {
-                    throw new System.Exception($"未知的卡牌转换错误");
+                    throw new System.Exception($"玩家不持有的技能：{useInfo.SkillId}");
                 }
             }
         }
