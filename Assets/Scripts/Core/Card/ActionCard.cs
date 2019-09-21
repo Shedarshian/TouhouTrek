@@ -11,6 +11,6 @@ namespace ZMDFQ
     {
         public abstract bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest);
 
-        internal abstract Task DoEffect(Game game, FreeUse useWay);
+        public abstract Task DoEffect(Game game, FreeUse useWay);
     }
 }

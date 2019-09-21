@@ -49,7 +49,7 @@ namespace ZMDFQ.Cards
             return false;
         }
 
-        internal override Task DoEffect(Game game, FreeUse useWay)
+        public override Task DoEffect(Game game, FreeUse useWay)
         {
             return Effects.UseCard.NormalUse(game, useWay, this, effect);          
         }
