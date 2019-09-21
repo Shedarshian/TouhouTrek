@@ -20,7 +20,7 @@ namespace ZMDFQ
         public Player Self;
 
         private Request nowRequest;
-        private UseWay nowUseWay;
+        private UseRequest nowUseWay;
         private Skill nowSkill;
 
         private void Awake()
@@ -34,7 +34,7 @@ namespace ZMDFQ
 
             _main.GetChild("n17").onClick.Add(takeUse);
 
-            _main.GetChild("EndTurn").onClick.Add(() => Game.Answer(new EndTurnResponse() { PlayerId = Self.Id }));
+            _main.GetChild("EndTurn").onClick.Add(() => Game.Answer(new EndFreeUseResponse() { PlayerId = Self.Id }));
 
             _main.GetChild("n30").onClick.Add(useForward);
 
@@ -63,7 +63,7 @@ namespace ZMDFQ
                 Skill skill = ui_skill.data as Skill;
                 if (nowSkill == null || nowSkill != skill) nowSkill = skill;
                 else nowSkill = null;
-                if (nowSkill != null) nowUseWay = nowSkill.UseWay;
+                if (nowSkill != null) nowSkill.CanUse(Game, nowRequest, getNowUseInfo(), out nowUseWay);
                 FlushView(Game);
             });
 
@@ -91,7 +91,7 @@ namespace ZMDFQ
                 ui_player.changeStateOnClick = false;
                 ui_player.onClick.Add(() =>
                 {
-                    if (nowUseWay is ChooseSomeoneRequest request && request.Number > 1)
+                    if (nowUseWay is HeroChooseRequest request && request.Number > 1)
                     {
                         //复选玩家模式
                         if (SelectedPlayers.Contains(ui_player))
@@ -192,13 +192,13 @@ namespace ZMDFQ
             _main.GetController("ChooseHero").selectedIndex = 0;
             switch (request)
             {
-                case UseCardRequest useCardRequest:
+                case FreeUseRequest useCardRequest:
                     Debug.Log("出牌");
                     c.selectedIndex = 1;
                     _main.GetChild("n17").asButton.enabled = false;
                     if (SelectedCards.Count == 1)
                     {
-                        checkUse(SelectedCards[0].UseWay);
+                        checkUse(SelectedCards[0]);
                     }
                     break;
                 case ChooseDirectionRequest chooseDirectionRequest:
@@ -233,37 +233,41 @@ namespace ZMDFQ
         /// 根据出牌方式刷新UI
         /// </summary>
         /// <param name="useway"></param>
-        void checkUse(UseWay useway)
+        void checkUse(ActionCard actionCard)
         {
-            nowUseWay = useway;
-            switch (useway)
+            if (SelectedCards[0].CanUse(Game, nowRequest, getNowUseInfo(), out nowUseWay))
             {
-                case SimpleRequest simpleRequest:
-                    _main.GetChild("n17").asButton.enabled = true;
-                    break;
-                case ChooseSomeoneRequest chooseSomeoneRequest:
-                    _main.GetChild("n17").asButton.enabled = SelectedPlayers.Count == chooseSomeoneRequest.Number;
-                    break;
+                _main.GetChild("n17").asButton.enabled = true;
             }
+            //switch (useway)
+            //{
+            //    case SimpleRequest simpleRequest:
+            //        _main.GetChild("n17").asButton.enabled = true;
+            //        break;
+            //    case ChooseSomeoneRequest chooseSomeoneRequest:
+            //        _main.GetChild("n17").asButton.enabled = SelectedPlayers.Count == chooseSomeoneRequest.Number;
+            //        break;
+            //}
         }
 
         void takeUse()
         {
             nowRequest = null;
-            switch (nowUseWay)
-            {
-                case SimpleRequest simpleRequest:
-                    Game.Answer(new SimpleResponse() { PlayerId = Self.Id, CardId = SelectedCards[0].Id });
-                    break;
-                case ChooseSomeoneRequest chooseSomeoneRequest:
-                    Game.Answer(new ChooseSomeoneResponse() { PlayerId = Self.Id, Targets = SelectedPlayers.Select(x => x.Player.Id).ToList() });
-                    break;
+            Game.Answer(getNowUseInfo());
+            //switch (nowUseWay)
+            //{
+                //case SimpleRequest simpleRequest:
+                //    Game.Answer(new SimpleResponse() { PlayerId = Self.Id, CardId = SelectedCards[0].Id });
+                //    break;
+                //case ChooseSomeoneRequest chooseSomeoneRequest:
+                //    Game.Answer(new ChooseSomeoneResponse() { PlayerId = Self.Id, Targets = SelectedPlayers.Select(x => x.Player.Id).ToList() });
+                //    break;
                 //case ChooseDirectionRequest chooseDirectionRequest:
                 //    break;
                 //case ChooseSomeCardRequest  dropCardRequest:
                 //    Game.DoAction(new ChooseSomeCardResponse() { PlayerId = Self.Id, Cards = SelectedCards });
                 //    break;
-            }
+            //}
             SelectedCards.Clear();
             FlushView(Game);
         }
@@ -312,6 +316,18 @@ namespace ZMDFQ
             nowRequest = null;
             Game.Answer(new ChooseDirectionResponse() { PlayerId = Self.Id, CardId = Self.EventCards[0].Id, IfSet = true });
             FlushView(Game);
+        }
+
+        FreeUse getNowUseInfo()
+        {
+            FreeUse result = new FreeUse()
+            {
+                PlayerId = Self.Id,
+                Source = SelectedCards.Select(x => x.Id).ToList(),
+                CardId = SelectedCards.Count > 0 ? SelectedCards[0].Id : 0,
+                HeroId = SelectedPlayers.Select(x => x.Player.Id).ToList(),
+            };
+            return result;
         }
     }
 }

@@ -109,19 +109,19 @@ namespace ZMDFQ
             }
         }
 
-        internal Task UseActionCard(Game game, int cardId, UseOneCard cardTarget)
+        internal Task UseActionCard(Game game, FreeUse cardTarget)
         {
-            if (cardId >= 0)
+            if (cardTarget.CardId >= 0)
             {
                 //正常用卡
-                ActionCard card = ActionCards.Find(x => x.Id == cardId);
+                ActionCard card = ActionCards.Find(x => x.Id == cardTarget.CardId);
                 if (card == null) return Task.CompletedTask;
                 return card.DoEffect(game, cardTarget);
             }
             else
             {
                 //玩家打出了一张转换过的卡
-                ITreatAs treatAs = System.Activator.CreateInstance(TreatHelper.getType(cardTarget.TreatAs)) as ITreatAs;
+                ITreatAs treatAs = System.Activator.CreateInstance(TreatHelper.getType(cardTarget.SkillId)) as ITreatAs;
                 if (treatAs.CanTreat(game, cardTarget))
                 {
                     var card = treatAs.TreatTo(game, cardTarget);
@@ -155,7 +155,7 @@ namespace ZMDFQ
         }
 
 
-        internal void UseSkill()
+        internal void UseSkill(Game game,FreeUse use)
         {
 
         }

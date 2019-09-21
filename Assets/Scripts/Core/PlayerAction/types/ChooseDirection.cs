@@ -13,13 +13,10 @@ namespace ZMDFQ.PlayerAction
     {
         //public EventCard EventCard;
     }
-    public class ChooseDirectionResponse : UseOneCard
+    public class ChooseDirectionResponse : Response
     {
+        public int CardId;
         public bool IfForward;
         public bool IfSet;
-        public override Task HandleAction(Game game)
-        {
-            return Task.CompletedTask;
-        }
     }
 }

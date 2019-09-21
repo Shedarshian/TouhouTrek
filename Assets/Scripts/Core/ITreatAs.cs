@@ -11,8 +11,8 @@ namespace ZMDFQ
     /// </summary>
     public interface ITreatAs
     {
-        Card TreatTo(Game game, PlayerAction.UseOneCard useOneCard);
-        bool CanTreat(Game game, PlayerAction.UseOneCard useOneCard);
+        Card TreatTo(Game game, PlayerAction.FreeUse useOneCard);
+        bool CanTreat(Game game, PlayerAction.FreeUse useOneCard);
     }
     public class TreatAttribute : Attribute
     {

@@ -44,8 +44,8 @@ namespace ZMDFQ
             Player player = Game.GetPlayer(request.PlayerId);
             switch (request)
             {
-                case UseCardRequest useCardRequest:
-                    Game.Answer(new EndTurnResponse() { PlayerId = request.PlayerId });
+                case FreeUseRequest useCardRequest:
+                    Game.Answer(new EndFreeUseResponse() { PlayerId = request.PlayerId });
                     break;
                 case ChooseSomeCardRequest dropCard:
                     List<ActionCard> cards = new List<ActionCard>();

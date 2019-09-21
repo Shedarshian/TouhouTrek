@@ -324,14 +324,14 @@ namespace ZMDFQ
             while (true)
             {
                 Log.Debug($"玩家{player.Id}出牌中");
-                Response response = await WaitAnswer(new UseCardRequest() { PlayerId = player.Id, TimeOut = TurnTime });
-                if (response is EndTurnResponse)
+                Response response = await WaitAnswer(new FreeUseRequest() { PlayerId = player.Id, TimeOut = TurnTime });
+                if (response is EndFreeUseResponse)
                 {
                     break;
                 }
                 else
                 {
-                    await (response as UseOneCard).HandleAction(this);
+                    await (response as FreeUse).HandleAction(this);
                 }
             }
 

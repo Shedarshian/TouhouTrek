@@ -9,14 +9,14 @@ namespace ZMDFQ.PlayerAction
     /// <summary>
     /// 自由用牌
     /// </summary>
-    public class UseCardRequest : Request
+    public class FreeUseRequest : Request
     {
 
     }
     /// <summary>
     /// 结束自由用牌
     /// </summary>
-    public class EndTurnResponse:Response
+    public class EndFreeUseResponse:Response
     {
         //public override void HandleAction(Game game)
         //{
