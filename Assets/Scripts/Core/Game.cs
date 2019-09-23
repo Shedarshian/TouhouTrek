@@ -288,7 +288,7 @@ namespace ZMDFQ
                             await p.SaveEvent.UseForward(this, p);
                     }
                     //统计玩家胜利情况和得分
-                    Dictionary<Player, int> playerPointDic = new Dictionary<Player, int>();
+                    List<Player> winnerList = new List<Player>();
                     foreach (Player player in Players)
                     {
                         int basePoint = 0;
@@ -300,10 +300,17 @@ namespace ZMDFQ
                             basePoint = Math.Abs(Size);
                         else if (player.Hero.camp == Camp.indivMinor && player.Size >= 0 && Size <= 0)
                             basePoint = player.Size;
+                        else if (player.Hero.camp == Camp.neutral)
+                        {
+                            //中立的分数结算额外算
+                        }
+                        else
+                            continue;//不结算分的玩家算失败
                         //TODO:进行玩家的其他分数结算
-                        playerPointDic.Add(player, basePoint);
+                        player.point = basePoint;
+                        winnerList.Add(player);
                     }
-                    winner = playerPointDic.OrderByDescending(kvp => kvp.Value).First().Key;//这就是获胜者，目前不知道该干嘛。
+                    winners = winnerList.ToArray();//这就是获胜者，目前不知道该干嘛。
                     await EventSystem.Call(EventEnum.GameEnd, this);
                     return;
                 }
@@ -314,7 +321,7 @@ namespace ZMDFQ
             await EventSystem.Call(EventEnum.RoundEnd, this);
             NewRound();
         }
-        public Player winner { get; private set; } = null;
+        public Player[] winners { get; private set; } = null;
         internal async Task NewTurn(Player player)
         {
             await EventSystem.Call(EventEnum.TurnStart, this);

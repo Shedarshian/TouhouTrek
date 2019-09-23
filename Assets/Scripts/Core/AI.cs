@@ -38,7 +38,7 @@ namespace ZMDFQ
                     game.Answer(new ChooseSomeCardResponse()
                     {
                         PlayerId = Id,
-                        Cards = cards.Select(x=>x.Id).ToList()
+                        Cards = cards.Select(x => x.Id).ToList()
                     });
                     break;
                 case ChooseHeroRequest chooseHero:
@@ -49,7 +49,7 @@ namespace ZMDFQ
                     });
                     break;
                 case ChooseDirectionRequest chooseDirectionRequest:
-                    game.Answer(new ChooseDirectionResponse() { PlayerId = Id, IfSet = false, IfForward = true });
+                    game.Answer(new ChooseDirectionResponse() { PlayerId = Id, CardId = EventCards[0].Id, IfSet = false, IfForward = true });
                     break;
                 default:
                     Log.Warning($"ai未处理的响应类型:{request.GetType()}");
