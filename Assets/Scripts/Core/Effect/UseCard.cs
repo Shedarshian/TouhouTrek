@@ -15,7 +15,7 @@ namespace ZMDFQ.Effects
         /// <param name="useOneCard"></param>
         /// <param name="card"></param>
         /// <param name="effect"></param>
-        public static async Task NormalUse<T>(Game game, T useOneCard, Card card, Func<Game, T, Task> effect) where T : PlayerAction.UseOneCard
+        public static async Task NormalUse(Game game, PlayerAction.FreeUse useOneCard, Card card, Func<Game, PlayerAction.FreeUse, Task> effect)
         {
             Player player = game.GetPlayer(useOneCard.PlayerId);
             if (card is ActionCard actionCard)

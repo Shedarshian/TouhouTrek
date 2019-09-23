@@ -10,14 +10,50 @@ namespace ZMDFQ.Cards
     /// <summary>
     /// 传教：社区规模±2
     /// </summary>
-    public class AT_N001 : ActionCard<SimpleRequest, SimpleResponse>
+    public class AT_N001 : ActionCard
     {
-        protected override Task doEffect(Game game, SimpleResponse useWay)
+        public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        {
+            nextRequest = null;
+            switch (nowRequest)
+            {
+                case UseLimitCard useLimitCard:
+                    if (useLimitCard.CardType != CardHelper.getId(this))
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        if (useInfo.Source.Count != 1)
+                        {
+                            nextRequest = new CardChooseRequest();
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                case FreeUseRequest freeUse:
+                    if (useInfo.Source.Count != 1)
+                    {
+                        nextRequest = new CardChooseRequest();
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+            }
+            return false;
+        }
+
+        public override Task DoEffect(Game game, FreeUse useWay)
         {
             return Effects.UseCard.NormalUse(game, useWay, this, effect);          
         }
 
-        private async Task effect(Game game, SimpleResponse useWay)
+        private async Task effect(Game game, FreeUse useWay)
         {
             //询问玩家是加或减
             TakeChoiceResponse response = (TakeChoiceResponse)await game.WaitAnswer(new TakeChoiceRequest()
@@ -38,11 +74,6 @@ namespace ZMDFQ.Cards
             {
                 await game.ChangeSize(-2, this);
             }
-        }
-
-        protected override SimpleRequest useWay()
-        {
-            return SimpleRequest.Instance;
         }
     }
 }

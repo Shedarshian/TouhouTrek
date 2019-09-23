@@ -20,23 +20,35 @@ namespace ZMDFQ.Cards
         List<Skill> skills = new List<Skill>() { new CR_CP001_SK1() { Name = "传教" } };
     }
 
-    public class CR_CP001_SK1 : Skill,ITreatAs
+    public class CR_CP001_SK1 : Skill
     {
         Effects.TurnLimit turnLimit = new Effects.TurnLimit() { MaxUseTime = 2 };
-        protected override UseWay useWay()
+
+
+        public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
         {
-            if (turnLimit.CanUse())
-                return SimpleRequest.Instance;
-            else
-                return null;
+            nextRequest = null;
+            if (!turnLimit.CanUse())
+            {
+                return false;
+            }
+            return new AT_N001().CanUse(game, nowRequest, useInfo, out nextRequest);
         }
 
-        public override Task DoEffect(Game game, UseInfo useInfo)
+        //protected override UseRequest useWay()
+        //{
+        //    if (turnLimit.CanUse())
+        //        return SimpleRequest.Instance;
+        //    else
+        //        return null;
+        //}
+
+        public override Task DoEffect(Game game, FreeUse useInfo)
         {
             turnLimit.Use();
-            SimpleResponse simpleResponse = useInfo as SimpleResponse;
+            //SimpleResponse simpleResponse = useInfo as SimpleResponse;
             AT_N001 card = new AT_N001();
-            return card.DoEffect(game, simpleResponse);
+            return card.DoEffect(game, useInfo);
         }
 
         public override void Enable(Game game)
@@ -46,16 +58,6 @@ namespace ZMDFQ.Cards
         public override void Disable(Game game)
         {
             turnLimit.Disable(game);
-        }
-
-        public Card TreatTo(Game game, UseOneCard useOneCard)
-        {
-            return new AT_N001();
-        }
-
-        public bool CanTreat(Game game, UseOneCard useOneCard)
-        {
-            return (useOneCard.Source.Count == 1);
         }
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="1920,1080">
-  <controller name="State" pages="0,,1,,2,,4,,5," selected="0">
+<component size="1920,1080" designImage="ui://oacz4rtmgs0sb" designImageLayer="1">
+  <controller name="State" pages="0,,1,,2,,4,,5," selected="1">
     <remark page="0" value="正常"/>
     <remark page="1" value="出牌阶段"/>
     <remark page="2" value="用事件卡"/>

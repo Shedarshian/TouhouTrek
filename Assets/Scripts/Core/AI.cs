@@ -26,8 +26,8 @@ namespace ZMDFQ
             await Task.Delay(500);//假装思考0.5s
             switch (request)
             {
-                case UseCardRequest useCardRequest:
-                    game.Answer(new EndTurnResponse() { PlayerId = Id });
+                case FreeUseRequest useCardRequest:
+                    game.Answer(new EndFreeUseResponse() { PlayerId = Id });
                     break;
                 case ChooseSomeCardRequest dropCard:
                     List<ActionCard> cards = new List<ActionCard>();

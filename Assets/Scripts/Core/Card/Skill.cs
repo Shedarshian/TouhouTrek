@@ -16,11 +16,15 @@ namespace ZMDFQ
         public bool AutoRequest = false;
 
         /// <summary>
-        /// 主动使用时应输入的参数类型，不可主动使用则为空
+        /// 根据输入信息决定技能是否能使用，如果否，那么提供技能还需要的参数
         /// </summary>
-        public UseWay UseWay => useWay();
+        /// <param name="game"></param>
+        /// <param name="nowRequest">当前处于什么询问中</param>
+        /// <param name="useInfo"></param>
+        /// <param name="nextRequest">要使用技能还需要什么参数</param>
+        /// <returns></returns>
+        public abstract bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest);
 
-        protected abstract UseWay useWay();
         /// <summary>
         /// 选择角色牌后就生效
         /// </summary>
@@ -38,6 +42,6 @@ namespace ZMDFQ
         /// <param name="game"></param>
         /// <param name="request"></param>
         /// <returns></returns>
-        public abstract Task DoEffect(Game game, UseInfo useInfo);
+        public abstract Task DoEffect(Game game, FreeUse useInfo);
     }
 }

@@ -9,22 +9,8 @@ namespace ZMDFQ
 {
     public abstract class ActionCard : Card
     {
-        internal abstract UseWay UseWay { get; }
+        public abstract bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest);
 
-        internal abstract Task DoEffect(Game game, UseOneCard useWay);
-    }
-
-    public abstract class ActionCard<T, K> : ActionCard where T : UseWay where K : UseOneCard
-    {
-        internal sealed override UseWay UseWay => useWay();
-
-        internal sealed async override  Task DoEffect(Game game, UseOneCard useWay)
-        {
-            await doEffect(game, useWay as K);
-        }
-
-        protected abstract T useWay();
-
-        protected abstract Task doEffect(Game game, K useWay);
+        public abstract Task DoEffect(Game game, FreeUse useWay);
     }
 }
