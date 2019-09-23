@@ -1,0 +1,178 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZMDFQ.CardTypeEnum
+  commentId: T:ZMDFQ.CardTypeEnum
+  id: CardTypeEnum
+  parent: ZMDFQ
+  children:
+  - ZMDFQ.CardTypeEnum.Action
+  - ZMDFQ.CardTypeEnum.Charactor
+  - ZMDFQ.CardTypeEnum.Event
+  - ZMDFQ.CardTypeEnum.Theme
+  langs:
+  - csharp
+  - vb
+  name: CardTypeEnum
+  nameWithType: CardTypeEnum
+  fullName: ZMDFQ.CardTypeEnum
+  type: Enum
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/Card.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: CardTypeEnum
+    path: Assets/Scripts/Core/Card/Card.cs
+    startLine: 31
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public enum CardTypeEnum
+    content.vb: Public Enum CardTypeEnum
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: ZMDFQ.CardTypeEnum.Charactor
+  commentId: F:ZMDFQ.CardTypeEnum.Charactor
+  id: Charactor
+  parent: ZMDFQ.CardTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: Charactor
+  nameWithType: CardTypeEnum.Charactor
+  fullName: ZMDFQ.CardTypeEnum.Charactor
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/Card.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Charactor
+    path: Assets/Scripts/Core/Card/Card.cs
+    startLine: 33
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: Charactor = 0
+    return:
+      type: ZMDFQ.CardTypeEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.CardTypeEnum.Theme
+  commentId: F:ZMDFQ.CardTypeEnum.Theme
+  id: Theme
+  parent: ZMDFQ.CardTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: Theme
+  nameWithType: CardTypeEnum.Theme
+  fullName: ZMDFQ.CardTypeEnum.Theme
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/Card.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Theme
+    path: Assets/Scripts/Core/Card/Card.cs
+    startLine: 34
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: Theme = 1
+    return:
+      type: ZMDFQ.CardTypeEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.CardTypeEnum.Event
+  commentId: F:ZMDFQ.CardTypeEnum.Event
+  id: Event
+  parent: ZMDFQ.CardTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: Event
+  nameWithType: CardTypeEnum.Event
+  fullName: ZMDFQ.CardTypeEnum.Event
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/Card.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Event
+    path: Assets/Scripts/Core/Card/Card.cs
+    startLine: 35
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: Event = 2
+    return:
+      type: ZMDFQ.CardTypeEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.CardTypeEnum.Action
+  commentId: F:ZMDFQ.CardTypeEnum.Action
+  id: Action
+  parent: ZMDFQ.CardTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: Action
+  nameWithType: CardTypeEnum.Action
+  fullName: ZMDFQ.CardTypeEnum.Action
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/Card.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Action
+    path: Assets/Scripts/Core/Card/Card.cs
+    startLine: 36
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: Action = 3
+    return:
+      type: ZMDFQ.CardTypeEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: ZMDFQ
+  commentId: N:ZMDFQ
+  name: ZMDFQ
+  nameWithType: ZMDFQ
+  fullName: ZMDFQ
+- uid: ZMDFQ.CardTypeEnum
+  commentId: T:ZMDFQ.CardTypeEnum
+  parent: ZMDFQ
+  name: CardTypeEnum
+  nameWithType: CardTypeEnum
+  fullName: ZMDFQ.CardTypeEnum

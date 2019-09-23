@@ -25,7 +25,10 @@ namespace ZMDFQ
         public EventCard SaveEvent;
 
         public HeroCard Hero;
-
+        /// <summary>
+        /// 得分
+        /// </summary>
+        public int point { get; set; } = 0;
         public Player(int id)
         {
             Id = id;
@@ -67,10 +70,19 @@ namespace ZMDFQ
             else
             {
                 //默认玩家手上一定是一张事件卡，有其他情况再改
-                if (response.IfForward)
-                    return EventCards.Find(c => c.Id == response.CardId).UseForward(game, this);
+                EventCard card = EventCards.Find(c => c.Id == response.CardId);
+                if (card != null)
+                {
+                    if (response.IfForward)
+                        return card.UseForward(game, this);
+                    else
+                        return card.UseBackward(game, this);
+                }
                 else
-                    return EventCards.Find(c => c.Id == response.CardId).UseBackward(game, this);
+                {
+                    Log.Error("未找到卡片(" + response.CardId + ")");
+                    return Task.CompletedTask;
+                }
             }
         }
 

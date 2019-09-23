@@ -1,0 +1,172 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZMDFQ.ITimeManager
+  commentId: T:ZMDFQ.ITimeManager
+  id: ITimeManager
+  parent: ZMDFQ
+  children:
+  - ZMDFQ.ITimeManager.Cancel(ZMDFQ.PlayerAction.Request)
+  - ZMDFQ.ITimeManager.Game
+  - ZMDFQ.ITimeManager.Register(ZMDFQ.PlayerAction.Request)
+  langs:
+  - csharp
+  - vb
+  name: ITimeManager
+  nameWithType: ITimeManager
+  fullName: ZMDFQ.ITimeManager
+  type: Interface
+  source:
+    remote:
+      path: Assets/Scripts/Core/ITimeManager.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: ITimeManager
+    path: Assets/Scripts/Core/ITimeManager.cs
+    startLine: 10
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public interface ITimeManager
+    content.vb: Public Interface ITimeManager
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: ZMDFQ.ITimeManager.Game
+  commentId: P:ZMDFQ.ITimeManager.Game
+  id: Game
+  parent: ZMDFQ.ITimeManager
+  langs:
+  - csharp
+  - vb
+  name: Game
+  nameWithType: ITimeManager.Game
+  fullName: ZMDFQ.ITimeManager.Game
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Core/ITimeManager.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Game
+    path: Assets/Scripts/Core/ITimeManager.cs
+    startLine: 12
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: Game Game { set; }
+    parameters: []
+    return:
+      type: ZMDFQ.Game
+    content.vb: WriteOnly Property Game As Game
+  overload: ZMDFQ.ITimeManager.Game*
+  modifiers.csharp:
+  - set
+  modifiers.vb:
+  - WriteOnly
+- uid: ZMDFQ.ITimeManager.Register(ZMDFQ.PlayerAction.Request)
+  commentId: M:ZMDFQ.ITimeManager.Register(ZMDFQ.PlayerAction.Request)
+  id: Register(ZMDFQ.PlayerAction.Request)
+  parent: ZMDFQ.ITimeManager
+  langs:
+  - csharp
+  - vb
+  name: Register(Request)
+  nameWithType: ITimeManager.Register(Request)
+  fullName: ZMDFQ.ITimeManager.Register(ZMDFQ.PlayerAction.Request)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/ITimeManager.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Register
+    path: Assets/Scripts/Core/ITimeManager.cs
+    startLine: 17
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  summary: "\n注册一个询问，超时后自动回应\n"
+  example: []
+  syntax:
+    content: void Register(Request request)
+    parameters:
+    - id: request
+      type: ZMDFQ.PlayerAction.Request
+      description: ''
+    content.vb: Sub Register(request As Request)
+  overload: ZMDFQ.ITimeManager.Register*
+- uid: ZMDFQ.ITimeManager.Cancel(ZMDFQ.PlayerAction.Request)
+  commentId: M:ZMDFQ.ITimeManager.Cancel(ZMDFQ.PlayerAction.Request)
+  id: Cancel(ZMDFQ.PlayerAction.Request)
+  parent: ZMDFQ.ITimeManager
+  langs:
+  - csharp
+  - vb
+  name: Cancel(Request)
+  nameWithType: ITimeManager.Cancel(Request)
+  fullName: ZMDFQ.ITimeManager.Cancel(ZMDFQ.PlayerAction.Request)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/ITimeManager.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Cancel
+    path: Assets/Scripts/Core/ITimeManager.cs
+    startLine: 23
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  summary: "\n取消一个询问\n"
+  example: []
+  syntax:
+    content: void Cancel(Request request)
+    parameters:
+    - id: request
+      type: ZMDFQ.PlayerAction.Request
+      description: ''
+    content.vb: Sub Cancel(request As Request)
+  overload: ZMDFQ.ITimeManager.Cancel*
+references:
+- uid: ZMDFQ
+  commentId: N:ZMDFQ
+  name: ZMDFQ
+  nameWithType: ZMDFQ
+  fullName: ZMDFQ
+- uid: ZMDFQ.ITimeManager.Game*
+  commentId: Overload:ZMDFQ.ITimeManager.Game
+  name: Game
+  nameWithType: ITimeManager.Game
+  fullName: ZMDFQ.ITimeManager.Game
+- uid: ZMDFQ.Game
+  commentId: T:ZMDFQ.Game
+  parent: ZMDFQ
+  name: Game
+  nameWithType: Game
+  fullName: ZMDFQ.Game
+- uid: ZMDFQ.ITimeManager.Register*
+  commentId: Overload:ZMDFQ.ITimeManager.Register
+  name: Register
+  nameWithType: ITimeManager.Register
+  fullName: ZMDFQ.ITimeManager.Register
+- uid: ZMDFQ.PlayerAction.Request
+  commentId: T:ZMDFQ.PlayerAction.Request
+  parent: ZMDFQ.PlayerAction
+  name: Request
+  nameWithType: Request
+  fullName: ZMDFQ.PlayerAction.Request
+- uid: ZMDFQ.PlayerAction
+  commentId: N:ZMDFQ.PlayerAction
+  name: ZMDFQ.PlayerAction
+  nameWithType: ZMDFQ.PlayerAction
+  fullName: ZMDFQ.PlayerAction
+- uid: ZMDFQ.ITimeManager.Cancel*
+  commentId: Overload:ZMDFQ.ITimeManager.Cancel
+  name: Cancel
+  nameWithType: ITimeManager.Cancel
+  fullName: ZMDFQ.ITimeManager.Cancel

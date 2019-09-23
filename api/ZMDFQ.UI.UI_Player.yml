@@ -1,0 +1,6536 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZMDFQ.UI.UI_Player
+  commentId: T:ZMDFQ.UI.UI_Player
+  id: UI_Player
+  parent: ZMDFQ.UI
+  children:
+  - ZMDFQ.UI.UI_Player.CreateInstance
+  - ZMDFQ.UI.UI_Player.Player
+  - ZMDFQ.UI.UI_Player.SetPlayerCard(ZMDFQ.Player)
+  - ZMDFQ.UI.UI_Player.URL
+  langs:
+  - csharp
+  - vb
+  name: UI_Player
+  nameWithType: UI_Player
+  fullName: ZMDFQ.UI.UI_Player
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/UI/Battle/UI_Player.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: UI_Player
+    path: Assets/Scripts/UI/Battle/UI_Player.cs
+    startLine: 10
+  assemblies:
+  - Model
+  namespace: ZMDFQ.UI
+  syntax:
+    content: 'public class UI_Player : GButton, IEventDispatcher, IColorGear'
+    content.vb: >-
+      Public Class UI_Player
+          Inherits GButton
+          Implements IEventDispatcher, IColorGear
+  inheritance:
+  - System.Object
+  - FairyGUI.EventDispatcher
+  - FairyGUI.GObject
+  - FairyGUI.GComponent
+  - FairyGUI.GButton
+  implements:
+  - FairyGUI.IEventDispatcher
+  - FairyGUI.IColorGear
+  inheritedMembers:
+  - FairyGUI.GButton.pageOption
+  - FairyGUI.GButton.sound
+  - FairyGUI.GButton.soundVolumeScale
+  - FairyGUI.GButton.changeStateOnClick
+  - FairyGUI.GButton.linkedPopup
+  - FairyGUI.GButton._titleObject
+  - FairyGUI.GButton._iconObject
+  - FairyGUI.GButton._relatedController
+  - FairyGUI.GButton.UP
+  - FairyGUI.GButton.DOWN
+  - FairyGUI.GButton.OVER
+  - FairyGUI.GButton.SELECTED_OVER
+  - FairyGUI.GButton.DISABLED
+  - FairyGUI.GButton.SELECTED_DISABLED
+  - FairyGUI.GButton.onChanged
+  - FairyGUI.GButton.icon
+  - FairyGUI.GButton.title
+  - FairyGUI.GButton.text
+  - FairyGUI.GButton.selectedIcon
+  - FairyGUI.GButton.selectedTitle
+  - FairyGUI.GButton.titleColor
+  - FairyGUI.GButton.color
+  - FairyGUI.GButton.titleFontSize
+  - FairyGUI.GButton.selected
+  - FairyGUI.GButton.mode
+  - FairyGUI.GButton.relatedController
+  - FairyGUI.GButton.FireClick(System.Boolean)
+  - FairyGUI.GButton.GetTextField
+  - FairyGUI.GButton.SetState(System.String)
+  - FairyGUI.GButton.SetCurrentState
+  - FairyGUI.GButton.HandleControllerChanged(FairyGUI.Controller)
+  - FairyGUI.GButton.HandleGrayedChanged
+  - FairyGUI.GButton.ConstructExtension(FairyGUI.Utils.ByteBuffer)
+  - FairyGUI.GButton.Setup_AfterAdd(FairyGUI.Utils.ByteBuffer,System.Int32)
+  - FairyGUI.GComponent.rootContainer
+  - FairyGUI.GComponent.container
+  - FairyGUI.GComponent.scrollPane
+  - FairyGUI.GComponent._margin
+  - FairyGUI.GComponent._trackBounds
+  - FairyGUI.GComponent._boundsChanged
+  - FairyGUI.GComponent._childrenRenderOrder
+  - FairyGUI.GComponent._apexIndex
+  - FairyGUI.GComponent.CreateDisplayObject
+  - FairyGUI.GComponent.Dispose
+  - FairyGUI.GComponent.onDrop
+  - FairyGUI.GComponent.fairyBatching
+  - FairyGUI.GComponent.InvalidateBatchingState(System.Boolean)
+  - FairyGUI.GComponent.opaque
+  - FairyGUI.GComponent.margin
+  - FairyGUI.GComponent.childrenRenderOrder
+  - FairyGUI.GComponent.apexIndex
+  - FairyGUI.GComponent.AddChild(FairyGUI.GObject)
+  - FairyGUI.GComponent.AddChildAt(FairyGUI.GObject,System.Int32)
+  - FairyGUI.GComponent.RemoveChild(FairyGUI.GObject)
+  - FairyGUI.GComponent.RemoveChild(FairyGUI.GObject,System.Boolean)
+  - FairyGUI.GComponent.RemoveChildAt(System.Int32)
+  - FairyGUI.GComponent.RemoveChildAt(System.Int32,System.Boolean)
+  - FairyGUI.GComponent.RemoveChildren
+  - FairyGUI.GComponent.RemoveChildren(System.Int32,System.Int32,System.Boolean)
+  - FairyGUI.GComponent.GetChildAt(System.Int32)
+  - FairyGUI.GComponent.GetChild(System.String)
+  - FairyGUI.GComponent.GetVisibleChild(System.String)
+  - FairyGUI.GComponent.GetChildInGroup(FairyGUI.GGroup,System.String)
+  - FairyGUI.GComponent.GetChildren
+  - FairyGUI.GComponent.GetChildIndex(FairyGUI.GObject)
+  - FairyGUI.GComponent.SetChildIndex(FairyGUI.GObject,System.Int32)
+  - FairyGUI.GComponent.SetChildIndexBefore(FairyGUI.GObject,System.Int32)
+  - FairyGUI.GComponent.SwapChildren(FairyGUI.GObject,FairyGUI.GObject)
+  - FairyGUI.GComponent.SwapChildrenAt(System.Int32,System.Int32)
+  - FairyGUI.GComponent.numChildren
+  - FairyGUI.GComponent.IsAncestorOf(FairyGUI.GObject)
+  - FairyGUI.GComponent.AddController(FairyGUI.Controller)
+  - FairyGUI.GComponent.GetControllerAt(System.Int32)
+  - FairyGUI.GComponent.GetController(System.String)
+  - FairyGUI.GComponent.RemoveController(FairyGUI.Controller)
+  - FairyGUI.GComponent.Controllers
+  - FairyGUI.GComponent.GetTransitionAt(System.Int32)
+  - FairyGUI.GComponent.GetTransition(System.String)
+  - FairyGUI.GComponent.clipSoftness
+  - FairyGUI.GComponent.mask
+  - FairyGUI.GComponent.reversedMask
+  - FairyGUI.GComponent.baseUserData
+  - FairyGUI.GComponent.IsChildInView(FairyGUI.GObject)
+  - FairyGUI.GComponent.GetFirstChildInView
+  - FairyGUI.GComponent.SetupScroll(FairyGUI.Utils.ByteBuffer)
+  - FairyGUI.GComponent.SetupOverflow(FairyGUI.OverflowType)
+  - FairyGUI.GComponent.HandleSizeChanged
+  - FairyGUI.GComponent.SetBoundsChangedFlag
+  - FairyGUI.GComponent.EnsureBoundsCorrect
+  - FairyGUI.GComponent.UpdateBounds
+  - FairyGUI.GComponent.SetBounds(System.Single,System.Single,System.Single,System.Single)
+  - FairyGUI.GComponent.viewWidth
+  - FairyGUI.GComponent.viewHeight
+  - FairyGUI.GComponent.GetSnappingPosition(System.Single@,System.Single@)
+  - FairyGUI.GComponent.OnUpdate
+  - FairyGUI.GComponent.ConstructFromResource
+  - FairyGUI.GComponent.ConstructFromXML(FairyGUI.Utils.XML)
+  - FairyGUI.GObject.id
+  - FairyGUI.GObject.name
+  - FairyGUI.GObject.data
+  - FairyGUI.GObject.sourceWidth
+  - FairyGUI.GObject.sourceHeight
+  - FairyGUI.GObject.initWidth
+  - FairyGUI.GObject.initHeight
+  - FairyGUI.GObject.minWidth
+  - FairyGUI.GObject.maxWidth
+  - FairyGUI.GObject.minHeight
+  - FairyGUI.GObject.maxHeight
+  - FairyGUI.GObject.relations
+  - FairyGUI.GObject.dragBounds
+  - FairyGUI.GObject.parent
+  - FairyGUI.GObject.displayObject
+  - FairyGUI.GObject.draggingObject
+  - FairyGUI.GObject.packageItem
+  - FairyGUI.GObject.underConstruct
+  - FairyGUI.GObject.onClick
+  - FairyGUI.GObject.onRightClick
+  - FairyGUI.GObject.onTouchBegin
+  - FairyGUI.GObject.onTouchMove
+  - FairyGUI.GObject.onTouchEnd
+  - FairyGUI.GObject.onRollOver
+  - FairyGUI.GObject.onRollOut
+  - FairyGUI.GObject.onAddedToStage
+  - FairyGUI.GObject.onRemovedFromStage
+  - FairyGUI.GObject.onKeyDown
+  - FairyGUI.GObject.onClickLink
+  - FairyGUI.GObject.onPositionChanged
+  - FairyGUI.GObject.onSizeChanged
+  - FairyGUI.GObject.onDragStart
+  - FairyGUI.GObject.onDragMove
+  - FairyGUI.GObject.onDragEnd
+  - FairyGUI.GObject.onGearStop
+  - FairyGUI.GObject.x
+  - FairyGUI.GObject.y
+  - FairyGUI.GObject.z
+  - FairyGUI.GObject.xy
+  - FairyGUI.GObject.position
+  - FairyGUI.GObject.SetXY(System.Single,System.Single)
+  - FairyGUI.GObject.SetXY(System.Single,System.Single,System.Boolean)
+  - FairyGUI.GObject.SetPosition(System.Single,System.Single,System.Single)
+  - FairyGUI.GObject.pixelSnapping
+  - FairyGUI.GObject.Center
+  - FairyGUI.GObject.Center(System.Boolean)
+  - FairyGUI.GObject.MakeFullScreen
+  - FairyGUI.GObject.width
+  - FairyGUI.GObject.height
+  - FairyGUI.GObject.size
+  - FairyGUI.GObject.actualWidth
+  - FairyGUI.GObject.actualHeight
+  - FairyGUI.GObject.SetSize(System.Single,System.Single)
+  - FairyGUI.GObject.SetSize(System.Single,System.Single,System.Boolean)
+  - FairyGUI.GObject.SetSizeDirectly(System.Single,System.Single)
+  - FairyGUI.GObject.xMin
+  - FairyGUI.GObject.yMin
+  - FairyGUI.GObject.scaleX
+  - FairyGUI.GObject.scaleY
+  - FairyGUI.GObject.scale
+  - FairyGUI.GObject.SetScale(System.Single,System.Single)
+  - FairyGUI.GObject.skew
+  - FairyGUI.GObject.pivotX
+  - FairyGUI.GObject.pivotY
+  - FairyGUI.GObject.pivot
+  - FairyGUI.GObject.pivotAsAnchor
+  - FairyGUI.GObject.SetPivot(System.Single,System.Single)
+  - FairyGUI.GObject.SetPivot(System.Single,System.Single,System.Boolean)
+  - FairyGUI.GObject.touchable
+  - FairyGUI.GObject.grayed
+  - FairyGUI.GObject.enabled
+  - FairyGUI.GObject.rotation
+  - FairyGUI.GObject.rotationX
+  - FairyGUI.GObject.rotationY
+  - FairyGUI.GObject.alpha
+  - FairyGUI.GObject.visible
+  - FairyGUI.GObject.sortingOrder
+  - FairyGUI.GObject.focusable
+  - FairyGUI.GObject.focused
+  - FairyGUI.GObject.RequestFocus
+  - FairyGUI.GObject.tooltips
+  - FairyGUI.GObject.filter
+  - FairyGUI.GObject.blendMode
+  - FairyGUI.GObject.gameObjectName
+  - FairyGUI.GObject.SetHome(FairyGUI.GObject)
+  - FairyGUI.GObject.inContainer
+  - FairyGUI.GObject.onStage
+  - FairyGUI.GObject.resourceURL
+  - FairyGUI.GObject.gearXY
+  - FairyGUI.GObject.gearSize
+  - FairyGUI.GObject.gearLook
+  - FairyGUI.GObject.GetGear(System.Int32)
+  - FairyGUI.GObject.UpdateGear(System.Int32)
+  - FairyGUI.GObject.InvalidateBatchingState
+  - FairyGUI.GObject.AddRelation(FairyGUI.GObject,FairyGUI.RelationType)
+  - FairyGUI.GObject.AddRelation(FairyGUI.GObject,FairyGUI.RelationType,System.Boolean)
+  - FairyGUI.GObject.RemoveRelation(FairyGUI.GObject,FairyGUI.RelationType)
+  - FairyGUI.GObject.RemoveFromParent
+  - FairyGUI.GObject.group
+  - FairyGUI.GObject.root
+  - FairyGUI.GObject.draggable
+  - FairyGUI.GObject.StartDrag
+  - FairyGUI.GObject.StartDrag(System.Int32)
+  - FairyGUI.GObject.StopDrag
+  - FairyGUI.GObject.dragging
+  - FairyGUI.GObject.LocalToGlobal(UnityEngine.Vector2)
+  - FairyGUI.GObject.GlobalToLocal(UnityEngine.Vector2)
+  - FairyGUI.GObject.LocalToGlobal(UnityEngine.Rect)
+  - FairyGUI.GObject.GlobalToLocal(UnityEngine.Rect)
+  - FairyGUI.GObject.LocalToRoot(UnityEngine.Vector2,FairyGUI.GRoot)
+  - FairyGUI.GObject.RootToLocal(UnityEngine.Vector2,FairyGUI.GRoot)
+  - FairyGUI.GObject.WorldToLocal(UnityEngine.Vector3)
+  - FairyGUI.GObject.WorldToLocal(UnityEngine.Vector3,UnityEngine.Camera)
+  - FairyGUI.GObject.TransformPoint(UnityEngine.Vector2,FairyGUI.GObject)
+  - FairyGUI.GObject.TransformRect(UnityEngine.Rect,FairyGUI.GObject)
+  - FairyGUI.GObject.isDisposed
+  - FairyGUI.GObject.asImage
+  - FairyGUI.GObject.asCom
+  - FairyGUI.GObject.asButton
+  - FairyGUI.GObject.asLabel
+  - FairyGUI.GObject.asProgress
+  - FairyGUI.GObject.asSlider
+  - FairyGUI.GObject.asComboBox
+  - FairyGUI.GObject.asTextField
+  - FairyGUI.GObject.asRichTextField
+  - FairyGUI.GObject.asTextInput
+  - FairyGUI.GObject.asLoader
+  - FairyGUI.GObject.asList
+  - FairyGUI.GObject.asGraph
+  - FairyGUI.GObject.asGroup
+  - FairyGUI.GObject.asMovieClip
+  - FairyGUI.GObject.HandlePositionChanged
+  - FairyGUI.GObject.HandleScaleChanged
+  - FairyGUI.GObject.HandleAlphaChanged
+  - FairyGUI.GObject.HandleVisibleChanged
+  - FairyGUI.GObject.Setup_BeforeAdd(FairyGUI.Utils.ByteBuffer,System.Int32)
+  - FairyGUI.GObject.TweenMove(UnityEngine.Vector2,System.Single)
+  - FairyGUI.GObject.TweenMoveX(System.Single,System.Single)
+  - FairyGUI.GObject.TweenMoveY(System.Single,System.Single)
+  - FairyGUI.GObject.TweenScale(UnityEngine.Vector2,System.Single)
+  - FairyGUI.GObject.TweenScaleX(System.Single,System.Single)
+  - FairyGUI.GObject.TweenScaleY(System.Single,System.Single)
+  - FairyGUI.GObject.TweenResize(UnityEngine.Vector2,System.Single)
+  - FairyGUI.GObject.TweenFade(System.Single,System.Single)
+  - FairyGUI.GObject.TweenRotate(System.Single,System.Single)
+  - FairyGUI.EventDispatcher.AddEventListener(System.String,FairyGUI.EventCallback1)
+  - FairyGUI.EventDispatcher.AddEventListener(System.String,FairyGUI.EventCallback0)
+  - FairyGUI.EventDispatcher.RemoveEventListener(System.String,FairyGUI.EventCallback1)
+  - FairyGUI.EventDispatcher.RemoveEventListener(System.String,FairyGUI.EventCallback0)
+  - FairyGUI.EventDispatcher.RemoveEventListeners
+  - FairyGUI.EventDispatcher.RemoveEventListeners(System.String)
+  - FairyGUI.EventDispatcher.hasEventListeners(System.String)
+  - FairyGUI.EventDispatcher.isDispatching(System.String)
+  - FairyGUI.EventDispatcher.DispatchEvent(System.String)
+  - FairyGUI.EventDispatcher.DispatchEvent(System.String,System.Object)
+  - FairyGUI.EventDispatcher.DispatchEvent(System.String,System.Object,System.Object)
+  - FairyGUI.EventDispatcher.DispatchEvent(FairyGUI.EventContext)
+  - FairyGUI.EventDispatcher.BubbleEvent(System.String,System.Object)
+  - FairyGUI.EventDispatcher.BroadcastEvent(System.String,System.Object)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ZMDFQ.UI.UI_Player.URL
+  commentId: F:ZMDFQ.UI.UI_Player.URL
+  id: URL
+  parent: ZMDFQ.UI.UI_Player
+  langs:
+  - csharp
+  - vb
+  name: URL
+  nameWithType: UI_Player.URL
+  fullName: ZMDFQ.UI.UI_Player.URL
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/UI/Battle/UI_Player.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: URL
+    path: Assets/Scripts/UI/Battle/UI_Player.cs
+    startLine: 12
+  assemblies:
+  - Model
+  namespace: ZMDFQ.UI
+  syntax:
+    content: public const string URL = "ui://oacz4rtmqfxq2"
+    return:
+      type: System.String
+    content.vb: Public Const URL As String = "ui://oacz4rtmqfxq2"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.UI.UI_Player.Player
+  commentId: F:ZMDFQ.UI.UI_Player.Player
+  id: Player
+  parent: ZMDFQ.UI.UI_Player
+  langs:
+  - csharp
+  - vb
+  name: Player
+  nameWithType: UI_Player.Player
+  fullName: ZMDFQ.UI.UI_Player.Player
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/UI/Battle/UI_Player.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Player
+    path: Assets/Scripts/UI/Battle/UI_Player.cs
+    startLine: 13
+  assemblies:
+  - Model
+  namespace: ZMDFQ.UI
+  syntax:
+    content: public Player Player
+    return:
+      type: ZMDFQ.Player
+    content.vb: Public Player As Player
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.UI.UI_Player.CreateInstance
+  commentId: M:ZMDFQ.UI.UI_Player.CreateInstance
+  id: CreateInstance
+  parent: ZMDFQ.UI.UI_Player
+  langs:
+  - csharp
+  - vb
+  name: CreateInstance()
+  nameWithType: UI_Player.CreateInstance()
+  fullName: ZMDFQ.UI.UI_Player.CreateInstance()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/UI/Battle/UI_Player.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: CreateInstance
+    path: Assets/Scripts/UI/Battle/UI_Player.cs
+    startLine: 14
+  assemblies:
+  - Model
+  namespace: ZMDFQ.UI
+  syntax:
+    content: public static UI_Player CreateInstance()
+    return:
+      type: ZMDFQ.UI.UI_Player
+    content.vb: Public Shared Function CreateInstance As UI_Player
+  overload: ZMDFQ.UI.UI_Player.CreateInstance*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: ZMDFQ.UI.UI_Player.SetPlayerCard(ZMDFQ.Player)
+  commentId: M:ZMDFQ.UI.UI_Player.SetPlayerCard(ZMDFQ.Player)
+  id: SetPlayerCard(ZMDFQ.Player)
+  parent: ZMDFQ.UI.UI_Player
+  langs:
+  - csharp
+  - vb
+  name: SetPlayerCard(Player)
+  nameWithType: UI_Player.SetPlayerCard(Player)
+  fullName: ZMDFQ.UI.UI_Player.SetPlayerCard(ZMDFQ.Player)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/UI/Battle/UI_Player.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: SetPlayerCard
+    path: Assets/Scripts/UI/Battle/UI_Player.cs
+    startLine: 18
+  assemblies:
+  - Model
+  namespace: ZMDFQ.UI
+  syntax:
+    content: public void SetPlayerCard(Player player)
+    parameters:
+    - id: player
+      type: ZMDFQ.Player
+    content.vb: Public Sub SetPlayerCard(player As Player)
+  overload: ZMDFQ.UI.UI_Player.SetPlayerCard*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: ZMDFQ.UI
+  commentId: N:ZMDFQ.UI
+  name: ZMDFQ.UI
+  nameWithType: ZMDFQ.UI
+  fullName: ZMDFQ.UI
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: FairyGUI.EventDispatcher
+  commentId: T:FairyGUI.EventDispatcher
+  parent: FairyGUI
+  name: EventDispatcher
+  nameWithType: EventDispatcher
+  fullName: FairyGUI.EventDispatcher
+- uid: FairyGUI.GObject
+  commentId: T:FairyGUI.GObject
+  parent: FairyGUI
+  name: GObject
+  nameWithType: GObject
+  fullName: FairyGUI.GObject
+- uid: FairyGUI.GComponent
+  commentId: T:FairyGUI.GComponent
+  parent: FairyGUI
+  name: GComponent
+  nameWithType: GComponent
+  fullName: FairyGUI.GComponent
+- uid: FairyGUI.GButton
+  commentId: T:FairyGUI.GButton
+  parent: FairyGUI
+  name: GButton
+  nameWithType: GButton
+  fullName: FairyGUI.GButton
+- uid: FairyGUI.IEventDispatcher
+  commentId: T:FairyGUI.IEventDispatcher
+  parent: FairyGUI
+  name: IEventDispatcher
+  nameWithType: IEventDispatcher
+  fullName: FairyGUI.IEventDispatcher
+- uid: FairyGUI.IColorGear
+  commentId: T:FairyGUI.IColorGear
+  parent: FairyGUI
+  name: IColorGear
+  nameWithType: IColorGear
+  fullName: FairyGUI.IColorGear
+- uid: FairyGUI.GButton.pageOption
+  commentId: P:FairyGUI.GButton.pageOption
+  parent: FairyGUI.GButton
+  name: pageOption
+  nameWithType: GButton.pageOption
+  fullName: FairyGUI.GButton.pageOption
+- uid: FairyGUI.GButton.sound
+  commentId: F:FairyGUI.GButton.sound
+  parent: FairyGUI.GButton
+  name: sound
+  nameWithType: GButton.sound
+  fullName: FairyGUI.GButton.sound
+- uid: FairyGUI.GButton.soundVolumeScale
+  commentId: F:FairyGUI.GButton.soundVolumeScale
+  parent: FairyGUI.GButton
+  name: soundVolumeScale
+  nameWithType: GButton.soundVolumeScale
+  fullName: FairyGUI.GButton.soundVolumeScale
+- uid: FairyGUI.GButton.changeStateOnClick
+  commentId: F:FairyGUI.GButton.changeStateOnClick
+  parent: FairyGUI.GButton
+  name: changeStateOnClick
+  nameWithType: GButton.changeStateOnClick
+  fullName: FairyGUI.GButton.changeStateOnClick
+- uid: FairyGUI.GButton.linkedPopup
+  commentId: F:FairyGUI.GButton.linkedPopup
+  parent: FairyGUI.GButton
+  name: linkedPopup
+  nameWithType: GButton.linkedPopup
+  fullName: FairyGUI.GButton.linkedPopup
+- uid: FairyGUI.GButton._titleObject
+  commentId: F:FairyGUI.GButton._titleObject
+  parent: FairyGUI.GButton
+  name: _titleObject
+  nameWithType: GButton._titleObject
+  fullName: FairyGUI.GButton._titleObject
+- uid: FairyGUI.GButton._iconObject
+  commentId: F:FairyGUI.GButton._iconObject
+  parent: FairyGUI.GButton
+  name: _iconObject
+  nameWithType: GButton._iconObject
+  fullName: FairyGUI.GButton._iconObject
+- uid: FairyGUI.GButton._relatedController
+  commentId: F:FairyGUI.GButton._relatedController
+  parent: FairyGUI.GButton
+  name: _relatedController
+  nameWithType: GButton._relatedController
+  fullName: FairyGUI.GButton._relatedController
+- uid: FairyGUI.GButton.UP
+  commentId: F:FairyGUI.GButton.UP
+  parent: FairyGUI.GButton
+  name: UP
+  nameWithType: GButton.UP
+  fullName: FairyGUI.GButton.UP
+- uid: FairyGUI.GButton.DOWN
+  commentId: F:FairyGUI.GButton.DOWN
+  parent: FairyGUI.GButton
+  name: DOWN
+  nameWithType: GButton.DOWN
+  fullName: FairyGUI.GButton.DOWN
+- uid: FairyGUI.GButton.OVER
+  commentId: F:FairyGUI.GButton.OVER
+  parent: FairyGUI.GButton
+  name: OVER
+  nameWithType: GButton.OVER
+  fullName: FairyGUI.GButton.OVER
+- uid: FairyGUI.GButton.SELECTED_OVER
+  commentId: F:FairyGUI.GButton.SELECTED_OVER
+  parent: FairyGUI.GButton
+  name: SELECTED_OVER
+  nameWithType: GButton.SELECTED_OVER
+  fullName: FairyGUI.GButton.SELECTED_OVER
+- uid: FairyGUI.GButton.DISABLED
+  commentId: F:FairyGUI.GButton.DISABLED
+  parent: FairyGUI.GButton
+  name: DISABLED
+  nameWithType: GButton.DISABLED
+  fullName: FairyGUI.GButton.DISABLED
+- uid: FairyGUI.GButton.SELECTED_DISABLED
+  commentId: F:FairyGUI.GButton.SELECTED_DISABLED
+  parent: FairyGUI.GButton
+  name: SELECTED_DISABLED
+  nameWithType: GButton.SELECTED_DISABLED
+  fullName: FairyGUI.GButton.SELECTED_DISABLED
+- uid: FairyGUI.GButton.onChanged
+  commentId: P:FairyGUI.GButton.onChanged
+  parent: FairyGUI.GButton
+  name: onChanged
+  nameWithType: GButton.onChanged
+  fullName: FairyGUI.GButton.onChanged
+- uid: FairyGUI.GButton.icon
+  commentId: P:FairyGUI.GButton.icon
+  parent: FairyGUI.GButton
+  name: icon
+  nameWithType: GButton.icon
+  fullName: FairyGUI.GButton.icon
+- uid: FairyGUI.GButton.title
+  commentId: P:FairyGUI.GButton.title
+  parent: FairyGUI.GButton
+  name: title
+  nameWithType: GButton.title
+  fullName: FairyGUI.GButton.title
+- uid: FairyGUI.GButton.text
+  commentId: P:FairyGUI.GButton.text
+  parent: FairyGUI.GButton
+  name: text
+  nameWithType: GButton.text
+  fullName: FairyGUI.GButton.text
+- uid: FairyGUI.GButton.selectedIcon
+  commentId: P:FairyGUI.GButton.selectedIcon
+  parent: FairyGUI.GButton
+  name: selectedIcon
+  nameWithType: GButton.selectedIcon
+  fullName: FairyGUI.GButton.selectedIcon
+- uid: FairyGUI.GButton.selectedTitle
+  commentId: P:FairyGUI.GButton.selectedTitle
+  parent: FairyGUI.GButton
+  name: selectedTitle
+  nameWithType: GButton.selectedTitle
+  fullName: FairyGUI.GButton.selectedTitle
+- uid: FairyGUI.GButton.titleColor
+  commentId: P:FairyGUI.GButton.titleColor
+  parent: FairyGUI.GButton
+  name: titleColor
+  nameWithType: GButton.titleColor
+  fullName: FairyGUI.GButton.titleColor
+- uid: FairyGUI.GButton.color
+  commentId: P:FairyGUI.GButton.color
+  parent: FairyGUI.GButton
+  name: color
+  nameWithType: GButton.color
+  fullName: FairyGUI.GButton.color
+- uid: FairyGUI.GButton.titleFontSize
+  commentId: P:FairyGUI.GButton.titleFontSize
+  parent: FairyGUI.GButton
+  name: titleFontSize
+  nameWithType: GButton.titleFontSize
+  fullName: FairyGUI.GButton.titleFontSize
+- uid: FairyGUI.GButton.selected
+  commentId: P:FairyGUI.GButton.selected
+  parent: FairyGUI.GButton
+  name: selected
+  nameWithType: GButton.selected
+  fullName: FairyGUI.GButton.selected
+- uid: FairyGUI.GButton.mode
+  commentId: P:FairyGUI.GButton.mode
+  parent: FairyGUI.GButton
+  name: mode
+  nameWithType: GButton.mode
+  fullName: FairyGUI.GButton.mode
+- uid: FairyGUI.GButton.relatedController
+  commentId: P:FairyGUI.GButton.relatedController
+  parent: FairyGUI.GButton
+  name: relatedController
+  nameWithType: GButton.relatedController
+  fullName: FairyGUI.GButton.relatedController
+- uid: FairyGUI.GButton.FireClick(System.Boolean)
+  commentId: M:FairyGUI.GButton.FireClick(System.Boolean)
+  parent: FairyGUI.GButton
+  isExternal: true
+  name: FireClick(Boolean)
+  nameWithType: GButton.FireClick(Boolean)
+  fullName: FairyGUI.GButton.FireClick(System.Boolean)
+  spec.csharp:
+  - uid: FairyGUI.GButton.FireClick(System.Boolean)
+    name: FireClick
+    nameWithType: GButton.FireClick
+    fullName: FairyGUI.GButton.FireClick
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GButton.FireClick(System.Boolean)
+    name: FireClick
+    nameWithType: GButton.FireClick
+    fullName: FairyGUI.GButton.FireClick
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GButton.GetTextField
+  commentId: M:FairyGUI.GButton.GetTextField
+  parent: FairyGUI.GButton
+  name: GetTextField()
+  nameWithType: GButton.GetTextField()
+  fullName: FairyGUI.GButton.GetTextField()
+  spec.csharp:
+  - uid: FairyGUI.GButton.GetTextField
+    name: GetTextField
+    nameWithType: GButton.GetTextField
+    fullName: FairyGUI.GButton.GetTextField
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GButton.GetTextField
+    name: GetTextField
+    nameWithType: GButton.GetTextField
+    fullName: FairyGUI.GButton.GetTextField
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GButton.SetState(System.String)
+  commentId: M:FairyGUI.GButton.SetState(System.String)
+  parent: FairyGUI.GButton
+  isExternal: true
+  name: SetState(String)
+  nameWithType: GButton.SetState(String)
+  fullName: FairyGUI.GButton.SetState(System.String)
+  spec.csharp:
+  - uid: FairyGUI.GButton.SetState(System.String)
+    name: SetState
+    nameWithType: GButton.SetState
+    fullName: FairyGUI.GButton.SetState
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GButton.SetState(System.String)
+    name: SetState
+    nameWithType: GButton.SetState
+    fullName: FairyGUI.GButton.SetState
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GButton.SetCurrentState
+  commentId: M:FairyGUI.GButton.SetCurrentState
+  parent: FairyGUI.GButton
+  name: SetCurrentState()
+  nameWithType: GButton.SetCurrentState()
+  fullName: FairyGUI.GButton.SetCurrentState()
+  spec.csharp:
+  - uid: FairyGUI.GButton.SetCurrentState
+    name: SetCurrentState
+    nameWithType: GButton.SetCurrentState
+    fullName: FairyGUI.GButton.SetCurrentState
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GButton.SetCurrentState
+    name: SetCurrentState
+    nameWithType: GButton.SetCurrentState
+    fullName: FairyGUI.GButton.SetCurrentState
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GButton.HandleControllerChanged(FairyGUI.Controller)
+  commentId: M:FairyGUI.GButton.HandleControllerChanged(FairyGUI.Controller)
+  parent: FairyGUI.GButton
+  name: HandleControllerChanged(Controller)
+  nameWithType: GButton.HandleControllerChanged(Controller)
+  fullName: FairyGUI.GButton.HandleControllerChanged(FairyGUI.Controller)
+  spec.csharp:
+  - uid: FairyGUI.GButton.HandleControllerChanged(FairyGUI.Controller)
+    name: HandleControllerChanged
+    nameWithType: GButton.HandleControllerChanged
+    fullName: FairyGUI.GButton.HandleControllerChanged
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: FairyGUI.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GButton.HandleControllerChanged(FairyGUI.Controller)
+    name: HandleControllerChanged
+    nameWithType: GButton.HandleControllerChanged
+    fullName: FairyGUI.GButton.HandleControllerChanged
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: FairyGUI.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GButton.HandleGrayedChanged
+  commentId: M:FairyGUI.GButton.HandleGrayedChanged
+  parent: FairyGUI.GButton
+  name: HandleGrayedChanged()
+  nameWithType: GButton.HandleGrayedChanged()
+  fullName: FairyGUI.GButton.HandleGrayedChanged()
+  spec.csharp:
+  - uid: FairyGUI.GButton.HandleGrayedChanged
+    name: HandleGrayedChanged
+    nameWithType: GButton.HandleGrayedChanged
+    fullName: FairyGUI.GButton.HandleGrayedChanged
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GButton.HandleGrayedChanged
+    name: HandleGrayedChanged
+    nameWithType: GButton.HandleGrayedChanged
+    fullName: FairyGUI.GButton.HandleGrayedChanged
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GButton.ConstructExtension(FairyGUI.Utils.ByteBuffer)
+  commentId: M:FairyGUI.GButton.ConstructExtension(FairyGUI.Utils.ByteBuffer)
+  parent: FairyGUI.GButton
+  name: ConstructExtension(ByteBuffer)
+  nameWithType: GButton.ConstructExtension(ByteBuffer)
+  fullName: FairyGUI.GButton.ConstructExtension(FairyGUI.Utils.ByteBuffer)
+  spec.csharp:
+  - uid: FairyGUI.GButton.ConstructExtension(FairyGUI.Utils.ByteBuffer)
+    name: ConstructExtension
+    nameWithType: GButton.ConstructExtension
+    fullName: FairyGUI.GButton.ConstructExtension
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Utils.ByteBuffer
+    name: ByteBuffer
+    nameWithType: ByteBuffer
+    fullName: FairyGUI.Utils.ByteBuffer
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GButton.ConstructExtension(FairyGUI.Utils.ByteBuffer)
+    name: ConstructExtension
+    nameWithType: GButton.ConstructExtension
+    fullName: FairyGUI.GButton.ConstructExtension
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Utils.ByteBuffer
+    name: ByteBuffer
+    nameWithType: ByteBuffer
+    fullName: FairyGUI.Utils.ByteBuffer
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GButton.Setup_AfterAdd(FairyGUI.Utils.ByteBuffer,System.Int32)
+  commentId: M:FairyGUI.GButton.Setup_AfterAdd(FairyGUI.Utils.ByteBuffer,System.Int32)
+  parent: FairyGUI.GButton
+  isExternal: true
+  name: Setup_AfterAdd(ByteBuffer, Int32)
+  nameWithType: GButton.Setup_AfterAdd(ByteBuffer, Int32)
+  fullName: FairyGUI.GButton.Setup_AfterAdd(FairyGUI.Utils.ByteBuffer, System.Int32)
+  spec.csharp:
+  - uid: FairyGUI.GButton.Setup_AfterAdd(FairyGUI.Utils.ByteBuffer,System.Int32)
+    name: Setup_AfterAdd
+    nameWithType: GButton.Setup_AfterAdd
+    fullName: FairyGUI.GButton.Setup_AfterAdd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Utils.ByteBuffer
+    name: ByteBuffer
+    nameWithType: ByteBuffer
+    fullName: FairyGUI.Utils.ByteBuffer
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GButton.Setup_AfterAdd(FairyGUI.Utils.ByteBuffer,System.Int32)
+    name: Setup_AfterAdd
+    nameWithType: GButton.Setup_AfterAdd
+    fullName: FairyGUI.GButton.Setup_AfterAdd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Utils.ByteBuffer
+    name: ByteBuffer
+    nameWithType: ByteBuffer
+    fullName: FairyGUI.Utils.ByteBuffer
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.rootContainer
+  commentId: P:FairyGUI.GComponent.rootContainer
+  parent: FairyGUI.GComponent
+  name: rootContainer
+  nameWithType: GComponent.rootContainer
+  fullName: FairyGUI.GComponent.rootContainer
+- uid: FairyGUI.GComponent.container
+  commentId: P:FairyGUI.GComponent.container
+  parent: FairyGUI.GComponent
+  name: container
+  nameWithType: GComponent.container
+  fullName: FairyGUI.GComponent.container
+- uid: FairyGUI.GComponent.scrollPane
+  commentId: P:FairyGUI.GComponent.scrollPane
+  parent: FairyGUI.GComponent
+  name: scrollPane
+  nameWithType: GComponent.scrollPane
+  fullName: FairyGUI.GComponent.scrollPane
+- uid: FairyGUI.GComponent._margin
+  commentId: F:FairyGUI.GComponent._margin
+  parent: FairyGUI.GComponent
+  name: _margin
+  nameWithType: GComponent._margin
+  fullName: FairyGUI.GComponent._margin
+- uid: FairyGUI.GComponent._trackBounds
+  commentId: F:FairyGUI.GComponent._trackBounds
+  parent: FairyGUI.GComponent
+  name: _trackBounds
+  nameWithType: GComponent._trackBounds
+  fullName: FairyGUI.GComponent._trackBounds
+- uid: FairyGUI.GComponent._boundsChanged
+  commentId: F:FairyGUI.GComponent._boundsChanged
+  parent: FairyGUI.GComponent
+  name: _boundsChanged
+  nameWithType: GComponent._boundsChanged
+  fullName: FairyGUI.GComponent._boundsChanged
+- uid: FairyGUI.GComponent._childrenRenderOrder
+  commentId: F:FairyGUI.GComponent._childrenRenderOrder
+  parent: FairyGUI.GComponent
+  name: _childrenRenderOrder
+  nameWithType: GComponent._childrenRenderOrder
+  fullName: FairyGUI.GComponent._childrenRenderOrder
+- uid: FairyGUI.GComponent._apexIndex
+  commentId: F:FairyGUI.GComponent._apexIndex
+  parent: FairyGUI.GComponent
+  name: _apexIndex
+  nameWithType: GComponent._apexIndex
+  fullName: FairyGUI.GComponent._apexIndex
+- uid: FairyGUI.GComponent.CreateDisplayObject
+  commentId: M:FairyGUI.GComponent.CreateDisplayObject
+  parent: FairyGUI.GComponent
+  name: CreateDisplayObject()
+  nameWithType: GComponent.CreateDisplayObject()
+  fullName: FairyGUI.GComponent.CreateDisplayObject()
+  spec.csharp:
+  - uid: FairyGUI.GComponent.CreateDisplayObject
+    name: CreateDisplayObject
+    nameWithType: GComponent.CreateDisplayObject
+    fullName: FairyGUI.GComponent.CreateDisplayObject
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.CreateDisplayObject
+    name: CreateDisplayObject
+    nameWithType: GComponent.CreateDisplayObject
+    fullName: FairyGUI.GComponent.CreateDisplayObject
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.Dispose
+  commentId: M:FairyGUI.GComponent.Dispose
+  parent: FairyGUI.GComponent
+  name: Dispose()
+  nameWithType: GComponent.Dispose()
+  fullName: FairyGUI.GComponent.Dispose()
+  spec.csharp:
+  - uid: FairyGUI.GComponent.Dispose
+    name: Dispose
+    nameWithType: GComponent.Dispose
+    fullName: FairyGUI.GComponent.Dispose
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.Dispose
+    name: Dispose
+    nameWithType: GComponent.Dispose
+    fullName: FairyGUI.GComponent.Dispose
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.onDrop
+  commentId: P:FairyGUI.GComponent.onDrop
+  parent: FairyGUI.GComponent
+  name: onDrop
+  nameWithType: GComponent.onDrop
+  fullName: FairyGUI.GComponent.onDrop
+- uid: FairyGUI.GComponent.fairyBatching
+  commentId: P:FairyGUI.GComponent.fairyBatching
+  parent: FairyGUI.GComponent
+  name: fairyBatching
+  nameWithType: GComponent.fairyBatching
+  fullName: FairyGUI.GComponent.fairyBatching
+- uid: FairyGUI.GComponent.InvalidateBatchingState(System.Boolean)
+  commentId: M:FairyGUI.GComponent.InvalidateBatchingState(System.Boolean)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: InvalidateBatchingState(Boolean)
+  nameWithType: GComponent.InvalidateBatchingState(Boolean)
+  fullName: FairyGUI.GComponent.InvalidateBatchingState(System.Boolean)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.InvalidateBatchingState(System.Boolean)
+    name: InvalidateBatchingState
+    nameWithType: GComponent.InvalidateBatchingState
+    fullName: FairyGUI.GComponent.InvalidateBatchingState
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.InvalidateBatchingState(System.Boolean)
+    name: InvalidateBatchingState
+    nameWithType: GComponent.InvalidateBatchingState
+    fullName: FairyGUI.GComponent.InvalidateBatchingState
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.opaque
+  commentId: P:FairyGUI.GComponent.opaque
+  parent: FairyGUI.GComponent
+  name: opaque
+  nameWithType: GComponent.opaque
+  fullName: FairyGUI.GComponent.opaque
+- uid: FairyGUI.GComponent.margin
+  commentId: P:FairyGUI.GComponent.margin
+  parent: FairyGUI.GComponent
+  name: margin
+  nameWithType: GComponent.margin
+  fullName: FairyGUI.GComponent.margin
+- uid: FairyGUI.GComponent.childrenRenderOrder
+  commentId: P:FairyGUI.GComponent.childrenRenderOrder
+  parent: FairyGUI.GComponent
+  name: childrenRenderOrder
+  nameWithType: GComponent.childrenRenderOrder
+  fullName: FairyGUI.GComponent.childrenRenderOrder
+- uid: FairyGUI.GComponent.apexIndex
+  commentId: P:FairyGUI.GComponent.apexIndex
+  parent: FairyGUI.GComponent
+  name: apexIndex
+  nameWithType: GComponent.apexIndex
+  fullName: FairyGUI.GComponent.apexIndex
+- uid: FairyGUI.GComponent.AddChild(FairyGUI.GObject)
+  commentId: M:FairyGUI.GComponent.AddChild(FairyGUI.GObject)
+  parent: FairyGUI.GComponent
+  name: AddChild(GObject)
+  nameWithType: GComponent.AddChild(GObject)
+  fullName: FairyGUI.GComponent.AddChild(FairyGUI.GObject)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.AddChild(FairyGUI.GObject)
+    name: AddChild
+    nameWithType: GComponent.AddChild
+    fullName: FairyGUI.GComponent.AddChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.AddChild(FairyGUI.GObject)
+    name: AddChild
+    nameWithType: GComponent.AddChild
+    fullName: FairyGUI.GComponent.AddChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.AddChildAt(FairyGUI.GObject,System.Int32)
+  commentId: M:FairyGUI.GComponent.AddChildAt(FairyGUI.GObject,System.Int32)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: AddChildAt(GObject, Int32)
+  nameWithType: GComponent.AddChildAt(GObject, Int32)
+  fullName: FairyGUI.GComponent.AddChildAt(FairyGUI.GObject, System.Int32)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.AddChildAt(FairyGUI.GObject,System.Int32)
+    name: AddChildAt
+    nameWithType: GComponent.AddChildAt
+    fullName: FairyGUI.GComponent.AddChildAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.AddChildAt(FairyGUI.GObject,System.Int32)
+    name: AddChildAt
+    nameWithType: GComponent.AddChildAt
+    fullName: FairyGUI.GComponent.AddChildAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.RemoveChild(FairyGUI.GObject)
+  commentId: M:FairyGUI.GComponent.RemoveChild(FairyGUI.GObject)
+  parent: FairyGUI.GComponent
+  name: RemoveChild(GObject)
+  nameWithType: GComponent.RemoveChild(GObject)
+  fullName: FairyGUI.GComponent.RemoveChild(FairyGUI.GObject)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.RemoveChild(FairyGUI.GObject)
+    name: RemoveChild
+    nameWithType: GComponent.RemoveChild
+    fullName: FairyGUI.GComponent.RemoveChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.RemoveChild(FairyGUI.GObject)
+    name: RemoveChild
+    nameWithType: GComponent.RemoveChild
+    fullName: FairyGUI.GComponent.RemoveChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.RemoveChild(FairyGUI.GObject,System.Boolean)
+  commentId: M:FairyGUI.GComponent.RemoveChild(FairyGUI.GObject,System.Boolean)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: RemoveChild(GObject, Boolean)
+  nameWithType: GComponent.RemoveChild(GObject, Boolean)
+  fullName: FairyGUI.GComponent.RemoveChild(FairyGUI.GObject, System.Boolean)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.RemoveChild(FairyGUI.GObject,System.Boolean)
+    name: RemoveChild
+    nameWithType: GComponent.RemoveChild
+    fullName: FairyGUI.GComponent.RemoveChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.RemoveChild(FairyGUI.GObject,System.Boolean)
+    name: RemoveChild
+    nameWithType: GComponent.RemoveChild
+    fullName: FairyGUI.GComponent.RemoveChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.RemoveChildAt(System.Int32)
+  commentId: M:FairyGUI.GComponent.RemoveChildAt(System.Int32)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: RemoveChildAt(Int32)
+  nameWithType: GComponent.RemoveChildAt(Int32)
+  fullName: FairyGUI.GComponent.RemoveChildAt(System.Int32)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.RemoveChildAt(System.Int32)
+    name: RemoveChildAt
+    nameWithType: GComponent.RemoveChildAt
+    fullName: FairyGUI.GComponent.RemoveChildAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.RemoveChildAt(System.Int32)
+    name: RemoveChildAt
+    nameWithType: GComponent.RemoveChildAt
+    fullName: FairyGUI.GComponent.RemoveChildAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.RemoveChildAt(System.Int32,System.Boolean)
+  commentId: M:FairyGUI.GComponent.RemoveChildAt(System.Int32,System.Boolean)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: RemoveChildAt(Int32, Boolean)
+  nameWithType: GComponent.RemoveChildAt(Int32, Boolean)
+  fullName: FairyGUI.GComponent.RemoveChildAt(System.Int32, System.Boolean)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.RemoveChildAt(System.Int32,System.Boolean)
+    name: RemoveChildAt
+    nameWithType: GComponent.RemoveChildAt
+    fullName: FairyGUI.GComponent.RemoveChildAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.RemoveChildAt(System.Int32,System.Boolean)
+    name: RemoveChildAt
+    nameWithType: GComponent.RemoveChildAt
+    fullName: FairyGUI.GComponent.RemoveChildAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.RemoveChildren
+  commentId: M:FairyGUI.GComponent.RemoveChildren
+  parent: FairyGUI.GComponent
+  name: RemoveChildren()
+  nameWithType: GComponent.RemoveChildren()
+  fullName: FairyGUI.GComponent.RemoveChildren()
+  spec.csharp:
+  - uid: FairyGUI.GComponent.RemoveChildren
+    name: RemoveChildren
+    nameWithType: GComponent.RemoveChildren
+    fullName: FairyGUI.GComponent.RemoveChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.RemoveChildren
+    name: RemoveChildren
+    nameWithType: GComponent.RemoveChildren
+    fullName: FairyGUI.GComponent.RemoveChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.RemoveChildren(System.Int32,System.Int32,System.Boolean)
+  commentId: M:FairyGUI.GComponent.RemoveChildren(System.Int32,System.Int32,System.Boolean)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: RemoveChildren(Int32, Int32, Boolean)
+  nameWithType: GComponent.RemoveChildren(Int32, Int32, Boolean)
+  fullName: FairyGUI.GComponent.RemoveChildren(System.Int32, System.Int32, System.Boolean)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.RemoveChildren(System.Int32,System.Int32,System.Boolean)
+    name: RemoveChildren
+    nameWithType: GComponent.RemoveChildren
+    fullName: FairyGUI.GComponent.RemoveChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.RemoveChildren(System.Int32,System.Int32,System.Boolean)
+    name: RemoveChildren
+    nameWithType: GComponent.RemoveChildren
+    fullName: FairyGUI.GComponent.RemoveChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.GetChildAt(System.Int32)
+  commentId: M:FairyGUI.GComponent.GetChildAt(System.Int32)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: GetChildAt(Int32)
+  nameWithType: GComponent.GetChildAt(Int32)
+  fullName: FairyGUI.GComponent.GetChildAt(System.Int32)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.GetChildAt(System.Int32)
+    name: GetChildAt
+    nameWithType: GComponent.GetChildAt
+    fullName: FairyGUI.GComponent.GetChildAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.GetChildAt(System.Int32)
+    name: GetChildAt
+    nameWithType: GComponent.GetChildAt
+    fullName: FairyGUI.GComponent.GetChildAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.GetChild(System.String)
+  commentId: M:FairyGUI.GComponent.GetChild(System.String)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: GetChild(String)
+  nameWithType: GComponent.GetChild(String)
+  fullName: FairyGUI.GComponent.GetChild(System.String)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.GetChild(System.String)
+    name: GetChild
+    nameWithType: GComponent.GetChild
+    fullName: FairyGUI.GComponent.GetChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.GetChild(System.String)
+    name: GetChild
+    nameWithType: GComponent.GetChild
+    fullName: FairyGUI.GComponent.GetChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.GetVisibleChild(System.String)
+  commentId: M:FairyGUI.GComponent.GetVisibleChild(System.String)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: GetVisibleChild(String)
+  nameWithType: GComponent.GetVisibleChild(String)
+  fullName: FairyGUI.GComponent.GetVisibleChild(System.String)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.GetVisibleChild(System.String)
+    name: GetVisibleChild
+    nameWithType: GComponent.GetVisibleChild
+    fullName: FairyGUI.GComponent.GetVisibleChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.GetVisibleChild(System.String)
+    name: GetVisibleChild
+    nameWithType: GComponent.GetVisibleChild
+    fullName: FairyGUI.GComponent.GetVisibleChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.GetChildInGroup(FairyGUI.GGroup,System.String)
+  commentId: M:FairyGUI.GComponent.GetChildInGroup(FairyGUI.GGroup,System.String)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: GetChildInGroup(GGroup, String)
+  nameWithType: GComponent.GetChildInGroup(GGroup, String)
+  fullName: FairyGUI.GComponent.GetChildInGroup(FairyGUI.GGroup, System.String)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.GetChildInGroup(FairyGUI.GGroup,System.String)
+    name: GetChildInGroup
+    nameWithType: GComponent.GetChildInGroup
+    fullName: FairyGUI.GComponent.GetChildInGroup
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GGroup
+    name: GGroup
+    nameWithType: GGroup
+    fullName: FairyGUI.GGroup
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.GetChildInGroup(FairyGUI.GGroup,System.String)
+    name: GetChildInGroup
+    nameWithType: GComponent.GetChildInGroup
+    fullName: FairyGUI.GComponent.GetChildInGroup
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GGroup
+    name: GGroup
+    nameWithType: GGroup
+    fullName: FairyGUI.GGroup
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.GetChildren
+  commentId: M:FairyGUI.GComponent.GetChildren
+  parent: FairyGUI.GComponent
+  name: GetChildren()
+  nameWithType: GComponent.GetChildren()
+  fullName: FairyGUI.GComponent.GetChildren()
+  spec.csharp:
+  - uid: FairyGUI.GComponent.GetChildren
+    name: GetChildren
+    nameWithType: GComponent.GetChildren
+    fullName: FairyGUI.GComponent.GetChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.GetChildren
+    name: GetChildren
+    nameWithType: GComponent.GetChildren
+    fullName: FairyGUI.GComponent.GetChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.GetChildIndex(FairyGUI.GObject)
+  commentId: M:FairyGUI.GComponent.GetChildIndex(FairyGUI.GObject)
+  parent: FairyGUI.GComponent
+  name: GetChildIndex(GObject)
+  nameWithType: GComponent.GetChildIndex(GObject)
+  fullName: FairyGUI.GComponent.GetChildIndex(FairyGUI.GObject)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.GetChildIndex(FairyGUI.GObject)
+    name: GetChildIndex
+    nameWithType: GComponent.GetChildIndex
+    fullName: FairyGUI.GComponent.GetChildIndex
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.GetChildIndex(FairyGUI.GObject)
+    name: GetChildIndex
+    nameWithType: GComponent.GetChildIndex
+    fullName: FairyGUI.GComponent.GetChildIndex
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.SetChildIndex(FairyGUI.GObject,System.Int32)
+  commentId: M:FairyGUI.GComponent.SetChildIndex(FairyGUI.GObject,System.Int32)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: SetChildIndex(GObject, Int32)
+  nameWithType: GComponent.SetChildIndex(GObject, Int32)
+  fullName: FairyGUI.GComponent.SetChildIndex(FairyGUI.GObject, System.Int32)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.SetChildIndex(FairyGUI.GObject,System.Int32)
+    name: SetChildIndex
+    nameWithType: GComponent.SetChildIndex
+    fullName: FairyGUI.GComponent.SetChildIndex
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.SetChildIndex(FairyGUI.GObject,System.Int32)
+    name: SetChildIndex
+    nameWithType: GComponent.SetChildIndex
+    fullName: FairyGUI.GComponent.SetChildIndex
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.SetChildIndexBefore(FairyGUI.GObject,System.Int32)
+  commentId: M:FairyGUI.GComponent.SetChildIndexBefore(FairyGUI.GObject,System.Int32)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: SetChildIndexBefore(GObject, Int32)
+  nameWithType: GComponent.SetChildIndexBefore(GObject, Int32)
+  fullName: FairyGUI.GComponent.SetChildIndexBefore(FairyGUI.GObject, System.Int32)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.SetChildIndexBefore(FairyGUI.GObject,System.Int32)
+    name: SetChildIndexBefore
+    nameWithType: GComponent.SetChildIndexBefore
+    fullName: FairyGUI.GComponent.SetChildIndexBefore
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.SetChildIndexBefore(FairyGUI.GObject,System.Int32)
+    name: SetChildIndexBefore
+    nameWithType: GComponent.SetChildIndexBefore
+    fullName: FairyGUI.GComponent.SetChildIndexBefore
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.SwapChildren(FairyGUI.GObject,FairyGUI.GObject)
+  commentId: M:FairyGUI.GComponent.SwapChildren(FairyGUI.GObject,FairyGUI.GObject)
+  parent: FairyGUI.GComponent
+  name: SwapChildren(GObject, GObject)
+  nameWithType: GComponent.SwapChildren(GObject, GObject)
+  fullName: FairyGUI.GComponent.SwapChildren(FairyGUI.GObject, FairyGUI.GObject)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.SwapChildren(FairyGUI.GObject,FairyGUI.GObject)
+    name: SwapChildren
+    nameWithType: GComponent.SwapChildren
+    fullName: FairyGUI.GComponent.SwapChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.SwapChildren(FairyGUI.GObject,FairyGUI.GObject)
+    name: SwapChildren
+    nameWithType: GComponent.SwapChildren
+    fullName: FairyGUI.GComponent.SwapChildren
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.SwapChildrenAt(System.Int32,System.Int32)
+  commentId: M:FairyGUI.GComponent.SwapChildrenAt(System.Int32,System.Int32)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: SwapChildrenAt(Int32, Int32)
+  nameWithType: GComponent.SwapChildrenAt(Int32, Int32)
+  fullName: FairyGUI.GComponent.SwapChildrenAt(System.Int32, System.Int32)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.SwapChildrenAt(System.Int32,System.Int32)
+    name: SwapChildrenAt
+    nameWithType: GComponent.SwapChildrenAt
+    fullName: FairyGUI.GComponent.SwapChildrenAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.SwapChildrenAt(System.Int32,System.Int32)
+    name: SwapChildrenAt
+    nameWithType: GComponent.SwapChildrenAt
+    fullName: FairyGUI.GComponent.SwapChildrenAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.numChildren
+  commentId: P:FairyGUI.GComponent.numChildren
+  parent: FairyGUI.GComponent
+  name: numChildren
+  nameWithType: GComponent.numChildren
+  fullName: FairyGUI.GComponent.numChildren
+- uid: FairyGUI.GComponent.IsAncestorOf(FairyGUI.GObject)
+  commentId: M:FairyGUI.GComponent.IsAncestorOf(FairyGUI.GObject)
+  parent: FairyGUI.GComponent
+  name: IsAncestorOf(GObject)
+  nameWithType: GComponent.IsAncestorOf(GObject)
+  fullName: FairyGUI.GComponent.IsAncestorOf(FairyGUI.GObject)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.IsAncestorOf(FairyGUI.GObject)
+    name: IsAncestorOf
+    nameWithType: GComponent.IsAncestorOf
+    fullName: FairyGUI.GComponent.IsAncestorOf
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.IsAncestorOf(FairyGUI.GObject)
+    name: IsAncestorOf
+    nameWithType: GComponent.IsAncestorOf
+    fullName: FairyGUI.GComponent.IsAncestorOf
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.AddController(FairyGUI.Controller)
+  commentId: M:FairyGUI.GComponent.AddController(FairyGUI.Controller)
+  parent: FairyGUI.GComponent
+  name: AddController(Controller)
+  nameWithType: GComponent.AddController(Controller)
+  fullName: FairyGUI.GComponent.AddController(FairyGUI.Controller)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.AddController(FairyGUI.Controller)
+    name: AddController
+    nameWithType: GComponent.AddController
+    fullName: FairyGUI.GComponent.AddController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: FairyGUI.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.AddController(FairyGUI.Controller)
+    name: AddController
+    nameWithType: GComponent.AddController
+    fullName: FairyGUI.GComponent.AddController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: FairyGUI.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.GetControllerAt(System.Int32)
+  commentId: M:FairyGUI.GComponent.GetControllerAt(System.Int32)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: GetControllerAt(Int32)
+  nameWithType: GComponent.GetControllerAt(Int32)
+  fullName: FairyGUI.GComponent.GetControllerAt(System.Int32)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.GetControllerAt(System.Int32)
+    name: GetControllerAt
+    nameWithType: GComponent.GetControllerAt
+    fullName: FairyGUI.GComponent.GetControllerAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.GetControllerAt(System.Int32)
+    name: GetControllerAt
+    nameWithType: GComponent.GetControllerAt
+    fullName: FairyGUI.GComponent.GetControllerAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.GetController(System.String)
+  commentId: M:FairyGUI.GComponent.GetController(System.String)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: GetController(String)
+  nameWithType: GComponent.GetController(String)
+  fullName: FairyGUI.GComponent.GetController(System.String)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.GetController(System.String)
+    name: GetController
+    nameWithType: GComponent.GetController
+    fullName: FairyGUI.GComponent.GetController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.GetController(System.String)
+    name: GetController
+    nameWithType: GComponent.GetController
+    fullName: FairyGUI.GComponent.GetController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.RemoveController(FairyGUI.Controller)
+  commentId: M:FairyGUI.GComponent.RemoveController(FairyGUI.Controller)
+  parent: FairyGUI.GComponent
+  name: RemoveController(Controller)
+  nameWithType: GComponent.RemoveController(Controller)
+  fullName: FairyGUI.GComponent.RemoveController(FairyGUI.Controller)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.RemoveController(FairyGUI.Controller)
+    name: RemoveController
+    nameWithType: GComponent.RemoveController
+    fullName: FairyGUI.GComponent.RemoveController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: FairyGUI.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.RemoveController(FairyGUI.Controller)
+    name: RemoveController
+    nameWithType: GComponent.RemoveController
+    fullName: FairyGUI.GComponent.RemoveController
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: FairyGUI.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.Controllers
+  commentId: P:FairyGUI.GComponent.Controllers
+  parent: FairyGUI.GComponent
+  name: Controllers
+  nameWithType: GComponent.Controllers
+  fullName: FairyGUI.GComponent.Controllers
+- uid: FairyGUI.GComponent.GetTransitionAt(System.Int32)
+  commentId: M:FairyGUI.GComponent.GetTransitionAt(System.Int32)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: GetTransitionAt(Int32)
+  nameWithType: GComponent.GetTransitionAt(Int32)
+  fullName: FairyGUI.GComponent.GetTransitionAt(System.Int32)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.GetTransitionAt(System.Int32)
+    name: GetTransitionAt
+    nameWithType: GComponent.GetTransitionAt
+    fullName: FairyGUI.GComponent.GetTransitionAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.GetTransitionAt(System.Int32)
+    name: GetTransitionAt
+    nameWithType: GComponent.GetTransitionAt
+    fullName: FairyGUI.GComponent.GetTransitionAt
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.GetTransition(System.String)
+  commentId: M:FairyGUI.GComponent.GetTransition(System.String)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: GetTransition(String)
+  nameWithType: GComponent.GetTransition(String)
+  fullName: FairyGUI.GComponent.GetTransition(System.String)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.GetTransition(System.String)
+    name: GetTransition
+    nameWithType: GComponent.GetTransition
+    fullName: FairyGUI.GComponent.GetTransition
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.GetTransition(System.String)
+    name: GetTransition
+    nameWithType: GComponent.GetTransition
+    fullName: FairyGUI.GComponent.GetTransition
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.clipSoftness
+  commentId: P:FairyGUI.GComponent.clipSoftness
+  parent: FairyGUI.GComponent
+  name: clipSoftness
+  nameWithType: GComponent.clipSoftness
+  fullName: FairyGUI.GComponent.clipSoftness
+- uid: FairyGUI.GComponent.mask
+  commentId: P:FairyGUI.GComponent.mask
+  parent: FairyGUI.GComponent
+  name: mask
+  nameWithType: GComponent.mask
+  fullName: FairyGUI.GComponent.mask
+- uid: FairyGUI.GComponent.reversedMask
+  commentId: P:FairyGUI.GComponent.reversedMask
+  parent: FairyGUI.GComponent
+  name: reversedMask
+  nameWithType: GComponent.reversedMask
+  fullName: FairyGUI.GComponent.reversedMask
+- uid: FairyGUI.GComponent.baseUserData
+  commentId: P:FairyGUI.GComponent.baseUserData
+  parent: FairyGUI.GComponent
+  name: baseUserData
+  nameWithType: GComponent.baseUserData
+  fullName: FairyGUI.GComponent.baseUserData
+- uid: FairyGUI.GComponent.IsChildInView(FairyGUI.GObject)
+  commentId: M:FairyGUI.GComponent.IsChildInView(FairyGUI.GObject)
+  parent: FairyGUI.GComponent
+  name: IsChildInView(GObject)
+  nameWithType: GComponent.IsChildInView(GObject)
+  fullName: FairyGUI.GComponent.IsChildInView(FairyGUI.GObject)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.IsChildInView(FairyGUI.GObject)
+    name: IsChildInView
+    nameWithType: GComponent.IsChildInView
+    fullName: FairyGUI.GComponent.IsChildInView
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.IsChildInView(FairyGUI.GObject)
+    name: IsChildInView
+    nameWithType: GComponent.IsChildInView
+    fullName: FairyGUI.GComponent.IsChildInView
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.GetFirstChildInView
+  commentId: M:FairyGUI.GComponent.GetFirstChildInView
+  parent: FairyGUI.GComponent
+  name: GetFirstChildInView()
+  nameWithType: GComponent.GetFirstChildInView()
+  fullName: FairyGUI.GComponent.GetFirstChildInView()
+  spec.csharp:
+  - uid: FairyGUI.GComponent.GetFirstChildInView
+    name: GetFirstChildInView
+    nameWithType: GComponent.GetFirstChildInView
+    fullName: FairyGUI.GComponent.GetFirstChildInView
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.GetFirstChildInView
+    name: GetFirstChildInView
+    nameWithType: GComponent.GetFirstChildInView
+    fullName: FairyGUI.GComponent.GetFirstChildInView
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.SetupScroll(FairyGUI.Utils.ByteBuffer)
+  commentId: M:FairyGUI.GComponent.SetupScroll(FairyGUI.Utils.ByteBuffer)
+  parent: FairyGUI.GComponent
+  name: SetupScroll(ByteBuffer)
+  nameWithType: GComponent.SetupScroll(ByteBuffer)
+  fullName: FairyGUI.GComponent.SetupScroll(FairyGUI.Utils.ByteBuffer)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.SetupScroll(FairyGUI.Utils.ByteBuffer)
+    name: SetupScroll
+    nameWithType: GComponent.SetupScroll
+    fullName: FairyGUI.GComponent.SetupScroll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Utils.ByteBuffer
+    name: ByteBuffer
+    nameWithType: ByteBuffer
+    fullName: FairyGUI.Utils.ByteBuffer
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.SetupScroll(FairyGUI.Utils.ByteBuffer)
+    name: SetupScroll
+    nameWithType: GComponent.SetupScroll
+    fullName: FairyGUI.GComponent.SetupScroll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Utils.ByteBuffer
+    name: ByteBuffer
+    nameWithType: ByteBuffer
+    fullName: FairyGUI.Utils.ByteBuffer
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.SetupOverflow(FairyGUI.OverflowType)
+  commentId: M:FairyGUI.GComponent.SetupOverflow(FairyGUI.OverflowType)
+  parent: FairyGUI.GComponent
+  name: SetupOverflow(OverflowType)
+  nameWithType: GComponent.SetupOverflow(OverflowType)
+  fullName: FairyGUI.GComponent.SetupOverflow(FairyGUI.OverflowType)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.SetupOverflow(FairyGUI.OverflowType)
+    name: SetupOverflow
+    nameWithType: GComponent.SetupOverflow
+    fullName: FairyGUI.GComponent.SetupOverflow
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.OverflowType
+    name: OverflowType
+    nameWithType: OverflowType
+    fullName: FairyGUI.OverflowType
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.SetupOverflow(FairyGUI.OverflowType)
+    name: SetupOverflow
+    nameWithType: GComponent.SetupOverflow
+    fullName: FairyGUI.GComponent.SetupOverflow
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.OverflowType
+    name: OverflowType
+    nameWithType: OverflowType
+    fullName: FairyGUI.OverflowType
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.HandleSizeChanged
+  commentId: M:FairyGUI.GComponent.HandleSizeChanged
+  parent: FairyGUI.GComponent
+  name: HandleSizeChanged()
+  nameWithType: GComponent.HandleSizeChanged()
+  fullName: FairyGUI.GComponent.HandleSizeChanged()
+  spec.csharp:
+  - uid: FairyGUI.GComponent.HandleSizeChanged
+    name: HandleSizeChanged
+    nameWithType: GComponent.HandleSizeChanged
+    fullName: FairyGUI.GComponent.HandleSizeChanged
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.HandleSizeChanged
+    name: HandleSizeChanged
+    nameWithType: GComponent.HandleSizeChanged
+    fullName: FairyGUI.GComponent.HandleSizeChanged
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.SetBoundsChangedFlag
+  commentId: M:FairyGUI.GComponent.SetBoundsChangedFlag
+  parent: FairyGUI.GComponent
+  name: SetBoundsChangedFlag()
+  nameWithType: GComponent.SetBoundsChangedFlag()
+  fullName: FairyGUI.GComponent.SetBoundsChangedFlag()
+  spec.csharp:
+  - uid: FairyGUI.GComponent.SetBoundsChangedFlag
+    name: SetBoundsChangedFlag
+    nameWithType: GComponent.SetBoundsChangedFlag
+    fullName: FairyGUI.GComponent.SetBoundsChangedFlag
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.SetBoundsChangedFlag
+    name: SetBoundsChangedFlag
+    nameWithType: GComponent.SetBoundsChangedFlag
+    fullName: FairyGUI.GComponent.SetBoundsChangedFlag
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.EnsureBoundsCorrect
+  commentId: M:FairyGUI.GComponent.EnsureBoundsCorrect
+  parent: FairyGUI.GComponent
+  name: EnsureBoundsCorrect()
+  nameWithType: GComponent.EnsureBoundsCorrect()
+  fullName: FairyGUI.GComponent.EnsureBoundsCorrect()
+  spec.csharp:
+  - uid: FairyGUI.GComponent.EnsureBoundsCorrect
+    name: EnsureBoundsCorrect
+    nameWithType: GComponent.EnsureBoundsCorrect
+    fullName: FairyGUI.GComponent.EnsureBoundsCorrect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.EnsureBoundsCorrect
+    name: EnsureBoundsCorrect
+    nameWithType: GComponent.EnsureBoundsCorrect
+    fullName: FairyGUI.GComponent.EnsureBoundsCorrect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.UpdateBounds
+  commentId: M:FairyGUI.GComponent.UpdateBounds
+  parent: FairyGUI.GComponent
+  name: UpdateBounds()
+  nameWithType: GComponent.UpdateBounds()
+  fullName: FairyGUI.GComponent.UpdateBounds()
+  spec.csharp:
+  - uid: FairyGUI.GComponent.UpdateBounds
+    name: UpdateBounds
+    nameWithType: GComponent.UpdateBounds
+    fullName: FairyGUI.GComponent.UpdateBounds
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.UpdateBounds
+    name: UpdateBounds
+    nameWithType: GComponent.UpdateBounds
+    fullName: FairyGUI.GComponent.UpdateBounds
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.SetBounds(System.Single,System.Single,System.Single,System.Single)
+  commentId: M:FairyGUI.GComponent.SetBounds(System.Single,System.Single,System.Single,System.Single)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: SetBounds(Single, Single, Single, Single)
+  nameWithType: GComponent.SetBounds(Single, Single, Single, Single)
+  fullName: FairyGUI.GComponent.SetBounds(System.Single, System.Single, System.Single, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.SetBounds(System.Single,System.Single,System.Single,System.Single)
+    name: SetBounds
+    nameWithType: GComponent.SetBounds
+    fullName: FairyGUI.GComponent.SetBounds
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.SetBounds(System.Single,System.Single,System.Single,System.Single)
+    name: SetBounds
+    nameWithType: GComponent.SetBounds
+    fullName: FairyGUI.GComponent.SetBounds
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.viewWidth
+  commentId: P:FairyGUI.GComponent.viewWidth
+  parent: FairyGUI.GComponent
+  name: viewWidth
+  nameWithType: GComponent.viewWidth
+  fullName: FairyGUI.GComponent.viewWidth
+- uid: FairyGUI.GComponent.viewHeight
+  commentId: P:FairyGUI.GComponent.viewHeight
+  parent: FairyGUI.GComponent
+  name: viewHeight
+  nameWithType: GComponent.viewHeight
+  fullName: FairyGUI.GComponent.viewHeight
+- uid: FairyGUI.GComponent.GetSnappingPosition(System.Single@,System.Single@)
+  commentId: M:FairyGUI.GComponent.GetSnappingPosition(System.Single@,System.Single@)
+  parent: FairyGUI.GComponent
+  isExternal: true
+  name: GetSnappingPosition(Single, Single)
+  nameWithType: GComponent.GetSnappingPosition(Single, Single)
+  fullName: FairyGUI.GComponent.GetSnappingPosition(System.Single, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.GetSnappingPosition(System.Single@,System.Single@)
+    name: GetSnappingPosition
+    nameWithType: GComponent.GetSnappingPosition
+    fullName: FairyGUI.GComponent.GetSnappingPosition
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.GetSnappingPosition(System.Single@,System.Single@)
+    name: GetSnappingPosition
+    nameWithType: GComponent.GetSnappingPosition
+    fullName: FairyGUI.GComponent.GetSnappingPosition
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.OnUpdate
+  commentId: M:FairyGUI.GComponent.OnUpdate
+  parent: FairyGUI.GComponent
+  name: OnUpdate()
+  nameWithType: GComponent.OnUpdate()
+  fullName: FairyGUI.GComponent.OnUpdate()
+  spec.csharp:
+  - uid: FairyGUI.GComponent.OnUpdate
+    name: OnUpdate
+    nameWithType: GComponent.OnUpdate
+    fullName: FairyGUI.GComponent.OnUpdate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.OnUpdate
+    name: OnUpdate
+    nameWithType: GComponent.OnUpdate
+    fullName: FairyGUI.GComponent.OnUpdate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.ConstructFromResource
+  commentId: M:FairyGUI.GComponent.ConstructFromResource
+  parent: FairyGUI.GComponent
+  name: ConstructFromResource()
+  nameWithType: GComponent.ConstructFromResource()
+  fullName: FairyGUI.GComponent.ConstructFromResource()
+  spec.csharp:
+  - uid: FairyGUI.GComponent.ConstructFromResource
+    name: ConstructFromResource
+    nameWithType: GComponent.ConstructFromResource
+    fullName: FairyGUI.GComponent.ConstructFromResource
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.ConstructFromResource
+    name: ConstructFromResource
+    nameWithType: GComponent.ConstructFromResource
+    fullName: FairyGUI.GComponent.ConstructFromResource
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GComponent.ConstructFromXML(FairyGUI.Utils.XML)
+  commentId: M:FairyGUI.GComponent.ConstructFromXML(FairyGUI.Utils.XML)
+  parent: FairyGUI.GComponent
+  name: ConstructFromXML(XML)
+  nameWithType: GComponent.ConstructFromXML(XML)
+  fullName: FairyGUI.GComponent.ConstructFromXML(FairyGUI.Utils.XML)
+  spec.csharp:
+  - uid: FairyGUI.GComponent.ConstructFromXML(FairyGUI.Utils.XML)
+    name: ConstructFromXML
+    nameWithType: GComponent.ConstructFromXML
+    fullName: FairyGUI.GComponent.ConstructFromXML
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Utils.XML
+    name: XML
+    nameWithType: XML
+    fullName: FairyGUI.Utils.XML
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GComponent.ConstructFromXML(FairyGUI.Utils.XML)
+    name: ConstructFromXML
+    nameWithType: GComponent.ConstructFromXML
+    fullName: FairyGUI.GComponent.ConstructFromXML
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Utils.XML
+    name: XML
+    nameWithType: XML
+    fullName: FairyGUI.Utils.XML
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.id
+  commentId: P:FairyGUI.GObject.id
+  parent: FairyGUI.GObject
+  name: id
+  nameWithType: GObject.id
+  fullName: FairyGUI.GObject.id
+- uid: FairyGUI.GObject.name
+  commentId: F:FairyGUI.GObject.name
+  parent: FairyGUI.GObject
+  name: name
+  nameWithType: GObject.name
+  fullName: FairyGUI.GObject.name
+- uid: FairyGUI.GObject.data
+  commentId: F:FairyGUI.GObject.data
+  parent: FairyGUI.GObject
+  name: data
+  nameWithType: GObject.data
+  fullName: FairyGUI.GObject.data
+- uid: FairyGUI.GObject.sourceWidth
+  commentId: F:FairyGUI.GObject.sourceWidth
+  parent: FairyGUI.GObject
+  name: sourceWidth
+  nameWithType: GObject.sourceWidth
+  fullName: FairyGUI.GObject.sourceWidth
+- uid: FairyGUI.GObject.sourceHeight
+  commentId: F:FairyGUI.GObject.sourceHeight
+  parent: FairyGUI.GObject
+  name: sourceHeight
+  nameWithType: GObject.sourceHeight
+  fullName: FairyGUI.GObject.sourceHeight
+- uid: FairyGUI.GObject.initWidth
+  commentId: F:FairyGUI.GObject.initWidth
+  parent: FairyGUI.GObject
+  name: initWidth
+  nameWithType: GObject.initWidth
+  fullName: FairyGUI.GObject.initWidth
+- uid: FairyGUI.GObject.initHeight
+  commentId: F:FairyGUI.GObject.initHeight
+  parent: FairyGUI.GObject
+  name: initHeight
+  nameWithType: GObject.initHeight
+  fullName: FairyGUI.GObject.initHeight
+- uid: FairyGUI.GObject.minWidth
+  commentId: F:FairyGUI.GObject.minWidth
+  parent: FairyGUI.GObject
+  name: minWidth
+  nameWithType: GObject.minWidth
+  fullName: FairyGUI.GObject.minWidth
+- uid: FairyGUI.GObject.maxWidth
+  commentId: F:FairyGUI.GObject.maxWidth
+  parent: FairyGUI.GObject
+  name: maxWidth
+  nameWithType: GObject.maxWidth
+  fullName: FairyGUI.GObject.maxWidth
+- uid: FairyGUI.GObject.minHeight
+  commentId: F:FairyGUI.GObject.minHeight
+  parent: FairyGUI.GObject
+  name: minHeight
+  nameWithType: GObject.minHeight
+  fullName: FairyGUI.GObject.minHeight
+- uid: FairyGUI.GObject.maxHeight
+  commentId: F:FairyGUI.GObject.maxHeight
+  parent: FairyGUI.GObject
+  name: maxHeight
+  nameWithType: GObject.maxHeight
+  fullName: FairyGUI.GObject.maxHeight
+- uid: FairyGUI.GObject.relations
+  commentId: P:FairyGUI.GObject.relations
+  parent: FairyGUI.GObject
+  name: relations
+  nameWithType: GObject.relations
+  fullName: FairyGUI.GObject.relations
+- uid: FairyGUI.GObject.dragBounds
+  commentId: F:FairyGUI.GObject.dragBounds
+  parent: FairyGUI.GObject
+  name: dragBounds
+  nameWithType: GObject.dragBounds
+  fullName: FairyGUI.GObject.dragBounds
+- uid: FairyGUI.GObject.parent
+  commentId: P:FairyGUI.GObject.parent
+  parent: FairyGUI.GObject
+  name: parent
+  nameWithType: GObject.parent
+  fullName: FairyGUI.GObject.parent
+- uid: FairyGUI.GObject.displayObject
+  commentId: P:FairyGUI.GObject.displayObject
+  parent: FairyGUI.GObject
+  name: displayObject
+  nameWithType: GObject.displayObject
+  fullName: FairyGUI.GObject.displayObject
+- uid: FairyGUI.GObject.draggingObject
+  commentId: P:FairyGUI.GObject.draggingObject
+  parent: FairyGUI.GObject
+  name: draggingObject
+  nameWithType: GObject.draggingObject
+  fullName: FairyGUI.GObject.draggingObject
+- uid: FairyGUI.GObject.packageItem
+  commentId: F:FairyGUI.GObject.packageItem
+  parent: FairyGUI.GObject
+  name: packageItem
+  nameWithType: GObject.packageItem
+  fullName: FairyGUI.GObject.packageItem
+- uid: FairyGUI.GObject.underConstruct
+  commentId: F:FairyGUI.GObject.underConstruct
+  parent: FairyGUI.GObject
+  name: underConstruct
+  nameWithType: GObject.underConstruct
+  fullName: FairyGUI.GObject.underConstruct
+- uid: FairyGUI.GObject.onClick
+  commentId: P:FairyGUI.GObject.onClick
+  parent: FairyGUI.GObject
+  name: onClick
+  nameWithType: GObject.onClick
+  fullName: FairyGUI.GObject.onClick
+- uid: FairyGUI.GObject.onRightClick
+  commentId: P:FairyGUI.GObject.onRightClick
+  parent: FairyGUI.GObject
+  name: onRightClick
+  nameWithType: GObject.onRightClick
+  fullName: FairyGUI.GObject.onRightClick
+- uid: FairyGUI.GObject.onTouchBegin
+  commentId: P:FairyGUI.GObject.onTouchBegin
+  parent: FairyGUI.GObject
+  name: onTouchBegin
+  nameWithType: GObject.onTouchBegin
+  fullName: FairyGUI.GObject.onTouchBegin
+- uid: FairyGUI.GObject.onTouchMove
+  commentId: P:FairyGUI.GObject.onTouchMove
+  parent: FairyGUI.GObject
+  name: onTouchMove
+  nameWithType: GObject.onTouchMove
+  fullName: FairyGUI.GObject.onTouchMove
+- uid: FairyGUI.GObject.onTouchEnd
+  commentId: P:FairyGUI.GObject.onTouchEnd
+  parent: FairyGUI.GObject
+  name: onTouchEnd
+  nameWithType: GObject.onTouchEnd
+  fullName: FairyGUI.GObject.onTouchEnd
+- uid: FairyGUI.GObject.onRollOver
+  commentId: P:FairyGUI.GObject.onRollOver
+  parent: FairyGUI.GObject
+  name: onRollOver
+  nameWithType: GObject.onRollOver
+  fullName: FairyGUI.GObject.onRollOver
+- uid: FairyGUI.GObject.onRollOut
+  commentId: P:FairyGUI.GObject.onRollOut
+  parent: FairyGUI.GObject
+  name: onRollOut
+  nameWithType: GObject.onRollOut
+  fullName: FairyGUI.GObject.onRollOut
+- uid: FairyGUI.GObject.onAddedToStage
+  commentId: P:FairyGUI.GObject.onAddedToStage
+  parent: FairyGUI.GObject
+  name: onAddedToStage
+  nameWithType: GObject.onAddedToStage
+  fullName: FairyGUI.GObject.onAddedToStage
+- uid: FairyGUI.GObject.onRemovedFromStage
+  commentId: P:FairyGUI.GObject.onRemovedFromStage
+  parent: FairyGUI.GObject
+  name: onRemovedFromStage
+  nameWithType: GObject.onRemovedFromStage
+  fullName: FairyGUI.GObject.onRemovedFromStage
+- uid: FairyGUI.GObject.onKeyDown
+  commentId: P:FairyGUI.GObject.onKeyDown
+  parent: FairyGUI.GObject
+  name: onKeyDown
+  nameWithType: GObject.onKeyDown
+  fullName: FairyGUI.GObject.onKeyDown
+- uid: FairyGUI.GObject.onClickLink
+  commentId: P:FairyGUI.GObject.onClickLink
+  parent: FairyGUI.GObject
+  name: onClickLink
+  nameWithType: GObject.onClickLink
+  fullName: FairyGUI.GObject.onClickLink
+- uid: FairyGUI.GObject.onPositionChanged
+  commentId: P:FairyGUI.GObject.onPositionChanged
+  parent: FairyGUI.GObject
+  name: onPositionChanged
+  nameWithType: GObject.onPositionChanged
+  fullName: FairyGUI.GObject.onPositionChanged
+- uid: FairyGUI.GObject.onSizeChanged
+  commentId: P:FairyGUI.GObject.onSizeChanged
+  parent: FairyGUI.GObject
+  name: onSizeChanged
+  nameWithType: GObject.onSizeChanged
+  fullName: FairyGUI.GObject.onSizeChanged
+- uid: FairyGUI.GObject.onDragStart
+  commentId: P:FairyGUI.GObject.onDragStart
+  parent: FairyGUI.GObject
+  name: onDragStart
+  nameWithType: GObject.onDragStart
+  fullName: FairyGUI.GObject.onDragStart
+- uid: FairyGUI.GObject.onDragMove
+  commentId: P:FairyGUI.GObject.onDragMove
+  parent: FairyGUI.GObject
+  name: onDragMove
+  nameWithType: GObject.onDragMove
+  fullName: FairyGUI.GObject.onDragMove
+- uid: FairyGUI.GObject.onDragEnd
+  commentId: P:FairyGUI.GObject.onDragEnd
+  parent: FairyGUI.GObject
+  name: onDragEnd
+  nameWithType: GObject.onDragEnd
+  fullName: FairyGUI.GObject.onDragEnd
+- uid: FairyGUI.GObject.onGearStop
+  commentId: P:FairyGUI.GObject.onGearStop
+  parent: FairyGUI.GObject
+  name: onGearStop
+  nameWithType: GObject.onGearStop
+  fullName: FairyGUI.GObject.onGearStop
+- uid: FairyGUI.GObject.x
+  commentId: P:FairyGUI.GObject.x
+  parent: FairyGUI.GObject
+  name: x
+  nameWithType: GObject.x
+  fullName: FairyGUI.GObject.x
+- uid: FairyGUI.GObject.y
+  commentId: P:FairyGUI.GObject.y
+  parent: FairyGUI.GObject
+  name: y
+  nameWithType: GObject.y
+  fullName: FairyGUI.GObject.y
+- uid: FairyGUI.GObject.z
+  commentId: P:FairyGUI.GObject.z
+  parent: FairyGUI.GObject
+  name: z
+  nameWithType: GObject.z
+  fullName: FairyGUI.GObject.z
+- uid: FairyGUI.GObject.xy
+  commentId: P:FairyGUI.GObject.xy
+  parent: FairyGUI.GObject
+  name: xy
+  nameWithType: GObject.xy
+  fullName: FairyGUI.GObject.xy
+- uid: FairyGUI.GObject.position
+  commentId: P:FairyGUI.GObject.position
+  parent: FairyGUI.GObject
+  name: position
+  nameWithType: GObject.position
+  fullName: FairyGUI.GObject.position
+- uid: FairyGUI.GObject.SetXY(System.Single,System.Single)
+  commentId: M:FairyGUI.GObject.SetXY(System.Single,System.Single)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: SetXY(Single, Single)
+  nameWithType: GObject.SetXY(Single, Single)
+  fullName: FairyGUI.GObject.SetXY(System.Single, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GObject.SetXY(System.Single,System.Single)
+    name: SetXY
+    nameWithType: GObject.SetXY
+    fullName: FairyGUI.GObject.SetXY
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.SetXY(System.Single,System.Single)
+    name: SetXY
+    nameWithType: GObject.SetXY
+    fullName: FairyGUI.GObject.SetXY
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.SetXY(System.Single,System.Single,System.Boolean)
+  commentId: M:FairyGUI.GObject.SetXY(System.Single,System.Single,System.Boolean)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: SetXY(Single, Single, Boolean)
+  nameWithType: GObject.SetXY(Single, Single, Boolean)
+  fullName: FairyGUI.GObject.SetXY(System.Single, System.Single, System.Boolean)
+  spec.csharp:
+  - uid: FairyGUI.GObject.SetXY(System.Single,System.Single,System.Boolean)
+    name: SetXY
+    nameWithType: GObject.SetXY
+    fullName: FairyGUI.GObject.SetXY
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.SetXY(System.Single,System.Single,System.Boolean)
+    name: SetXY
+    nameWithType: GObject.SetXY
+    fullName: FairyGUI.GObject.SetXY
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.SetPosition(System.Single,System.Single,System.Single)
+  commentId: M:FairyGUI.GObject.SetPosition(System.Single,System.Single,System.Single)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: SetPosition(Single, Single, Single)
+  nameWithType: GObject.SetPosition(Single, Single, Single)
+  fullName: FairyGUI.GObject.SetPosition(System.Single, System.Single, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GObject.SetPosition(System.Single,System.Single,System.Single)
+    name: SetPosition
+    nameWithType: GObject.SetPosition
+    fullName: FairyGUI.GObject.SetPosition
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.SetPosition(System.Single,System.Single,System.Single)
+    name: SetPosition
+    nameWithType: GObject.SetPosition
+    fullName: FairyGUI.GObject.SetPosition
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.pixelSnapping
+  commentId: P:FairyGUI.GObject.pixelSnapping
+  parent: FairyGUI.GObject
+  name: pixelSnapping
+  nameWithType: GObject.pixelSnapping
+  fullName: FairyGUI.GObject.pixelSnapping
+- uid: FairyGUI.GObject.Center
+  commentId: M:FairyGUI.GObject.Center
+  parent: FairyGUI.GObject
+  name: Center()
+  nameWithType: GObject.Center()
+  fullName: FairyGUI.GObject.Center()
+  spec.csharp:
+  - uid: FairyGUI.GObject.Center
+    name: Center
+    nameWithType: GObject.Center
+    fullName: FairyGUI.GObject.Center
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.Center
+    name: Center
+    nameWithType: GObject.Center
+    fullName: FairyGUI.GObject.Center
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.Center(System.Boolean)
+  commentId: M:FairyGUI.GObject.Center(System.Boolean)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: Center(Boolean)
+  nameWithType: GObject.Center(Boolean)
+  fullName: FairyGUI.GObject.Center(System.Boolean)
+  spec.csharp:
+  - uid: FairyGUI.GObject.Center(System.Boolean)
+    name: Center
+    nameWithType: GObject.Center
+    fullName: FairyGUI.GObject.Center
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.Center(System.Boolean)
+    name: Center
+    nameWithType: GObject.Center
+    fullName: FairyGUI.GObject.Center
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.MakeFullScreen
+  commentId: M:FairyGUI.GObject.MakeFullScreen
+  parent: FairyGUI.GObject
+  name: MakeFullScreen()
+  nameWithType: GObject.MakeFullScreen()
+  fullName: FairyGUI.GObject.MakeFullScreen()
+  spec.csharp:
+  - uid: FairyGUI.GObject.MakeFullScreen
+    name: MakeFullScreen
+    nameWithType: GObject.MakeFullScreen
+    fullName: FairyGUI.GObject.MakeFullScreen
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.MakeFullScreen
+    name: MakeFullScreen
+    nameWithType: GObject.MakeFullScreen
+    fullName: FairyGUI.GObject.MakeFullScreen
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.width
+  commentId: P:FairyGUI.GObject.width
+  parent: FairyGUI.GObject
+  name: width
+  nameWithType: GObject.width
+  fullName: FairyGUI.GObject.width
+- uid: FairyGUI.GObject.height
+  commentId: P:FairyGUI.GObject.height
+  parent: FairyGUI.GObject
+  name: height
+  nameWithType: GObject.height
+  fullName: FairyGUI.GObject.height
+- uid: FairyGUI.GObject.size
+  commentId: P:FairyGUI.GObject.size
+  parent: FairyGUI.GObject
+  name: size
+  nameWithType: GObject.size
+  fullName: FairyGUI.GObject.size
+- uid: FairyGUI.GObject.actualWidth
+  commentId: P:FairyGUI.GObject.actualWidth
+  parent: FairyGUI.GObject
+  name: actualWidth
+  nameWithType: GObject.actualWidth
+  fullName: FairyGUI.GObject.actualWidth
+- uid: FairyGUI.GObject.actualHeight
+  commentId: P:FairyGUI.GObject.actualHeight
+  parent: FairyGUI.GObject
+  name: actualHeight
+  nameWithType: GObject.actualHeight
+  fullName: FairyGUI.GObject.actualHeight
+- uid: FairyGUI.GObject.SetSize(System.Single,System.Single)
+  commentId: M:FairyGUI.GObject.SetSize(System.Single,System.Single)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: SetSize(Single, Single)
+  nameWithType: GObject.SetSize(Single, Single)
+  fullName: FairyGUI.GObject.SetSize(System.Single, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GObject.SetSize(System.Single,System.Single)
+    name: SetSize
+    nameWithType: GObject.SetSize
+    fullName: FairyGUI.GObject.SetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.SetSize(System.Single,System.Single)
+    name: SetSize
+    nameWithType: GObject.SetSize
+    fullName: FairyGUI.GObject.SetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.SetSize(System.Single,System.Single,System.Boolean)
+  commentId: M:FairyGUI.GObject.SetSize(System.Single,System.Single,System.Boolean)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: SetSize(Single, Single, Boolean)
+  nameWithType: GObject.SetSize(Single, Single, Boolean)
+  fullName: FairyGUI.GObject.SetSize(System.Single, System.Single, System.Boolean)
+  spec.csharp:
+  - uid: FairyGUI.GObject.SetSize(System.Single,System.Single,System.Boolean)
+    name: SetSize
+    nameWithType: GObject.SetSize
+    fullName: FairyGUI.GObject.SetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.SetSize(System.Single,System.Single,System.Boolean)
+    name: SetSize
+    nameWithType: GObject.SetSize
+    fullName: FairyGUI.GObject.SetSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.SetSizeDirectly(System.Single,System.Single)
+  commentId: M:FairyGUI.GObject.SetSizeDirectly(System.Single,System.Single)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: SetSizeDirectly(Single, Single)
+  nameWithType: GObject.SetSizeDirectly(Single, Single)
+  fullName: FairyGUI.GObject.SetSizeDirectly(System.Single, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GObject.SetSizeDirectly(System.Single,System.Single)
+    name: SetSizeDirectly
+    nameWithType: GObject.SetSizeDirectly
+    fullName: FairyGUI.GObject.SetSizeDirectly
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.SetSizeDirectly(System.Single,System.Single)
+    name: SetSizeDirectly
+    nameWithType: GObject.SetSizeDirectly
+    fullName: FairyGUI.GObject.SetSizeDirectly
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.xMin
+  commentId: P:FairyGUI.GObject.xMin
+  parent: FairyGUI.GObject
+  name: xMin
+  nameWithType: GObject.xMin
+  fullName: FairyGUI.GObject.xMin
+- uid: FairyGUI.GObject.yMin
+  commentId: P:FairyGUI.GObject.yMin
+  parent: FairyGUI.GObject
+  name: yMin
+  nameWithType: GObject.yMin
+  fullName: FairyGUI.GObject.yMin
+- uid: FairyGUI.GObject.scaleX
+  commentId: P:FairyGUI.GObject.scaleX
+  parent: FairyGUI.GObject
+  name: scaleX
+  nameWithType: GObject.scaleX
+  fullName: FairyGUI.GObject.scaleX
+- uid: FairyGUI.GObject.scaleY
+  commentId: P:FairyGUI.GObject.scaleY
+  parent: FairyGUI.GObject
+  name: scaleY
+  nameWithType: GObject.scaleY
+  fullName: FairyGUI.GObject.scaleY
+- uid: FairyGUI.GObject.scale
+  commentId: P:FairyGUI.GObject.scale
+  parent: FairyGUI.GObject
+  name: scale
+  nameWithType: GObject.scale
+  fullName: FairyGUI.GObject.scale
+- uid: FairyGUI.GObject.SetScale(System.Single,System.Single)
+  commentId: M:FairyGUI.GObject.SetScale(System.Single,System.Single)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: SetScale(Single, Single)
+  nameWithType: GObject.SetScale(Single, Single)
+  fullName: FairyGUI.GObject.SetScale(System.Single, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GObject.SetScale(System.Single,System.Single)
+    name: SetScale
+    nameWithType: GObject.SetScale
+    fullName: FairyGUI.GObject.SetScale
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.SetScale(System.Single,System.Single)
+    name: SetScale
+    nameWithType: GObject.SetScale
+    fullName: FairyGUI.GObject.SetScale
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.skew
+  commentId: P:FairyGUI.GObject.skew
+  parent: FairyGUI.GObject
+  name: skew
+  nameWithType: GObject.skew
+  fullName: FairyGUI.GObject.skew
+- uid: FairyGUI.GObject.pivotX
+  commentId: P:FairyGUI.GObject.pivotX
+  parent: FairyGUI.GObject
+  name: pivotX
+  nameWithType: GObject.pivotX
+  fullName: FairyGUI.GObject.pivotX
+- uid: FairyGUI.GObject.pivotY
+  commentId: P:FairyGUI.GObject.pivotY
+  parent: FairyGUI.GObject
+  name: pivotY
+  nameWithType: GObject.pivotY
+  fullName: FairyGUI.GObject.pivotY
+- uid: FairyGUI.GObject.pivot
+  commentId: P:FairyGUI.GObject.pivot
+  parent: FairyGUI.GObject
+  name: pivot
+  nameWithType: GObject.pivot
+  fullName: FairyGUI.GObject.pivot
+- uid: FairyGUI.GObject.pivotAsAnchor
+  commentId: P:FairyGUI.GObject.pivotAsAnchor
+  parent: FairyGUI.GObject
+  name: pivotAsAnchor
+  nameWithType: GObject.pivotAsAnchor
+  fullName: FairyGUI.GObject.pivotAsAnchor
+- uid: FairyGUI.GObject.SetPivot(System.Single,System.Single)
+  commentId: M:FairyGUI.GObject.SetPivot(System.Single,System.Single)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: SetPivot(Single, Single)
+  nameWithType: GObject.SetPivot(Single, Single)
+  fullName: FairyGUI.GObject.SetPivot(System.Single, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GObject.SetPivot(System.Single,System.Single)
+    name: SetPivot
+    nameWithType: GObject.SetPivot
+    fullName: FairyGUI.GObject.SetPivot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.SetPivot(System.Single,System.Single)
+    name: SetPivot
+    nameWithType: GObject.SetPivot
+    fullName: FairyGUI.GObject.SetPivot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.SetPivot(System.Single,System.Single,System.Boolean)
+  commentId: M:FairyGUI.GObject.SetPivot(System.Single,System.Single,System.Boolean)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: SetPivot(Single, Single, Boolean)
+  nameWithType: GObject.SetPivot(Single, Single, Boolean)
+  fullName: FairyGUI.GObject.SetPivot(System.Single, System.Single, System.Boolean)
+  spec.csharp:
+  - uid: FairyGUI.GObject.SetPivot(System.Single,System.Single,System.Boolean)
+    name: SetPivot
+    nameWithType: GObject.SetPivot
+    fullName: FairyGUI.GObject.SetPivot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.SetPivot(System.Single,System.Single,System.Boolean)
+    name: SetPivot
+    nameWithType: GObject.SetPivot
+    fullName: FairyGUI.GObject.SetPivot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.touchable
+  commentId: P:FairyGUI.GObject.touchable
+  parent: FairyGUI.GObject
+  name: touchable
+  nameWithType: GObject.touchable
+  fullName: FairyGUI.GObject.touchable
+- uid: FairyGUI.GObject.grayed
+  commentId: P:FairyGUI.GObject.grayed
+  parent: FairyGUI.GObject
+  name: grayed
+  nameWithType: GObject.grayed
+  fullName: FairyGUI.GObject.grayed
+- uid: FairyGUI.GObject.enabled
+  commentId: P:FairyGUI.GObject.enabled
+  parent: FairyGUI.GObject
+  name: enabled
+  nameWithType: GObject.enabled
+  fullName: FairyGUI.GObject.enabled
+- uid: FairyGUI.GObject.rotation
+  commentId: P:FairyGUI.GObject.rotation
+  parent: FairyGUI.GObject
+  name: rotation
+  nameWithType: GObject.rotation
+  fullName: FairyGUI.GObject.rotation
+- uid: FairyGUI.GObject.rotationX
+  commentId: P:FairyGUI.GObject.rotationX
+  parent: FairyGUI.GObject
+  name: rotationX
+  nameWithType: GObject.rotationX
+  fullName: FairyGUI.GObject.rotationX
+- uid: FairyGUI.GObject.rotationY
+  commentId: P:FairyGUI.GObject.rotationY
+  parent: FairyGUI.GObject
+  name: rotationY
+  nameWithType: GObject.rotationY
+  fullName: FairyGUI.GObject.rotationY
+- uid: FairyGUI.GObject.alpha
+  commentId: P:FairyGUI.GObject.alpha
+  parent: FairyGUI.GObject
+  name: alpha
+  nameWithType: GObject.alpha
+  fullName: FairyGUI.GObject.alpha
+- uid: FairyGUI.GObject.visible
+  commentId: P:FairyGUI.GObject.visible
+  parent: FairyGUI.GObject
+  name: visible
+  nameWithType: GObject.visible
+  fullName: FairyGUI.GObject.visible
+- uid: FairyGUI.GObject.sortingOrder
+  commentId: P:FairyGUI.GObject.sortingOrder
+  parent: FairyGUI.GObject
+  name: sortingOrder
+  nameWithType: GObject.sortingOrder
+  fullName: FairyGUI.GObject.sortingOrder
+- uid: FairyGUI.GObject.focusable
+  commentId: P:FairyGUI.GObject.focusable
+  parent: FairyGUI.GObject
+  name: focusable
+  nameWithType: GObject.focusable
+  fullName: FairyGUI.GObject.focusable
+- uid: FairyGUI.GObject.focused
+  commentId: P:FairyGUI.GObject.focused
+  parent: FairyGUI.GObject
+  name: focused
+  nameWithType: GObject.focused
+  fullName: FairyGUI.GObject.focused
+- uid: FairyGUI.GObject.RequestFocus
+  commentId: M:FairyGUI.GObject.RequestFocus
+  parent: FairyGUI.GObject
+  name: RequestFocus()
+  nameWithType: GObject.RequestFocus()
+  fullName: FairyGUI.GObject.RequestFocus()
+  spec.csharp:
+  - uid: FairyGUI.GObject.RequestFocus
+    name: RequestFocus
+    nameWithType: GObject.RequestFocus
+    fullName: FairyGUI.GObject.RequestFocus
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.RequestFocus
+    name: RequestFocus
+    nameWithType: GObject.RequestFocus
+    fullName: FairyGUI.GObject.RequestFocus
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.tooltips
+  commentId: P:FairyGUI.GObject.tooltips
+  parent: FairyGUI.GObject
+  name: tooltips
+  nameWithType: GObject.tooltips
+  fullName: FairyGUI.GObject.tooltips
+- uid: FairyGUI.GObject.filter
+  commentId: P:FairyGUI.GObject.filter
+  parent: FairyGUI.GObject
+  name: filter
+  nameWithType: GObject.filter
+  fullName: FairyGUI.GObject.filter
+- uid: FairyGUI.GObject.blendMode
+  commentId: P:FairyGUI.GObject.blendMode
+  parent: FairyGUI.GObject
+  name: blendMode
+  nameWithType: GObject.blendMode
+  fullName: FairyGUI.GObject.blendMode
+- uid: FairyGUI.GObject.gameObjectName
+  commentId: P:FairyGUI.GObject.gameObjectName
+  parent: FairyGUI.GObject
+  name: gameObjectName
+  nameWithType: GObject.gameObjectName
+  fullName: FairyGUI.GObject.gameObjectName
+- uid: FairyGUI.GObject.SetHome(FairyGUI.GObject)
+  commentId: M:FairyGUI.GObject.SetHome(FairyGUI.GObject)
+  parent: FairyGUI.GObject
+  name: SetHome(GObject)
+  nameWithType: GObject.SetHome(GObject)
+  fullName: FairyGUI.GObject.SetHome(FairyGUI.GObject)
+  spec.csharp:
+  - uid: FairyGUI.GObject.SetHome(FairyGUI.GObject)
+    name: SetHome
+    nameWithType: GObject.SetHome
+    fullName: FairyGUI.GObject.SetHome
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.SetHome(FairyGUI.GObject)
+    name: SetHome
+    nameWithType: GObject.SetHome
+    fullName: FairyGUI.GObject.SetHome
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.inContainer
+  commentId: P:FairyGUI.GObject.inContainer
+  parent: FairyGUI.GObject
+  name: inContainer
+  nameWithType: GObject.inContainer
+  fullName: FairyGUI.GObject.inContainer
+- uid: FairyGUI.GObject.onStage
+  commentId: P:FairyGUI.GObject.onStage
+  parent: FairyGUI.GObject
+  name: onStage
+  nameWithType: GObject.onStage
+  fullName: FairyGUI.GObject.onStage
+- uid: FairyGUI.GObject.resourceURL
+  commentId: P:FairyGUI.GObject.resourceURL
+  parent: FairyGUI.GObject
+  name: resourceURL
+  nameWithType: GObject.resourceURL
+  fullName: FairyGUI.GObject.resourceURL
+- uid: FairyGUI.GObject.gearXY
+  commentId: P:FairyGUI.GObject.gearXY
+  parent: FairyGUI.GObject
+  name: gearXY
+  nameWithType: GObject.gearXY
+  fullName: FairyGUI.GObject.gearXY
+- uid: FairyGUI.GObject.gearSize
+  commentId: P:FairyGUI.GObject.gearSize
+  parent: FairyGUI.GObject
+  name: gearSize
+  nameWithType: GObject.gearSize
+  fullName: FairyGUI.GObject.gearSize
+- uid: FairyGUI.GObject.gearLook
+  commentId: P:FairyGUI.GObject.gearLook
+  parent: FairyGUI.GObject
+  name: gearLook
+  nameWithType: GObject.gearLook
+  fullName: FairyGUI.GObject.gearLook
+- uid: FairyGUI.GObject.GetGear(System.Int32)
+  commentId: M:FairyGUI.GObject.GetGear(System.Int32)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: GetGear(Int32)
+  nameWithType: GObject.GetGear(Int32)
+  fullName: FairyGUI.GObject.GetGear(System.Int32)
+  spec.csharp:
+  - uid: FairyGUI.GObject.GetGear(System.Int32)
+    name: GetGear
+    nameWithType: GObject.GetGear
+    fullName: FairyGUI.GObject.GetGear
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.GetGear(System.Int32)
+    name: GetGear
+    nameWithType: GObject.GetGear
+    fullName: FairyGUI.GObject.GetGear
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.UpdateGear(System.Int32)
+  commentId: M:FairyGUI.GObject.UpdateGear(System.Int32)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: UpdateGear(Int32)
+  nameWithType: GObject.UpdateGear(Int32)
+  fullName: FairyGUI.GObject.UpdateGear(System.Int32)
+  spec.csharp:
+  - uid: FairyGUI.GObject.UpdateGear(System.Int32)
+    name: UpdateGear
+    nameWithType: GObject.UpdateGear
+    fullName: FairyGUI.GObject.UpdateGear
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.UpdateGear(System.Int32)
+    name: UpdateGear
+    nameWithType: GObject.UpdateGear
+    fullName: FairyGUI.GObject.UpdateGear
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.InvalidateBatchingState
+  commentId: M:FairyGUI.GObject.InvalidateBatchingState
+  parent: FairyGUI.GObject
+  name: InvalidateBatchingState()
+  nameWithType: GObject.InvalidateBatchingState()
+  fullName: FairyGUI.GObject.InvalidateBatchingState()
+  spec.csharp:
+  - uid: FairyGUI.GObject.InvalidateBatchingState
+    name: InvalidateBatchingState
+    nameWithType: GObject.InvalidateBatchingState
+    fullName: FairyGUI.GObject.InvalidateBatchingState
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.InvalidateBatchingState
+    name: InvalidateBatchingState
+    nameWithType: GObject.InvalidateBatchingState
+    fullName: FairyGUI.GObject.InvalidateBatchingState
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.AddRelation(FairyGUI.GObject,FairyGUI.RelationType)
+  commentId: M:FairyGUI.GObject.AddRelation(FairyGUI.GObject,FairyGUI.RelationType)
+  parent: FairyGUI.GObject
+  name: AddRelation(GObject, RelationType)
+  nameWithType: GObject.AddRelation(GObject, RelationType)
+  fullName: FairyGUI.GObject.AddRelation(FairyGUI.GObject, FairyGUI.RelationType)
+  spec.csharp:
+  - uid: FairyGUI.GObject.AddRelation(FairyGUI.GObject,FairyGUI.RelationType)
+    name: AddRelation
+    nameWithType: GObject.AddRelation
+    fullName: FairyGUI.GObject.AddRelation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.RelationType
+    name: RelationType
+    nameWithType: RelationType
+    fullName: FairyGUI.RelationType
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.AddRelation(FairyGUI.GObject,FairyGUI.RelationType)
+    name: AddRelation
+    nameWithType: GObject.AddRelation
+    fullName: FairyGUI.GObject.AddRelation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.RelationType
+    name: RelationType
+    nameWithType: RelationType
+    fullName: FairyGUI.RelationType
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.AddRelation(FairyGUI.GObject,FairyGUI.RelationType,System.Boolean)
+  commentId: M:FairyGUI.GObject.AddRelation(FairyGUI.GObject,FairyGUI.RelationType,System.Boolean)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: AddRelation(GObject, RelationType, Boolean)
+  nameWithType: GObject.AddRelation(GObject, RelationType, Boolean)
+  fullName: FairyGUI.GObject.AddRelation(FairyGUI.GObject, FairyGUI.RelationType, System.Boolean)
+  spec.csharp:
+  - uid: FairyGUI.GObject.AddRelation(FairyGUI.GObject,FairyGUI.RelationType,System.Boolean)
+    name: AddRelation
+    nameWithType: GObject.AddRelation
+    fullName: FairyGUI.GObject.AddRelation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.RelationType
+    name: RelationType
+    nameWithType: RelationType
+    fullName: FairyGUI.RelationType
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.AddRelation(FairyGUI.GObject,FairyGUI.RelationType,System.Boolean)
+    name: AddRelation
+    nameWithType: GObject.AddRelation
+    fullName: FairyGUI.GObject.AddRelation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.RelationType
+    name: RelationType
+    nameWithType: RelationType
+    fullName: FairyGUI.RelationType
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.RemoveRelation(FairyGUI.GObject,FairyGUI.RelationType)
+  commentId: M:FairyGUI.GObject.RemoveRelation(FairyGUI.GObject,FairyGUI.RelationType)
+  parent: FairyGUI.GObject
+  name: RemoveRelation(GObject, RelationType)
+  nameWithType: GObject.RemoveRelation(GObject, RelationType)
+  fullName: FairyGUI.GObject.RemoveRelation(FairyGUI.GObject, FairyGUI.RelationType)
+  spec.csharp:
+  - uid: FairyGUI.GObject.RemoveRelation(FairyGUI.GObject,FairyGUI.RelationType)
+    name: RemoveRelation
+    nameWithType: GObject.RemoveRelation
+    fullName: FairyGUI.GObject.RemoveRelation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.RelationType
+    name: RelationType
+    nameWithType: RelationType
+    fullName: FairyGUI.RelationType
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.RemoveRelation(FairyGUI.GObject,FairyGUI.RelationType)
+    name: RemoveRelation
+    nameWithType: GObject.RemoveRelation
+    fullName: FairyGUI.GObject.RemoveRelation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.RelationType
+    name: RelationType
+    nameWithType: RelationType
+    fullName: FairyGUI.RelationType
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.RemoveFromParent
+  commentId: M:FairyGUI.GObject.RemoveFromParent
+  parent: FairyGUI.GObject
+  name: RemoveFromParent()
+  nameWithType: GObject.RemoveFromParent()
+  fullName: FairyGUI.GObject.RemoveFromParent()
+  spec.csharp:
+  - uid: FairyGUI.GObject.RemoveFromParent
+    name: RemoveFromParent
+    nameWithType: GObject.RemoveFromParent
+    fullName: FairyGUI.GObject.RemoveFromParent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.RemoveFromParent
+    name: RemoveFromParent
+    nameWithType: GObject.RemoveFromParent
+    fullName: FairyGUI.GObject.RemoveFromParent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.group
+  commentId: P:FairyGUI.GObject.group
+  parent: FairyGUI.GObject
+  name: group
+  nameWithType: GObject.group
+  fullName: FairyGUI.GObject.group
+- uid: FairyGUI.GObject.root
+  commentId: P:FairyGUI.GObject.root
+  parent: FairyGUI.GObject
+  name: root
+  nameWithType: GObject.root
+  fullName: FairyGUI.GObject.root
+- uid: FairyGUI.GObject.draggable
+  commentId: P:FairyGUI.GObject.draggable
+  parent: FairyGUI.GObject
+  name: draggable
+  nameWithType: GObject.draggable
+  fullName: FairyGUI.GObject.draggable
+- uid: FairyGUI.GObject.StartDrag
+  commentId: M:FairyGUI.GObject.StartDrag
+  parent: FairyGUI.GObject
+  name: StartDrag()
+  nameWithType: GObject.StartDrag()
+  fullName: FairyGUI.GObject.StartDrag()
+  spec.csharp:
+  - uid: FairyGUI.GObject.StartDrag
+    name: StartDrag
+    nameWithType: GObject.StartDrag
+    fullName: FairyGUI.GObject.StartDrag
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.StartDrag
+    name: StartDrag
+    nameWithType: GObject.StartDrag
+    fullName: FairyGUI.GObject.StartDrag
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.StartDrag(System.Int32)
+  commentId: M:FairyGUI.GObject.StartDrag(System.Int32)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: StartDrag(Int32)
+  nameWithType: GObject.StartDrag(Int32)
+  fullName: FairyGUI.GObject.StartDrag(System.Int32)
+  spec.csharp:
+  - uid: FairyGUI.GObject.StartDrag(System.Int32)
+    name: StartDrag
+    nameWithType: GObject.StartDrag
+    fullName: FairyGUI.GObject.StartDrag
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.StartDrag(System.Int32)
+    name: StartDrag
+    nameWithType: GObject.StartDrag
+    fullName: FairyGUI.GObject.StartDrag
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.StopDrag
+  commentId: M:FairyGUI.GObject.StopDrag
+  parent: FairyGUI.GObject
+  name: StopDrag()
+  nameWithType: GObject.StopDrag()
+  fullName: FairyGUI.GObject.StopDrag()
+  spec.csharp:
+  - uid: FairyGUI.GObject.StopDrag
+    name: StopDrag
+    nameWithType: GObject.StopDrag
+    fullName: FairyGUI.GObject.StopDrag
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.StopDrag
+    name: StopDrag
+    nameWithType: GObject.StopDrag
+    fullName: FairyGUI.GObject.StopDrag
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.dragging
+  commentId: P:FairyGUI.GObject.dragging
+  parent: FairyGUI.GObject
+  name: dragging
+  nameWithType: GObject.dragging
+  fullName: FairyGUI.GObject.dragging
+- uid: FairyGUI.GObject.LocalToGlobal(UnityEngine.Vector2)
+  commentId: M:FairyGUI.GObject.LocalToGlobal(UnityEngine.Vector2)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: LocalToGlobal(Vector2)
+  nameWithType: GObject.LocalToGlobal(Vector2)
+  fullName: FairyGUI.GObject.LocalToGlobal(UnityEngine.Vector2)
+  spec.csharp:
+  - uid: FairyGUI.GObject.LocalToGlobal(UnityEngine.Vector2)
+    name: LocalToGlobal
+    nameWithType: GObject.LocalToGlobal
+    fullName: FairyGUI.GObject.LocalToGlobal
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.LocalToGlobal(UnityEngine.Vector2)
+    name: LocalToGlobal
+    nameWithType: GObject.LocalToGlobal
+    fullName: FairyGUI.GObject.LocalToGlobal
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.GlobalToLocal(UnityEngine.Vector2)
+  commentId: M:FairyGUI.GObject.GlobalToLocal(UnityEngine.Vector2)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: GlobalToLocal(Vector2)
+  nameWithType: GObject.GlobalToLocal(Vector2)
+  fullName: FairyGUI.GObject.GlobalToLocal(UnityEngine.Vector2)
+  spec.csharp:
+  - uid: FairyGUI.GObject.GlobalToLocal(UnityEngine.Vector2)
+    name: GlobalToLocal
+    nameWithType: GObject.GlobalToLocal
+    fullName: FairyGUI.GObject.GlobalToLocal
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.GlobalToLocal(UnityEngine.Vector2)
+    name: GlobalToLocal
+    nameWithType: GObject.GlobalToLocal
+    fullName: FairyGUI.GObject.GlobalToLocal
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.LocalToGlobal(UnityEngine.Rect)
+  commentId: M:FairyGUI.GObject.LocalToGlobal(UnityEngine.Rect)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: LocalToGlobal(Rect)
+  nameWithType: GObject.LocalToGlobal(Rect)
+  fullName: FairyGUI.GObject.LocalToGlobal(UnityEngine.Rect)
+  spec.csharp:
+  - uid: FairyGUI.GObject.LocalToGlobal(UnityEngine.Rect)
+    name: LocalToGlobal
+    nameWithType: GObject.LocalToGlobal
+    fullName: FairyGUI.GObject.LocalToGlobal
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    nameWithType: Rect
+    fullName: UnityEngine.Rect
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.LocalToGlobal(UnityEngine.Rect)
+    name: LocalToGlobal
+    nameWithType: GObject.LocalToGlobal
+    fullName: FairyGUI.GObject.LocalToGlobal
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    nameWithType: Rect
+    fullName: UnityEngine.Rect
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.GlobalToLocal(UnityEngine.Rect)
+  commentId: M:FairyGUI.GObject.GlobalToLocal(UnityEngine.Rect)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: GlobalToLocal(Rect)
+  nameWithType: GObject.GlobalToLocal(Rect)
+  fullName: FairyGUI.GObject.GlobalToLocal(UnityEngine.Rect)
+  spec.csharp:
+  - uid: FairyGUI.GObject.GlobalToLocal(UnityEngine.Rect)
+    name: GlobalToLocal
+    nameWithType: GObject.GlobalToLocal
+    fullName: FairyGUI.GObject.GlobalToLocal
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    nameWithType: Rect
+    fullName: UnityEngine.Rect
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.GlobalToLocal(UnityEngine.Rect)
+    name: GlobalToLocal
+    nameWithType: GObject.GlobalToLocal
+    fullName: FairyGUI.GObject.GlobalToLocal
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    nameWithType: Rect
+    fullName: UnityEngine.Rect
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.LocalToRoot(UnityEngine.Vector2,FairyGUI.GRoot)
+  commentId: M:FairyGUI.GObject.LocalToRoot(UnityEngine.Vector2,FairyGUI.GRoot)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: LocalToRoot(Vector2, GRoot)
+  nameWithType: GObject.LocalToRoot(Vector2, GRoot)
+  fullName: FairyGUI.GObject.LocalToRoot(UnityEngine.Vector2, FairyGUI.GRoot)
+  spec.csharp:
+  - uid: FairyGUI.GObject.LocalToRoot(UnityEngine.Vector2,FairyGUI.GRoot)
+    name: LocalToRoot
+    nameWithType: GObject.LocalToRoot
+    fullName: FairyGUI.GObject.LocalToRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.GRoot
+    name: GRoot
+    nameWithType: GRoot
+    fullName: FairyGUI.GRoot
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.LocalToRoot(UnityEngine.Vector2,FairyGUI.GRoot)
+    name: LocalToRoot
+    nameWithType: GObject.LocalToRoot
+    fullName: FairyGUI.GObject.LocalToRoot
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.GRoot
+    name: GRoot
+    nameWithType: GRoot
+    fullName: FairyGUI.GRoot
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.RootToLocal(UnityEngine.Vector2,FairyGUI.GRoot)
+  commentId: M:FairyGUI.GObject.RootToLocal(UnityEngine.Vector2,FairyGUI.GRoot)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: RootToLocal(Vector2, GRoot)
+  nameWithType: GObject.RootToLocal(Vector2, GRoot)
+  fullName: FairyGUI.GObject.RootToLocal(UnityEngine.Vector2, FairyGUI.GRoot)
+  spec.csharp:
+  - uid: FairyGUI.GObject.RootToLocal(UnityEngine.Vector2,FairyGUI.GRoot)
+    name: RootToLocal
+    nameWithType: GObject.RootToLocal
+    fullName: FairyGUI.GObject.RootToLocal
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.GRoot
+    name: GRoot
+    nameWithType: GRoot
+    fullName: FairyGUI.GRoot
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.RootToLocal(UnityEngine.Vector2,FairyGUI.GRoot)
+    name: RootToLocal
+    nameWithType: GObject.RootToLocal
+    fullName: FairyGUI.GObject.RootToLocal
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.GRoot
+    name: GRoot
+    nameWithType: GRoot
+    fullName: FairyGUI.GRoot
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.WorldToLocal(UnityEngine.Vector3)
+  commentId: M:FairyGUI.GObject.WorldToLocal(UnityEngine.Vector3)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: WorldToLocal(Vector3)
+  nameWithType: GObject.WorldToLocal(Vector3)
+  fullName: FairyGUI.GObject.WorldToLocal(UnityEngine.Vector3)
+  spec.csharp:
+  - uid: FairyGUI.GObject.WorldToLocal(UnityEngine.Vector3)
+    name: WorldToLocal
+    nameWithType: GObject.WorldToLocal
+    fullName: FairyGUI.GObject.WorldToLocal
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.WorldToLocal(UnityEngine.Vector3)
+    name: WorldToLocal
+    nameWithType: GObject.WorldToLocal
+    fullName: FairyGUI.GObject.WorldToLocal
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.WorldToLocal(UnityEngine.Vector3,UnityEngine.Camera)
+  commentId: M:FairyGUI.GObject.WorldToLocal(UnityEngine.Vector3,UnityEngine.Camera)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: WorldToLocal(Vector3, Camera)
+  nameWithType: GObject.WorldToLocal(Vector3, Camera)
+  fullName: FairyGUI.GObject.WorldToLocal(UnityEngine.Vector3, UnityEngine.Camera)
+  spec.csharp:
+  - uid: FairyGUI.GObject.WorldToLocal(UnityEngine.Vector3,UnityEngine.Camera)
+    name: WorldToLocal
+    nameWithType: GObject.WorldToLocal
+    fullName: FairyGUI.GObject.WorldToLocal
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Camera
+    name: Camera
+    nameWithType: Camera
+    fullName: UnityEngine.Camera
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.WorldToLocal(UnityEngine.Vector3,UnityEngine.Camera)
+    name: WorldToLocal
+    nameWithType: GObject.WorldToLocal
+    fullName: FairyGUI.GObject.WorldToLocal
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector3
+    name: Vector3
+    nameWithType: Vector3
+    fullName: UnityEngine.Vector3
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: UnityEngine.Camera
+    name: Camera
+    nameWithType: Camera
+    fullName: UnityEngine.Camera
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.TransformPoint(UnityEngine.Vector2,FairyGUI.GObject)
+  commentId: M:FairyGUI.GObject.TransformPoint(UnityEngine.Vector2,FairyGUI.GObject)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: TransformPoint(Vector2, GObject)
+  nameWithType: GObject.TransformPoint(Vector2, GObject)
+  fullName: FairyGUI.GObject.TransformPoint(UnityEngine.Vector2, FairyGUI.GObject)
+  spec.csharp:
+  - uid: FairyGUI.GObject.TransformPoint(UnityEngine.Vector2,FairyGUI.GObject)
+    name: TransformPoint
+    nameWithType: GObject.TransformPoint
+    fullName: FairyGUI.GObject.TransformPoint
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.TransformPoint(UnityEngine.Vector2,FairyGUI.GObject)
+    name: TransformPoint
+    nameWithType: GObject.TransformPoint
+    fullName: FairyGUI.GObject.TransformPoint
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.TransformRect(UnityEngine.Rect,FairyGUI.GObject)
+  commentId: M:FairyGUI.GObject.TransformRect(UnityEngine.Rect,FairyGUI.GObject)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: TransformRect(Rect, GObject)
+  nameWithType: GObject.TransformRect(Rect, GObject)
+  fullName: FairyGUI.GObject.TransformRect(UnityEngine.Rect, FairyGUI.GObject)
+  spec.csharp:
+  - uid: FairyGUI.GObject.TransformRect(UnityEngine.Rect,FairyGUI.GObject)
+    name: TransformRect
+    nameWithType: GObject.TransformRect
+    fullName: FairyGUI.GObject.TransformRect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    nameWithType: Rect
+    fullName: UnityEngine.Rect
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.TransformRect(UnityEngine.Rect,FairyGUI.GObject)
+    name: TransformRect
+    nameWithType: GObject.TransformRect
+    fullName: FairyGUI.GObject.TransformRect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Rect
+    name: Rect
+    nameWithType: Rect
+    fullName: UnityEngine.Rect
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.GObject
+    name: GObject
+    nameWithType: GObject
+    fullName: FairyGUI.GObject
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.isDisposed
+  commentId: P:FairyGUI.GObject.isDisposed
+  parent: FairyGUI.GObject
+  name: isDisposed
+  nameWithType: GObject.isDisposed
+  fullName: FairyGUI.GObject.isDisposed
+- uid: FairyGUI.GObject.asImage
+  commentId: P:FairyGUI.GObject.asImage
+  parent: FairyGUI.GObject
+  name: asImage
+  nameWithType: GObject.asImage
+  fullName: FairyGUI.GObject.asImage
+- uid: FairyGUI.GObject.asCom
+  commentId: P:FairyGUI.GObject.asCom
+  parent: FairyGUI.GObject
+  name: asCom
+  nameWithType: GObject.asCom
+  fullName: FairyGUI.GObject.asCom
+- uid: FairyGUI.GObject.asButton
+  commentId: P:FairyGUI.GObject.asButton
+  parent: FairyGUI.GObject
+  name: asButton
+  nameWithType: GObject.asButton
+  fullName: FairyGUI.GObject.asButton
+- uid: FairyGUI.GObject.asLabel
+  commentId: P:FairyGUI.GObject.asLabel
+  parent: FairyGUI.GObject
+  name: asLabel
+  nameWithType: GObject.asLabel
+  fullName: FairyGUI.GObject.asLabel
+- uid: FairyGUI.GObject.asProgress
+  commentId: P:FairyGUI.GObject.asProgress
+  parent: FairyGUI.GObject
+  name: asProgress
+  nameWithType: GObject.asProgress
+  fullName: FairyGUI.GObject.asProgress
+- uid: FairyGUI.GObject.asSlider
+  commentId: P:FairyGUI.GObject.asSlider
+  parent: FairyGUI.GObject
+  name: asSlider
+  nameWithType: GObject.asSlider
+  fullName: FairyGUI.GObject.asSlider
+- uid: FairyGUI.GObject.asComboBox
+  commentId: P:FairyGUI.GObject.asComboBox
+  parent: FairyGUI.GObject
+  name: asComboBox
+  nameWithType: GObject.asComboBox
+  fullName: FairyGUI.GObject.asComboBox
+- uid: FairyGUI.GObject.asTextField
+  commentId: P:FairyGUI.GObject.asTextField
+  parent: FairyGUI.GObject
+  name: asTextField
+  nameWithType: GObject.asTextField
+  fullName: FairyGUI.GObject.asTextField
+- uid: FairyGUI.GObject.asRichTextField
+  commentId: P:FairyGUI.GObject.asRichTextField
+  parent: FairyGUI.GObject
+  name: asRichTextField
+  nameWithType: GObject.asRichTextField
+  fullName: FairyGUI.GObject.asRichTextField
+- uid: FairyGUI.GObject.asTextInput
+  commentId: P:FairyGUI.GObject.asTextInput
+  parent: FairyGUI.GObject
+  name: asTextInput
+  nameWithType: GObject.asTextInput
+  fullName: FairyGUI.GObject.asTextInput
+- uid: FairyGUI.GObject.asLoader
+  commentId: P:FairyGUI.GObject.asLoader
+  parent: FairyGUI.GObject
+  name: asLoader
+  nameWithType: GObject.asLoader
+  fullName: FairyGUI.GObject.asLoader
+- uid: FairyGUI.GObject.asList
+  commentId: P:FairyGUI.GObject.asList
+  parent: FairyGUI.GObject
+  name: asList
+  nameWithType: GObject.asList
+  fullName: FairyGUI.GObject.asList
+- uid: FairyGUI.GObject.asGraph
+  commentId: P:FairyGUI.GObject.asGraph
+  parent: FairyGUI.GObject
+  name: asGraph
+  nameWithType: GObject.asGraph
+  fullName: FairyGUI.GObject.asGraph
+- uid: FairyGUI.GObject.asGroup
+  commentId: P:FairyGUI.GObject.asGroup
+  parent: FairyGUI.GObject
+  name: asGroup
+  nameWithType: GObject.asGroup
+  fullName: FairyGUI.GObject.asGroup
+- uid: FairyGUI.GObject.asMovieClip
+  commentId: P:FairyGUI.GObject.asMovieClip
+  parent: FairyGUI.GObject
+  name: asMovieClip
+  nameWithType: GObject.asMovieClip
+  fullName: FairyGUI.GObject.asMovieClip
+- uid: FairyGUI.GObject.HandlePositionChanged
+  commentId: M:FairyGUI.GObject.HandlePositionChanged
+  parent: FairyGUI.GObject
+  name: HandlePositionChanged()
+  nameWithType: GObject.HandlePositionChanged()
+  fullName: FairyGUI.GObject.HandlePositionChanged()
+  spec.csharp:
+  - uid: FairyGUI.GObject.HandlePositionChanged
+    name: HandlePositionChanged
+    nameWithType: GObject.HandlePositionChanged
+    fullName: FairyGUI.GObject.HandlePositionChanged
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.HandlePositionChanged
+    name: HandlePositionChanged
+    nameWithType: GObject.HandlePositionChanged
+    fullName: FairyGUI.GObject.HandlePositionChanged
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.HandleScaleChanged
+  commentId: M:FairyGUI.GObject.HandleScaleChanged
+  parent: FairyGUI.GObject
+  name: HandleScaleChanged()
+  nameWithType: GObject.HandleScaleChanged()
+  fullName: FairyGUI.GObject.HandleScaleChanged()
+  spec.csharp:
+  - uid: FairyGUI.GObject.HandleScaleChanged
+    name: HandleScaleChanged
+    nameWithType: GObject.HandleScaleChanged
+    fullName: FairyGUI.GObject.HandleScaleChanged
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.HandleScaleChanged
+    name: HandleScaleChanged
+    nameWithType: GObject.HandleScaleChanged
+    fullName: FairyGUI.GObject.HandleScaleChanged
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.HandleAlphaChanged
+  commentId: M:FairyGUI.GObject.HandleAlphaChanged
+  parent: FairyGUI.GObject
+  name: HandleAlphaChanged()
+  nameWithType: GObject.HandleAlphaChanged()
+  fullName: FairyGUI.GObject.HandleAlphaChanged()
+  spec.csharp:
+  - uid: FairyGUI.GObject.HandleAlphaChanged
+    name: HandleAlphaChanged
+    nameWithType: GObject.HandleAlphaChanged
+    fullName: FairyGUI.GObject.HandleAlphaChanged
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.HandleAlphaChanged
+    name: HandleAlphaChanged
+    nameWithType: GObject.HandleAlphaChanged
+    fullName: FairyGUI.GObject.HandleAlphaChanged
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.HandleVisibleChanged
+  commentId: M:FairyGUI.GObject.HandleVisibleChanged
+  parent: FairyGUI.GObject
+  name: HandleVisibleChanged()
+  nameWithType: GObject.HandleVisibleChanged()
+  fullName: FairyGUI.GObject.HandleVisibleChanged()
+  spec.csharp:
+  - uid: FairyGUI.GObject.HandleVisibleChanged
+    name: HandleVisibleChanged
+    nameWithType: GObject.HandleVisibleChanged
+    fullName: FairyGUI.GObject.HandleVisibleChanged
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.HandleVisibleChanged
+    name: HandleVisibleChanged
+    nameWithType: GObject.HandleVisibleChanged
+    fullName: FairyGUI.GObject.HandleVisibleChanged
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.Setup_BeforeAdd(FairyGUI.Utils.ByteBuffer,System.Int32)
+  commentId: M:FairyGUI.GObject.Setup_BeforeAdd(FairyGUI.Utils.ByteBuffer,System.Int32)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: Setup_BeforeAdd(ByteBuffer, Int32)
+  nameWithType: GObject.Setup_BeforeAdd(ByteBuffer, Int32)
+  fullName: FairyGUI.GObject.Setup_BeforeAdd(FairyGUI.Utils.ByteBuffer, System.Int32)
+  spec.csharp:
+  - uid: FairyGUI.GObject.Setup_BeforeAdd(FairyGUI.Utils.ByteBuffer,System.Int32)
+    name: Setup_BeforeAdd
+    nameWithType: GObject.Setup_BeforeAdd
+    fullName: FairyGUI.GObject.Setup_BeforeAdd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Utils.ByteBuffer
+    name: ByteBuffer
+    nameWithType: ByteBuffer
+    fullName: FairyGUI.Utils.ByteBuffer
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.Setup_BeforeAdd(FairyGUI.Utils.ByteBuffer,System.Int32)
+    name: Setup_BeforeAdd
+    nameWithType: GObject.Setup_BeforeAdd
+    fullName: FairyGUI.GObject.Setup_BeforeAdd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.Utils.ByteBuffer
+    name: ByteBuffer
+    nameWithType: ByteBuffer
+    fullName: FairyGUI.Utils.ByteBuffer
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.TweenMove(UnityEngine.Vector2,System.Single)
+  commentId: M:FairyGUI.GObject.TweenMove(UnityEngine.Vector2,System.Single)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: TweenMove(Vector2, Single)
+  nameWithType: GObject.TweenMove(Vector2, Single)
+  fullName: FairyGUI.GObject.TweenMove(UnityEngine.Vector2, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GObject.TweenMove(UnityEngine.Vector2,System.Single)
+    name: TweenMove
+    nameWithType: GObject.TweenMove
+    fullName: FairyGUI.GObject.TweenMove
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.TweenMove(UnityEngine.Vector2,System.Single)
+    name: TweenMove
+    nameWithType: GObject.TweenMove
+    fullName: FairyGUI.GObject.TweenMove
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.TweenMoveX(System.Single,System.Single)
+  commentId: M:FairyGUI.GObject.TweenMoveX(System.Single,System.Single)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: TweenMoveX(Single, Single)
+  nameWithType: GObject.TweenMoveX(Single, Single)
+  fullName: FairyGUI.GObject.TweenMoveX(System.Single, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GObject.TweenMoveX(System.Single,System.Single)
+    name: TweenMoveX
+    nameWithType: GObject.TweenMoveX
+    fullName: FairyGUI.GObject.TweenMoveX
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.TweenMoveX(System.Single,System.Single)
+    name: TweenMoveX
+    nameWithType: GObject.TweenMoveX
+    fullName: FairyGUI.GObject.TweenMoveX
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.TweenMoveY(System.Single,System.Single)
+  commentId: M:FairyGUI.GObject.TweenMoveY(System.Single,System.Single)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: TweenMoveY(Single, Single)
+  nameWithType: GObject.TweenMoveY(Single, Single)
+  fullName: FairyGUI.GObject.TweenMoveY(System.Single, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GObject.TweenMoveY(System.Single,System.Single)
+    name: TweenMoveY
+    nameWithType: GObject.TweenMoveY
+    fullName: FairyGUI.GObject.TweenMoveY
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.TweenMoveY(System.Single,System.Single)
+    name: TweenMoveY
+    nameWithType: GObject.TweenMoveY
+    fullName: FairyGUI.GObject.TweenMoveY
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.TweenScale(UnityEngine.Vector2,System.Single)
+  commentId: M:FairyGUI.GObject.TweenScale(UnityEngine.Vector2,System.Single)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: TweenScale(Vector2, Single)
+  nameWithType: GObject.TweenScale(Vector2, Single)
+  fullName: FairyGUI.GObject.TweenScale(UnityEngine.Vector2, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GObject.TweenScale(UnityEngine.Vector2,System.Single)
+    name: TweenScale
+    nameWithType: GObject.TweenScale
+    fullName: FairyGUI.GObject.TweenScale
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.TweenScale(UnityEngine.Vector2,System.Single)
+    name: TweenScale
+    nameWithType: GObject.TweenScale
+    fullName: FairyGUI.GObject.TweenScale
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.TweenScaleX(System.Single,System.Single)
+  commentId: M:FairyGUI.GObject.TweenScaleX(System.Single,System.Single)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: TweenScaleX(Single, Single)
+  nameWithType: GObject.TweenScaleX(Single, Single)
+  fullName: FairyGUI.GObject.TweenScaleX(System.Single, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GObject.TweenScaleX(System.Single,System.Single)
+    name: TweenScaleX
+    nameWithType: GObject.TweenScaleX
+    fullName: FairyGUI.GObject.TweenScaleX
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.TweenScaleX(System.Single,System.Single)
+    name: TweenScaleX
+    nameWithType: GObject.TweenScaleX
+    fullName: FairyGUI.GObject.TweenScaleX
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.TweenScaleY(System.Single,System.Single)
+  commentId: M:FairyGUI.GObject.TweenScaleY(System.Single,System.Single)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: TweenScaleY(Single, Single)
+  nameWithType: GObject.TweenScaleY(Single, Single)
+  fullName: FairyGUI.GObject.TweenScaleY(System.Single, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GObject.TweenScaleY(System.Single,System.Single)
+    name: TweenScaleY
+    nameWithType: GObject.TweenScaleY
+    fullName: FairyGUI.GObject.TweenScaleY
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.TweenScaleY(System.Single,System.Single)
+    name: TweenScaleY
+    nameWithType: GObject.TweenScaleY
+    fullName: FairyGUI.GObject.TweenScaleY
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.TweenResize(UnityEngine.Vector2,System.Single)
+  commentId: M:FairyGUI.GObject.TweenResize(UnityEngine.Vector2,System.Single)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: TweenResize(Vector2, Single)
+  nameWithType: GObject.TweenResize(Vector2, Single)
+  fullName: FairyGUI.GObject.TweenResize(UnityEngine.Vector2, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GObject.TweenResize(UnityEngine.Vector2,System.Single)
+    name: TweenResize
+    nameWithType: GObject.TweenResize
+    fullName: FairyGUI.GObject.TweenResize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.TweenResize(UnityEngine.Vector2,System.Single)
+    name: TweenResize
+    nameWithType: GObject.TweenResize
+    fullName: FairyGUI.GObject.TweenResize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: UnityEngine.Vector2
+    name: Vector2
+    nameWithType: Vector2
+    fullName: UnityEngine.Vector2
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.TweenFade(System.Single,System.Single)
+  commentId: M:FairyGUI.GObject.TweenFade(System.Single,System.Single)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: TweenFade(Single, Single)
+  nameWithType: GObject.TweenFade(Single, Single)
+  fullName: FairyGUI.GObject.TweenFade(System.Single, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GObject.TweenFade(System.Single,System.Single)
+    name: TweenFade
+    nameWithType: GObject.TweenFade
+    fullName: FairyGUI.GObject.TweenFade
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.TweenFade(System.Single,System.Single)
+    name: TweenFade
+    nameWithType: GObject.TweenFade
+    fullName: FairyGUI.GObject.TweenFade
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.GObject.TweenRotate(System.Single,System.Single)
+  commentId: M:FairyGUI.GObject.TweenRotate(System.Single,System.Single)
+  parent: FairyGUI.GObject
+  isExternal: true
+  name: TweenRotate(Single, Single)
+  nameWithType: GObject.TweenRotate(Single, Single)
+  fullName: FairyGUI.GObject.TweenRotate(System.Single, System.Single)
+  spec.csharp:
+  - uid: FairyGUI.GObject.TweenRotate(System.Single,System.Single)
+    name: TweenRotate
+    nameWithType: GObject.TweenRotate
+    fullName: FairyGUI.GObject.TweenRotate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.GObject.TweenRotate(System.Single,System.Single)
+    name: TweenRotate
+    nameWithType: GObject.TweenRotate
+    fullName: FairyGUI.GObject.TweenRotate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.EventDispatcher.AddEventListener(System.String,FairyGUI.EventCallback1)
+  commentId: M:FairyGUI.EventDispatcher.AddEventListener(System.String,FairyGUI.EventCallback1)
+  parent: FairyGUI.EventDispatcher
+  isExternal: true
+  name: AddEventListener(String, EventCallback1)
+  nameWithType: EventDispatcher.AddEventListener(String, EventCallback1)
+  fullName: FairyGUI.EventDispatcher.AddEventListener(System.String, FairyGUI.EventCallback1)
+  spec.csharp:
+  - uid: FairyGUI.EventDispatcher.AddEventListener(System.String,FairyGUI.EventCallback1)
+    name: AddEventListener
+    nameWithType: EventDispatcher.AddEventListener
+    fullName: FairyGUI.EventDispatcher.AddEventListener
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.EventCallback1
+    name: EventCallback1
+    nameWithType: EventCallback1
+    fullName: FairyGUI.EventCallback1
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.EventDispatcher.AddEventListener(System.String,FairyGUI.EventCallback1)
+    name: AddEventListener
+    nameWithType: EventDispatcher.AddEventListener
+    fullName: FairyGUI.EventDispatcher.AddEventListener
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.EventCallback1
+    name: EventCallback1
+    nameWithType: EventCallback1
+    fullName: FairyGUI.EventCallback1
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.EventDispatcher.AddEventListener(System.String,FairyGUI.EventCallback0)
+  commentId: M:FairyGUI.EventDispatcher.AddEventListener(System.String,FairyGUI.EventCallback0)
+  parent: FairyGUI.EventDispatcher
+  isExternal: true
+  name: AddEventListener(String, EventCallback0)
+  nameWithType: EventDispatcher.AddEventListener(String, EventCallback0)
+  fullName: FairyGUI.EventDispatcher.AddEventListener(System.String, FairyGUI.EventCallback0)
+  spec.csharp:
+  - uid: FairyGUI.EventDispatcher.AddEventListener(System.String,FairyGUI.EventCallback0)
+    name: AddEventListener
+    nameWithType: EventDispatcher.AddEventListener
+    fullName: FairyGUI.EventDispatcher.AddEventListener
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.EventCallback0
+    name: EventCallback0
+    nameWithType: EventCallback0
+    fullName: FairyGUI.EventCallback0
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.EventDispatcher.AddEventListener(System.String,FairyGUI.EventCallback0)
+    name: AddEventListener
+    nameWithType: EventDispatcher.AddEventListener
+    fullName: FairyGUI.EventDispatcher.AddEventListener
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.EventCallback0
+    name: EventCallback0
+    nameWithType: EventCallback0
+    fullName: FairyGUI.EventCallback0
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.EventDispatcher.RemoveEventListener(System.String,FairyGUI.EventCallback1)
+  commentId: M:FairyGUI.EventDispatcher.RemoveEventListener(System.String,FairyGUI.EventCallback1)
+  parent: FairyGUI.EventDispatcher
+  isExternal: true
+  name: RemoveEventListener(String, EventCallback1)
+  nameWithType: EventDispatcher.RemoveEventListener(String, EventCallback1)
+  fullName: FairyGUI.EventDispatcher.RemoveEventListener(System.String, FairyGUI.EventCallback1)
+  spec.csharp:
+  - uid: FairyGUI.EventDispatcher.RemoveEventListener(System.String,FairyGUI.EventCallback1)
+    name: RemoveEventListener
+    nameWithType: EventDispatcher.RemoveEventListener
+    fullName: FairyGUI.EventDispatcher.RemoveEventListener
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.EventCallback1
+    name: EventCallback1
+    nameWithType: EventCallback1
+    fullName: FairyGUI.EventCallback1
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.EventDispatcher.RemoveEventListener(System.String,FairyGUI.EventCallback1)
+    name: RemoveEventListener
+    nameWithType: EventDispatcher.RemoveEventListener
+    fullName: FairyGUI.EventDispatcher.RemoveEventListener
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.EventCallback1
+    name: EventCallback1
+    nameWithType: EventCallback1
+    fullName: FairyGUI.EventCallback1
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.EventDispatcher.RemoveEventListener(System.String,FairyGUI.EventCallback0)
+  commentId: M:FairyGUI.EventDispatcher.RemoveEventListener(System.String,FairyGUI.EventCallback0)
+  parent: FairyGUI.EventDispatcher
+  isExternal: true
+  name: RemoveEventListener(String, EventCallback0)
+  nameWithType: EventDispatcher.RemoveEventListener(String, EventCallback0)
+  fullName: FairyGUI.EventDispatcher.RemoveEventListener(System.String, FairyGUI.EventCallback0)
+  spec.csharp:
+  - uid: FairyGUI.EventDispatcher.RemoveEventListener(System.String,FairyGUI.EventCallback0)
+    name: RemoveEventListener
+    nameWithType: EventDispatcher.RemoveEventListener
+    fullName: FairyGUI.EventDispatcher.RemoveEventListener
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.EventCallback0
+    name: EventCallback0
+    nameWithType: EventCallback0
+    fullName: FairyGUI.EventCallback0
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.EventDispatcher.RemoveEventListener(System.String,FairyGUI.EventCallback0)
+    name: RemoveEventListener
+    nameWithType: EventDispatcher.RemoveEventListener
+    fullName: FairyGUI.EventDispatcher.RemoveEventListener
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: FairyGUI.EventCallback0
+    name: EventCallback0
+    nameWithType: EventCallback0
+    fullName: FairyGUI.EventCallback0
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.EventDispatcher.RemoveEventListeners
+  commentId: M:FairyGUI.EventDispatcher.RemoveEventListeners
+  parent: FairyGUI.EventDispatcher
+  name: RemoveEventListeners()
+  nameWithType: EventDispatcher.RemoveEventListeners()
+  fullName: FairyGUI.EventDispatcher.RemoveEventListeners()
+  spec.csharp:
+  - uid: FairyGUI.EventDispatcher.RemoveEventListeners
+    name: RemoveEventListeners
+    nameWithType: EventDispatcher.RemoveEventListeners
+    fullName: FairyGUI.EventDispatcher.RemoveEventListeners
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.EventDispatcher.RemoveEventListeners
+    name: RemoveEventListeners
+    nameWithType: EventDispatcher.RemoveEventListeners
+    fullName: FairyGUI.EventDispatcher.RemoveEventListeners
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.EventDispatcher.RemoveEventListeners(System.String)
+  commentId: M:FairyGUI.EventDispatcher.RemoveEventListeners(System.String)
+  parent: FairyGUI.EventDispatcher
+  isExternal: true
+  name: RemoveEventListeners(String)
+  nameWithType: EventDispatcher.RemoveEventListeners(String)
+  fullName: FairyGUI.EventDispatcher.RemoveEventListeners(System.String)
+  spec.csharp:
+  - uid: FairyGUI.EventDispatcher.RemoveEventListeners(System.String)
+    name: RemoveEventListeners
+    nameWithType: EventDispatcher.RemoveEventListeners
+    fullName: FairyGUI.EventDispatcher.RemoveEventListeners
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.EventDispatcher.RemoveEventListeners(System.String)
+    name: RemoveEventListeners
+    nameWithType: EventDispatcher.RemoveEventListeners
+    fullName: FairyGUI.EventDispatcher.RemoveEventListeners
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.EventDispatcher.hasEventListeners(System.String)
+  commentId: M:FairyGUI.EventDispatcher.hasEventListeners(System.String)
+  parent: FairyGUI.EventDispatcher
+  isExternal: true
+  name: hasEventListeners(String)
+  nameWithType: EventDispatcher.hasEventListeners(String)
+  fullName: FairyGUI.EventDispatcher.hasEventListeners(System.String)
+  spec.csharp:
+  - uid: FairyGUI.EventDispatcher.hasEventListeners(System.String)
+    name: hasEventListeners
+    nameWithType: EventDispatcher.hasEventListeners
+    fullName: FairyGUI.EventDispatcher.hasEventListeners
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.EventDispatcher.hasEventListeners(System.String)
+    name: hasEventListeners
+    nameWithType: EventDispatcher.hasEventListeners
+    fullName: FairyGUI.EventDispatcher.hasEventListeners
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.EventDispatcher.isDispatching(System.String)
+  commentId: M:FairyGUI.EventDispatcher.isDispatching(System.String)
+  parent: FairyGUI.EventDispatcher
+  isExternal: true
+  name: isDispatching(String)
+  nameWithType: EventDispatcher.isDispatching(String)
+  fullName: FairyGUI.EventDispatcher.isDispatching(System.String)
+  spec.csharp:
+  - uid: FairyGUI.EventDispatcher.isDispatching(System.String)
+    name: isDispatching
+    nameWithType: EventDispatcher.isDispatching
+    fullName: FairyGUI.EventDispatcher.isDispatching
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.EventDispatcher.isDispatching(System.String)
+    name: isDispatching
+    nameWithType: EventDispatcher.isDispatching
+    fullName: FairyGUI.EventDispatcher.isDispatching
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.EventDispatcher.DispatchEvent(System.String)
+  commentId: M:FairyGUI.EventDispatcher.DispatchEvent(System.String)
+  parent: FairyGUI.EventDispatcher
+  isExternal: true
+  name: DispatchEvent(String)
+  nameWithType: EventDispatcher.DispatchEvent(String)
+  fullName: FairyGUI.EventDispatcher.DispatchEvent(System.String)
+  spec.csharp:
+  - uid: FairyGUI.EventDispatcher.DispatchEvent(System.String)
+    name: DispatchEvent
+    nameWithType: EventDispatcher.DispatchEvent
+    fullName: FairyGUI.EventDispatcher.DispatchEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.EventDispatcher.DispatchEvent(System.String)
+    name: DispatchEvent
+    nameWithType: EventDispatcher.DispatchEvent
+    fullName: FairyGUI.EventDispatcher.DispatchEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.EventDispatcher.DispatchEvent(System.String,System.Object)
+  commentId: M:FairyGUI.EventDispatcher.DispatchEvent(System.String,System.Object)
+  parent: FairyGUI.EventDispatcher
+  isExternal: true
+  name: DispatchEvent(String, Object)
+  nameWithType: EventDispatcher.DispatchEvent(String, Object)
+  fullName: FairyGUI.EventDispatcher.DispatchEvent(System.String, System.Object)
+  spec.csharp:
+  - uid: FairyGUI.EventDispatcher.DispatchEvent(System.String,System.Object)
+    name: DispatchEvent
+    nameWithType: EventDispatcher.DispatchEvent
+    fullName: FairyGUI.EventDispatcher.DispatchEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.EventDispatcher.DispatchEvent(System.String,System.Object)
+    name: DispatchEvent
+    nameWithType: EventDispatcher.DispatchEvent
+    fullName: FairyGUI.EventDispatcher.DispatchEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.EventDispatcher.DispatchEvent(System.String,System.Object,System.Object)
+  commentId: M:FairyGUI.EventDispatcher.DispatchEvent(System.String,System.Object,System.Object)
+  parent: FairyGUI.EventDispatcher
+  isExternal: true
+  name: DispatchEvent(String, Object, Object)
+  nameWithType: EventDispatcher.DispatchEvent(String, Object, Object)
+  fullName: FairyGUI.EventDispatcher.DispatchEvent(System.String, System.Object, System.Object)
+  spec.csharp:
+  - uid: FairyGUI.EventDispatcher.DispatchEvent(System.String,System.Object,System.Object)
+    name: DispatchEvent
+    nameWithType: EventDispatcher.DispatchEvent
+    fullName: FairyGUI.EventDispatcher.DispatchEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.EventDispatcher.DispatchEvent(System.String,System.Object,System.Object)
+    name: DispatchEvent
+    nameWithType: EventDispatcher.DispatchEvent
+    fullName: FairyGUI.EventDispatcher.DispatchEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.EventDispatcher.DispatchEvent(FairyGUI.EventContext)
+  commentId: M:FairyGUI.EventDispatcher.DispatchEvent(FairyGUI.EventContext)
+  parent: FairyGUI.EventDispatcher
+  name: DispatchEvent(EventContext)
+  nameWithType: EventDispatcher.DispatchEvent(EventContext)
+  fullName: FairyGUI.EventDispatcher.DispatchEvent(FairyGUI.EventContext)
+  spec.csharp:
+  - uid: FairyGUI.EventDispatcher.DispatchEvent(FairyGUI.EventContext)
+    name: DispatchEvent
+    nameWithType: EventDispatcher.DispatchEvent
+    fullName: FairyGUI.EventDispatcher.DispatchEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.EventContext
+    name: EventContext
+    nameWithType: EventContext
+    fullName: FairyGUI.EventContext
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.EventDispatcher.DispatchEvent(FairyGUI.EventContext)
+    name: DispatchEvent
+    nameWithType: EventDispatcher.DispatchEvent
+    fullName: FairyGUI.EventDispatcher.DispatchEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: FairyGUI.EventContext
+    name: EventContext
+    nameWithType: EventContext
+    fullName: FairyGUI.EventContext
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.EventDispatcher.BubbleEvent(System.String,System.Object)
+  commentId: M:FairyGUI.EventDispatcher.BubbleEvent(System.String,System.Object)
+  parent: FairyGUI.EventDispatcher
+  isExternal: true
+  name: BubbleEvent(String, Object)
+  nameWithType: EventDispatcher.BubbleEvent(String, Object)
+  fullName: FairyGUI.EventDispatcher.BubbleEvent(System.String, System.Object)
+  spec.csharp:
+  - uid: FairyGUI.EventDispatcher.BubbleEvent(System.String,System.Object)
+    name: BubbleEvent
+    nameWithType: EventDispatcher.BubbleEvent
+    fullName: FairyGUI.EventDispatcher.BubbleEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.EventDispatcher.BubbleEvent(System.String,System.Object)
+    name: BubbleEvent
+    nameWithType: EventDispatcher.BubbleEvent
+    fullName: FairyGUI.EventDispatcher.BubbleEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: FairyGUI.EventDispatcher.BroadcastEvent(System.String,System.Object)
+  commentId: M:FairyGUI.EventDispatcher.BroadcastEvent(System.String,System.Object)
+  parent: FairyGUI.EventDispatcher
+  isExternal: true
+  name: BroadcastEvent(String, Object)
+  nameWithType: EventDispatcher.BroadcastEvent(String, Object)
+  fullName: FairyGUI.EventDispatcher.BroadcastEvent(System.String, System.Object)
+  spec.csharp:
+  - uid: FairyGUI.EventDispatcher.BroadcastEvent(System.String,System.Object)
+    name: BroadcastEvent
+    nameWithType: EventDispatcher.BroadcastEvent
+    fullName: FairyGUI.EventDispatcher.BroadcastEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: FairyGUI.EventDispatcher.BroadcastEvent(System.String,System.Object)
+    name: BroadcastEvent
+    nameWithType: EventDispatcher.BroadcastEvent
+    fullName: FairyGUI.EventDispatcher.BroadcastEvent
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: FairyGUI
+  commentId: N:FairyGUI
+  name: FairyGUI
+  nameWithType: FairyGUI
+  fullName: FairyGUI
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: ZMDFQ.Player
+  commentId: T:ZMDFQ.Player
+  parent: ZMDFQ
+  name: Player
+  nameWithType: Player
+  fullName: ZMDFQ.Player
+- uid: ZMDFQ
+  commentId: N:ZMDFQ
+  name: ZMDFQ
+  nameWithType: ZMDFQ
+  fullName: ZMDFQ
+- uid: ZMDFQ.UI.UI_Player.CreateInstance*
+  commentId: Overload:ZMDFQ.UI.UI_Player.CreateInstance
+  name: CreateInstance
+  nameWithType: UI_Player.CreateInstance
+  fullName: ZMDFQ.UI.UI_Player.CreateInstance
+- uid: ZMDFQ.UI.UI_Player
+  commentId: T:ZMDFQ.UI.UI_Player
+  parent: ZMDFQ.UI
+  name: UI_Player
+  nameWithType: UI_Player
+  fullName: ZMDFQ.UI.UI_Player
+- uid: ZMDFQ.UI.UI_Player.SetPlayerCard*
+  commentId: Overload:ZMDFQ.UI.UI_Player.SetPlayerCard
+  name: SetPlayerCard
+  nameWithType: UI_Player.SetPlayerCard
+  fullName: ZMDFQ.UI.UI_Player.SetPlayerCard

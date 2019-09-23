@@ -1,0 +1,568 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZMDFQ.PlayerAction.ChooseDirectionResponse
+  commentId: T:ZMDFQ.PlayerAction.ChooseDirectionResponse
+  id: ChooseDirectionResponse
+  parent: ZMDFQ.PlayerAction
+  children:
+  - ZMDFQ.PlayerAction.ChooseDirectionResponse.HandleAction(ZMDFQ.Game)
+  - ZMDFQ.PlayerAction.ChooseDirectionResponse.IfForward
+  - ZMDFQ.PlayerAction.ChooseDirectionResponse.IfSet
+  langs:
+  - csharp
+  - vb
+  name: ChooseDirectionResponse
+  nameWithType: ChooseDirectionResponse
+  fullName: ZMDFQ.PlayerAction.ChooseDirectionResponse
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Core/PlayerAction/types/ChooseDirection.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: ChooseDirectionResponse
+    path: Assets/Scripts/Core/PlayerAction/types/ChooseDirection.cs
+    startLine: 15
+  assemblies:
+  - Model
+  namespace: ZMDFQ.PlayerAction
+  syntax:
+    content: 'public class ChooseDirectionResponse : UseOneCard'
+    content.vb: >-
+      Public Class ChooseDirectionResponse
+          Inherits UseOneCard
+  inheritance:
+  - System.Object
+  - ZMDFQ.PlayerAction.Response
+  - ZMDFQ.PlayerAction.UseInfo
+  - ZMDFQ.PlayerAction.UseOneCard
+  inheritedMembers:
+  - ZMDFQ.PlayerAction.UseOneCard.CardId
+  - ZMDFQ.PlayerAction.UseOneCard.Source
+  - ZMDFQ.PlayerAction.UseOneCard.TreatAs
+  - ZMDFQ.PlayerAction.Response.PlayerId
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ZMDFQ.PlayerAction.ChooseDirectionResponse.IfForward
+  commentId: F:ZMDFQ.PlayerAction.ChooseDirectionResponse.IfForward
+  id: IfForward
+  parent: ZMDFQ.PlayerAction.ChooseDirectionResponse
+  langs:
+  - csharp
+  - vb
+  name: IfForward
+  nameWithType: ChooseDirectionResponse.IfForward
+  fullName: ZMDFQ.PlayerAction.ChooseDirectionResponse.IfForward
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/PlayerAction/types/ChooseDirection.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: IfForward
+    path: Assets/Scripts/Core/PlayerAction/types/ChooseDirection.cs
+    startLine: 17
+  assemblies:
+  - Model
+  namespace: ZMDFQ.PlayerAction
+  syntax:
+    content: public bool IfForward
+    return:
+      type: System.Boolean
+    content.vb: Public IfForward As Boolean
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.PlayerAction.ChooseDirectionResponse.IfSet
+  commentId: F:ZMDFQ.PlayerAction.ChooseDirectionResponse.IfSet
+  id: IfSet
+  parent: ZMDFQ.PlayerAction.ChooseDirectionResponse
+  langs:
+  - csharp
+  - vb
+  name: IfSet
+  nameWithType: ChooseDirectionResponse.IfSet
+  fullName: ZMDFQ.PlayerAction.ChooseDirectionResponse.IfSet
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/PlayerAction/types/ChooseDirection.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: IfSet
+    path: Assets/Scripts/Core/PlayerAction/types/ChooseDirection.cs
+    startLine: 18
+  assemblies:
+  - Model
+  namespace: ZMDFQ.PlayerAction
+  syntax:
+    content: public bool IfSet
+    return:
+      type: System.Boolean
+    content.vb: Public IfSet As Boolean
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.PlayerAction.ChooseDirectionResponse.HandleAction(ZMDFQ.Game)
+  commentId: M:ZMDFQ.PlayerAction.ChooseDirectionResponse.HandleAction(ZMDFQ.Game)
+  id: HandleAction(ZMDFQ.Game)
+  parent: ZMDFQ.PlayerAction.ChooseDirectionResponse
+  langs:
+  - csharp
+  - vb
+  name: HandleAction(Game)
+  nameWithType: ChooseDirectionResponse.HandleAction(Game)
+  fullName: ZMDFQ.PlayerAction.ChooseDirectionResponse.HandleAction(ZMDFQ.Game)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/PlayerAction/types/ChooseDirection.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: HandleAction
+    path: Assets/Scripts/Core/PlayerAction/types/ChooseDirection.cs
+    startLine: 19
+  assemblies:
+  - Model
+  namespace: ZMDFQ.PlayerAction
+  syntax:
+    content: public override Task HandleAction(Game game)
+    parameters:
+    - id: game
+      type: ZMDFQ.Game
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Overrides Function HandleAction(game As Game) As Task
+  overridden: ZMDFQ.PlayerAction.UseInfo.HandleAction(ZMDFQ.Game)
+  overload: ZMDFQ.PlayerAction.ChooseDirectionResponse.HandleAction*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: ZMDFQ.PlayerAction
+  commentId: N:ZMDFQ.PlayerAction
+  name: ZMDFQ.PlayerAction
+  nameWithType: ZMDFQ.PlayerAction
+  fullName: ZMDFQ.PlayerAction
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ZMDFQ.PlayerAction.Response
+  commentId: T:ZMDFQ.PlayerAction.Response
+  parent: ZMDFQ.PlayerAction
+  name: Response
+  nameWithType: Response
+  fullName: ZMDFQ.PlayerAction.Response
+- uid: ZMDFQ.PlayerAction.UseInfo
+  commentId: T:ZMDFQ.PlayerAction.UseInfo
+  parent: ZMDFQ.PlayerAction
+  name: UseInfo
+  nameWithType: UseInfo
+  fullName: ZMDFQ.PlayerAction.UseInfo
+- uid: ZMDFQ.PlayerAction.UseOneCard
+  commentId: T:ZMDFQ.PlayerAction.UseOneCard
+  parent: ZMDFQ.PlayerAction
+  name: UseOneCard
+  nameWithType: UseOneCard
+  fullName: ZMDFQ.PlayerAction.UseOneCard
+- uid: ZMDFQ.PlayerAction.UseOneCard.CardId
+  commentId: F:ZMDFQ.PlayerAction.UseOneCard.CardId
+  parent: ZMDFQ.PlayerAction.UseOneCard
+  name: CardId
+  nameWithType: UseOneCard.CardId
+  fullName: ZMDFQ.PlayerAction.UseOneCard.CardId
+- uid: ZMDFQ.PlayerAction.UseOneCard.Source
+  commentId: F:ZMDFQ.PlayerAction.UseOneCard.Source
+  parent: ZMDFQ.PlayerAction.UseOneCard
+  name: Source
+  nameWithType: UseOneCard.Source
+  fullName: ZMDFQ.PlayerAction.UseOneCard.Source
+- uid: ZMDFQ.PlayerAction.UseOneCard.TreatAs
+  commentId: F:ZMDFQ.PlayerAction.UseOneCard.TreatAs
+  parent: ZMDFQ.PlayerAction.UseOneCard
+  name: TreatAs
+  nameWithType: UseOneCard.TreatAs
+  fullName: ZMDFQ.PlayerAction.UseOneCard.TreatAs
+- uid: ZMDFQ.PlayerAction.Response.PlayerId
+  commentId: F:ZMDFQ.PlayerAction.Response.PlayerId
+  parent: ZMDFQ.PlayerAction.Response
+  name: PlayerId
+  nameWithType: Response.PlayerId
+  fullName: ZMDFQ.PlayerAction.Response.PlayerId
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: ZMDFQ.PlayerAction.UseInfo.HandleAction(ZMDFQ.Game)
+  commentId: M:ZMDFQ.PlayerAction.UseInfo.HandleAction(ZMDFQ.Game)
+  parent: ZMDFQ.PlayerAction.UseInfo
+  name: HandleAction(Game)
+  nameWithType: UseInfo.HandleAction(Game)
+  fullName: ZMDFQ.PlayerAction.UseInfo.HandleAction(ZMDFQ.Game)
+  spec.csharp:
+  - uid: ZMDFQ.PlayerAction.UseInfo.HandleAction(ZMDFQ.Game)
+    name: HandleAction
+    nameWithType: UseInfo.HandleAction
+    fullName: ZMDFQ.PlayerAction.UseInfo.HandleAction
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.PlayerAction.UseInfo.HandleAction(ZMDFQ.Game)
+    name: HandleAction
+    nameWithType: UseInfo.HandleAction
+    fullName: ZMDFQ.PlayerAction.UseInfo.HandleAction
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.PlayerAction.ChooseDirectionResponse.HandleAction*
+  commentId: Overload:ZMDFQ.PlayerAction.ChooseDirectionResponse.HandleAction
+  name: HandleAction
+  nameWithType: ChooseDirectionResponse.HandleAction
+  fullName: ZMDFQ.PlayerAction.ChooseDirectionResponse.HandleAction
+- uid: ZMDFQ.Game
+  commentId: T:ZMDFQ.Game
+  parent: ZMDFQ
+  name: Game
+  nameWithType: Game
+  fullName: ZMDFQ.Game
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: ZMDFQ
+  commentId: N:ZMDFQ
+  name: ZMDFQ
+  nameWithType: ZMDFQ
+  fullName: ZMDFQ
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks

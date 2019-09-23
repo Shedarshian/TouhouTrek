@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZMDFQ.Effects
+  commentId: N:ZMDFQ.Effects
+  id: ZMDFQ.Effects
+  children:
+  - ZMDFQ.Effects.TurnLimit
+  - ZMDFQ.Effects.UseCard
+  langs:
+  - csharp
+  - vb
+  name: ZMDFQ.Effects
+  nameWithType: ZMDFQ.Effects
+  fullName: ZMDFQ.Effects
+  type: Namespace
+  assemblies:
+  - Model
+references:
+- uid: ZMDFQ.Effects.TurnLimit
+  commentId: T:ZMDFQ.Effects.TurnLimit
+  name: TurnLimit
+  nameWithType: TurnLimit
+  fullName: ZMDFQ.Effects.TurnLimit
+- uid: ZMDFQ.Effects.UseCard
+  commentId: T:ZMDFQ.Effects.UseCard
+  name: UseCard
+  nameWithType: UseCard
+  fullName: ZMDFQ.Effects.UseCard

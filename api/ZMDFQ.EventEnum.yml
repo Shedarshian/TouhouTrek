@@ -1,0 +1,475 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZMDFQ.EventEnum
+  commentId: T:ZMDFQ.EventEnum
+  id: EventEnum
+  parent: ZMDFQ
+  children:
+  - ZMDFQ.EventEnum.ActionEnd
+  - ZMDFQ.EventEnum.ActionStart
+  - ZMDFQ.EventEnum.AfterGameSizeChange
+  - ZMDFQ.EventEnum.DrawActionCard
+  - ZMDFQ.EventEnum.DrawEventCard
+  - ZMDFQ.EventEnum.DropActionCard
+  - ZMDFQ.EventEnum.GameEnd
+  - ZMDFQ.EventEnum.GameStart
+  - ZMDFQ.EventEnum.OnGameSizeChange
+  - ZMDFQ.EventEnum.RoundEnd
+  - ZMDFQ.EventEnum.RoundStart
+  - ZMDFQ.EventEnum.TurnEnd
+  - ZMDFQ.EventEnum.TurnStart
+  langs:
+  - csharp
+  - vb
+  name: EventEnum
+  nameWithType: EventEnum
+  fullName: ZMDFQ.EventEnum
+  type: Enum
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventEnum.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: EventEnum
+    path: Assets/Scripts/Core/Event/EventEnum.cs
+    startLine: 8
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public enum EventEnum
+    content.vb: Public Enum EventEnum
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: ZMDFQ.EventEnum.GameStart
+  commentId: F:ZMDFQ.EventEnum.GameStart
+  id: GameStart
+  parent: ZMDFQ.EventEnum
+  langs:
+  - csharp
+  - vb
+  name: GameStart
+  nameWithType: EventEnum.GameStart
+  fullName: ZMDFQ.EventEnum.GameStart
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventEnum.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: GameStart
+    path: Assets/Scripts/Core/Event/EventEnum.cs
+    startLine: 10
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: GameStart = 0
+    return:
+      type: ZMDFQ.EventEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.EventEnum.GameEnd
+  commentId: F:ZMDFQ.EventEnum.GameEnd
+  id: GameEnd
+  parent: ZMDFQ.EventEnum
+  langs:
+  - csharp
+  - vb
+  name: GameEnd
+  nameWithType: EventEnum.GameEnd
+  fullName: ZMDFQ.EventEnum.GameEnd
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventEnum.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: GameEnd
+    path: Assets/Scripts/Core/Event/EventEnum.cs
+    startLine: 11
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: GameEnd = 1
+    return:
+      type: ZMDFQ.EventEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.EventEnum.RoundStart
+  commentId: F:ZMDFQ.EventEnum.RoundStart
+  id: RoundStart
+  parent: ZMDFQ.EventEnum
+  langs:
+  - csharp
+  - vb
+  name: RoundStart
+  nameWithType: EventEnum.RoundStart
+  fullName: ZMDFQ.EventEnum.RoundStart
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventEnum.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: RoundStart
+    path: Assets/Scripts/Core/Event/EventEnum.cs
+    startLine: 13
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: RoundStart = 2
+    return:
+      type: ZMDFQ.EventEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.EventEnum.RoundEnd
+  commentId: F:ZMDFQ.EventEnum.RoundEnd
+  id: RoundEnd
+  parent: ZMDFQ.EventEnum
+  langs:
+  - csharp
+  - vb
+  name: RoundEnd
+  nameWithType: EventEnum.RoundEnd
+  fullName: ZMDFQ.EventEnum.RoundEnd
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventEnum.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: RoundEnd
+    path: Assets/Scripts/Core/Event/EventEnum.cs
+    startLine: 14
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: RoundEnd = 3
+    return:
+      type: ZMDFQ.EventEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.EventEnum.TurnStart
+  commentId: F:ZMDFQ.EventEnum.TurnStart
+  id: TurnStart
+  parent: ZMDFQ.EventEnum
+  langs:
+  - csharp
+  - vb
+  name: TurnStart
+  nameWithType: EventEnum.TurnStart
+  fullName: ZMDFQ.EventEnum.TurnStart
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventEnum.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: TurnStart
+    path: Assets/Scripts/Core/Event/EventEnum.cs
+    startLine: 16
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: TurnStart = 4
+    return:
+      type: ZMDFQ.EventEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.EventEnum.TurnEnd
+  commentId: F:ZMDFQ.EventEnum.TurnEnd
+  id: TurnEnd
+  parent: ZMDFQ.EventEnum
+  langs:
+  - csharp
+  - vb
+  name: TurnEnd
+  nameWithType: EventEnum.TurnEnd
+  fullName: ZMDFQ.EventEnum.TurnEnd
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventEnum.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: TurnEnd
+    path: Assets/Scripts/Core/Event/EventEnum.cs
+    startLine: 17
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: TurnEnd = 5
+    return:
+      type: ZMDFQ.EventEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.EventEnum.ActionStart
+  commentId: F:ZMDFQ.EventEnum.ActionStart
+  id: ActionStart
+  parent: ZMDFQ.EventEnum
+  langs:
+  - csharp
+  - vb
+  name: ActionStart
+  nameWithType: EventEnum.ActionStart
+  fullName: ZMDFQ.EventEnum.ActionStart
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventEnum.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: ActionStart
+    path: Assets/Scripts/Core/Event/EventEnum.cs
+    startLine: 19
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: ActionStart = 6
+    return:
+      type: ZMDFQ.EventEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.EventEnum.ActionEnd
+  commentId: F:ZMDFQ.EventEnum.ActionEnd
+  id: ActionEnd
+  parent: ZMDFQ.EventEnum
+  langs:
+  - csharp
+  - vb
+  name: ActionEnd
+  nameWithType: EventEnum.ActionEnd
+  fullName: ZMDFQ.EventEnum.ActionEnd
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventEnum.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: ActionEnd
+    path: Assets/Scripts/Core/Event/EventEnum.cs
+    startLine: 20
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: ActionEnd = 7
+    return:
+      type: ZMDFQ.EventEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.EventEnum.DrawEventCard
+  commentId: F:ZMDFQ.EventEnum.DrawEventCard
+  id: DrawEventCard
+  parent: ZMDFQ.EventEnum
+  langs:
+  - csharp
+  - vb
+  name: DrawEventCard
+  nameWithType: EventEnum.DrawEventCard
+  fullName: ZMDFQ.EventEnum.DrawEventCard
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventEnum.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: DrawEventCard
+    path: Assets/Scripts/Core/Event/EventEnum.cs
+    startLine: 22
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: DrawEventCard = 8
+    return:
+      type: ZMDFQ.EventEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.EventEnum.DrawActionCard
+  commentId: F:ZMDFQ.EventEnum.DrawActionCard
+  id: DrawActionCard
+  parent: ZMDFQ.EventEnum
+  langs:
+  - csharp
+  - vb
+  name: DrawActionCard
+  nameWithType: EventEnum.DrawActionCard
+  fullName: ZMDFQ.EventEnum.DrawActionCard
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventEnum.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: DrawActionCard
+    path: Assets/Scripts/Core/Event/EventEnum.cs
+    startLine: 24
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: DrawActionCard = 9
+    return:
+      type: ZMDFQ.EventEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.EventEnum.DropActionCard
+  commentId: F:ZMDFQ.EventEnum.DropActionCard
+  id: DropActionCard
+  parent: ZMDFQ.EventEnum
+  langs:
+  - csharp
+  - vb
+  name: DropActionCard
+  nameWithType: EventEnum.DropActionCard
+  fullName: ZMDFQ.EventEnum.DropActionCard
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventEnum.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: DropActionCard
+    path: Assets/Scripts/Core/Event/EventEnum.cs
+    startLine: 25
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: DropActionCard = 10
+    return:
+      type: ZMDFQ.EventEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.EventEnum.OnGameSizeChange
+  commentId: F:ZMDFQ.EventEnum.OnGameSizeChange
+  id: OnGameSizeChange
+  parent: ZMDFQ.EventEnum
+  langs:
+  - csharp
+  - vb
+  name: OnGameSizeChange
+  nameWithType: EventEnum.OnGameSizeChange
+  fullName: ZMDFQ.EventEnum.OnGameSizeChange
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventEnum.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: OnGameSizeChange
+    path: Assets/Scripts/Core/Event/EventEnum.cs
+    startLine: 27
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: OnGameSizeChange = 11
+    return:
+      type: ZMDFQ.EventEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: ZMDFQ.EventEnum.AfterGameSizeChange
+  commentId: F:ZMDFQ.EventEnum.AfterGameSizeChange
+  id: AfterGameSizeChange
+  parent: ZMDFQ.EventEnum
+  langs:
+  - csharp
+  - vb
+  name: AfterGameSizeChange
+  nameWithType: EventEnum.AfterGameSizeChange
+  fullName: ZMDFQ.EventEnum.AfterGameSizeChange
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventEnum.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: AfterGameSizeChange
+    path: Assets/Scripts/Core/Event/EventEnum.cs
+    startLine: 28
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: AfterGameSizeChange = 12
+    return:
+      type: ZMDFQ.EventEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: ZMDFQ
+  commentId: N:ZMDFQ
+  name: ZMDFQ
+  nameWithType: ZMDFQ
+  fullName: ZMDFQ
+- uid: ZMDFQ.EventEnum
+  commentId: T:ZMDFQ.EventEnum
+  parent: ZMDFQ
+  name: EventEnum
+  nameWithType: EventEnum
+  fullName: ZMDFQ.EventEnum

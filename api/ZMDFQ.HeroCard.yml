@@ -1,0 +1,669 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZMDFQ.HeroCard
+  commentId: T:ZMDFQ.HeroCard
+  id: HeroCard
+  parent: ZMDFQ
+  children:
+  - ZMDFQ.HeroCard.camp
+  - ZMDFQ.HeroCard.Skills
+  langs:
+  - csharp
+  - vb
+  name: HeroCard
+  nameWithType: HeroCard
+  fullName: ZMDFQ.HeroCard
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/HeroCard.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: HeroCard
+    path: Assets/Scripts/Core/Card/HeroCard.cs
+    startLine: 8
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: 'public abstract class HeroCard : Card'
+    content.vb: >-
+      Public MustInherit Class HeroCard
+          Inherits Card
+  inheritance:
+  - System.Object
+  - ZMDFQ.Card
+  derivedClasses:
+  - ZMDFQ.Cards.CR_CP001
+  inheritedMembers:
+  - ZMDFQ.Card.Id
+  - ZMDFQ.Card.Name
+  - ZMDFQ.Card.CardType
+  - ZMDFQ.Card.copyCard``1({T})
+  - ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: ZMDFQ.HeroCard.camp
+  commentId: P:ZMDFQ.HeroCard.camp
+  id: camp
+  parent: ZMDFQ.HeroCard
+  langs:
+  - csharp
+  - vb
+  name: camp
+  nameWithType: HeroCard.camp
+  fullName: ZMDFQ.HeroCard.camp
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/HeroCard.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: camp
+    path: Assets/Scripts/Core/Card/HeroCard.cs
+    startLine: 13
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  summary: "\n阵营\n"
+  example: []
+  syntax:
+    content: public abstract Camp camp { get; }
+    parameters: []
+    return:
+      type: ZMDFQ.Camp
+    content.vb: Public MustOverride ReadOnly Property camp As Camp
+  overload: ZMDFQ.HeroCard.camp*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: ZMDFQ.HeroCard.Skills
+  commentId: P:ZMDFQ.HeroCard.Skills
+  id: Skills
+  parent: ZMDFQ.HeroCard
+  langs:
+  - csharp
+  - vb
+  name: Skills
+  nameWithType: HeroCard.Skills
+  fullName: ZMDFQ.HeroCard.Skills
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/HeroCard.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Skills
+    path: Assets/Scripts/Core/Card/HeroCard.cs
+    startLine: 14
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public abstract List<Skill> Skills { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{ZMDFQ.Skill}
+    content.vb: Public MustOverride ReadOnly Property Skills As List(Of Skill)
+  overload: ZMDFQ.HeroCard.Skills*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+references:
+- uid: ZMDFQ
+  commentId: N:ZMDFQ
+  name: ZMDFQ
+  nameWithType: ZMDFQ
+  fullName: ZMDFQ
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ZMDFQ.Card
+  commentId: T:ZMDFQ.Card
+  parent: ZMDFQ
+  name: Card
+  nameWithType: Card
+  fullName: ZMDFQ.Card
+- uid: ZMDFQ.Card.Id
+  commentId: F:ZMDFQ.Card.Id
+  parent: ZMDFQ.Card
+  name: Id
+  nameWithType: Card.Id
+  fullName: ZMDFQ.Card.Id
+- uid: ZMDFQ.Card.Name
+  commentId: F:ZMDFQ.Card.Name
+  parent: ZMDFQ.Card
+  name: Name
+  nameWithType: Card.Name
+  fullName: ZMDFQ.Card.Name
+- uid: ZMDFQ.Card.CardType
+  commentId: F:ZMDFQ.Card.CardType
+  parent: ZMDFQ.Card
+  name: CardType
+  nameWithType: Card.CardType
+  fullName: ZMDFQ.Card.CardType
+- uid: ZMDFQ.Card.copyCard``1({T})
+  commentId: M:ZMDFQ.Card.copyCard``1(``0)
+  parent: ZMDFQ.Card
+  definition: ZMDFQ.Card.copyCard``1(``0)
+  name: copyCard<T>(T)
+  nameWithType: Card.copyCard<T>(T)
+  fullName: ZMDFQ.Card.copyCard<T>(T)
+  nameWithType.vb: Card.copyCard(Of T)(T)
+  fullName.vb: ZMDFQ.Card.copyCard(Of T)(T)
+  name.vb: copyCard(Of T)(T)
+  spec.csharp:
+  - uid: ZMDFQ.Card.copyCard``1(``0)
+    name: copyCard<T>
+    nameWithType: Card.copyCard<T>
+    fullName: ZMDFQ.Card.copyCard<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.Card.copyCard``1(``0)
+    name: copyCard(Of T)
+    nameWithType: Card.copyCard(Of T)
+    fullName: ZMDFQ.Card.copyCard(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+  commentId: M:ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+  parent: ZMDFQ.Card
+  name: copyPropTo(Card)
+  nameWithType: Card.copyPropTo(Card)
+  fullName: ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+  spec.csharp:
+  - uid: ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+    name: copyPropTo
+    nameWithType: Card.copyPropTo
+    fullName: ZMDFQ.Card.copyPropTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Card
+    name: Card
+    nameWithType: Card
+    fullName: ZMDFQ.Card
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+    name: copyPropTo
+    nameWithType: Card.copyPropTo
+    fullName: ZMDFQ.Card.copyPropTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Card
+    name: Card
+    nameWithType: Card
+    fullName: ZMDFQ.Card
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ZMDFQ.Card.copyCard``1(``0)
+  commentId: M:ZMDFQ.Card.copyCard``1(``0)
+  name: copyCard<T>(T)
+  nameWithType: Card.copyCard<T>(T)
+  fullName: ZMDFQ.Card.copyCard<T>(T)
+  nameWithType.vb: Card.copyCard(Of T)(T)
+  fullName.vb: ZMDFQ.Card.copyCard(Of T)(T)
+  name.vb: copyCard(Of T)(T)
+  spec.csharp:
+  - uid: ZMDFQ.Card.copyCard``1(``0)
+    name: copyCard<T>
+    nameWithType: Card.copyCard<T>
+    fullName: ZMDFQ.Card.copyCard<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.Card.copyCard``1(``0)
+    name: copyCard(Of T)
+    nameWithType: Card.copyCard(Of T)
+    fullName: ZMDFQ.Card.copyCard(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.HeroCard.camp*
+  commentId: Overload:ZMDFQ.HeroCard.camp
+  name: camp
+  nameWithType: HeroCard.camp
+  fullName: ZMDFQ.HeroCard.camp
+- uid: ZMDFQ.Camp
+  commentId: T:ZMDFQ.Camp
+  parent: ZMDFQ
+  name: Camp
+  nameWithType: Camp
+  fullName: ZMDFQ.Camp
+- uid: ZMDFQ.HeroCard.Skills*
+  commentId: Overload:ZMDFQ.HeroCard.Skills
+  name: Skills
+  nameWithType: HeroCard.Skills
+  fullName: ZMDFQ.HeroCard.Skills
+- uid: System.Collections.Generic.List{ZMDFQ.Skill}
+  commentId: T:System.Collections.Generic.List{ZMDFQ.Skill}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Skill>
+  nameWithType: List<Skill>
+  fullName: System.Collections.Generic.List<ZMDFQ.Skill>
+  nameWithType.vb: List(Of Skill)
+  fullName.vb: System.Collections.Generic.List(Of ZMDFQ.Skill)
+  name.vb: List(Of Skill)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ZMDFQ.Skill
+    name: Skill
+    nameWithType: Skill
+    fullName: ZMDFQ.Skill
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ZMDFQ.Skill
+    name: Skill
+    nameWithType: Skill
+    fullName: ZMDFQ.Skill
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic

@@ -307,7 +307,9 @@ namespace Tests
             game.Answer(new ChooseDirectionResponse() { PlayerId = 1, CardId = 62, IfSet = true });
             game.Answer(new ChooseSomeCardResponse() { PlayerId = 1, Cards = new List<int>() { 23, 24 } });
 
-            Assert.AreEqual(game.Players[0], game.winner);
+            Assert.AreEqual(2, game.winners.Length);
+            Assert.AreEqual(1, game.winners[0].point);
+            Assert.AreEqual(1, game.winners[0].point);
             yield break;
         }
         class TestCharacter : HeroCard

@@ -1,0 +1,647 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZMDFQ.EventSystem
+  commentId: T:ZMDFQ.EventSystem
+  id: EventSystem
+  parent: ZMDFQ
+  children:
+  - ZMDFQ.EventSystem.Call(ZMDFQ.EventEnum,System.Object[])
+  - ZMDFQ.EventSystem.Register(ZMDFQ.EventEnum,System.Func{System.Object[],System.Threading.Tasks.Task},System.Int32)
+  - ZMDFQ.EventSystem.Remove(ZMDFQ.EventEnum,System.Func{System.Object[],System.Threading.Tasks.Task})
+  langs:
+  - csharp
+  - vb
+  name: EventSystem
+  nameWithType: EventSystem
+  fullName: ZMDFQ.EventSystem
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventSystem.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: EventSystem
+    path: Assets/Scripts/Core/Event/EventSystem.cs
+    startLine: 8
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public class EventSystem
+    content.vb: Public Class EventSystem
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ZMDFQ.EventSystem.Register(ZMDFQ.EventEnum,System.Func{System.Object[],System.Threading.Tasks.Task},System.Int32)
+  commentId: M:ZMDFQ.EventSystem.Register(ZMDFQ.EventEnum,System.Func{System.Object[],System.Threading.Tasks.Task},System.Int32)
+  id: Register(ZMDFQ.EventEnum,System.Func{System.Object[],System.Threading.Tasks.Task},System.Int32)
+  parent: ZMDFQ.EventSystem
+  langs:
+  - csharp
+  - vb
+  name: Register(EventEnum, Func<Object[], Task>, Int32)
+  nameWithType: EventSystem.Register(EventEnum, Func<Object[], Task>, Int32)
+  fullName: ZMDFQ.EventSystem.Register(ZMDFQ.EventEnum, System.Func<System.Object[], System.Threading.Tasks.Task>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventSystem.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Register
+    path: Assets/Scripts/Core/Event/EventSystem.cs
+    startLine: 16
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public void Register(EventEnum eventEnum, Func<object[], Task> action, int sortIndex = 0)
+    parameters:
+    - id: eventEnum
+      type: ZMDFQ.EventEnum
+    - id: action
+      type: System.Func{System.Object[],System.Threading.Tasks.Task}
+    - id: sortIndex
+      type: System.Int32
+    content.vb: Public Sub Register(eventEnum As EventEnum, action As Func(Of Object(), Task), sortIndex As Integer = 0)
+  overload: ZMDFQ.EventSystem.Register*
+  nameWithType.vb: EventSystem.Register(EventEnum, Func(Of Object(), Task), Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ZMDFQ.EventSystem.Register(ZMDFQ.EventEnum, System.Func(Of System.Object(), System.Threading.Tasks.Task), System.Int32)
+  name.vb: Register(EventEnum, Func(Of Object(), Task), Int32)
+- uid: ZMDFQ.EventSystem.Remove(ZMDFQ.EventEnum,System.Func{System.Object[],System.Threading.Tasks.Task})
+  commentId: M:ZMDFQ.EventSystem.Remove(ZMDFQ.EventEnum,System.Func{System.Object[],System.Threading.Tasks.Task})
+  id: Remove(ZMDFQ.EventEnum,System.Func{System.Object[],System.Threading.Tasks.Task})
+  parent: ZMDFQ.EventSystem
+  langs:
+  - csharp
+  - vb
+  name: Remove(EventEnum, Func<Object[], Task>)
+  nameWithType: EventSystem.Remove(EventEnum, Func<Object[], Task>)
+  fullName: ZMDFQ.EventSystem.Remove(ZMDFQ.EventEnum, System.Func<System.Object[], System.Threading.Tasks.Task>)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventSystem.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Remove
+    path: Assets/Scripts/Core/Event/EventSystem.cs
+    startLine: 42
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public void Remove(EventEnum eventEnum, Func<object[], Task> action)
+    parameters:
+    - id: eventEnum
+      type: ZMDFQ.EventEnum
+    - id: action
+      type: System.Func{System.Object[],System.Threading.Tasks.Task}
+    content.vb: Public Sub Remove(eventEnum As EventEnum, action As Func(Of Object(), Task))
+  overload: ZMDFQ.EventSystem.Remove*
+  nameWithType.vb: EventSystem.Remove(EventEnum, Func(Of Object(), Task))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ZMDFQ.EventSystem.Remove(ZMDFQ.EventEnum, System.Func(Of System.Object(), System.Threading.Tasks.Task))
+  name.vb: Remove(EventEnum, Func(Of Object(), Task))
+- uid: ZMDFQ.EventSystem.Call(ZMDFQ.EventEnum,System.Object[])
+  commentId: M:ZMDFQ.EventSystem.Call(ZMDFQ.EventEnum,System.Object[])
+  id: Call(ZMDFQ.EventEnum,System.Object[])
+  parent: ZMDFQ.EventSystem
+  langs:
+  - csharp
+  - vb
+  name: Call(EventEnum, Object[])
+  nameWithType: EventSystem.Call(EventEnum, Object[])
+  fullName: ZMDFQ.EventSystem.Call(ZMDFQ.EventEnum, System.Object[])
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/Event/EventSystem.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Call
+    path: Assets/Scripts/Core/Event/EventSystem.cs
+    startLine: 50
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public Task Call(EventEnum eventEnum, params object[] param)
+    parameters:
+    - id: eventEnum
+      type: ZMDFQ.EventEnum
+    - id: param
+      type: System.Object[]
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function Call(eventEnum As EventEnum, ParamArray param As Object()) As Task
+  overload: ZMDFQ.EventSystem.Call*
+  nameWithType.vb: EventSystem.Call(EventEnum, Object())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ZMDFQ.EventSystem.Call(ZMDFQ.EventEnum, System.Object())
+  name.vb: Call(EventEnum, Object())
+references:
+- uid: ZMDFQ
+  commentId: N:ZMDFQ
+  name: ZMDFQ
+  nameWithType: ZMDFQ
+  fullName: ZMDFQ
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ZMDFQ.EventSystem.Register*
+  commentId: Overload:ZMDFQ.EventSystem.Register
+  name: Register
+  nameWithType: EventSystem.Register
+  fullName: ZMDFQ.EventSystem.Register
+- uid: ZMDFQ.EventEnum
+  commentId: T:ZMDFQ.EventEnum
+  parent: ZMDFQ
+  name: EventEnum
+  nameWithType: EventEnum
+  fullName: ZMDFQ.EventEnum
+- uid: System.Func{System.Object[],System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Object[],System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`2
+  name: Func<Object[], Task>
+  nameWithType: Func<Object[], Task>
+  fullName: System.Func<System.Object[], System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of Object(), Task)
+  fullName.vb: System.Func(Of System.Object(), System.Threading.Tasks.Task)
+  name.vb: Func(Of Object(), Task)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.EventSystem.Remove*
+  commentId: Overload:ZMDFQ.EventSystem.Remove
+  name: Remove
+  nameWithType: EventSystem.Remove
+  fullName: ZMDFQ.EventSystem.Remove
+- uid: ZMDFQ.EventSystem.Call*
+  commentId: Overload:ZMDFQ.EventSystem.Call
+  name: Call
+  nameWithType: EventSystem.Call
+  fullName: ZMDFQ.EventSystem.Call
+- uid: System.Object[]
+  isExternal: true
+  name: Object[]
+  nameWithType: Object[]
+  fullName: System.Object[]
+  nameWithType.vb: Object()
+  fullName.vb: System.Object()
+  name.vb: Object()
+  spec.csharp:
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks

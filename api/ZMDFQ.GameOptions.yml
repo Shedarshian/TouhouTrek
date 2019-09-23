@@ -1,0 +1,977 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZMDFQ.GameOptions
+  commentId: T:ZMDFQ.GameOptions
+  id: GameOptions
+  parent: ZMDFQ
+  children:
+  - ZMDFQ.GameOptions.actionCards
+  - ZMDFQ.GameOptions.characterCards
+  - ZMDFQ.GameOptions.chooseCharacter
+  - ZMDFQ.GameOptions.doubleCharacter
+  - ZMDFQ.GameOptions.endingOfficialCardCount
+  - ZMDFQ.GameOptions.eventCards
+  - ZMDFQ.GameOptions.firstPlayer
+  - ZMDFQ.GameOptions.initCommunitySize
+  - ZMDFQ.GameOptions.initInfluence
+  - ZMDFQ.GameOptions.officialCards
+  - ZMDFQ.GameOptions.players
+  - ZMDFQ.GameOptions.shuffle
+  langs:
+  - csharp
+  - vb
+  name: GameOptions
+  nameWithType: GameOptions
+  fullName: ZMDFQ.GameOptions
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Core/Game.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: GameOptions
+    path: Assets/Scripts/Core/Game.cs
+    startLine: 418
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public class GameOptions
+    content.vb: Public Class GameOptions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ZMDFQ.GameOptions.players
+  commentId: F:ZMDFQ.GameOptions.players
+  id: players
+  parent: ZMDFQ.GameOptions
+  langs:
+  - csharp
+  - vb
+  name: players
+  nameWithType: GameOptions.players
+  fullName: ZMDFQ.GameOptions.players
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Game.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: players
+    path: Assets/Scripts/Core/Game.cs
+    startLine: 420
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public Player[] players
+    return:
+      type: ZMDFQ.Player[]
+    content.vb: Public players As Player()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.GameOptions.endingOfficialCardCount
+  commentId: F:ZMDFQ.GameOptions.endingOfficialCardCount
+  id: endingOfficialCardCount
+  parent: ZMDFQ.GameOptions
+  langs:
+  - csharp
+  - vb
+  name: endingOfficialCardCount
+  nameWithType: GameOptions.endingOfficialCardCount
+  fullName: ZMDFQ.GameOptions.endingOfficialCardCount
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Game.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: endingOfficialCardCount
+    path: Assets/Scripts/Core/Game.cs
+    startLine: 421
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public int endingOfficialCardCount
+    return:
+      type: System.Int32
+    content.vb: Public endingOfficialCardCount As Integer
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.GameOptions.characterCards
+  commentId: F:ZMDFQ.GameOptions.characterCards
+  id: characterCards
+  parent: ZMDFQ.GameOptions
+  langs:
+  - csharp
+  - vb
+  name: characterCards
+  nameWithType: GameOptions.characterCards
+  fullName: ZMDFQ.GameOptions.characterCards
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Game.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: characterCards
+    path: Assets/Scripts/Core/Game.cs
+    startLine: 422
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public IEnumerable<HeroCard> characterCards
+    return:
+      type: System.Collections.Generic.IEnumerable{ZMDFQ.HeroCard}
+    content.vb: Public characterCards As IEnumerable(Of HeroCard)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.GameOptions.actionCards
+  commentId: F:ZMDFQ.GameOptions.actionCards
+  id: actionCards
+  parent: ZMDFQ.GameOptions
+  langs:
+  - csharp
+  - vb
+  name: actionCards
+  nameWithType: GameOptions.actionCards
+  fullName: ZMDFQ.GameOptions.actionCards
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Game.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: actionCards
+    path: Assets/Scripts/Core/Game.cs
+    startLine: 423
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public IEnumerable<ActionCard> actionCards
+    return:
+      type: System.Collections.Generic.IEnumerable{ZMDFQ.ActionCard}
+    content.vb: Public actionCards As IEnumerable(Of ActionCard)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.GameOptions.officialCards
+  commentId: F:ZMDFQ.GameOptions.officialCards
+  id: officialCards
+  parent: ZMDFQ.GameOptions
+  langs:
+  - csharp
+  - vb
+  name: officialCards
+  nameWithType: GameOptions.officialCards
+  fullName: ZMDFQ.GameOptions.officialCards
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Game.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: officialCards
+    path: Assets/Scripts/Core/Game.cs
+    startLine: 424
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public IEnumerable<ThemeCard> officialCards
+    return:
+      type: System.Collections.Generic.IEnumerable{ZMDFQ.ThemeCard}
+    content.vb: Public officialCards As IEnumerable(Of ThemeCard)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.GameOptions.eventCards
+  commentId: F:ZMDFQ.GameOptions.eventCards
+  id: eventCards
+  parent: ZMDFQ.GameOptions
+  langs:
+  - csharp
+  - vb
+  name: eventCards
+  nameWithType: GameOptions.eventCards
+  fullName: ZMDFQ.GameOptions.eventCards
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Game.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: eventCards
+    path: Assets/Scripts/Core/Game.cs
+    startLine: 425
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public IEnumerable<EventCard> eventCards
+    return:
+      type: System.Collections.Generic.IEnumerable{ZMDFQ.EventCard}
+    content.vb: Public eventCards As IEnumerable(Of EventCard)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.GameOptions.firstPlayer
+  commentId: F:ZMDFQ.GameOptions.firstPlayer
+  id: firstPlayer
+  parent: ZMDFQ.GameOptions
+  langs:
+  - csharp
+  - vb
+  name: firstPlayer
+  nameWithType: GameOptions.firstPlayer
+  fullName: ZMDFQ.GameOptions.firstPlayer
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Game.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: firstPlayer
+    path: Assets/Scripts/Core/Game.cs
+    startLine: 426
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public int firstPlayer
+    return:
+      type: System.Int32
+    content.vb: Public firstPlayer As Integer
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.GameOptions.shuffle
+  commentId: F:ZMDFQ.GameOptions.shuffle
+  id: shuffle
+  parent: ZMDFQ.GameOptions
+  langs:
+  - csharp
+  - vb
+  name: shuffle
+  nameWithType: GameOptions.shuffle
+  fullName: ZMDFQ.GameOptions.shuffle
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Game.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: shuffle
+    path: Assets/Scripts/Core/Game.cs
+    startLine: 427
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public bool shuffle
+    return:
+      type: System.Boolean
+    content.vb: Public shuffle As Boolean
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.GameOptions.initCommunitySize
+  commentId: F:ZMDFQ.GameOptions.initCommunitySize
+  id: initCommunitySize
+  parent: ZMDFQ.GameOptions
+  langs:
+  - csharp
+  - vb
+  name: initCommunitySize
+  nameWithType: GameOptions.initCommunitySize
+  fullName: ZMDFQ.GameOptions.initCommunitySize
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Game.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: initCommunitySize
+    path: Assets/Scripts/Core/Game.cs
+    startLine: 428
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public int initCommunitySize
+    return:
+      type: System.Int32
+    content.vb: Public initCommunitySize As Integer
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.GameOptions.initInfluence
+  commentId: F:ZMDFQ.GameOptions.initInfluence
+  id: initInfluence
+  parent: ZMDFQ.GameOptions
+  langs:
+  - csharp
+  - vb
+  name: initInfluence
+  nameWithType: GameOptions.initInfluence
+  fullName: ZMDFQ.GameOptions.initInfluence
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Game.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: initInfluence
+    path: Assets/Scripts/Core/Game.cs
+    startLine: 429
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public int initInfluence
+    return:
+      type: System.Int32
+    content.vb: Public initInfluence As Integer
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.GameOptions.chooseCharacter
+  commentId: F:ZMDFQ.GameOptions.chooseCharacter
+  id: chooseCharacter
+  parent: ZMDFQ.GameOptions
+  langs:
+  - csharp
+  - vb
+  name: chooseCharacter
+  nameWithType: GameOptions.chooseCharacter
+  fullName: ZMDFQ.GameOptions.chooseCharacter
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Game.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: chooseCharacter
+    path: Assets/Scripts/Core/Game.cs
+    startLine: 430
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public bool chooseCharacter
+    return:
+      type: System.Boolean
+    content.vb: Public chooseCharacter As Boolean
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.GameOptions.doubleCharacter
+  commentId: F:ZMDFQ.GameOptions.doubleCharacter
+  id: doubleCharacter
+  parent: ZMDFQ.GameOptions
+  langs:
+  - csharp
+  - vb
+  name: doubleCharacter
+  nameWithType: GameOptions.doubleCharacter
+  fullName: ZMDFQ.GameOptions.doubleCharacter
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Game.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: doubleCharacter
+    path: Assets/Scripts/Core/Game.cs
+    startLine: 431
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public bool doubleCharacter
+    return:
+      type: System.Boolean
+    content.vb: Public doubleCharacter As Boolean
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: ZMDFQ
+  commentId: N:ZMDFQ
+  name: ZMDFQ
+  nameWithType: ZMDFQ
+  fullName: ZMDFQ
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ZMDFQ.Player[]
+  isExternal: true
+  name: Player[]
+  nameWithType: Player[]
+  fullName: ZMDFQ.Player[]
+  nameWithType.vb: Player()
+  fullName.vb: ZMDFQ.Player()
+  name.vb: Player()
+  spec.csharp:
+  - uid: ZMDFQ.Player
+    name: Player
+    nameWithType: Player
+    fullName: ZMDFQ.Player
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: ZMDFQ.Player
+    name: Player
+    nameWithType: Player
+    fullName: ZMDFQ.Player
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Collections.Generic.IEnumerable{ZMDFQ.HeroCard}
+  commentId: T:System.Collections.Generic.IEnumerable{ZMDFQ.HeroCard}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<HeroCard>
+  nameWithType: IEnumerable<HeroCard>
+  fullName: System.Collections.Generic.IEnumerable<ZMDFQ.HeroCard>
+  nameWithType.vb: IEnumerable(Of HeroCard)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ZMDFQ.HeroCard)
+  name.vb: IEnumerable(Of HeroCard)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ZMDFQ.HeroCard
+    name: HeroCard
+    nameWithType: HeroCard
+    fullName: ZMDFQ.HeroCard
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ZMDFQ.HeroCard
+    name: HeroCard
+    nameWithType: HeroCard
+    fullName: ZMDFQ.HeroCard
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections.Generic.IEnumerable{ZMDFQ.ActionCard}
+  commentId: T:System.Collections.Generic.IEnumerable{ZMDFQ.ActionCard}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<ActionCard>
+  nameWithType: IEnumerable<ActionCard>
+  fullName: System.Collections.Generic.IEnumerable<ZMDFQ.ActionCard>
+  nameWithType.vb: IEnumerable(Of ActionCard)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ZMDFQ.ActionCard)
+  name.vb: IEnumerable(Of ActionCard)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ZMDFQ.ActionCard
+    name: ActionCard
+    nameWithType: ActionCard
+    fullName: ZMDFQ.ActionCard
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ZMDFQ.ActionCard
+    name: ActionCard
+    nameWithType: ActionCard
+    fullName: ZMDFQ.ActionCard
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{ZMDFQ.ThemeCard}
+  commentId: T:System.Collections.Generic.IEnumerable{ZMDFQ.ThemeCard}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<ThemeCard>
+  nameWithType: IEnumerable<ThemeCard>
+  fullName: System.Collections.Generic.IEnumerable<ZMDFQ.ThemeCard>
+  nameWithType.vb: IEnumerable(Of ThemeCard)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ZMDFQ.ThemeCard)
+  name.vb: IEnumerable(Of ThemeCard)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ZMDFQ.ThemeCard
+    name: ThemeCard
+    nameWithType: ThemeCard
+    fullName: ZMDFQ.ThemeCard
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ZMDFQ.ThemeCard
+    name: ThemeCard
+    nameWithType: ThemeCard
+    fullName: ZMDFQ.ThemeCard
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{ZMDFQ.EventCard}
+  commentId: T:System.Collections.Generic.IEnumerable{ZMDFQ.EventCard}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<EventCard>
+  nameWithType: IEnumerable<EventCard>
+  fullName: System.Collections.Generic.IEnumerable<ZMDFQ.EventCard>
+  nameWithType.vb: IEnumerable(Of EventCard)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ZMDFQ.EventCard)
+  name.vb: IEnumerable(Of EventCard)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ZMDFQ.EventCard
+    name: EventCard
+    nameWithType: EventCard
+    fullName: ZMDFQ.EventCard
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ZMDFQ.EventCard
+    name: EventCard
+    nameWithType: EventCard
+    fullName: ZMDFQ.EventCard
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

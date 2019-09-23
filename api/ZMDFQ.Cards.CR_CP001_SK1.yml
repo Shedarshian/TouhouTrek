@@ -1,0 +1,952 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZMDFQ.Cards.CR_CP001_SK1
+  commentId: T:ZMDFQ.Cards.CR_CP001_SK1
+  id: CR_CP001_SK1
+  parent: ZMDFQ.Cards
+  children:
+  - ZMDFQ.Cards.CR_CP001_SK1.CanTreat(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  - ZMDFQ.Cards.CR_CP001_SK1.Disable(ZMDFQ.Game)
+  - ZMDFQ.Cards.CR_CP001_SK1.DoEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.UseInfo)
+  - ZMDFQ.Cards.CR_CP001_SK1.Enable(ZMDFQ.Game)
+  - ZMDFQ.Cards.CR_CP001_SK1.TreatTo(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  - ZMDFQ.Cards.CR_CP001_SK1.useWay
+  langs:
+  - csharp
+  - vb
+  name: CR_CP001_SK1
+  nameWithType: CR_CP001_SK1
+  fullName: ZMDFQ.Cards.CR_CP001_SK1
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/HeroCard/CR_CP001.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: CR_CP001_SK1
+    path: Assets/Scripts/Core/Card/HeroCard/CR_CP001.cs
+    startLine: 22
+  assemblies:
+  - Model
+  namespace: ZMDFQ.Cards
+  syntax:
+    content: 'public class CR_CP001_SK1 : Skill, ITreatAs'
+    content.vb: >-
+      Public Class CR_CP001_SK1
+          Inherits Skill
+          Implements ITreatAs
+  inheritance:
+  - System.Object
+  - ZMDFQ.Skill
+  implements:
+  - ZMDFQ.ITreatAs
+  inheritedMembers:
+  - ZMDFQ.Skill.Name
+  - ZMDFQ.Skill.AutoRequest
+  - ZMDFQ.Skill.UseWay
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ZMDFQ.Cards.CR_CP001_SK1.useWay
+  commentId: M:ZMDFQ.Cards.CR_CP001_SK1.useWay
+  id: useWay
+  parent: ZMDFQ.Cards.CR_CP001_SK1
+  langs:
+  - csharp
+  - vb
+  name: useWay()
+  nameWithType: CR_CP001_SK1.useWay()
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.useWay()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/HeroCard/CR_CP001.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: useWay
+    path: Assets/Scripts/Core/Card/HeroCard/CR_CP001.cs
+    startLine: 25
+  assemblies:
+  - Model
+  namespace: ZMDFQ.Cards
+  syntax:
+    content: protected override UseWay useWay()
+    return:
+      type: ZMDFQ.PlayerAction.UseWay
+    content.vb: Protected Overrides Function useWay As UseWay
+  overridden: ZMDFQ.Skill.useWay
+  overload: ZMDFQ.Cards.CR_CP001_SK1.useWay*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ZMDFQ.Cards.CR_CP001_SK1.DoEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.UseInfo)
+  commentId: M:ZMDFQ.Cards.CR_CP001_SK1.DoEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.UseInfo)
+  id: DoEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.UseInfo)
+  parent: ZMDFQ.Cards.CR_CP001_SK1
+  langs:
+  - csharp
+  - vb
+  name: DoEffect(Game, UseInfo)
+  nameWithType: CR_CP001_SK1.DoEffect(Game, UseInfo)
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.DoEffect(ZMDFQ.Game, ZMDFQ.PlayerAction.UseInfo)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/HeroCard/CR_CP001.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: DoEffect
+    path: Assets/Scripts/Core/Card/HeroCard/CR_CP001.cs
+    startLine: 33
+  assemblies:
+  - Model
+  namespace: ZMDFQ.Cards
+  syntax:
+    content: public override Task DoEffect(Game game, UseInfo useInfo)
+    parameters:
+    - id: game
+      type: ZMDFQ.Game
+    - id: useInfo
+      type: ZMDFQ.PlayerAction.UseInfo
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Overrides Function DoEffect(game As Game, useInfo As UseInfo) As Task
+  overridden: ZMDFQ.Skill.DoEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.UseInfo)
+  overload: ZMDFQ.Cards.CR_CP001_SK1.DoEffect*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ZMDFQ.Cards.CR_CP001_SK1.Enable(ZMDFQ.Game)
+  commentId: M:ZMDFQ.Cards.CR_CP001_SK1.Enable(ZMDFQ.Game)
+  id: Enable(ZMDFQ.Game)
+  parent: ZMDFQ.Cards.CR_CP001_SK1
+  langs:
+  - csharp
+  - vb
+  name: Enable(Game)
+  nameWithType: CR_CP001_SK1.Enable(Game)
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.Enable(ZMDFQ.Game)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/HeroCard/CR_CP001.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Enable
+    path: Assets/Scripts/Core/Card/HeroCard/CR_CP001.cs
+    startLine: 41
+  assemblies:
+  - Model
+  namespace: ZMDFQ.Cards
+  syntax:
+    content: public override void Enable(Game game)
+    parameters:
+    - id: game
+      type: ZMDFQ.Game
+    content.vb: Public Overrides Sub Enable(game As Game)
+  overridden: ZMDFQ.Skill.Enable(ZMDFQ.Game)
+  overload: ZMDFQ.Cards.CR_CP001_SK1.Enable*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ZMDFQ.Cards.CR_CP001_SK1.Disable(ZMDFQ.Game)
+  commentId: M:ZMDFQ.Cards.CR_CP001_SK1.Disable(ZMDFQ.Game)
+  id: Disable(ZMDFQ.Game)
+  parent: ZMDFQ.Cards.CR_CP001_SK1
+  langs:
+  - csharp
+  - vb
+  name: Disable(Game)
+  nameWithType: CR_CP001_SK1.Disable(Game)
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.Disable(ZMDFQ.Game)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/HeroCard/CR_CP001.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Disable
+    path: Assets/Scripts/Core/Card/HeroCard/CR_CP001.cs
+    startLine: 45
+  assemblies:
+  - Model
+  namespace: ZMDFQ.Cards
+  syntax:
+    content: public override void Disable(Game game)
+    parameters:
+    - id: game
+      type: ZMDFQ.Game
+    content.vb: Public Overrides Sub Disable(game As Game)
+  overridden: ZMDFQ.Skill.Disable(ZMDFQ.Game)
+  overload: ZMDFQ.Cards.CR_CP001_SK1.Disable*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: ZMDFQ.Cards.CR_CP001_SK1.TreatTo(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  commentId: M:ZMDFQ.Cards.CR_CP001_SK1.TreatTo(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  id: TreatTo(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  parent: ZMDFQ.Cards.CR_CP001_SK1
+  langs:
+  - csharp
+  - vb
+  name: TreatTo(Game, UseOneCard)
+  nameWithType: CR_CP001_SK1.TreatTo(Game, UseOneCard)
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.TreatTo(ZMDFQ.Game, ZMDFQ.PlayerAction.UseOneCard)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/HeroCard/CR_CP001.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: TreatTo
+    path: Assets/Scripts/Core/Card/HeroCard/CR_CP001.cs
+    startLine: 50
+  assemblies:
+  - Model
+  namespace: ZMDFQ.Cards
+  syntax:
+    content: public Card TreatTo(Game game, UseOneCard useOneCard)
+    parameters:
+    - id: game
+      type: ZMDFQ.Game
+    - id: useOneCard
+      type: ZMDFQ.PlayerAction.UseOneCard
+    return:
+      type: ZMDFQ.Card
+    content.vb: Public Function TreatTo(game As Game, useOneCard As UseOneCard) As Card
+  overload: ZMDFQ.Cards.CR_CP001_SK1.TreatTo*
+  implements:
+  - ZMDFQ.ITreatAs.TreatTo(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.Cards.CR_CP001_SK1.CanTreat(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  commentId: M:ZMDFQ.Cards.CR_CP001_SK1.CanTreat(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  id: CanTreat(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  parent: ZMDFQ.Cards.CR_CP001_SK1
+  langs:
+  - csharp
+  - vb
+  name: CanTreat(Game, UseOneCard)
+  nameWithType: CR_CP001_SK1.CanTreat(Game, UseOneCard)
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.CanTreat(ZMDFQ.Game, ZMDFQ.PlayerAction.UseOneCard)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/HeroCard/CR_CP001.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: CanTreat
+    path: Assets/Scripts/Core/Card/HeroCard/CR_CP001.cs
+    startLine: 55
+  assemblies:
+  - Model
+  namespace: ZMDFQ.Cards
+  syntax:
+    content: public bool CanTreat(Game game, UseOneCard useOneCard)
+    parameters:
+    - id: game
+      type: ZMDFQ.Game
+    - id: useOneCard
+      type: ZMDFQ.PlayerAction.UseOneCard
+    return:
+      type: System.Boolean
+    content.vb: Public Function CanTreat(game As Game, useOneCard As UseOneCard) As Boolean
+  overload: ZMDFQ.Cards.CR_CP001_SK1.CanTreat*
+  implements:
+  - ZMDFQ.ITreatAs.CanTreat(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: ZMDFQ.Cards
+  commentId: N:ZMDFQ.Cards
+  name: ZMDFQ.Cards
+  nameWithType: ZMDFQ.Cards
+  fullName: ZMDFQ.Cards
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ZMDFQ.Skill
+  commentId: T:ZMDFQ.Skill
+  parent: ZMDFQ
+  name: Skill
+  nameWithType: Skill
+  fullName: ZMDFQ.Skill
+- uid: ZMDFQ.ITreatAs
+  commentId: T:ZMDFQ.ITreatAs
+  parent: ZMDFQ
+  name: ITreatAs
+  nameWithType: ITreatAs
+  fullName: ZMDFQ.ITreatAs
+- uid: ZMDFQ.Skill.Name
+  commentId: F:ZMDFQ.Skill.Name
+  parent: ZMDFQ.Skill
+  name: Name
+  nameWithType: Skill.Name
+  fullName: ZMDFQ.Skill.Name
+- uid: ZMDFQ.Skill.AutoRequest
+  commentId: F:ZMDFQ.Skill.AutoRequest
+  parent: ZMDFQ.Skill
+  name: AutoRequest
+  nameWithType: Skill.AutoRequest
+  fullName: ZMDFQ.Skill.AutoRequest
+- uid: ZMDFQ.Skill.UseWay
+  commentId: P:ZMDFQ.Skill.UseWay
+  parent: ZMDFQ.Skill
+  name: UseWay
+  nameWithType: Skill.UseWay
+  fullName: ZMDFQ.Skill.UseWay
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ZMDFQ
+  commentId: N:ZMDFQ
+  name: ZMDFQ
+  nameWithType: ZMDFQ
+  fullName: ZMDFQ
+- uid: ZMDFQ.Skill.useWay
+  commentId: M:ZMDFQ.Skill.useWay
+  parent: ZMDFQ.Skill
+  name: useWay()
+  nameWithType: Skill.useWay()
+  fullName: ZMDFQ.Skill.useWay()
+  spec.csharp:
+  - uid: ZMDFQ.Skill.useWay
+    name: useWay
+    nameWithType: Skill.useWay
+    fullName: ZMDFQ.Skill.useWay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.Skill.useWay
+    name: useWay
+    nameWithType: Skill.useWay
+    fullName: ZMDFQ.Skill.useWay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.Cards.CR_CP001_SK1.useWay*
+  commentId: Overload:ZMDFQ.Cards.CR_CP001_SK1.useWay
+  name: useWay
+  nameWithType: CR_CP001_SK1.useWay
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.useWay
+- uid: ZMDFQ.PlayerAction.UseWay
+  commentId: T:ZMDFQ.PlayerAction.UseWay
+  parent: ZMDFQ.PlayerAction
+  name: UseWay
+  nameWithType: UseWay
+  fullName: ZMDFQ.PlayerAction.UseWay
+- uid: ZMDFQ.PlayerAction
+  commentId: N:ZMDFQ.PlayerAction
+  name: ZMDFQ.PlayerAction
+  nameWithType: ZMDFQ.PlayerAction
+  fullName: ZMDFQ.PlayerAction
+- uid: ZMDFQ.Skill.DoEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.UseInfo)
+  commentId: M:ZMDFQ.Skill.DoEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.UseInfo)
+  parent: ZMDFQ.Skill
+  name: DoEffect(Game, UseInfo)
+  nameWithType: Skill.DoEffect(Game, UseInfo)
+  fullName: ZMDFQ.Skill.DoEffect(ZMDFQ.Game, ZMDFQ.PlayerAction.UseInfo)
+  spec.csharp:
+  - uid: ZMDFQ.Skill.DoEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.UseInfo)
+    name: DoEffect
+    nameWithType: Skill.DoEffect
+    fullName: ZMDFQ.Skill.DoEffect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: ZMDFQ.PlayerAction.UseInfo
+    name: UseInfo
+    nameWithType: UseInfo
+    fullName: ZMDFQ.PlayerAction.UseInfo
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.Skill.DoEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.UseInfo)
+    name: DoEffect
+    nameWithType: Skill.DoEffect
+    fullName: ZMDFQ.Skill.DoEffect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: ZMDFQ.PlayerAction.UseInfo
+    name: UseInfo
+    nameWithType: UseInfo
+    fullName: ZMDFQ.PlayerAction.UseInfo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.Cards.CR_CP001_SK1.DoEffect*
+  commentId: Overload:ZMDFQ.Cards.CR_CP001_SK1.DoEffect
+  name: DoEffect
+  nameWithType: CR_CP001_SK1.DoEffect
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.DoEffect
+- uid: ZMDFQ.Game
+  commentId: T:ZMDFQ.Game
+  parent: ZMDFQ
+  name: Game
+  nameWithType: Game
+  fullName: ZMDFQ.Game
+- uid: ZMDFQ.PlayerAction.UseInfo
+  commentId: T:ZMDFQ.PlayerAction.UseInfo
+  parent: ZMDFQ.PlayerAction
+  name: UseInfo
+  nameWithType: UseInfo
+  fullName: ZMDFQ.PlayerAction.UseInfo
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: ZMDFQ.Skill.Enable(ZMDFQ.Game)
+  commentId: M:ZMDFQ.Skill.Enable(ZMDFQ.Game)
+  parent: ZMDFQ.Skill
+  name: Enable(Game)
+  nameWithType: Skill.Enable(Game)
+  fullName: ZMDFQ.Skill.Enable(ZMDFQ.Game)
+  spec.csharp:
+  - uid: ZMDFQ.Skill.Enable(ZMDFQ.Game)
+    name: Enable
+    nameWithType: Skill.Enable
+    fullName: ZMDFQ.Skill.Enable
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.Skill.Enable(ZMDFQ.Game)
+    name: Enable
+    nameWithType: Skill.Enable
+    fullName: ZMDFQ.Skill.Enable
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.Cards.CR_CP001_SK1.Enable*
+  commentId: Overload:ZMDFQ.Cards.CR_CP001_SK1.Enable
+  name: Enable
+  nameWithType: CR_CP001_SK1.Enable
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.Enable
+- uid: ZMDFQ.Skill.Disable(ZMDFQ.Game)
+  commentId: M:ZMDFQ.Skill.Disable(ZMDFQ.Game)
+  parent: ZMDFQ.Skill
+  name: Disable(Game)
+  nameWithType: Skill.Disable(Game)
+  fullName: ZMDFQ.Skill.Disable(ZMDFQ.Game)
+  spec.csharp:
+  - uid: ZMDFQ.Skill.Disable(ZMDFQ.Game)
+    name: Disable
+    nameWithType: Skill.Disable
+    fullName: ZMDFQ.Skill.Disable
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.Skill.Disable(ZMDFQ.Game)
+    name: Disable
+    nameWithType: Skill.Disable
+    fullName: ZMDFQ.Skill.Disable
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.Cards.CR_CP001_SK1.Disable*
+  commentId: Overload:ZMDFQ.Cards.CR_CP001_SK1.Disable
+  name: Disable
+  nameWithType: CR_CP001_SK1.Disable
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.Disable
+- uid: ZMDFQ.Cards.CR_CP001_SK1.TreatTo*
+  commentId: Overload:ZMDFQ.Cards.CR_CP001_SK1.TreatTo
+  name: TreatTo
+  nameWithType: CR_CP001_SK1.TreatTo
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.TreatTo
+- uid: ZMDFQ.ITreatAs.TreatTo(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  commentId: M:ZMDFQ.ITreatAs.TreatTo(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  parent: ZMDFQ.ITreatAs
+  name: TreatTo(Game, UseOneCard)
+  nameWithType: ITreatAs.TreatTo(Game, UseOneCard)
+  fullName: ZMDFQ.ITreatAs.TreatTo(ZMDFQ.Game, ZMDFQ.PlayerAction.UseOneCard)
+  spec.csharp:
+  - uid: ZMDFQ.ITreatAs.TreatTo(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+    name: TreatTo
+    nameWithType: ITreatAs.TreatTo
+    fullName: ZMDFQ.ITreatAs.TreatTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: ZMDFQ.PlayerAction.UseOneCard
+    name: UseOneCard
+    nameWithType: UseOneCard
+    fullName: ZMDFQ.PlayerAction.UseOneCard
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.ITreatAs.TreatTo(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+    name: TreatTo
+    nameWithType: ITreatAs.TreatTo
+    fullName: ZMDFQ.ITreatAs.TreatTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: ZMDFQ.PlayerAction.UseOneCard
+    name: UseOneCard
+    nameWithType: UseOneCard
+    fullName: ZMDFQ.PlayerAction.UseOneCard
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.PlayerAction.UseOneCard
+  commentId: T:ZMDFQ.PlayerAction.UseOneCard
+  parent: ZMDFQ.PlayerAction
+  name: UseOneCard
+  nameWithType: UseOneCard
+  fullName: ZMDFQ.PlayerAction.UseOneCard
+- uid: ZMDFQ.Card
+  commentId: T:ZMDFQ.Card
+  parent: ZMDFQ
+  name: Card
+  nameWithType: Card
+  fullName: ZMDFQ.Card
+- uid: ZMDFQ.Cards.CR_CP001_SK1.CanTreat*
+  commentId: Overload:ZMDFQ.Cards.CR_CP001_SK1.CanTreat
+  name: CanTreat
+  nameWithType: CR_CP001_SK1.CanTreat
+  fullName: ZMDFQ.Cards.CR_CP001_SK1.CanTreat
+- uid: ZMDFQ.ITreatAs.CanTreat(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  commentId: M:ZMDFQ.ITreatAs.CanTreat(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  parent: ZMDFQ.ITreatAs
+  name: CanTreat(Game, UseOneCard)
+  nameWithType: ITreatAs.CanTreat(Game, UseOneCard)
+  fullName: ZMDFQ.ITreatAs.CanTreat(ZMDFQ.Game, ZMDFQ.PlayerAction.UseOneCard)
+  spec.csharp:
+  - uid: ZMDFQ.ITreatAs.CanTreat(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+    name: CanTreat
+    nameWithType: ITreatAs.CanTreat
+    fullName: ZMDFQ.ITreatAs.CanTreat
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: ZMDFQ.PlayerAction.UseOneCard
+    name: UseOneCard
+    nameWithType: UseOneCard
+    fullName: ZMDFQ.PlayerAction.UseOneCard
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.ITreatAs.CanTreat(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+    name: CanTreat
+    nameWithType: ITreatAs.CanTreat
+    fullName: ZMDFQ.ITreatAs.CanTreat
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: ZMDFQ.PlayerAction.UseOneCard
+    name: UseOneCard
+    nameWithType: UseOneCard
+    fullName: ZMDFQ.PlayerAction.UseOneCard
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

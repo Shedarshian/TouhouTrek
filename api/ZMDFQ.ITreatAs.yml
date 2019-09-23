@@ -1,0 +1,156 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZMDFQ.ITreatAs
+  commentId: T:ZMDFQ.ITreatAs
+  id: ITreatAs
+  parent: ZMDFQ
+  children:
+  - ZMDFQ.ITreatAs.CanTreat(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  - ZMDFQ.ITreatAs.TreatTo(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  langs:
+  - csharp
+  - vb
+  name: ITreatAs
+  nameWithType: ITreatAs
+  fullName: ZMDFQ.ITreatAs
+  type: Interface
+  source:
+    remote:
+      path: Assets/Scripts/Core/ITreatAs.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: ITreatAs
+    path: Assets/Scripts/Core/ITreatAs.cs
+    startLine: 11
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  summary: "\n表示可以将一张卡视为另一张\n"
+  example: []
+  syntax:
+    content: public interface ITreatAs
+    content.vb: Public Interface ITreatAs
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: ZMDFQ.ITreatAs.TreatTo(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  commentId: M:ZMDFQ.ITreatAs.TreatTo(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  id: TreatTo(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  parent: ZMDFQ.ITreatAs
+  langs:
+  - csharp
+  - vb
+  name: TreatTo(Game, UseOneCard)
+  nameWithType: ITreatAs.TreatTo(Game, UseOneCard)
+  fullName: ZMDFQ.ITreatAs.TreatTo(ZMDFQ.Game, ZMDFQ.PlayerAction.UseOneCard)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/ITreatAs.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: TreatTo
+    path: Assets/Scripts/Core/ITreatAs.cs
+    startLine: 13
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: Card TreatTo(Game game, UseOneCard useOneCard)
+    parameters:
+    - id: game
+      type: ZMDFQ.Game
+    - id: useOneCard
+      type: ZMDFQ.PlayerAction.UseOneCard
+    return:
+      type: ZMDFQ.Card
+    content.vb: Function TreatTo(game As Game, useOneCard As UseOneCard) As Card
+  overload: ZMDFQ.ITreatAs.TreatTo*
+- uid: ZMDFQ.ITreatAs.CanTreat(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  commentId: M:ZMDFQ.ITreatAs.CanTreat(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  id: CanTreat(ZMDFQ.Game,ZMDFQ.PlayerAction.UseOneCard)
+  parent: ZMDFQ.ITreatAs
+  langs:
+  - csharp
+  - vb
+  name: CanTreat(Game, UseOneCard)
+  nameWithType: ITreatAs.CanTreat(Game, UseOneCard)
+  fullName: ZMDFQ.ITreatAs.CanTreat(ZMDFQ.Game, ZMDFQ.PlayerAction.UseOneCard)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/ITreatAs.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: CanTreat
+    path: Assets/Scripts/Core/ITreatAs.cs
+    startLine: 14
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: bool CanTreat(Game game, UseOneCard useOneCard)
+    parameters:
+    - id: game
+      type: ZMDFQ.Game
+    - id: useOneCard
+      type: ZMDFQ.PlayerAction.UseOneCard
+    return:
+      type: System.Boolean
+    content.vb: Function CanTreat(game As Game, useOneCard As UseOneCard) As Boolean
+  overload: ZMDFQ.ITreatAs.CanTreat*
+references:
+- uid: ZMDFQ
+  commentId: N:ZMDFQ
+  name: ZMDFQ
+  nameWithType: ZMDFQ
+  fullName: ZMDFQ
+- uid: ZMDFQ.ITreatAs.TreatTo*
+  commentId: Overload:ZMDFQ.ITreatAs.TreatTo
+  name: TreatTo
+  nameWithType: ITreatAs.TreatTo
+  fullName: ZMDFQ.ITreatAs.TreatTo
+- uid: ZMDFQ.Game
+  commentId: T:ZMDFQ.Game
+  parent: ZMDFQ
+  name: Game
+  nameWithType: Game
+  fullName: ZMDFQ.Game
+- uid: ZMDFQ.PlayerAction.UseOneCard
+  commentId: T:ZMDFQ.PlayerAction.UseOneCard
+  parent: ZMDFQ.PlayerAction
+  name: UseOneCard
+  nameWithType: UseOneCard
+  fullName: ZMDFQ.PlayerAction.UseOneCard
+- uid: ZMDFQ.Card
+  commentId: T:ZMDFQ.Card
+  parent: ZMDFQ
+  name: Card
+  nameWithType: Card
+  fullName: ZMDFQ.Card
+- uid: ZMDFQ.PlayerAction
+  commentId: N:ZMDFQ.PlayerAction
+  name: ZMDFQ.PlayerAction
+  nameWithType: ZMDFQ.PlayerAction
+  fullName: ZMDFQ.PlayerAction
+- uid: ZMDFQ.ITreatAs.CanTreat*
+  commentId: Overload:ZMDFQ.ITreatAs.CanTreat
+  name: CanTreat
+  nameWithType: ITreatAs.CanTreat
+  fullName: ZMDFQ.ITreatAs.CanTreat
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

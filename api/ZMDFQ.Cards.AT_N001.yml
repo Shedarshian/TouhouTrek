@@ -1,0 +1,888 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZMDFQ.Cards.AT_N001
+  commentId: T:ZMDFQ.Cards.AT_N001
+  id: AT_N001
+  parent: ZMDFQ.Cards
+  children:
+  - ZMDFQ.Cards.AT_N001.doEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.SimpleResponse)
+  - ZMDFQ.Cards.AT_N001.useWay
+  langs:
+  - csharp
+  - vb
+  name: AT_N001
+  nameWithType: AT_N001
+  fullName: ZMDFQ.Cards.AT_N001
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/ActionCard/AT_N001.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: AT_N001
+    path: Assets/Scripts/Core/Card/ActionCard/AT_N001.cs
+    startLine: 12
+  assemblies:
+  - Model
+  namespace: ZMDFQ.Cards
+  summary: "\n传教：社区规模±2\n"
+  example: []
+  syntax:
+    content: 'public class AT_N001 : ActionCard<SimpleRequest, SimpleResponse>'
+    content.vb: >-
+      Public Class AT_N001
+          Inherits ActionCard(Of SimpleRequest, SimpleResponse)
+  inheritance:
+  - System.Object
+  - ZMDFQ.Card
+  - ZMDFQ.ActionCard
+  - ZMDFQ.ActionCard{ZMDFQ.PlayerAction.SimpleRequest,ZMDFQ.PlayerAction.SimpleResponse}
+  inheritedMembers:
+  - ZMDFQ.ActionCard{ZMDFQ.PlayerAction.SimpleRequest,ZMDFQ.PlayerAction.SimpleResponse}.useWay
+  - ZMDFQ.ActionCard{ZMDFQ.PlayerAction.SimpleRequest,ZMDFQ.PlayerAction.SimpleResponse}.doEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.SimpleResponse)
+  - ZMDFQ.Card.Id
+  - ZMDFQ.Card.Name
+  - ZMDFQ.Card.CardType
+  - ZMDFQ.Card.copyCard``1({T})
+  - ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: ZMDFQ.Cards.AT_N001.doEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.SimpleResponse)
+  commentId: M:ZMDFQ.Cards.AT_N001.doEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.SimpleResponse)
+  id: doEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.SimpleResponse)
+  parent: ZMDFQ.Cards.AT_N001
+  langs:
+  - csharp
+  - vb
+  name: doEffect(Game, SimpleResponse)
+  nameWithType: AT_N001.doEffect(Game, SimpleResponse)
+  fullName: ZMDFQ.Cards.AT_N001.doEffect(ZMDFQ.Game, ZMDFQ.PlayerAction.SimpleResponse)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/ActionCard/AT_N001.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: doEffect
+    path: Assets/Scripts/Core/Card/ActionCard/AT_N001.cs
+    startLine: 14
+  assemblies:
+  - Model
+  namespace: ZMDFQ.Cards
+  syntax:
+    content: protected override Task doEffect(Game game, SimpleResponse useWay)
+    parameters:
+    - id: game
+      type: ZMDFQ.Game
+    - id: useWay
+      type: ZMDFQ.PlayerAction.SimpleResponse
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Protected Overrides Function doEffect(game As Game, useWay As SimpleResponse) As Task
+  overridden: ZMDFQ.ActionCard{ZMDFQ.PlayerAction.SimpleRequest,ZMDFQ.PlayerAction.SimpleResponse}.doEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.SimpleResponse)
+  overload: ZMDFQ.Cards.AT_N001.doEffect*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: ZMDFQ.Cards.AT_N001.useWay
+  commentId: M:ZMDFQ.Cards.AT_N001.useWay
+  id: useWay
+  parent: ZMDFQ.Cards.AT_N001
+  langs:
+  - csharp
+  - vb
+  name: useWay()
+  nameWithType: AT_N001.useWay()
+  fullName: ZMDFQ.Cards.AT_N001.useWay()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/ActionCard/AT_N001.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: useWay
+    path: Assets/Scripts/Core/Card/ActionCard/AT_N001.cs
+    startLine: 42
+  assemblies:
+  - Model
+  namespace: ZMDFQ.Cards
+  syntax:
+    content: protected override SimpleRequest useWay()
+    return:
+      type: ZMDFQ.PlayerAction.SimpleRequest
+    content.vb: Protected Overrides Function useWay As SimpleRequest
+  overridden: ZMDFQ.ActionCard{ZMDFQ.PlayerAction.SimpleRequest,ZMDFQ.PlayerAction.SimpleResponse}.useWay
+  overload: ZMDFQ.Cards.AT_N001.useWay*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+references:
+- uid: ZMDFQ.Cards
+  commentId: N:ZMDFQ.Cards
+  name: ZMDFQ.Cards
+  nameWithType: ZMDFQ.Cards
+  fullName: ZMDFQ.Cards
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ZMDFQ.Card
+  commentId: T:ZMDFQ.Card
+  parent: ZMDFQ
+  name: Card
+  nameWithType: Card
+  fullName: ZMDFQ.Card
+- uid: ZMDFQ.ActionCard
+  commentId: T:ZMDFQ.ActionCard
+  parent: ZMDFQ
+  name: ActionCard
+  nameWithType: ActionCard
+  fullName: ZMDFQ.ActionCard
+- uid: ZMDFQ.ActionCard{ZMDFQ.PlayerAction.SimpleRequest,ZMDFQ.PlayerAction.SimpleResponse}
+  commentId: T:ZMDFQ.ActionCard{ZMDFQ.PlayerAction.SimpleRequest,ZMDFQ.PlayerAction.SimpleResponse}
+  parent: ZMDFQ
+  definition: ZMDFQ.ActionCard`2
+  name: ActionCard<SimpleRequest, SimpleResponse>
+  nameWithType: ActionCard<SimpleRequest, SimpleResponse>
+  fullName: ZMDFQ.ActionCard<ZMDFQ.PlayerAction.SimpleRequest, ZMDFQ.PlayerAction.SimpleResponse>
+  nameWithType.vb: ActionCard(Of SimpleRequest, SimpleResponse)
+  fullName.vb: ZMDFQ.ActionCard(Of ZMDFQ.PlayerAction.SimpleRequest, ZMDFQ.PlayerAction.SimpleResponse)
+  name.vb: ActionCard(Of SimpleRequest, SimpleResponse)
+  spec.csharp:
+  - uid: ZMDFQ.ActionCard`2
+    name: ActionCard
+    nameWithType: ActionCard
+    fullName: ZMDFQ.ActionCard
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ZMDFQ.PlayerAction.SimpleRequest
+    name: SimpleRequest
+    nameWithType: SimpleRequest
+    fullName: ZMDFQ.PlayerAction.SimpleRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: ZMDFQ.PlayerAction.SimpleResponse
+    name: SimpleResponse
+    nameWithType: SimpleResponse
+    fullName: ZMDFQ.PlayerAction.SimpleResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: ZMDFQ.ActionCard`2
+    name: ActionCard
+    nameWithType: ActionCard
+    fullName: ZMDFQ.ActionCard
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ZMDFQ.PlayerAction.SimpleRequest
+    name: SimpleRequest
+    nameWithType: SimpleRequest
+    fullName: ZMDFQ.PlayerAction.SimpleRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: ZMDFQ.PlayerAction.SimpleResponse
+    name: SimpleResponse
+    nameWithType: SimpleResponse
+    fullName: ZMDFQ.PlayerAction.SimpleResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.ActionCard{ZMDFQ.PlayerAction.SimpleRequest,ZMDFQ.PlayerAction.SimpleResponse}.useWay
+  commentId: M:ZMDFQ.ActionCard{ZMDFQ.PlayerAction.SimpleRequest,ZMDFQ.PlayerAction.SimpleResponse}.useWay
+  parent: ZMDFQ.ActionCard{ZMDFQ.PlayerAction.SimpleRequest,ZMDFQ.PlayerAction.SimpleResponse}
+  definition: ZMDFQ.ActionCard`2.useWay
+  name: useWay()
+  nameWithType: ActionCard<SimpleRequest, SimpleResponse>.useWay()
+  fullName: ZMDFQ.ActionCard<ZMDFQ.PlayerAction.SimpleRequest, ZMDFQ.PlayerAction.SimpleResponse>.useWay()
+  nameWithType.vb: ActionCard(Of SimpleRequest, SimpleResponse).useWay()
+  fullName.vb: ZMDFQ.ActionCard(Of ZMDFQ.PlayerAction.SimpleRequest, ZMDFQ.PlayerAction.SimpleResponse).useWay()
+  spec.csharp:
+  - uid: ZMDFQ.ActionCard`2.useWay
+    name: useWay
+    nameWithType: ActionCard<SimpleRequest, SimpleResponse>.useWay
+    fullName: ZMDFQ.ActionCard<ZMDFQ.PlayerAction.SimpleRequest, ZMDFQ.PlayerAction.SimpleResponse>.useWay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.ActionCard`2.useWay
+    name: useWay
+    nameWithType: ActionCard(Of SimpleRequest, SimpleResponse).useWay
+    fullName: ZMDFQ.ActionCard(Of ZMDFQ.PlayerAction.SimpleRequest, ZMDFQ.PlayerAction.SimpleResponse).useWay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.ActionCard{ZMDFQ.PlayerAction.SimpleRequest,ZMDFQ.PlayerAction.SimpleResponse}.doEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.SimpleResponse)
+  commentId: M:ZMDFQ.ActionCard{ZMDFQ.PlayerAction.SimpleRequest,ZMDFQ.PlayerAction.SimpleResponse}.doEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.SimpleResponse)
+  parent: ZMDFQ.ActionCard{ZMDFQ.PlayerAction.SimpleRequest,ZMDFQ.PlayerAction.SimpleResponse}
+  definition: ZMDFQ.ActionCard`2.doEffect(ZMDFQ.Game,`1)
+  name: doEffect(Game, SimpleResponse)
+  nameWithType: ActionCard<SimpleRequest, SimpleResponse>.doEffect(Game, SimpleResponse)
+  fullName: ZMDFQ.ActionCard<ZMDFQ.PlayerAction.SimpleRequest, ZMDFQ.PlayerAction.SimpleResponse>.doEffect(ZMDFQ.Game, ZMDFQ.PlayerAction.SimpleResponse)
+  nameWithType.vb: ActionCard(Of SimpleRequest, SimpleResponse).doEffect(Game, SimpleResponse)
+  fullName.vb: ZMDFQ.ActionCard(Of ZMDFQ.PlayerAction.SimpleRequest, ZMDFQ.PlayerAction.SimpleResponse).doEffect(ZMDFQ.Game, ZMDFQ.PlayerAction.SimpleResponse)
+  spec.csharp:
+  - uid: ZMDFQ.ActionCard`2.doEffect(ZMDFQ.Game,`1)
+    name: doEffect
+    nameWithType: ActionCard<SimpleRequest, SimpleResponse>.doEffect
+    fullName: ZMDFQ.ActionCard<ZMDFQ.PlayerAction.SimpleRequest, ZMDFQ.PlayerAction.SimpleResponse>.doEffect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: ZMDFQ.PlayerAction.SimpleResponse
+    name: SimpleResponse
+    nameWithType: SimpleResponse
+    fullName: ZMDFQ.PlayerAction.SimpleResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.ActionCard`2.doEffect(ZMDFQ.Game,`1)
+    name: doEffect
+    nameWithType: ActionCard(Of SimpleRequest, SimpleResponse).doEffect
+    fullName: ZMDFQ.ActionCard(Of ZMDFQ.PlayerAction.SimpleRequest, ZMDFQ.PlayerAction.SimpleResponse).doEffect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: ZMDFQ.PlayerAction.SimpleResponse
+    name: SimpleResponse
+    nameWithType: SimpleResponse
+    fullName: ZMDFQ.PlayerAction.SimpleResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.Card.Id
+  commentId: F:ZMDFQ.Card.Id
+  parent: ZMDFQ.Card
+  name: Id
+  nameWithType: Card.Id
+  fullName: ZMDFQ.Card.Id
+- uid: ZMDFQ.Card.Name
+  commentId: F:ZMDFQ.Card.Name
+  parent: ZMDFQ.Card
+  name: Name
+  nameWithType: Card.Name
+  fullName: ZMDFQ.Card.Name
+- uid: ZMDFQ.Card.CardType
+  commentId: F:ZMDFQ.Card.CardType
+  parent: ZMDFQ.Card
+  name: CardType
+  nameWithType: Card.CardType
+  fullName: ZMDFQ.Card.CardType
+- uid: ZMDFQ.Card.copyCard``1({T})
+  commentId: M:ZMDFQ.Card.copyCard``1(``0)
+  parent: ZMDFQ.Card
+  definition: ZMDFQ.Card.copyCard``1(``0)
+  name: copyCard<T>(T)
+  nameWithType: Card.copyCard<T>(T)
+  fullName: ZMDFQ.Card.copyCard<T>(T)
+  nameWithType.vb: Card.copyCard(Of T)(T)
+  fullName.vb: ZMDFQ.Card.copyCard(Of T)(T)
+  name.vb: copyCard(Of T)(T)
+  spec.csharp:
+  - uid: ZMDFQ.Card.copyCard``1(``0)
+    name: copyCard<T>
+    nameWithType: Card.copyCard<T>
+    fullName: ZMDFQ.Card.copyCard<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.Card.copyCard``1(``0)
+    name: copyCard(Of T)
+    nameWithType: Card.copyCard(Of T)
+    fullName: ZMDFQ.Card.copyCard(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+  commentId: M:ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+  parent: ZMDFQ.Card
+  name: copyPropTo(Card)
+  nameWithType: Card.copyPropTo(Card)
+  fullName: ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+  spec.csharp:
+  - uid: ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+    name: copyPropTo
+    nameWithType: Card.copyPropTo
+    fullName: ZMDFQ.Card.copyPropTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Card
+    name: Card
+    nameWithType: Card
+    fullName: ZMDFQ.Card
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+    name: copyPropTo
+    nameWithType: Card.copyPropTo
+    fullName: ZMDFQ.Card.copyPropTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Card
+    name: Card
+    nameWithType: Card
+    fullName: ZMDFQ.Card
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ZMDFQ
+  commentId: N:ZMDFQ
+  name: ZMDFQ
+  nameWithType: ZMDFQ
+  fullName: ZMDFQ
+- uid: ZMDFQ.ActionCard`2
+  commentId: T:ZMDFQ.ActionCard`2
+  name: ActionCard<T, K>
+  nameWithType: ActionCard<T, K>
+  fullName: ZMDFQ.ActionCard<T, K>
+  nameWithType.vb: ActionCard(Of T, K)
+  fullName.vb: ZMDFQ.ActionCard(Of T, K)
+  name.vb: ActionCard(Of T, K)
+  spec.csharp:
+  - uid: ZMDFQ.ActionCard`2
+    name: ActionCard
+    nameWithType: ActionCard
+    fullName: ZMDFQ.ActionCard
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: ZMDFQ.ActionCard`2
+    name: ActionCard
+    nameWithType: ActionCard
+    fullName: ZMDFQ.ActionCard
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.ActionCard`2.useWay
+  commentId: M:ZMDFQ.ActionCard`2.useWay
+  name: useWay()
+  nameWithType: ActionCard<T, K>.useWay()
+  fullName: ZMDFQ.ActionCard<T, K>.useWay()
+  nameWithType.vb: ActionCard(Of T, K).useWay()
+  fullName.vb: ZMDFQ.ActionCard(Of T, K).useWay()
+  spec.csharp:
+  - uid: ZMDFQ.ActionCard`2.useWay
+    name: useWay
+    nameWithType: ActionCard<T, K>.useWay
+    fullName: ZMDFQ.ActionCard<T, K>.useWay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.ActionCard`2.useWay
+    name: useWay
+    nameWithType: ActionCard(Of T, K).useWay
+    fullName: ZMDFQ.ActionCard(Of T, K).useWay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.ActionCard`2.doEffect(ZMDFQ.Game,`1)
+  commentId: M:ZMDFQ.ActionCard`2.doEffect(ZMDFQ.Game,`1)
+  name: doEffect(Game, K)
+  nameWithType: ActionCard<T, K>.doEffect(Game, K)
+  fullName: ZMDFQ.ActionCard<T, K>.doEffect(ZMDFQ.Game, K)
+  nameWithType.vb: ActionCard(Of T, K).doEffect(Game, K)
+  fullName.vb: ZMDFQ.ActionCard(Of T, K).doEffect(ZMDFQ.Game, K)
+  spec.csharp:
+  - uid: ZMDFQ.ActionCard`2.doEffect(ZMDFQ.Game,`1)
+    name: doEffect
+    nameWithType: ActionCard<T, K>.doEffect
+    fullName: ZMDFQ.ActionCard<T, K>.doEffect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.ActionCard`2.doEffect(ZMDFQ.Game,`1)
+    name: doEffect
+    nameWithType: ActionCard(Of T, K).doEffect
+    fullName: ZMDFQ.ActionCard(Of T, K).doEffect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Game
+    name: Game
+    nameWithType: Game
+    fullName: ZMDFQ.Game
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.Card.copyCard``1(``0)
+  commentId: M:ZMDFQ.Card.copyCard``1(``0)
+  name: copyCard<T>(T)
+  nameWithType: Card.copyCard<T>(T)
+  fullName: ZMDFQ.Card.copyCard<T>(T)
+  nameWithType.vb: Card.copyCard(Of T)(T)
+  fullName.vb: ZMDFQ.Card.copyCard(Of T)(T)
+  name.vb: copyCard(Of T)(T)
+  spec.csharp:
+  - uid: ZMDFQ.Card.copyCard``1(``0)
+    name: copyCard<T>
+    nameWithType: Card.copyCard<T>
+    fullName: ZMDFQ.Card.copyCard<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.Card.copyCard``1(``0)
+    name: copyCard(Of T)
+    nameWithType: Card.copyCard(Of T)
+    fullName: ZMDFQ.Card.copyCard(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.Cards.AT_N001.doEffect*
+  commentId: Overload:ZMDFQ.Cards.AT_N001.doEffect
+  name: doEffect
+  nameWithType: AT_N001.doEffect
+  fullName: ZMDFQ.Cards.AT_N001.doEffect
+- uid: ZMDFQ.Game
+  commentId: T:ZMDFQ.Game
+  parent: ZMDFQ
+  name: Game
+  nameWithType: Game
+  fullName: ZMDFQ.Game
+- uid: ZMDFQ.PlayerAction.SimpleResponse
+  commentId: T:ZMDFQ.PlayerAction.SimpleResponse
+  parent: ZMDFQ.PlayerAction
+  name: SimpleResponse
+  nameWithType: SimpleResponse
+  fullName: ZMDFQ.PlayerAction.SimpleResponse
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: ZMDFQ.PlayerAction
+  commentId: N:ZMDFQ.PlayerAction
+  name: ZMDFQ.PlayerAction
+  nameWithType: ZMDFQ.PlayerAction
+  fullName: ZMDFQ.PlayerAction
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: ZMDFQ.Cards.AT_N001.useWay*
+  commentId: Overload:ZMDFQ.Cards.AT_N001.useWay
+  name: useWay
+  nameWithType: AT_N001.useWay
+  fullName: ZMDFQ.Cards.AT_N001.useWay
+- uid: ZMDFQ.PlayerAction.SimpleRequest
+  commentId: T:ZMDFQ.PlayerAction.SimpleRequest
+  parent: ZMDFQ.PlayerAction
+  name: SimpleRequest
+  nameWithType: SimpleRequest
+  fullName: ZMDFQ.PlayerAction.SimpleRequest

@@ -1,0 +1,615 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZMDFQ.ThemeCard
+  commentId: T:ZMDFQ.ThemeCard
+  id: ThemeCard
+  parent: ZMDFQ
+  children:
+  - ZMDFQ.ThemeCard.Disable(ZMDFQ.Game)
+  - ZMDFQ.ThemeCard.Enable(ZMDFQ.Game)
+  - ZMDFQ.ThemeCard.Enabled
+  langs:
+  - csharp
+  - vb
+  name: ThemeCard
+  nameWithType: ThemeCard
+  fullName: ZMDFQ.ThemeCard
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/ThemeCard.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: ThemeCard
+    path: Assets/Scripts/Core/Card/ThemeCard.cs
+    startLine: 8
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: 'public abstract class ThemeCard : Card'
+    content.vb: >-
+      Public MustInherit Class ThemeCard
+          Inherits Card
+  inheritance:
+  - System.Object
+  - ZMDFQ.Card
+  derivedClasses:
+  - ZMDFQ.Cards.G_001
+  inheritedMembers:
+  - ZMDFQ.Card.Id
+  - ZMDFQ.Card.Name
+  - ZMDFQ.Card.CardType
+  - ZMDFQ.Card.copyCard``1({T})
+  - ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: ZMDFQ.ThemeCard.Enabled
+  commentId: F:ZMDFQ.ThemeCard.Enabled
+  id: Enabled
+  parent: ZMDFQ.ThemeCard
+  langs:
+  - csharp
+  - vb
+  name: Enabled
+  nameWithType: ThemeCard.Enabled
+  fullName: ZMDFQ.ThemeCard.Enabled
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/ThemeCard.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Enabled
+    path: Assets/Scripts/Core/Card/ThemeCard.cs
+    startLine: 10
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public bool Enabled
+    return:
+      type: System.Boolean
+    content.vb: Public Enabled As Boolean
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ZMDFQ.ThemeCard.Enable(ZMDFQ.Game)
+  commentId: M:ZMDFQ.ThemeCard.Enable(ZMDFQ.Game)
+  id: Enable(ZMDFQ.Game)
+  parent: ZMDFQ.ThemeCard
+  langs:
+  - csharp
+  - vb
+  name: Enable(Game)
+  nameWithType: ThemeCard.Enable(Game)
+  fullName: ZMDFQ.ThemeCard.Enable(ZMDFQ.Game)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/ThemeCard.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Enable
+    path: Assets/Scripts/Core/Card/ThemeCard.cs
+    startLine: 11
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public abstract void Enable(Game game)
+    parameters:
+    - id: game
+      type: ZMDFQ.Game
+    content.vb: Public MustOverride Sub Enable(game As Game)
+  overload: ZMDFQ.ThemeCard.Enable*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: ZMDFQ.ThemeCard.Disable(ZMDFQ.Game)
+  commentId: M:ZMDFQ.ThemeCard.Disable(ZMDFQ.Game)
+  id: Disable(ZMDFQ.Game)
+  parent: ZMDFQ.ThemeCard
+  langs:
+  - csharp
+  - vb
+  name: Disable(Game)
+  nameWithType: ThemeCard.Disable(Game)
+  fullName: ZMDFQ.ThemeCard.Disable(ZMDFQ.Game)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Core/Card/ThemeCard.cs
+      branch: develop
+      repo: https://github.com/a395338563/ZMDFQ.git
+    id: Disable
+    path: Assets/Scripts/Core/Card/ThemeCard.cs
+    startLine: 12
+  assemblies:
+  - Model
+  namespace: ZMDFQ
+  syntax:
+    content: public abstract void Disable(Game game)
+    parameters:
+    - id: game
+      type: ZMDFQ.Game
+    content.vb: Public MustOverride Sub Disable(game As Game)
+  overload: ZMDFQ.ThemeCard.Disable*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+references:
+- uid: ZMDFQ
+  commentId: N:ZMDFQ
+  name: ZMDFQ
+  nameWithType: ZMDFQ
+  fullName: ZMDFQ
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ZMDFQ.Card
+  commentId: T:ZMDFQ.Card
+  parent: ZMDFQ
+  name: Card
+  nameWithType: Card
+  fullName: ZMDFQ.Card
+- uid: ZMDFQ.Card.Id
+  commentId: F:ZMDFQ.Card.Id
+  parent: ZMDFQ.Card
+  name: Id
+  nameWithType: Card.Id
+  fullName: ZMDFQ.Card.Id
+- uid: ZMDFQ.Card.Name
+  commentId: F:ZMDFQ.Card.Name
+  parent: ZMDFQ.Card
+  name: Name
+  nameWithType: Card.Name
+  fullName: ZMDFQ.Card.Name
+- uid: ZMDFQ.Card.CardType
+  commentId: F:ZMDFQ.Card.CardType
+  parent: ZMDFQ.Card
+  name: CardType
+  nameWithType: Card.CardType
+  fullName: ZMDFQ.Card.CardType
+- uid: ZMDFQ.Card.copyCard``1({T})
+  commentId: M:ZMDFQ.Card.copyCard``1(``0)
+  parent: ZMDFQ.Card
+  definition: ZMDFQ.Card.copyCard``1(``0)
+  name: copyCard<T>(T)
+  nameWithType: Card.copyCard<T>(T)
+  fullName: ZMDFQ.Card.copyCard<T>(T)
+  nameWithType.vb: Card.copyCard(Of T)(T)
+  fullName.vb: ZMDFQ.Card.copyCard(Of T)(T)
+  name.vb: copyCard(Of T)(T)
+  spec.csharp:
+  - uid: ZMDFQ.Card.copyCard``1(``0)
+    name: copyCard<T>
+    nameWithType: Card.copyCard<T>
+    fullName: ZMDFQ.Card.copyCard<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.Card.copyCard``1(``0)
+    name: copyCard(Of T)
+    nameWithType: Card.copyCard(Of T)
+    fullName: ZMDFQ.Card.copyCard(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+  commentId: M:ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+  parent: ZMDFQ.Card
+  name: copyPropTo(Card)
+  nameWithType: Card.copyPropTo(Card)
+  fullName: ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+  spec.csharp:
+  - uid: ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+    name: copyPropTo
+    nameWithType: Card.copyPropTo
+    fullName: ZMDFQ.Card.copyPropTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Card
+    name: Card
+    nameWithType: Card
+    fullName: ZMDFQ.Card
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.Card.copyPropTo(ZMDFQ.Card)
+    name: copyPropTo
+    nameWithType: Card.copyPropTo
+    fullName: ZMDFQ.Card.copyPropTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: ZMDFQ.Card
+    name: Card
+    nameWithType: Card
+    fullName: ZMDFQ.Card
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ZMDFQ.Card.copyCard``1(``0)
+  commentId: M:ZMDFQ.Card.copyCard``1(``0)
+  name: copyCard<T>(T)
+  nameWithType: Card.copyCard<T>(T)
+  fullName: ZMDFQ.Card.copyCard<T>(T)
+  nameWithType.vb: Card.copyCard(Of T)(T)
+  fullName.vb: ZMDFQ.Card.copyCard(Of T)(T)
+  name.vb: copyCard(Of T)(T)
+  spec.csharp:
+  - uid: ZMDFQ.Card.copyCard``1(``0)
+    name: copyCard<T>
+    nameWithType: Card.copyCard<T>
+    fullName: ZMDFQ.Card.copyCard<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ZMDFQ.Card.copyCard``1(``0)
+    name: copyCard(Of T)
+    nameWithType: Card.copyCard(Of T)
+    fullName: ZMDFQ.Card.copyCard(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: ZMDFQ.ThemeCard.Enable*
+  commentId: Overload:ZMDFQ.ThemeCard.Enable
+  name: Enable
+  nameWithType: ThemeCard.Enable
+  fullName: ZMDFQ.ThemeCard.Enable
+- uid: ZMDFQ.Game
+  commentId: T:ZMDFQ.Game
+  parent: ZMDFQ
+  name: Game
+  nameWithType: Game
+  fullName: ZMDFQ.Game
+- uid: ZMDFQ.ThemeCard.Disable*
+  commentId: Overload:ZMDFQ.ThemeCard.Disable
+  name: Disable
+  nameWithType: ThemeCard.Disable
+  fullName: ZMDFQ.ThemeCard.Disable
