@@ -181,7 +181,9 @@ namespace ZMDFQ
                     foreach (var response in chooseHero)
                     {
                         var chooseHeroResponse = response.Result as ChooseHeroResponse;
-                        GetPlayer(chooseHeroResponse.PlayerId).Hero = characterDeck.Find(c => c.Id == chooseHeroResponse.HeroId);
+                        Player player = GetPlayer(chooseHeroResponse.PlayerId);
+                        player.Hero = characterDeck.Find(c => c.Id == chooseHeroResponse.HeroId);
+                        player.Hero.Init(player);
                     }
                     Log.Debug($"所有玩家选择英雄完毕！");
                 }
