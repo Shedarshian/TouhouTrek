@@ -24,7 +24,6 @@ namespace ZMDFQ.Cards
     {
         Effects.TurnLimit turnLimit = new Effects.TurnLimit() { MaxUseTime = 2 };
 
-
         public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
         {
             nextRequest = null;
@@ -32,21 +31,20 @@ namespace ZMDFQ.Cards
             {
                 return false;
             }
-            return new AT_N001().CanUse(game, nowRequest, useInfo, out nextRequest);
+            if (useInfo.Source.Count < 1)
+            {
+                nextRequest = new CardChooseRequest() { };
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
-
-        //protected override UseRequest useWay()
-        //{
-        //    if (turnLimit.CanUse())
-        //        return SimpleRequest.Instance;
-        //    else
-        //        return null;
-        //}
 
         public override Task DoEffect(Game game, FreeUse useInfo)
         {
             turnLimit.Use();
-            //SimpleResponse simpleResponse = useInfo as SimpleResponse;
             AT_N001 card = new AT_N001();
             return card.DoEffect(game, useInfo);
         }

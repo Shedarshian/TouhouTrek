@@ -26,6 +26,8 @@ namespace ZMDFQ
         DropActionCard,
 
         OnGameSizeChange,
+        OnPlayrSizeChange,
+
         AfterGameSizeChange,
     }
 }

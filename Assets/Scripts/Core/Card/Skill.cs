@@ -9,6 +9,11 @@ namespace ZMDFQ
     using PlayerAction;
     public abstract class Skill
     {
+        /// <summary>
+        /// 持有此技能的英雄
+        /// </summary>
+        public HeroCard Hero;
+
         public string Name;
         /// <summary>
         /// 未翻开时 是否询问响应技能
@@ -43,5 +48,22 @@ namespace ZMDFQ
         /// <param name="request"></param>
         /// <returns></returns>
         public abstract Task DoEffect(Game game, FreeUse useInfo);
+    }
+
+    /// <summary>
+    /// 被动技能，无法使用，也没有主动效果
+    /// </summary>
+    public abstract class PassiveSkill:Skill
+    {
+        public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        {
+            nextRequest = null;
+            return false;
+        }
+
+        public override Task DoEffect(Game game, FreeUse useInfo)
+        {
+            return Task.CompletedTask;
+        }
     }
 }

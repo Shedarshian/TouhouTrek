@@ -8,6 +8,15 @@ namespace ZMDFQ
 {
     public abstract class HeroCard : Card
     {
+        Player Player;
+        public void Init(Player player)
+        {
+            this.Player = player;
+            foreach (var skill in Skills)
+            {
+                skill.Hero = this;
+            }
+        }
         /// <summary>
         /// 阵营
         /// </summary>

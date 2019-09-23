@@ -150,15 +150,11 @@ namespace ZMDFQ
             await game.EventSystem.Call(EventEnum.DropActionCard, this, data);
         }
 
-
-        internal void UseSkill(Game game,FreeUse use)
+        internal async Task ChangeSize(Game game, int Size,object source)
         {
-
-        }
-
-        internal void ChangeSize(int Size)
-        {
-
+            var data = new EventData<int>() { data = Size };
+            await game.EventSystem.Call(EventEnum.OnPlayrSizeChange, game, this, data);
+            this.Size += data.data;
         }
 
         internal int HandMax()
