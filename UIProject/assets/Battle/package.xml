@@ -14,6 +14,17 @@
     <image id="gs0sb" name="设计图.png" path="/"/>
     <component id="gs0sc" name="Main2.xml" path="/" exported="true"/>
     <component id="gs0sd" name="PlayerSimpleInfo.xml" path="/"/>
+    <component id="dzy4e" name="MainSize.xml" path="/"/>
+    <component id="dzy4f" name="SkillBtn.xml" path="/"/>
+    <component id="dzy4g" name="NormalBtn.xml" path="/"/>
+    <component id="dzy4h" name="Card.xml" path="/"/>
+    <component id="dzy4j" name="GameInfo.xml" path="/"/>
+    <component id="dzy4k" name="HandCards.xml" path="/"/>
+    <component id="dzy4l" name="ThemeCard.xml" path="/"/>
+    <component id="dzy4m" name="TimeBar.xml" path="/"/>
+    <component id="dzy4n" name="SmallHeroCard.xml" path="/"/>
+    <component id="dzy4o" name="Group.xml" path="/"/>
+    <component id="dzy4p" name="SmallBuff.xml" path="/"/>
   </resources>
   <publish name="Battle"/>
 </packageDescription>

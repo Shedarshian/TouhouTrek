@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="302,211">
+  <displayList>
+    <graph id="n71_dzy4" name="n71" xy="0,0" size="302,211" type="rect" fillColor="#ff666666"/>
+    <graph id="n72_dzy4" name="n72" xy="12,11" size="280,188" type="rect"/>
+    <text id="n73_dzy4" name="n73" xy="23,18" size="256,30" fontSize="23" align="center" autoSize="none" text="东方地灵殿"/>
+  </displayList>
+</component>
