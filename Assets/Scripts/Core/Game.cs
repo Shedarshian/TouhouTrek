@@ -310,6 +310,10 @@ namespace ZMDFQ
                         else if (player.Hero.camp == Camp.neutral)
                         {
                             //中立的分数结算额外算
+                            foreach (IPropertyModifier<int> modifier in player.Hero.Skills.Where(s => s is IPropertyModifier<int> m && m.propName == nameof(Player.point)))
+                            {
+                                modifier.modify(ref basePoint);
+                            }
                         }
                         else
                             continue;//不结算分的玩家算失败
@@ -362,11 +366,9 @@ namespace ZMDFQ
             {
                 ChooseSomeCardResponse chooseSomeCardResponse = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { PlayerId = player.Id, Count = player.ActionCards.Count - max });
                 await player.DropActionCard(this, chooseSomeCardResponse.Cards, true);
+                await EventSystem.Call(EventEnum.afterDiscardPhase, this, player);
             }
-
             await EventSystem.Call(EventEnum.TurnEnd, this);
-
-
         }
 
         internal void NextThemeCard()
