@@ -163,8 +163,15 @@ namespace ZMDFQ
         {
             Size = options != null ? options.initCommunitySize : 0;//初始化社群规模
             //Self = Players[1];
-            //TODO:随机决定玩家行动顺序
-            ActivePlayer = Players[0];
+            if (options == null || options.firstPlayer == 0)
+                ActivePlayer = Players[0];
+            else
+            {
+                int firstPlayerIndex = options.firstPlayer < 0 ? ram.Next(0, Players.Count) : options.firstPlayer;
+                var ps = Players.GetRange(0, firstPlayerIndex);
+                Players.RemoveRange(0, firstPlayerIndex);
+                Players.AddRange(ps);
+            }
             if (options == null || options.chooseCharacter)//选择角色
             {
                 if (options == null || !options.doubleCharacter)//单角色三选一
@@ -303,6 +310,10 @@ namespace ZMDFQ
                         else if (player.Hero.camp == Camp.neutral)
                         {
                             //中立的分数结算额外算
+                            foreach (IPropertyModifier<int> modifier in player.Hero.Skills.Where(s => s is IPropertyModifier<int> m && m.propName == nameof(Player.point)))
+                            {
+                                modifier.modify(ref basePoint);
+                            }
                         }
                         else
                             continue;//不结算分的玩家算失败
@@ -355,11 +366,9 @@ namespace ZMDFQ
             {
                 ChooseSomeCardResponse chooseSomeCardResponse = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { PlayerId = player.Id, Count = player.ActionCards.Count - max });
                 await player.DropActionCard(this, chooseSomeCardResponse.Cards, true);
+                await EventSystem.Call(EventEnum.afterDiscardPhase, this, player);
             }
-
             await EventSystem.Call(EventEnum.TurnEnd, this);
-
-
         }
 
         internal void NextThemeCard()

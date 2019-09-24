@@ -140,7 +140,7 @@ namespace Tests
             game.Answer(new ChooseHeroResponse() { PlayerId = 1, HeroId = 4 });
             game.Answer(new FreeUse() { PlayerId = 0, CardId = 21, Source = new List<int>() { 21 } });
             game.Answer(new FreeUse() { PlayerId = 0, CardId = 22, Source = new List<int>() { 22 } });
-            game.Answer(new EndFreeUseResponse() { PlayerId = 0 });//TODO:回合结束的设定也许需要修改，按道理来讲应该先进入事件结算。
+            game.Answer(new EndFreeUseResponse() { PlayerId = 0 });
             game.Answer(new ChooseDirectionResponse() { PlayerId = 0, CardId = 61, IfForward = true });
 
             Assert.AreEqual(4, game.Players[0].Size);
@@ -173,7 +173,7 @@ namespace Tests
             game.Answer(new ChooseHeroResponse() { PlayerId = 1, HeroId = 4 });
             game.Answer(new FreeUse() { PlayerId = 0, CardId = 21, Source = new List<int>() { 21 } });
             game.Answer(new FreeUse() { PlayerId = 0, CardId = 22, Source = new List<int>() { 22 } });
-            game.Answer(new EndFreeUseResponse() { PlayerId = 0 });//TODO:回合结束的设定也许需要修改，按道理来讲应该先进入事件结算。
+            game.Answer(new EndFreeUseResponse() { PlayerId = 0 });
             game.Answer(new ChooseDirectionResponse() { PlayerId = 0, CardId = 61, IfForward = false });
 
             Assert.AreEqual(0, game.Players[0].Size);
@@ -204,7 +204,7 @@ namespace Tests
             game.StartGame();
             game.Answer(new ChooseHeroResponse() { PlayerId = 0, HeroId = 1 });
             game.Answer(new ChooseHeroResponse() { PlayerId = 1, HeroId = 4 });
-            game.Answer(new EndFreeUseResponse() { PlayerId = 0 });//TODO:回合结束的设定也许需要修改，按道理来讲应该先进入事件结算。
+            game.Answer(new EndFreeUseResponse() { PlayerId = 0 });
             game.Answer(new ChooseDirectionResponse() { PlayerId = 0, CardId = 61, IfSet = true });
             game.Answer(new ChooseSomeCardResponse() { PlayerId = 0, Cards = new List<int>() { 21, 22 } });
 
@@ -254,7 +254,7 @@ namespace Tests
             game.Answer(new ChooseHeroResponse() { PlayerId = 0, HeroId = 1 });
             game.Answer(new ChooseHeroResponse() { PlayerId = 1, HeroId = 4 });
             game.Answer(new FreeUse() { PlayerId = 0, CardId = 21, Source = new List<int>() { 21 } });
-            game.Answer(new EndFreeUseResponse() { PlayerId = 0 });//TODO:回合结束的设定也许需要修改，按道理来讲应该先进入事件结算。
+            game.Answer(new EndFreeUseResponse() { PlayerId = 0 });
             game.Answer(new ChooseDirectionResponse() { PlayerId = 0, CardId = 61, IfForward = true });
 
             Assert.AreEqual(2, game.Players[0].Size);
@@ -300,7 +300,7 @@ namespace Tests
             game.Answer(new ChooseHeroResponse() { PlayerId = 0, HeroId = 1 });
             game.Answer(new ChooseHeroResponse() { PlayerId = 1, HeroId = 4 });
             game.Answer(new FreeUse() { PlayerId = 0, CardId = 21, Source = new List<int>() { 21 } });
-            game.Answer(new EndFreeUseResponse() { PlayerId = 0 });//TODO:回合结束的设定也许需要修改，按道理来讲应该先进入事件结算。
+            game.Answer(new EndFreeUseResponse() { PlayerId = 0 });
             game.Answer(new ChooseDirectionResponse() { PlayerId = 0, CardId = 61, IfForward = true });
 
             game.Answer(new EndFreeUseResponse() { PlayerId = 1 });

@@ -57,7 +57,7 @@ namespace ZMDFQ.Cards
         {
             Player player = param[1] as Player;
             var sizeChange = param[2] as EventData<int>;
-            if (player.Hero == Hero&& sizeChange.data>0)
+            if (player.Hero == Hero && sizeChange.data > 0)
             {
                 sizeChange.data++;
             }

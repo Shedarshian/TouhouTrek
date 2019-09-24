@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace ZMDFQ
 {
@@ -162,7 +164,7 @@ namespace ZMDFQ
             await game.EventSystem.Call(EventEnum.DropActionCard, this, data);
         }
 
-        internal async Task ChangeSize(Game game, int Size,object source)
+        internal async Task ChangeSize(Game game, int Size, object source)
         {
             var data = new EventData<int>() { data = Size };
             await game.EventSystem.Call(EventEnum.OnPlayrSizeChange, game, this, data);
@@ -171,12 +173,15 @@ namespace ZMDFQ
 
         internal int HandMax()
         {
-            int result = 1;
-            if (Size > 1 && Size < 4)
+            int result = Size;
+            //属性修正
+            foreach (IPropertyModifier<int> modifier in Hero.Skills.Where(s => s is IPropertyModifier<int> m && m.propName == nameof(HandMax)))
             {
-                result = Size;
+                modifier.modify(ref result);
             }
-            else if (Size >= 4)
+            if (result < 1)
+                result = 1;
+            if (result > 4)
                 result = 4;
             return result;
         }

@@ -8,10 +8,14 @@ namespace ZMDFQ
 {
     public abstract class HeroCard : Card
     {
-        Player Player;
+        public Player Player { get; private set; }
+        /// <summary>
+        /// 角色牌是否正面朝上？
+        /// </summary>
+        public bool isFaceup { get; set; } = false;
         public void Init(Player player)
         {
-            this.Player = player;
+            Player = player;
             foreach (var skill in Skills)
             {
                 skill.Hero = this;
