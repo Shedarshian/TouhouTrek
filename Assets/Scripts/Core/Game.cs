@@ -163,8 +163,15 @@ namespace ZMDFQ
         {
             Size = options != null ? options.initCommunitySize : 0;//初始化社群规模
             //Self = Players[1];
-            //TODO:随机决定玩家行动顺序
-            ActivePlayer = Players[0];
+            if (options == null || options.firstPlayer == 0)
+                ActivePlayer = Players[0];
+            else
+            {
+                int firstPlayerIndex = options.firstPlayer < 0 ? ram.Next(0, Players.Count) : options.firstPlayer;
+                var ps = Players.GetRange(0, firstPlayerIndex);
+                Players.RemoveRange(0, firstPlayerIndex);
+                Players.AddRange(ps);
+            }
             if (options == null || options.chooseCharacter)//选择角色
             {
                 if (options == null || !options.doubleCharacter)//单角色三选一
