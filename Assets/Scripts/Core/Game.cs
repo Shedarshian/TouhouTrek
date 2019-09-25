@@ -190,7 +190,7 @@ namespace ZMDFQ
                         var chooseHeroResponse = response.Result as ChooseHeroResponse;
                         Player player = GetPlayer(chooseHeroResponse.PlayerId);
                         player.Hero = characterDeck.Find(c => c.Id == chooseHeroResponse.HeroId);
-                        player.Hero.Init(player);
+                        player.Hero.Init(this, player);
                     }
                     Log.Debug($"所有玩家选择英雄完毕！");
                 }
@@ -299,7 +299,7 @@ namespace ZMDFQ
                     foreach (Player player in Players)
                     {
                         int basePoint = 0;
-                        bool win = true;
+                        //bool win = true;
                         if (player.Hero.camp == Camp.commuMajor && player.Size >= 0 && Size >= 0)
                             basePoint = Size;
                         else if (player.Hero.camp == Camp.indivMajor && player.Size >= 0 && Size >= 0)
@@ -308,21 +308,13 @@ namespace ZMDFQ
                             basePoint = Math.Abs(Size);
                         else if (player.Hero.camp == Camp.indivMinor && player.Size >= 0 && Size <= 0)
                             basePoint = player.Size;
-                        else if (player.Hero.camp == Camp.neutral)
-                        {
-                            //中立的分数结算额外算
-                            //foreach (IPropertyModifier<int> modifier in player.Hero.Skills.Where(s => s is IPropertyModifier<int> m && m.propName == nameof(Player.point)))
-                            //{
-                            //    modifier.modify(ref basePoint);
-                            //}
-                        }
-                        else
-                            win = false;//不结算分的玩家算失败
+                        //else
+                        //    win = false;//不结算分的玩家算失败
                         EventData<int> pointData = new EventData<int>() { data = basePoint };
-                        EventData<bool> winData = new EventData<bool>() { data = win };
-                        await EventSystem.Call(EventEnum.GetPoint, this, pointData, winData);
+                        //EventData<bool> winData = new EventData<bool>() { data = win };
+                        await EventSystem.Call(EventEnum.GetPoint, this, player, pointData/*, winData*/);
                         player.point = pointData.data;
-                        if (winData.data) winnerList.Add(player);
+                        if (player.point > 0/*winData.data*/) winnerList.Add(player);
                     }
                     winners = winnerList.ToArray();//这就是获胜者，目前不知道该干嘛。
                     await EventSystem.Call(EventEnum.GameEnd, this);

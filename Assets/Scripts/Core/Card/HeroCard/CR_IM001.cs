@@ -111,9 +111,19 @@ namespace ZMDFQ.Cards
         //}
         public override void Enable(Game game)
         {
+            game.EventSystem.Register(EventEnum.GetPoint, effect);
         }
         public override void Disable(Game game)
         {
+            game.EventSystem.Remove(EventEnum.GetPoint, effect);
+        }
+        Task effect(object[] args)
+        {
+            Player player = args[1] as Player;
+            EventData<int> point = args[2] as EventData<int>;
+            if (player == Hero.Player)
+                point.data = Math.Abs(Hero.Player.Size);
+            return Task.CompletedTask;
         }
     }
 }

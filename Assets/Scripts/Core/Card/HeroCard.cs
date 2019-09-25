@@ -13,12 +13,13 @@ namespace ZMDFQ
         /// 角色牌是否正面朝上？
         /// </summary>
         public bool isFaceup { get; set; } = false;
-        public void Init(Player player)
+        public void Init(Game game, Player player)
         {
             Player = player;
             foreach (var skill in Skills)
             {
                 skill.Hero = this;
+                skill.Enable(game);
             }
         }
         /// <summary>
