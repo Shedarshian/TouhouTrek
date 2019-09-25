@@ -43,7 +43,7 @@ namespace ZMDFQ.Cards
                 }) as TakeChoiceResponse;
                 if (response.Index > 0)
                 {
-                    Hero.isFaceup = true;
+                    await Hero.FaceUp(game);
                     await Hero.Player.DrawActionCard(game, Math.Abs(Hero.Player.Size));
                 }
             }
@@ -62,20 +62,23 @@ namespace ZMDFQ.Cards
         }
         public override void Enable(Game game)
         {
-            game.EventSystem.Register(EventEnum.afterDrawcardPhase, effect);
+            game.EventSystem.Register(EventEnum.BeforDrawActionCard, effect);
         }
         public override void Disable(Game game)
         {
-            game.EventSystem.Remove(EventEnum.afterDrawcardPhase, effect);
+            game.EventSystem.Remove(EventEnum.BeforDrawActionCard, effect);
         }
-        async Task effect(object[] args)
+        Task effect(object[] args)
         {
-            Game game = args[0] as Game;
-            Player player = args[1] as Player;
+
+            //Game game = args[0] as Game;
+            Player player = args[0] as Player;
+            EventData<int> count = args[1] as EventData<int>;
             if (Hero.Player.Size > 1 && player == Hero.Player)
             {
-                await Hero.Player.DrawActionCard(game, 1);
+                count.data++;
             }
+            return Task.CompletedTask;
         }
     }
     /// <summary>

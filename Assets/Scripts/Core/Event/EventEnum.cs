@@ -22,6 +22,7 @@ namespace ZMDFQ
 
         DrawEventCard,
 
+        BeforDrawActionCard,
         DrawActionCard,
         DropActionCard,
 
@@ -31,6 +32,8 @@ namespace ZMDFQ
         AfterGameSizeChange,
 
         afterDrawcardPhase,
-        afterDiscardPhase
+        afterDiscardPhase,
+
+        FaceUp,
     }
 }

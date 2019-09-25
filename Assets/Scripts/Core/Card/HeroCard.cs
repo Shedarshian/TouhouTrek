@@ -26,6 +26,15 @@ namespace ZMDFQ
         /// </summary>
         public abstract Camp camp { get; }
         public abstract List<Skill> Skills { get; }
+
+        public async Task FaceUp(Game game)
+        {
+            if (!isFaceup)
+            {
+                isFaceup = true;
+                await game.EventSystem.Call(EventEnum.FaceUp, game, this);
+            }
+        }
     }
     /// <summary>
     /// 角色阵营

@@ -38,8 +38,10 @@ namespace ZMDFQ
 
         internal async Task DrawActionCard(Game game, int count)
         {
+            EventData<int> drawCount = new EventData<int>() { data = count };
+            await game.EventSystem.Call(EventEnum.BeforDrawActionCard, this, drawCount);
             List<ActionCard> drawedCards = new List<ActionCard>();
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < drawCount.data; i++)
             {
                 if (game.Deck.Count == 0)//如果没有行动牌了
                 {
