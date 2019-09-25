@@ -12,6 +12,47 @@ using ZMDFQ.PlayerAction;
 
 namespace Tests
 {
+    public class CR_IM001Tests
+    {
+        [Test]
+        public void skill1Test()
+        {
+            Game game = new Game();
+            game.Init(new GameOptions()
+            {
+                players = new Player[]
+                {
+                    new Player(0),
+                    new Player(1)
+                },
+                characterCards = game.createCards(new CR_IM001(), 20),
+                actionCards = game.createCards(new TestAction1(), 20),
+                officialCards = game.createCards(new TestOfficial(), 20),
+                eventCards = game.createCards(new TestEvent(), 20),
+                firstPlayer = 0,
+                shuffle = false,
+                initCommunitySize = 0,
+                initInfluence = 0,
+                chooseCharacter = true,
+                doubleCharacter = false,
+                endingOfficialCardCount = 1
+            });
+            game.StartGame();
+            game.Answer(new ChooseHeroResponse() { PlayerId = 0, HeroId = 1 });
+            game.Answer(new ChooseHeroResponse() { PlayerId = 1, HeroId = 4 });
+            game.Answer(new FreeUse() { PlayerId = 0, CardId = 21, Source = new List<int>() { 21 } });
+            game.Answer(new EndFreeUseResponse() { PlayerId = 0 });
+            game.Answer(new ChooseDirectionResponse() { PlayerId = 0, CardId = 61, IfForward = true });
+
+            game.Answer(new EndFreeUseResponse() { PlayerId = 1 });
+            game.Answer(new ChooseDirectionResponse() { PlayerId = 1, CardId = 62, IfSet = true });
+            game.Answer(new ChooseSomeCardResponse() { PlayerId = 1, Cards = new List<int>() { 23, 24 } });
+
+            Assert.AreEqual(2, game.winners.Length);
+            Assert.AreEqual(1, game.winners[0].point);
+            Assert.AreEqual(1, game.winners[0].point);
+        }
+    }
     public class GameTests
     {
         [UnityTest]
@@ -312,77 +353,77 @@ namespace Tests
             Assert.AreEqual(1, game.winners[0].point);
             yield break;
         }
-        class TestCharacter : HeroCard
+    }
+    class TestCharacter : HeroCard
+    {
+        public override Camp camp
         {
-            public override Camp camp
-            {
-                get { return Camp.commuMajor; }
-            }
-            public override List<Skill> Skills { get; } = new List<Skill>(new Skill[] { });
+            get { return Camp.commuMajor; }
         }
-        class TestSkill : Skill
+        public override List<Skill> Skills { get; } = new List<Skill>(new Skill[] { });
+    }
+    class TestSkill : Skill
+    {
+        public override void Disable(Game game)
         {
-            public override void Disable(Game game)
-            {
-                throw new System.NotImplementedException();
-            }
-
-            public override void Enable(Game game)
-            {
-                throw new System.NotImplementedException();
-            }
-
-            public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
-            {
-                nextRequest = null;
-                return true;
-            }
-
-            public override Task DoEffect(Game game, FreeUse useInfo)
-            {
-                throw new System.NotImplementedException();
-            }
+            throw new System.NotImplementedException();
         }
-        class TestAction1 : ActionCard
-        {
-            public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
-            {
-                nextRequest = null;
-                return true;
-            }
 
-            public override Task DoEffect(Game game, FreeUse useWay)
-            {
-                return UseCard.NormalUse(game, useWay, this, (g, r) =>
-                {
-                    game.Players.Find(p => p.Id == useWay.PlayerId).Size += 1;
-                    return Task.CompletedTask;
-                });
-            }
-        }
-        class TestOfficial : ThemeCard
+        public override void Enable(Game game)
         {
-            public override void Enable(Game game)
-            {
-                game.Size += 1;
-            }
-            public override void Disable(Game game)
-            {
-            }
+            throw new System.NotImplementedException();
         }
-        class TestEvent : EventCard
+
+        public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
         {
-            public override bool ForwardOnly => false;
-            public override Task UseForward(Game game, Player user)
+            nextRequest = null;
+            return true;
+        }
+
+        public override Task DoEffect(Game game, FreeUse useInfo)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    class TestAction1 : ActionCard
+    {
+        public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        {
+            nextRequest = null;
+            return true;
+        }
+
+        public override Task DoEffect(Game game, FreeUse useWay)
+        {
+            return UseCard.NormalUse(game, useWay, this, (g, r) =>
             {
-                user.Size *= 2;
+                game.Players.Find(p => p.Id == useWay.PlayerId).Size += 1;
                 return Task.CompletedTask;
-            }
-            public override Task UseBackward(Game game, Player user)
-            {
-                user.Size = 0;
-                return Task.CompletedTask;
-            }
+            });
+        }
+    }
+    class TestOfficial : ThemeCard
+    {
+        public override void Enable(Game game)
+        {
+            game.Size += 1;
+        }
+        public override void Disable(Game game)
+        {
+        }
+    }
+    class TestEvent : EventCard
+    {
+        public override bool ForwardOnly => false;
+        public override Task UseForward(Game game, Player user)
+        {
+            user.Size *= 2;
+            return Task.CompletedTask;
+        }
+        public override Task UseBackward(Game game, Player user)
+        {
+            user.Size = 0;
+            return Task.CompletedTask;
         }
     }
 }
