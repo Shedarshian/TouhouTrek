@@ -15,7 +15,7 @@ namespace Tests
     public class CR_IM001Tests
     {
         [Test]
-        public void skill1Test()
+        public async void skill2TestAsync()
         {
             Game game = new Game();
             game.Init(new GameOptions()
@@ -40,17 +40,12 @@ namespace Tests
             game.StartGame();
             game.Answer(new ChooseHeroResponse() { PlayerId = 0, HeroId = 1 });
             game.Answer(new ChooseHeroResponse() { PlayerId = 1, HeroId = 4 });
-            game.Answer(new FreeUse() { PlayerId = 0, CardId = 21, Source = new List<int>() { 21 } });
-            game.Answer(new EndFreeUseResponse() { PlayerId = 0 });
-            game.Answer(new ChooseDirectionResponse() { PlayerId = 0, CardId = 61, IfForward = true });
 
-            game.Answer(new EndFreeUseResponse() { PlayerId = 1 });
-            game.Answer(new ChooseDirectionResponse() { PlayerId = 1, CardId = 62, IfSet = true });
-            game.Answer(new ChooseSomeCardResponse() { PlayerId = 1, Cards = new List<int>() { 23, 24 } });
+            Assert.AreEqual(1, game.Players[0].HandMax());
 
-            Assert.AreEqual(2, game.winners.Length);
-            Assert.AreEqual(1, game.winners[0].point);
-            Assert.AreEqual(1, game.winners[0].point);
+            await game.Players[0].Hero.FaceUp(game);
+
+            Assert.AreEqual(4, game.Players[0].HandMax());
         }
     }
     public class GameTests

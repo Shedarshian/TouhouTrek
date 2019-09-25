@@ -12,7 +12,12 @@ namespace ZMDFQ.Cards
     public class CR_IM001 : HeroCard
     {
         public override Camp camp => Camp.indivMinor;
-        public override List<Skill> Skills => throw new NotImplementedException();
+        public override List<Skill> Skills { get; } = new List<Skill>()
+        {
+            new CR_IM001_SK1(),
+            new CR_IM001_SK2(),
+            new CR_IM001_SK3()
+        };
     }
     /// <summary>
     /// 当个人影响力为负时，可在自己的弃牌阶段后将角色正面朝上，并摸个人影响力绝对数量的手牌。

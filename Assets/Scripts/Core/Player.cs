@@ -173,7 +173,7 @@ namespace ZMDFQ
             this.Size += data.data;
         }
 
-        internal int HandMax()
+        public int HandMax()
         {
             int result = Size;
             //属性修正
