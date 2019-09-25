@@ -299,6 +299,7 @@ namespace ZMDFQ
                     foreach (Player player in Players)
                     {
                         int basePoint = 0;
+                        bool win = true;
                         if (player.Hero.camp == Camp.commuMajor && player.Size >= 0 && Size >= 0)
                             basePoint = Size;
                         else if (player.Hero.camp == Camp.indivMajor && player.Size >= 0 && Size >= 0)
@@ -310,16 +311,18 @@ namespace ZMDFQ
                         else if (player.Hero.camp == Camp.neutral)
                         {
                             //中立的分数结算额外算
-                            foreach (IPropertyModifier<int> modifier in player.Hero.Skills.Where(s => s is IPropertyModifier<int> m && m.propName == nameof(Player.point)))
-                            {
-                                modifier.modify(ref basePoint);
-                            }
+                            //foreach (IPropertyModifier<int> modifier in player.Hero.Skills.Where(s => s is IPropertyModifier<int> m && m.propName == nameof(Player.point)))
+                            //{
+                            //    modifier.modify(ref basePoint);
+                            //}
                         }
                         else
-                            continue;//不结算分的玩家算失败
-                        //TODO:进行玩家的其他分数结算
-                        player.point = basePoint;
-                        winnerList.Add(player);
+                            win = false;//不结算分的玩家算失败
+                        EventData<int> pointData = new EventData<int>() { data = basePoint };
+                        EventData<bool> winData = new EventData<bool>() { data = win };
+                        await EventSystem.Call(EventEnum.GetPoint, this, pointData, winData);
+                        player.point = pointData.data;
+                        if (winData.data) winnerList.Add(player);
                     }
                     winners = winnerList.ToArray();//这就是获胜者，目前不知道该干嘛。
                     await EventSystem.Call(EventEnum.GameEnd, this);
@@ -361,7 +364,7 @@ namespace ZMDFQ
 
             await player.UseEventCard(this, chooseDirectionResponse);
 
-            int max = player.HandMax();
+            int max = await player.HandMax(this);
             if (player.ActionCards.Count > max)
             {
                 ChooseSomeCardResponse chooseSomeCardResponse = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { PlayerId = player.Id, Count = player.ActionCards.Count - max });
