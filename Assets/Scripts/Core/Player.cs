@@ -173,19 +173,21 @@ namespace ZMDFQ
             this.Size += data.data;
         }
 
-        public int HandMax()
+        public async Task<int> HandMax(Game game)
         {
             int result = Size;
             //属性修正
-            foreach (IPropertyModifier<int> modifier in Hero.Skills.Where(s => s is IPropertyModifier<int> m && m.propName == nameof(HandMax)))
-            {
-                modifier.modify(ref result);
-            }
+            //foreach (IPropertyModifier<int> modifier in Hero.Skills.Where(s => s is IPropertyModifier<int> m && m.propName == nameof(HandMax)))
+            //{
+            //    modifier.modify(ref result);
+            //}
             if (result < 1)
                 result = 1;
             if (result > 4)
                 result = 4;
-            return result;
+            EventData<int> max = new EventData<int>() { data = result };
+            await game.EventSystem.Call(EventEnum.GetHandMax, this, max);
+            return max.data;
         }
     }
 }

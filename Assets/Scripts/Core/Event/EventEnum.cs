@@ -35,5 +35,8 @@ namespace ZMDFQ
         afterDiscardPhase,
 
         FaceUp,
+
+        GetHandMax,
+        GetPoint,
     }
 }
