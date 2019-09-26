@@ -2,12 +2,12 @@
 	"binaryFormat":true,
 	"codeGeneration":{
 		"classNamePrefix":"UI_",
-		"codePath":"",
+		"codePath":"F:\\MyProject\\ZMDFQ\\Assets\\Scripts\\UI\\AutoRelease",
 		"codeType":"",
 		"getMemberByName":false,
-		"ignoreNoname":false,
+		"ignoreNoname":true,
 		"memberNamePrefix":"m_",
-		"packageName":""
+		"packageName":"ZMDFQ.UI"
 	},
 	"compressDesc":true,
 	"fileExtension":"",

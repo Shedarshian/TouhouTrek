@@ -10,6 +10,7 @@ namespace ZMDFQ
     public class Player
     {
         public int Id;
+        public string Name;
         public int Size;
         /// <summary>
         /// 手牌

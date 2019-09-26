@@ -69,7 +69,9 @@ namespace ZMDFQ
         /// </summary>
         public float RequestTime = 5f;
 
-        public System.Action<Game, Request> OnRequest;
+        public Action<Game, Request> OnRequest;
+
+        public Action<Game, Response> OnResponse;
 
         private System.Random ram = new System.Random();
 
@@ -143,6 +145,7 @@ namespace ZMDFQ
                     Player p;
                     if (i == 1) p = new Player(i);
                     else { p = new AI(this, i); }
+                    p.Name = "玩家" + i;
                     //p.Hero = new Cards.CR_CP001();
                     Players.Add(p);
                 }
@@ -180,7 +183,7 @@ namespace ZMDFQ
                     for (int i = 0; i < Players.Count; i++)
                     {
                         Player p = Players[i];
-                        chooseHero[i] = WaitAnswer(new ChooseHeroRequest() { PlayerId = p.Id, HeroIds = new List<int>(characterDeck.GetRange(i * 3, 3).Select(c => c.Id)) });
+                        chooseHero[i] = WaitAnswer(new ChooseHeroRequest() { PlayerId = p.Id, HeroIds = new List<int>(characterDeck.GetRange(i * 3, 3).Select(c => c.Id)) }.SetTimeOut(RequestTime));
                     }
 
                     await Task.WhenAll(chooseHero);
@@ -245,11 +248,12 @@ namespace ZMDFQ
         /// <param name="response"></param>
         public void Answer(Response response)
         {
-            Log.Debug(response.GetType().Name);
+            //Log.Debug(response.GetType().Name);
             int index = Players.FindIndex(x => x.Id == response.PlayerId);
             var tcs = requests[index];
             requests[index] = null;//可能后续会重新对requests[index]询问，所以这个要写在TrySetResult之前
             tcs?.TrySetResult(response);
+            OnResponse?.Invoke(this, response);
         }
         /// <summary>
         /// 向玩家请求一个动作的回应
@@ -347,7 +351,7 @@ namespace ZMDFQ
             while (true)
             {
                 Log.Debug($"玩家{player.Id}出牌中");
-                Response response = await WaitAnswer(new FreeUseRequest() { PlayerId = player.Id, TimeOut = TurnTime });
+                Response response = await WaitAnswer(new FreeUseRequest() { PlayerId = player.Id }.SetTimeOut(TurnTime));
                 if (response is EndFreeUseResponse)
                 {
                     break;
@@ -360,14 +364,14 @@ namespace ZMDFQ
 
             await EventSystem.Call(EventEnum.ActionEnd, this);
 
-            var chooseDirectionResponse = (ChooseDirectionResponse)await WaitAnswer(new ChooseDirectionRequest() { PlayerId = player.Id });
+            var chooseDirectionResponse = (ChooseDirectionResponse)await WaitAnswer(new ChooseDirectionRequest() { PlayerId = player.Id }.SetTimeOut(RequestTime));
 
             await player.UseEventCard(this, chooseDirectionResponse);
 
             int max = await player.HandMax(this);
             if (player.ActionCards.Count > max)
             {
-                ChooseSomeCardResponse chooseSomeCardResponse = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { PlayerId = player.Id, Count = player.ActionCards.Count - max });
+                ChooseSomeCardResponse chooseSomeCardResponse = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { PlayerId = player.Id, Count = player.ActionCards.Count - max }.SetTimeOut(RequestTime));
                 await player.DropActionCard(this, chooseSomeCardResponse.Cards, true);
                 await EventSystem.Call(EventEnum.afterDiscardPhase, this, player);
             }
