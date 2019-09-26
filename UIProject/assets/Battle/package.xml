@@ -26,6 +26,7 @@
     <component id="dzy4o" name="Group.xml" path="/"/>
     <component id="dzy4p" name="SmallBuff.xml" path="/"/>
     <component id="sqtfq" name="ChooseHero.xml" path="/"/>
+    <component id="g2d6r" name="SimpleBtn.xml" path="/"/>
   </resources>
   <publish name="Battle" genCode="true"/>
 </packageDescription>

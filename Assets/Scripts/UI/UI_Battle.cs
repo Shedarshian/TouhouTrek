@@ -325,7 +325,7 @@ namespace ZMDFQ
                 PlayerId = Self.Id,
                 Source = SelectedCards.Select(x => x.Id).ToList(),
                 CardId = SelectedCards.Count > 0 ? SelectedCards[0].Id : 0,
-                HeroId = SelectedPlayers.Select(x => x.Player.Id).ToList(),
+                PlayersId = SelectedPlayers.Select(x => x.Player.Id).ToList(),
             };
             return result;
         }

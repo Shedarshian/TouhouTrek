@@ -21,10 +21,13 @@ namespace ZMDFQ.UI.Battle
 		public UI_MainSize m_MainSize;
 		public GTextField m_RoundInfo;
 		public GTextField m_TurnInfo;
+		public GButton m_useCard;
+		public GButton m_Endturn;
 		public UI_Card m_NowEvent;
 		public GList m_DelayAction;
 		public GTextField m_ActionDropDeck;
 		public GTextField m_EventDropDeckCount;
+		public UI_Card m_PlayerHero;
 		public GComponent m_GameInfo;
 		public UI_HandCards m_Hand;
 		public UI_Card m_SetEvent;
@@ -34,6 +37,7 @@ namespace ZMDFQ.UI.Battle
 		public GProgressBar m_TimeBar;
 		public UI_Card m_NowAction;
 		public UI_ChooseHero m_HeroChooseWindow;
+		public GTextField m_UseTip;
 
 		public const string URL = "ui://oacz4rtmgs0sc";
 
@@ -64,10 +68,13 @@ namespace ZMDFQ.UI.Battle
 			m_MainSize = (UI_MainSize)this.GetChildAt(19);
 			m_RoundInfo = (GTextField)this.GetChildAt(20);
 			m_TurnInfo = (GTextField)this.GetChildAt(21);
+			m_useCard = (GButton)this.GetChildAt(26);
+			m_Endturn = (GButton)this.GetChildAt(29);
 			m_NowEvent = (UI_Card)this.GetChildAt(34);
 			m_DelayAction = (GList)this.GetChildAt(35);
 			m_ActionDropDeck = (GTextField)this.GetChildAt(37);
 			m_EventDropDeckCount = (GTextField)this.GetChildAt(40);
+			m_PlayerHero = (UI_Card)this.GetChildAt(42);
 			m_GameInfo = (GComponent)this.GetChildAt(44);
 			m_Hand = (UI_HandCards)this.GetChildAt(45);
 			m_SetEvent = (UI_Card)this.GetChildAt(46);
@@ -77,6 +84,7 @@ namespace ZMDFQ.UI.Battle
 			m_TimeBar = (GProgressBar)this.GetChildAt(58);
 			m_NowAction = (UI_Card)this.GetChildAt(59);
 			m_HeroChooseWindow = (UI_ChooseHero)this.GetChildAt(71);
+			m_UseTip = (GTextField)this.GetChildAt(72);
 			Init();
 		}
 		

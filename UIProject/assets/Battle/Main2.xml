@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080" designImage="ui://oacz4rtmgs0sb" designImageAlpha="0" designImageLayer="1">
-  <controller name="ChooseHero" pages="0,,1," selected="1"/>
+  <controller name="ChooseHero" pages="0,,1," selected="0"/>
   <displayList>
     <graph id="n91_dzy4" name="n91" xy="0,0" size="1920,1080" type="rect"/>
     <component id="n0_gs0s" name="PlayerInfo0" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="8,8"/>
@@ -34,7 +34,7 @@
       <Button title="吃瓜11"/>
     </component>
     <graph id="n45_dzy4" name="n45" xy="657,728" size="550,76" type="rect"/>
-    <component id="n41_dzy4" name="n41" src="dzy4g" fileName="NormalBtn.xml" xy="665,735">
+    <component id="n41_dzy4" name="useCard" src="dzy4g" fileName="NormalBtn.xml" xy="665,735">
       <Button title="使用/打出" titleColor="#009900"/>
     </component>
     <component id="n42_dzy4" name="n42" src="dzy4g" fileName="NormalBtn.xml" xy="801,736">
@@ -43,7 +43,7 @@
     <component id="n43_dzy4" name="n43" src="dzy4g" fileName="NormalBtn.xml" xy="938,736">
       <Button title="投掷骰子" titleColor="#ff9900"/>
     </component>
-    <component id="n44_dzy4" name="n44" src="dzy4g" fileName="NormalBtn.xml" xy="1073,735">
+    <component id="n44_dzy4" name="Endturn" src="dzy4g" fileName="NormalBtn.xml" xy="1073,735">
       <Button title="结束回合" titleColor="#000000"/>
     </component>
     <graph id="n46_dzy4" name="n46" xy="446,508" size="197,295" type="rect"/>
@@ -61,7 +61,7 @@
     <text id="n58_dzy4" name="n58" xy="1490,407" size="86,69" fontSize="25" autoSize="none" text="事件牌弃牌堆"/>
     <text id="n59_dzy4" name="EventDropDeckCount" xy="1498,480" size="61,61" fontSize="50" color="#ffffff" text="21"/>
     <graph id="n61_dzy4" name="n61" xy="1332,386" size="118,133" type="rect"/>
-    <component id="n63_dzy4" name="n63" src="dzy4h" fileName="Card.xml" xy="1423,829" controller="type,2"/>
+    <component id="n63_dzy4" name="PlayerHero" src="dzy4h" fileName="Card.xml" xy="1423,829" controller="type,2"/>
     <graph id="n64_dzy4" name="n64" xy="1625,75" size="282,293" type="rect"/>
     <component id="n65_dzy4" name="GameInfo" src="dzy4j" fileName="GameInfo.xml" xy="1638,85"/>
     <component id="n66_dzy4" name="Hand" src="dzy4k" fileName="HandCards.xml" xy="448,818"/>
@@ -97,5 +97,6 @@
     <component id="n99_sqtf" name="HeroChooseWindow" src="sqtfq" fileName="ChooseHero.xml" xy="450,263">
       <gearDisplay controller="ChooseHero" pages="1"/>
     </component>
+    <text id="n100_g2d6" name="UseTip" xy="686,691" size="10,36" fontSize="27" text=""/>
   </displayList>
 </component>

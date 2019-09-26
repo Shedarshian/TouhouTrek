@@ -9,6 +9,16 @@ namespace ZMDFQ.UI.Battle
     //用于处理倒计时
     partial class UI_Main2
     {
+        [BattleUI(nameof(SetGame))]
+        void turnTimeInit()
+        {
+            game.EventSystem.Register(EventEnum.TurnStart, (x) =>
+            {
+                m_ActivePlayer.SetVar("p", game.ActivePlayer.Id == self.Id ? "你" : game.ActivePlayer.Id.ToString());
+                return Task.CompletedTask;
+            });
+        }
+
         [BattleUI(nameof(OnUpdate))]
         private void timeUpdate()
         {

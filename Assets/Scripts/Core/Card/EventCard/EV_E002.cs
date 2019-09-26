@@ -14,7 +14,7 @@ namespace ZMDFQ.Cards
         public override bool ForwardOnly => false;
         public override Task Use(Game game, ChooseDirectionResponse response)
         {
-            throw new NotImplementedException();
+            return Task.CompletedTask;
         }
     }
 }

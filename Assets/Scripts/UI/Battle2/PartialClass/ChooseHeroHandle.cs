@@ -60,6 +60,7 @@ namespace ZMDFQ.UI.Battle
         {
             if (nowResponse.PlayerId==self.Id&&nowResponse is PlayerAction.ChooseHeroResponse chooseHeroResponse)
             {
+                m_PlayerHero.SetCard(game.GetCard(chooseHeroResponse.HeroId));
                 this.chooseHeroRequset = null;
                 m_ChooseHero.selectedIndex = 0;
             }

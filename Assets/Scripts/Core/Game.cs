@@ -95,39 +95,35 @@ namespace ZMDFQ
                 TimeManager.Game = this;
             //初始化牌库
             if (options != null && options.characterCards != null)
-                characterDeck = new List<HeroCard>(options.characterCards);
+            {
+                characterDeck.AddRange(options.characterCards);
+            }
             else
             {
-                characterDeck = new List<HeroCard>(createCards(new Cards.CR_CP001()
+                characterDeck.AddRange(createCards(new Cards.CR_CP001()
                 {
                     Name = "传教爱好者",
                 }, 28));
             }
             if (options != null && options.actionCards != null)
-                Deck = new List<ActionCard>(options.actionCards);
+                Deck.AddRange(options.actionCards);
             else
             {
-                for (int i = 0; i < 20; i++)
-                {
-                    Deck.Add(new Cards.AT_N001() { Name = "传教" });
-                }
+                Deck.AddRange(createCards(new Cards.AT_N001() { Name = "传教" }, 20));
             }
             if (options != null && options.officialCards != null)
-                ThemeDeck = new List<ThemeCard>(options.officialCards);
+                ThemeDeck.AddRange(options.officialCards);
             else
             {
-                for (int i = 0; i < 23; i++)
-                {
-                    ThemeDeck.Add(new Cards.G_001() { Name = "旧作" });
-                }
+                ThemeDeck.AddRange(createCards(new Cards.G_001() { Name = "旧作" }, 20));
             }
             if (options != null && options.eventCards != null)
-                EventDeck = new List<EventCard>(options.eventCards);
+                EventDeck.AddRange(options.eventCards);
             else
             {
                 for (int i = 0; i < 50; i++)
                 {
-                    EventDeck.Add(new Cards.EV_E002() { Name = "全国性活动" });
+                    EventDeck.AddRange(createCards(new Cards.EV_E002() { Name = "全国性活动" }, 20));
                 }
             }
             if (options == null || options.shuffle)

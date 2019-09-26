@@ -47,7 +47,7 @@ namespace ZMDFQ.UI.Battle
             for (int i = 0; i < Cards.Count; i++)
             {
                 Cards[i].x = 185 * i;
-                Cards[i].y = selected.Contains(Cards[i].Card) ? -20 : 0;
+                Cards[i].y = selected.Contains(Cards[i].Card) ? 5 : 20;
             }
         }
 

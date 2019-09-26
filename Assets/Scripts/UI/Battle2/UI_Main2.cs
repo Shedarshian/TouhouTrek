@@ -21,6 +21,8 @@ namespace ZMDFQ.UI.Battle
         /// </summary>
         List<ActionCard> selectedCards = new List<ActionCard>();
 
+        List<Player> selectedPlayers = new List<Player>(); 
+
         /// <summary>
         /// 当前选中的技能，最多一个
         /// </summary>
