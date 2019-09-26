@@ -78,10 +78,7 @@ namespace ZMDFQ
                 EventCard card = EventCards.Find(c => c.Id == response.CardId);
                 if (card != null)
                 {
-                    if (response.IfForward)
-                        return card.UseForward(game, this);
-                    else
-                        return card.UseBackward(game, this);
+                    return card.Use(game, response);
                 }
                 else
                 {
@@ -95,7 +92,7 @@ namespace ZMDFQ
         {
             if (SaveEvent != null)
             {
-                await SaveEvent.UseForward(game, this);
+                await SaveEvent.Use(game, response);
             }
             SaveEvent = EventCards[0];
             EventCards.RemoveAt(0);
@@ -108,21 +105,17 @@ namespace ZMDFQ
         /// <param name="game"></param>
         /// <param name="card"></param>
         /// <returns></returns>
-        internal EventCard DropEventCard(Game game, EventCard card)
+        internal async Task DropEventCard(Game game, EventCard card)
         {
             if (card == SaveEvent)
             {
                 //game.UsedEventDeck.Add(card);
                 SaveEvent = null;
-                return SaveEvent;
             }
             else
             {
                 //game.UsedEventDeck.Add(card);
-                if (EventCards.Remove(card))
-                    return card;
-                else
-                    return null;
+                EventCards.Remove(card);
             }
         }
 
@@ -174,7 +167,7 @@ namespace ZMDFQ
             this.Size += data.data;
         }
 
-        internal async Task<int> HandMax(Game game)
+        public async Task<int> HandMax(Game game)
         {
             int result = Size;
             //属性修正

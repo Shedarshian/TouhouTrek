@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ
 {
-    public abstract class EventCard:Card
+    public abstract class EventCard : Card
     {
         public abstract bool ForwardOnly { get; }
-
-        public abstract Task UseForward(Game game, Player user);
-
-        public abstract Task UseBackward(Game game, Player user);
+        public abstract Task Use(Game game, PlayerAction.ChooseDirectionResponse response);
     }
 }
