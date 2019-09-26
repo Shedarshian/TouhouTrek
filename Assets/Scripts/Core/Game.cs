@@ -361,8 +361,9 @@ namespace ZMDFQ
             {
                 ChooseSomeCardResponse chooseSomeCardResponse = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { PlayerId = player.Id, Count = player.ActionCards.Count - max });
                 await player.DropActionCard(this, chooseSomeCardResponse.Cards, true);
-                await EventSystem.Call(EventEnum.afterDiscardPhase, this, player);
             }
+            await EventSystem.Call(EventEnum.afterDiscardPhase, this, player);
+
             await EventSystem.Call(EventEnum.TurnEnd, this);
         }
 
