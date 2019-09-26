@@ -47,6 +47,8 @@ namespace ZMDFQ
 
         public List<EventCard> UsedEventDeck = new List<EventCard>();
 
+        public List<EventCard> ChainEventDeck = new List<EventCard>();
+
         public ThemeCard ActiveTheme;
 
         /// <summary>
@@ -292,7 +294,7 @@ namespace ZMDFQ
                     {
                         Player p = Players[Players.Count - 1 - i];
                         if (p.SaveEvent != null)
-                            await p.SaveEvent.UseForward(this, p);
+                            await p.SaveEvent.Use(this, new ChooseDirectionResponse() { PlayerId = p.Id, CardId = p.SaveEvent.Id, IfForward = true });
                     }
                     //统计玩家胜利情况和得分
                     List<Player> winnerList = new List<Player>();
