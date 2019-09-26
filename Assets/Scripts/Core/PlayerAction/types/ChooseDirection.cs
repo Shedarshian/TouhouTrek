@@ -16,7 +16,7 @@ namespace ZMDFQ.PlayerAction
     public class ChooseDirectionResponse : Response
     {
         public int CardId;
-        public bool IfForward;
+        public bool IfForward = true;
         public bool IfSet;
     }
 }

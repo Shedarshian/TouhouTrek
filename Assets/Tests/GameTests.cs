@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace Tests
                     new Player(1)
                 },
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 shuffle = false,
                 initCommunitySize = 0,
@@ -55,7 +56,7 @@ namespace Tests
                 },
                 characterCards = game.createCards(new TestCharacter(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
@@ -96,7 +97,7 @@ namespace Tests
                 },
                 characterCards = game.createCards(new TestCharacter(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
@@ -128,7 +129,7 @@ namespace Tests
                 },
                 characterCards = game.createCards(new TestCharacter(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
@@ -163,7 +164,7 @@ namespace Tests
                 },
                 characterCards = game.createCards(new TestCharacter(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
@@ -196,7 +197,7 @@ namespace Tests
                 },
                 characterCards = game.createCards(new TestCharacter(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
@@ -245,7 +246,7 @@ namespace Tests
                 },
                 characterCards = game.createCards(new TestCharacter(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
@@ -290,7 +291,7 @@ namespace Tests
                 },
                 characterCards = game.createCards(new TestCharacter(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
@@ -367,12 +368,21 @@ namespace Tests
     }
     class TestOfficial : ThemeCard
     {
+        public Action<Game> onEnable { get; set; }
+        public Action<Game> onDisable { get; set; }
         public override void Enable(Game game)
         {
-            game.Size += 1;
+            onEnable?.Invoke(game);
         }
         public override void Disable(Game game)
         {
+            onDisable?.Invoke(game);
+        }
+        protected override void copyPropTo(Card target)
+        {
+            base.copyPropTo(target);
+            (target as TestOfficial).onEnable = onEnable;
+            (target as TestOfficial).onDisable = onDisable;
         }
     }
     class TestEvent : EventCard
