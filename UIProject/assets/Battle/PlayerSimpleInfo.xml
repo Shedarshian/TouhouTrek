@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="419,128" extention="Button">
-  <controller name="button" pages="0,up,1,down,2,disabled,3,selectedDisabled" selected="3"/>
+  <controller name="button" pages="0,up,1,down,2,disabled,3,selectedDisabled" selected="0"/>
   <displayList>
-    <graph id="n0_gs0s" name="n0" xy="0,0" size="362,128" type="rect" fillColor="#ff999999">
+    <graph id="n0_gs0s" name="n0" xy="0,0" size="362,128" type="rect">
       <gearColor controller="button" pages="1,2,3" values="#00ccff|#999999|#999999" default="#ffffff"/>
     </graph>
     <graph id="n1_gs0s" name="n1" xy="11,10" size="70,66" type="rect"/>
@@ -10,7 +10,7 @@
     <graph id="n3_gs0s" name="n3" xy="148,10" size="49,66" type="rect" lineSize="0" fillColor="#ff0066ff"/>
     <graph id="n4_gs0s" name="n4" xy="101,18" size="27,49" type="rect" lineSize="0"/>
     <graph id="n5_gs0s" name="n5" xy="160,18" size="27,49" type="rect" lineSize="0"/>
-    <component id="n6_gs0s" name="n6" src="dzy4n" fileName="SmallHeroCard.xml" xy="206,10"/>
+    <component id="n6_gs0s" name="Hero" src="dzy4n" fileName="SmallHeroCard.xml" xy="206,10"/>
     <graph id="n8_gs0s" name="n8" xy="295,10" size="58,50" type="rect"/>
     <component id="n9_gs0s" name="Group" src="dzy4o" fileName="Group.xml" xy="294,67"/>
     <graph id="n10_gs0s" name="n10" xy="361,0" size="58,128" type="rect"/>
@@ -26,5 +26,5 @@
       <item/>
     </list>
   </displayList>
-  <Button/>
+  <Button mode="Radio"/>
 </component>

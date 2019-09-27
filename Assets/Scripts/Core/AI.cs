@@ -22,7 +22,7 @@ namespace ZMDFQ
         async void doResponse(Game game, Request request)
         {
             if (request.PlayerId != Id) return;
-            Log.Debug(request.PlayerId + "," + Id);
+            //Log.Debug(request.PlayerId + "," + Id);
             await Task.Delay(500);//假装思考0.5s
             switch (request)
             {

@@ -20,7 +20,7 @@ namespace ZMDFQ.Cards
                 case UseLimitCard useLimitCard:
                     return Effects.UseWayResponse.CheckLimit(game, useLimitCard, useInfo, ref nextRequest, this);
                 case FreeUseRequest freeUse:
-                    if (useInfo.HeroId.Count < 1)
+                    if (useInfo.PlayersId.Count < 1)
                     {
                         nextRequest = new HeroChooseRequest() { };
                         return false;
@@ -39,7 +39,7 @@ namespace ZMDFQ.Cards
         }
         private async Task effect(Game game, FreeUse useWay)
         {
-            Player target = game.GetPlayer(useWay.HeroId[0]);
+            Player target = game.GetPlayer(useWay.PlayersId[0]);
             Player user = game.GetPlayer(useWay.PlayerId);
             await target.ChangeSize(game, -1, this);
             Player now = target;

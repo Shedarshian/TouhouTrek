@@ -71,7 +71,9 @@ namespace ZMDFQ
         /// </summary>
         public float RequestTime = 5f;
 
-        public System.Action<Game, Request> OnRequest;
+        public Action<Game, Request> OnRequest;
+
+        public Action<Game, Response> OnResponse;
 
         private System.Random ram = new System.Random();
 
@@ -93,39 +95,35 @@ namespace ZMDFQ
                 TimeManager.Game = this;
             //初始化牌库
             if (options != null && options.characterCards != null)
-                characterDeck = new List<HeroCard>(options.characterCards);
+            {
+                characterDeck.AddRange(options.characterCards);
+            }
             else
             {
-                characterDeck = new List<HeroCard>(createCards(new Cards.CR_CP001()
+                characterDeck.AddRange(createCards(new Cards.CR_CP001()
                 {
                     Name = "传教爱好者",
                 }, 28));
             }
             if (options != null && options.actionCards != null)
-                Deck = new List<ActionCard>(options.actionCards);
+                Deck.AddRange(options.actionCards);
             else
             {
-                for (int i = 0; i < 20; i++)
-                {
-                    Deck.Add(new Cards.AT_N001() { Name = "传教" });
-                }
+                Deck.AddRange(createCards(new Cards.AT_N001() { Name = "传教" }, 20));
             }
             if (options != null && options.officialCards != null)
-                ThemeDeck = new List<ThemeCard>(options.officialCards);
+                ThemeDeck.AddRange(options.officialCards);
             else
             {
-                for (int i = 0; i < 23; i++)
-                {
-                    ThemeDeck.Add(new Cards.G_001() { Name = "旧作" });
-                }
+                ThemeDeck.AddRange(createCards(new Cards.G_001() { Name = "旧作" }, 20));
             }
             if (options != null && options.eventCards != null)
-                EventDeck = new List<EventCard>(options.eventCards);
+                EventDeck.AddRange(options.eventCards);
             else
             {
                 for (int i = 0; i < 50; i++)
                 {
-                    EventDeck.Add(new Cards.EV_E002() { Name = "全国性活动" });
+                    EventDeck.AddRange(createCards(new Cards.EV_E002() { Name = "全国性活动" }, 20));
                 }
             }
             if (options == null || options.shuffle)
@@ -145,6 +143,7 @@ namespace ZMDFQ
                     Player p;
                     if (i == 1) p = new Player(i);
                     else { p = new AI(this, i); }
+                    p.Name = "玩家" + i;
                     //p.Hero = new Cards.CR_CP001();
                     Players.Add(p);
                 }
@@ -182,7 +181,7 @@ namespace ZMDFQ
                     for (int i = 0; i < Players.Count; i++)
                     {
                         Player p = Players[i];
-                        chooseHero[i] = WaitAnswer(new ChooseHeroRequest() { PlayerId = p.Id, HeroIds = new List<int>(characterDeck.GetRange(i * 3, 3).Select(c => c.Id)) });
+                        chooseHero[i] = WaitAnswer(new ChooseHeroRequest() { PlayerId = p.Id, HeroIds = new List<int>(characterDeck.GetRange(i * 3, 3).Select(c => c.Id)) }.SetTimeOut(RequestTime));
                     }
 
                     await Task.WhenAll(chooseHero);
@@ -247,11 +246,12 @@ namespace ZMDFQ
         /// <param name="response"></param>
         public void Answer(Response response)
         {
-            Log.Debug(response.GetType().Name);
+            //Log.Debug(response.GetType().Name);
             int index = Players.FindIndex(x => x.Id == response.PlayerId);
             var tcs = requests[index];
             requests[index] = null;//可能后续会重新对requests[index]询问，所以这个要写在TrySetResult之前
             tcs?.TrySetResult(response);
+            OnResponse?.Invoke(this, response);
         }
         /// <summary>
         /// 向玩家请求一个动作的回应
@@ -341,7 +341,7 @@ namespace ZMDFQ
             while (true)
             {
                 Log.Debug($"玩家{player.Id}出牌中");
-                Response response = await WaitAnswer(new FreeUseRequest() { PlayerId = player.Id, TimeOut = TurnTime });
+                Response response = await WaitAnswer(new FreeUseRequest() { PlayerId = player.Id }.SetTimeOut(TurnTime));
                 if (response is EndFreeUseResponse)
                 {
                     break;
@@ -354,14 +354,14 @@ namespace ZMDFQ
 
             await EventSystem.Call(EventEnum.ActionEnd, this);
 
-            var chooseDirectionResponse = (ChooseDirectionResponse)await WaitAnswer(new ChooseDirectionRequest() { PlayerId = player.Id });
+            var chooseDirectionResponse = (ChooseDirectionResponse)await WaitAnswer(new ChooseDirectionRequest() { PlayerId = player.Id }.SetTimeOut(RequestTime));
 
             await player.UseEventCard(this, chooseDirectionResponse);
 
             int max = await player.HandMax(this);
             if (player.ActionCards.Count > max)
             {
-                ChooseSomeCardResponse chooseSomeCardResponse = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { PlayerId = player.Id, Count = player.ActionCards.Count - max });
+                ChooseSomeCardResponse chooseSomeCardResponse = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { PlayerId = player.Id, Count = player.ActionCards.Count - max }.SetTimeOut(RequestTime));
                 await player.DropActionCard(this, chooseSomeCardResponse.Cards, true);
             }
             await EventSystem.Call(EventEnum.afterDiscardPhase, this, player);

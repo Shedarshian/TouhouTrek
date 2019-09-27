@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1021,535">
+  <displayList>
+    <graph id="n99_sqtf" name="n99" xy="0,0" size="1021,535" type="rect"/>
+    <component id="n100_sqtf" name="p0" src="dzy4h" fileName="Card.xml" xy="142,111" controller="type,4"/>
+    <component id="n101_sqtf" name="p1" src="dzy4h" fileName="Card.xml" xy="393,114" controller="type,4"/>
+    <component id="n102_sqtf" name="p2" src="dzy4h" fileName="Card.xml" xy="681,114" controller="type,4"/>
+    <text id="n103_sqtf" name="n103" xy="280,20" size="433,71" fontSize="60" text="请选择你的英雄"/>
+    <component id="n104_sqtf" name="time" src="dzy4m" fileName="TimeBar.xml" xy="233,408" size="578,36">
+      <ProgressBar value="50" max="100"/>
+    </component>
+  </displayList>
+</component>

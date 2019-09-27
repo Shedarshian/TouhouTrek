@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="827,35">
-  <controller name="c1" pages="0,,1,,2,,3,,4,,5,,6,,7,,8,,9,,10,,11,,12,,13,,14,,15,,16,,17,,18,,19,,20," selected="20"/>
+  <controller name="size" pages="0,,1,,2,,3,,4,,5,,6,,7,,8,,9,,10,,11,,12,,13,,14,,15,,16,,17,,18,,19,,20," selected="0"/>
   <displayList>
     <graph id="n35_dzy4" name="n35" xy="0,0" size="826,34" type="rect"/>
-    <text id="n36_dzy4" name="n36" xy="5,6" size="38,27" fontSize="20" text="-10"/>
-    <text id="n37_dzy4" name="n37" xy="61,5" size="24,27" fontSize="20" text="-9"/>
-    <text id="n38_dzy4" name="n38" xy="103,5" size="24,27" fontSize="20" text="-8"/>
-    <text id="n39_dzy4" name="n39" xy="145,5" size="25,27" fontSize="20" text="-7"/>
-    <text id="n40_dzy4" name="n40" xy="188,5" size="24,27" fontSize="20" text="-6"/>
-    <text id="n41_dzy4" name="n41" xy="230,5" size="25,27" fontSize="20" text="-5"/>
-    <text id="n42_dzy4" name="n42" xy="273,5" size="24,27" fontSize="20" text="-4"/>
-    <text id="n43_dzy4" name="n43" xy="315,5" size="25,27" fontSize="20" text="-3"/>
-    <text id="n44_dzy4" name="n44" xy="358,5" size="24,27" fontSize="20" text="-2"/>
-    <text id="n45_dzy4" name="n45" xy="400,5" size="25,27" fontSize="20" text="-1"/>
-    <text id="n46_dzy4" name="n46" xy="443,5" size="17,27" fontSize="20" text="0"/>
-    <text id="n47_dzy4" name="n47" xy="478,5" size="17,27" fontSize="20" text="1"/>
-    <text id="n48_dzy4" name="n48" xy="513,5" size="17,27" fontSize="20" text="2"/>
-    <text id="n49_dzy4" name="n49" xy="548,5" size="17,27" fontSize="20" text="3"/>
-    <text id="n50_dzy4" name="n50" xy="583,5" size="17,27" fontSize="20" text="4"/>
-    <text id="n51_dzy4" name="n51" xy="618,5" size="17,27" fontSize="20" text="5"/>
-    <text id="n52_dzy4" name="n52" xy="653,5" size="17,27" fontSize="20" text="6"/>
-    <text id="n53_dzy4" name="n53" xy="688,5" size="17,27" fontSize="20" text="7"/>
-    <text id="n56_dzy4" name="n56" xy="723,5" size="17,27" fontSize="20" text="8"/>
-    <text id="n57_dzy4" name="n57" xy="758,5" size="17,27" fontSize="20" text="9"/>
-    <text id="n58_dzy4" name="n58" xy="793,5" size="29,27" fontSize="20" text="10"/>
-    <graph id="n59_dzy4" name="n59" xy="790,1" size="35,35" type="rect" lineSize="0" fillColor="#80ffff00">
-      <gearXY controller="c1" pages="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20" values="55,1|96,1|140,1|182,1|224,1|269,1|308,1|353,1|394,1|435,1|469,1|503,1|539,1|574,1|608,1|643,1|680,1|713,1|749,1|790,1" default="6,1" tween="true"/>
+    <text id="n36_dzy4" name="n36" xy="5,6" size="34,27" fontSize="20" text="-10"/>
+    <text id="n37_dzy4" name="n37" xy="61,5" size="23,27" fontSize="20" text="-9"/>
+    <text id="n38_dzy4" name="n38" xy="103,5" size="23,27" fontSize="20" text="-8"/>
+    <text id="n39_dzy4" name="n39" xy="145,5" size="23,27" fontSize="20" text="-7"/>
+    <text id="n40_dzy4" name="n40" xy="188,5" size="23,27" fontSize="20" text="-6"/>
+    <text id="n41_dzy4" name="n41" xy="230,5" size="23,27" fontSize="20" text="-5"/>
+    <text id="n42_dzy4" name="n42" xy="273,5" size="23,27" fontSize="20" text="-4"/>
+    <text id="n43_dzy4" name="n43" xy="315,5" size="23,27" fontSize="20" text="-3"/>
+    <text id="n44_dzy4" name="n44" xy="358,5" size="23,27" fontSize="20" text="-2"/>
+    <text id="n45_dzy4" name="n45" xy="400,5" size="23,27" fontSize="20" text="-1"/>
+    <text id="n46_dzy4" name="n46" xy="443,5" size="16,27" fontSize="20" text="0"/>
+    <text id="n47_dzy4" name="n47" xy="478,5" size="16,27" fontSize="20" text="1"/>
+    <text id="n48_dzy4" name="n48" xy="513,5" size="16,27" fontSize="20" text="2"/>
+    <text id="n49_dzy4" name="n49" xy="548,5" size="16,27" fontSize="20" text="3"/>
+    <text id="n50_dzy4" name="n50" xy="583,5" size="16,27" fontSize="20" text="4"/>
+    <text id="n51_dzy4" name="n51" xy="618,5" size="16,27" fontSize="20" text="5"/>
+    <text id="n52_dzy4" name="n52" xy="653,5" size="16,27" fontSize="20" text="6"/>
+    <text id="n53_dzy4" name="n53" xy="688,5" size="16,27" fontSize="20" text="7"/>
+    <text id="n56_dzy4" name="n56" xy="723,5" size="16,27" fontSize="20" text="8"/>
+    <text id="n57_dzy4" name="n57" xy="758,5" size="16,27" fontSize="20" text="9"/>
+    <text id="n58_dzy4" name="n58" xy="793,5" size="27,27" fontSize="20" text="10"/>
+    <graph id="n59_dzy4" name="n59" xy="6,1" size="35,35" type="rect" lineSize="0" fillColor="#80ffff00">
+      <gearXY controller="size" pages="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20" values="55,1|96,1|140,1|182,1|224,1|269,1|308,1|353,1|394,1|435,1|469,1|503,1|539,1|574,1|608,1|643,1|680,1|713,1|749,1|790,1" default="6,1" tween="true"/>
     </graph>
   </displayList>
 </component>
