@@ -20,7 +20,7 @@ namespace ZMDFQ.Cards
     }
     public class CR_IP001_SK1 : Skill
     {
-        public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
         {
             throw new NotImplementedException();
         }
