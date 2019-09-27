@@ -15,7 +15,14 @@ namespace ZMDFQ
             bool result = canUse(game, nowRequest, useInfo, out request);
             EventData<bool> boolData = new EventData<bool>() { data = result };
             EventData<UseRequest> nextRequestData = new EventData<UseRequest>() { data = request };
-            game.EventSystem.Call(EventEnum.onCheckCanUse, this, boolData, nextRequestData).GetAwaiter().GetResult();
+            Task task = game.EventSystem.Call(EventEnum.onCheckCanUse, this, boolData, nextRequestData);
+            if (!task.GetAwaiter().IsCompleted)
+            {
+                Log.Error($"EventEnum.onCheckCanUse必须同步运行");
+                nextRequest = request;
+                return result;
+            }
+            task.GetAwaiter().GetResult();
             nextRequest = nextRequestData.data;
             return boolData.data;
         }
