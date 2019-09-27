@@ -332,6 +332,7 @@ namespace ZMDFQ
         public Player[] winners { get; private set; } = null;
         internal async Task NewTurn(Player player)
         {
+            ActivePlayer = player;
             await EventSystem.Call(EventEnum.TurnStart, this);
             await player.DrawEventCard(this);
             await player.DrawActionCard(this, 1);

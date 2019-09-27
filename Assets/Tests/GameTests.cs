@@ -351,7 +351,7 @@ namespace Tests
     }
     class TestAction1 : ActionCard
     {
-        public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
         {
             nextRequest = null;
             return true;

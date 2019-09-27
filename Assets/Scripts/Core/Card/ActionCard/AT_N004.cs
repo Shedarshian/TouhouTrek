@@ -13,7 +13,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class AT_N004 : ActionCard
     {
-        public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
         {
             throw new NotImplementedException();
         }
