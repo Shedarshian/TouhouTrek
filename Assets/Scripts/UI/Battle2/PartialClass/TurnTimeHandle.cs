@@ -12,11 +12,11 @@ namespace ZMDFQ.UI.Battle
         [BattleUI(nameof(SetGame))]
         void turnTimeInit()
         {
-            game.EventSystem.Register(EventEnum.TurnStart, (x) =>
-            {
-                m_ActivePlayer.SetVar("p", game.ActivePlayer.Id == self.Id ? "你" : game.ActivePlayer.Id.ToString());
-                return Task.CompletedTask;
-            });
+            game.EventSystem.Register(EventEnum.TurnStart, 100, (x) =>
+             {
+                 m_ActivePlayer.SetVar("p", game.ActivePlayer.Id == self.Id ? "你" : game.ActivePlayer.Id.ToString());
+                 return Task.CompletedTask;
+             });
         }
 
         [BattleUI(nameof(OnUpdate))]

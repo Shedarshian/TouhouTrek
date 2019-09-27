@@ -26,7 +26,7 @@ namespace ZMDFQ.Cards
     {
         public override void Enable(Game game)
         {
-            game.EventSystem.Register(EventEnum.afterDiscardPhase, effect);
+            game.EventSystem.Register(EventEnum.afterDiscardPhase, game.Players.IndexOf(Hero.Player), effect);
         }
         public override void Disable(Game game)
         {
@@ -67,8 +67,8 @@ namespace ZMDFQ.Cards
         //}
         public override void Enable(Game game)
         {
-            game.EventSystem.Register(EventEnum.BeforDrawActionCard, effect);
-            game.EventSystem.Register(EventEnum.GetHandMax, changeHandMax);
+            game.EventSystem.Register(EventEnum.BeforDrawActionCard, game.Players.IndexOf(Hero.Player), effect);
+            game.EventSystem.Register(EventEnum.GetHandMax, game.Players.IndexOf(Hero.Player), changeHandMax);
         }
         public override void Disable(Game game)
         {
@@ -111,7 +111,7 @@ namespace ZMDFQ.Cards
         //}
         public override void Enable(Game game)
         {
-            game.EventSystem.Register(EventEnum.GetPoint, effect);
+            game.EventSystem.Register(EventEnum.GetPoint, game.Players.IndexOf(Hero.Player), effect);
         }
         public override void Disable(Game game)
         {

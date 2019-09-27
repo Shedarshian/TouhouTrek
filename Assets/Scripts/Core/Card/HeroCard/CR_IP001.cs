@@ -50,7 +50,7 @@ namespace ZMDFQ.Cards
 
         public override void Enable(Game game)
         {
-            game.EventSystem.Register(EventEnum.OnPlayrSizeChange, moreChange);
+            game.EventSystem.Register(EventEnum.OnPlayrSizeChange, game.Players.IndexOf(Hero.Player), moreChange);
         }
 
         private Task moreChange(object[] param)

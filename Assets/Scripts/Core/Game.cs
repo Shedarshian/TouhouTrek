@@ -10,7 +10,7 @@ namespace ZMDFQ
     using PlayerAction;
     public class Game
     {
-        public EventSystem EventSystem = new EventSystem();
+        public SeatByEventSystem EventSystem;
 
         public ITimeManager TimeManager;
         /// <summary>
@@ -90,6 +90,7 @@ namespace ZMDFQ
         /// </summary>
         public void Init(GameOptions options = null)
         {
+            EventSystem = new SeatByEventSystem();
             this.options = options;
             if (TimeManager != null)
                 TimeManager.Game = this;
@@ -148,6 +149,7 @@ namespace ZMDFQ
                     Players.Add(p);
                 }
             }
+            EventSystem.MaxSeat = Players.Count;
             foreach (Player player in Players)
             {
                 player.Size = options != null ? options.initInfluence : 0;
@@ -206,7 +208,7 @@ namespace ZMDFQ
                 await player.DrawActionCard(this, 2);
             }
             //游戏执行阶段
-            await EventSystem.Call(EventEnum.GameStart);
+            await EventSystem.Call(EventEnum.GameStart, 0);
 
             NewRound();
         }
@@ -277,7 +279,7 @@ namespace ZMDFQ
             Round++;
             //官作发布阶段
             NextThemeCard();
-            await EventSystem.Call(EventEnum.RoundStart, this);
+            await EventSystem.Call(EventEnum.RoundStart, 0, this);
             //玩家回合
             for (int i = 0; i < Players.Count; i++)
             {
@@ -314,29 +316,30 @@ namespace ZMDFQ
                         //    win = false;//不结算分的玩家算失败
                         EventData<int> pointData = new EventData<int>() { data = basePoint };
                         //EventData<bool> winData = new EventData<bool>() { data = win };
-                        await EventSystem.Call(EventEnum.GetPoint, this, player, pointData/*, winData*/);
+                        await EventSystem.Call(EventEnum.GetPoint, 0, this, player, pointData/*, winData*/);
                         player.point = pointData.data;
                         if (player.point > 0/*winData.data*/) winnerList.Add(player);
                     }
                     winners = winnerList.ToArray();//这就是获胜者，目前不知道该干嘛。
-                    await EventSystem.Call(EventEnum.GameEnd, this);
+                    await EventSystem.Call(EventEnum.GameEnd, 0, this);
                     return;
                 }
                 else
                     ActiveTheme.Disable(this);//在游戏结束的时候不调用该方法，因为此时进入弃牌堆的官作牌被视作有效的。
             }
             //一轮结束了
-            await EventSystem.Call(EventEnum.RoundEnd, this);
+            await EventSystem.Call(EventEnum.RoundEnd, 0, this);
             NewRound();
         }
         public Player[] winners { get; private set; } = null;
         internal async Task NewTurn(Player player)
         {
             ActivePlayer = player;
-            await EventSystem.Call(EventEnum.TurnStart, this);
+            int seat = Players.IndexOf(player);
+            await EventSystem.Call(EventEnum.TurnStart, seat, this);
             await player.DrawEventCard(this);
             await player.DrawActionCard(this, 1);
-            await EventSystem.Call(EventEnum.ActionStart, this);
+            await EventSystem.Call(EventEnum.ActionStart, seat, this);
 
 
             while (true)
@@ -353,7 +356,7 @@ namespace ZMDFQ
                 }
             }
 
-            await EventSystem.Call(EventEnum.ActionEnd, this);
+            await EventSystem.Call(EventEnum.ActionEnd, seat, this);
 
             var chooseDirectionResponse = (ChooseDirectionResponse)await WaitAnswer(new ChooseDirectionRequest() { PlayerId = player.Id }.SetTimeOut(RequestTime));
 
@@ -365,9 +368,9 @@ namespace ZMDFQ
                 ChooseSomeCardResponse chooseSomeCardResponse = (ChooseSomeCardResponse)await WaitAnswer(new ChooseSomeCardRequest() { PlayerId = player.Id, Count = player.ActionCards.Count - max }.SetTimeOut(RequestTime));
                 await player.DropActionCard(this, chooseSomeCardResponse.Cards, true);
             }
-            await EventSystem.Call(EventEnum.afterDiscardPhase, this, player);
+            await EventSystem.Call(EventEnum.afterDiscardPhase, seat, this, player);
 
-            await EventSystem.Call(EventEnum.TurnEnd, this);
+            await EventSystem.Call(EventEnum.TurnEnd, seat, this);
         }
 
         internal void NextThemeCard()
@@ -384,6 +387,11 @@ namespace ZMDFQ
         internal void AddUsingInfo(UsingInfo useInfo)
         {
             UsingInfos.Add(useInfo);
+        }
+
+        public int ActivePlayerSeat()
+        {
+            return Players.IndexOf(ActivePlayer);
         }
 
         internal Player GetPlayer(int id)
@@ -421,7 +429,7 @@ namespace ZMDFQ
         internal async Task ChangeSize(int size, object source)
         {
             var data = new EventData<int> { data = size };
-            await EventSystem.Call(EventEnum.OnGameSizeChange, data, source);
+            await EventSystem.Call(EventEnum.OnGameSizeChange, Players.IndexOf(ActivePlayer), data, source);
             Size += data.data;
             Log.Debug($"Game size change to {Size}");
         }

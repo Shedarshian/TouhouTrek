@@ -17,7 +17,7 @@ namespace ZMDFQ.Cards
         };
         public override void Enable(Game game)
         {
-            game.EventSystem.Register(EventEnum.onCheckCanUse, changeUseable);
+            game.EventSystem.Register(EventEnum.onCheckCanUse, -1, changeUseable);
         }
 
         public override void Disable(Game game)
@@ -27,9 +27,9 @@ namespace ZMDFQ.Cards
 
         Task changeUseable(object[] args)
         {
-            if (limitType.Contains(args[0].GetType()))
+            if (args[0] is IDiceCheck)
             {
-                EventData<bool> booldata=args[1] as EventData<bool>;
+                EventData<bool> booldata = args[1] as EventData<bool>;
                 booldata.data = false;
             }
             return Task.CompletedTask;

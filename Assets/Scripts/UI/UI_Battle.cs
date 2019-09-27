@@ -126,9 +126,9 @@ namespace ZMDFQ
 
             Self = Game.Players[1];
 
-            Game.EventSystem.Register(EventEnum.DrawActionCard, onDrawCard);
+            //Game.EventSystem.Register(EventEnum.DrawActionCard, onDrawCard);
 
-            Game.EventSystem.Register(EventEnum.DropActionCard, onDropCard);
+            //Game.EventSystem.Register(EventEnum.DropActionCard, onDropCard);
 
             Game.OnRequest += OnRequest;
 

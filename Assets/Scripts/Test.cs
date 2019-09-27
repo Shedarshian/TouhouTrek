@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -9,17 +10,28 @@ public class Test : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var s = "165*8";
-
-        int muti = s.LastIndexOf('*');
-
-        if (muti >= 0)
+        SeatByEventSystem eventSystem = new SeatByEventSystem();
+        eventSystem.MaxSeat = 8;
+        for (int i = 0; i < 8; i++)
         {
-            string s1 = s.Substring(muti + 1, s.Length - muti - 1);
-            Debug.Log(s1);
-            s = s.Substring(0, muti);
+            int k = i;
+            eventSystem.Register(EventEnum.ActionEnd, i, (x) =>
+            {
+                Debug.Log($"p{k}的1");
+                return Task.CompletedTask;
+            });
+            eventSystem.Register(EventEnum.ActionEnd, i, (x) =>
+            {
+                Debug.Log($"p{k}的2");
+                return Task.CompletedTask;
+            }, 1);
         }
-        Debug.Log(s);
+        eventSystem.Register(EventEnum.ActionEnd, -1, (x) =>
+        {
+            Debug.Log($"官作测试");
+            return Task.CompletedTask;
+        });
+        eventSystem.Call(EventEnum.ActionEnd, 5);
     }
 
     // Update is called once per frame

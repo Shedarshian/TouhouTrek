@@ -92,7 +92,7 @@ namespace ZMDFQ.UI.Battle
         [BattleUI(nameof(SetGame))]
         private void DisplayCard_NewGame()
         {
-            game.EventSystem.Register(EventEnum.DrawActionCard, (x) =>
+            game.EventSystem.Register(EventEnum.DrawActionCard,100, (x) =>
             {
                 Player player = x[0] as Player;
                 if (player.Id == self.Id)

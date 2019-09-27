@@ -33,7 +33,7 @@ namespace ZMDFQ
             if (!isFaceup)
             {
                 isFaceup = true;
-                await game.EventSystem.Call(EventEnum.FaceUp, game, this);
+                await game.EventSystem.Call(EventEnum.FaceUp,game.ActivePlayerSeat(), game, this);
             }
         }
     }

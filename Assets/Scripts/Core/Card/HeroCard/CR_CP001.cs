@@ -51,7 +51,7 @@ namespace ZMDFQ.Cards
 
         public override void Enable(Game game)
         {
-            turnLimit.Enable(game);
+            turnLimit.Enable(game, game.Players.IndexOf(Hero.Player));
         }
         public override void Disable(Game game)
         {
