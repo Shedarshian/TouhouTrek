@@ -19,7 +19,10 @@ namespace ZMDFQ
         /// 未翻开时 是否询问响应技能
         /// </summary>
         public bool AutoRequest = false;
-
+        /// <summary>
+        /// 这是不是一个需要骰子的技能？
+        /// </summary>
+        public virtual bool NeedDice { get; } = false;
         /// <summary>
         /// 根据输入信息决定技能是否能使用，如果否，那么提供技能还需要的参数
         /// </summary>

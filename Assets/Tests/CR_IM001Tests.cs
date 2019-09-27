@@ -73,11 +73,11 @@ namespace Tests
             game.Answer(new ChooseHeroResponse() { PlayerId = 0, HeroId = 1 });
             game.Answer(new ChooseHeroResponse() { PlayerId = 1, HeroId = 4 });
 
-            Assert.AreEqual(1, game.Players[0].HandMax(game));
+            Assert.AreEqual(1, await game.Players[0].HandMax(game));
 
             await game.Players[0].Hero.FaceUp(game);
 
-            Assert.AreEqual(4, game.Players[0].HandMax(game));
+            Assert.AreEqual(4, await game.Players[0].HandMax(game));
         }
         [Test]
         public void skill3Test()

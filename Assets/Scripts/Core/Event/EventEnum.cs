@@ -38,5 +38,9 @@ namespace ZMDFQ
 
         GetHandMax,
         GetPoint,
+        /// <summary>
+        /// 当检查卡牌或者技能是否可用。
+        /// </summary>
+        onCheckCanUse
     }
 }
