@@ -9,11 +9,12 @@ namespace ZMDFQ.UI.Battle
     //用于处理场上能看见的卡
     partial class UI_Main2
     {
-        [BattleUI(nameof(Init))]
+        [BattleUI(nameof(Init),true)]
         private void DisplayCard_Init()
         {
-            m_useCard.enabled = false;
-            m_Hand.OnCardClick.Add((evt) =>
+            //这里必须先行其他注册事件，否则其他位置的手牌会出错
+            //点选卡片
+            m_Hand.OnCardClick.Add(evt =>
             {
                 UI_Card uI_Card = evt.data as UI_Card;
                 ActionCard card = uI_Card.Card as ActionCard;
@@ -26,60 +27,19 @@ namespace ZMDFQ.UI.Battle
                     selectedCards.Add(card);
                 }
                 m_Hand.SetCards(self.ActionCards, selectedCards);
-                m_useCard.enabled = false;
-                if (nowRequest.PlayerId == self.Id)
-                {
-                    if (selectedSkill != null)
-                    {
-                        PlayerAction.UseRequest nextRequest;
-                        if (selectedSkill.CanUse(game, nowRequest,getFreeUseInfo(), out nextRequest))
-                        {
-                            m_useCard.enabled = true;
-                        }
-                        else
-                        {
-                            m_UseTip.text = nextRequest.RequestInfo;
-                        }
-                    }
-                    else if (selectedCards.Count == 1)
-                    {
-                        PlayerAction.UseRequest nextRequest;
-                        if (selectedCards[0].CanUse(game, nowRequest, getFreeUseInfo(),out nextRequest))
-                        {
-                            m_useCard.enabled = true;
-                        }
-                        else
-                        {
-                            m_UseTip.text = nextRequest.RequestInfo;
-                        }
-                    }
-                }
-            });
-            m_useCard.onClick.Add(() =>
-            {
-                var useinfo = getFreeUseInfo();
-                selectedCards.Clear();
-                game.Answer(useinfo);
-            });
-            m_Endturn.onClick.Add(() =>
-            {
-                game.Answer(new PlayerAction.EndFreeUseResponse()
-                {
-                    PlayerId = self.Id,
-                });
             });
         }
 
-        PlayerAction.FreeUse getFreeUseInfo()
+        [BattleUI(nameof(flush))]
+        private void DisplayCardflush()
         {
-            return new PlayerAction.FreeUse()
-            {
-                PlayerId = self.Id,
-                Source = selectedCards.Select(x => x.Id).ToList(),
-                CardId = selectedSkill != null || selectedCards.Count != 1 ? -1 : selectedCards[0].Id,
-                SkillId = selectedSkill == null ? -1 : SkillHelper.getId(selectedSkill),
-                PlayersId = selectedPlayers.Select(x => x.Id).ToList(),
-            };
+            m_MainSize.m_size.selectedIndex = game.Size + 10;
+            m_EventDeckCount.text = game.EventDeck.Count.ToString();
+            m_ActionDeckCount.text = game.ActionDeck.Count.ToString();
+            m_ThemeDeckCount.text = game.UsedThemeDeck.Count.ToString();
+            m_EventDropDeckCount.text = game.UsedEventDeck.Count.ToString();
+            m_ActionDeckCount.text = game.UsedActionDeck.Count.ToString();
+            //m_NowTheme game.ActiveTheme
         }
 
         [BattleUI(nameof(onResponse))]

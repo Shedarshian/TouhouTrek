@@ -9,6 +9,7 @@ namespace ZMDFQ
     public class UI_Battle2 : MonoBehaviour
     {
         UI_Main2 _Main2;
+        Game game;
         private void Awake()
         {
             BattleBinder.BindAll();
@@ -17,7 +18,7 @@ namespace ZMDFQ
         void Start()
         {
             _Main2 = GetComponent<UIPanel>().ui as UI_Main2;
-            Game game = new Game();
+            game = new Game();
             game.TimeManager = gameObject.AddComponent<RequestTimeoutManager>();
             game.Init();
             _Main2.SetGame(game, game.GetPlayer(1));
@@ -28,6 +29,11 @@ namespace ZMDFQ
         void Update()
         {
 
+        }
+
+        private void OnDestroy()
+        {
+            game.Cancel();
         }
     }
 

@@ -44,16 +44,16 @@ namespace ZMDFQ
             List<ActionCard> drawedCards = new List<ActionCard>();
             for (int i = 0; i < drawCount.data; i++)
             {
-                if (game.Deck.Count == 0)//如果没有行动牌了
+                if (game.ActionDeck.Count == 0)//如果没有行动牌了
                 {
                     //就把行动弃牌堆洗入行动牌堆
-                    game.Deck.AddRange(game.UsedActionDeck);
+                    game.ActionDeck.AddRange(game.UsedActionDeck);
                     game.UsedActionDeck.Clear();
-                    game.Reshuffle(game.Deck);
+                    game.Reshuffle(game.ActionDeck);
                 }
-                ActionCards.Add(game.Deck[0]);
-                drawedCards.Add(game.Deck[0]);
-                game.Deck.RemoveAt(0);
+                ActionCards.Add(game.ActionDeck[0]);
+                drawedCards.Add(game.ActionDeck[0]);
+                game.ActionDeck.RemoveAt(0);
             }
             await game.EventSystem.Call(EventEnum.DrawActionCard,game.ActivePlayerSeat(), this, drawedCards);
         }

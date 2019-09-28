@@ -16,7 +16,7 @@ namespace ZMDFQ.UI.Battle
         {
             m_Name.text = player.Name;
             m_ActionCards.text = player.ActionCards.Count.ToString();
-            m_EventCards.text = (player.ActionCards.Count + (player.SaveEvent == null ? 0 : 1)).ToString();
+            m_EventCards.text = (player.EventCards.Count + (player.SaveEvent == null ? 0 : 1)).ToString();
             m_Size.text = player.Size.ToString();
             m_Group.m_type.selectedIndex = 0;//TODO
             m_Hero.visible = player.Hero != null;
