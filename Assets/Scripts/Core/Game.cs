@@ -433,9 +433,28 @@ namespace ZMDFQ
             Size += data.data;
             Log.Debug($"Game size change to {Size}");
         }
+        Queue<int> diceQueue { get; } = new Queue<int>();
+        /// <summary>
+        /// 设置骰子结果，设置的骰子结果会被保存进一个队列，在投骰子的时候出队。
+        /// </summary>
+        /// <param name="result"></param>
+        public void setDice(int result)
+        {
+            diceQueue.Enqueue(result);
+        }
+        /// <summary>
+        /// 投6面骰子，返回得到的结果。
+        /// </summary>
+        /// <returns></returns>
+        public int dice()
+        {
+            if (diceQueue.Count > 0)
+                return diceQueue.Dequeue();
+            return ram.Next(1, 7);
+        }
         public int twoPointCheck()
         {
-            switch(ram.Next(1,7))
+            switch (dice())
             {
                 case 6:
                 case 5:

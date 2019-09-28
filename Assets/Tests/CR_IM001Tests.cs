@@ -22,7 +22,7 @@ namespace Tests
                 },
                 characterCards = game.createCards(new CR_IM001(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
+                officialCards = game.createCards(new TestOfficial(), 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
