@@ -433,6 +433,20 @@ namespace ZMDFQ
             Size += data.data;
             Log.Debug($"Game size change to {Size}");
         }
+        public int twoPointCheck()
+        {
+            switch(ram.Next(1,7))
+            {
+                case 6:
+                case 5:
+                    return 2;
+                case 4:
+                case 3:
+                    return 1;
+                default:
+                    return 0;
+            }
+        }
     }
     public class GameOptions
     {
