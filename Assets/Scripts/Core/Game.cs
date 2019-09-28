@@ -84,7 +84,7 @@ namespace ZMDFQ
         /// </summary>
         private TaskCompletionSource<Response>[] requests;
 
-        private System.Threading.CancellationTokenSource cts;
+        internal System.Threading.CancellationTokenSource cts;
 
         GameOptions options { get; set; } = null;
         int endingOfficialCardCount { get; set; } = 0;
@@ -94,6 +94,7 @@ namespace ZMDFQ
         public void Init(GameOptions options = null)
         {
             EventSystem = new SeatByEventSystem();
+            EventSystem.game = this;
             this.options = options;
             if (TimeManager != null)
                 TimeManager.Game = this;
