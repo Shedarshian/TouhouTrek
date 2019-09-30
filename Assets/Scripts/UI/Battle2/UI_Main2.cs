@@ -52,9 +52,11 @@ namespace ZMDFQ.UI.Battle
         class BattleUIAttribute : Attribute
         {
             public string Name;
-            public BattleUIAttribute(string Name)
+            public bool AddToTop = false;
+            public BattleUIAttribute(string Name,bool toTop=false)
             {
                 this.Name = Name;
+                this.AddToTop = toTop;
             }
         }
 
@@ -73,7 +75,10 @@ namespace ZMDFQ.UI.Battle
                         list = new List<Action>();
                         dic.Add(attr.Name, list);
                     }
-                    list.Add(action);
+                    if (attr.AddToTop)
+                        list.Insert(0, action);
+                    else
+                        list.Add(action);
                 }
             }
             doDispatch(nameof(Init));
@@ -131,6 +136,7 @@ namespace ZMDFQ.UI.Battle
         {
             //m_ActivePlayer.SetVar("p", request.PlayerId == self.Id ? "你" : request.PlayerId.ToString());
             nowRequest = request;
+            m_Request.selectedIndex = 0;
             doDispatch(nameof(onRequest));
             flush();//感觉这里写的有问题
         }

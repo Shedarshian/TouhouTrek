@@ -35,7 +35,7 @@ namespace ZMDFQ
 
         List<HeroCard> characterDeck = new List<HeroCard>();
 
-        public List<ActionCard> Deck = new List<ActionCard>();
+        public List<ActionCard> ActionDeck = new List<ActionCard>();
 
         public List<ActionCard> UsedActionDeck = new List<ActionCard>();
 
@@ -83,6 +83,9 @@ namespace ZMDFQ
         /// 一名玩家最多处于一个询问状态
         /// </summary>
         private TaskCompletionSource<Response>[] requests;
+
+        internal System.Threading.CancellationTokenSource cts;
+
         GameOptions options { get; set; } = null;
         int endingOfficialCardCount { get; set; } = 0;
         /// <summary>
@@ -91,6 +94,7 @@ namespace ZMDFQ
         public void Init(GameOptions options = null)
         {
             EventSystem = new SeatByEventSystem();
+            EventSystem.game = this;
             this.options = options;
             if (TimeManager != null)
                 TimeManager.Game = this;
@@ -107,10 +111,10 @@ namespace ZMDFQ
                 }, 28));
             }
             if (options != null && options.actionCards != null)
-                Deck.AddRange(options.actionCards);
+                ActionDeck.AddRange(options.actionCards);
             else
             {
-                Deck.AddRange(createCards(new Cards.AT_N001() { Name = "传教" }, 20));
+                ActionDeck.AddRange(createCards(new Cards.AT_N001() { Name = "传教" }, 20));
             }
             if (options != null && options.officialCards != null)
                 ThemeDeck.AddRange(options.officialCards);
@@ -122,15 +126,12 @@ namespace ZMDFQ
                 EventDeck.AddRange(options.eventCards);
             else
             {
-                for (int i = 0; i < 50; i++)
-                {
-                    EventDeck.AddRange(createCards(new Cards.EV_E002() { Name = "全国性活动" }, 20));
-                }
+                EventDeck.AddRange(createCards(new Cards.EV_E002() { Name = "全国性活动" }, 50));
             }
             if (options == null || options.shuffle)
             {
                 Reshuffle(characterDeck);
-                Reshuffle(Deck);
+                Reshuffle(ActionDeck);
                 Reshuffle(ThemeDeck);
                 Reshuffle(EventDeck);
             }
@@ -164,6 +165,7 @@ namespace ZMDFQ
         /// </summary>
         public async void StartGame()
         {
+            this.cts = new System.Threading.CancellationTokenSource();
             Size = options != null ? options.initCommunitySize : 0;//初始化社群规模
             //Self = Players[1];
             if (options == null || options.firstPlayer == 0)
@@ -210,7 +212,7 @@ namespace ZMDFQ
             //游戏执行阶段
             await EventSystem.Call(EventEnum.GameStart, 0);
 
-            NewRound();
+            await NewRound();
         }
         T[] drawCards<T>(List<T> pile, int number) where T : Card
         {
@@ -262,19 +264,27 @@ namespace ZMDFQ
         /// <returns></returns>
         public Task<Response> WaitAnswer(Request request)
         {
-            var tcs = new TaskCompletionSource<Response>();
+            var tcs = new TaskCompletionSource<Response>(cts.Token);
             int index = Players.FindIndex(x => x.Id == request.PlayerId);
             requests[index] = tcs;
             OnRequest?.Invoke(this, request);
             if (TimeManager != null)
             {
                 TimeManager.Register(request);
-                tcs.Task.ContinueWith(x => { TimeManager.Cancel(request); });
+                tcs.Task.ContinueWith(x => { TimeManager.Cancel(request); }, cts.Token);
             }
             return tcs.Task;
         }
 
-        internal async void NewRound()
+        /// <summary>
+        /// 临时终止游戏
+        /// </summary>
+        public void Cancel()
+        {
+            cts.Cancel();
+        }
+
+        internal async Task NewRound()
         {
             Round++;
             //官作发布阶段
@@ -329,7 +339,7 @@ namespace ZMDFQ
             }
             //一轮结束了
             await EventSystem.Call(EventEnum.RoundEnd, 0, this);
-            NewRound();
+            await NewRound();
         }
         public Player[] winners { get; private set; } = null;
         internal async Task NewTurn(Player player)

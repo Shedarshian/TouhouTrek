@@ -37,7 +37,7 @@ namespace Tests
             Assert.AreEqual(2, game.Players.Count);
             Assert.IsInstanceOf<Player>(game.Players[0]);
             Assert.IsInstanceOf<Player>(game.Players[1]);
-            Assert.AreEqual(20, game.Deck.Count);
+            Assert.AreEqual(20, game.ActionDeck.Count);
             Assert.AreEqual(20, game.ThemeDeck.Count);
             Assert.AreEqual(20, game.EventDeck.Count);
             Assert.AreEqual(0, game.Size);

@@ -14,6 +14,8 @@ namespace ZMDFQ
         public bool DoLog = false;
         List<Request> requests = new List<Request>();
 
+        private bool destoryed = false;
+
         private void Update()
         {
             foreach (var request in requests.ToArray())
@@ -30,6 +32,7 @@ namespace ZMDFQ
 
         public void Register(Request request)
         {
+            if (destoryed) return;
             doLog($"注册了{request.PlayerId}的 {request.GetType().Name}事件，超时：{request.TimeOut}s ");
             requests.Add(request);
         }
@@ -79,6 +82,15 @@ namespace ZMDFQ
         void doLog(string s)
         {
             if (DoLog) Log.Debug(s);
+        }
+
+        private void OnDestroy()
+        {
+            destoryed = true;
+            foreach (var request in requests.ToArray())
+            {
+                Cancel(request);
+            }
         }
     }
 }

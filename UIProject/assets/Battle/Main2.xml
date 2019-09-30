@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080" designImage="ui://oacz4rtmgs0sb" designImageAlpha="0" designImageLayer="1">
   <controller name="ChooseHero" pages="0,,1," selected="0"/>
+  <controller name="Request" pages="5,,0,,1,,2,,3,,4," selected="5">
+    <remark page="0" value="null"/>
+    <remark page="1" value="freeUse"/>
+    <remark page="2" value="takeChoice"/>
+    <remark page="3" value="chooseCard"/>
+    <remark page="4" value="useLimit"/>
+    <remark page="5" value="chooseDirection"/>
+  </controller>
   <displayList>
     <graph id="n91_dzy4" name="n91" xy="0,0" size="1920,1080" type="rect"/>
     <component id="n0_gs0s" name="PlayerInfo0" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="8,8"/>
@@ -32,19 +40,6 @@
     </component>
     <component id="n40_dzy4" name="n40" src="dzy4f" fileName="SkillBtn.xml" xy="1511,737">
       <Button title="吃瓜11"/>
-    </component>
-    <graph id="n45_dzy4" name="n45" xy="657,728" size="550,76" type="rect"/>
-    <component id="n41_dzy4" name="useCard" src="dzy4g" fileName="NormalBtn.xml" xy="665,735">
-      <Button title="使用/打出" titleColor="#009900"/>
-    </component>
-    <component id="n42_dzy4" name="n42" src="dzy4g" fileName="NormalBtn.xml" xy="801,736">
-      <Button title="取消选择" titleColor="#0066ff"/>
-    </component>
-    <component id="n43_dzy4" name="n43" src="dzy4g" fileName="NormalBtn.xml" xy="938,736">
-      <Button title="投掷骰子" titleColor="#ff9900"/>
-    </component>
-    <component id="n44_dzy4" name="Endturn" src="dzy4g" fileName="NormalBtn.xml" xy="1073,735">
-      <Button title="结束回合" titleColor="#000000"/>
     </component>
     <graph id="n46_dzy4" name="n46" xy="446,508" size="197,295" type="rect"/>
     <text id="n47_dzy4" name="n47" xy="465,523" size="159,29" fontSize="22" text="事件牌扣置区域"/>
@@ -91,12 +86,59 @@
     <graph id="n95_dzy4" name="n95" xy="1734,15" size="39,37" type="rect"/>
     <graph id="n96_dzy4" name="n96" xy="1782,18" size="40,33" type="rect"/>
     <graph id="n97_dzy4" name="n97" xy="1829,15" size="72,37" type="rect"/>
+    <text id="n100_g2d6" name="UseTip" xy="686,691" size="10,36" fontSize="27" text=""/>
+    <graph id="n45_dzy4" name="n45" xy="657,728" size="328,76" group="n101_g2d6" type="rect"/>
+    <component id="n41_dzy4" name="useCard" src="dzy4g" fileName="NormalBtn.xml" xy="665,735" group="n101_g2d6">
+      <Button title="使用/打出" titleColor="#009900"/>
+    </component>
+    <component id="n44_dzy4" name="Endturn" src="dzy4g" fileName="NormalBtn.xml" xy="826,735" group="n101_g2d6">
+      <Button title="结束回合" titleColor="#000000"/>
+    </component>
+    <group id="n101_g2d6" name="freeUse" xy="657,728" size="328,76" advanced="true" collapsed="true">
+      <gearDisplay controller="Request" pages="0"/>
+    </group>
+    <graph id="n102_g2d6" name="n102" xy="659,728" size="328,76" group="n105_g2d6" type="rect"/>
+    <component id="n103_g2d6" name="choose_y" src="dzy4g" fileName="NormalBtn.xml" xy="667,735" group="n105_g2d6">
+      <Button title="确认" titleColor="#009900"/>
+    </component>
+    <component id="n104_g2d6" name="choose_n" src="dzy4g" fileName="NormalBtn.xml" xy="828,735" group="n105_g2d6">
+      <Button title="取消" titleColor="#000000"/>
+    </component>
+    <group id="n105_g2d6" name="chooseCard" xy="659,728" size="328,76" advanced="true" collapsed="true">
+      <gearDisplay controller="Request" pages="2"/>
+    </group>
+    <graph id="n106_g2d6" name="n106" xy="668,736" size="296,72" group="n108_g2d6" type="rect">
+      <relation target="n107_g2d6" sidePair="width-width"/>
+    </graph>
+    <list id="n107_g2d6" name="choiceList" xy="673,740" size="282,68" group="n108_g2d6" layout="row" overflow="scroll" colGap="15" defaultItem="ui://oacz4rtmdzy4g">
+      <item title="选择1"/>
+      <item title="选择2"/>
+    </list>
+    <group id="n108_g2d6" name="takeChoice" xy="668,736" size="296,73" advanced="true" collapsed="true">
+      <gearDisplay controller="Request" pages="1"/>
+    </group>
+    <component id="n109_g2d6" name="limitUse" src="dzy4g" fileName="NormalBtn.xml" xy="661,743">
+      <gearDisplay controller="Request" pages="3"/>
+      <Button title="使用"/>
+    </component>
+    <graph id="n110_g2d6" name="n110" xy="658,742" size="484,68" group="n114_g2d6" type="rect"/>
+    <component id="n111_g2d6" name="forward" src="dzy4g" fileName="NormalBtn.xml" xy="665,747" group="n114_g2d6">
+      <Button title="正向"/>
+    </component>
+    <component id="n112_g2d6" name="backward" src="dzy4g" fileName="NormalBtn.xml" xy="814,747" group="n114_g2d6">
+      <Button title="逆向"/>
+    </component>
+    <component id="n113_g2d6" name="setcard" src="dzy4g" fileName="NormalBtn.xml" xy="969,747" group="n114_g2d6">
+      <Button title="扣置"/>
+    </component>
+    <group id="n114_g2d6" name="chooseDirection" xy="658,742" size="484,68" advanced="true">
+      <gearDisplay controller="Request" pages="4"/>
+    </group>
     <graph id="n98_sqtf" name="n98" xy="0,0" size="1920,1080" type="rect" lineSize="0" fillColor="#80000000">
       <gearDisplay controller="ChooseHero" pages="1"/>
     </graph>
     <component id="n99_sqtf" name="HeroChooseWindow" src="sqtfq" fileName="ChooseHero.xml" xy="450,263">
       <gearDisplay controller="ChooseHero" pages="1"/>
     </component>
-    <text id="n100_g2d6" name="UseTip" xy="686,691" size="10,36" fontSize="27" text=""/>
   </displayList>
 </component>

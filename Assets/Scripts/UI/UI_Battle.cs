@@ -151,7 +151,7 @@ namespace ZMDFQ
 
             checkRequest(nowRequest);
 
-            _main.GetChild("Deck").text = game.Deck.Count.ToString();
+            _main.GetChild("Deck").text = game.ActionDeck.Count.ToString();
             _main.GetChild("Size").text = game.Size.ToString();
             _main.GetChild("n16").text = Self.EventCards.Count > 0 ? Self.EventCards[0].Name : "无";
 

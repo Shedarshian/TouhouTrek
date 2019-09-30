@@ -8,6 +8,7 @@ namespace ZMDFQ.UI.Battle
 	public partial class UI_Main2 : GComponent
 	{
 		public Controller m_ChooseHero;
+		public Controller m_Request;
 		public UI_PlayerSimpleInfo m_PlayerInfo0;
 		public UI_PlayerSimpleInfo m_PlayerInfo1;
 		public UI_PlayerSimpleInfo m_PlayerInfo2;
@@ -21,8 +22,6 @@ namespace ZMDFQ.UI.Battle
 		public UI_MainSize m_MainSize;
 		public GTextField m_RoundInfo;
 		public GTextField m_TurnInfo;
-		public GButton m_useCard;
-		public GButton m_Endturn;
 		public UI_Card m_NowEvent;
 		public GList m_DelayAction;
 		public GTextField m_ActionDropDeck;
@@ -36,8 +35,21 @@ namespace ZMDFQ.UI.Battle
 		public GTextField m_ActivePlayer;
 		public GProgressBar m_TimeBar;
 		public UI_Card m_NowAction;
-		public UI_ChooseHero m_HeroChooseWindow;
 		public GTextField m_UseTip;
+		public GButton m_useCard;
+		public GButton m_Endturn;
+		public GGroup m_freeUse;
+		public GButton m_choose_y;
+		public GButton m_choose_n;
+		public GGroup m_chooseCard;
+		public GList m_choiceList;
+		public GGroup m_takeChoice;
+		public GButton m_limitUse;
+		public GButton m_forward;
+		public GButton m_backward;
+		public GButton m_setcard;
+		public GGroup m_chooseDirection;
+		public UI_ChooseHero m_HeroChooseWindow;
 
 		public const string URL = "ui://oacz4rtmgs0sc";
 
@@ -55,6 +67,7 @@ namespace ZMDFQ.UI.Battle
 			base.ConstructFromXML(xml);
 
 			m_ChooseHero = this.GetControllerAt(0);
+			m_Request = this.GetControllerAt(1);
 			m_PlayerInfo0 = (UI_PlayerSimpleInfo)this.GetChildAt(1);
 			m_PlayerInfo1 = (UI_PlayerSimpleInfo)this.GetChildAt(2);
 			m_PlayerInfo2 = (UI_PlayerSimpleInfo)this.GetChildAt(3);
@@ -68,23 +81,34 @@ namespace ZMDFQ.UI.Battle
 			m_MainSize = (UI_MainSize)this.GetChildAt(19);
 			m_RoundInfo = (GTextField)this.GetChildAt(20);
 			m_TurnInfo = (GTextField)this.GetChildAt(21);
-			m_useCard = (GButton)this.GetChildAt(26);
-			m_Endturn = (GButton)this.GetChildAt(29);
-			m_NowEvent = (UI_Card)this.GetChildAt(34);
-			m_DelayAction = (GList)this.GetChildAt(35);
-			m_ActionDropDeck = (GTextField)this.GetChildAt(37);
-			m_EventDropDeckCount = (GTextField)this.GetChildAt(40);
-			m_PlayerHero = (UI_Card)this.GetChildAt(42);
-			m_GameInfo = (GComponent)this.GetChildAt(44);
-			m_Hand = (UI_HandCards)this.GetChildAt(45);
-			m_SetEvent = (UI_Card)this.GetChildAt(46);
-			m_NowTheme = (GComponent)this.GetChildAt(49);
-			m_ThemeDeckCount = (GTextField)this.GetChildAt(54);
-			m_ActivePlayer = (GTextField)this.GetChildAt(56);
-			m_TimeBar = (GProgressBar)this.GetChildAt(58);
-			m_NowAction = (UI_Card)this.GetChildAt(59);
-			m_HeroChooseWindow = (UI_ChooseHero)this.GetChildAt(71);
-			m_UseTip = (GTextField)this.GetChildAt(72);
+			m_NowEvent = (UI_Card)this.GetChildAt(29);
+			m_DelayAction = (GList)this.GetChildAt(30);
+			m_ActionDropDeck = (GTextField)this.GetChildAt(32);
+			m_EventDropDeckCount = (GTextField)this.GetChildAt(35);
+			m_PlayerHero = (UI_Card)this.GetChildAt(37);
+			m_GameInfo = (GComponent)this.GetChildAt(39);
+			m_Hand = (UI_HandCards)this.GetChildAt(40);
+			m_SetEvent = (UI_Card)this.GetChildAt(41);
+			m_NowTheme = (GComponent)this.GetChildAt(44);
+			m_ThemeDeckCount = (GTextField)this.GetChildAt(49);
+			m_ActivePlayer = (GTextField)this.GetChildAt(51);
+			m_TimeBar = (GProgressBar)this.GetChildAt(53);
+			m_NowAction = (UI_Card)this.GetChildAt(54);
+			m_UseTip = (GTextField)this.GetChildAt(65);
+			m_useCard = (GButton)this.GetChildAt(67);
+			m_Endturn = (GButton)this.GetChildAt(68);
+			m_freeUse = (GGroup)this.GetChildAt(69);
+			m_choose_y = (GButton)this.GetChildAt(71);
+			m_choose_n = (GButton)this.GetChildAt(72);
+			m_chooseCard = (GGroup)this.GetChildAt(73);
+			m_choiceList = (GList)this.GetChildAt(75);
+			m_takeChoice = (GGroup)this.GetChildAt(76);
+			m_limitUse = (GButton)this.GetChildAt(77);
+			m_forward = (GButton)this.GetChildAt(79);
+			m_backward = (GButton)this.GetChildAt(80);
+			m_setcard = (GButton)this.GetChildAt(81);
+			m_chooseDirection = (GGroup)this.GetChildAt(82);
+			m_HeroChooseWindow = (UI_ChooseHero)this.GetChildAt(84);
 			Init();
 		}
 		

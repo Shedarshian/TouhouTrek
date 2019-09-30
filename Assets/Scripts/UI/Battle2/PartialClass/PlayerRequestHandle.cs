@@ -19,7 +19,29 @@ namespace ZMDFQ.UI.Battle
                         //由ChooseHero模块处理
                         break;
                     case FreeUseRequest freeUseRequest:
-                        //由DisplayCard处理
+                        //由FreeUseHandle处理
+                        break;
+                    case TakeChoiceRequest takeChoiceRequest:
+                        m_Request.selectedIndex = 2;
+                        m_choiceList.RemoveChildrenToPool();
+                        for (int i = 0; i < takeChoiceRequest.Infos.Count; i++)
+                        {
+                            int k = i;
+                            var g= m_choiceList.AddItemFromPool();
+                            g.text = takeChoiceRequest.Infos[i];
+                            g.onClick.Set(() => game.Answer(new TakeChoiceResponse()
+                            {
+                                Index = k,
+                                PlayerId = self.Id,
+                            }));
+                        }
+                        m_choiceList.ResizeToFit(m_choiceList.numItems);
+                        break;
+                    case ChooseSomeCardRequest chooseSomeCardRequest:
+                       
+                        break;
+                    case ChooseDirectionRequest chooseDirectionRequest:
+                        
                         break;
                     default:
                         Log.Warning($"未处理的request:{nowRequest.GetType().Name}");
