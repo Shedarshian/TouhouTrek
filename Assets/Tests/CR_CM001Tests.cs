@@ -40,6 +40,18 @@ namespace Tests
 
             Assert.AreEqual(-2, game.Players[1].Size);
             Assert.AreEqual(2, game.Size);
+
+            game.setDice(6);
+            game.Answer(new FreeUse() { PlayerId = 0, SkillId = SkillHelper.getId(game.Players[0].Hero.Skills[0]), Source = new List<int>() { 22 }, PlayersId = new List<int>() { 1 } });
+            game.Answer(new TakeChoiceResponse() { PlayerId = 0, Index = 1 });
+
+            Assert.AreEqual(-4, game.Players[1].Size);
+            Assert.AreEqual(4, game.Size);
+            Assert.False(game.Players[0].Hero.Skills[0].CanUse(
+                game,
+                null,
+                new FreeUse() { PlayerId = 0, SkillId = SkillHelper.getId(game.Players[0].Hero.Skills[0]), Source = new List<int>() { 22 }, PlayersId = new List<int>() { 1 } },
+                out _));
         }
     }
 }
