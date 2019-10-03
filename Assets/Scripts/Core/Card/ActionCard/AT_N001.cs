@@ -12,38 +12,15 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class AT_N001 : ActionCard
     {
-        public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
         {
             nextRequest = null;
             switch (nowRequest)
             {
                 case UseLimitCard useLimitCard:
-                    if (useLimitCard.CardType != CardHelper.getId(this))
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        if (useInfo.Source.Count != 1)
-                        {
-                            nextRequest = new CardChooseRequest();
-                            return false;
-                        }
-                        else
-                        {
-                            return true;
-                        }
-                    }
+                    return Effects.UseWayResponse.CheckLimit(game, useLimitCard, useInfo, ref nextRequest, this);
                 case FreeUseRequest freeUse:
-                    if (useInfo.Source.Count != 1)
-                    {
-                        nextRequest = new CardChooseRequest();
-                        return false;
-                    }
-                    else
-                    {
-                        return true;
-                    }
+                    return true;
             }
             return false;
         }

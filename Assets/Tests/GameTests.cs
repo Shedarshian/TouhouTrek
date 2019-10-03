@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using NUnit.Framework;
@@ -6,7 +8,6 @@ using UnityEngine;
 using UnityEngine.TestTools;
 
 using ZMDFQ;
-using ZMDFQ.Cards;
 using ZMDFQ.Effects;
 using ZMDFQ.PlayerAction;
 
@@ -26,7 +27,7 @@ namespace Tests
                     new Player(1)
                 },
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 shuffle = false,
                 initCommunitySize = 0,
@@ -36,7 +37,7 @@ namespace Tests
             Assert.AreEqual(2, game.Players.Count);
             Assert.IsInstanceOf<Player>(game.Players[0]);
             Assert.IsInstanceOf<Player>(game.Players[1]);
-            Assert.AreEqual(20, game.Deck.Count);
+            Assert.AreEqual(20, game.ActionDeck.Count);
             Assert.AreEqual(20, game.ThemeDeck.Count);
             Assert.AreEqual(20, game.EventDeck.Count);
             Assert.AreEqual(0, game.Size);
@@ -55,7 +56,7 @@ namespace Tests
                 },
                 characterCards = game.createCards(new TestCharacter(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
@@ -96,7 +97,7 @@ namespace Tests
                 },
                 characterCards = game.createCards(new TestCharacter(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
@@ -111,6 +112,8 @@ namespace Tests
             game.Answer(new FreeUse() { PlayerId = 0, CardId = 21, Source = new List<int>() { 21 } });
 
             Assert.AreEqual(1, game.Players[0].Size);
+            Assert.IsFalse(game.Players[0].ActionCards.Any(c => c.Id == 21));
+            Assert.IsTrue(game.UsedActionDeck.Any(c => c.Id == 21));
             yield break;
         }
         [UnityTest]
@@ -126,7 +129,7 @@ namespace Tests
                 },
                 characterCards = game.createCards(new TestCharacter(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
@@ -144,6 +147,8 @@ namespace Tests
             game.Answer(new ChooseDirectionResponse() { PlayerId = 0, CardId = 61, IfForward = true });
 
             Assert.AreEqual(4, game.Players[0].Size);
+            Assert.IsFalse(game.Players[0].EventCards.Any(c => c.Id == 61));
+            Assert.IsTrue(game.UsedEventDeck.Any(c => c.Id == 61));
             yield break;
         }
         [UnityTest]
@@ -159,7 +164,7 @@ namespace Tests
                 },
                 characterCards = game.createCards(new TestCharacter(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
@@ -192,7 +197,7 @@ namespace Tests
                 },
                 characterCards = game.createCards(new TestCharacter(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
@@ -241,7 +246,7 @@ namespace Tests
                 },
                 characterCards = game.createCards(new TestCharacter(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
@@ -286,7 +291,7 @@ namespace Tests
                 },
                 characterCards = game.createCards(new TestCharacter(), 20),
                 actionCards = game.createCards(new TestAction1(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
+                officialCards = game.createCards(new TestOfficial() { onEnable = g => g.Size += 1 }, 20),
                 eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
@@ -307,80 +312,93 @@ namespace Tests
             game.Answer(new ChooseDirectionResponse() { PlayerId = 1, CardId = 62, IfSet = true });
             game.Answer(new ChooseSomeCardResponse() { PlayerId = 1, Cards = new List<int>() { 23, 24 } });
 
-            Assert.AreEqual(game.Players[0], game.winner);
+            Assert.AreEqual(2, game.winners.Length);
+            Assert.AreEqual(1, game.winners[0].point);
+            Assert.AreEqual(1, game.winners[0].point);
             yield break;
         }
-        class TestCharacter : HeroCard
+    }
+    class TestCharacter : HeroCard
+    {
+        public override Camp camp
         {
-            public override Camp camp
-            {
-                get { return Camp.commuMajor; }
-            }
-            public override List<Skill> Skills { get; } = new List<Skill>(new Skill[] { });
+            get { return Camp.commuMajor; }
         }
-        class TestSkill : Skill
+        public override List<Skill> Skills { get; } = new List<Skill>(new Skill[] { });
+    }
+    class TestSkill : Skill
+    {
+        public override void Disable(Game game)
         {
-            public override void Disable(Game game)
-            {
-                throw new System.NotImplementedException();
-            }
-
-            public override void Enable(Game game)
-            {
-                throw new System.NotImplementedException();
-            }
-
-            public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
-            {
-                nextRequest = null;
-                return true;
-            }
-
-            public override Task DoEffect(Game game, FreeUse useInfo)
-            {
-                throw new System.NotImplementedException();
-            }
+            throw new System.NotImplementedException();
         }
-        class TestAction1 : ActionCard
-        {
-            public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
-            {
-                nextRequest = null;
-                return true;
-            }
 
-            public override Task DoEffect(Game game, FreeUse useWay)
-            {
-                return UseCard.NormalUse(game, useWay, this, (g, r) =>
-                {
-                    game.Players.Find(p => p.Id == useWay.PlayerId).Size += 1;
-                    return Task.CompletedTask;
-                });
-            }
-        }
-        class TestOfficial : ThemeCard
+        public override void Enable(Game game)
         {
-            public override void Enable(Game game)
-            {
-                game.Size += 1;
-            }
-            public override void Disable(Game game)
-            {
-            }
+            throw new System.NotImplementedException();
         }
-        class TestEvent : EventCard
+
+        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
         {
-            public override bool ForwardOnly => false;
-            public override Task UseForward(Game game, Player user)
+            nextRequest = null;
+            return true;
+        }
+
+        public override Task DoEffect(Game game, FreeUse useInfo)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    class TestAction1 : ActionCard
+    {
+        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        {
+            nextRequest = null;
+            return true;
+        }
+
+        public override Task DoEffect(Game game, FreeUse useWay)
+        {
+            return UseCard.NormalUse(game, useWay, this, (g, r) =>
             {
-                user.Size *= 2;
+                game.Players.Find(p => p.Id == useWay.PlayerId).Size += 1;
                 return Task.CompletedTask;
-            }
-            public override Task UseBackward(Game game, Player user)
-            {
-                user.Size = 0;
-                return Task.CompletedTask;
-            }
+            });
+        }
+    }
+    class TestOfficial : ThemeCard
+    {
+        public Action<Game> onEnable { get; set; }
+        public Action<Game> onDisable { get; set; }
+        public override void Enable(Game game)
+        {
+            onEnable?.Invoke(game);
+        }
+        public override void Disable(Game game)
+        {
+            onDisable?.Invoke(game);
+        }
+        protected override void copyPropTo(Card target)
+        {
+            base.copyPropTo(target);
+            (target as TestOfficial).onEnable = onEnable;
+            (target as TestOfficial).onDisable = onDisable;
+        }
+    }
+    class TestEvent : EventCard
+    {
+        public override bool ForwardOnly => false;
+        public override async Task Use(Game game, ChooseDirectionResponse response)
+        {
+            await UseCard.NormalUse(game, response, this, effect);
+        }
+        Task effect(Game game, ChooseDirectionResponse response)
+        {
+            if (response.IfForward)
+                game.Players.Find(p => p.Id == response.PlayerId).Size *= 2;
+            else
+                game.Players.Find(p => p.Id == response.PlayerId).Size = 0;
+            return Task.CompletedTask;
         }
     }
 }

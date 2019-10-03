@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="1920,1080" designImage="ui://oacz4rtmgs0sb" designImageAlpha="28" designImageLayer="1">
+<component size="1920,1080" designImage="ui://oacz4rtmgs0sb" designImageAlpha="0" designImageLayer="1">
+  <controller name="ChooseHero" pages="0,,1," selected="0"/>
+  <controller name="Request" pages="5,,0,,1,,2,,3,,4," selected="5">
+    <remark page="0" value="null"/>
+    <remark page="1" value="freeUse"/>
+    <remark page="2" value="takeChoice"/>
+    <remark page="3" value="chooseCard"/>
+    <remark page="4" value="useLimit"/>
+    <remark page="5" value="chooseDirection"/>
+  </controller>
   <displayList>
+    <graph id="n91_dzy4" name="n91" xy="0,0" size="1920,1080" type="rect"/>
     <component id="n0_gs0s" name="PlayerInfo0" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="8,8"/>
     <component id="n18_gs0s" name="PlayerInfo1" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="7,142"/>
     <component id="n19_gs0s" name="PlayerInfo2" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="7,276"/>
@@ -9,6 +19,7 @@
     <component id="n22_gs0s" name="PlayerInfo5" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="7,678"/>
     <component id="n23_gs0s" name="PlayerInfo6" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="7,812"/>
     <component id="n24_gs0s" name="PlayerInfo7" src="gs0sd" fileName="PlayerSimpleInfo.xml" xy="7,946"/>
+    <graph id="n68_dzy4" name="n68" xy="643,81" size="641,318" type="rect"/>
     <graph id="n26_gs0s" name="n26" xy="456,48" size="148,170" type="rect" fillColor="#ff0066ff"/>
     <text id="n27_gs0s" name="n27" xy="493,76" size="105,32" fontSize="25" align="center" vAlign="middle" text="事件牌堆"/>
     <text id="n28_gs0s" name="n28" xy="496,153" size="55,32" fontSize="25" align="center" vAlign="middle" text="剩余"/>
@@ -18,5 +29,116 @@
     <text id="n32_gs0s" name="n32" xy="498,339" size="55,32" fontSize="25" align="center" vAlign="middle" text="剩余"/>
     <text id="n33_gs0s" name="ActionDeckCount" xy="543,328" size="55,54" fontSize="45" color="#ffffff" align="center" vAlign="middle" text="56"/>
     <graph id="n34_gs0s" name="n34" xy="1477,549" size="128,151" type="rect" fillColor="#ffff0000"/>
+    <component id="n35_dzy4" name="MainSize" src="dzy4e" fileName="MainSize.xml" xy="458,9"/>
+    <text id="n36_dzy4" name="RoundInfo" xy="804,55" size="105,29" fontSize="22" vars="true" text="总计第{r=3}轮"/>
+    <text id="n37_dzy4" name="TurnInfo" xy="913,55" size="217,29" fontSize="22" vars="true" text="玩家「{id=你(ID)}」的回合"/>
+    <component id="n38_dzy4" name="n38" src="dzy4f" fileName="SkillBtn.xml" xy="1314,737">
+      <Button title="不显示"/>
+    </component>
+    <component id="n39_dzy4" name="n39" src="dzy4f" fileName="SkillBtn.xml" xy="1413,737">
+      <Button title="站队"/>
+    </component>
+    <component id="n40_dzy4" name="n40" src="dzy4f" fileName="SkillBtn.xml" xy="1511,737">
+      <Button title="吃瓜11"/>
+    </component>
+    <graph id="n46_dzy4" name="n46" xy="446,508" size="197,295" type="rect"/>
+    <text id="n47_dzy4" name="n47" xy="465,523" size="159,29" fontSize="22" text="事件牌扣置区域"/>
+    <graph id="n48_dzy4" name="n48" xy="448,415" size="193,89" type="rect"/>
+    <text id="n49_dzy4" name="n49" xy="452,434" size="49,66" fontSize="22" autoSize="none" text="你的状态"/>
+    <component id="n51_dzy4" name="NowEvent" src="dzy4h" fileName="Card.xml" xy="662,142" controller="type,0"/>
+    <list id="n54_dzy4" name="DelayAction" xy="856,138" size="420,248" layout="row" overflow="hidden" colGap="1" defaultItem="ui://oacz4rtmdzy4h">
+      <item/>
+      <item/>
+    </list>
+    <text id="n55_dzy4" name="n55" xy="1489,571" size="86,69" fontSize="25" autoSize="none" text="行动牌弃牌堆"/>
+    <text id="n56_dzy4" name="ActionDropDeck" xy="1497,644" size="61,61" fontSize="50" color="#ffffff" text="21"/>
+    <graph id="n57_dzy4" name="n57" xy="1478,385" size="128,151" type="rect" fillColor="#ff0099ff"/>
+    <text id="n58_dzy4" name="n58" xy="1490,407" size="86,69" fontSize="25" autoSize="none" text="事件牌弃牌堆"/>
+    <text id="n59_dzy4" name="EventDropDeckCount" xy="1498,480" size="61,61" fontSize="50" color="#ffffff" text="21"/>
+    <graph id="n61_dzy4" name="n61" xy="1332,386" size="118,133" type="rect"/>
+    <component id="n63_dzy4" name="PlayerHero" src="dzy4h" fileName="Card.xml" xy="1423,829" controller="type,2"/>
+    <graph id="n64_dzy4" name="n64" xy="1625,75" size="282,293" type="rect"/>
+    <component id="n65_dzy4" name="GameInfo" src="dzy4j" fileName="GameInfo.xml" xy="1638,85"/>
+    <component id="n66_dzy4" name="Hand" src="dzy4k" fileName="HandCards.xml" xy="448,818"/>
+    <component id="n67_dzy4" name="SetEvent" src="dzy4h" fileName="Card.xml" xy="459,560" controller="type,0"/>
+    <text id="n69_dzy4" name="n69" xy="668,104" size="166,30" fontSize="23" text="当前回合事件牌"/>
+    <text id="n70_dzy4" name="n70" xy="959,102" size="212,30" fontSize="23" text="延迟行动牌触发队列"/>
+    <component id="n71_dzy4" name="NowTheme" src="dzy4l" fileName="ThemeCard.xml" xy="1304,159"/>
+    <graph id="n74_dzy4" name="n74" xy="1305,16" size="165,135" type="rect" fillColor="#ff999999"/>
+    <text id="n75_dzy4" name="n75" xy="1342,85" size="97,30" fontSize="23" align="center" text="官作牌堆"/>
+    <graph id="n76_dzy4" name="n76" xy="1480,17" size="126,135" type="rect" fillColor="#ff999999"/>
+    <text id="n77_dzy4" name="n77" xy="1493,26" size="75,63" fontSize="23" autoSize="none" text="官作弃牌堆"/>
+    <text id="n78_dzy4" name="ThemeDeckCount" xy="1511,91" size="33,61" fontSize="50" text="2"/>
+    <graph id="n79_dzy4" name="n79" xy="1333,425" size="117,4" type="rect" fillColor="#ff000000"/>
+    <text id="n80_dzy4" name="ActivePlayer" xy="1346,393" size="97,30" fontSize="23" vars="true" text="{p=你}的回合"/>
+    <text id="n81_dzy4" name="n81" xy="1349,439" size="89,28" fontSize="21" text="行动阶段"/>
+    <component id="n83_dzy4" name="TimeBar" src="dzy4m" fileName="TimeBar.xml" xy="1342,484">
+      <ProgressBar value="95" max="100"/>
+    </component>
+    <component id="n85_dzy4" name="NowAction" src="dzy4h" fileName="Card.xml" xy="1334,539" scale="0.65,0.65" controller="type,1"/>
+    <graph id="n86_dzy4" name="n86" xy="1628,382" size="278,323" type="rect"/>
+    <text id="n88_dzy4" name="n88" xy="1736,461" size="68,28" fontSize="21" text="聊天窗"/>
+    <graph id="n89_dzy4" name="n89" xy="1628,728" size="280,338" type="rect"/>
+    <text id="n90_dzy4" name="n90" xy="1668,884" size="197,31" fontSize="24" text="玩家个人信息面板"/>
+    <graph id="n92_dzy4" name="n92" xy="1626,9" size="280,49" type="rect"/>
+    <graph id="n93_dzy4" name="n93" xy="1635,16" size="39,34" type="rect"/>
+    <graph id="n94_dzy4" name="n94" xy="1685,16" size="37,35" type="rect"/>
+    <graph id="n95_dzy4" name="n95" xy="1734,15" size="39,37" type="rect"/>
+    <graph id="n96_dzy4" name="n96" xy="1782,18" size="40,33" type="rect"/>
+    <graph id="n97_dzy4" name="n97" xy="1829,15" size="72,37" type="rect"/>
+    <text id="n100_g2d6" name="UseTip" xy="686,691" size="10,36" fontSize="27" text=""/>
+    <graph id="n45_dzy4" name="n45" xy="657,728" size="328,76" group="n101_g2d6" type="rect"/>
+    <component id="n41_dzy4" name="useCard" src="dzy4g" fileName="NormalBtn.xml" xy="665,735" group="n101_g2d6">
+      <Button title="使用/打出" titleColor="#009900"/>
+    </component>
+    <component id="n44_dzy4" name="Endturn" src="dzy4g" fileName="NormalBtn.xml" xy="826,735" group="n101_g2d6">
+      <Button title="结束回合" titleColor="#000000"/>
+    </component>
+    <group id="n101_g2d6" name="freeUse" xy="657,728" size="328,76" advanced="true" collapsed="true">
+      <gearDisplay controller="Request" pages="0"/>
+    </group>
+    <graph id="n102_g2d6" name="n102" xy="659,728" size="328,76" group="n105_g2d6" type="rect"/>
+    <component id="n103_g2d6" name="choose_y" src="dzy4g" fileName="NormalBtn.xml" xy="667,735" group="n105_g2d6">
+      <Button title="确认" titleColor="#009900"/>
+    </component>
+    <component id="n104_g2d6" name="choose_n" src="dzy4g" fileName="NormalBtn.xml" xy="828,735" group="n105_g2d6">
+      <Button title="取消" titleColor="#000000"/>
+    </component>
+    <group id="n105_g2d6" name="chooseCard" xy="659,728" size="328,76" advanced="true" collapsed="true">
+      <gearDisplay controller="Request" pages="2"/>
+    </group>
+    <graph id="n106_g2d6" name="n106" xy="668,736" size="296,72" group="n108_g2d6" type="rect">
+      <relation target="n107_g2d6" sidePair="width-width"/>
+    </graph>
+    <list id="n107_g2d6" name="choiceList" xy="673,740" size="282,68" group="n108_g2d6" layout="row" overflow="scroll" colGap="15" defaultItem="ui://oacz4rtmdzy4g">
+      <item title="选择1"/>
+      <item title="选择2"/>
+    </list>
+    <group id="n108_g2d6" name="takeChoice" xy="668,736" size="296,73" advanced="true" collapsed="true">
+      <gearDisplay controller="Request" pages="1"/>
+    </group>
+    <component id="n109_g2d6" name="limitUse" src="dzy4g" fileName="NormalBtn.xml" xy="661,743">
+      <gearDisplay controller="Request" pages="3"/>
+      <Button title="使用"/>
+    </component>
+    <graph id="n110_g2d6" name="n110" xy="658,742" size="484,68" group="n114_g2d6" type="rect"/>
+    <component id="n111_g2d6" name="forward" src="dzy4g" fileName="NormalBtn.xml" xy="665,747" group="n114_g2d6">
+      <Button title="正向"/>
+    </component>
+    <component id="n112_g2d6" name="backward" src="dzy4g" fileName="NormalBtn.xml" xy="814,747" group="n114_g2d6">
+      <Button title="逆向"/>
+    </component>
+    <component id="n113_g2d6" name="setcard" src="dzy4g" fileName="NormalBtn.xml" xy="969,747" group="n114_g2d6">
+      <Button title="扣置"/>
+    </component>
+    <group id="n114_g2d6" name="chooseDirection" xy="658,742" size="484,68" advanced="true">
+      <gearDisplay controller="Request" pages="4"/>
+    </group>
+    <graph id="n98_sqtf" name="n98" xy="0,0" size="1920,1080" type="rect" lineSize="0" fillColor="#80000000">
+      <gearDisplay controller="ChooseHero" pages="1"/>
+    </graph>
+    <component id="n99_sqtf" name="HeroChooseWindow" src="sqtfq" fileName="ChooseHero.xml" xy="450,263">
+      <gearDisplay controller="ChooseHero" pages="1"/>
+    </component>
   </displayList>
 </component>

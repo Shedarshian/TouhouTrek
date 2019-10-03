@@ -8,11 +8,34 @@ namespace ZMDFQ
 {
     public abstract class HeroCard : Card
     {
+        public Player Player { get; private set; }
+        /// <summary>
+        /// 角色牌是否正面朝上？
+        /// </summary>
+        public bool isFaceup { get; set; } = false;
+        public void Init(Game game, Player player)
+        {
+            Player = player;
+            foreach (var skill in Skills)
+            {
+                skill.Hero = this;
+                skill.Enable(game);
+            }
+        }
         /// <summary>
         /// 阵营
         /// </summary>
         public abstract Camp camp { get; }
         public abstract List<Skill> Skills { get; }
+
+        public async Task FaceUp(Game game)
+        {
+            if (!isFaceup)
+            {
+                isFaceup = true;
+                await game.EventSystem.Call(EventEnum.FaceUp,game.ActivePlayerSeat(), game, this);
+            }
+        }
     }
     /// <summary>
     /// 角色阵营

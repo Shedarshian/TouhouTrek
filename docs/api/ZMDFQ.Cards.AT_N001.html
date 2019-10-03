@@ -81,17 +81,10 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="ZMDFQ.Card.html">Card</a></div>
     <div class="level2"><a class="xref" href="ZMDFQ.ActionCard.html">ActionCard</a></div>
-    <div class="level3"><a class="xref" href="ZMDFQ.ActionCard-2.html">ActionCard</a>&lt;<a class="xref" href="ZMDFQ.PlayerAction.SimpleRequest.html">SimpleRequest</a>, <a class="xref" href="ZMDFQ.PlayerAction.SimpleResponse.html">SimpleResponse</a>&gt;</div>
-    <div class="level4"><span class="xref">AT_N001</span></div>
+    <div class="level3"><span class="xref">AT_N001</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="ZMDFQ.ActionCard-2.html#ZMDFQ_ActionCard_2_useWay">ActionCard&lt;SimpleRequest, SimpleResponse&gt;.useWay()</a>
-    </div>
-    <div>
-      <a class="xref" href="ZMDFQ.ActionCard-2.html#ZMDFQ_ActionCard_2_doEffect_ZMDFQ_Game__1_">ActionCard&lt;SimpleRequest, SimpleResponse&gt;.doEffect(Game, SimpleResponse)</a>
-    </div>
     <div>
       <a class="xref" href="ZMDFQ.Card.html#ZMDFQ_Card_Id">Card.Id</a>
     </div>
@@ -133,24 +126,24 @@
   <h6><strong>Assembly</strong>: Model.dll</h6>
   <h5 id="ZMDFQ_Cards_AT_N001_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AT_N001 : ActionCard&lt;SimpleRequest, SimpleResponse&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class AT_N001 : ActionCard</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_Cards_AT_N001_doEffect_ZMDFQ_Game_ZMDFQ_PlayerAction_SimpleResponse_.md&amp;value=---%0Auid%3A%20ZMDFQ.Cards.AT_N001.doEffect(ZMDFQ.Game%2CZMDFQ.PlayerAction.SimpleResponse)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_Cards_AT_N001_CanUse_ZMDFQ_Game_ZMDFQ_PlayerAction_Request_ZMDFQ_PlayerAction_FreeUse_ZMDFQ_PlayerAction_UseRequest__.md&amp;value=---%0Auid%3A%20ZMDFQ.Cards.AT_N001.CanUse(ZMDFQ.Game%2CZMDFQ.PlayerAction.Request%2CZMDFQ.PlayerAction.FreeUse%2CZMDFQ.PlayerAction.UseRequest%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/Core/Card/ActionCard/AT_N001.cs/#L15">View Source</a>
   </span>
-  <a id="ZMDFQ_Cards_AT_N001_doEffect_" data-uid="ZMDFQ.Cards.AT_N001.doEffect*"></a>
-  <h4 id="ZMDFQ_Cards_AT_N001_doEffect_ZMDFQ_Game_ZMDFQ_PlayerAction_SimpleResponse_" data-uid="ZMDFQ.Cards.AT_N001.doEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.SimpleResponse)">doEffect(Game, SimpleResponse)</h4>
+  <a id="ZMDFQ_Cards_AT_N001_CanUse_" data-uid="ZMDFQ.Cards.AT_N001.CanUse*"></a>
+  <h4 id="ZMDFQ_Cards_AT_N001_CanUse_ZMDFQ_Game_ZMDFQ_PlayerAction_Request_ZMDFQ_PlayerAction_FreeUse_ZMDFQ_PlayerAction_UseRequest__" data-uid="ZMDFQ.Cards.AT_N001.CanUse(ZMDFQ.Game,ZMDFQ.PlayerAction.Request,ZMDFQ.PlayerAction.FreeUse,ZMDFQ.PlayerAction.UseRequest@)">CanUse(Game, Request, FreeUse, out UseRequest)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Task doEffect(Game game, SimpleResponse useWay)</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -168,7 +161,71 @@
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="ZMDFQ.PlayerAction.SimpleResponse.html">SimpleResponse</a></td>
+        <td><a class="xref" href="ZMDFQ.PlayerAction.Request.html">Request</a></td>
+        <td><span class="parametername">nowRequest</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.PlayerAction.FreeUse.html">FreeUse</a></td>
+        <td><span class="parametername">useInfo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.PlayerAction.UseRequest.html">UseRequest</a></td>
+        <td><span class="parametername">nextRequest</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="ZMDFQ.ActionCard.html#ZMDFQ_ActionCard_CanUse_ZMDFQ_Game_ZMDFQ_PlayerAction_Request_ZMDFQ_PlayerAction_FreeUse_ZMDFQ_PlayerAction_UseRequest__">ActionCard.CanUse(Game, Request, FreeUse, out UseRequest)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_Cards_AT_N001_DoEffect_ZMDFQ_Game_ZMDFQ_PlayerAction_FreeUse_.md&amp;value=---%0Auid%3A%20ZMDFQ.Cards.AT_N001.DoEffect(ZMDFQ.Game%2CZMDFQ.PlayerAction.FreeUse)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/Core/Card/ActionCard/AT_N001.cs/#L28">View Source</a>
+  </span>
+  <a id="ZMDFQ_Cards_AT_N001_DoEffect_" data-uid="ZMDFQ.Cards.AT_N001.DoEffect*"></a>
+  <h4 id="ZMDFQ_Cards_AT_N001_DoEffect_ZMDFQ_Game_ZMDFQ_PlayerAction_FreeUse_" data-uid="ZMDFQ.Cards.AT_N001.DoEffect(ZMDFQ.Game,ZMDFQ.PlayerAction.FreeUse)">DoEffect(Game, FreeUse)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task DoEffect(Game game, FreeUse useWay)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.PlayerAction.FreeUse.html">FreeUse</a></td>
         <td><span class="parametername">useWay</span></td>
         <td></td>
       </tr>
@@ -190,39 +247,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">ZMDFQ.ActionCard&lt;ZMDFQ.PlayerAction.SimpleRequest, ZMDFQ.PlayerAction.SimpleResponse&gt;.doEffect(ZMDFQ.Game, ZMDFQ.PlayerAction.SimpleResponse)</span></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_Cards_AT_N001_useWay.md&amp;value=---%0Auid%3A%20ZMDFQ.Cards.AT_N001.useWay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/Core/Card/ActionCard/AT_N001.cs/#L43">View Source</a>
-  </span>
-  <a id="ZMDFQ_Cards_AT_N001_useWay_" data-uid="ZMDFQ.Cards.AT_N001.useWay*"></a>
-  <h4 id="ZMDFQ_Cards_AT_N001_useWay" data-uid="ZMDFQ.Cards.AT_N001.useWay">useWay()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override SimpleRequest useWay()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="ZMDFQ.PlayerAction.SimpleRequest.html">SimpleRequest</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">ZMDFQ.ActionCard&lt;ZMDFQ.PlayerAction.SimpleRequest, ZMDFQ.PlayerAction.SimpleResponse&gt;.useWay()</span></div>
+  <div><a class="xref" href="ZMDFQ.ActionCard.html#ZMDFQ_ActionCard_DoEffect_ZMDFQ_Game_ZMDFQ_PlayerAction_FreeUse_">ActionCard.DoEffect(Game, FreeUse)</a></div>
 </article>
           </div>
           

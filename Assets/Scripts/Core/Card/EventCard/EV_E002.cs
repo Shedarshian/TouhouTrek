@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZMDFQ.PlayerAction;
 
 namespace ZMDFQ.Cards
 {
@@ -12,13 +12,7 @@ namespace ZMDFQ.Cards
     public class EV_E002 : EventCard
     {
         public override bool ForwardOnly => false;
-
-        public override Task UseBackward(Game game, Player user)
-        {
-            return Task.CompletedTask;
-        }
-
-        public override Task UseForward(Game game, Player user)
+        public override Task Use(Game game, ChooseDirectionResponse response)
         {
             return Task.CompletedTask;
         }

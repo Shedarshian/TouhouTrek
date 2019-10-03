@@ -11,16 +11,19 @@ namespace ZMDFQ
     public class RequestTimeoutManager:MonoBehaviour,ITimeManager
     {
         public Game Game { get; set; }
+        public bool DoLog = false;
         List<Request> requests = new List<Request>();
+
+        private bool destoryed = false;
 
         private void Update()
         {
             foreach (var request in requests.ToArray())
             {
-                request.TimeOut -= Time.deltaTime;
-                if (request.TimeOut < 0)
+                request.RemainTime -= Time.deltaTime;
+                if (request.RemainTime < 0)
                 {
-                    Debug.Log($"{request.PlayerId}超时了{request.GetType().Name}询问");
+                    Log.Debug($"{request.PlayerId}超时了{request.GetType().Name}询问");
                     requests.Remove(request);
                     timeoutAnswer(request);
                 }
@@ -29,13 +32,14 @@ namespace ZMDFQ
 
         public void Register(Request request)
         {
-            Debug.Log($"注册了{request.PlayerId}的 {request.GetType().Name}事件，超时：{request.TimeOut}s ");
+            if (destoryed) return;
+            doLog($"注册了{request.PlayerId}的 {request.GetType().Name}事件，超时：{request.TimeOut}s ");
             requests.Add(request);
         }
 
         public void Cancel(Request request)
         {
-            Debug.Log($"取消了{request.PlayerId}的 {request.GetType().Name}事件，剩余：{request.TimeOut}s ");
+            doLog($"取消了{request.PlayerId}的 {request.GetType().Name}事件，剩余：{request.TimeOut}s ");
             requests.Remove(request);
         }
 
@@ -72,6 +76,20 @@ namespace ZMDFQ
                 default:
                     Log.Warning($"ai未处理的响应类型:{request.GetType()}");
                     break;
+            }
+        }
+
+        void doLog(string s)
+        {
+            if (DoLog) Log.Debug(s);
+        }
+
+        private void OnDestroy()
+        {
+            destoryed = true;
+            foreach (var request in requests.ToArray())
+            {
+                Cancel(request);
             }
         }
     }

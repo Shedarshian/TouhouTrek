@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace ZMDFQ
 {
@@ -8,6 +10,7 @@ namespace ZMDFQ
     public class Player
     {
         public int Id;
+        public string Name;
         public int Size;
         /// <summary>
         /// 手牌
@@ -25,7 +28,10 @@ namespace ZMDFQ
         public EventCard SaveEvent;
 
         public HeroCard Hero;
-
+        /// <summary>
+        /// 得分
+        /// </summary>
+        public int point { get; set; } = 0;
         public Player(int id)
         {
             Id = id;
@@ -33,21 +39,23 @@ namespace ZMDFQ
 
         internal async Task DrawActionCard(Game game, int count)
         {
+            EventData<int> drawCount = new EventData<int>() { data = count };
+            await game.EventSystem.Call(EventEnum.BeforDrawActionCard,game.ActivePlayerSeat(), this, drawCount);
             List<ActionCard> drawedCards = new List<ActionCard>();
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < drawCount.data; i++)
             {
-                if (game.Deck.Count == 0)//如果没有行动牌了
+                if (game.ActionDeck.Count == 0)//如果没有行动牌了
                 {
                     //就把行动弃牌堆洗入行动牌堆
-                    game.Deck.AddRange(game.UsedActionDeck);
+                    game.ActionDeck.AddRange(game.UsedActionDeck);
                     game.UsedActionDeck.Clear();
-                    game.Reshuffle(game.Deck);
+                    game.Reshuffle(game.ActionDeck);
                 }
-                ActionCards.Add(game.Deck[0]);
-                drawedCards.Add(game.Deck[0]);
-                game.Deck.RemoveAt(0);
+                ActionCards.Add(game.ActionDeck[0]);
+                drawedCards.Add(game.ActionDeck[0]);
+                game.ActionDeck.RemoveAt(0);
             }
-            await game.EventSystem.Call(EventEnum.DrawActionCard, this, drawedCards);
+            await game.EventSystem.Call(EventEnum.DrawActionCard,game.ActivePlayerSeat(), this, drawedCards);
         }
 
         internal async Task DrawEventCard(Game game)
@@ -55,7 +63,7 @@ namespace ZMDFQ
             EventCard card = game.EventDeck[0];
             EventCards.Add(card);
             game.EventDeck.Remove(card);
-            await game.EventSystem.Call(EventEnum.DrawEventCard, this, card);
+            await game.EventSystem.Call(EventEnum.DrawEventCard,game.ActivePlayerSeat(), this, card);
         }
 
         internal Task UseEventCard(Game game, ChooseDirectionResponse response)
@@ -67,10 +75,16 @@ namespace ZMDFQ
             else
             {
                 //默认玩家手上一定是一张事件卡，有其他情况再改
-                if (response.IfForward)
-                    return EventCards.Find(c => c.Id == response.CardId).UseForward(game, this);
+                EventCard card = EventCards.Find(c => c.Id == response.CardId);
+                if (card != null)
+                {
+                    return card.Use(game, response);
+                }
                 else
-                    return EventCards.Find(c => c.Id == response.CardId).UseBackward(game, this);
+                {
+                    Log.Error("未找到卡片(" + response.CardId + ")");
+                    return Task.CompletedTask;
+                }
             }
         }
 
@@ -78,7 +92,7 @@ namespace ZMDFQ
         {
             if (SaveEvent != null)
             {
-                await SaveEvent.UseForward(game, this);
+                await SaveEvent.Use(game, response);
             }
             SaveEvent = EventCards[0];
             EventCards.RemoveAt(0);
@@ -91,21 +105,17 @@ namespace ZMDFQ
         /// <param name="game"></param>
         /// <param name="card"></param>
         /// <returns></returns>
-        internal EventCard DropEventCard(Game game, EventCard card)
+        internal async Task DropEventCard(Game game, EventCard card)
         {
             if (card == SaveEvent)
             {
                 //game.UsedEventDeck.Add(card);
                 SaveEvent = null;
-                return SaveEvent;
             }
             else
             {
                 //game.UsedEventDeck.Add(card);
-                if (EventCards.Remove(card))
-                    return card;
-                else
-                    return null;
+                EventCards.Remove(card);
             }
         }
 
@@ -147,30 +157,31 @@ namespace ZMDFQ
                     game.UsedActionDeck.Add(card);
                 data.Add(card);
             }
-            await game.EventSystem.Call(EventEnum.DropActionCard, this, data);
+            await game.EventSystem.Call(EventEnum.DropActionCard,game.ActivePlayerSeat(), this, data);
         }
 
-
-        internal void UseSkill(Game game,FreeUse use)
+        internal async Task ChangeSize(Game game, int Size, object source)
         {
-
+            var data = new EventData<int>() { data = Size };
+            await game.EventSystem.Call(EventEnum.OnPlayrSizeChange,game.ActivePlayerSeat(), game, this, data);
+            this.Size += data.data;
         }
 
-        internal void ChangeSize(int Size)
+        public async Task<int> HandMax(Game game)
         {
-
-        }
-
-        internal int HandMax()
-        {
-            int result = 1;
-            if (Size > 1 && Size < 4)
-            {
-                result = Size;
-            }
-            else if (Size >= 4)
+            int result = Size;
+            //属性修正
+            //foreach (IPropertyModifier<int> modifier in Hero.Skills.Where(s => s is IPropertyModifier<int> m && m.propName == nameof(HandMax)))
+            //{
+            //    modifier.modify(ref result);
+            //}
+            if (result < 1)
+                result = 1;
+            if (result > 4)
                 result = 4;
-            return result;
+            EventData<int> max = new EventData<int>() { data = result };
+            await game.EventSystem.Call(EventEnum.GetHandMax,game.ActivePlayerSeat(), this, max);
+            return max.data;
         }
     }
 }

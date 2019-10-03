@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="101,15" extention="ProgressBar">
+  <displayList>
+    <graph id="n83_dzy4" name="n83" xy="0,0" size="101,15" type="rect">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <graph id="n84_dzy4" name="bar" xy="3,2" size="95,11" type="rect" fillColor="#ff000000">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+  </displayList>
+  <ProgressBar/>
+</component>

@@ -15,6 +15,10 @@ namespace ZMDFQ.PlayerAction
         /// 需要选择的数量
         /// </summary>
         public int Count;
+        /// <summary>
+        /// 是否必须选择对应的张数
+        /// </summary>
+        public bool EnoughOnly = true;
     }
     public class ChooseSomeCardResponse : Response
     {

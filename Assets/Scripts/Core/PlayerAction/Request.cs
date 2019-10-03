@@ -12,6 +12,10 @@ namespace ZMDFQ.PlayerAction
     public class Request
     {
         /// <summary>
+        /// 剩余时间
+        /// </summary>
+        public float RemainTime = 5;
+        /// <summary>
         /// 超时时间
         /// </summary>
         public float TimeOut = 5;
@@ -19,5 +23,12 @@ namespace ZMDFQ.PlayerAction
         /// 询问的目标玩家
         /// </summary>
         public int PlayerId = -1;
+
+        public Request SetTimeOut(float time)
+        {
+            RemainTime = time;
+            TimeOut = time;
+            return this;
+        }
     }
 }

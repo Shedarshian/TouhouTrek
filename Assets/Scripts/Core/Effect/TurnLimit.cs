@@ -14,9 +14,9 @@ namespace ZMDFQ.Effects
         public int MaxUseTime;
         public int UseTime;
 
-        public void Enable(Game game)
+        public void Enable(Game game,int seat)
         {
-            game.EventSystem.Register(EventEnum.TurnStart, resetUseTime, 0);
+            game.EventSystem.Register(EventEnum.TurnStart, seat, resetUseTime, 0);
         }
 
         public void Disable(Game game)

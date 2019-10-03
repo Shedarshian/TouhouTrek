@@ -11,12 +11,13 @@ namespace ZMDFQ.PlayerAction
     /// </summary>
     public class ChooseDirectionRequest : Request
     {
+        public bool CanSet = true;
         //public EventCard EventCard;
     }
     public class ChooseDirectionResponse : Response
     {
         public int CardId;
-        public bool IfForward;
+        public bool IfForward = true;
         public bool IfSet;
     }
 }

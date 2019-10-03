@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="127,58" pivot="0.5,0.5" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,disabled,3,selectedDisabled" selected="0"/>
+  <displayList>
+    <graph id="n38_dzy4" name="n38" xy="3,3" size="127,52" type="rect" lineSize="6" lineColor="#ff0099ff">
+      <gearColor controller="button" pages="2,3" values="#999999|#999999" default="#ffffff"/>
+    </graph>
+    <graph id="n40_dzy4" name="n40" xy="3,3" size="127,52" type="rect" lineSize="6" lineColor="#ffff6600">
+      <gearDisplay controller="button" pages="1"/>
+    </graph>
+    <text id="n39_dzy4" name="title" xy="0,8" size="127,42" fontSize="27" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text=""/>
+  </displayList>
+  <Button/>
+</component>

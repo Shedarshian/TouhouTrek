@@ -19,7 +19,7 @@ namespace ZMDFQ.PlayerAction
         /// <summary>
         /// 用卡时选中的角色目标
         /// </summary>
-        public List<int> HeroId;
+        public List<int> PlayersId = new List<int>();
 
         /// <summary>
         /// 使用技能时，可能一次需要选中多张手牌

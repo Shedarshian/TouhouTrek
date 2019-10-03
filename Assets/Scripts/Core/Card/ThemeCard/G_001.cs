@@ -13,12 +13,12 @@ namespace ZMDFQ.Cards
     {
         public override void Disable(Game game)
         {
-            
+
         }
 
         public override void Enable(Game game)
         {
-            
+
         }
     }
 }
