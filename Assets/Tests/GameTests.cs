@@ -359,7 +359,7 @@ namespace Tests
 
         public override Task DoEffect(Game game, FreeUse useWay)
         {
-            return UseCard.NormalUse(game, useWay, this, (g, r) =>
+            return UseCard.UseActionCard(game, useWay, this, (g, r) =>
             {
                 game.Players.Find(p => p.Id == useWay.PlayerId).Size += 1;
                 return Task.CompletedTask;
@@ -390,7 +390,7 @@ namespace Tests
         public override bool ForwardOnly => false;
         public override async Task Use(Game game, ChooseDirectionResponse response)
         {
-            await UseCard.NormalUse(game, response, this, effect);
+            await UseCard.UseEventCard(game, response, this, effect);
         }
         Task effect(Game game, ChooseDirectionResponse response)
         {

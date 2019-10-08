@@ -13,5 +13,6 @@ namespace ZMDFQ
     {
         public Card Card;
         public string Info;
+        public List<Card> Source = new List<Card>();
     }
 }

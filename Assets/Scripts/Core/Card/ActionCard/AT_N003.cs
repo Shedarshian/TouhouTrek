@@ -16,7 +16,7 @@ namespace ZMDFQ.Cards
         }
         public override async Task DoEffect(Game game, FreeUse useWay)
         {
-            await Effects.UseCard.NormalUse(game, useWay, this, async (g, r) =>
+            await Effects.UseCard.UseActionCard(game, useWay, this, async (g, r) =>
             {
                 await g.GetPlayer(r.PlayerId).DrawActionCard(game, 2);
             });

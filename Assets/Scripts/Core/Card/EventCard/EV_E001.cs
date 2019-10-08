@@ -15,7 +15,7 @@ namespace ZMDFQ.Cards
         public override bool ForwardOnly => false;
         public override async Task Use(Game game, ChooseDirectionResponse response)
         {
-            await Effects.UseCard.NormalUse(game, response, this, effect);
+            await Effects.UseCard.UseEventCard(game, response, this, effect);
         }
         Task effect(Game game, ChooseDirectionResponse response)
         {

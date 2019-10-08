@@ -31,7 +31,7 @@ namespace ZMDFQ.Cards
             {
                 return false;
             }
-            if (useInfo.Source.Count < 1)
+            if (useInfo.Source.Count != 1)
             {
                 nextRequest = new CardChooseRequest() { };
                 return false;

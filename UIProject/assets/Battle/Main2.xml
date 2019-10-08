@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080" designImage="ui://oacz4rtmgs0sb" designImageAlpha="0" designImageLayer="1">
   <controller name="ChooseHero" pages="0,,1," selected="0"/>
-  <controller name="Request" pages="5,,0,,1,,2,,3,,4," selected="5">
+  <controller name="Request" pages="5,,0,,1,,2,,3,,4," selected="1">
     <remark page="0" value="null"/>
     <remark page="1" value="freeUse"/>
     <remark page="2" value="takeChoice"/>
@@ -32,15 +32,6 @@
     <component id="n35_dzy4" name="MainSize" src="dzy4e" fileName="MainSize.xml" xy="458,9"/>
     <text id="n36_dzy4" name="RoundInfo" xy="804,55" size="105,29" fontSize="22" vars="true" text="总计第{r=3}轮"/>
     <text id="n37_dzy4" name="TurnInfo" xy="913,55" size="217,29" fontSize="22" vars="true" text="玩家「{id=你(ID)}」的回合"/>
-    <component id="n38_dzy4" name="n38" src="dzy4f" fileName="SkillBtn.xml" xy="1314,737">
-      <Button title="不显示"/>
-    </component>
-    <component id="n39_dzy4" name="n39" src="dzy4f" fileName="SkillBtn.xml" xy="1413,737">
-      <Button title="站队"/>
-    </component>
-    <component id="n40_dzy4" name="n40" src="dzy4f" fileName="SkillBtn.xml" xy="1511,737">
-      <Button title="吃瓜11"/>
-    </component>
     <graph id="n46_dzy4" name="n46" xy="446,508" size="197,295" type="rect"/>
     <text id="n47_dzy4" name="n47" xy="465,523" size="159,29" fontSize="22" text="事件牌扣置区域"/>
     <graph id="n48_dzy4" name="n48" xy="448,415" size="193,89" type="rect"/>
@@ -87,6 +78,7 @@
     <graph id="n96_dzy4" name="n96" xy="1782,18" size="40,33" type="rect"/>
     <graph id="n97_dzy4" name="n97" xy="1829,15" size="72,37" type="rect"/>
     <text id="n100_g2d6" name="UseTip" xy="686,691" size="10,36" fontSize="27" text=""/>
+    <list id="n115_f8ge" name="skills" xy="1238,727" size="357,71" layout="row" overflow="scroll" colGap="15" defaultItem="ui://oacz4rtmdzy4f" align="right"/>
     <graph id="n45_dzy4" name="n45" xy="657,728" size="328,76" group="n101_g2d6" type="rect"/>
     <component id="n41_dzy4" name="useCard" src="dzy4g" fileName="NormalBtn.xml" xy="665,735" group="n101_g2d6">
       <Button title="使用/打出" titleColor="#009900"/>

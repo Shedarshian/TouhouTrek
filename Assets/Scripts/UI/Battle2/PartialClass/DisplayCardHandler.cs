@@ -50,8 +50,8 @@ namespace ZMDFQ.UI.Battle
             m_ThemeDeckCount.text = game.UsedThemeDeck.Count.ToString();
             m_EventDropDeckCount.text = game.UsedEventDeck.Count.ToString();
             m_ActionDeckCount.text = game.UsedActionDeck.Count.ToString();
-            m_NowAction.SetCard(game.UsingCards.Count > 0 ? game.UsingCards[0] : null);
-            m_NowEvent.SetCard(game.UsingCards.Count > 0 ? game.UsingCards[0] : null);
+            m_NowAction.SetCard(game.UsingCards.Count > 0 ? game.UsingCards[0] as ActionCard : null);
+            m_NowEvent.SetCard(game.UsingCards.Count > 0 ? game.UsingCards[0] as EventCard : null);
             m_SetEvent.SetCard(self.SaveEvent);
 
             m_DelayAction.RemoveChildrenToPool();

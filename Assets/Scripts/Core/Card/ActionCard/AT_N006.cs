@@ -34,7 +34,7 @@ namespace ZMDFQ.Cards
 
         public override Task DoEffect(Game game, FreeUse useWay)
         {
-            return Effects.UseCard.NormalUse(game, useWay, this, effect);
+            return Effects.UseCard.UseActionCard(game, useWay, this, effect);
         }
         private async Task effect(Game game, FreeUse useWay)
         {
