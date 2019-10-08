@@ -47,6 +47,9 @@ namespace ZMDFQ
 
         public List<EventCard> UsedEventDeck = new List<EventCard>();
 
+        /// <summary>
+        /// 延迟行动牌
+        /// </summary>
         public List<EventCard> ChainEventDeck = new List<EventCard>();
 
         public ThemeCard ActiveTheme;
@@ -363,6 +366,7 @@ namespace ZMDFQ
                 else
                 {
                     await (response as FreeUse).HandleAction(this);
+                    //await EventSystem.Call(EventEnum.CardUsed, ActivePlayerSeat());
                 }
             }
 
@@ -393,6 +397,10 @@ namespace ZMDFQ
         internal void AddUsingCard(Card card)
         {
             UsingCards.Add(card);
+        }
+        internal void RemoveUsingCard(Card card)
+        {
+            UsingCards.Remove(card);
         }
         internal void AddUsingInfo(UsingInfo useInfo)
         {

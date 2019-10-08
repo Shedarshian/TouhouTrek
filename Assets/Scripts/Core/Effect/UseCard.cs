@@ -48,6 +48,7 @@ namespace ZMDFQ.Effects
                 Info = $"{player.Hero.Name}使用了{card.Name}",
             });
             await effect(game, useOneCard);
+            game.RemoveUsingCard(card);
             //结算完毕进入弃牌堆
             if (card is ActionCard actionCard1)
                 game.UsedActionDeck.Add(actionCard1);

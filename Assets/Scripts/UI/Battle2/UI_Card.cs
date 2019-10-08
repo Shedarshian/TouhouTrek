@@ -17,7 +17,12 @@ namespace ZMDFQ.UI.Battle
         public void SetCard(Card card)
         {
             this.Card = card;
-            if (card == null) m_type.selectedIndex = 0;
+
+            if (card == null)
+            {
+                m_type.selectedIndex = 0;
+                return;
+            }
             m_Name.text = card.Name;
             switch (card)
             {
