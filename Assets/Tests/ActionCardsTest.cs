@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+
+using NUnit.Framework;
 
 using ZMDFQ;
 using ZMDFQ.Cards;
@@ -33,7 +35,7 @@ namespace Tests
             game.StartGame();
             game.Answer(new ChooseHeroResponse() { PlayerId = 0, HeroId = 1 });
             game.Answer(new ChooseHeroResponse() { PlayerId = 1, HeroId = 4 });
-            game.Answer(new FreeUse() { PlayerId = 0, CardId = 21 });
+            game.Answer(new FreeUse() { PlayerId = 0, CardId = 21, Source = new List<int>() { 21 } });
 
             Assert.AreEqual(4, game.Players[0].ActionCards.Count);
         }

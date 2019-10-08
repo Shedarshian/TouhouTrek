@@ -26,6 +26,7 @@ namespace ZMDFQ.Effects
         public static async Task UseEventCard<T>(Game game, T useOneCard, EventCard card, Func<Game, T, Task> effect) where T : PlayerAction.ChooseDirectionResponse
         {
             Player player = game.GetPlayer(useOneCard.PlayerId);
+            await player.DropEventCard(game, card);
             game.AddUsingCard(card);
             game.AddUsingInfo(new UsingInfo()
             {
@@ -65,7 +66,7 @@ namespace ZMDFQ.Effects
                 game.UsedActionDeck.Add(c);
             }
         }
-
+        [Obsolete("时请使用UseActionCard和UseEventCard作为替代")]
         public static async Task NormalUse<T>(Game game, T useOneCard, Card card, Func<Game, T, Task> effect) where T : PlayerAction.FreeUse
         {
             Player player = game.GetPlayer(useOneCard.PlayerId);
