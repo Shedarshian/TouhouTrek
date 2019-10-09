@@ -59,7 +59,7 @@ namespace ZMDFQ.Cards
                 {
                     //如果使用了墨菲定律，那么取消所有剩余询问
                     game.CancelRequests();
-                    await Owner.DropActionCard(game, new List<int>() { this.Id });
+                    await Owner.DropActionCard(game, new List<int>() { this.Id }, true);
                     response.IfForward = !response.IfForward;
                 }
             }

@@ -24,6 +24,7 @@ namespace ZMDFQ
 
         BeforDrawActionCard,
         DrawActionCard,
+        BeforePassiveDropActionCard,
         DropActionCard,
 
         OnGameSizeChange,

@@ -151,8 +151,19 @@ namespace ZMDFQ
         /// </summary>
         /// <param name="game"></param>
         /// <param name="cards"></param>
-        internal async Task DropActionCard(Game game, List<int> cards, bool goUsedPile = false)
+        internal async Task DropActionCard(Game game, List<int> cards, bool goUsedPile = false, bool ifPassive = false)
         {
+            if (ifPassive)
+            {
+                EventData<bool> dropData = new EventData<bool>(true);
+                //被动丢牌抛出一个事件
+                await game.EventSystem.Call(EventEnum.BeforePassiveDropActionCard, game.GetSeat(this), game, this, dropData);
+                if (!dropData.data)
+                {
+                    //这次丢牌被取消了
+                    return;
+                }
+            }
             List<ActionCard> data = new List<ActionCard>();
             foreach (var cardId in cards)
             {
@@ -164,7 +175,7 @@ namespace ZMDFQ
                 card.OnDrop(game, this);
                 card.Owner = null;
             }
-            await game.EventSystem.Call(EventEnum.DropActionCard,game.ActivePlayerSeat(), this, data);
+            await game.EventSystem.Call(EventEnum.DropActionCard, game.GetSeat(this), this, data);
         }
 
         internal async Task ChangeSize(Game game, int Size, object source)
