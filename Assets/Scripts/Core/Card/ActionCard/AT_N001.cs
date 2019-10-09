@@ -24,33 +24,30 @@ namespace ZMDFQ.Cards
             }
             return false;
         }
-
         public override Task DoEffect(Game game, FreeUse useWay)
         {
-            return Effects.UseCard.UseActionCard(game, useWay, this, effect);          
-        }
-
-        private async Task effect(Game game, FreeUse useWay)
-        {
-            //询问玩家是加或减
-            TakeChoiceResponse response = (TakeChoiceResponse)await game.WaitAnswer(new TakeChoiceRequest()
+            return Effects.UseCard.UseActionCard(game, useWay, this, async (g,r)=>
             {
-                PlayerId = useWay.PlayerId,
-                Infos = new List<string>()
+                //询问玩家是加或减
+                TakeChoiceResponse response = (TakeChoiceResponse)await game.WaitAnswer(new TakeChoiceRequest()
+                {
+                    PlayerId = useWay.PlayerId,
+                    Infos = new List<string>()
                 {
                     "+2",
                     "-2",
                 }
-            });
-            //处理实际效果
-            if (response.Index == 0)
-            {
-                await game.ChangeSize(2, this);
-            }
-            else
-            {
-                await game.ChangeSize(-2, this);
-            }
+                });
+                //处理实际效果
+                if (response.Index == 0)
+                {
+                    await game.ChangeSize(2, this);
+                }
+                else
+                {
+                    await game.ChangeSize(-2, this);
+                }
+            });          
         }
     }
 }
