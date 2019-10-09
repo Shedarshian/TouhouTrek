@@ -1233,7 +1233,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/how_to_write_cards.html",
-          "hash": "tlYpZARG/Oq5bacCOmXiKA=="
+          "hash": "ajCzYgWnzlExatGKpTtZFw=="
         }
       },
       "is_incremental": false,
@@ -1304,17 +1304,17 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 4,
-          "skipped_file_count": 3
-        },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 100,
           "skipped_file_count": 100
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 4,
+          "skipped_file_count": 3
         }
       }
     },

@@ -115,14 +115,7 @@
 <pre><code>protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
 {
 	nextRequest = null;
-	switch (nowRequest)
-	{
-		case UseLimitCard useLimitCard:
-			return Effects.UseWayResponse.CheckLimit(game, useLimitCard, useInfo, ref nextRequest, this);
-		case FreeUseRequest _:
-			return true;
-	}
-	return false;
+	return true;
 }
 </code></pre>
 <p>显而易见的，这个方法表示这张卡的使用条件，当返回<code>true</code>的时候，表示这张卡可以使用。如果一张卡没有任何使用条件，那么该方法可以直接返回<code>true</code>。在其他的情况下，比如这张卡有特定的发动条件，或者是这张卡在使用之前需要指定一个目标的时候，就会需要用到这个方法提供的参数：</p>
