@@ -117,7 +117,7 @@ namespace ZMDFQ
 #else
             dependencies = ResourcesManager.AssetBundleManifestObject.GetAllDependencies(assetBundleName);
 #endif
-            
+
             return dependencies;
         }
 
@@ -157,7 +157,7 @@ namespace ZMDFQ
     }
 
 
-    public class ResourcesManager:MonoBehaviour
+    public class ResourcesManager : MonoBehaviour
     {
         public static ResourcesManager Instance
         {
@@ -172,7 +172,7 @@ namespace ZMDFQ
                         instance = g.AddComponent<ResourcesManager>();
                     }
                 }
-                return instance;              
+                return instance;
             }
         }
         private static ResourcesManager instance;
@@ -194,13 +194,13 @@ namespace ZMDFQ
             instance = this;
 #if !UNITY_EDITOR
             LoadOneBundle("StreamingAssets");
-            AssetBundleManifestObject = (AssetBundleManifest)GetAsset("StreamingAssets", "AssetBundleManifest");           
+            AssetBundleManifestObject = (AssetBundleManifest)GetAsset<AssetBundleManifest>("StreamingAssets", "AssetBundleManifest");
 #endif
         }
 
         private void Update()
         {
-            for (int i = createRequest.Count-1; i >= 0; i--)
+            for (int i = createRequest.Count - 1; i >= 0; i--)
             {
                 (AssetBundleCreateRequest, TaskCompletionSource<AssetBundle>) kv = createRequest[i];
                 if (kv.Item1.isDone)
@@ -209,7 +209,7 @@ namespace ZMDFQ
                     createRequest.RemoveAt(i);
                 }
             }
-            for (int i= requests.Count-1; i >= 0; i--)
+            for (int i = requests.Count - 1; i >= 0; i--)
             {
                 (AssetBundleRequest, TaskCompletionSource<bool>) kv = requests[i];
                 if (kv.Item1.isDone)
@@ -253,7 +253,7 @@ namespace ZMDFQ
             return request.allAssets;
         }
 
-        public T GetAsset<T>(string bundleName, string prefab) where T: UnityEngine.Object
+        public T GetAsset<T>(string bundleName, string prefab) where T : UnityEngine.Object
         {
             Dictionary<string, UnityEngine.Object> dict;
             if (!this.resourceCache.ContainsKey(bundleName.BundleNameToLower()))
@@ -299,7 +299,7 @@ namespace ZMDFQ
         public AssetBundle GetBundle(string bundleName)
         {
             ABInfo aBInfo;
-            if (bundles.TryGetValue(bundleName,out aBInfo))
+            if (bundles.TryGetValue(bundleName, out aBInfo))
             {
                 return aBInfo.AssetBundle;
             }
