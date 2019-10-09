@@ -74,8 +74,14 @@ namespace ZMDFQ
         /// </summary>
         public float RequestTime = 5f;
 
+        /// <summary>
+        /// 被询问时事件
+        /// </summary>
         public Action<Game, Request> OnRequest;
 
+        /// <summary>
+        /// 回应询问事件
+        /// </summary>
         public Action<Game, Response> OnResponse;
 
         private System.Random ram = new System.Random();
@@ -83,9 +89,9 @@ namespace ZMDFQ
         private List<Card> allCards = new List<Card>();
 
         /// <summary>
-        /// 一名玩家最多处于一个询问状态
+        /// 所有玩家的询问状态
         /// </summary>
-        private TaskCompletionSource<Response>[] requests;
+        public TaskCompletionSource<Response>[] Requests;
 
         internal System.Threading.CancellationTokenSource cts;
 
@@ -160,7 +166,7 @@ namespace ZMDFQ
             }
             //初始化游戏结束条件
             endingOfficialCardCount = options != null && options.endingOfficialCardCount > 0 ? options.endingOfficialCardCount : 12 - Players.Count;
-            requests = new TaskCompletionSource<Response>[Players.Count];
+            Requests = new TaskCompletionSource<Response>[Players.Count];
         }
 
         /// <summary>
@@ -255,8 +261,8 @@ namespace ZMDFQ
         {
             //Log.Debug(response.GetType().Name);
             int index = Players.FindIndex(x => x.Id == response.PlayerId);
-            var tcs = requests[index];
-            requests[index] = null;//可能后续会重新对requests[index]询问，所以这个要写在TrySetResult之前
+            var tcs = Requests[index];
+            Requests[index] = null;//可能后续会重新对requests[index]询问，所以这个要写在TrySetResult之前
             tcs?.TrySetResult(response);
             OnResponse?.Invoke(this, response);
         }
@@ -269,7 +275,7 @@ namespace ZMDFQ
         {
             var tcs = new TaskCompletionSource<Response>(cts.Token);
             int index = Players.FindIndex(x => x.Id == request.PlayerId);
-            requests[index] = tcs;
+            Requests[index] = tcs;
             OnRequest?.Invoke(this, request);
             if (TimeManager != null)
             {
@@ -279,10 +285,20 @@ namespace ZMDFQ
             return tcs.Task;
         }
 
+        public void CancelRequests()
+        {
+            for (int i = 0; i < Requests.Length; i++)
+            {
+                var tcs = Requests[i];
+                Requests[i] = null;
+                tcs?.TrySetCanceled();
+            }
+        }
+
         /// <summary>
         /// 临时终止游戏
         /// </summary>
-        public void Cancel()
+        public void CancelGame()
         {
             cts.Cancel();
         }
@@ -405,6 +421,11 @@ namespace ZMDFQ
         internal void AddUsingInfo(UsingInfo useInfo)
         {
             UsingInfos.Add(useInfo);
+        }
+
+        public int GetSeat(Player player)
+        {
+            return Players.IndexOf(player);
         }
 
         public int ActivePlayerSeat()

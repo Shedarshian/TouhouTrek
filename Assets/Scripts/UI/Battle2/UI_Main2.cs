@@ -36,7 +36,7 @@ namespace ZMDFQ.UI.Battle
         /// <summary>
         /// 处于FreeUse状态时，哪些牌能选择
         /// </summary>
-        UseRequest useRequest;
+        NextRequest useRequest;
 
         /// <summary>
         /// 当前收到的回应

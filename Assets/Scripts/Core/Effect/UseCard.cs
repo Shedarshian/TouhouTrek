@@ -33,7 +33,7 @@ namespace ZMDFQ.Effects
                 Card = card,
                 Info = $"{player.Hero.Name}使用了{card.Name}",
             });
-            await game.EventSystem.Call(EventEnum.changeEventDirection, game.ActivePlayerSeat(), useEventCard);
+            await game.EventSystem.Call(EventEnum.changeEventDirection, game.ActivePlayerSeat(),game, useEventCard);
             await effect(game, useEventCard);
             game.RemoveUsingCard(card);
             if (!game.ChainEventDeck.Contains(card))

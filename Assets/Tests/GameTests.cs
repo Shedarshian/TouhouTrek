@@ -338,7 +338,7 @@ namespace Tests
             throw new System.NotImplementedException();
         }
 
-        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
             nextRequest = null;
             return true;
@@ -351,7 +351,7 @@ namespace Tests
     }
     class TestAction1 : ActionCard
     {
-        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
             nextRequest = null;
             return true;

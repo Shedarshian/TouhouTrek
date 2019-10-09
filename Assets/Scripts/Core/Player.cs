@@ -55,8 +55,8 @@ namespace ZMDFQ
                 ActionCards.Add(card);
                 drawedCards.Add(card);
                 game.ActionDeck.Remove(card);
-                card.OnDraw(game, this);
-                
+                card.Owner = this;
+                card.OnDraw(game, this);               
             }
             await game.EventSystem.Call(EventEnum.DrawActionCard,game.ActivePlayerSeat(), this, drawedCards);
         }
@@ -66,6 +66,7 @@ namespace ZMDFQ
             EventCard card = game.EventDeck[0];
             EventCards.Add(card);
             game.EventDeck.Remove(card);
+            card.Owner = this;
             await game.EventSystem.Call(EventEnum.DrawEventCard,game.ActivePlayerSeat(), this, card);
         }
 
@@ -120,6 +121,7 @@ namespace ZMDFQ
                 //game.UsedEventDeck.Add(card);
                 EventCards.Remove(card);
             }
+            card.Owner = null;
         }
 
         internal Task UseActionCard(Game game, FreeUse useInfo)
@@ -160,6 +162,7 @@ namespace ZMDFQ
                     game.UsedActionDeck.Add(card);
                 data.Add(card);
                 card.OnDrop(game, this);
+                card.Owner = null;
             }
             await game.EventSystem.Call(EventEnum.DropActionCard,game.ActivePlayerSeat(), this, data);
         }

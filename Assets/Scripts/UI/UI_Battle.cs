@@ -20,7 +20,7 @@ namespace ZMDFQ
         public Player Self;
 
         private Request nowRequest;
-        private UseRequest nowUseWay;
+        private NextRequest nowUseWay;
         private Skill nowSkill;
 
         private void Awake()

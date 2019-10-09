@@ -36,7 +36,7 @@ namespace ZMDFQ
 
         private void OnDestroy()
         {
-            game.Cancel();
+            game.CancelGame();
         }
 
         public void LoadPackge(string PackageName)

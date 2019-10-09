@@ -70,7 +70,7 @@ namespace ZMDFQ.UI.Battle
                 return;
             }
             selectedSkill = skill;
-            UseRequest nextRequest;
+            NextRequest nextRequest;
             if (skill.CanUse(game,nowRequest,getFreeUseInfo(),out nextRequest))
             {
                 m_useCard.enabled = true;
@@ -91,7 +91,7 @@ namespace ZMDFQ.UI.Battle
             {
                 if (selectedSkill != null)
                 {
-                    UseRequest nextRequest;
+                    NextRequest nextRequest;
                     if (selectedSkill.CanUse(game, nowRequest, getFreeUseInfo(), out nextRequest))
                     {
                         m_useCard.enabled = true;
@@ -105,7 +105,7 @@ namespace ZMDFQ.UI.Battle
                 }
                 else if (selectedCards.Count == 1)
                 {
-                    UseRequest nextRequest;
+                    NextRequest nextRequest;
                     if (selectedCards[0].CanUse(game, nowRequest, getFreeUseInfo(), out nextRequest))
                     {
                         m_useCard.enabled = true;

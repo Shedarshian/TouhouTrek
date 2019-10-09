@@ -24,7 +24,7 @@ namespace ZMDFQ.Cards
     {
         Effects.TurnLimit turnLimit = new Effects.TurnLimit() { MaxUseTime = 2 };
 
-        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
             nextRequest = null;
             if (!turnLimit.CanUse())

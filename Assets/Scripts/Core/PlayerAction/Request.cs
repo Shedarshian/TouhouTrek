@@ -24,6 +24,11 @@ namespace ZMDFQ.PlayerAction
         /// </summary>
         public int PlayerId = -1;
 
+        /// <summary>
+        /// 是否是向所有玩家进行的询问，true时表示玩家拼手速出牌
+        /// </summary>
+        public bool AllPlayerRequest = false;
+
         public Request SetTimeOut(float time)
         {
             RemainTime = time;
