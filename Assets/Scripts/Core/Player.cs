@@ -51,9 +51,12 @@ namespace ZMDFQ
                     game.UsedActionDeck.Clear();
                     game.Reshuffle(game.ActionDeck);
                 }
-                ActionCards.Add(game.ActionDeck[0]);
-                drawedCards.Add(game.ActionDeck[0]);
-                game.ActionDeck.RemoveAt(0);
+                ActionCard card = game.ActionDeck[0];
+                ActionCards.Add(card);
+                drawedCards.Add(card);
+                game.ActionDeck.Remove(card);
+                card.Owner = this;
+                card.OnDraw(game, this);               
             }
             await game.EventSystem.Call(EventEnum.DrawActionCard,game.ActivePlayerSeat(), this, drawedCards);
         }
@@ -63,6 +66,7 @@ namespace ZMDFQ
             EventCard card = game.EventDeck[0];
             EventCards.Add(card);
             game.EventDeck.Remove(card);
+            card.Owner = this;
             await game.EventSystem.Call(EventEnum.DrawEventCard,game.ActivePlayerSeat(), this, card);
         }
 
@@ -117,6 +121,7 @@ namespace ZMDFQ
                 //game.UsedEventDeck.Add(card);
                 EventCards.Remove(card);
             }
+            card.Owner = null;
         }
 
         internal Task UseActionCard(Game game, FreeUse useInfo)
@@ -146,8 +151,19 @@ namespace ZMDFQ
         /// </summary>
         /// <param name="game"></param>
         /// <param name="cards"></param>
-        internal async Task DropActionCard(Game game, List<int> cards, bool goUsedPile = false)
+        internal async Task DropActionCard(Game game, List<int> cards, bool goUsedPile = false, bool ifPassive = false)
         {
+            if (ifPassive)
+            {
+                EventData<bool> dropData = new EventData<bool>(true);
+                //被动丢牌抛出一个事件
+                await game.EventSystem.Call(EventEnum.BeforePassiveDropActionCard, game.GetSeat(this), game, this, dropData);
+                if (!dropData.data)
+                {
+                    //这次丢牌被取消了
+                    return;
+                }
+            }
             List<ActionCard> data = new List<ActionCard>();
             foreach (var cardId in cards)
             {
@@ -156,8 +172,10 @@ namespace ZMDFQ
                 if (goUsedPile)
                     game.UsedActionDeck.Add(card);
                 data.Add(card);
+                card.OnDrop(game, this);
+                card.Owner = null;
             }
-            await game.EventSystem.Call(EventEnum.DropActionCard,game.ActivePlayerSeat(), this, data);
+            await game.EventSystem.Call(EventEnum.DropActionCard, game.GetSeat(this), this, data);
         }
 
         internal async Task ChangeSize(Game game, int Size, object source)

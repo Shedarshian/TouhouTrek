@@ -27,7 +27,7 @@ namespace ZMDFQ.Cards
         {
             turnLimit.Disable(game);
         }
-        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
             nextRequest = null;
             if (!turnLimit.CanUse())

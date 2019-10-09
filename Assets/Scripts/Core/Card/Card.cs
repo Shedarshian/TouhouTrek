@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,9 @@ namespace ZMDFQ
 {
     public abstract class Card
     {
+        [BsonIgnore]
+        public Player Owner;
+
         public int Id;
         public string Name;
         public CardTypeEnum CardType;

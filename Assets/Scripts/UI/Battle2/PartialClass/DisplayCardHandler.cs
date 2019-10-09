@@ -30,6 +30,17 @@ namespace ZMDFQ.UI.Battle
             });
         }
 
+        //[BattleUI(nameof(SetGame))]
+        //private void DisplayCard_setGame()
+        //{
+        //    //出完牌后，刷新ui
+        //    game.EventSystem.Register(EventEnum.CardUsed, 100, (x) =>
+        //    {
+        //        //flush();
+        //        return Task.CompletedTask;
+        //    });
+        //}
+
         [BattleUI(nameof(flush))]
         private void DisplayCardflush()
         {
@@ -39,6 +50,16 @@ namespace ZMDFQ.UI.Battle
             m_ThemeDeckCount.text = game.UsedThemeDeck.Count.ToString();
             m_EventDropDeckCount.text = game.UsedEventDeck.Count.ToString();
             m_ActionDeckCount.text = game.UsedActionDeck.Count.ToString();
+            m_NowAction.SetCard(game.UsingCards.Count > 0 ? game.UsingCards[0] as ActionCard : null);
+            m_NowEvent.SetCard(game.UsingCards.Count > 0 ? game.UsingCards[0] as EventCard : null);
+            m_SetEvent.SetCard(self.SaveEvent);
+
+            m_DelayAction.RemoveChildrenToPool();
+            foreach (var card in game.ChainEventDeck)
+            {
+                var ui_card = m_DelayAction.AddItemFromPool() as UI_Card;
+                ui_card.SetCard(card);
+            }
             //m_NowTheme game.ActiveTheme
         }
 

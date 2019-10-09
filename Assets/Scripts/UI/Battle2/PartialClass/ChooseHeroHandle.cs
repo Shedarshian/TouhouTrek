@@ -11,6 +11,9 @@ namespace ZMDFQ.UI.Battle
     /// </summary>
     public partial class UI_Main2
     {
+        /// <summary>
+        /// 当前的选择英雄请求
+        /// </summary>
         PlayerAction.ChooseHeroRequest chooseHeroRequset;
 
         [BattleUI(nameof(Init))]
@@ -63,6 +66,16 @@ namespace ZMDFQ.UI.Battle
                 m_PlayerHero.SetCard(game.GetCard(chooseHeroResponse.HeroId));
                 this.chooseHeroRequset = null;
                 m_ChooseHero.selectedIndex = 0;
+
+                m_skills.RemoveChildrenToPool();
+                foreach (var skill in self.Hero.Skills)
+                {
+                    var ui_skill = m_skills.AddItemFromPool().asButton;
+                    ui_skill.changeStateOnClick = false;
+                    ui_skill.data = skill;
+                    ui_skill.text = skill.Name;
+                    ui_skill.enabled = !(skill is PassiveSkill);//技能的可使用性，要改
+                }
             }
         }
     }

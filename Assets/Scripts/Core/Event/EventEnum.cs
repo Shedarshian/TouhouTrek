@@ -24,6 +24,7 @@ namespace ZMDFQ
 
         BeforDrawActionCard,
         DrawActionCard,
+        BeforePassiveDropActionCard,
         DropActionCard,
 
         OnGameSizeChange,
@@ -41,6 +42,7 @@ namespace ZMDFQ
         /// <summary>
         /// 当检查卡牌或者技能是否可用。注册事件必须注册同步方法，返回Task.CompletedTask
         /// </summary>
-        onCheckCanUse
+        onCheckCanUse,
+        changeEventDirection,
     }
 }

@@ -13,14 +13,18 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class AT_N002 : ActionCard
     {
-        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
-            throw new NotImplementedException();
+            nextRequest = null;
+            return true;
         }
-
-        public override Task DoEffect(Game game, FreeUse useWay)
+        public override async Task DoEffect(Game game, FreeUse useWay)
         {
-            throw new NotImplementedException();
+            await Effects.UseCard.UseActionCard(game, useWay, this, (g, r) =>
+            {
+                g.GetPlayer(r.PlayerId).Size += 1;
+                return Task.CompletedTask;
+            });
         }
     }
 }

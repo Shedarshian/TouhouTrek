@@ -7,36 +7,35 @@ using ZMDFQ;
 
 public class Test : MonoBehaviour
 {
+    Task t;
+    TaskCompletionSource<bool> tcs;
     // Start is called before the first frame update
     void Start()
     {
-        SeatByEventSystem eventSystem = new SeatByEventSystem();
-        eventSystem.MaxSeat = 8;
-        for (int i = 0; i < 8; i++)
+        t = testTask();
+        t.ContinueWith((x) =>
         {
-            int k = i;
-            eventSystem.Register(EventEnum.ActionEnd, i, (x) =>
-            {
-                Debug.Log($"p{k}的1");
-                return Task.CompletedTask;
-            });
-            eventSystem.Register(EventEnum.ActionEnd, i, (x) =>
-            {
-                Debug.Log($"p{k}的2");
-                return Task.CompletedTask;
-            }, 1);
-        }
-        eventSystem.Register(EventEnum.ActionEnd, -1, (x) =>
-        {
-            Debug.Log($"官作测试");
-            return Task.CompletedTask;
+            Debug.Log(x.Status);
+            Debug.Log("Task end");
         });
-        eventSystem.Call(EventEnum.ActionEnd, 5);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Q))
+        {
+            tcs.TrySetCanceled();
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            tcs.TrySetResult(true);
+        }
+    }
 
+    Task testTask()
+    {
+        tcs = new System.Threading.Tasks.TaskCompletionSource<bool>();
+        return tcs.Task;
     }
 }

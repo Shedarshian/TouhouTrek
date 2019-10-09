@@ -9,5 +9,13 @@ namespace ZMDFQ
     public class EventData<T>
     {
         public T data;
+        public EventData()
+        {
+
+        }
+        public EventData(T t)
+        {
+            data = t;
+        }
     }
 }

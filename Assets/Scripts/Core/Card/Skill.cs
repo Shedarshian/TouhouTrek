@@ -31,12 +31,12 @@ namespace ZMDFQ
         /// <param name="useInfo"></param>
         /// <param name="nextRequest">要使用技能还需要什么参数</param>
         /// <returns></returns>
-        public bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        public bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
-            UseRequest request;
+            NextRequest request;
             bool result = canUse(game, nowRequest, useInfo, out request);
             EventData<bool> boolData = new EventData<bool>() { data = result };
-            EventData<UseRequest> nextRequestData = new EventData<UseRequest>() { data = request };
+            EventData<NextRequest> nextRequestData = new EventData<NextRequest>() { data = request };
             Task task = game.EventSystem.Call(EventEnum.onCheckCanUse, game.ActivePlayerSeat(), this, boolData, nextRequestData);
             if (!task.GetAwaiter().IsCompleted)
             {
@@ -49,7 +49,7 @@ namespace ZMDFQ
             return boolData.data;
         }
 
-        protected abstract bool canUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest);
+        protected abstract bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest);
 
         /// <summary>
         /// 选择角色牌后就生效
@@ -76,7 +76,7 @@ namespace ZMDFQ
     /// </summary>
     public abstract class PassiveSkill:Skill
     {
-        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
             nextRequest = null;
             return false;

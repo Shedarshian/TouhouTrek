@@ -12,7 +12,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class AT_N001 : ActionCard
     {
-        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)
+        protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
             nextRequest = null;
             switch (nowRequest)
@@ -27,7 +27,7 @@ namespace ZMDFQ.Cards
 
         public override Task DoEffect(Game game, FreeUse useWay)
         {
-            return Effects.UseCard.NormalUse(game, useWay, this, effect);          
+            return Effects.UseCard.UseActionCard(game, useWay, this, effect);          
         }
 
         private async Task effect(Game game, FreeUse useWay)

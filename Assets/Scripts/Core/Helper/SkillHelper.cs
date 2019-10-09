@@ -16,7 +16,7 @@ namespace ZMDFQ
             {
                 if (typeof(Skill).IsAssignableFrom(type) && !type.IsAbstract)
                 {
-                    Log.Debug($"获取到技能实例类型:{type.Name},Id:{list.Count - 1}");
+                    //Log.Debug($"获取到技能实例类型:{type.Name},Id:{list.Count - 1}");
                     list.Add(type);
                 }
             }
