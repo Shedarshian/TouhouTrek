@@ -51,9 +51,12 @@ namespace ZMDFQ
                     game.UsedActionDeck.Clear();
                     game.Reshuffle(game.ActionDeck);
                 }
-                ActionCards.Add(game.ActionDeck[0]);
-                drawedCards.Add(game.ActionDeck[0]);
-                game.ActionDeck.RemoveAt(0);
+                ActionCard card = game.ActionDeck[0];
+                ActionCards.Add(card);
+                drawedCards.Add(card);
+                game.ActionDeck.Remove(card);
+                card.OnDraw(game, this);
+                
             }
             await game.EventSystem.Call(EventEnum.DrawActionCard,game.ActivePlayerSeat(), this, drawedCards);
         }
@@ -156,6 +159,7 @@ namespace ZMDFQ
                 if (goUsedPile)
                     game.UsedActionDeck.Add(card);
                 data.Add(card);
+                card.OnDrop(game, this);
             }
             await game.EventSystem.Call(EventEnum.DropActionCard,game.ActivePlayerSeat(), this, data);
         }

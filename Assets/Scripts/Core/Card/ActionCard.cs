@@ -30,5 +30,14 @@ namespace ZMDFQ
         protected abstract bool canUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest);
 
         public abstract Task DoEffect(Game game, FreeUse useWay);
+
+        internal virtual void OnDraw(Game game,Player player)
+        {
+
+        }
+        internal virtual void OnDrop(Game game,Player player)
+        {
+
+        }
     }
 }
