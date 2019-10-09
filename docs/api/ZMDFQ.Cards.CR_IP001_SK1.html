@@ -93,6 +93,12 @@
       <a class="xref" href="ZMDFQ.Skill.html#ZMDFQ_Skill_AutoRequest">Skill.AutoRequest</a>
     </div>
     <div>
+      <a class="xref" href="ZMDFQ.Skill.html#ZMDFQ_Skill_NeedDice">Skill.NeedDice</a>
+    </div>
+    <div>
+      <a class="xref" href="ZMDFQ.Skill.html#ZMDFQ_Skill_CanUse_ZMDFQ_Game_ZMDFQ_PlayerAction_Request_ZMDFQ_PlayerAction_FreeUse_ZMDFQ_PlayerAction_NextRequest__">Skill.CanUse(Game, Request, FreeUse, NextRequest)</a>
+    </div>
+    <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
     <div>
@@ -124,18 +130,18 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_Cards_CR_IP001_SK1_CanUse_ZMDFQ_Game_ZMDFQ_PlayerAction_Request_ZMDFQ_PlayerAction_FreeUse_ZMDFQ_PlayerAction_UseRequest__.md&amp;value=---%0Auid%3A%20ZMDFQ.Cards.CR_IP001_SK1.CanUse(ZMDFQ.Game%2CZMDFQ.PlayerAction.Request%2CZMDFQ.PlayerAction.FreeUse%2CZMDFQ.PlayerAction.UseRequest%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_Cards_CR_IP001_SK1_canUse_ZMDFQ_Game_ZMDFQ_PlayerAction_Request_ZMDFQ_PlayerAction_FreeUse_ZMDFQ_PlayerAction_NextRequest__.md&amp;value=---%0Auid%3A%20ZMDFQ.Cards.CR_IP001_SK1.canUse(ZMDFQ.Game%2CZMDFQ.PlayerAction.Request%2CZMDFQ.PlayerAction.FreeUse%2CZMDFQ.PlayerAction.NextRequest%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/Core/Card/HeroCard/CR_IP001.cs/#L23">View Source</a>
   </span>
-  <a id="ZMDFQ_Cards_CR_IP001_SK1_CanUse_" data-uid="ZMDFQ.Cards.CR_IP001_SK1.CanUse*"></a>
-  <h4 id="ZMDFQ_Cards_CR_IP001_SK1_CanUse_ZMDFQ_Game_ZMDFQ_PlayerAction_Request_ZMDFQ_PlayerAction_FreeUse_ZMDFQ_PlayerAction_UseRequest__" data-uid="ZMDFQ.Cards.CR_IP001_SK1.CanUse(ZMDFQ.Game,ZMDFQ.PlayerAction.Request,ZMDFQ.PlayerAction.FreeUse,ZMDFQ.PlayerAction.UseRequest@)">CanUse(Game, Request, FreeUse, out UseRequest)</h4>
+  <a id="ZMDFQ_Cards_CR_IP001_SK1_canUse_" data-uid="ZMDFQ.Cards.CR_IP001_SK1.canUse*"></a>
+  <h4 id="ZMDFQ_Cards_CR_IP001_SK1_canUse_ZMDFQ_Game_ZMDFQ_PlayerAction_Request_ZMDFQ_PlayerAction_FreeUse_ZMDFQ_PlayerAction_NextRequest__" data-uid="ZMDFQ.Cards.CR_IP001_SK1.canUse(ZMDFQ.Game,ZMDFQ.PlayerAction.Request,ZMDFQ.PlayerAction.FreeUse,ZMDFQ.PlayerAction.NextRequest@)">canUse(Game, Request, FreeUse, out NextRequest)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool CanUse(Game game, Request nowRequest, FreeUse useInfo, out UseRequest nextRequest)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -163,7 +169,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="ZMDFQ.PlayerAction.UseRequest.html">UseRequest</a></td>
+        <td><a class="xref" href="ZMDFQ.PlayerAction.NextRequest.html">NextRequest</a></td>
         <td><span class="parametername">nextRequest</span></td>
         <td></td>
       </tr>
@@ -185,7 +191,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="ZMDFQ.Skill.html#ZMDFQ_Skill_CanUse_ZMDFQ_Game_ZMDFQ_PlayerAction_Request_ZMDFQ_PlayerAction_FreeUse_ZMDFQ_PlayerAction_UseRequest__">Skill.CanUse(Game, Request, FreeUse, out UseRequest)</a></div>
+  <div><a class="xref" href="ZMDFQ.Skill.html#ZMDFQ_Skill_canUse_ZMDFQ_Game_ZMDFQ_PlayerAction_Request_ZMDFQ_PlayerAction_FreeUse_ZMDFQ_PlayerAction_NextRequest__">Skill.canUse(Game, Request, FreeUse, out NextRequest)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_Cards_CR_IP001_SK1_Disable_ZMDFQ_Game_.md&amp;value=---%0Auid%3A%20ZMDFQ.Cards.CR_IP001_SK1.Disable(ZMDFQ.Game)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>

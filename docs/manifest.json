@@ -5,14 +5,26 @@
   "files": [
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.ABInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.ABInfo.html",
+          "hash": "Rt6rmm9J3LOSQuczDuY+sg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ZMDFQ.AI.yml",
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.AI.html",
-          "hash": "3a3I8+zAeV8dABwKAs85oA=="
+          "hash": "r+UxLyMFDStJY2Gak1/CCQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -21,10 +33,22 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.ActionCard.html",
-          "hash": "2/VE8+X6fCfzxsLTAeBsTQ=="
+          "hash": "PIZop9+UTASxcYfWAjk7zw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.AssetBundleHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.AssetBundleHelper.html",
+          "hash": "iwkghZahiGT0hqejQrMM1w=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -33,10 +57,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Camp.html",
-          "hash": "Cq2YFnVnyql/ZY8xm6oXPg=="
+          "hash": "06Fbf8VNDsgD9dNmKb9u/w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -45,10 +69,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Card.html",
-          "hash": "BhOppMhfgn8VbsKBY7enQw=="
+          "hash": "X+Lb8R4F9mWjmb7sQHjiIg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -60,7 +84,7 @@
           "hash": "jGQSCWi5eCaMfMb+/WfhkQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -69,10 +93,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.CardTypeEnum.html",
-          "hash": "hwi0Md95z9s2ruvygLa8OQ=="
+          "hash": "aYnnoMleS8lp3Atck96xeA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -81,10 +105,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.AT_N001.html",
-          "hash": "gydx1v84soCtPjXIx8H26g=="
+          "hash": "SqKCM/7chVLLyZaYjNyhcg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -93,10 +117,22 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.AT_N002.html",
-          "hash": "37sVU7cXm8saLP1jxrLrVw=="
+          "hash": "JibgEcK008wldiCE50AeAQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Cards.AT_N003.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Cards.AT_N003.html",
+          "hash": "Oz3QciXKSZnSLY21HWqtfA=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -105,10 +141,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.AT_N004.html",
-          "hash": "OZnAqkj4x5RUI861PqD21g=="
+          "hash": "/9R5ylnfpvRTtX54ePe0rQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -117,10 +153,58 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.AT_N006.html",
-          "hash": "PZEL73Vcl7qemMtep1CBfQ=="
+          "hash": "FKrBU+E3XkzsNROtNys3Cg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Cards.AT_N012.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Cards.AT_N012.html",
+          "hash": "ouw/rUvnOMz8A65eQBbKEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Cards.AT_N020.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Cards.AT_N020.html",
+          "hash": "7GZSs6wCHqGXjKUfi1Yl+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Cards.CR_CM001.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Cards.CR_CM001.html",
+          "hash": "0HwGO/x3GRsHeB6XPg1cxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Cards.CR_CM001_SK1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Cards.CR_CM001_SK1.html",
+          "hash": "WSyD8GIyThpL1hxSlSeedA=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -129,10 +213,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.CR_CP001.html",
-          "hash": "e3y9AHTu2nICPDC0pc6AbQ=="
+          "hash": "QpSghmj1UKkTfIgrB505Qw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -141,10 +225,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.CR_CP001_SK1.html",
-          "hash": "y873VpNvnX8RDxhjSzg1dQ=="
+          "hash": "JsI35lf79TAfqzyB3OXWhQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -153,10 +237,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.CR_IM001.html",
-          "hash": "DpSn659b8P3eF3HlkEtKTQ=="
+          "hash": "EOecqbp8Ao9Qiv+Nb/XDuA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -165,10 +249,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.CR_IM001_SK1.html",
-          "hash": "dNUb4VrTUHQnOPi1UL4MOQ=="
+          "hash": "klrBMhlGJXUf1dFiODezzA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -177,10 +261,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.CR_IM001_SK2.html",
-          "hash": "zwDYxfdRMYWpQUWvcfSgkg=="
+          "hash": "Vl929lwcrrguN84KZLn5lg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -189,10 +273,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.CR_IM001_SK3.html",
-          "hash": "OCfV6dRnEbSSvn15VcgjtQ=="
+          "hash": "xqrh0EuTrSBNVsL6Fe9eMA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -201,10 +285,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.CR_IP001.html",
-          "hash": "5tXv7xEP7hv5nx7LIjDIqA=="
+          "hash": "u3+oWrKRYuJOVCjqJtCAHg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -213,10 +297,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.CR_IP001_SK1.html",
-          "hash": "FswElqlsBEGUnMn6Xi5Qhg=="
+          "hash": "UC6p0KLUUFXGP98+bOkF4g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -225,10 +309,22 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.CR_IP001_SK2.html",
-          "hash": "ioqlMoHnn/oYbIiVcYNfaA=="
+          "hash": "hdZTNl9v0K6LbLKubn9/Sg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Cards.EV_E001.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Cards.EV_E001.html",
+          "hash": "/63nMoikWSoU5i3bxARzRg=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -237,10 +333,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.EV_E002.html",
-          "hash": "idRoqTKd55moY3pXfU0nFA=="
+          "hash": "pI+gXrHGukIXLGcLYl0ffg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -249,10 +345,34 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.G_001.html",
-          "hash": "w+IWqDOEs5PgojUj0x7S+g=="
+          "hash": "W3tDR11nCr5HNxIM6O9TYA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Cards.G_002.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Cards.G_002.html",
+          "hash": "pFeENjD3rRloQpyhRFhkhA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.Cards.IDiceCheck.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.Cards.IDiceCheck.html",
+          "hash": "Jo3Bd7hhI6Q9wK3AdB7ayw=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -261,10 +381,22 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Cards.html",
-          "hash": "G7QNcY+3apYHwCq6gW1XRA=="
+          "hash": "4nEzhStRJRWlE7hdA5UXWw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.ConfigManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.ConfigManager.html",
+          "hash": "ogvoCzgVMjJLFPKEDJdVwg=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -273,10 +405,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Effects.TurnLimit.html",
-          "hash": "gy3U+mfBcH3NglycoztOHw=="
+          "hash": "ytjjfa/RXDDu3Jfr6yKmaQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -285,10 +417,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Effects.UseCard.html",
-          "hash": "q45J4mMMXvLIgm0s8jnFxA=="
+          "hash": "+FA44QTEPpdH3hddPaNdKA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -297,10 +429,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Effects.UseWayResponse.html",
-          "hash": "ed/jc2VsymxX1Q6EaVxLqg=="
+          "hash": "3fC7DlNa0oFzWIGvq5Onzw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -312,7 +444,7 @@
           "hash": "bIpOkyKh/Ywl/b5XDgA8Og=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -321,10 +453,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.EventCard.html",
-          "hash": "PjFDWEATf59GZFpD+J+ZIA=="
+          "hash": "BKoD7W+PpeaeAiMXWfRacw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -333,10 +465,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.EventData-1.html",
-          "hash": "VaToO+ZR2OfmWzJyevj5QA=="
+          "hash": "xaUD5EyKMmq9136NjM+diw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -345,10 +477,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.EventEnum.html",
-          "hash": "WAlaNmuJ+JbAAN6/qeNy6A=="
+          "hash": "3607P3JrfcgCl9FIqvX6OA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -360,7 +492,19 @@
           "hash": "IGx82nJyjBt/YmPpNYq3Tg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.FileHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.FileHelper.html",
+          "hash": "ERqKO4V6G+fpka+BwWJXUg=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -369,10 +513,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Game.html",
-          "hash": "bfNzi5rHCOOjt1hBotow6A=="
+          "hash": "z1uMB/no+DPmEPEM2yWGnQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -384,7 +528,7 @@
           "hash": "CNZCZR8tFCcAHiUYMZdEvA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -393,10 +537,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.GameOptions.html",
-          "hash": "NCYO3cswya66+NDeFmIvog=="
+          "hash": "CxupAuwFx7XvkoiuRcGx9Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -408,7 +552,7 @@
           "hash": "7tnn0B8N8VhQ8sNxnxwUyw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -417,10 +561,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.HeroCard.html",
-          "hash": "pDV65BpsQg4Uh6A7fwxoaw=="
+          "hash": "HLtnxeUOHxiqpf4Ku0YrGg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -432,7 +576,19 @@
           "hash": "eEygBGHuiD6AMWNBrIi50w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.MongoHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.MongoHelper.html",
+          "hash": "mXAVpltBxCZLdIBvd/MAbg=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -441,10 +597,22 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.PassiveSkill.html",
-          "hash": "oTs5E3jX50DpgrQ8qGbtLw=="
+          "hash": "hnr8gSWK4fcG7L7LXQif7Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.PathHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.PathHelper.html",
+          "hash": "T/+4KcaSGKe8GcaM2r/EdA=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -453,10 +621,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Player.html",
-          "hash": "AHjpYbvU3Y1qc+teNmoJiQ=="
+          "hash": "trjcaATDEGET0ydUxy8VUA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -465,10 +633,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.PlayerAction.CardChooseRequest.html",
-          "hash": "WgY5kOyv40hywx9A+zFd1Q=="
+          "hash": "4Tt63MdN68PivCvSFkAsJg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -477,10 +645,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.PlayerAction.ChooseDirectionRequest.html",
-          "hash": "mJCIj7NlSV4EspjU1x+BDA=="
+          "hash": "Tbk8DCRvggoEmKKExlJvkQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -489,10 +657,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.PlayerAction.ChooseDirectionResponse.html",
-          "hash": "QSCA40Agt4yT69ytLOHHmw=="
+          "hash": "2Fn92q9tWoHcph6tAA3V1A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -501,10 +669,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.PlayerAction.ChooseHeroRequest.html",
-          "hash": "rli5nlRDqAVxM3TMEjlQPg=="
+          "hash": "jacRAs6ZJp1E6K7qKG21zQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -516,7 +684,7 @@
           "hash": "UNN2HNPj0dMRCqOte+G66A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -525,10 +693,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.PlayerAction.ChooseSomeCardRequest.html",
-          "hash": "CgnD1T3ljmgtPOuwridZZQ=="
+          "hash": "Q2nr+FxrbJZUBALe715Fdw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -540,7 +708,7 @@
           "hash": "wIW7ChVwGkhoTPrlY/WWHw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -552,7 +720,7 @@
           "hash": "x1c1SNpahcL7lmcW+p2fYA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -561,10 +729,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.PlayerAction.FreeUse.html",
-          "hash": "gVluMkciqhx61+W6dwTcsg=="
+          "hash": "+dng2wGqtbtdJ52piidujg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -573,10 +741,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.PlayerAction.FreeUseRequest.html",
-          "hash": "+P/kRu9iyC0tejjqoTjkJQ=="
+          "hash": "aM6252+R6lbxosQoRhtnFQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -585,10 +753,22 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.PlayerAction.HeroChooseRequest.html",
-          "hash": "Xn68yfOtXHL4CZa+dDlk1A=="
+          "hash": "KNmJ+OCkEXKwlPSeVWchFw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.PlayerAction.NextRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.PlayerAction.NextRequest.html",
+          "hash": "NfYVcW3Jl2/hb77MvxmGvQ=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -597,10 +777,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.PlayerAction.Request.html",
-          "hash": "AYVGUhrUM3+yIKGaumDJTg=="
+          "hash": "0JM4htEyAIKsP8bG/ELLXA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -612,7 +792,7 @@
           "hash": "IAgF9mJZf+QyW7L8HCZ4Jw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -621,10 +801,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.PlayerAction.TakeChoiceRequest.html",
-          "hash": "J/32JK7LF3PQnaJ8SJlxzQ=="
+          "hash": "D4g+txQTNAuwJ2L4P6mRWQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -636,7 +816,7 @@
           "hash": "ewm8a7SAzXz0jGENsRaKsA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -645,22 +825,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.PlayerAction.UseLimitCard.html",
-          "hash": "dGTclkUjmTPqYHyTFYZ/BA=="
+          "hash": "JJI1nCMhwBf/dKls7zh7JA=="
         }
       },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/ZMDFQ.PlayerAction.UseRequest.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ZMDFQ.PlayerAction.UseRequest.html",
-          "hash": "JMv5yebI3YFHUDn/O90FIA=="
-        }
-      },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -669,10 +837,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.PlayerAction.html",
-          "hash": "ELt65cIiDH+tixshYRa9FA=="
+          "hash": "vnixeGUdcbPLCzgqJRl9sA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -681,10 +849,34 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.RequestTimeoutManager.html",
-          "hash": "5GPleaoA+csqXTdDJlqQmQ=="
+          "hash": "7MRT1CyVg5Hk1bR06xxaVQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.ResHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.ResHelper.html",
+          "hash": "7RpuMjezQrB1/lhA809u6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.ResourcesManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.ResourcesManager.html",
+          "hash": "/n4Ug2sxxZ+arh186JxMww=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -696,7 +888,7 @@
           "hash": "DnjeTcE72LYbQae0HBKRFw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -708,7 +900,19 @@
           "hash": "34Gh+mXxyaSdJxP+CrXMyw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.SeatByEventSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.SeatByEventSystem.html",
+          "hash": "4Nc3NeKuNDEjhV347C9dhg=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -717,10 +921,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.Skill.html",
-          "hash": "l63WrAw8GOq6tstZR5OlFA=="
+          "hash": "TG6fWeLvyZW+URp5sFrFAw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -732,7 +936,7 @@
           "hash": "TzCz743OWZkZ6XtpqIq25Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -741,10 +945,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.ThemeCard.html",
-          "hash": "rwBLAsdpumV/twFS4UgJyA=="
+          "hash": "TinxmoDfUNQMu2gjLOUYEA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -756,7 +960,7 @@
           "hash": "L+nJgKJNr+gKitmBOUglzw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -768,7 +972,127 @@
           "hash": "9gt/uGYXm9YUaTWEG8NrQA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI.Battle.BattleBinder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI.Battle.BattleBinder.html",
+          "hash": "dXWIiCX68ckkP82i9hkbzQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI.Battle.UI_Card.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI.Battle.UI_Card.html",
+          "hash": "wcP6fwPsdRyk2eCdZwkzyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI.Battle.UI_ChooseHero.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI.Battle.UI_ChooseHero.html",
+          "hash": "0zMtJ6TN9VyN0seYEtJPRg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI.Battle.UI_Group.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI.Battle.UI_Group.html",
+          "hash": "VDA2bgdAZ7xsk0P0NHxr4Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI.Battle.UI_HandCards.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI.Battle.UI_HandCards.html",
+          "hash": "4K2vAakkNUUMQXGOKnp7EQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI.Battle.UI_Main2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI.Battle.UI_Main2.html",
+          "hash": "2IJw3JABMCXTVxspI2Dp0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI.Battle.UI_MainSize.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI.Battle.UI_MainSize.html",
+          "hash": "AQwEfMaabXIOu+5+VSAuXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI.Battle.UI_PlayerSimpleInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI.Battle.UI_PlayerSimpleInfo.html",
+          "hash": "NaLLtpQgGuGaX4zuX8FOqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI.Battle.UI_SmallHeroCard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI.Battle.UI_SmallHeroCard.html",
+          "hash": "+B+AnnErh5CmXJNii2jDgQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI.Battle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI.Battle.html",
+          "hash": "wKtWEthw63A1lE4xZQLXDw=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -777,10 +1101,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.UI.FairyGUIRegister.html",
-          "hash": "QRXEKz+pb71ZG/pfFhIfHQ=="
+          "hash": "dGrWIP7x3ndaafllZ+ou+w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -792,7 +1116,7 @@
           "hash": "W2MXAiKfpeh+mQYbSyC81g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -804,7 +1128,7 @@
           "hash": "6YcfLGkCESmAMxjQIKQkzw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -816,7 +1140,7 @@
           "hash": "w3Fk4n0XyI6Jr2EraopBDg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -828,7 +1152,7 @@
           "hash": "0vwnX9XKU7lhPQMb2sOoxQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -840,7 +1164,19 @@
           "hash": "OmcIeTxs10TkU0vNo9HAXQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZMDFQ.UI_Battle2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZMDFQ.UI_Battle2.html",
+          "hash": "tFqHT8AMx0eaQLtqQ0W0yQ=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -849,10 +1185,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.UsingInfo.html",
-          "hash": "MarT27w16cMYLYDfl3kBIA=="
+          "hash": "8m+MOIZi6DnBinqo7bl60Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -861,10 +1197,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ZMDFQ.html",
-          "hash": "dMYNvxAl1eTTxmpJqncWwg=="
+          "hash": "C5CNFU6Klfqf4e/9n6MXfQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -876,7 +1212,7 @@
           "hash": "trFolVUyPEGAHTVUlX4qGA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -885,22 +1221,25 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "glALjfcZLFVVU1YzvQ/NgQ=="
+          "hash": "WYwucnPZEF0orzzmhJ5R8Q=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Conceptual",
       "source_relative_path": "articles/intro.md",
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "IQ37s8JcB/kB7sjgfgVG/w=="
+          "hash": "r0ec9en1o2PzLCsHsugVKQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -956,17 +1295,17 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 72,
-          "skipped_file_count": 72
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 3,
-          "skipped_file_count": 3
+          "skipped_file_count": 2
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 100,
+          "skipped_file_count": 20
         }
       }
     },
