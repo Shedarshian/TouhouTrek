@@ -38,7 +38,7 @@ namespace ZMDFQ.Cards
                 return false;
             }
             else
-                return true;
+                return new AT_N012().CanUse(game, nowRequest, useInfo, out nextRequest);
         }
         public override Task DoEffect(Game game, FreeUse useInfo)
         {
