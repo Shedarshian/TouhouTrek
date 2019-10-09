@@ -75,14 +75,7 @@
 	protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
 	{
 		nextRequest = null;
-		switch (nowRequest)
-		{
-			case UseLimitCard useLimitCard:
-				return Effects.UseWayResponse.CheckLimit(game, useLimitCard, useInfo, ref nextRequest, this);
-			case FreeUseRequest _:
-				return true;
-		}
-		return false;
+		return true;
 	}
 	public override Task DoEffect(Game game, FreeUse useWay)
 	{
@@ -111,6 +104,68 @@
 	}
 }
 </code></pre>
+<p>在这段代码中，“传教”这张卡实际上是类型<code>AT_N001</code>，而类<code>AT_N001</code>继承类型<code>ActionCard</code>就代表着这是一张行动卡。在这个游戏中，分别有<code>ActionCard</code>（行动卡），<code>EventCard</code>（事件卡），<code>HeroCard</code>（角色卡），<code>ThemeCard</code>（官作卡）共4种类型的卡片，而所有的卡片类型均继承基类<code>Card</code>。所以要编写一张卡片，首先应当遵守以下两个规范：</p>
+<ol>
+<li>新建一个类型，将其按照卡片编号命名。注意其可访问性应为<code>public</code>，这样便于游戏框架通过反射对其进行查找。</li>
+<li>根据卡片的分类，使其类型继承相应的卡片类型。</li>
+</ol>
+<p>根据卡片类型继承的父类不同，你会需要重写不同的抽象方法。</p>
+<h2 id="行动卡">行动卡</h2>
+<p>继承行动卡需要你重写<code>canUse</code>和<code>DoEffect</code>两个方法。依然是以卡片<code>AT_N001</code>为例，先来看<code>canUse</code>：</p>
+<pre><code>protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
+{
+	nextRequest = null;
+	switch (nowRequest)
+	{
+		case UseLimitCard useLimitCard:
+			return Effects.UseWayResponse.CheckLimit(game, useLimitCard, useInfo, ref nextRequest, this);
+		case FreeUseRequest _:
+			return true;
+	}
+	return false;
+}
+</code></pre>
+<p>显而易见的，这个方法表示这张卡的使用条件，当返回<code>true</code>的时候，表示这张卡可以使用。如果一张卡没有任何使用条件，那么该方法可以直接返回<code>true</code>。在其他的情况下，比如这张卡有特定的发动条件，或者是这张卡在使用之前需要指定一个目标的时候，就会需要用到这个方法提供的参数：</p>
+<ul>
+<li>Game game：当前正在运行的游戏对象，提供当前游戏运行状态和方法，比如检查当前的游戏是否符合这张卡的使用条件。</li>
+<li>Request nowRequest：表示当前正在询问玩家的<code>Request</code>。<code>Request</code>和<code>Respond</code>是一组特殊的概念，可以理解为对玩家进行的询问与玩家提供的回应，而玩家对卡片的使用实际上也算是一种<code>Respond</code>，因为在自由行动阶段游戏一直都在询问玩家是否要使用卡片或者结束回合。关于这一参数的信息会在相关的例子中提到。</li>
+<li>FreeUse useInfo：表示玩家使用这张卡片的信息。通常来讲，使用一张行动卡必然包含以下信息：
+<ul>
+<li>PlayerId：使用卡片的玩家的ID。通常用于调用<code>Game.GetPlayer</code>来获取使用卡片的玩家。</li>
+<li>CardId：同样的，玩家所使用的卡片的ID。</li>
+<li>Source：一个整数的列表，表示使用的卡片来源。这个听上去比较不明所以，它是为了“将任意牌作为某种牌打出”的机制而存在的。比如“传教爱好者”可以将任意牌作为“传教”打出，在这种情况下<code>Source</code>列表中就会列出这张卡原本是由哪张卡变形而来的。</li>
+</ul>
+</li>
+<li>out NextRequest nextRequest：如果这张卡需要玩家提供使用目标之类的信息，而玩家还没有提供，你就可以将<code>nextRequest</code>设置为对玩家的某种询问来要求玩家提供相应的信息（至于具体有哪些类型的询问，请查询API文档）。如果你这么做了，记得返回<code>false</code>。</li>
+</ul>
+<p>接着是<code>DoEffect</code>方法：</p>
+<pre><code>public override Task DoEffect(Game game, FreeUse useWay)
+{
+	return Effects.UseCard.UseActionCard(game, useWay, this, async (g,r)=&gt;
+	{
+		//询问玩家是加或减
+		TakeChoiceResponse response = (TakeChoiceResponse)await game.WaitAnswer(new TakeChoiceRequest()
+		{
+			PlayerId = useWay.PlayerId,
+			Infos = new List&lt;string&gt;()
+		{
+			&quot;+2&quot;,
+			&quot;-2&quot;,
+		}
+		});
+		//处理实际效果
+		if (response.Index == 0)
+		{
+			await game.ChangeSize(2, this);
+		}
+		else
+		{
+			await game.ChangeSize(-2, this);
+		}
+	});          
+}
+</code></pre>
+<p>通常情况下，你必须返回<code>Effects.UseCard.UseActionCard(game, useWay, this, async (g,r)=&gt; {...});</code>，因为调用这个方法代表着使用这张牌会经过正常的使用动作卡的流程，即先将这张牌从手牌中移除，置入结算区，结算效果，最后置入弃牌堆。<code>async (g,r)=&gt; {...}</code>是一个lambda表达式，你可以把这张卡的具体效果写在<code>{...}</code>中。以这张卡为例，它在效果中为玩家提供了“+2”和“-2”两个选项，如果玩家选了“+2”（第0个选项），那么社区规模+2，否则-2。</p>
 </article>
           </div>
           
