@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Reflection;
 //using UnityEngine;
 
 namespace ZMDFQ
@@ -131,18 +132,29 @@ namespace ZMDFQ
             }
             else
             {
-                characterDeck.AddRange(createCards(new Cards.CR_CP001()
-                {
-                    Name = "传教爱好者",
-                }, 15));
-                characterDeck.AddRange(createCards(new Cards.CR_IM001()
-                {
-                    Name = "冷门爱好者",
-                }, 15));
-                ActionDeck.AddRange(createCards(new Cards.AT_N001() { Name = "传教" }, 20));
-                ThemeDeck.AddRange(createCards(new Cards.G_001() { Name = "旧作" }, 20));
-                EventDeck.AddRange(createCards(new Cards.EV_E002() { Name = "全国性活动" }, 50));
+                //for (int i = 0; i < 7; i++)
+                //{
+                //    characterDeck.Add(new Cards.CR_CM001());
+                //    characterDeck.Add(new Cards.CR_CP001());
+                //    characterDeck.Add(new Cards.CR_IM001());
+                //    characterDeck.Add(new Cards.CR_IP001());
+                //}
+                characterDeck.AddRange(createCards<Cards.CR_CP001>(7));
+                characterDeck.AddRange(createCards<Cards.CR_CM001>(7));
+                characterDeck.AddRange(createCards<Cards.CR_IM001>(7));
+                characterDeck.AddRange(createCards<Cards.CR_IP001>(7));
+                ActionDeck.AddRange(createCards<Cards.AT_N001>(4));
+                ActionDeck.AddRange(createCards<Cards.AT_N002>(4));
+                ActionDeck.AddRange(createCards<Cards.AT_N003>(40));
+                ActionDeck.AddRange(createCards<Cards.AT_N004>(4));
+                ActionDeck.AddRange(createCards<Cards.AT_N006>(4));
+                ActionDeck.AddRange(createCards<Cards.AT_N012>(4));
+                ThemeDeck.AddRange(createCards(new Cards.G_001(), 20));
+                EventDeck.AddRange(createCards(new Cards.EV_E002(), 50));
+                //characterDeck = new List<HeroCard>(types.Where(t => t.IsSubclassOf(typeof(HeroCard)))
+                //                                        .Select(t => Activator.CreateInstance(t) as HeroCard));
             }
+
 
             if (options == null || options.shuffle)
             {
@@ -255,7 +267,63 @@ namespace ZMDFQ
         }
         int lastAllocatedID { get; set; } = 0;
         /// <summary>
-        /// 创建卡牌
+        /// 创建一张指定类型的卡牌。
+        /// </summary>
+        /// <param name="type">卡牌类型</param>
+        /// <param name="startID">如果不填这个参数那么会自动给卡牌分配ID，否则会赋予给定的ID</param>
+        /// <returns>创建好的卡牌</returns>
+        public Card createCard(Type type, int startID = -1)
+        {
+            Card card = Activator.CreateInstance(type) as Card;
+            registerCard(card, startID > -1 ? startID : ++lastAllocatedID);
+            return card;
+        }
+        /// <summary>
+        /// 创建指定数量的某种卡牌
+        /// </summary>
+        /// <param name="type">卡牌类型</param>
+        /// <param name="number">卡牌数量</param>
+        /// <param name="startID">如果不填这个参数那么会自动给卡牌分配ID，如果填了那么被创建的卡牌会从startID开始分配参数，每张卡在前一张的基础上+1</param>
+        /// <returns>创建好的卡牌</returns>
+        public Card[] createCards(Type type, int number, int startID = -1)
+        {
+            Card[] cards = new Card[number];
+            for (int i = 0; i < number; i++)
+            {
+                cards[i] = createCard(type, startID > -1 ? startID + i : ++lastAllocatedID);
+            }
+            return cards;
+        }
+        /// <summary>
+        /// 创建一张指定类型的卡牌
+        /// </summary>
+        /// <typeparam name="T">卡牌类型</typeparam>
+        /// <param name="startID">如果不填这个参数那么会自动给卡牌分配ID，否则会赋予给定的ID</param>
+        /// <returns>创建好的卡牌</returns>
+        public T createCard<T>(int startID = -1) where T : Card, new()
+        {
+            T card = new T();
+            registerCard(card, startID > -1 ? startID : ++lastAllocatedID);
+            return card;
+        }
+        /// <summary>
+        /// 创建指定数量的某种卡牌
+        /// </summary>
+        /// <typeparam name="T">卡牌类型</typeparam>
+        /// <param name="number">卡牌数量</param>
+        /// <param name="startID">如果不填这个参数那么会自动给卡牌分配ID，如果填了那么被创建的卡牌会从startID开始分配参数，每张卡在前一张的基础上+1</param>
+        /// <returns>创建好的卡牌</returns>
+        public T[] createCards<T>(int number, int startID = -1) where T : Card, new()
+        {
+            T[] cards = new T[number];
+            for (int i = 0; i < number; i++)
+            {
+                cards[i] = createCard<T>(startID > -1 ? startID + i : ++lastAllocatedID);
+            }
+            return cards;
+        }
+        /// <summary>
+        /// 创建指定数量卡牌的复制
         /// </summary>
         /// <typeparam name="T">卡牌类型</typeparam>
         /// <param name="origin">数组中的所有卡牌都会以这张牌作为原型</param>
@@ -268,18 +336,21 @@ namespace ZMDFQ
             for (int i = 0; i < number; i++)
             {
                 cards[i] = Card.copyCard(origin);
-                cards[i].Id = startID > -1 ? startID + i : ++lastAllocatedID;
-                allCards.Add(cards[i]);
+                registerCard(cards[i], startID > -1 ? startID + i : ++lastAllocatedID);
             }
             return cards;
         }
-
-        public Card CreatCard(int id,IDatabase database)
+        public Card CreatCard(int id, IDatabase database)
         {
             Card card = database.Get(id);
             card.Id = ++lastAllocatedID;
             allCards.Add(card);
             return card;
+        }
+        private void registerCard(Card card, int id)
+        {
+            card.Id = id;
+            allCards.Add(card);
         }
 
         /// <summary>

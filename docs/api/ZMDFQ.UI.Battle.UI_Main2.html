@@ -1,0 +1,2288 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class UI_Main2
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class UI_Main2
+   ">
+    <meta name="generator" content="docfx 2.45.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ZMDFQ.UI.Battle.UI_Main2">
+  
+  
+  <h1 id="ZMDFQ_UI_Battle_UI_Main2" data-uid="ZMDFQ.UI.Battle.UI_Main2" class="text-break">Class UI_Main2
+  </h1>
+  <div class="markdown level0 summary"><p>处理选英雄逻辑</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">FairyGUI.EventDispatcher</span></div>
+    <div class="level2"><span class="xref">FairyGUI.GObject</span></div>
+    <div class="level3"><span class="xref">FairyGUI.GComponent</span></div>
+    <div class="level4"><span class="xref">UI_Main2</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">FairyGUI.IEventDispatcher</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">FairyGUI.GComponent.rootContainer</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.container</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.scrollPane</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent._margin</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent._trackBounds</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent._boundsChanged</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent._childrenRenderOrder</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent._apexIndex</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.CreateDisplayObject()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.Dispose()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.onDrop</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.fairyBatching</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.InvalidateBatchingState(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.opaque</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.margin</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.childrenRenderOrder</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.apexIndex</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.AddChild(FairyGUI.GObject)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.AddChildAt(FairyGUI.GObject, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.RemoveChild(FairyGUI.GObject)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.RemoveChild(FairyGUI.GObject, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.RemoveChildAt(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.RemoveChildAt(System.Int32, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.RemoveChildren()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.RemoveChildren(System.Int32, System.Int32, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.GetChildAt(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.GetChild(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.GetVisibleChild(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.GetChildInGroup(FairyGUI.GGroup, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.GetChildren()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.GetChildIndex(FairyGUI.GObject)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.SetChildIndex(FairyGUI.GObject, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.SetChildIndexBefore(FairyGUI.GObject, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.SwapChildren(FairyGUI.GObject, FairyGUI.GObject)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.SwapChildrenAt(System.Int32, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.numChildren</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.IsAncestorOf(FairyGUI.GObject)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.AddController(FairyGUI.Controller)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.GetControllerAt(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.GetController(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.RemoveController(FairyGUI.Controller)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.Controllers</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.GetTransitionAt(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.GetTransition(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.clipSoftness</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.mask</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.reversedMask</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.baseUserData</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.IsChildInView(FairyGUI.GObject)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.GetFirstChildInView()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.SetupScroll(FairyGUI.Utils.ByteBuffer)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.SetupOverflow(FairyGUI.OverflowType)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.HandleSizeChanged()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.HandleGrayedChanged()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.HandleControllerChanged(FairyGUI.Controller)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.SetBoundsChangedFlag()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.EnsureBoundsCorrect()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.UpdateBounds()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.SetBounds(System.Single, System.Single, System.Single, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.viewWidth</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.viewHeight</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.GetSnappingPosition(System.Single, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.ConstructFromResource()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.ConstructExtension(FairyGUI.Utils.ByteBuffer)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GComponent.Setup_AfterAdd(FairyGUI.Utils.ByteBuffer, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.id</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.name</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.data</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.sourceWidth</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.sourceHeight</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.initWidth</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.initHeight</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.minWidth</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.maxWidth</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.minHeight</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.maxHeight</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.relations</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.dragBounds</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.parent</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.displayObject</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.draggingObject</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.packageItem</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.underConstruct</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onClick</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onRightClick</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onTouchBegin</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onTouchMove</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onTouchEnd</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onRollOver</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onRollOut</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onAddedToStage</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onRemovedFromStage</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onKeyDown</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onClickLink</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onPositionChanged</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onSizeChanged</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onDragStart</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onDragMove</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onDragEnd</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onGearStop</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.x</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.y</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.z</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.xy</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.position</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.SetXY(System.Single, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.SetXY(System.Single, System.Single, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.SetPosition(System.Single, System.Single, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.pixelSnapping</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.Center()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.Center(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.MakeFullScreen()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.width</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.height</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.size</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.actualWidth</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.actualHeight</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.SetSize(System.Single, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.SetSize(System.Single, System.Single, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.SetSizeDirectly(System.Single, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.xMin</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.yMin</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.scaleX</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.scaleY</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.scale</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.SetScale(System.Single, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.skew</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.pivotX</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.pivotY</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.pivot</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.pivotAsAnchor</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.SetPivot(System.Single, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.SetPivot(System.Single, System.Single, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.touchable</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.grayed</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.enabled</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.rotation</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.rotationX</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.rotationY</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.alpha</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.visible</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.sortingOrder</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.focusable</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.focused</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.RequestFocus()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.tooltips</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.filter</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.blendMode</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.gameObjectName</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.SetHome(FairyGUI.GObject)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.inContainer</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.onStage</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.resourceURL</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.gearXY</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.gearSize</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.gearLook</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.GetGear(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.UpdateGear(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.InvalidateBatchingState()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.AddRelation(FairyGUI.GObject, FairyGUI.RelationType)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.AddRelation(FairyGUI.GObject, FairyGUI.RelationType, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.RemoveRelation(FairyGUI.GObject, FairyGUI.RelationType)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.RemoveFromParent()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.group</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.root</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.text</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.icon</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.draggable</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.StartDrag()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.StartDrag(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.StopDrag()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.dragging</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.LocalToGlobal(UnityEngine.Vector2)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.GlobalToLocal(UnityEngine.Vector2)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.LocalToGlobal(UnityEngine.Rect)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.GlobalToLocal(UnityEngine.Rect)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.LocalToRoot(UnityEngine.Vector2, FairyGUI.GRoot)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.RootToLocal(UnityEngine.Vector2, FairyGUI.GRoot)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.WorldToLocal(UnityEngine.Vector3)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.WorldToLocal(UnityEngine.Vector3, UnityEngine.Camera)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.TransformPoint(UnityEngine.Vector2, FairyGUI.GObject)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.TransformRect(UnityEngine.Rect, FairyGUI.GObject)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.isDisposed</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.asImage</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.asCom</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.asButton</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.asLabel</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.asProgress</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.asSlider</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.asComboBox</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.asTextField</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.asRichTextField</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.asTextInput</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.asLoader</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.asList</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.asGraph</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.asGroup</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.asMovieClip</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.HandlePositionChanged()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.HandleScaleChanged()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.HandleAlphaChanged()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.HandleVisibleChanged()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.Setup_BeforeAdd(FairyGUI.Utils.ByteBuffer, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.TweenMove(UnityEngine.Vector2, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.TweenMoveX(System.Single, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.TweenMoveY(System.Single, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.TweenScale(UnityEngine.Vector2, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.TweenScaleX(System.Single, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.TweenScaleY(System.Single, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.TweenResize(UnityEngine.Vector2, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.TweenFade(System.Single, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.GObject.TweenRotate(System.Single, System.Single)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.EventDispatcher.AddEventListener(System.String, FairyGUI.EventCallback1)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.EventDispatcher.AddEventListener(System.String, FairyGUI.EventCallback0)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.EventDispatcher.RemoveEventListener(System.String, FairyGUI.EventCallback1)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.EventDispatcher.RemoveEventListener(System.String, FairyGUI.EventCallback0)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.EventDispatcher.RemoveEventListeners()</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.EventDispatcher.RemoveEventListeners(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.EventDispatcher.hasEventListeners(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.EventDispatcher.isDispatching(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.EventDispatcher.DispatchEvent(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.EventDispatcher.DispatchEvent(System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.EventDispatcher.DispatchEvent(System.String, System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.EventDispatcher.DispatchEvent(FairyGUI.EventContext)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.EventDispatcher.BubbleEvent(System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">FairyGUI.EventDispatcher.BroadcastEvent(System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ZMDFQ.UI.Battle.html">ZMDFQ.UI.Battle</a></h6>
+  <h6><strong>Assembly</strong>: Model.dll</h6>
+  <h5 id="ZMDFQ_UI_Battle_UI_Main2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class UI_Main2 : GComponent, IEventDispatcher</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2__ctor.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L62">View Source</a>
+  </span>
+  <a id="ZMDFQ_UI_Battle_UI_Main2__ctor_" data-uid="ZMDFQ.UI.Battle.UI_Main2.#ctor*"></a>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2__ctor" data-uid="ZMDFQ.UI.Battle.UI_Main2.#ctor">UI_Main2()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_Main2()</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_ActionDeckCount.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_ActionDeckCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L21">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_ActionDeckCount" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_ActionDeckCount">m_ActionDeckCount</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GTextField m_ActionDeckCount</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GTextField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_ActionDropDeck.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_ActionDropDeck%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L27">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_ActionDropDeck" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_ActionDropDeck">m_ActionDropDeck</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GTextField m_ActionDropDeck</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GTextField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_ActivePlayer.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_ActivePlayer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L35">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_ActivePlayer" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_ActivePlayer">m_ActivePlayer</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GTextField m_ActivePlayer</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GTextField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_backward.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_backward%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L50">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_backward" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_backward">m_backward</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GButton m_backward</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GButton</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_choiceList.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_choiceList%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L46">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_choiceList" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_choiceList">m_choiceList</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GList m_choiceList</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_choose_n.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_choose_n%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L44">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_choose_n" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_choose_n">m_choose_n</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GButton m_choose_n</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GButton</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_choose_y.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_choose_y%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L43">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_choose_y" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_choose_y">m_choose_y</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GButton m_choose_y</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GButton</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_chooseCard.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_chooseCard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L45">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_chooseCard" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_chooseCard">m_chooseCard</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GGroup m_chooseCard</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GGroup</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_chooseDirection.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_chooseDirection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L52">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_chooseDirection" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_chooseDirection">m_chooseDirection</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GGroup m_chooseDirection</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GGroup</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_ChooseHero.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_ChooseHero%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L10">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_ChooseHero" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_ChooseHero">m_ChooseHero</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Controller m_ChooseHero</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.Controller</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_DelayAction.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_DelayAction%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L26">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_DelayAction" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_DelayAction">m_DelayAction</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GList m_DelayAction</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_Endturn.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_Endturn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L41">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_Endturn" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_Endturn">m_Endturn</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GButton m_Endturn</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GButton</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_EventDeckCount.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_EventDeckCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L20">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_EventDeckCount" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_EventDeckCount">m_EventDeckCount</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GTextField m_EventDeckCount</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GTextField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_EventDropDeckCount.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_EventDropDeckCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L28">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_EventDropDeckCount" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_EventDropDeckCount">m_EventDropDeckCount</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GTextField m_EventDropDeckCount</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GTextField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_forward.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_forward%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L49">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_forward" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_forward">m_forward</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GButton m_forward</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GButton</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_freeUse.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_freeUse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L42">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_freeUse" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_freeUse">m_freeUse</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GGroup m_freeUse</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GGroup</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_GameInfo.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_GameInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L30">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_GameInfo" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_GameInfo">m_GameInfo</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GComponent m_GameInfo</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GComponent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_Hand.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_Hand%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L31">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_Hand" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_Hand">m_Hand</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_HandCards m_Hand</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_HandCards.html">UI_HandCards</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_HeroChooseWindow.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_HeroChooseWindow%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L53">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_HeroChooseWindow" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_HeroChooseWindow">m_HeroChooseWindow</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_ChooseHero m_HeroChooseWindow</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_ChooseHero.html">UI_ChooseHero</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_limitUse.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_limitUse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L48">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_limitUse" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_limitUse">m_limitUse</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GButton m_limitUse</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GButton</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_MainSize.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_MainSize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L22">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_MainSize" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_MainSize">m_MainSize</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_MainSize m_MainSize</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_MainSize.html">UI_MainSize</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_NowAction.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_NowAction%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L37">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_NowAction" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_NowAction">m_NowAction</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_Card m_NowAction</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_Card.html">UI_Card</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_NowEvent.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_NowEvent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L25">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_NowEvent" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_NowEvent">m_NowEvent</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_Card m_NowEvent</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_Card.html">UI_Card</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_NowTheme.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_NowTheme%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L33">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_NowTheme" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_NowTheme">m_NowTheme</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GComponent m_NowTheme</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GComponent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_PlayerHero.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_PlayerHero%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L29">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_PlayerHero" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_PlayerHero">m_PlayerHero</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_Card m_PlayerHero</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_Card.html">UI_Card</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo0.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo0%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L12">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo0" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo0">m_PlayerInfo0</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_PlayerSimpleInfo m_PlayerInfo0</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_PlayerSimpleInfo.html">UI_PlayerSimpleInfo</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo1.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo1%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L13">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo1" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo1">m_PlayerInfo1</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_PlayerSimpleInfo m_PlayerInfo1</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_PlayerSimpleInfo.html">UI_PlayerSimpleInfo</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo2.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo2%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L14">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo2" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo2">m_PlayerInfo2</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_PlayerSimpleInfo m_PlayerInfo2</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_PlayerSimpleInfo.html">UI_PlayerSimpleInfo</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo3.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo3%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L15">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo3" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo3">m_PlayerInfo3</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_PlayerSimpleInfo m_PlayerInfo3</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_PlayerSimpleInfo.html">UI_PlayerSimpleInfo</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo4.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo4%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L16">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo4" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo4">m_PlayerInfo4</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_PlayerSimpleInfo m_PlayerInfo4</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_PlayerSimpleInfo.html">UI_PlayerSimpleInfo</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo5.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo5%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L17">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo5" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo5">m_PlayerInfo5</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_PlayerSimpleInfo m_PlayerInfo5</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_PlayerSimpleInfo.html">UI_PlayerSimpleInfo</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo6.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo6%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L18">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo6" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo6">m_PlayerInfo6</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_PlayerSimpleInfo m_PlayerInfo6</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_PlayerSimpleInfo.html">UI_PlayerSimpleInfo</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo7.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo7%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L19">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_PlayerInfo7" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_PlayerInfo7">m_PlayerInfo7</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_PlayerSimpleInfo m_PlayerInfo7</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_PlayerSimpleInfo.html">UI_PlayerSimpleInfo</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_Request.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_Request%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L11">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_Request" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_Request">m_Request</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Controller m_Request</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.Controller</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_RoundInfo.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_RoundInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L23">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_RoundInfo" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_RoundInfo">m_RoundInfo</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GTextField m_RoundInfo</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GTextField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_setcard.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_setcard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L51">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_setcard" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_setcard">m_setcard</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GButton m_setcard</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GButton</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_SetEvent.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_SetEvent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L32">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_SetEvent" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_SetEvent">m_SetEvent</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UI_Card m_SetEvent</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_Card.html">UI_Card</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_skills.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_skills%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L39">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_skills" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_skills">m_skills</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GList m_skills</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_takeChoice.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_takeChoice%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L47">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_takeChoice" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_takeChoice">m_takeChoice</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GGroup m_takeChoice</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GGroup</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_ThemeDeckCount.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_ThemeDeckCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L34">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_ThemeDeckCount" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_ThemeDeckCount">m_ThemeDeckCount</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GTextField m_ThemeDeckCount</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GTextField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_TimeBar.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_TimeBar%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L36">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_TimeBar" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_TimeBar">m_TimeBar</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GProgressBar m_TimeBar</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GProgressBar</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_TurnInfo.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_TurnInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L24">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_TurnInfo" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_TurnInfo">m_TurnInfo</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GTextField m_TurnInfo</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GTextField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_useCard.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_useCard%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L40">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_useCard" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_useCard">m_useCard</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GButton m_useCard</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GButton</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_m_UseTip.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.m_UseTip%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L38">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_m_UseTip" data-uid="ZMDFQ.UI.Battle.UI_Main2.m_UseTip">m_UseTip</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GTextField m_UseTip</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.GTextField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_URL.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.URL%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L55">View Source</a>
+  </span>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_URL" data-uid="ZMDFQ.UI.Battle.UI_Main2.URL">URL</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string URL = &quot;ui://oacz4rtmgs0sc&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_ConstructFromXML_FairyGUI_Utils_XML_.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.ConstructFromXML(FairyGUI.Utils.XML)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L66">View Source</a>
+  </span>
+  <a id="ZMDFQ_UI_Battle_UI_Main2_ConstructFromXML_" data-uid="ZMDFQ.UI.Battle.UI_Main2.ConstructFromXML*"></a>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_ConstructFromXML_FairyGUI_Utils_XML_" data-uid="ZMDFQ.UI.Battle.UI_Main2.ConstructFromXML(FairyGUI.Utils.XML)">ConstructFromXML(XML)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ConstructFromXML(XML xml)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FairyGUI.Utils.XML</span></td>
+        <td><span class="parametername">xml</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">FairyGUI.GComponent.ConstructFromXML(FairyGUI.Utils.XML)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_CreateInstance.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.CreateInstance%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/AutoRelease/Battle/UI_Main2.cs/#L57">View Source</a>
+  </span>
+  <a id="ZMDFQ_UI_Battle_UI_Main2_CreateInstance_" data-uid="ZMDFQ.UI.Battle.UI_Main2.CreateInstance*"></a>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_CreateInstance" data-uid="ZMDFQ.UI.Battle.UI_Main2.CreateInstance">CreateInstance()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UI_Main2 CreateInstance()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.UI.Battle.UI_Main2.html">UI_Main2</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_OnUpdate.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.OnUpdate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/Battle2/UI_Main2.cs/#L100">View Source</a>
+  </span>
+  <a id="ZMDFQ_UI_Battle_UI_Main2_OnUpdate_" data-uid="ZMDFQ.UI.Battle.UI_Main2.OnUpdate*"></a>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_OnUpdate" data-uid="ZMDFQ.UI.Battle.UI_Main2.OnUpdate">OnUpdate()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnUpdate()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">FairyGUI.GComponent.OnUpdate()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2_SetGame_ZMDFQ_Game_ZMDFQ_Player_.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2.SetGame(ZMDFQ.Game%2CZMDFQ.Player)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/Battle2/UI_Main2.cs/#L106">View Source</a>
+  </span>
+  <a id="ZMDFQ_UI_Battle_UI_Main2_SetGame_" data-uid="ZMDFQ.UI.Battle.UI_Main2.SetGame*"></a>
+  <h4 id="ZMDFQ_UI_Battle_UI_Main2_SetGame_ZMDFQ_Game_ZMDFQ_Player_" data-uid="ZMDFQ.UI.Battle.UI_Main2.SetGame(ZMDFQ.Game,ZMDFQ.Player)">SetGame(Game, Player)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetGame(Game game, Player self)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.Player.html">Player</a></td>
+        <td><span class="parametername">self</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">FairyGUI.IEventDispatcher</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_UI_Battle_UI_Main2.md&amp;value=---%0Auid%3A%20ZMDFQ.UI.Battle.UI_Main2%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/UI/Battle2/UI_Main2.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

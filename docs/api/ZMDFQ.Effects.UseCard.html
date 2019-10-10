@@ -114,19 +114,20 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_Effects_UseCard_NormalUse_ZMDFQ_Game_ZMDFQ_PlayerAction_FreeUse_ZMDFQ_Card_System_Func_ZMDFQ_Game_ZMDFQ_PlayerAction_FreeUse_System_Threading_Tasks_Task__.md&amp;value=---%0Auid%3A%20ZMDFQ.Effects.UseCard.NormalUse(ZMDFQ.Game%2CZMDFQ.PlayerAction.FreeUse%2CZMDFQ.Card%2CSystem.Func%7BZMDFQ.Game%2CZMDFQ.PlayerAction.FreeUse%2CSystem.Threading.Tasks.Task%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_Effects_UseCard_NormalUse__1_ZMDFQ_Game___0_ZMDFQ_Card_System_Func_ZMDFQ_Game___0_System_Threading_Tasks_Task__.md&amp;value=---%0Auid%3A%20ZMDFQ.Effects.UseCard.NormalUse%60%601(ZMDFQ.Game%2C%60%600%2CZMDFQ.Card%2CSystem.Func%7BZMDFQ.Game%2C%60%600%2CSystem.Threading.Tasks.Task%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/Core/Effect/UseCard.cs/#L18">View Source</a>
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/Core/Effect/UseCard.cs/#L70">View Source</a>
   </span>
   <a id="ZMDFQ_Effects_UseCard_NormalUse_" data-uid="ZMDFQ.Effects.UseCard.NormalUse*"></a>
-  <h4 id="ZMDFQ_Effects_UseCard_NormalUse_ZMDFQ_Game_ZMDFQ_PlayerAction_FreeUse_ZMDFQ_Card_System_Func_ZMDFQ_Game_ZMDFQ_PlayerAction_FreeUse_System_Threading_Tasks_Task__" data-uid="ZMDFQ.Effects.UseCard.NormalUse(ZMDFQ.Game,ZMDFQ.PlayerAction.FreeUse,ZMDFQ.Card,System.Func{ZMDFQ.Game,ZMDFQ.PlayerAction.FreeUse,System.Threading.Tasks.Task})">NormalUse(Game, FreeUse, Card, Func&lt;Game, FreeUse, Task&gt;)</h4>
-  <div class="markdown level1 summary"><p>正常的结算流程：结算牌放结算区，结算完毕后进入弃牌堆</p>
-</div>
+  <h4 id="ZMDFQ_Effects_UseCard_NormalUse__1_ZMDFQ_Game___0_ZMDFQ_Card_System_Func_ZMDFQ_Game___0_System_Threading_Tasks_Task__" data-uid="ZMDFQ.Effects.UseCard.NormalUse``1(ZMDFQ.Game,``0,ZMDFQ.Card,System.Func{ZMDFQ.Game,``0,System.Threading.Tasks.Task})">NormalUse&lt;T&gt;(Game, T, Card, Func&lt;Game, T, Task&gt;)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task NormalUse(Game game, FreeUse useOneCard, Card card, Func&lt;Game, FreeUse, Task&gt; effect)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;&#26102;&#35831;&#20351;&#29992;UseActionCard&#21644;UseEventCard&#20316;&#20026;&#26367;&#20195;&quot;)]
+public static Task NormalUse&lt;T&gt;(Game game, T useOneCard, Card card, Func&lt;Game, T, Task&gt; effect)
+    where T : FreeUse</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -144,7 +145,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="ZMDFQ.PlayerAction.FreeUse.html">FreeUse</a></td>
+        <td><span class="xref">T</span></td>
         <td><span class="parametername">useOneCard</span></td>
         <td></td>
       </tr>
@@ -154,7 +155,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="ZMDFQ.Game.html">Game</a>, <a class="xref" href="ZMDFQ.PlayerAction.FreeUse.html">FreeUse</a>, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="ZMDFQ.Game.html">Game</a>, T, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
         <td><span class="parametername">effect</span></td>
         <td></td>
       </tr>
@@ -171,6 +172,178 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_Effects_UseCard_UseActionCard__1_ZMDFQ_Game___0_ZMDFQ_ActionCard_System_Func_ZMDFQ_Game___0_System_Threading_Tasks_Task__.md&amp;value=---%0Auid%3A%20ZMDFQ.Effects.UseCard.UseActionCard%60%601(ZMDFQ.Game%2C%60%600%2CZMDFQ.ActionCard%2CSystem.Func%7BZMDFQ.Game%2C%60%600%2CSystem.Threading.Tasks.Task%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/Core/Effect/UseCard.cs/#L43">View Source</a>
+  </span>
+  <a id="ZMDFQ_Effects_UseCard_UseActionCard_" data-uid="ZMDFQ.Effects.UseCard.UseActionCard*"></a>
+  <h4 id="ZMDFQ_Effects_UseCard_UseActionCard__1_ZMDFQ_Game___0_ZMDFQ_ActionCard_System_Func_ZMDFQ_Game___0_System_Threading_Tasks_Task__" data-uid="ZMDFQ.Effects.UseCard.UseActionCard``1(ZMDFQ.Game,``0,ZMDFQ.ActionCard,System.Func{ZMDFQ.Game,``0,System.Threading.Tasks.Task})">UseActionCard&lt;T&gt;(Game, T, ActionCard, Func&lt;Game, T, Task&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task UseActionCard&lt;T&gt;(Game game, T useActionCard, ActionCard card, Func&lt;Game, T, Task&gt; effect)
+    where T : FreeUse</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">useActionCard</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.ActionCard.html">ActionCard</a></td>
+        <td><span class="parametername">card</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="ZMDFQ.Game.html">Game</a>, T, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/a395338563/ZMDFQ/new/develop/apiSpec/new?filename=ZMDFQ_Effects_UseCard_UseEventCard__1_ZMDFQ_Game___0_ZMDFQ_EventCard_System_Func_ZMDFQ_Game___0_System_Threading_Tasks_Task__.md&amp;value=---%0Auid%3A%20ZMDFQ.Effects.UseCard.UseEventCard%60%601(ZMDFQ.Game%2C%60%600%2CZMDFQ.EventCard%2CSystem.Func%7BZMDFQ.Game%2C%60%600%2CSystem.Threading.Tasks.Task%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/Assets/Scripts/Core/Effect/UseCard.cs/#L26">View Source</a>
+  </span>
+  <a id="ZMDFQ_Effects_UseCard_UseEventCard_" data-uid="ZMDFQ.Effects.UseCard.UseEventCard*"></a>
+  <h4 id="ZMDFQ_Effects_UseCard_UseEventCard__1_ZMDFQ_Game___0_ZMDFQ_EventCard_System_Func_ZMDFQ_Game___0_System_Threading_Tasks_Task__" data-uid="ZMDFQ.Effects.UseCard.UseEventCard``1(ZMDFQ.Game,``0,ZMDFQ.EventCard,System.Func{ZMDFQ.Game,``0,System.Threading.Tasks.Task})">UseEventCard&lt;T&gt;(Game, T, EventCard, Func&lt;Game, T, Task&gt;)</h4>
+  <div class="markdown level1 summary"><p>正常的结算流程：结算牌放结算区，结算完毕后进入弃牌堆</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task UseEventCard&lt;T&gt;(Game game, T useEventCard, EventCard card, Func&lt;Game, T, Task&gt; effect)
+    where T : ChooseDirectionResponse</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">useEventCard</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ZMDFQ.EventCard.html">EventCard</a></td>
+        <td><span class="parametername">card</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="ZMDFQ.Game.html">Game</a>, T, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
         <td></td>
       </tr>
     </tbody>

@@ -14,7 +14,7 @@ namespace ZMDFQ
         /// </summary>
         public HeroCard Hero;
 
-        public string Name;
+        public abstract string Name { get; }
         /// <summary>
         /// 未翻开时 是否询问响应技能
         /// </summary>
@@ -74,7 +74,7 @@ namespace ZMDFQ
     /// <summary>
     /// 被动技能，无法使用，也没有主动效果
     /// </summary>
-    public abstract class PassiveSkill:Skill
+    public abstract class PassiveSkill : Skill
     {
         protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {

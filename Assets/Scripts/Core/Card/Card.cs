@@ -29,7 +29,6 @@ namespace ZMDFQ
         protected virtual void copyPropTo(Card target)
         {
             target.Id = Id;
-            target.Name = Name;
             target.CardType = CardType;
         }
     }
