@@ -6,14 +6,14 @@ namespace ZMDFQ
 {
 	public static class BuildHelper
 	{
-		private const string relativeDirPrefix = "../Release";
+		private const string relativeDirPrefix = "./Release";
 
-		public static string BuildFolder = "../Release/{0}/StreamingAssets/";
+		public static string BuildFolder = "./Release/{0}/StreamingAssets/";
 			
 		public static void Build(PlatformType type, BuildAssetBundleOptions buildAssetBundleOptions, BuildOptions buildOptions, bool isBuildExe, bool isContainAB)
 		{
 			BuildTarget buildTarget = BuildTarget.StandaloneWindows;
-			string exeName = "ET";
+			string exeName = "ZMDFQ";
 			switch (type)
 			{
 				case PlatformType.PC:
@@ -54,6 +54,7 @@ namespace ZMDFQ
 			{
 				AssetDatabase.Refresh();
 				string[] levels = {
+                    "Assets/Scenes/Battle2.unity"
 					//"Assets/Scenes/Init.unity",
      //               "Assets/Scenes/Map.unity",
      //               "Assets/Scenes/Test.unity",
