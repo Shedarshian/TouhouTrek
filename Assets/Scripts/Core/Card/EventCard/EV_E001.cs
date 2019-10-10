@@ -12,6 +12,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class EV_E001 : EventCard
     {
+        public override string Name => "人气投票";
         public override bool ForwardOnly => false;
         public override async Task Use(Game game, ChooseDirectionResponse response)
         {

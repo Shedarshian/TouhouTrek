@@ -12,6 +12,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class AT_N020 : ActionCard
     {
+        public override string Name => "墨菲定理";
         public override Task DoEffect(Game game, FreeUse useWay)
         {
             return Task.CompletedTask;

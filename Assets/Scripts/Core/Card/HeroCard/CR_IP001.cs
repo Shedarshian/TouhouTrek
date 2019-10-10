@@ -14,35 +14,45 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class CR_IP001 : HeroCard
     {
+        public override string Name => "社团主催";
         public override Camp camp => Camp.indivMajor;
 
-        public override List<Skill> Skills => throw new NotImplementedException();
+        public override List<Skill> Skills { get; } = new List<Skill>()
+        {
+            new CR_IP001_SK1(),
+            new CR_IP001_SK2()
+        };
     }
     public class CR_IP001_SK1 : Skill
     {
+        public override string Name => "合同招募";
         protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            nextRequest = null;
+            return true;
         }
 
         public override void Disable(Game game)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public override Task DoEffect(Game game, FreeUse useInfo)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return Task.CompletedTask;
         }
 
         public override void Enable(Game game)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 
     public class CR_IP001_SK2 : PassiveSkill
     {
+        public override string Name => "社团运营";
         public override void Disable(Game game)
         {
             game.EventSystem.Remove(EventEnum.OnPlayrSizeChange, moreChange);

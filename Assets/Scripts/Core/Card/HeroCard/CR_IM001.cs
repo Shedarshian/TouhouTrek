@@ -11,6 +11,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class CR_IM001 : HeroCard
     {
+        public override string Name => "冷门爱好者";
         public override Camp camp => Camp.indivMinor;
         public override List<Skill> Skills { get; } = new List<Skill>()
         {
@@ -24,6 +25,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class CR_IM001_SK1 : PassiveSkill
     {
+        public override string Name => "自我产粮";
         public override void Enable(Game game)
         {
             game.EventSystem.Register(EventEnum.afterDiscardPhase, game.Players.IndexOf(Hero.Player), effect);
@@ -59,6 +61,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class CR_IM001_SK2 : PassiveSkill
     {
+        public override string Name => "坚定不移";
         //string IPropertyModifier<int>.propName => nameof(Player.HandMax);
         //void IPropertyModifier<int>.modify(ref int value)
         //{
@@ -104,6 +107,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class CR_IM001_SK3 : PassiveSkill//, IPropertyModifier<int>
     {
+        public override string Name => "小众至高";
         //string IPropertyModifier<int>.propName => nameof(Player.point);
         //void IPropertyModifier<int>.modify(ref int value)
         //{

@@ -13,6 +13,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class AT_N002 : ActionCard
     {
+        public override string Name => "创作";
         protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
             nextRequest = null;

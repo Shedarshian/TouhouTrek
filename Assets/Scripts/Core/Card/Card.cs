@@ -13,7 +13,7 @@ namespace ZMDFQ
         public Player Owner;
 
         public int Id;
-        public string Name;
+        public abstract string Name { get; }
         public CardTypeEnum CardType;
 
         //internal abstract PlayerAction.Request GetRequest();
@@ -28,7 +28,6 @@ namespace ZMDFQ
         protected virtual void copyPropTo(Card target)
         {
             target.Id = Id;
-            target.Name = Name;
             target.CardType = CardType;
         }
     }

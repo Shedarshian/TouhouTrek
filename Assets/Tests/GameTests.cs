@@ -330,6 +330,7 @@ namespace Tests
     }
     class TestCharacter : HeroCard
     {
+        public override string Name => "测试角色";
         public override Camp camp
         {
             get { return Camp.commuMajor; }
@@ -338,6 +339,7 @@ namespace Tests
     }
     class TestSkill : Skill
     {
+        public override string Name => "测试技能";
         public override void Disable(Game game)
         {
             throw new System.NotImplementedException();
@@ -361,6 +363,7 @@ namespace Tests
     }
     class TestAction1 : ActionCard
     {
+        public override string Name => "测试行动";
         protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
             nextRequest = null;
@@ -378,6 +381,7 @@ namespace Tests
     }
     class TestOfficial : ThemeCard
     {
+        public override string Name => "测试官作";
         public Action<Game> onEnable { get; set; }
         public Action<Game> onDisable { get; set; }
         public override void Enable(Game game)
@@ -397,6 +401,7 @@ namespace Tests
     }
     class TestEvent : EventCard
     {
+        public override string Name => "测试事件";
         public override bool ForwardOnly => false;
         public override async Task Use(Game game, ChooseDirectionResponse response)
         {

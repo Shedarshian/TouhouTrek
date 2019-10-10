@@ -9,6 +9,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class AT_N003 : ActionCard
     {
+        public override string Name => "盈利";
         protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
             nextRequest = null;

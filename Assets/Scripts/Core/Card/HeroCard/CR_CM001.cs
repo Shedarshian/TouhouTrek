@@ -10,6 +10,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class CR_CM001 : HeroCard
     {
+        public override string Name => "东方警察";
         public override Camp camp => Camp.commuMinor;
         public override List<Skill> Skills => new List<Skill>() { new CR_CM001_SK1() };
     }
@@ -18,6 +19,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class CR_CM001_SK1 : Skill
     {
+        public override string Name => "出警";
         Effects.TurnLimit turnLimit { get; } = new Effects.TurnLimit() { MaxUseTime = 2 };
         public override void Enable(Game game)
         {

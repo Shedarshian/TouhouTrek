@@ -9,6 +9,7 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class AT_N012 : ActionCard
     {
+        public override string Name => "出警";
         protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
             if (useInfo.PlayersId.Count < 1)
