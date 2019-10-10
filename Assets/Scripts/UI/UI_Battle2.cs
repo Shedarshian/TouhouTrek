@@ -32,6 +32,7 @@ namespace ZMDFQ
                 };
             }
             game = new Game();
+            game.Database = ConfigManager.Instance;
             game.TimeManager = gameObject.AddComponent<RequestTimeoutManager>();
             //game.Init();
             game.Init(ConfigManager.Instance.GetGameOption("Test",infos));

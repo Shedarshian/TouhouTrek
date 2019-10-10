@@ -1,0 +1,3 @@
+{"_t":"CR_CP001_SK1","ConfigId":1,"Name":"传教"}
+{"_t":"CR_IP001_SK1","ConfigId":2,"Name":"合同招募"}
+{"_t":"CR_IP001_SK2","ConfigId":3,"Name":"社团运营"}

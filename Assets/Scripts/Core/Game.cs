@@ -96,6 +96,7 @@ namespace ZMDFQ
 
         internal System.Threading.CancellationTokenSource cts;
 
+        internal IDatabase Database;
         GameOptions options { get; set; } = null;
         int endingOfficialCardCount { get; set; } = 0;
         /// <summary>
@@ -109,11 +110,11 @@ namespace ZMDFQ
             if (TimeManager != null)
                 TimeManager.Game = this;
             //初始化牌库
-            if (options != null && options.Cards != null && options.Database != null)
+            if (options != null && options.Cards != null && Database != null)
             {
                 foreach (var id in options.Cards)
                 {
-                    switch (CreatCard(id, options.Database))
+                    switch (CreatCard(id))
                     {
                         case EventCard eventCard:
                             EventDeck.Add(eventCard);
@@ -139,10 +140,10 @@ namespace ZMDFQ
                 //    characterDeck.Add(new Cards.CR_IM001());
                 //    characterDeck.Add(new Cards.CR_IP001());
                 //}
-                characterDeck.AddRange(createCards<Cards.CR_CP001>(7));
-                characterDeck.AddRange(createCards<Cards.CR_CM001>(7));
-                characterDeck.AddRange(createCards<Cards.CR_IM001>(7));
-                characterDeck.AddRange(createCards<Cards.CR_IP001>(7));
+                //characterDeck.AddRange(createCards<Cards.CR_CP001>(7));
+                //characterDeck.AddRange(createCards<Cards.CR_CM001>(7));
+                //characterDeck.AddRange(createCards<Cards.CR_IM001>(7));
+                //characterDeck.AddRange(createCards<Cards.CR_IP001>(7));
                 ActionDeck.AddRange(createCards<Cards.AT_N001>(4));
                 ActionDeck.AddRange(createCards<Cards.AT_N002>(4));
                 ActionDeck.AddRange(createCards<Cards.AT_N003>(40));
@@ -340,9 +341,9 @@ namespace ZMDFQ
             }
             return cards;
         }
-        public Card CreatCard(int id, IDatabase database)
+        public Card CreatCard(int id)
         {
-            Card card = database.Get(id);
+            Card card = Database.GetCard(id);
             card.Id = ++lastAllocatedID;
             allCards.Add(card);
             return card;
@@ -608,7 +609,6 @@ namespace ZMDFQ
     }
     public class GameOptions
     {
-        public IDatabase Database;
         public PlayerInfo[] PlayerInfos;
         public int endingOfficialCardCount = 0;
         public IEnumerable<int> Cards = null;

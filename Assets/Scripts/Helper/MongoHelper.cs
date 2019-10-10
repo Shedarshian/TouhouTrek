@@ -15,7 +15,7 @@ namespace ZMDFQ
 			Type[] types = typeof(Game).Assembly.GetTypes();
 			foreach (Type type in types)
 			{
-				if (!type.IsSubclassOf(typeof(Card)))
+				if (!type.IsSubclassOf(typeof(Card))&&!type.IsSubclassOf(typeof(Skill)))
 				{
 					continue;
 				}

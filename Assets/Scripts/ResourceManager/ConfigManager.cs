@@ -18,11 +18,13 @@ namespace ZMDFQ
         }
         private static ConfigManager instance;
         public Dictionary<int, Card> Cards;
+        public Dictionary<int, Skill> Skills;
         public Dictionary<int, DeckConfig> Decks;
         public ConfigManager Init()
         {
             load("Card", out Cards, (x) => x.ConfigId);
             load("Deck", out Decks, (x) => x.ConfigId);
+            load("Skill", out Skills, (x) => x.ConfigId);
             return this;
         }
 
@@ -34,17 +36,30 @@ namespace ZMDFQ
             for (int i = 0; i < jsons.Length; i++)
             {
                 if (string.IsNullOrEmpty(jsons[i])) continue;
+                Log.Debug(jsons[i]);
                 T t = MongoHelper.FromJson<T>(jsons[i]);
                 data.Add(getId(t), t);
             }
         }
 
-        public Card Get(int configId)
+        public Card GetCard(int configId)
         {
             Card card;
             if (Cards.TryGetValue(configId, out card))
             {
-                return MongoHelper.Clone(Cards[configId]);
+                return MongoHelper.Clone(card);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public Skill GetSkill(int configId)
+        {
+            Skill skill;
+            if (Skills.TryGetValue(configId, out skill))
+            {
+                return MongoHelper.Clone(skill);
             }
             else
             {
@@ -63,7 +78,6 @@ namespace ZMDFQ
             if (deck == null) return null;
             GameOptions gameOptions = new GameOptions()
             {
-                Database = this,
                 PlayerInfos = playerInfos,
                 firstPlayer = 0,
                 shuffle = true,
@@ -77,7 +91,7 @@ namespace ZMDFQ
             gameOptions.Cards = cards;
             for (int i = 0; i < deck.CardTypes.Length; i++)
             {
-                if (Get(deck.CardTypes[i]) == null) continue;
+                if (GetCard(deck.CardTypes[i]) == null) continue;
                 for (int j = 0; j < deck.CardNumbers[i]; j++)
                 {
                     cards.Add(deck.CardTypes[i]);

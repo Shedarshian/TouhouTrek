@@ -330,15 +330,14 @@ namespace Tests
     }
     class TestCharacter : HeroCard
     {
-        public override Camp camp
-        {
-            get { return Camp.commuMajor; }
-        }
-        public override List<Skill> Skills { get; } = new List<Skill>(new Skill[] { });
+        //public override Camp camp
+        //{
+        //    get { return Camp.commuMajor; }
+        //}
+        //public override List<Skill> Skills { get; } = new List<Skill>(new Skill[] { });
     }
     class TestSkill : Skill
     {
-        public override string Name => "测试技能";
         public override void Disable(Game game)
         {
             throw new System.NotImplementedException();

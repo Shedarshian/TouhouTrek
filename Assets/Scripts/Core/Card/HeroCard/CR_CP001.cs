@@ -10,19 +10,18 @@ namespace ZMDFQ.Cards
     /// <summary>
     /// 传教爱好者：你可以把任意手牌当传教打出，每回合最多两次
     /// </summary>
-    public class CR_CP001 : HeroCard
-    {
-        public override Camp camp
-        {
-            get { return Camp.commuMajor; }
-        }
-        public override List<Skill> Skills => skills;
-        List<Skill> skills = new List<Skill>() { new CR_CP001_SK1() };
-    }
+    //public class CR_CP001 : HeroCard
+    //{
+    //    public override Camp camp
+    //    {
+    //        get { return Camp.commuMajor; }
+    //    }
+    //    public override List<Skill> Skills => skills;
+    //    List<Skill> skills = new List<Skill>() { new CR_CP001_SK1() };
+    //}
 
     public class CR_CP001_SK1 : Skill
     {
-        public override string Name => "传教";
         Effects.TurnLimit turnLimit = new Effects.TurnLimit() { MaxUseTime = 2 };
 
         protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)

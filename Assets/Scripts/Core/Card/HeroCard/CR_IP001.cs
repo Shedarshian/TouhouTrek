@@ -12,19 +12,18 @@ namespace ZMDFQ.Cards
     /// 你可以把任意手牌当约稿使用，一回合一次
     /// 你个人影响力因为创作或者约稿增加时，摸一张行动牌
     /// </summary>
-    public class CR_IP001 : HeroCard
-    {
-        public override Camp camp => Camp.indivMajor;
+    //public class CR_IP001 : HeroCard
+    //{
+    //    public override Camp camp => Camp.indivMajor;
 
-        public override List<Skill> Skills { get; } = new List<Skill>()
-        {
-            new CR_IP001_SK1(),
-            new CR_IP001_SK2()
-        };
-    }
+    //    public override List<Skill> Skills { get; } = new List<Skill>()
+    //    {
+    //        new CR_IP001_SK1(),
+    //        new CR_IP001_SK2()
+    //    };
+    //}
     public class CR_IP001_SK1 : Skill
     {
-        public override string Name => "合同招募";
         protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
             //throw new NotImplementedException();
@@ -51,7 +50,6 @@ namespace ZMDFQ.Cards
 
     public class CR_IP001_SK2 : PassiveSkill
     {
-        public override string Name => "社团运营";
         public override void Disable(Game game)
         {
             game.EventSystem.Remove(EventEnum.OnPlayrSizeChange, moreChange);
