@@ -108,35 +108,42 @@ namespace ZMDFQ
             if (TimeManager != null)
                 TimeManager.Game = this;
             //初始化牌库
-            if (options != null && options.characterCards != null)
+            if (options != null && options.Cards != null && options.Database != null)
             {
-                characterDeck.AddRange(options.characterCards);
+                foreach (var id in options.Cards)
+                {
+                    switch (CreatCard(id, options.Database))
+                    {
+                        case EventCard eventCard:
+                            EventDeck.Add(eventCard);
+                            break;
+                        case ActionCard actionCard:
+                            ActionDeck.Add(actionCard);
+                            break;
+                        case ThemeCard themeCard:
+                            ThemeDeck.Add(themeCard);
+                            break;
+                        case HeroCard heroCard:
+                            characterDeck.Add(heroCard);
+                            break;
+                    }
+                }
             }
             else
             {
                 characterDeck.AddRange(createCards(new Cards.CR_CP001()
                 {
                     Name = "传教爱好者",
-                }, 28));
-            }
-            if (options != null && options.actionCards != null)
-                ActionDeck.AddRange(options.actionCards);
-            else
-            {
+                }, 15));
+                characterDeck.AddRange(createCards(new Cards.CR_IM001()
+                {
+                    Name = "冷门爱好者",
+                }, 15));
                 ActionDeck.AddRange(createCards(new Cards.AT_N001() { Name = "传教" }, 20));
-            }
-            if (options != null && options.officialCards != null)
-                ThemeDeck.AddRange(options.officialCards);
-            else
-            {
                 ThemeDeck.AddRange(createCards(new Cards.G_001() { Name = "旧作" }, 20));
-            }
-            if (options != null && options.eventCards != null)
-                EventDeck.AddRange(options.eventCards);
-            else
-            {
                 EventDeck.AddRange(createCards(new Cards.EV_E002() { Name = "全国性活动" }, 50));
             }
+
             if (options == null || options.shuffle)
             {
                 Reshuffle(characterDeck);
@@ -145,8 +152,21 @@ namespace ZMDFQ
                 Reshuffle(EventDeck);
             }
             //初始化玩家
-            if (options != null && options.players != null)
-                Players = new List<Player>(options.players);
+            if (options != null && options.PlayerInfos != null)
+            {
+                for (int i = 0; i < options.PlayerInfos.Length; i++)
+                {
+                    GameOptions.PlayerInfo info = (GameOptions.PlayerInfo)options.PlayerInfos[i];
+                    Player p;
+                    if (info.Id < 0)
+                        p = new AI(this, i);
+                    else
+                        p = new Player(i);
+                    p.Name = info.Name;
+                    p.PlayerId = info.Id;
+                    Players.Add(p);
+                }
+            }
             else
             {
                 for (int i = 0; i < 8; i++)
@@ -253,6 +273,15 @@ namespace ZMDFQ
             }
             return cards;
         }
+
+        public Card CreatCard(int id,IDatabase database)
+        {
+            Card card = database.Get(id);
+            card.Id = ++lastAllocatedID;
+            allCards.Add(card);
+            return card;
+        }
+
         /// <summary>
         /// 玩家响应系统询问用这个接口
         /// </summary>
@@ -508,17 +537,21 @@ namespace ZMDFQ
     }
     public class GameOptions
     {
-        public Player[] players = null;
+        public IDatabase Database;
+        public PlayerInfo[] PlayerInfos;
         public int endingOfficialCardCount = 0;
-        public IEnumerable<HeroCard> characterCards = null;
-        public IEnumerable<ActionCard> actionCards = null;
-        public IEnumerable<ThemeCard> officialCards = null;
-        public IEnumerable<EventCard> eventCards = null;
+        public IEnumerable<int> Cards = null;
         public int firstPlayer = -1;
         public bool shuffle = true;
         public int initCommunitySize = 0;
         public int initInfluence = 0;
         public bool chooseCharacter = true;
         public bool doubleCharacter = false;
+
+        public class PlayerInfo
+        {
+            public long Id;
+            public string Name;
+        }
     }
 }

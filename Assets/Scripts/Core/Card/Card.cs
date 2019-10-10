@@ -13,6 +13,7 @@ namespace ZMDFQ
         public Player Owner;
 
         public int Id;
+        public int ConfigId;
         public string Name;
         public CardTypeEnum CardType;
 

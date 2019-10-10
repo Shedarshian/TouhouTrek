@@ -16,28 +16,30 @@ namespace ZMDFQ.Cards
     {
         public override Camp camp => Camp.indivMajor;
 
-        public override List<Skill> Skills => throw new NotImplementedException();
+        public override List<Skill> Skills => new List<Skill>() { new CR_IP001_SK1(), new CR_IP001_SK2() };
     }
     public class CR_IP001_SK1 : Skill
     {
         protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
-            throw new NotImplementedException();
+            nextRequest = null;
+            return false;
         }
 
         public override void Disable(Game game)
         {
-            throw new NotImplementedException();
+
         }
 
         public override Task DoEffect(Game game, FreeUse useInfo)
         {
-            throw new NotImplementedException();
+            return Task.CompletedTask;
         }
 
         public override void Enable(Game game)
         {
-            throw new NotImplementedException();
+
+
         }
     }
 

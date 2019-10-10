@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using MongoDB.Bson;
-using NPOI.SS.UserModel;
-using NPOI.XSSF.UserModel;
+//using NPOI.SS.UserModel;
+//using NPOI.XSSF.UserModel;
 using UnityEditor;
 using UnityEngine;
 using ZMDFQ;
+using ExcelDataReader;
 
 public struct CellInfo
 {
@@ -87,34 +88,37 @@ public class ExcelExporterEditor : EditorWindow
     }
 
     private void Export(string fileName, string exportDir)
-    {      
-        FileStream file = new FileStream(fileName, FileMode.Open, FileAccess.Read);
-        //var pkg = NPOI.OpenXml4Net.OPC.OPCPackage.Open(file);
-        //xssfWorkbook = new XSSFWorkbook(file);
-        IWorkbook workbook = WorkbookFactory.Create(fileName);
-        string protoName = Path.GetFileNameWithoutExtension(fileName);
-        Log.Info($"{protoName}导表开始");
-        string exportPath = Path.Combine(exportDir, $"{protoName}.txt");
-        using (FileStream txt = new FileStream(exportPath, FileMode.Create))
-        using (StreamWriter sw = new StreamWriter(txt))
+    {
+        using (FileStream file = new FileStream(fileName, FileMode.Open, FileAccess.Read))
         {
-            for (int i = 0; i < workbook.NumberOfSheets; ++i)
+            string protoName = Path.GetFileNameWithoutExtension(fileName);
+
+            Log.Info($"{protoName}导表开始");
+
+            var reader = ExcelReaderFactory.CreateReader(file);
             {
-                ISheet sheet = workbook.GetSheetAt(i);
-                ExportSheet(sheet, sw);
+                var result = reader.AsDataSet();
+                foreach (System.Data.DataTable table in result.Tables)
+                {
+                    string exportPath = Path.Combine(exportDir, $"{table.TableName}.txt");
+                    using (FileStream txt = new FileStream(exportPath, FileMode.Create))
+                    {
+                        using (StreamWriter sw = new StreamWriter(txt))
+                        {
+                            ExportSheet(table, sw);
+                        };
+                    };
+                };
             }
+            Log.Info($"{protoName}导表完成");
         }
-
-        //pkg.Close();
-        //workbook.Close();
-
-        Log.Info($"{protoName}导表完成");
     }
 
-    private void ExportSheet(ISheet sheet, StreamWriter sw)
+    private void ExportSheet(System.Data.DataTable sheet, StreamWriter sw)
     {
-        Debug.Log(sheet.SheetName);
-        int cellCount = sheet.GetRow(0).LastCellNum;
+        int cellCount = sheet.Columns.Count;
+        
+        //sheet.Workbook.GetCreationHelper().
 
         CellInfo[] cellInfos = new CellInfo[cellCount];
 
@@ -126,7 +130,7 @@ public class ExcelExporterEditor : EditorWindow
             cellInfos[i] = new CellInfo() { Name = fieldName, Type = fieldType, Desc = fieldDesc };
         }
 
-        for (int i = 3; i <= sheet.LastRowNum; ++i)
+        for (int i = 3; i < sheet.Rows.Count; ++i)
         {
             if (GetCellString(sheet, i, 0).StartsWith("#"))
             {
@@ -138,7 +142,7 @@ public class ExcelExporterEditor : EditorWindow
             //}
             StringBuilder sb = new StringBuilder();
             sb.Append("{");
-            IRow row = sheet.GetRow(i);
+            //IRow row = sheet.GetRow(i);
             for (int j = 1; j < cellCount; ++j)
             {
                 string desc = cellInfos[j].Desc.ToLower();
@@ -147,7 +151,7 @@ public class ExcelExporterEditor : EditorWindow
                     continue;
                 }
 
-                string fieldValue = GetCellString(row, j);
+                string fieldValue = GetCellString(sheet, i, j);
                 if (fieldValue == "")
                 {
                     //Log.Warning($"sheet: {sheet.SheetName} 中有空白字段 {i},{j}");
@@ -170,7 +174,7 @@ public class ExcelExporterEditor : EditorWindow
                 sb.Append($"\"{fieldName}\":{Convert(fieldType, fieldValue)}");
             }
             sb.Append("}");
-            if (i != sheet.LastRowNum) sb.Append("\n");
+            if (i != sheet.Rows.Count - 1) sb.Append("\n");
             sw.Write(sb.ToString());
         }
     }
@@ -221,18 +225,8 @@ public class ExcelExporterEditor : EditorWindow
         }
     }
 
-    private static string GetCellString(ISheet sheet, int i, int j)
+    private static string GetCellString(System.Data.DataTable sheet, int i, int j)
     {
-        return sheet.GetRow(i)?.GetCell(j)?.ToString() ?? "";
-    }
-
-    private static string GetCellString(IRow row, int i)
-    {
-        return row?.GetCell(i)?.ToString() ?? "";
-    }
-
-    private static string GetCellString(ICell cell)
-    {
-        return cell?.ToString() ?? "";
+        return sheet.Rows[i][j].ToString();
     }
 }

@@ -11,7 +11,7 @@ namespace ZMDFQ.Cards
     public class CR_CM001 : HeroCard
     {
         public override Camp camp => Camp.commuMinor;
-        public override List<Skill> Skills => new List<Skill>() { new CR_CM001_SK1() };
+        public override List<Skill> Skills => new List<Skill>() { new CR_CM001_SK1() { Name = "出警" } };
     }
     /// <summary>
     /// 出警：你可以将任意手牌当做“出警”打出，每回合最多两次。

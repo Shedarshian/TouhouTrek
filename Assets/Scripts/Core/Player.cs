@@ -9,6 +9,13 @@ namespace ZMDFQ
 
     public class Player
     {
+        /// <summary>
+        /// 玩家全局id
+        /// </summary>
+        public long PlayerId;
+        /// <summary>
+        /// 本局游戏使用的id
+        /// </summary>
         public int Id;
         public string Name;
         public int Size;
