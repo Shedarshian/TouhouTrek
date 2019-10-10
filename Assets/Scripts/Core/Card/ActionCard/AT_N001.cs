@@ -19,7 +19,7 @@ namespace ZMDFQ.Cards
             {
                 case UseLimitCard useLimitCard:
                     return Effects.UseWayResponse.CheckLimit(game, useLimitCard, useInfo, ref nextRequest, this);
-                case FreeUseRequest freeUse:
+                case FreeUseRequest _:
                     return true;
             }
             return false;
