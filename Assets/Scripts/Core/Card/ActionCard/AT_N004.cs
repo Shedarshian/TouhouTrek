@@ -16,7 +16,7 @@ namespace ZMDFQ.Cards
         protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
             nextRequest = null;
-            return false;
+            return true;
         }
 
         public override Task DoEffect(Game game, FreeUse useWay)

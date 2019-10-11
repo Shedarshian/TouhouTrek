@@ -102,7 +102,7 @@ namespace ZMDFQ.UI.Battle
 
         private void checkUseAble()
         {
-            if (nowRequest == null|| nowRequest.PlayerId != self.Id) return;
+            if (nowRequest == null || nowRequest.PlayerId != self.Id) return;
             if (selectedSkill != null)
             {
                 NextRequest nextRequest;
@@ -128,7 +128,8 @@ namespace ZMDFQ.UI.Battle
                 else
                 {
                     m_useCard.enabled = false;
-                    m_UseTip.text = nextRequest.RequestInfo;
+                    if (nextRequest != null)
+                        m_UseTip.text = nextRequest.RequestInfo;
                 }
             }
             else
