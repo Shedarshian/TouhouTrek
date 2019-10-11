@@ -71,7 +71,7 @@ namespace ZMDFQ.Cards
                 if (response1.Index == 0)
                 {
                     await Owner.DropActionCard(game, new List<int>() { this.Id }, true);
-                    Player target = args[2];
+                    Player target = args[2].Owner;
                     await target.ChangeSize(game, -x, this);
                 }
             }
