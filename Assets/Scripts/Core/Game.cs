@@ -135,12 +135,12 @@ namespace ZMDFQ
             else
             {
                 //ActionDeck.AddRange(createCards(new Cards.AT_N001() { Name = "传教" }, 20));
-                ActionDeck.AddRange(createCards<Cards.AT_N001>(4));
-                ActionDeck.AddRange(createCards<Cards.AT_N002>(4));
-                ActionDeck.AddRange(createCards<Cards.AT_N003>(40));
-                ActionDeck.AddRange(createCards<Cards.AT_N004>(4));
-                ActionDeck.AddRange(createCards<Cards.AT_N006>(4));
-                ActionDeck.AddRange(createCards<Cards.AT_N012>(4));
+                ActionDeck.AddRange(createCards<Cards.AT_N001>(5));
+                ActionDeck.AddRange(createCards<Cards.AT_N002>(5));
+                ActionDeck.AddRange(createCards<Cards.AT_N003>(3));
+                ActionDeck.AddRange(createCards<Cards.AT_N004>(3));
+                ActionDeck.AddRange(createCards<Cards.AT_N006>(3));
+                ActionDeck.AddRange(createCards<Cards.AT_N012>(5));
                 //foreach (Type type in types.Where(t => t.IsSubclassOf(typeof(ActionCard))))
                 //{
                 //    ActionDeck.AddRange(createCards(type, 4).Cast<ActionCard>());
@@ -161,10 +161,12 @@ namespace ZMDFQ
             else
             {
                 //EventDeck.AddRange(createCards(new Cards.EV_E002() { Name = "全国性活动" }, 50));
-                foreach (Type type in types.Where(t => t.IsSubclassOf(typeof(EventCard))))
-                {
-                    EventDeck.Add(createCard(type) as EventCard);
-                }
+                //foreach (Type type in types.Where(t => t.IsSubclassOf(typeof(EventCard))))
+                //{
+                //    EventDeck.Add(createCard(type) as EventCard);
+                //}
+                EventDeck.AddRange(createCards<Cards.EV_E001>(7));
+                EventDeck.AddRange(createCards<Cards.EV_E002>(3));
             }
             if (options == null || options.shuffle)
             {
