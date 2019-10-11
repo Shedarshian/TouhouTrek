@@ -12,7 +12,6 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class AT_N020 : ActionCard
     {
-        public override string Name => "墨菲定理";
         public override Task DoEffect(Game game, FreeUse useWay)
         {
             return Task.CompletedTask;
@@ -39,14 +38,14 @@ namespace ZMDFQ.Cards
 
         private Task effect(object[] args)
         {
+            Game game = args[0] as Game;
             //这里不能用异步阻塞，直接返回任务完成
-            doeffect(args).Start();
+            Task.Run(() => doeffect(args, game), game.cts.Token);
             return Task.CompletedTask;
         }
 
-        private async Task doeffect(object[] args)
+        private async Task doeffect(object[] args,Game game)
         {
-            Game game = args[0] as Game;
             ChooseDirectionResponse response = args[1] as ChooseDirectionResponse;
             if (!response.IfSet)
             {

@@ -11,7 +11,6 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class EV_E002 : EventCard
     {
-        public override string Name => "全国性活动";
         public override bool ForwardOnly => false;
         public override Task Use(Game game, ChooseDirectionResponse response)
         {

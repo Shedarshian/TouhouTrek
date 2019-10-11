@@ -1,0 +1,7 @@
+{"_t":"CR_CP001_SK1","ConfigId":1,"Name":"传教"}
+{"_t":"CR_IP001_SK1","ConfigId":2,"Name":"合同招募"}
+{"_t":"CR_IP001_SK2","ConfigId":3,"Name":"社团运营"}
+{"_t":"CR_IM001_SK1","ConfigId":4,"Name":"自我产粮"}
+{"_t":"CR_IM001_SK2","ConfigId":5,"Name":"坚定不移"}
+{"_t":"CR_IM001_SK3","ConfigId":6,"Name":"小众至高"}
+{"_t":"CR_CM001_SK1","ConfigId":7,"Name":"出警"}

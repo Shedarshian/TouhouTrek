@@ -22,9 +22,20 @@ namespace ZMDFQ
             _Main2 = UIPackage.CreateObject("Battle", "Main2") as UI_Main2;
             GRoot.inst.AddChild(_Main2);
 
+            GameOptions.PlayerInfo[] infos = new GameOptions.PlayerInfo[8];
+            for (int i = 0; i < infos.Length; i++)
+            {
+                infos[i] = new GameOptions.PlayerInfo()
+                {
+                    Id = i == 1 ? i : (-i - 1),
+                    Name = "玩家" + i,
+                };
+            }
             game = new Game();
+            game.Database = ConfigManager.Instance;
             game.TimeManager = gameObject.AddComponent<RequestTimeoutManager>();
-            game.Init();
+            //game.Init();
+            game.Init(ConfigManager.Instance.GetGameOption("Test",infos));
             _Main2.SetGame(game, game.GetPlayer(1));
             game.StartGame();
         }

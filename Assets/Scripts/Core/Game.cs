@@ -96,6 +96,7 @@ namespace ZMDFQ
 
         internal System.Threading.CancellationTokenSource cts;
 
+        internal IDatabase Database;
         GameOptions options { get; set; } = null;
         int endingOfficialCardCount { get; set; } = 0;
         /// <summary>
@@ -109,10 +110,26 @@ namespace ZMDFQ
             if (TimeManager != null)
                 TimeManager.Game = this;
             //初始化牌库
-            Type[] types = typeof(Card).Assembly.GetTypes();
-            if (options != null && options.characterCards != null)
+            if (options != null && options.Cards != null && Database != null)
             {
-                characterDeck.AddRange(options.characterCards);
+                foreach (var id in options.Cards)
+                {
+                    switch (CreatCard(id))
+                    {
+                        case EventCard eventCard:
+                            EventDeck.Add(eventCard);
+                            break;
+                        case ActionCard actionCard:
+                            ActionDeck.Add(actionCard);
+                            break;
+                        case ThemeCard themeCard:
+                            ThemeDeck.Add(themeCard);
+                            break;
+                        case HeroCard heroCard:
+                            characterDeck.Add(heroCard);
+                            break;
+                    }
+                }
             }
             else
             {
@@ -123,28 +140,20 @@ namespace ZMDFQ
                 //    characterDeck.Add(new Cards.CR_IM001());
                 //    characterDeck.Add(new Cards.CR_IP001());
                 //}
-                characterDeck.AddRange(createCards<Cards.CR_CP001>(7));
-                characterDeck.AddRange(createCards<Cards.CR_CM001>(7));
-                characterDeck.AddRange(createCards<Cards.CR_IM001>(7));
-                characterDeck.AddRange(createCards<Cards.CR_IP001>(7));
-                //characterDeck = new List<HeroCard>(types.Where(t => t.IsSubclassOf(typeof(HeroCard)))
-                //                                        .Select(t => Activator.CreateInstance(t) as HeroCard));
-            }
-            if (options != null && options.actionCards != null)
-                ActionDeck.AddRange(options.actionCards);
-            else
-            {
-                //ActionDeck.AddRange(createCards(new Cards.AT_N001() { Name = "传教" }, 20));
+                //characterDeck.AddRange(createCards<Cards.CR_CP001>(7));
+                //characterDeck.AddRange(createCards<Cards.CR_CM001>(7));
+                //characterDeck.AddRange(createCards<Cards.CR_IM001>(7));
+                //characterDeck.AddRange(createCards<Cards.CR_IP001>(7));
                 ActionDeck.AddRange(createCards<Cards.AT_N001>(5));
                 ActionDeck.AddRange(createCards<Cards.AT_N002>(5));
                 ActionDeck.AddRange(createCards<Cards.AT_N003>(3));
                 ActionDeck.AddRange(createCards<Cards.AT_N004>(3));
                 ActionDeck.AddRange(createCards<Cards.AT_N006>(3));
                 ActionDeck.AddRange(createCards<Cards.AT_N012>(5));
-                //foreach (Type type in types.Where(t => t.IsSubclassOf(typeof(ActionCard))))
-                //{
-                //    ActionDeck.AddRange(createCards(type, 4).Cast<ActionCard>());
-                //}
+                ThemeDeck.AddRange(createCards(new Cards.G_001(), 20));
+                EventDeck.AddRange(createCards(new Cards.EV_E002(), 50));
+                //characterDeck = new List<HeroCard>(types.Where(t => t.IsSubclassOf(typeof(HeroCard)))
+                //                                        .Select(t => Activator.CreateInstance(t) as HeroCard));
             }
             if (options != null && options.officialCards != null)
                 ThemeDeck.AddRange(options.officialCards);
@@ -176,8 +185,21 @@ namespace ZMDFQ
                 Reshuffle(EventDeck);
             }
             //初始化玩家
-            if (options != null && options.players != null)
-                Players = new List<Player>(options.players);
+            if (options != null && options.PlayerInfos != null)
+            {
+                for (int i = 0; i < options.PlayerInfos.Length; i++)
+                {
+                    GameOptions.PlayerInfo info = (GameOptions.PlayerInfo)options.PlayerInfos[i];
+                    Player p;
+                    if (info.Id < 0)
+                        p = new AI(this, i);
+                    else
+                        p = new Player(i);
+                    p.Name = info.Name;
+                    p.PlayerId = info.Id;
+                    Players.Add(p);
+                }
+            }
             else
             {
                 for (int i = 0; i < 8; i++)
@@ -338,6 +360,13 @@ namespace ZMDFQ
                 registerCard(cards[i], startID > -1 ? startID + i : ++lastAllocatedID);
             }
             return cards;
+        }
+        public Card CreatCard(int id)
+        {
+            Card card = Database.GetCard(id);
+            card.Id = ++lastAllocatedID;
+            allCards.Add(card);
+            return card;
         }
         private void registerCard(Card card, int id)
         {
@@ -600,17 +629,20 @@ namespace ZMDFQ
     }
     public class GameOptions
     {
-        public Player[] players = null;
+        public PlayerInfo[] PlayerInfos;
         public int endingOfficialCardCount = 0;
-        public IEnumerable<HeroCard> characterCards = null;
-        public IEnumerable<ActionCard> actionCards = null;
-        public IEnumerable<ThemeCard> officialCards = null;
-        public IEnumerable<EventCard> eventCards = null;
+        public IEnumerable<int> Cards = null;
         public int firstPlayer = -1;
         public bool shuffle = true;
         public int initCommunitySize = 0;
         public int initInfluence = 0;
         public bool chooseCharacter = true;
         public bool doubleCharacter = false;
+
+        public class PlayerInfo
+        {
+            public long Id;
+            public string Name;
+        }
     }
 }

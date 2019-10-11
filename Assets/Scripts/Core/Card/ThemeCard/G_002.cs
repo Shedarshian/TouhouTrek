@@ -11,7 +11,6 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class G_002 : ThemeCard
     {
-        public override string Name => "东方红魔乡";
         List<Type> limitType = new List<Type>()
         {
 

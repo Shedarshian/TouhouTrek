@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ
 {
+    using MongoDB.Bson.Serialization.Attributes;
     using PlayerAction;
     public abstract class Skill
     {
+        [BsonIgnore]
         /// <summary>
         /// 持有此技能的英雄
         /// </summary>
         public HeroCard Hero;
 
-        public abstract string Name { get; }
+        public string Name;
+
+        public int ConfigId;
+
+        [BsonIgnore]
         /// <summary>
         /// 未翻开时 是否询问响应技能
         /// </summary>

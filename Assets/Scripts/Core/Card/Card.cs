@@ -13,7 +13,8 @@ namespace ZMDFQ
         public Player Owner;
 
         public int Id;
-        public abstract string Name { get; }
+        public int ConfigId;
+        public string Name;
         public CardTypeEnum CardType;
 
         //internal abstract PlayerAction.Request GetRequest();

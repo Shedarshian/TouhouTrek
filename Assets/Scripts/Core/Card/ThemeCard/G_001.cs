@@ -11,7 +11,6 @@ namespace ZMDFQ.Cards
     /// </summary>
     public class G_001 : ThemeCard
     {
-        public override string Name => "旧作";
         public override void Disable(Game game)
         {
 

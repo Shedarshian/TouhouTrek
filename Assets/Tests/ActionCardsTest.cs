@@ -16,15 +16,15 @@ namespace Tests
             Game game = new Game();
             game.Init(new GameOptions()
             {
-                players = new Player[]
-                {
-                    new Player(0),
-                    new Player(1)
-                },
-                characterCards = game.createCards(new TestCharacter(), 20),
-                actionCards = game.createCards(new AT_N003(), 20),
-                officialCards = game.createCards(new TestOfficial(), 20),
-                eventCards = game.createCards(new TestEvent(), 20),
+                //players = new Player[]
+                //{
+                //    new Player(0),
+                //    new Player(1)
+                //},
+                //characterCards = game.createCards(new TestCharacter(), 20),
+                //actionCards = game.createCards(new AT_N003(), 20),
+                //officialCards = game.createCards(new TestOfficial(), 20),
+                //eventCards = game.createCards(new TestEvent(), 20),
                 firstPlayer = 0,
                 shuffle = false,
                 initCommunitySize = 0,
