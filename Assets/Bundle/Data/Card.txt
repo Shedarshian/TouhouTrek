@@ -5,10 +5,10 @@
 {"_t":"AT_N006","ConfigId":6,"Name":"互撕","CardType":3}
 {"_t":"AT_N012","ConfigId":12,"Name":"出警","CardType":3}
 {"_t":"AT_N020","ConfigId":20,"Name":"墨菲定理","CardType":3}
-{"_t":"HeroCard","ConfigId":101,"Name":"社团主催","CardType":0,"SkillIds":[2,3],"camp":indivMajor}
-{"_t":"HeroCard","ConfigId":107,"Name":"冷门爱好者","CardType":0,"SkillIds":[4,5,6],"camp":indivMinor}
-{"_t":"HeroCard","ConfigId":113,"Name":"传教爱好者","CardType":0,"SkillIds":[1],"camp":commuMajor}
-{"_t":"HeroCard","ConfigId":119,"Name":"东方警察","CardType":0,"SkillIds":[7],"camp":commuMinor}
+{"_t":"HeroCard","ConfigId":101,"Name":"社团主催","CardType":0,"SkillIds":[2,3],"camp":1}
+{"_t":"HeroCard","ConfigId":107,"Name":"冷门爱好者","CardType":0,"SkillIds":[4,5,6],"camp":3}
+{"_t":"HeroCard","ConfigId":113,"Name":"传教爱好者","CardType":0,"SkillIds":[1],"camp":0}
+{"_t":"HeroCard","ConfigId":119,"Name":"东方警察","CardType":0,"SkillIds":[7],"camp":2}
 {"_t":"G_001","ConfigId":125,"Name":"旧作","CardType":1}
 {"_t":"EV_E001","ConfigId":148,"Name":"人气投票","CardType":2}
 {"_t":"EV_E002","ConfigId":149,"Name":"全国性活动","CardType":2}

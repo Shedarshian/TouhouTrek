@@ -15,12 +15,14 @@ namespace ZMDFQ.Cards
     {
         protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
-            throw new NotImplementedException();
+            nextRequest = null;
+            return false;
         }
 
         public override Task DoEffect(Game game, FreeUse useWay)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return Task.CompletedTask;
         }
     }
 }
