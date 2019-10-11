@@ -31,6 +31,7 @@ namespace ZMDFQ
         OnPlayrSizeChange,
 
         AfterGameSizeChange,
+        AfterPlayrSizeChange,
 
         afterDrawcardPhase,
         afterDiscardPhase,
