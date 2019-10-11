@@ -18,7 +18,7 @@ namespace ZMDFQ.Cards
         {
             await Effects.UseCard.UseActionCard(game, useWay, this, async (g, r) =>
             {
-                await g.GetPlayer(r.PlayerId).DrawActionCard(game, 2);
+                await g.GetPlayer(r.PlayerId).DrawActionCard(g, 2);
             });
         }
     }

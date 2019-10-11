@@ -24,13 +24,16 @@ namespace ZMDFQ.Cards
         }
         public override async Task DoEffect(Game game, FreeUse useWay)
         {
-            int x = game.twoPointCheck();
-            game.GetPlayer(useWay.PlayersId[0]).Size -= x;
-            TakeChoiceResponse response = await game.WaitAnswer(new TakeChoiceRequest() { PlayerId = useWay.PlayerId, Infos = new List<string>() { "-2", "+2" } }) as TakeChoiceResponse;
-            if (response.Index == 0)
-                game.Size -= x;
-            else
-                game.Size += x;
+            await Effects.UseCard.UseActionCard(game, useWay, this, async (g, r) =>
+            {
+                int x = g.twoPointCheck();
+                g.GetPlayer(r.PlayersId[0]).ChangeSize(g, -x, this);
+                TakeChoiceResponse response = await g.WaitAnswer(new TakeChoiceRequest() { PlayerId = r.PlayerId, Infos = new List<string>() { "-2", "+2" } }) as TakeChoiceResponse;
+                if (response.Index == 0)
+                    g.Size -= x;
+                else
+                    g.Size += x;
+            }
         }
     }
 }

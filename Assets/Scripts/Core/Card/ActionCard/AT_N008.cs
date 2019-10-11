@@ -35,8 +35,11 @@ namespace ZMDFQ.Cards
 
         public override async Task DoEffect(Game game, FreeUse useWay)
         {
-            await Owner.ChangeSize(game, -1, this);
-            await game.GetPlayer(useWay.PlayersId[0]).ChangeSize(game, -2, this);
+            await Effects.UseCard.UseActionCard(game, useWay, this, async (g, r) =>
+            {
+                await Owner.ChangeSize(g, -1, this);
+                await g.GetPlayer(r.PlayersId[0]).ChangeSize(g, -2, this);
+            });
         }
     }
 }

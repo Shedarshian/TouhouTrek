@@ -37,8 +37,11 @@ namespace ZMDFQ.Cards
 
         public override async Task DoEffect(Game game, FreeUse useWay)
         {
-            int x = game.twoPointCheck();
-            await game.GetPlayer(useWay.PlayersId[0]).ChangeSize(game, -x, this);
+            await Effects.UseCard.UseActionCard(game, useWay, this, async (g, r) =>
+            {
+                int x = g.twoPointCheck();
+                await g.GetPlayer(r.PlayersId[0]).ChangeSize(g, -x, this);
+            });
         }
 
         internal override void OnDraw(Game game, Player player)
