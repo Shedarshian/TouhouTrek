@@ -20,7 +20,7 @@ namespace ZMDFQ
         /// <summary>
         /// 阵营
         /// </summary>
-        public Camp camp;
+        public CampEnum camp;
         [BsonIgnore]
         public List<Skill> Skills;
 
@@ -50,7 +50,7 @@ namespace ZMDFQ
     /// <summary>
     /// 角色阵营
     /// </summary>
-    public enum Camp
+    public enum CampEnum
     {
         /// <summary>
         /// 社群繁荣

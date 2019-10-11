@@ -14,10 +14,22 @@ namespace ZMDFQ
         public SeatByEventSystem EventSystem;
 
         public ITimeManager TimeManager;
+        int _size;
         /// <summary>
-        /// 当前社团规模
+        /// 当前社群规模
         /// </summary>
-        public int Size;
+        public int Size
+        {
+            get { return _size; }
+            set
+            {
+                _size = value;
+                if (_size > 10)
+                    _size = 10;
+                if (_size < -10)
+                    _size = -10;
+            }
+        }
 
         /// <summary>
         /// 当前玩家
@@ -140,10 +152,10 @@ namespace ZMDFQ
                 //    characterDeck.Add(new Cards.CR_IM001());
                 //    characterDeck.Add(new Cards.CR_IP001());
                 //}
-                //characterDeck.AddRange(createCards<Cards.CR_CP001>(7));
-                //characterDeck.AddRange(createCards<Cards.CR_CM001>(7));
-                //characterDeck.AddRange(createCards<Cards.CR_IM001>(7));
-                //characterDeck.AddRange(createCards<Cards.CR_IP001>(7));
+                characterDeck.AddRange(createCards(113, 7).Cast<HeroCard>());
+                characterDeck.AddRange(createCards(119, 7).Cast<HeroCard>());
+                characterDeck.AddRange(createCards(107, 7).Cast<HeroCard>());
+                characterDeck.AddRange(createCards(101, 7).Cast<HeroCard>());
                 ActionDeck.AddRange(createCards<Cards.AT_N001>(5));
                 ActionDeck.AddRange(createCards<Cards.AT_N002>(5));
                 ActionDeck.AddRange(createCards<Cards.AT_N003>(3));
@@ -151,31 +163,10 @@ namespace ZMDFQ
                 ActionDeck.AddRange(createCards<Cards.AT_N006>(3));
                 ActionDeck.AddRange(createCards<Cards.AT_N012>(5));
                 ThemeDeck.AddRange(createCards(new Cards.G_001(), 20));
-                EventDeck.AddRange(createCards(new Cards.EV_E002(), 50));
-                //characterDeck = new List<HeroCard>(types.Where(t => t.IsSubclassOf(typeof(HeroCard)))
-                //                                        .Select(t => Activator.CreateInstance(t) as HeroCard));
-            }
-            if (options != null && options.officialCards != null)
-                ThemeDeck.AddRange(options.officialCards);
-            else
-            {
-                //ThemeDeck.AddRange(createCards(new Cards.G_001() { Name = "旧作" }, 20));
-                foreach (Type type in types.Where(t => t.IsSubclassOf(typeof(ThemeCard))))
-                {
-                    ThemeDeck.Add(createCard(type) as ThemeCard);
-                }
-            }
-            if (options != null && options.eventCards != null)
-                EventDeck.AddRange(options.eventCards);
-            else
-            {
-                //EventDeck.AddRange(createCards(new Cards.EV_E002() { Name = "全国性活动" }, 50));
-                //foreach (Type type in types.Where(t => t.IsSubclassOf(typeof(EventCard))))
-                //{
-                //    EventDeck.Add(createCard(type) as EventCard);
-                //}
                 EventDeck.AddRange(createCards<Cards.EV_E001>(7));
                 EventDeck.AddRange(createCards<Cards.EV_E002>(3));
+                //characterDeck = new List<HeroCard>(types.Where(t => t.IsSubclassOf(typeof(HeroCard)))
+                //                                        .Select(t => Activator.CreateInstance(t) as HeroCard));
             }
             if (options == null || options.shuffle)
             {
@@ -364,9 +355,17 @@ namespace ZMDFQ
         public Card CreatCard(int id)
         {
             Card card = Database.GetCard(id);
-            card.Id = ++lastAllocatedID;
-            allCards.Add(card);
+            registerCard(card, ++lastAllocatedID);
             return card;
+        }
+        public Card[] createCards(int id, int number)
+        {
+            Card[] cards = new Card[number];
+            for (int i = 0; i < cards.Length; i++)
+            {
+                cards[i] = CreatCard(id);
+            }
+            return cards;
         }
         private void registerCard(Card card, int id)
         {
@@ -454,13 +453,13 @@ namespace ZMDFQ
                     {
                         int basePoint = 0;
                         //bool win = true;
-                        if (player.Hero.camp == Camp.commuMajor && player.Size >= 0 && Size >= 0)
+                        if (player.Hero.camp == CampEnum.commuMajor && player.Size >= 0 && Size >= 0)
                             basePoint = Size;
-                        else if (player.Hero.camp == Camp.indivMajor && player.Size >= 0 && Size >= 0)
+                        else if (player.Hero.camp == CampEnum.indivMajor && player.Size >= 0 && Size >= 0)
                             basePoint = player.Size;
-                        else if (player.Hero.camp == Camp.commuMinor && player.Size >= 0 && Size <= 0)
+                        else if (player.Hero.camp == CampEnum.commuMinor && player.Size >= 0 && Size <= 0)
                             basePoint = Math.Abs(Size);
-                        else if (player.Hero.camp == Camp.indivMinor && player.Size >= 0 && Size <= 0)
+                        else if (player.Hero.camp == CampEnum.indivMinor && player.Size >= 0 && Size <= 0)
                             basePoint = player.Size;
                         //else
                         //    win = false;//不结算分的玩家算失败
