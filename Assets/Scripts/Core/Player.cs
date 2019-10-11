@@ -188,8 +188,9 @@ namespace ZMDFQ
         internal async Task ChangeSize(Game game, int Size, object source)
         {
             var data = new EventData<int>() { data = Size };
-            await game.EventSystem.Call(EventEnum.OnPlayrSizeChange,game.ActivePlayerSeat(), game, this, data);
+            await game.EventSystem.Call(EventEnum.OnPlayrSizeChange, game.ActivePlayerSeat(), game, this, data);
             this.Size += data.data;
+            await game.EventSystem.Call(EventEnum.AfterPlayrSizeChange, game.ActivePlayerSeat(), game, this, data, new EventData<object>() { data = source });
         }
 
         public async Task<int> HandMax(Game game)
