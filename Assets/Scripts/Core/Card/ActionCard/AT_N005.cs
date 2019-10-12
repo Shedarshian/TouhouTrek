@@ -39,7 +39,7 @@ namespace ZMDFQ.Cards
         {
             await Effects.UseCard.UseActionCard(game, useWay, this, async (g, r) =>
             {
-                await g.GetPlayer(r.PlayersId[0]).ChangeSize(g, -g.twoPointCheck(), this, Owner);
+                await game.GetPlayer(useWay.PlayersId[0]).ChangeSize(game, -game.twoPointCheck(), this, Owner);
             });
         }
 
