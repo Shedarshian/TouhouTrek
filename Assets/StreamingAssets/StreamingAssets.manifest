@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 4172210069
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: bundle/ui/battledesc
+      Dependencies: {}
+    Info_1:
+      Name: bundle/data/skill
+      Dependencies: {}
+    Info_2:
+      Name: bundle/data/deck
+      Dependencies: {}
+    Info_3:
+      Name: bundle/data/card
+      Dependencies: {}

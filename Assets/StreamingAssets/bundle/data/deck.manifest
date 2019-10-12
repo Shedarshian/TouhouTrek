@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 3287947917
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 97a657842669aae1b9c0b49feb6dd683
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/Bundle/Data/Deck.txt
+Dependencies: []

@@ -107,8 +107,17 @@ namespace ZMDFQ
         public TaskCompletionSource<Response>[] Requests;
 
         internal System.Threading.CancellationTokenSource cts;
-
-        internal IDatabase Database;
+        IDatabase _database;
+        public IDatabase Database
+        {
+            get
+            {
+                if (_database == null)
+                    _database = ConfigManager.Instance;
+                return _database;
+            }
+            set { _database = value; }
+        }
         GameOptions options { get; set; } = null;
         int endingOfficialCardCount { get; set; } = 0;
         /// <summary>
@@ -553,7 +562,7 @@ namespace ZMDFQ
             return Players.IndexOf(ActivePlayer);
         }
 
-        internal Player GetPlayer(int id)
+        public Player GetPlayer(int id)
         {
             return Players.Find(x => x.Id == id);
         }
@@ -585,7 +594,7 @@ namespace ZMDFQ
         /// </summary>
         /// <param name="size"></param>
         /// <param name="source">改变的原因</param>
-        internal async Task ChangeSize(int size, object source)
+        public async Task ChangeSize(int size, object source)
         {
             var data = new EventData<int> { data = size };
             await EventSystem.Call(EventEnum.OnGameSizeChange, Players.IndexOf(ActivePlayer), data, source);

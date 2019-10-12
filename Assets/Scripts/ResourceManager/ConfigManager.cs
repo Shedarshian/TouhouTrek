@@ -28,7 +28,7 @@ namespace ZMDFQ
             return this;
         }
 
-        void load<T>(string path, out Dictionary<int,T> data,Func<T,int> getId)
+        void load<T>(string path, out Dictionary<int, T> data, Func<T, int> getId)
         {
             string text = ResHelper.GetData(path).text;
             string[] jsons = text.Split('\n');
@@ -41,7 +41,11 @@ namespace ZMDFQ
                 data.Add(getId(t), t);
             }
         }
-
+        public void AddCard(int id, Card card)
+        {
+            if (!Cards.ContainsKey(id))
+                Cards.Add(id, card);
+        }
         public Card GetCard(int configId)
         {
             Card card;
@@ -72,7 +76,7 @@ namespace ZMDFQ
             return MongoHelper.Clone(Cards.FirstOrDefault(x => x.Value is T) as T);
         }
 
-        public GameOptions GetGameOption(string gameType,GameOptions.PlayerInfo[] playerInfos)
+        public GameOptions GetGameOption(string gameType, GameOptions.PlayerInfo[] playerInfos)
         {
             var deck = Decks.FirstOrDefault(x => x.Value.Mode == gameType).Value;
             if (deck == null) return null;
@@ -85,9 +89,8 @@ namespace ZMDFQ
                 initInfluence = 0,
                 chooseCharacter = true,
                 doubleCharacter = false,
-                endingOfficialCardCount = 1
             };
-            var cards= new List<int>();
+            var cards = new List<int>();
             gameOptions.Cards = cards;
             for (int i = 0; i < deck.CardTypes.Length; i++)
             {
