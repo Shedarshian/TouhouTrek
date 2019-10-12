@@ -9,6 +9,13 @@ namespace ZMDFQ
 
     public class Player
     {
+        /// <summary>
+        /// 玩家全局id
+        /// </summary>
+        public long PlayerId;
+        /// <summary>
+        /// 本局游戏使用的id
+        /// </summary>
         public int Id;
         public string Name;
         public int Size;
@@ -40,7 +47,7 @@ namespace ZMDFQ
         internal async Task DrawActionCard(Game game, int count)
         {
             EventData<int> drawCount = new EventData<int>() { data = count };
-            await game.EventSystem.Call(EventEnum.BeforDrawActionCard,game.ActivePlayerSeat(), this, drawCount);
+            await game.EventSystem.Call(EventEnum.BeforDrawActionCard, game.ActivePlayerSeat(), this, drawCount);
             List<ActionCard> drawedCards = new List<ActionCard>();
             for (int i = 0; i < drawCount.data; i++)
             {
@@ -56,9 +63,9 @@ namespace ZMDFQ
                 drawedCards.Add(card);
                 game.ActionDeck.Remove(card);
                 card.Owner = this;
-                card.OnDraw(game, this);               
+                card.OnDraw(game, this);
             }
-            await game.EventSystem.Call(EventEnum.DrawActionCard,game.ActivePlayerSeat(), this, drawedCards);
+            await game.EventSystem.Call(EventEnum.DrawActionCard, game.ActivePlayerSeat(), this, drawedCards);
         }
 
         internal async Task DrawEventCard(Game game)
@@ -67,7 +74,7 @@ namespace ZMDFQ
             EventCards.Add(card);
             game.EventDeck.Remove(card);
             card.Owner = this;
-            await game.EventSystem.Call(EventEnum.DrawEventCard,game.ActivePlayerSeat(), this, card);
+            await game.EventSystem.Call(EventEnum.DrawEventCard, game.ActivePlayerSeat(), this, card);
         }
 
         internal Task UseEventCard(Game game, ChooseDirectionResponse response)
@@ -178,12 +185,12 @@ namespace ZMDFQ
             await game.EventSystem.Call(EventEnum.DropActionCard, game.GetSeat(this), this, data);
         }
 
-        internal async Task ChangeSize(Game game, int Size, object source)
+        public async Task ChangeSize(Game game, int Size, object source, Player sourcePlayer)
         {
             var data = new EventData<int>() { data = Size };
-            await game.EventSystem.Call(EventEnum.OnPlayrSizeChange, game.ActivePlayerSeat(), game, this, data);
+            await game.EventSystem.Call(EventEnum.BeforePlayrSizeChange, game.ActivePlayerSeat(), game, this, data);
             this.Size += data.data;
-            await game.EventSystem.Call(EventEnum.AfterPlayrSizeChange, game.ActivePlayerSeat(), game, this, data, new EventData<object>() { data = source });
+            await game.EventSystem.Call(EventEnum.AfterPlayrSizeChange, game.ActivePlayerSeat(), game, this, data, new EventData<object>() { data = source }, sourcePlayer);
         }
 
         public async Task<int> HandMax(Game game)
@@ -199,7 +206,7 @@ namespace ZMDFQ
             if (result > 4)
                 result = 4;
             EventData<int> max = new EventData<int>() { data = result };
-            await game.EventSystem.Call(EventEnum.GetHandMax,game.ActivePlayerSeat(), this, max);
+            await game.EventSystem.Call(EventEnum.GetHandMax, game.ActivePlayerSeat(), this, max);
             return max.data;
         }
     }

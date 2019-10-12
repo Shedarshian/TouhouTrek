@@ -31,6 +31,10 @@ namespace ZMDFQ.UI.Battle
             });
             m_Hand.OnCardClick.Add(freeUse_CardClick);
             m_skills.onClickItem.Add(freeUse_SkillClick);
+            for (int i = 0; i < 8; i++)
+            {
+                playersSimpleInfo[i].onClick.Add(freeUse_HeroClick);
+            }
         }
 
         //[BattleUI(nameof(flush))]
@@ -59,6 +63,22 @@ namespace ZMDFQ.UI.Battle
             }
         }
 
+        void freeUse_HeroClick(EventContext evt)
+        {
+            UI_PlayerSimpleInfo playerSimpleInfo = evt.sender as UI_PlayerSimpleInfo;
+            Log.Debug(playerSimpleInfo.Player.Name);
+            if (selectedPlayers.Contains(playerSimpleInfo.Player))
+            {
+                selectedPlayers.Remove(playerSimpleInfo.Player);
+            }
+            else
+            {
+                selectedPlayers.Add(playerSimpleInfo.Player);
+            }
+            flushSelectPlayer();
+            checkUseAble();
+        }
+
         void freeUse_SkillClick(FairyGUI.EventContext evt)
         {
             var skill = (evt.data as GObject).data as Skill;
@@ -66,57 +86,56 @@ namespace ZMDFQ.UI.Battle
             {
                 //再点一下表示取消选择
                 selectedSkill = null;
-                flushSkills();
-                return;
-            }
-            selectedSkill = skill;
-            NextRequest nextRequest;
-            if (skill.CanUse(game,nowRequest,getFreeUseInfo(),out nextRequest))
-            {
-                m_useCard.enabled = true;
-                m_UseTip.text = "";//应该是确认是否使用
             }
             else
             {
-                m_useCard.enabled = false;
-                m_UseTip.text = nextRequest.RequestInfo;
+                selectedSkill = skill;
             }
+            checkUseAble();
             flushSkills();
         }
 
         void freeUse_CardClick(FairyGUI.EventContext evt)
         {
-            if (!(nowRequest is FreeUseRequest)) return;
-            if (nowRequest.PlayerId == self.Id)
+            checkUseAble();
+        }
+
+        private void checkUseAble()
+        {
+            if (nowRequest == null || nowRequest.PlayerId != self.Id) return;
+            if (selectedSkill != null)
             {
-                if (selectedSkill != null)
+                NextRequest nextRequest;
+                if (selectedSkill.CanUse(game, nowRequest, getFreeUseInfo(), out nextRequest))
                 {
-                    NextRequest nextRequest;
-                    if (selectedSkill.CanUse(game, nowRequest, getFreeUseInfo(), out nextRequest))
-                    {
-                        m_useCard.enabled = true;
-                        m_UseTip.text = "";//应该是确认是否使用
-                    }
-                    else
-                    {
-                        m_useCard.enabled = false;
-                        m_UseTip.text = nextRequest.RequestInfo;
-                    }
+                    m_useCard.enabled = true;
+                    m_UseTip.text = "";//应该是确认是否使用
                 }
-                else if (selectedCards.Count == 1)
+                else
                 {
-                    NextRequest nextRequest;
-                    if (selectedCards[0].CanUse(game, nowRequest, getFreeUseInfo(), out nextRequest))
-                    {
-                        m_useCard.enabled = true;
-                        m_UseTip.text = "";//应该是确认是否使用
-                    }
-                    else
-                    {
-                        m_useCard.enabled = false;
-                        m_UseTip.text = nextRequest.RequestInfo;
-                    }
+                    m_useCard.enabled = false;
+                    m_UseTip.text = nextRequest.RequestInfo;
                 }
+            }
+            else if (selectedCards.Count == 1)
+            {
+                NextRequest nextRequest;
+                if (selectedCards[0].CanUse(game, nowRequest, getFreeUseInfo(), out nextRequest))
+                {
+                    m_useCard.enabled = true;
+                    m_UseTip.text = "";//应该是确认是否使用
+                }
+                else
+                {
+                    m_useCard.enabled = false;
+                    if (nextRequest != null)
+                        m_UseTip.text = nextRequest.RequestInfo;
+                }
+            }
+            else
+            {
+                m_useCard.enabled = false;
+                m_UseTip.text = "";
             }
         }
 

@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>&#20107;&#20214;&#31995;&#32479; </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="&#20107;&#20214;&#31995;&#32479; ">
+    <meta name="generator" content="docfx 2.45.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="事件系统">事件系统</h1>
+
+<p>顾名思义，事件系统就是管理游戏中的各种事件，以及提供监听接口的系统。</p>
+<h2 id="它是如何工作的">它是如何工作的</h2>
+<p>事件系统使用<code>EventEnum</code>来区分不同种类的事件，在<code>EventEnum</code>中添加值来新增事件类型。当调用<code>EventSystem.Call</code>的时候，即代表一个事件发生了，事件系统会按照次序调用所有在事件系统中注册的函数。通过调用<code>EventSystem.Register</code>来注册事件，通过调用<code>EventSystem.Remove</code>来注销事件。</p>
+<h2 id="如何正确的使用它">如何正确的使用它</h2>
+<p>当你发现这个游戏中不存在你需要的事件类型的时候，在<code>EventEnum</code>中添加你需要的事件类型，然后在事件发生的时机调用<code>EventSystem.Call</code>，<code>object[]</code>参数即为事件所包含的参数信息。</p>
+<p>如果你需要实现持续响应游戏事件的效果，比如“所有牌面上对社群规模和个人影响力进行变动的粗体阿拉伯数字翻倍”，参考以下代码：</p>
+<pre><code>public class G_013 : ThemeCard
+{
+	public override void Enable(Game game)
+	{
+		game.EventSystem.Register(EventEnum.BeforeGameSizeChange, -1, effect_BeforeGameSizeChange);
+		game.EventSystem.Register(EventEnum.BeforePlayrSizeChange, -1, effect_BeforePlayerSizeChange);
+	}
+	public override void Disable(Game game)
+	{
+		game.EventSystem.Remove(EventEnum.BeforeGameSizeChange, effect_BeforeGameSizeChange);
+		game.EventSystem.Remove(EventEnum.BeforePlayrSizeChange, effect_BeforePlayerSizeChange);
+	}
+	Task effect_BeforeGameSizeChange(object[] args)
+	{
+		EventData&lt;int&gt; value = args[0] as EventData&lt;int&gt;;
+		value.data *= 2;
+		return Task.CompletedTask;
+	}
+	Task effect_BeforePlayerSizeChange(object[] args)
+	{
+		EventData&lt;int&gt; value = args[2] as EventData&lt;int&gt;;
+		value.data *= 2;
+		return Task.CompletedTask;
+	}
+}
+</code></pre>
+<p>你可以在这个效果开始生效的时候调用<code>EventSystem.Register</code>来注册事件，在它失效的时候调用<code>EventSystem.Remove</code>，这样你就可以在效果生效期间持续的监听特定的事件。所有的事件都使用<code>object[] args</code>来传递参数，所以不同类型的事件具有的参数也不相同，推荐对事件枚举使用查找引用来查找事件枚举在<code>EventSystem.Call</code>中的引用来查询事件的参数。如果需要为事件添加新的参数，原则上应该向后添加，以避免改动当前已有的参数。</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/a395338563/ZMDFQ/blob/develop/articles/event_system.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -8,11 +8,11 @@ namespace ZMDFQ.Cards
     /// <summary>
     /// 东方警察
     /// </summary>
-    public class CR_CM001 : HeroCard
-    {
-        public override Camp camp => Camp.commuMinor;
-        public override List<Skill> Skills => new List<Skill>() { new CR_CM001_SK1() };
-    }
+    //public class CR_CM001 : HeroCard
+    //{
+    //    public override Camp camp => Camp.commuMinor;
+    //    public override List<Skill> Skills => new List<Skill>() { new CR_CM001_SK1() };
+    //}
     /// <summary>
     /// 出警：你可以将任意手牌当做“出警”打出，每回合最多两次。
     /// </summary>

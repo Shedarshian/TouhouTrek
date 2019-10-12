@@ -13,6 +13,7 @@ namespace ZMDFQ
         public Player Owner;
 
         public int Id;
+        public int ConfigId;
         public string Name;
         public CardTypeEnum CardType;
 
@@ -28,7 +29,6 @@ namespace ZMDFQ
         protected virtual void copyPropTo(Card target)
         {
             target.Id = Id;
-            target.Name = Name;
             target.CardType = CardType;
         }
     }

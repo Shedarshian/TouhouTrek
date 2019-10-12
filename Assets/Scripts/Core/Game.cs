@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Reflection;
 //using UnityEngine;
 
 namespace ZMDFQ
@@ -13,10 +14,22 @@ namespace ZMDFQ
         public SeatByEventSystem EventSystem;
 
         public ITimeManager TimeManager;
+        int _size;
         /// <summary>
-        /// 当前社团规模
+        /// 当前社群规模
         /// </summary>
-        public int Size;
+        public int Size
+        {
+            get { return _size; }
+            set
+            {
+                _size = value;
+                if (_size > 10)
+                    _size = 10;
+                if (_size < -10)
+                    _size = -10;
+            }
+        }
 
         /// <summary>
         /// 当前玩家
@@ -94,7 +107,17 @@ namespace ZMDFQ
         public TaskCompletionSource<Response>[] Requests;
 
         internal System.Threading.CancellationTokenSource cts;
-
+        IDatabase _database;
+        public IDatabase Database
+        {
+            get
+            {
+                if (_database == null)
+                    _database = ConfigManager.Instance;
+                return _database;
+            }
+            set { _database = value; }
+        }
         GameOptions options { get; set; } = null;
         int endingOfficialCardCount { get; set; } = 0;
         /// <summary>
@@ -108,34 +131,51 @@ namespace ZMDFQ
             if (TimeManager != null)
                 TimeManager.Game = this;
             //初始化牌库
-            if (options != null && options.characterCards != null)
+            if (options != null && options.Cards != null && Database != null)
             {
-                characterDeck.AddRange(options.characterCards);
-            }
-            else
-            {
-                characterDeck.AddRange(createCards(new Cards.CR_CP001()
+                foreach (var id in options.Cards)
                 {
-                    Name = "传教爱好者",
-                }, 28));
+                    switch (CreatCard(id))
+                    {
+                        case EventCard eventCard:
+                            EventDeck.Add(eventCard);
+                            break;
+                        case ActionCard actionCard:
+                            ActionDeck.Add(actionCard);
+                            break;
+                        case ThemeCard themeCard:
+                            ThemeDeck.Add(themeCard);
+                            break;
+                        case HeroCard heroCard:
+                            characterDeck.Add(heroCard);
+                            break;
+                    }
+                }
             }
-            if (options != null && options.actionCards != null)
-                ActionDeck.AddRange(options.actionCards);
             else
             {
-                ActionDeck.AddRange(createCards(new Cards.AT_N001() { Name = "传教" }, 20));
-            }
-            if (options != null && options.officialCards != null)
-                ThemeDeck.AddRange(options.officialCards);
-            else
-            {
-                ThemeDeck.AddRange(createCards(new Cards.G_001() { Name = "旧作" }, 20));
-            }
-            if (options != null && options.eventCards != null)
-                EventDeck.AddRange(options.eventCards);
-            else
-            {
-                EventDeck.AddRange(createCards(new Cards.EV_E002() { Name = "全国性活动" }, 50));
+                //for (int i = 0; i < 7; i++)
+                //{
+                //    characterDeck.Add(new Cards.CR_CM001());
+                //    characterDeck.Add(new Cards.CR_CP001());
+                //    characterDeck.Add(new Cards.CR_IM001());
+                //    characterDeck.Add(new Cards.CR_IP001());
+                //}
+                characterDeck.AddRange(createCards(113, 7).Cast<HeroCard>());
+                characterDeck.AddRange(createCards(119, 7).Cast<HeroCard>());
+                characterDeck.AddRange(createCards(107, 7).Cast<HeroCard>());
+                characterDeck.AddRange(createCards(101, 7).Cast<HeroCard>());
+                ActionDeck.AddRange(createCards<Cards.AT_N001>(5));
+                ActionDeck.AddRange(createCards<Cards.AT_N002>(5));
+                ActionDeck.AddRange(createCards<Cards.AT_N003>(3));
+                ActionDeck.AddRange(createCards<Cards.AT_N004>(3));
+                ActionDeck.AddRange(createCards<Cards.AT_N006>(3));
+                ActionDeck.AddRange(createCards<Cards.AT_N012>(5));
+                ThemeDeck.AddRange(createCards(new Cards.G_001(), 20));
+                EventDeck.AddRange(createCards<Cards.EV_E001>(7));
+                EventDeck.AddRange(createCards<Cards.EV_E002>(3));
+                //characterDeck = new List<HeroCard>(types.Where(t => t.IsSubclassOf(typeof(HeroCard)))
+                //                                        .Select(t => Activator.CreateInstance(t) as HeroCard));
             }
             if (options == null || options.shuffle)
             {
@@ -145,8 +185,21 @@ namespace ZMDFQ
                 Reshuffle(EventDeck);
             }
             //初始化玩家
-            if (options != null && options.players != null)
-                Players = new List<Player>(options.players);
+            if (options != null && options.PlayerInfos != null)
+            {
+                for (int i = 0; i < options.PlayerInfos.Length; i++)
+                {
+                    GameOptions.PlayerInfo info = (GameOptions.PlayerInfo)options.PlayerInfos[i];
+                    Player p;
+                    if (info.Id < 0)
+                        p = new AI(this, i);
+                    else
+                        p = new Player(i);
+                    p.Name = info.Name;
+                    p.PlayerId = info.Id;
+                    Players.Add(p);
+                }
+            }
             else
             {
                 for (int i = 0; i < 8; i++)
@@ -235,7 +288,63 @@ namespace ZMDFQ
         }
         int lastAllocatedID { get; set; } = 0;
         /// <summary>
-        /// 创建卡牌
+        /// 创建一张指定类型的卡牌。
+        /// </summary>
+        /// <param name="type">卡牌类型</param>
+        /// <param name="startID">如果不填这个参数那么会自动给卡牌分配ID，否则会赋予给定的ID</param>
+        /// <returns>创建好的卡牌</returns>
+        public Card createCard(Type type, int startID = -1)
+        {
+            Card card = Activator.CreateInstance(type) as Card;
+            registerCard(card, startID > -1 ? startID : ++lastAllocatedID);
+            return card;
+        }
+        /// <summary>
+        /// 创建指定数量的某种卡牌
+        /// </summary>
+        /// <param name="type">卡牌类型</param>
+        /// <param name="number">卡牌数量</param>
+        /// <param name="startID">如果不填这个参数那么会自动给卡牌分配ID，如果填了那么被创建的卡牌会从startID开始分配参数，每张卡在前一张的基础上+1</param>
+        /// <returns>创建好的卡牌</returns>
+        public Card[] createCards(Type type, int number, int startID = -1)
+        {
+            Card[] cards = new Card[number];
+            for (int i = 0; i < number; i++)
+            {
+                cards[i] = createCard(type, startID > -1 ? startID + i : ++lastAllocatedID);
+            }
+            return cards;
+        }
+        /// <summary>
+        /// 创建一张指定类型的卡牌
+        /// </summary>
+        /// <typeparam name="T">卡牌类型</typeparam>
+        /// <param name="startID">如果不填这个参数那么会自动给卡牌分配ID，否则会赋予给定的ID</param>
+        /// <returns>创建好的卡牌</returns>
+        public T createCard<T>(int startID = -1) where T : Card, new()
+        {
+            T card = new T();
+            registerCard(card, startID > -1 ? startID : ++lastAllocatedID);
+            return card;
+        }
+        /// <summary>
+        /// 创建指定数量的某种卡牌
+        /// </summary>
+        /// <typeparam name="T">卡牌类型</typeparam>
+        /// <param name="number">卡牌数量</param>
+        /// <param name="startID">如果不填这个参数那么会自动给卡牌分配ID，如果填了那么被创建的卡牌会从startID开始分配参数，每张卡在前一张的基础上+1</param>
+        /// <returns>创建好的卡牌</returns>
+        public T[] createCards<T>(int number, int startID = -1) where T : Card, new()
+        {
+            T[] cards = new T[number];
+            for (int i = 0; i < number; i++)
+            {
+                cards[i] = createCard<T>(startID > -1 ? startID + i : ++lastAllocatedID);
+            }
+            return cards;
+        }
+        /// <summary>
+        /// 创建指定数量卡牌的复制
         /// </summary>
         /// <typeparam name="T">卡牌类型</typeparam>
         /// <param name="origin">数组中的所有卡牌都会以这张牌作为原型</param>
@@ -248,11 +357,31 @@ namespace ZMDFQ
             for (int i = 0; i < number; i++)
             {
                 cards[i] = Card.copyCard(origin);
-                cards[i].Id = startID > -1 ? startID + i : ++lastAllocatedID;
-                allCards.Add(cards[i]);
+                registerCard(cards[i], startID > -1 ? startID + i : ++lastAllocatedID);
             }
             return cards;
         }
+        public Card CreatCard(int id)
+        {
+            Card card = Database.GetCard(id);
+            registerCard(card, ++lastAllocatedID);
+            return card;
+        }
+        public Card[] createCards(int id, int number)
+        {
+            Card[] cards = new Card[number];
+            for (int i = 0; i < cards.Length; i++)
+            {
+                cards[i] = CreatCard(id);
+            }
+            return cards;
+        }
+        private void registerCard(Card card, int id)
+        {
+            card.Id = id;
+            allCards.Add(card);
+        }
+
         /// <summary>
         /// 玩家响应系统询问用这个接口
         /// </summary>
@@ -333,13 +462,13 @@ namespace ZMDFQ
                     {
                         int basePoint = 0;
                         //bool win = true;
-                        if (player.Hero.camp == Camp.commuMajor && player.Size >= 0 && Size >= 0)
+                        if (player.Hero.camp == CampEnum.commuMajor && player.Size >= 0 && Size >= 0)
                             basePoint = Size;
-                        else if (player.Hero.camp == Camp.indivMajor && player.Size >= 0 && Size >= 0)
+                        else if (player.Hero.camp == CampEnum.indivMajor && player.Size >= 0 && Size >= 0)
                             basePoint = player.Size;
-                        else if (player.Hero.camp == Camp.commuMinor && player.Size >= 0 && Size <= 0)
+                        else if (player.Hero.camp == CampEnum.commuMinor && player.Size >= 0 && Size <= 0)
                             basePoint = Math.Abs(Size);
-                        else if (player.Hero.camp == Camp.indivMinor && player.Size >= 0 && Size <= 0)
+                        else if (player.Hero.camp == CampEnum.indivMinor && player.Size >= 0 && Size <= 0)
                             basePoint = player.Size;
                         //else
                         //    win = false;//不结算分的玩家算失败
@@ -433,7 +562,7 @@ namespace ZMDFQ
             return Players.IndexOf(ActivePlayer);
         }
 
-        internal Player GetPlayer(int id)
+        public Player GetPlayer(int id)
         {
             return Players.Find(x => x.Id == id);
         }
@@ -465,10 +594,10 @@ namespace ZMDFQ
         /// </summary>
         /// <param name="size"></param>
         /// <param name="source">改变的原因</param>
-        internal async Task ChangeSize(int size, object source)
+        public async Task ChangeSize(int size, object source)
         {
             var data = new EventData<int> { data = size };
-            await EventSystem.Call(EventEnum.OnGameSizeChange, Players.IndexOf(ActivePlayer), data, source);
+            await EventSystem.Call(EventEnum.BeforeGameSizeChange, Players.IndexOf(ActivePlayer), data, source);
             Size += data.data;
             Log.Debug($"Game size change to {Size}");
         }
@@ -508,17 +637,20 @@ namespace ZMDFQ
     }
     public class GameOptions
     {
-        public Player[] players = null;
+        public PlayerInfo[] PlayerInfos;
         public int endingOfficialCardCount = 0;
-        public IEnumerable<HeroCard> characterCards = null;
-        public IEnumerable<ActionCard> actionCards = null;
-        public IEnumerable<ThemeCard> officialCards = null;
-        public IEnumerable<EventCard> eventCards = null;
+        public IEnumerable<int> Cards = null;
         public int firstPlayer = -1;
         public bool shuffle = true;
         public int initCommunitySize = 0;
         public int initInfluence = 0;
         public bool chooseCharacter = true;
         public bool doubleCharacter = false;
+
+        public class PlayerInfo
+        {
+            public long Id;
+            public string Name;
+        }
     }
 }

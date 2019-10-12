@@ -27,8 +27,8 @@ namespace ZMDFQ
         BeforePassiveDropActionCard,
         DropActionCard,
 
-        OnGameSizeChange,
-        OnPlayrSizeChange,
+        BeforeGameSizeChange,
+        BeforePlayrSizeChange,
 
         AfterGameSizeChange,
         AfterPlayrSizeChange,

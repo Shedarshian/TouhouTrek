@@ -71,7 +71,10 @@ namespace ZMDFQ
                     });
                     break;
                 case ChooseDirectionRequest chooseDirectionRequest:
-                    Game.Answer(new ChooseDirectionResponse() { PlayerId = request.PlayerId, IfSet = false, IfForward = true });
+                    Game.Answer(new ChooseDirectionResponse() { PlayerId = request.PlayerId, CardId = player.EventCards[0].Id, IfSet = false, IfForward = true });
+                    break;
+                case TakeChoiceRequest takeChoiceRequest:
+                    Game.Answer(new TakeChoiceResponse() { PlayerId = request.PlayerId, Index = takeChoiceRequest.Infos.Count - 1 });
                     break;
                 default:
                     Log.Warning($"ai未处理的响应类型:{request.GetType()}");

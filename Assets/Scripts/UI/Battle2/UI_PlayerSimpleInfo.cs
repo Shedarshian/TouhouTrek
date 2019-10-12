@@ -8,12 +8,14 @@ namespace ZMDFQ.UI.Battle
 {
     public partial class UI_PlayerSimpleInfo
     {
+        public Player Player;
         partial void Init()
         {
 
         }
         public void SetPlayer(Player player)
         {
+            this.Player = player;
             m_Name.text = player.Name;
             m_ActionCards.text = player.ActionCards.Count.ToString();
             m_EventCards.text = (player.EventCards.Count + (player.SaveEvent == null ? 0 : 1)).ToString();

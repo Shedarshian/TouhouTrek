@@ -51,6 +51,9 @@ namespace ZMDFQ
                 case ChooseDirectionRequest chooseDirectionRequest:
                     game.Answer(new ChooseDirectionResponse() { PlayerId = Id, CardId = EventCards[0].Id, IfSet = false, IfForward = true });
                     break;
+                case TakeChoiceRequest takeChoice:
+                    game.Answer(new TakeChoiceResponse() { PlayerId = Id, Index = 0 });
+                    break;
                 default:
                     Log.Warning($"ai未处理的响应类型:{request.GetType()}");
                     break;

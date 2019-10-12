@@ -4,6 +4,7 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+Release/
 
 # Visual Studio cache directory
 .vs/
@@ -117,3 +118,4 @@ UIProject/.objs/
 /docfx.json
 /index.md
 /toc.yml
+/Excel/~$CardConfig.xlsx
