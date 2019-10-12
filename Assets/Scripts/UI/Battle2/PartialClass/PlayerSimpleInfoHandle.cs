@@ -13,21 +13,32 @@ namespace ZMDFQ.UI.Battle
     {
         UI_PlayerSimpleInfo[] playersSimpleInfo;
 
+        [BattleUI(nameof(Init),true)]
+        private void SimpleInfo_Init()
+        {
+            playersSimpleInfo = new UI_PlayerSimpleInfo[8];
+            for (int i = 0; i < 8; i++)
+            {
+                int k = i;
+                UI_PlayerSimpleInfo uI_PlayerSimpleInfo = GetChild("PlayerInfo" + i) as UI_PlayerSimpleInfo;
+                playersSimpleInfo[i] = uI_PlayerSimpleInfo;
+                playersSimpleInfo[i].changeStateOnClick = false;
+            }
+        }
+
         [BattleUI(nameof(SetGame))]
         private void SimpleInfo_SetGame()
         {
-            playersSimpleInfo = new UI_PlayerSimpleInfo[game.Players.Count];
             for (int i = 0; i < 8; i++)
-            {
-                UI_PlayerSimpleInfo uI_PlayerSimpleInfo = GetChild("PlayerInfo" + i) as UI_PlayerSimpleInfo;
+            {               
                 if (i < game.Players.Count)
                 {
-                    uI_PlayerSimpleInfo.visible = true;
-                    playersSimpleInfo[i] = uI_PlayerSimpleInfo;
+                    playersSimpleInfo[i].visible = true;
+                  
                 }
                 else
                 {
-                    uI_PlayerSimpleInfo.visible = false;
+                    playersSimpleInfo[i].visible = false;
                 }
             }
         }
@@ -38,6 +49,14 @@ namespace ZMDFQ.UI.Battle
             for (int i = 0; i < game.Players.Count; i++)
             {
                 playersSimpleInfo[i].SetPlayer(game.Players[i]);
+            }
+        }
+
+        private void flushSelectPlayer()
+        {
+            for (int i = 0; i < playersSimpleInfo.Length; i++)
+            {
+                playersSimpleInfo[i].selected = selectedPlayers.Contains(playersSimpleInfo[i].Player);
             }
         }
     }

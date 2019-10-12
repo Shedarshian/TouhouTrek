@@ -12,7 +12,7 @@ namespace ZMDFQ.Cards
     /// 挂裱： 指定一名玩家，你进行一次两点点数判定，该玩家个人影响力减少判定结果的数值。
     /// 当其他玩家减少你的个人影响力时可以使用，该玩家的个人影响力减少相同的数值。
     /// </summary>
-    public class AT_005 : ActionCard
+    public class AT_N005 : ActionCard
     {
         protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
@@ -39,46 +39,44 @@ namespace ZMDFQ.Cards
         {
             await Effects.UseCard.UseActionCard(game, useWay, this, async (g, r) =>
             {
-                int x = g.twoPointCheck();
-                await g.GetPlayer(r.PlayersId[0]).ChangeSize(g, -x, this);
+                await g.GetPlayer(r.PlayersId[0]).ChangeSize(g, -g.twoPointCheck(), this, Owner);
             });
         }
 
         internal override void OnDraw(Game game, Player player)
         {
-            game.EventSystem.Register(EventEnum.AfterPlayrSizeChange, game.GetSeat(player), effect_passive);
+            game.EventSystem.Register(EventEnum.AfterPlayrSizeChange, game.GetSeat(player), doeffect_passive);
         }
         internal override void OnDrop(Game game, Player player)
         {
-            game.EventSystem.Remove(EventEnum.changeEventDirection, effect_passive);
+            game.EventSystem.Remove(EventEnum.AfterPlayrSizeChange, doeffect_passive);
         }
-
-        private Task effect_passive(object[] args)
-        {
-            //这里不能用异步阻塞，直接返回任务完成
-            doeffect_passive(args).Start();
-            return Task.CompletedTask;
-        }
-
         private async Task doeffect_passive(object[] args)
         {
             Game game = args[0] as Game;
-            ChooseDirectionResponse response = args[1] as ChooseDirectionResponse;
-            if (!response.IfSet)
+            EventData<int> value = args[2] as EventData<int>;
+            Player sourcePlayer = args[4] as Player;
+            if (value.data < 0 && sourcePlayer != Owner)
             {
-                TakeChoiceResponse response1 = (TakeChoiceResponse)await game.WaitAnswer(new TakeChoiceRequest()
+                TakeChoiceResponse response = (TakeChoiceResponse)await game.WaitAnswer(new TakeChoiceRequest()
                 {
                     PlayerId = Owner.Id,
-                    Infos = new List<string>() { "使用挂裱", "取消" }
+                    Infos = new List<string>() { "取消", "使用挂裱" }
                 });
-                if (response1.Index == 0)
+                if (response.Index == 1)
                 {
-                    await Owner.DropActionCard(game, new List<int>() { this.Id }, true);
-                    Player target = args[2].Owner;
-                    await target.ChangeSize(game, -x, this);
+                    await Effects.UseCard.UseActionCard(game, new FreeUse()
+                    {
+                        PlayerId = Owner.Id,
+                        CardId = Id,
+                        Source = new List<int>() { Id },
+                        PlayersId = new List<int>() { sourcePlayer.Id }
+                    }, this, async (g, r) =>
+                    {
+                        await g.GetPlayer(r.PlayersId[0]).ChangeSize(g, value.data, this, g.GetPlayer(r.PlayerId));
+                    });
                 }
             }
-
         }
     }
 }

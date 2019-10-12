@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace ZMDFQ
 {
+    using MongoDB.Bson.Serialization.Attributes;
     using PlayerAction;
     public abstract class Skill
     {
+        [BsonIgnore]
         /// <summary>
         /// 持有此技能的英雄
         /// </summary>
         public HeroCard Hero;
 
         public string Name;
+
+        public int ConfigId;
+
+        [BsonIgnore]
         /// <summary>
         /// 未翻开时 是否询问响应技能
         /// </summary>
@@ -74,7 +80,7 @@ namespace ZMDFQ
     /// <summary>
     /// 被动技能，无法使用，也没有主动效果
     /// </summary>
-    public abstract class PassiveSkill:Skill
+    public abstract class PassiveSkill : Skill
     {
         protected override bool canUse(Game game, Request nowRequest, FreeUse useInfo, out NextRequest nextRequest)
         {
